@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "builds": [
-    { "src": "api/index.py", "use": "@vercel/python", "config": { "includeFiles": ["admin_core/**", "storefront/assets/*.json"] } },
+    { "src": "api/index.py", "use": "@vercel/python", "config": { "includeFiles": ["admin_core/**", "storefront/assets/*.json"], "excludeFiles": "{storefront/**,_zip_review/**,**/*.zip}" } },
     { "src": "storefront/**", "use": "@vercel/static" }
   ],
   "routes": [
