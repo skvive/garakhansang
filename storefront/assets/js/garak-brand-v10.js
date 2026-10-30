@@ -8,18 +8,23 @@
   document.body.classList.add('garak-brand-v10');
   const isHome=location.pathname==='/'||/\/(?:index\.html)?$/.test(location.pathname)&&!location.pathname.includes('/admin/')||document.querySelector('.story-hero')!==null;
   if(isHome)document.body.classList.add('brand-home');
-  document.querySelectorAll('.header a.logo, .header a.brand-lockup').forEach((a)=>{
-    a.setAttribute('aria-label','가락한상 홈');
-    a.classList.add('garak-v10-logo');
-    const img=document.createElement('img');img.src=asset('wordmark.png');img.alt='가락한상';img.width=215;img.height=58;
-    a.replaceChildren(img);
-  });
+  const applyLogo=()=>{
+    document.querySelectorAll('.header a.logo, .header a.brand-lockup, a.auth-brand').forEach((a)=>{
+      a.setAttribute('aria-label','가락한상 홈');
+      a.classList.add('garak-v10-logo');
+      if(a.querySelector('img[src*="wordmark"]'))return;
+      const img=document.createElement('img');img.src=asset('wordmark.png');img.alt='가락한상';img.width=215;img.height=58;
+      a.replaceChildren(img);
+    });
+  };
+  applyLogo();
+  setTimeout(applyLogo,120);
   const hero=document.querySelector('.story-hero');
   if(hero){
     const inner=hero.querySelector('.story-hero-inner')||hero;
-    if(!inner.querySelector('.brand-v10-hero-mascot')){
-      let img=document.createElement('img');img.src=asset('mascot.webp');img.alt='';img.setAttribute('aria-hidden','true');img.className='brand-v10-hero-mascot';img.loading='eager';inner.append(img);
-      let bubble=document.createElement('p');bubble.className='brand-v10-speech';bubble.textContent='오늘도 좋은 먹거리, 가락한상에서 만나보세요!';inner.append(bubble);
+    if(!inner.querySelector('.brand-v10-hero-mascot,.hero-mascot')){
+      let img=document.createElement('img');img.src=asset('mascot.webp')+'?v=17';img.alt='';img.setAttribute('aria-hidden','true');img.className='brand-v10-hero-mascot';img.loading='eager';inner.append(img);
+      let bubble=document.createElement('p');bubble.className='brand-v10-speech';bubble.textContent='오늘도 좋은 먹거리, 가락한상에서 만나요!';inner.append(bubble);
     }
     if(!document.querySelector('.brand-v10-promo')){
       let promo=document.createElement('section');promo.className='brand-v10-promo';promo.setAttribute('aria-label','시장 바로가기');
@@ -33,8 +38,8 @@
   }else{
     const pageHero=document.querySelector('.page-hero');
     if(pageHero){const container=pageHero.querySelector('.container')||pageHero;
-      if(!container.querySelector('.brand-v10-page-mascot')){
-       const img=document.createElement('img');img.src=asset('mascot.webp');img.alt='';img.setAttribute('aria-hidden','true');img.loading='lazy';img.className='brand-v10-page-mascot';container.append(img);
+      if(!pageHero.querySelector('.brand-v10-page-mascot,.page-mascot,.mascot')){
+       const img=document.createElement('img');img.src=asset('mascot.webp')+'?v=17';img.alt='';img.setAttribute('aria-hidden','true');img.loading='lazy';img.className='brand-v10-page-mascot';container.append(img);
       }
     }
   }

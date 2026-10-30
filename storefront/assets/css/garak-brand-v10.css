@@ -8,7 +8,8 @@
  --brand-red:#c44232;--brand-gold:#d1a952;--brand-brown:#77563d;
 }
 html {scroll-padding-top:116px}
-body {background:var(--brand-cream)!important;color:var(--ink)}
+body {background:var(--brand-cream)!important;color:var(--ink);word-break:keep-all;overflow-wrap:break-word}
+h1,h2,h3,p,a,button,li,td,th,.brand-v10-speech,.page-title {word-break:keep-all;overflow-wrap:break-word}
 body.garak-brand-v10 a:focus-visible,body.garak-brand-v10 button:focus-visible,body.garak-brand-v10 input:focus-visible {outline:3px solid var(--brand-gold);outline-offset:3px}
 .top-strip{background:var(--brand-green)!important;color:#f8f1df!important;border:0!important;letter-spacing:-.01em}
 .top-strip b{color:#ffebac!important}
@@ -27,7 +28,8 @@ body.garak-brand-v10 a:focus-visible,body.garak-brand-v10 button:focus-visible,b
 .mobile-menu a{color:#fff3df!important;border-color:#426c4f!important}
 .brand-lockup,body.brand-home .brand-lockup{display:inline-flex!important;background:transparent!important;box-shadow:none!important;padding:0!important;max-width:none!important;min-width:0!important;gap:0!important;height:58px!important;overflow:visible!important}
 .header .logo.garak-v10-logo,.header .brand-lockup.garak-v10-logo{display:flex!important;align-items:center!important;justify-content:flex-start!important;width:auto!important;max-width:240px!important;min-width:140px!important;white-space:nowrap!important;flex-shrink:0}
-.header .garak-v10-logo img{width:min(225px,28vw)!important;height:58px!important;max-height:58px!important;object-fit:contain!important;display:block!important}
+.header .garak-v10-logo img,.auth-brand.garak-v10-logo img{width:min(225px,28vw)!important;height:58px!important;max-height:58px!important;object-fit:contain!important;display:block!important}
+.header a.logo.garak-v10-logo svg,.header a.logo.garak-v10-logo>span{display:none!important}
 .garak-v10-logo .brand-logo-img{display:none!important}
 .garak-v10-seal {height:52px;width:52px;object-fit:contain;flex-shrink:0}
 .section h2,.page-title,.story-hero h1,.page-hero h1{color:var(--brand-green);letter-spacing:-.045em}
@@ -35,7 +37,7 @@ body.garak-brand-v10 a:focus-visible,body.garak-brand-v10 button:focus-visible,b
 .kicker,.story-kicker{color:var(--brand-leaf)!important;letter-spacing:.11em}
 .page-hero{background:linear-gradient(115deg,#e9f1e2 0%,#f7f0e2 80%)!important;border-top:1px solid #d8d1b5;border-bottom:2px solid #d7c49e;overflow:hidden}
 .page-hero .container{position:relative}
-.brand-v10-page-mascot{position:absolute;right:2%;bottom:-16px;width:112px;height:auto;object-fit:contain;pointer-events:none;z-index:1;filter:drop-shadow(1px 5px 5px #284c3132)}
+.brand-v10-page-mascot{position:absolute;right:2%;bottom:-8px;width:132px;height:auto;object-fit:contain;object-position:bottom;pointer-events:none;z-index:1;filter:drop-shadow(1px 5px 5px #284c3132)}
 .page-hero .container>div,.page-hero .container>h1,.page-hero .container>p{position:relative;z-index:2}
 .btn.primary,.btn.dark,button.primary,.story-hero .btn.primary{background:var(--brand-leaf)!important;color:#fff!important;border-color:var(--brand-leaf)!important}
 .btn.primary:hover,.btn.dark:hover,button.primary:hover{background:#095939!important}
@@ -53,7 +55,7 @@ body.garak-brand-v10 a:focus-visible,body.garak-brand-v10 button:focus-visible,b
 .story-hero p{color:#fff5e7!important}
 .story-hero .story-feature-card{display:none!important}
 .brand-v10-hero-mascot{position:absolute;right:2%;bottom:-4px;z-index:5;height:clamp(230px,32vw,430px);width:auto;object-fit:contain;pointer-events:none;filter:drop-shadow(0 14px 15px rgba(3,24,14,.32))}
-.story-hero .brand-v10-speech{color:var(--brand-green)!important;position:absolute;z-index:6;right:4%;top:8%;background:#fff7e7;color:var(--brand-green)!important;padding:13px 20px;border-radius:24px 24px 8px 24px;box-shadow:0 7px 25px #0002;max-width:230px;font-size:19px!important;line-height:1.45!important;font-weight:800!important;letter-spacing:-.04em}
+.story-hero .brand-v10-speech{color:var(--brand-green)!important;position:absolute;z-index:6;right:4%;top:8%;background:#fff7e7;padding:13px 20px;border-radius:24px 24px 8px 24px;box-shadow:0 7px 25px #0002;max-width:280px;font-size:18px!important;line-height:1.4!important;font-weight:800!important;letter-spacing:-.03em;word-break:keep-all}
 .brand-v10-speech::after{content:"";position:absolute;bottom:-13px;right:38px;border:8px solid transparent;border-top-color:#fff7e7}
 .brand-v10-promo{background:linear-gradient(100deg,#fff8e7,#f2f1df);border-bottom:1px solid #e1d3b6;padding:21px 0}
 .brand-v10-promo .brand-v10-promo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}

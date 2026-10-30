@@ -33,7 +33,7 @@ const liked = () => storage('likes', []);
 const wallet = () => storage('wallet', []);
 const routes = {home:'index.html', prices:'prices.html', map:'market-map.html', stores:'stores.html', coupons:'coupons.html', events:'events.html', merchant:'merchant-center.html', guide:'market-guide.html'};
 const img = p => 'assets/images/' + p + '.webp';
-const mascot = (cls='') => `<img class="mascot ${cls}" src="assets/brand/mascot.webp" alt="가락한상 상인 마스코트"/>`;
+const mascot = (cls='') => `<img class="mascot ${cls}" src="assets/brand/mascot.webp?v=17" alt="가락한상 상인 마스코트"/>`;
 const logo = `<a class="logo" href="index.html" aria-label="가락한상 홈"><img class="logo-wordmark" src="assets/brand/wordmark.png" alt="가락한상"/></a>`;
 
 function shopsFromProducts() {
@@ -195,7 +195,7 @@ function home() {
     <div class="hero-ctas"><a class="btn btn-primary" href="category/seafood.html">지금 장보기 →</a>
     <a class="btn btn-outline-white" href="prices.html">오늘의 시세 보기</a></div>
     <div class="hero-labels"><span>✦ 수산 시연 시세 ${quotes.length}품목</span><span>✦ 상품 ${(window.GARAK_PRODUCTS||[]).length}개</span><span>✦ 공식 경매 API 아님</span></div>
-    </div><div class="hero-art">${mascot('hero-mascot')}<div class="quote-bubble">“오늘도 좋은 먹거리,<br>가락한상에서 만나보세요!”</div>
+    </div><div class="hero-art">${mascot('hero-mascot')}<div class="quote-bubble">“오늘도 좋은 먹거리,<br>가락한상에서 만나요!”</div>
     <div class="hero-floating"><span>오늘의 장보기</span><b>시세 확인하고, 길을 찾아보세요</b></div></div></div></section>
     <div class="quote-ticker" aria-label="수산 시연 시세 티커"><div class="quote-ticker-track"><span>${ticker}   ·   ${ticker}</span></div></div>
     <section class="quick container" aria-label="빠른 메뉴"><div class="quick-panel">
@@ -382,7 +382,7 @@ function guide() {
       <div class="guide-palette"><div class="eyebrow">COLOR PALETTE</div>
         ${[['가락 그린','#018F3B'],['크림','#F8F3E9'],['황토 브라운','#8B5E3C'],['특가 레드','#C43D2F'],['골드','#D4AF48'],['딥 그린','#123D2A']].map(c=>`<div class="swatch"><i style="background:${c[1]}"></i><b>${c[0]}</b><small>${c[1]}</small></div>`).join('')}
       </div>
-      <section class="guide-image"><img src="assets/brand/logo-lockup.webp" alt="가락한상 로고">
+      <section class="guide-image"><img src="assets/brand/wordmark.png" alt="가락한상 로고">
         <div><h2>캐릭터는 과하지 않게, 곳곳에서.</h2><p>헤더에서는 로고로, 메인에서는 안내자로, 쿠폰에서는 응원하는 친구로 등장합니다.</p>
         <a class="btn btn-primary" href="stories/index.html">상인 이야기 더 보기 →</a>
         <a class="btn btn-light" href="ir/index.html">브랜드북·IR 자료실 →</a></div></section>
