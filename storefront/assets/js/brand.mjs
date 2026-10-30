@@ -8,6 +8,20 @@ function asset(name) {
   return root + 'assets/brand/' + name;
 }
 
+function absUrl(rel) {
+  return new URL(root + rel, location.href).href;
+}
+
+function setMeta(attr, key, value) {
+  let el = document.querySelector(`meta[${attr}="${key}"]`);
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute(attr, key);
+    document.head.append(el);
+  }
+  el.setAttribute('content', value);
+}
+
 function injectCss() {
   if (document.querySelector('[data-garak-brand-css]')) return;
   const link = document.createElement('link');
@@ -17,6 +31,27 @@ function injectCss() {
   document.head.append(link);
   const theme = document.querySelector('meta[name="theme-color"]');
   if (theme) theme.setAttribute('content', '#123D2A');
+}
+
+function injectShare() {
+  const og = absUrl('assets/brand/og-image.jpg');
+  const desc =
+    document.querySelector('meta[name="description"]')?.content ||
+    '가락시장 30년 전통의 맛. 좋은 먹거리가 만나는 곳.';
+  setMeta('property', 'og:type', 'website');
+  setMeta('property', 'og:site_name', '가락한상');
+  setMeta('property', 'og:title', document.title || '가락한상');
+  setMeta('property', 'og:description', desc);
+  setMeta('property', 'og:image', og);
+  setMeta('property', 'og:url', location.href.split('#')[0]);
+  setMeta('name', 'twitter:card', 'summary_large_image');
+  setMeta('name', 'twitter:image', og);
+  if (!document.querySelector('link[rel="apple-touch-icon"]')) {
+    const apple = document.createElement('link');
+    apple.rel = 'apple-touch-icon';
+    apple.href = root + 'assets/images/apple-touch-icon.png';
+    document.head.append(apple);
+  }
 }
 
 function replaceLogos() {
@@ -103,6 +138,7 @@ function paintFooter() {
 
 if (!isAdmin) {
   injectCss();
+  injectShare();
   replaceLogos();
   paintStrip();
   paintHome();
