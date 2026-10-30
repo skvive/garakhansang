@@ -31,10 +31,10 @@ const storage = (key, initial) => { try { return JSON.parse(localStorage.getItem
 const save = (key, v) => localStorage.setItem('garak-brand-'+key, JSON.stringify(v));
 const liked = () => storage('likes', []);
 const wallet = () => storage('wallet', []);
-const routes = {home:'index.html', map:'market-map.html', stores:'stores.html', coupons:'coupons.html', events:'events.html', merchant:'merchant-center.html', guide:'market-guide.html'};
+const routes = {home:'index.html', prices:'prices.html', map:'market-map.html', stores:'stores.html', coupons:'coupons.html', events:'events.html', merchant:'merchant-center.html', guide:'market-guide.html'};
 const img = p => 'assets/images/' + p + '.webp';
 const mascot = (cls='') => `<img class="mascot ${cls}" src="assets/brand/mascot.webp" alt="가락한상 상인 마스코트"/>`;
-const logo = `<a class="logo" href="index.html" aria-label="가락한상 홈"><img class="logo-wordmark" src="assets/brand/logo-lockup.webp" alt="가락한상"/><span class="brand-strapline">가락시장 30년 전통의 맛 <small>탐험 · 장보기 · 시연</small></span></a>`;
+const logo = `<a class="logo" href="index.html" aria-label="가락한상 홈"><img class="logo-wordmark" src="assets/brand/wordmark.png" alt="가락한상"/></a>`;
 
 function shopsFromProducts() {
   const list = window.GARAK_PRODUCTS || [];
@@ -98,8 +98,8 @@ const store = id => D.shops.find(s => s.id === id);
 const coupon = id => D.coupons.find(c => c.id === id);
 
 function header() {
-  const nav = [['home','홈'],['map','시장 지도'],['stores','매장 찾기'],['coupons','쿠폰'],['events','이벤트'],['guide','시장 이야기'],['merchant','상인센터']];
-  return `<div class="top-notice">좋은 먹거리가 만나는 곳, <b>가락한상</b>에서 새로운 발견을! <span>· 매장·상품·쿠폰은 시연 데이터</span></div>
+  const nav = [['home','홈'],['prices','오늘의 시세'],['map','시장 지도'],['stores','매장 찾기'],['coupons','쿠폰'],['events','이벤트'],['guide','시장 이야기'],['merchant','상인센터']];
+  return `<div class="top-notice">가락시장 <b>수산 경매 시세</b>와 신선한 장보기 허브 <span>· 시세·상품은 시연 데이터 · 공식 경매 API 아님</span></div>
   <header class="site-header"><div class="container head-inner">${logo}
     <form class="search-global" id="global-search"><label class="sr-only" for="search-top">매장 또는 상품 검색</label>
     <input id="search-top" name="q" placeholder="어떤 시장의 이야기를 찾으세요?" autocomplete="off"/><button aria-label="검색" type="submit">⌕</button></form>
@@ -118,7 +118,7 @@ function header() {
 }
 function footer() {
   return `<footer class="site-footer"><div class="container foot-grid"><div>${logo}<p>시장의 신선함과 사람의 이야기를 더 가까이 잇습니다.<br>상품·가격·매장은 시연 데이터이며 실판매가 아닙니다.</p></div>
-    <div><b>둘러보기</b><a href="stores.html">매장 찾기</a><a href="market-map.html">시장 지도</a><a href="category/seafood.html">장보기</a><a href="recipes/index.html">레시피 132</a></div>
+    <div><b>둘러보기</b><a href="prices.html">오늘의 시세</a><a href="stores.html">매장 찾기</a><a href="market-map.html">시장 지도</a><a href="category/seafood.html">장보기</a></div>
     <div><b>혜택과 상인</b><a href="coupons.html">쿠폰 지갑</a><a href="events.html">기획전</a><a href="merchant-center.html">상인센터</a></div>
     <div><b>안내</b><p>지도와 상호·메뉴·가격은 시연용입니다. 실제 방문 전 위치·영업 여부를 확인하세요.</p><a href="map.html">Google 지도에서 가락시장 보기 ↗</a><a href="ir/index.html">브랜드·IR 자료실</a><a href="legal/privacy.html">개인정보 안내</a></div>
     </div><div class="container foot-bottom">© 2026 GARAK HANSANG · 시연 프로토타입 <span>공식 가락시장 운영 서비스 아님</span></div></footer>`;
@@ -126,10 +126,10 @@ function footer() {
 function lowerNav() {
   return `<div class="bottom-nav" aria-label="모바일 메뉴">
     <a href="index.html">⌂<small>홈</small></a>
-    <a href="market-map.html">⌖<small>지도</small></a>
+    <a href="prices.html">📊<small>시세</small></a>
+    <a href="category/seafood.html">🛒<small>장보기</small></a>
     <a href="stores.html">▣<small>매장</small></a>
-    <a href="coupons.html">🎟<small>쿠폰</small></a>
-    <a href="merchant-center.html">♟<small>상인</small></a>
+    <a href="market-map.html">⌖<small>지도</small></a>
   </div>`;
 }
 function title(eyebrow,h,p=''){return `<div class="section-title"><div><span class="eyebrow">${eyebrow}</span><h2>${h}</h2>${p?`<p>${p}</p>`:''}</div></div>`;}
@@ -171,20 +171,50 @@ function dealCard(p) {
     </div></article>`;
 }
 
+function auctionQuotes() {
+  return (window.GARAK_PRODUCTS || []).filter(p => p.category === 'seafood').slice(0, 8);
+}
+function quoteRow(p) {
+  return `<tr>
+    <td><a href="product/${encodeURIComponent(p.slug)}.html">${safe(p.name)}</a></td>
+    <td class="quote-price">${currency(p.price)}</td>
+    <td>${safe(p.merchant)}</td>
+    <td class="quote-actions"><a class="btn btn-sm btn-green" href="product/${encodeURIComponent(p.slug)}.html">장보기</a>
+      <button class="btn btn-sm btn-light" type="button" data-route="${safe(p.merchant)}">길찾기</button></td>
+  </tr>`;
+}
+
 function home() {
   const featured = featuredShops();
+  const quotes = auctionQuotes();
+  const ticker = quotes.map(p => `${safe(p.name.replace(/\s*\(.*/, ''))} ${currency(p.price)}`).join('   ·   ');
   return `<section class="hero" aria-labelledby="hero-heading"><div class="container hero-grid"><div class="hero-copy">
-    <span class="eyebrow hero-kicker">FRESH STORIES · GOOD PEOPLE · GARAK HANSANG</span>
-    <h1 id="hero-heading">가락시장에서<br><em>새로운 발견!</em></h1>
-    <p>시장 골목의 온기, 매일 다른 제철 먹거리.<br>좋은 장보기를 찾는 오늘, 가락한상이 함께합니다.</p>
-    <div class="hero-ctas"><a class="btn btn-primary" href="stores.html">매장 둘러보기 ↗</a>
-    <a class="btn btn-outline-white" href="market-map.html">시장 지도 보기</a></div>
-    <div class="hero-labels"><span>✦ 시연 상인 ${D.shops.length}곳</span><span>✦ 상품 ${(window.GARAK_PRODUCTS||[]).length}개</span><span>✦ 쿠폰 · 길찾기</span></div>
-    </div><div class="hero-art">${mascot('hero-mascot')}<div class="quote-bubble">“신선한 오늘이<br>더 맛있는 내일을 만들어요!”</div>
-    <div class="hero-floating"><span>오늘의 발견</span><b>시장 탐험, 시작해 볼까요?</b></div></div></div></section>
+    <span class="eyebrow hero-kicker">GARAK MARKET · AUCTION DESK · FRESH SHOP</span>
+    <h1 id="hero-heading">가락시장의 신선함을<br><em>우리 집 식탁으로.</em></h1>
+    <p>수산 경매 시세와 제철 장보기를 한 화면에서.<br>상인과 요리사가 들려주는 오늘을 만나보세요.</p>
+    <div class="hero-ctas"><a class="btn btn-primary" href="category/seafood.html">지금 장보기 →</a>
+    <a class="btn btn-outline-white" href="prices.html">오늘의 시세 보기</a></div>
+    <div class="hero-labels"><span>✦ 수산 시연 시세 ${quotes.length}품목</span><span>✦ 상품 ${(window.GARAK_PRODUCTS||[]).length}개</span><span>✦ 공식 경매 API 아님</span></div>
+    </div><div class="hero-art">${mascot('hero-mascot')}<div class="quote-bubble">“오늘도 좋은 먹거리,<br>가락한상에서 만나보세요!”</div>
+    <div class="hero-floating"><span>오늘의 장보기</span><b>시세 확인하고, 길을 찾아보세요</b></div></div></div></section>
+    <div class="quote-ticker" aria-label="수산 시연 시세 티커"><div class="quote-ticker-track"><span>${ticker}   ·   ${ticker}</span></div></div>
     <section class="quick container" aria-label="빠른 메뉴"><div class="quick-panel">
-      ${[['📍','매장 찾기','stores.html','ico-pin'],['🗺️','시장 지도','market-map.html','ico-map'],['🎟️','할인 쿠폰','coupons.html','ico-ticket'],['🛒','장보기','category/seafood.html','ico-cart'],['🍳','레시피','recipes/index.html','ico-cook'],['🏪','상인센터','merchant-center.html','ico-shop']]
+      ${[['📊','오늘의 시세','prices.html','ico-pin'],['🛒','신선 장보기','category/seafood.html','ico-cart'],['📍','매장 찾기','stores.html','ico-map'],['🗺️','시장 지도','market-map.html','ico-ticket'],['🍳','뚝딱 레시피','recipes/index.html','ico-cook'],['🏪','상인센터','merchant-center.html','ico-shop']]
         .map(a=>`<a href="${a[2]}" class="${a[3]}"><span>${a[0]}</span><b>${a[1]}</b><small>바로가기 ↗</small></a>`).join('')}
+    </div></section>
+    <section class="section container auction-desk" aria-labelledby="auction-heading">
+      <div class="pick-head">${title('TODAY’S AUCTION DESK','오늘의 수산 경매 시세','가락시장 공식 경매가가 아닙니다. 시연 상품 가격으로 장보기 경로만 안내합니다.')}
+        <a class="btn btn-sm btn-primary" href="prices.html">시세 전체 보기</a></div>
+      <div class="auction-wrap"><table class="quote-table">
+        <thead><tr><th>품목</th><th>시연 시세</th><th>상인</th><th>장보기</th></tr></thead>
+        <tbody>${quotes.map(quoteRow).join('')}</tbody>
+      </table></div>
+      <p class="data-caution">※ 실시간 경매·전일 대비 등락은 연결된 API가 없어 표시하지 않습니다.</p>
+    </section>
+    <section class="brand-v10-promo home-promo" aria-label="시장 바로가기"><div class="brand-v10-promo-grid">
+      <a href="category/seafood.html"><span class="symbol" aria-hidden="true">🐟</span><span><strong>제철 상품 둘러보기</strong><small>수산·축산·농산을 한곳에서</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+      <a href="recipes/index.html"><span class="symbol" aria-hidden="true">🍲</span><span><strong>뚝딱 요리 레시피</strong><small>장보기부터 조리법까지</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+      <a href="community/index.html"><span class="symbol" aria-hidden="true">🏪</span><span><strong>시장 사람들의 이야기</strong><small>상인·요리사·협회 소식</small></span><span class="arrow" aria-hidden="true">↗</span></a>
     </div></section>
     <section class="section container">${title('TODAY AT GARAK','오늘은 어느 시장으로 갈까요?','제철 과일에서 신선한 수산, 든든한 한상까지. 먼저 분위기부터 발견해보세요.')}
       <div class="category-grid">${[

@@ -1,0 +1,24 @@
+/* Admin brand system shares tokens with the public Garak Mall storefront. */
+:root{--navy:#173d2b;--navy2:#21533a;--red:#bc4939;--paper:#f8f4e9;--white:#fffdf7;--ink:#243a2a;--muted:#6f7569;--border:#e0d7c3;--green:#0b7747;--blue:#0b7747;--yellow:#d1a952;--shadow:0 8px 24px rgba(24,50,30,.07)}
+body{background:var(--paper)!important}
+.sidebar{background:#143d2c!important;border-right:3px solid #d1a952}
+.side-brand{background:#1b4934}
+.side-brand .symbol{font-size:0!important;background:url('/assets/brand/seal.png') center/contain no-repeat!important;border:0!important}
+.side-brand strong{color:#fff9e8!important;font-family:'NanumMyeongjo',serif;font-weight:900}
+.side-brand small{color:#e1d4b5!important}
+.side-brand b{color:#d1a952!important}
+.beta-strip{background:#245438!important;color:#e9eccf!important}
+.nav-link:hover{background:#27563d!important}.nav-link.active{background:#0b7747!important;box-shadow:inset 4px 0 0 #d1a952!important}
+.topbar{background:#fffaf0!important;border-bottom:1px solid #dfd4bb!important}
+.page-title h1{font-family:'Noto Serif CJK KR','NanumMyeongjo',serif;font-weight:800;color:#173d2b}
+.eyebrow{color:#0b7747!important}.btn.primary{background:#0b7747!important}.btn.primary:hover{background:#095a38!important}
+.kpi,.panel{border-color:#e2d5bd!important;border-radius:16px!important}
+.kpi .symbol{background:#eaf2df!important;color:#173d2b}
+.info-bar{background:#fff9e5;border:1px solid #e8daa9!important}
+.data-table th{background:#f5eedf!important;color:#415c46!important}
+.login-screen{background:#f8f3e9!important}.login-card{border-color:#e0d3ba!important}
+.login-brand .brand-logo{font-size:0!important;display:inline-flex;vertical-align:middle;background:url('/assets/brand/seal.png') center/contain no-repeat!important;width:47px;height:47px}
+.login-brand b{color:#143d2c!important}
+.login-decoration{background:linear-gradient(120deg,#143d2cce,#143d2c5c),url('/assets/images/hero-market.webp') center/cover!important}
+.login-accent{color:#0b7747!important}
+#content a:focus-visible,#content button:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #d1a952;outline-offset:3px}
