@@ -95,11 +95,14 @@ body,h1,h2,h3,p,a,button,li,td,th,.quote-bubble,.page-hero h1{
 }
 .hero,.hero-grid{min-height:640px}
 .hero-copy{padding:72px 0 120px}
-.hero-art{min-height:640px;overflow:visible}
+.hero-art{min-height:640px;overflow:visible;display:flex;align-items:flex-end;justify-content:flex-end}
 .hero-mascot{
-  right:3%;
-  bottom:6px;
-  height:min(540px,78vh);
+  position:relative;
+  right:auto;
+  bottom:0;
+  height:min(500px,70vh);
+  width:auto;
+  max-width:min(360px,100%);
   z-index:2;
   object-fit:contain;
   object-position:bottom center;
@@ -131,13 +134,13 @@ body,h1,h2,h3,p,a,button,li,td,th,.quote-bubble,.page-hero h1{
 .join-mascot{width:240px;right:-12px;bottom:-28px}
 @media(max-width:1020px){
   .hero,.hero-grid,.hero-art{min-height:580px}
-  .hero-mascot{height:400px;right:-2%;bottom:4px}
+  .hero-mascot{height:360px;max-width:280px;right:auto;bottom:0}
   .quote-bubble{font-size:15px;max-width:220px;right:2%}
   .page-mascot{width:160px}
 }
 @media(max-width:700px){
   .hero,.hero-grid,.hero-art{min-height:520px}
-  .hero-mascot{height:250px;right:-10%;bottom:-8px}
+  .hero-mascot{height:220px;max-width:180px;right:auto;bottom:0}
   .quote-bubble{font-size:13px;max-width:158px;top:10px;right:4%;padding:10px 12px}
   .page-mascot{width:128px;right:-18px;bottom:-16px}
   .join-mascot{width:150px;opacity:.7}
