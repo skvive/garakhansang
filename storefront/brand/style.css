@@ -19,3 +19,48 @@
 
 /* Original user-supplied brush-lettered brand mark */
 .logo{gap:8px}.logo-wordmark{height:42px;width:169px;object-fit:contain;object-position:left center}.brand-strapline{font-size:9px;white-space:nowrap;color:#765f49;line-height:1.4;font-weight:800}.brand-strapline small{display:block;color:#9d9b88;font-size:9px;letter-spacing:.06em}.foot-grid .logo-wordmark{height:37px;width:145px}@media(max-width:700px){.logo-wordmark{height:34px;width:117px}.brand-strapline{display:none}.search-global{max-width:36px;min-width:36px;height:36px}.search-global button{width:28px;height:28px;min-width:28px;margin:3px}.head-inner{gap:6px}}
+
+/* 01_home_pc + v5 TODAY'S PICK template */
+.hero,.hero-grid{min-height:560px;overflow:hidden}
+.hero-copy{padding:78px 0 150px}
+.hero-art{height:100%;min-height:560px;overflow:visible}
+.hero-mascot{right:2%;bottom:88px;height:310px;z-index:1}
+.quote-bubble{right:5%;top:42px;max-width:230px;z-index:2;font-family:'Gaegu','Noto Sans KR',cursive}
+.hero-floating{left:auto;right:7%;bottom:168px;z-index:2}
+.quick{z-index:6}
+.quick-panel span{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-size:22px;background:#f3f7f1}
+.quick-panel .ico-pin span{background:#e7f6ea}
+.quick-panel .ico-map span{background:#e7eef8}
+.quick-panel .ico-ticket span{background:#fdecec}
+.quick-panel .ico-cart span{background:#fff4e4}
+.quick-panel .ico-cook span{background:#f3eaf8}
+.quick-panel .ico-shop span{background:#eaf4f2}
+.pick-section,.section-title h2{scroll-margin-top:150px}
+.pick-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.pick-head .section-title{margin-bottom:0;flex:1}
+.deal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.deal-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 4px 18px rgba(24,58,36,.04);display:flex;flex-direction:column}
+.deal-photo{position:relative;display:block}
+.deal-photo img{width:100%;height:188px;object-fit:cover}
+.deal-badge{position:absolute;left:10px;top:10px;background:#fff6e8;color:#9a5a28;font-size:10px;font-weight:800;padding:4px 8px;border-radius:999px}
+.deal-body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.deal-body small{color:#be7541;font-weight:800;font-size:11px}
+.deal-body h3{font-size:16px;line-height:1.35;margin:0;font-family:'Noto Sans KR',sans-serif;font-weight:900;letter-spacing:-.03em;color:var(--deep)}
+.deal-price{color:var(--red);font-size:22px;letter-spacing:-.04em}
+.deal-note{font-size:11px;margin:0;color:#8a9a8c}
+.deal-actions{display:flex;gap:8px;margin-top:auto;padding-top:10px}
+.deal-actions .btn{flex:1}
+.shop-grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1020px){
+  .hero-mascot{height:330px;right:-4%}
+  .deal-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .hero-mascot{height:250px;bottom:-20px}
+  .hero-art{z-index:0}
+  .hero-copy{position:relative;z-index:1}
+  .deal-grid,.shop-grid-4{grid-template-columns:1fr}
+  .pick-head{align-items:flex-start}
+  .deal-photo img{height:170px}
+  .deal-actions{flex-wrap:wrap}
+}

@@ -55,8 +55,22 @@ function shopsFromProducts() {
         coupon: 'c-' + (p.category || 'extras')
       });
     }
-    map.get(id).products.push({name:p.name, price:p.price, slug:p.slug, image:p.image});
+    map.get(id).products.push({name:p.name, price:p.price, slug:p.slug, image:p.image, category:p.category});
   });
+  for (const s of map.values()) {
+    const counts = {};
+    s.products.forEach(p => { counts[p.category] = (counts[p.category] || 0) + 1; });
+    const top = Object.entries(counts).sort((a, b) => b[1] - a[1])[0];
+    if (top) s.catKey = top[0];
+    const meta = CAT[s.catKey] || CAT.extras;
+    s.category = meta.label;
+    s.zone = meta.zone;
+    s.coupon = 'c-' + (s.catKey === 'extras' ? 'extras' : s.catKey);
+    s.photo = meta.photo || s.photo;
+    const introP = s.products.find(p => p.category === s.catKey) || s.products[0];
+    const src = list.find(x => introP && x.slug === introP.slug);
+    if (src && src.summary) s.intro = src.summary;
+  }
   return [...map.values()];
 }
 function couponsFromShops(shops) {
@@ -91,6 +105,7 @@ function header() {
     <input id="search-top" name="q" placeholder="어떤 시장의 이야기를 찾으세요?" autocomplete="off"/><button aria-label="검색" type="submit">⌕</button></form>
     <div class="head-actions">
       <a href="coupons.html">🎟️ <span>내 쿠폰 <b id="wallet-qty">0</b></span></a>
+      <a href="stores.html?favorites=1">♡ <span>찜한 매장</span></a>
       <a href="cart.html">🛒 <span>장바구니 <b data-cart-count>0</b></span></a>
       <a href="login.html">로그인</a>
       <button id="menu-toggle" class="mobile-menu" type="button" aria-label="메뉴 열기" aria-expanded="false">☰</button>
@@ -119,30 +134,59 @@ function lowerNav() {
 }
 function title(eyebrow,h,p=''){return `<div class="section-title"><div><span class="eyebrow">${eyebrow}</span><h2>${h}</h2>${p?`<p>${p}</p>`:''}</div></div>`;}
 function card(s) {
-  return `<article class="shop-card"><a class="thumb" href="store.html?id=${encodeURIComponent(s.id)}"><img src="${s.photo}" alt="${safe(s.name)} 시연 이미지" loading="lazy"><span class="photo-label">시연 이미지</span></a>
+  const photo = (CAT[s.catKey] && CAT[s.catKey].photo) || s.photo;
+  return `<article class="shop-card"><a class="thumb" href="store.html?id=${encodeURIComponent(s.id)}"><img src="${photo}" alt="${safe(s.category)} 분위기 이미지" loading="lazy"><span class="photo-label">시연 이미지</span></a>
     <div class="shop-card-body"><small>${safe(s.category)} · ${safe(s.products.length)}개 상품</small>
     <div class="card-row"><a class="shop-title" href="store.html?id=${encodeURIComponent(s.id)}">${safe(s.name)}</a>
     <button class="like ${liked().includes(s.id)?'is-liked':''}" data-like="${safe(s.id)}" type="button" aria-label="관심 매장">${liked().includes(s.id)?'♥':'♡'}</button></div>
     <p>${safe(s.intro)}</p>
     <div class="card-actions"><a class="btn btn-sm btn-green" href="store.html?id=${encodeURIComponent(s.id)}">상세 보기</a>
-    <button class="btn btn-sm btn-light" data-route="${safe(s.id)}">길찾기 ↗</button></div></div></article>`;
+    <button class="btn btn-sm btn-light" data-route="${safe(s.id)}" type="button">길찾기 ↗</button></div></div></article>`;
+}
+function featuredShops() {
+  const order = ['produce', 'seafood', 'meat', 'sets'];
+  return order.map(k => D.shops.find(s => s.catKey === k)).filter(Boolean);
+}
+function pickDeals(cat) {
+  const list = window.GARAK_PRODUCTS || [];
+  const key = cat || 'all';
+  if (key === 'all') {
+    return ['produce', 'seafood', 'meat', 'sets'].map(c => list.find(p => p.category === c)).filter(Boolean);
+  }
+  const match = key === 'sets' ? ['sets', 'extras'] : [key];
+  return list.filter(p => match.includes(p.category)).slice(0, 4);
+}
+function dealCard(p) {
+  const meta = CAT[p.category] || CAT.extras;
+  const couponId = 'c-' + (p.category === 'extras' ? 'extras' : p.category);
+  const c = coupon(couponId);
+  return `<article class="deal-card">
+    <a class="deal-photo" href="product/${encodeURIComponent(p.slug)}.html"><img src="${img(p.image)}" alt="${safe(p.name)}" loading="lazy"><span class="deal-badge">가상 시연</span></a>
+    <div class="deal-body"><small>${safe(meta.label)} · ${safe(p.merchant)}</small>
+      <h3><a href="product/${encodeURIComponent(p.slug)}.html">${safe(p.name)}</a></h3>
+      <strong class="deal-price">${currency(p.price)}</strong>
+      <p class="deal-note">시연 가격 · 실판매가 아님</p>
+      <div class="deal-actions">${c ? `<button class="btn btn-sm btn-primary" type="button" data-claim="${c.id}">쿠폰 받기</button>` : ''}
+        <button class="btn btn-sm btn-outline" type="button" data-route="${safe(p.merchant)}">Google 길찾기</button></div>
+    </div></article>`;
 }
 
 function home() {
-  const featured = D.shops.slice(0, 8);
+  const featured = featuredShops();
   return `<section class="hero" aria-labelledby="hero-heading"><div class="container hero-grid"><div class="hero-copy">
-    <span class="eyebrow hero-kicker">대한민국 최대 농수산물 시장</span>
+    <span class="eyebrow hero-kicker">FRESH STORIES · GOOD PEOPLE · GARAK HANSANG</span>
     <h1 id="hero-heading">가락시장에서<br><em>새로운 발견!</em></h1>
-    <p>신선한 먹거리, 특별한 혜택. 지금 가락한상에서 만나보세요.</p>
+    <p>시장 골목의 온기, 매일 다른 제철 먹거리.<br>좋은 장보기를 찾는 오늘, 가락한상이 함께합니다.</p>
     <div class="hero-ctas"><a class="btn btn-primary" href="stores.html">매장 둘러보기 ↗</a>
     <a class="btn btn-outline-white" href="market-map.html">시장 지도 보기</a></div>
-    <div class="hero-labels"><span>✦ 시연 상인 ${D.shops.length}곳</span><span>✦ 상품 ${ (window.GARAK_PRODUCTS||[]).length }개</span><span>✦ 쿠폰·길찾기</span></div>
-    </div><div class="hero-art">${mascot('hero-mascot')}<div class="quote-bubble">신선한 오늘이<br>더 맛있는 내일을 만듭니다.</div></div></div></section>
+    <div class="hero-labels"><span>✦ 시연 상인 ${D.shops.length}곳</span><span>✦ 상품 ${(window.GARAK_PRODUCTS||[]).length}개</span><span>✦ 쿠폰 · 길찾기</span></div>
+    </div><div class="hero-art">${mascot('hero-mascot')}<div class="quote-bubble">“신선한 오늘이<br>더 맛있는 내일을 만들어요!”</div>
+    <div class="hero-floating"><span>오늘의 발견</span><b>시장 탐험, 시작해 볼까요?</b></div></div></div></section>
     <section class="quick container" aria-label="빠른 메뉴"><div class="quick-panel">
-      ${[['📍','매장 찾기','stores.html'],['🗺️','시장 지도','market-map.html'],['🎟️','쿠폰 지갑','coupons.html'],['🍳','레시피','recipes/index.html'],['🛒','장보기','category/seafood.html'],['🏪','상인센터','merchant-center.html']]
-        .map(a=>`<a href="${a[2]}"><span>${a[0]}</span><b>${a[1]}</b><small>바로가기 ↗</small></a>`).join('')}
+      ${[['📍','매장 찾기','stores.html','ico-pin'],['🗺️','시장 지도','market-map.html','ico-map'],['🎟️','할인 쿠폰','coupons.html','ico-ticket'],['🛒','장보기','category/seafood.html','ico-cart'],['🍳','레시피','recipes/index.html','ico-cook'],['🏪','상인센터','merchant-center.html','ico-shop']]
+        .map(a=>`<a href="${a[2]}" class="${a[3]}"><span>${a[0]}</span><b>${a[1]}</b><small>바로가기 ↗</small></a>`).join('')}
     </div></section>
-    <section class="section container">${title('TODAY AT GARAK','오늘은 어느 시장으로 갈까요?','제철 과일에서 신선한 수산, 든든한 한상까지.')}
+    <section class="section container">${title('TODAY AT GARAK','오늘은 어느 시장으로 갈까요?','제철 과일에서 신선한 수산, 든든한 한상까지. 먼저 분위기부터 발견해보세요.')}
       <div class="category-grid">${[
         ['청과','assets/editorial/fruit.webp','stores.html?category='+encodeURIComponent('청과'),'색으로 만나는 오늘'],
         ['수산','assets/editorial/seafood.webp','stores.html?category='+encodeURIComponent('수산'),'바다에서 온 신선함'],
@@ -150,10 +194,16 @@ function home() {
         ['먹거리','assets/editorial/kitchen.webp','stores.html?category='+encodeURIComponent('먹거리'),'시장의 온기가 담긴 한상']
       ].map(a=>`<a href="${a[2]}" class="category-card"><img src="${a[1]}" alt="${a[0]} 분위기 이미지"><span>${a[0]}<small>${a[3]} ↗</small></span></a>`).join('')}</div>
     </section>
+    <section class="section container pick-section">
+      <div class="pick-head">${title('TODAY’S PICK','오늘의 시장 특가','상품을 선택한 뒤 쿠폰과 찾아가는 경로를 함께 확인하세요.')}
+        <div class="chipbar" id="home-cat-filters">${[['all','전체'],['produce','청과'],['seafood','수산'],['meat','축산'],['sets','먹거리']].map(([id,label],i)=>`<button class="chip ${i===0?'active':''}" type="button" data-home-cat="${id}">${label}</button>`).join('')}</div>
+      </div>
+      <div class="deal-grid" id="deal-grid">${pickDeals('all').map(dealCard).join('')}</div>
+    </section>
     <section class="section container"><div class="feature-split">
       <div class="feature-card feature-cream"><span class="eyebrow">DISCOVER LOCAL SHOPS</span>
         <h2>좋은 상점을 만나는<br><em>가장 따뜻한 방법</em></h2>
-        <p>상인 이야기와 메뉴·쿠폰을 살펴보고 Google 지도에서 시장까지 길을 찾아보세요.</p>
+        <p>상인들의 이야기와 메뉴·쿠폰을 살펴보고 Google 지도에서 시장까지 길을 찾아보세요.</p>
         <a class="btn btn-primary" href="stores.html">추천 매장 알아보기 →</a>${mascot('feature-mascot')}</div>
       <div class="feature-card feature-dark"><span class="eyebrow">MARKET REWARDS</span>
         <h2>가락한상<br><em>쿠폰 지갑</em></h2>
@@ -162,7 +212,7 @@ function home() {
         <div class="ticket-graphic">🎟️ <strong>좋은 오늘 할인 티켓</strong><small>사용 체험용 · 실제 결제 불가</small></div></div>
     </div></section>
     <section class="section container">${title('FEATURED MERCHANTS','가락한상이 소개하는 매장들','시연 상인입니다. 실제 입점·영업 정보는 확인이 필요합니다.')}
-      <div class="shop-grid">${featured.map(s=>card(s)).join('')}</div>
+      <div class="shop-grid shop-grid-4">${featured.map(s=>card(s)).join('')}</div>
       <p class="data-caution"><a class="btn btn-sm btn-primary" href="stores.html">매장 전체 보기</a> · <a class="btn btn-sm btn-light" href="category/seafood.html">상품 장보기</a></p>
     </section>
     <section class="section container"><div class="story-banner"><img src="assets/editorial/merchant.webp" alt="상인 이야기">
@@ -474,6 +524,13 @@ function onExploreClick(ev) {
     if ($('#wallet-qty')) $('#wallet-qty').textContent = wallet().length;
     renderWallet();
     openNavSheet(c);
+    return;
+  }
+  if (el.closest('[data-home-cat]')) {
+    const chip = el.closest('[data-home-cat]');
+    $$('[data-home-cat]').forEach(x => x.classList.toggle('active', x === chip));
+    const grid = $('#deal-grid');
+    if (grid) grid.innerHTML = pickDeals(chip.getAttribute('data-home-cat')).map(dealCard).join('');
     return;
   }
   const b = el.closest('button'); if (!b) return;

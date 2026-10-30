@@ -1,5 +1,5 @@
 // Garak V8: cache only explicit public demo assets. Never cache account/admin/API data.
-const CACHE='garak-public-v10';
+const CACHE='garak-public-v12';
 const ASSETS=['/index.html','/assets/css/style.css','/assets/js/app.js','/assets/js/garak-v3.js','/assets/js/commerce-bridge-v6.js','/recipes/index.html','/community/index.html','/assets/images/hero-market.webp'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS))));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key))))));
