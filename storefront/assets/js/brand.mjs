@@ -145,6 +145,7 @@ function injectExploreNav() {
     ['coupons.html', '쿠폰'],
     ['events.html', '이벤트'],
     ['market-map.html', '탐험 지도'],
+    ['ir/index.html', '자료실'],
   ];
   function add(nav) {
     if (!nav) return;

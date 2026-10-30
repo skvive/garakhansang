@@ -8,6 +8,13 @@ const CAT = {
   extras: {label:'먹거리', zone:'먹거리', photo:'assets/editorial/kitchen.webp', href:'category/extras.html'}
 };
 const ZONE_CATS = {수산:['seafood'], 청과:['produce'], 축산:['meat'], 먹거리:['sets','extras']};
+const BUILDINGS = [
+  {id:'sales', name:'가락몰 판매동', floors:'B2 축산부산물 · B1 청과 · 1F 수산·축산 · 2F 식자재 · 3F 상가', note:'소비자 장보기 중심'},
+  {id:'produce', name:'청과 도매구역', floors:'1F', note:'도매 기능 안내 · 동 경계 미확정'},
+  {id:'seafood', name:'수산 도매구역', floors:'1F', note:'도매 기능 안내 · 동 경계 미확정'},
+  {id:'theme', name:'테마 1~5관', floors:'B1~3F', note:'식음·식문화 테마 · 공식 배치 확인 필요'},
+  {id:'office', name:'가락몰 업무동', floors:'1F~5F', note:'도서관·컨벤션·편의'}
+];
 const COUPON_COPY = {
   seafood: {title:'수산 장보기 체험권', benefit:'3,000원 할인', description:'3만 원 이상 장보기 조건을 가정한 시연 쿠폰'},
   meat: {title:'축산 한상 체험 쿠폰', benefit:'5,000원 할인', description:'5만 원 이상 구매를 가정한 시연 쿠폰'},
@@ -98,7 +105,7 @@ function footer() {
   return `<footer class="site-footer"><div class="container foot-grid"><div>${logo}<p>시장의 신선함과 사람의 이야기를 더 가까이 잇습니다.<br>상품·가격·매장은 시연 데이터이며 실판매가 아닙니다.</p></div>
     <div><b>둘러보기</b><a href="stores.html">매장 찾기</a><a href="market-map.html">시장 지도</a><a href="category/seafood.html">장보기</a><a href="recipes/index.html">레시피 132</a></div>
     <div><b>혜택과 상인</b><a href="coupons.html">쿠폰 지갑</a><a href="events.html">기획전</a><a href="merchant-center.html">상인센터</a></div>
-    <div><b>안내</b><p>지도와 상호·메뉴·가격은 시연용입니다. 실제 방문 전 위치·영업 여부를 확인하세요.</p><a href="map.html">Google 지도에서 가락시장 보기 ↗</a></div>
+    <div><b>안내</b><p>지도와 상호·메뉴·가격은 시연용입니다. 실제 방문 전 위치·영업 여부를 확인하세요.</p><a href="map.html">Google 지도에서 가락시장 보기 ↗</a><a href="ir/index.html">브랜드·IR 자료실</a><a href="legal/privacy.html">개인정보 안내</a></div>
     </div><div class="container foot-bottom">© 2026 GARAK HANSANG · 시연 프로토타입 <span>공식 가락시장 운영 서비스 아님</span></div></footer>`;
 }
 function lowerNav() {
@@ -190,6 +197,8 @@ function storeDetail() {
       <h1>${safe(s.name)}</h1><div class="demo-tag">시연 상점 · 실입점·위치 미검증</div>
       <p class="detail-intro">${safe(s.intro)}</p>
       <dl class="store-meta"><div><dt>업종</dt><dd>${safe(s.category)}</dd></div>
+      <div><dt>구역</dt><dd>${safe(s.zone)} (안내)</dd></div>
+      <div><dt>층·호실</dt><dd>미검증 · 현장 확인</dd></div>
       <div><dt>상품</dt><dd>${s.products.length}개 시연</dd></div>
       <div><dt>주소</dt><dd>서울 송파구 양재대로 932 (시장 공통)</dd></div>
       <div><dt>좌표</dt><dd>점포별 GPS 미확보</dd></div></dl>
@@ -249,8 +258,11 @@ function mapPage() {
       </div>
       <div class="map-actions">
         <a class="btn btn-primary" href="map.html">Google 실제 지도 열기 ↗</a>
-        <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=%EA%B0%80%EB%9D%BD%EC%8B%9C%EC%9E%A5" target="_blank" rel="noopener noreferrer">Google 길찾기 ↗</a>
-      </div></div>
+        <a class="btn btn-secondary" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent('가락시장 서울 송파구 양재대로 932')}&travelmode=walking&dir_action=navigate" target="_blank" rel="noopener noreferrer">도보 길찾기 ↗</a>
+        <a class="btn btn-light" href="https://www.garak.co.kr/homepage/M0000212/market/findStore.do" target="_blank" rel="noopener noreferrer">가락몰 공식 매장찾기 ↗</a>
+      </div>
+      <div class="building-guide">${BUILDINGS.map(b=>`<article><b>${safe(b.name)}</b><small>${safe(b.floors)}</small><p>${safe(b.note)}</p></article>`).join('')}<p class="data-caution">층별 안내는 공식 가락몰 소개를 요약한 탐방 메모이며, 실내 도면·호실 좌표가 아닙니다.</p></div>
+      </div>
       <aside class="map-detail">
         <div class="mascot-tip map-bubble">${mascot('tip-mascot')}<div><b>어느 구역을 둘러보실래요?</b><p>지도에서 구역을 선택하면 관련 시연 매장이 나타나요.</p></div></div>
         <div id="zone-results">${D.shops.map(zoneShop).join('')}</div>
@@ -292,7 +304,8 @@ function guide() {
       </div>
       <section class="guide-image"><img src="assets/brand/logo-lockup.webp" alt="가락한상 로고">
         <div><h2>캐릭터는 과하지 않게, 곳곳에서.</h2><p>헤더에서는 로고로, 메인에서는 안내자로, 쿠폰에서는 응원하는 친구로 등장합니다.</p>
-        <a class="btn btn-primary" href="stories/index.html">상인 이야기 더 보기 →</a></div></section>
+        <a class="btn btn-primary" href="stories/index.html">상인 이야기 더 보기 →</a>
+        <a class="btn btn-light" href="ir/index.html">브랜드북·IR 자료실 →</a></div></section>
     </section>`;
 }
 
@@ -334,7 +347,33 @@ function toast(msg) {
   t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 3200);
 }
 function mapsUrl() {
-  return 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent('가락시장 서울 송파구 양재대로 932') + '&travelmode=walking';
+  return 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent('가락시장 서울 송파구 양재대로 932') + '&travelmode=walking&dir_action=navigate';
+}
+function couponSerial(id) {
+  return 'GH-DEMO-' + String(id || 'X').replace(/[^a-z0-9-]/gi, '').toUpperCase();
+}
+function openNavSheet(c) {
+  const s = c && store(c.shopId);
+  let sheet = $('#nav-sheet');
+  if (!sheet) {
+    sheet = document.createElement('div');
+    sheet.id = 'nav-sheet';
+    sheet.setAttribute('role', 'dialog');
+    sheet.setAttribute('aria-modal', 'true');
+    document.body.append(sheet);
+  }
+  sheet.className = 'nav-sheet show';
+  sheet.innerHTML = `<div class="nav-sheet-card">
+    <button class="nav-sheet-x" type="button" data-close-sheet="1" aria-label="닫기">×</button>
+    <span class="eyebrow">MARKET DIRECTIONS</span>
+    <h3>시연 쿠폰을 담았습니다</h3>
+    <p><b>${safe(c ? c.benefit : '')}</b> · ${safe(s ? s.name : '가락시장')}<br>시연 번호 ${couponSerial(c && c.id)} · 실제 사용 불가</p>
+    <p class="data-caution">개별 점포 GPS가 없어 가락시장 공통 주소로 안내합니다. 길찾기만으로 쿠폰이 소모되지 않습니다.</p>
+    <div class="nav-sheet-actions">
+      <button class="btn btn-primary" type="button" data-route="${safe(s ? s.id : '')}">🧭 이 매장으로 길찾기</button>
+      <a class="btn btn-light" href="coupons.html">내 쿠폰 지갑 보기</a>
+    </div>
+  </div>`;
 }
 function addDemoCart(slug) {
   const key = 'garak-hansang-demo-cart';
@@ -354,8 +393,8 @@ function renderWallet() {
   $('#wallet-count').textContent = ids.length + '장';
   $('#wallet-list').innerHTML = ids.length ? ids.map(id => {
     const c = coupon(id); const s = c && store(c.shopId);
-    return c ? `<div class="wallet-item"><small>${safe(s?s.name:'')} · 시연</small><b>${safe(c.benefit)}</b>
-      <div><button class="btn btn-sm btn-primary" data-route="${safe(s?s.id:'')}" type="button">길찾기 ↗</button>
+    return c ? `<div class="wallet-item"><small>${safe(s?s.name:'')} · 시연 ${couponSerial(c.id)}</small><b>${safe(c.benefit)}</b>
+      <div><button class="btn btn-sm btn-primary" data-route="${safe(s?s.id:'')}" type="button">🧭 길찾기</button>
       <button class="btn btn-sm btn-light" data-remove-coupon="${c.id}" type="button">지갑에서 제외</button></div></div>` : '';
   }).join('') : `<div class="wallet-empty">아직 담은 쿠폰이 없어요.<br>왼쪽에서 시연 쿠폰을 담아보세요.</div>`;
 }
@@ -386,45 +425,7 @@ function init() {
     const n = $('#primary-nav'); n.classList.toggle('open');
     $('#menu-toggle').setAttribute('aria-expanded', String(n.classList.contains('open')));
   });
-  document.addEventListener('click', ev => {
-    const el = ev.target instanceof Element ? ev.target : ev.target.parentElement;
-    const b = el && el.closest('button'); if (!b) return;
-    if (b.dataset.claim) {
-      const c = coupon(b.dataset.claim); if (!c) return;
-      let wlt = wallet();
-      if (wlt.includes(c.id)) toast('이미 내 쿠폰 지갑에 담겨 있습니다.');
-      else { wlt.push(c.id); save('wallet', wlt); toast('시연 쿠폰을 지갑에 담았어요!'); }
-      if ($('#wallet-qty')) $('#wallet-qty').textContent = wallet().length;
-      renderWallet();
-    }
-    if (b.dataset.removeCoupon) {
-      save('wallet', wallet().filter(id => id !== b.dataset.removeCoupon));
-      renderWallet();
-      if ($('#wallet-qty')) $('#wallet-qty').textContent = wallet().length;
-      toast('쿠폰을 지갑에서 제외했습니다.');
-    }
-    if (b.dataset.route) { toast('개별 좌표 미검증: 가락시장 대표 주소로 안내합니다.'); window.open(mapsUrl(), '_blank', 'noopener,noreferrer'); }
-    if (b.dataset.like) {
-      let l = liked();
-      l = l.includes(b.dataset.like) ? l.filter(id => id !== b.dataset.like) : l.concat(b.dataset.like);
-      save('likes', l);
-      $$(`[data-like="${b.dataset.like}"]`).forEach(x => { x.textContent = l.includes(b.dataset.like) ? '♥' : '♡'; x.classList.toggle('is-liked', l.includes(b.dataset.like)); });
-      toast(l.includes(b.dataset.like) ? '찜한 매장에 저장했습니다.' : '관심 매장에서 해제했습니다.');
-      if (page === 'stores') filterShops();
-    }
-    if (b.dataset.addCart) addDemoCart(b.dataset.addCart);
-    if (b.dataset.zone) {
-      $$('[data-zone]').forEach(x => x.classList.toggle('selected', x === b));
-      const cats = ZONE_CATS[b.dataset.zone] || [];
-      $('#zone-results').innerHTML = D.shops.filter(s => cats.includes(s.catKey) || s.zone === b.dataset.zone).map(zoneShop).join('')
-        || '<p class="data-caution">이 구역의 시연 매장이 없습니다.</p>';
-    }
-    if (b.dataset.category) { $$('[data-category]').forEach(x => x.classList.toggle('active', x === b)); filterShops(); }
-    if (b.dataset.eventFilter) {
-      $$('[data-event-filter]').forEach(x => x.classList.toggle('active', x === b));
-      $('#event-results').innerHTML = D.events.filter(e => b.dataset.eventFilter === '전체' || e.type === b.dataset.eventFilter).map(eventCard).join('');
-    }
-  });
+  document.body.dataset.brandInit = '1';
   $('#store-search')?.addEventListener('input', filterShops);
   $('#favorites-only')?.addEventListener('change', filterShops);
   $('#reset-search')?.addEventListener('click', () => {
@@ -458,6 +459,53 @@ function init() {
   } catch {}
   renderWallet();
 }
+function onExploreClick(ev) {
+  const raw = ev.target;
+  const el = raw && raw.nodeType === 1 ? raw : raw && raw.parentElement;
+  if (!el || typeof el.closest !== 'function') return;
+  if (raw && raw.id === 'nav-sheet') { $('#nav-sheet')?.classList.remove('show'); return; }
+  if (el.closest('[data-close-sheet]')) { $('#nav-sheet')?.classList.remove('show'); return; }
+  const claimEl = el.closest('[data-claim]');
+  if (claimEl) {
+    const c = coupon(claimEl.getAttribute('data-claim')); if (!c) return;
+    let wlt = wallet();
+    if (wlt.includes(c.id)) toast('이미 내 쿠폰 지갑에 담겨 있습니다.');
+    else { wlt.push(c.id); save('wallet', wlt); toast('시연 쿠폰을 지갑에 담았어요!'); }
+    if ($('#wallet-qty')) $('#wallet-qty').textContent = wallet().length;
+    renderWallet();
+    openNavSheet(c);
+    return;
+  }
+  const b = el.closest('button'); if (!b) return;
+  if (b.dataset.removeCoupon) {
+    save('wallet', wallet().filter(id => id !== b.dataset.removeCoupon));
+    renderWallet();
+    if ($('#wallet-qty')) $('#wallet-qty').textContent = wallet().length;
+    toast('쿠폰을 지갑에서 제외했습니다.');
+  }
+  if (b.dataset.route) { toast('개별 좌표 미검증: 가락시장 대표 주소로 안내합니다.'); window.open(mapsUrl(), '_blank', 'noopener,noreferrer'); }
+  if (b.dataset.like) {
+    let l = liked();
+    l = l.includes(b.dataset.like) ? l.filter(id => id !== b.dataset.like) : l.concat(b.dataset.like);
+    save('likes', l);
+    $$(`[data-like="${b.dataset.like}"]`).forEach(x => { x.textContent = l.includes(b.dataset.like) ? '♥' : '♡'; x.classList.toggle('is-liked', l.includes(b.dataset.like)); });
+    toast(l.includes(b.dataset.like) ? '찜한 매장에 저장했습니다.' : '관심 매장에서 해제했습니다.');
+    if (page === 'stores') filterShops();
+  }
+  if (b.dataset.addCart) addDemoCart(b.dataset.addCart);
+  if (b.dataset.zone) {
+    $$('[data-zone]').forEach(x => x.classList.toggle('selected', x === b));
+    const cats = ZONE_CATS[b.dataset.zone] || [];
+    $('#zone-results').innerHTML = D.shops.filter(s => cats.includes(s.catKey) || s.zone === b.dataset.zone).map(zoneShop).join('')
+      || '<p class="data-caution">이 구역의 시연 매장이 없습니다.</p>';
+  }
+  if (b.dataset.category) { $$('[data-category]').forEach(x => x.classList.toggle('active', x === b)); filterShops(); }
+  if (b.dataset.eventFilter) {
+    $$('[data-event-filter]').forEach(x => x.classList.toggle('active', x === b));
+    $('#event-results').innerHTML = D.events.filter(e => b.dataset.eventFilter === '전체' || e.type === b.dataset.eventFilter).map(eventCard).join('');
+  }
+}
+document.addEventListener('click', onExploreClick, true);
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
 else init();
 })();

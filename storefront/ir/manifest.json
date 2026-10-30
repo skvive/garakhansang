@@ -1,0 +1,266 @@
+{
+  "title": "가락한상 사업계획·IR·브랜드북/저작권 준비 패키지",
+  "date": "2026-10-29",
+  "files": [
+    {
+      "path": "brandbook.html",
+      "size": 16979,
+      "sha256": "67cde6a12e28cbfd8cf456d3e2969cb50090a81be22935960b3961642cec540e"
+    },
+    {
+      "path": "investment-proposal.html",
+      "size": 15105,
+      "sha256": "00555f31f7e8de09e87259027beb388881dd477a314b2fbd0d80df62cce945ad"
+    },
+    {
+      "path": "index.html",
+      "size": 4275,
+      "sha256": "0c2a7df4e698df599093642a37e1794d8ab21bcc286ff33bee5b95a13f897e2c"
+    },
+    {
+      "path": "business-plan.html",
+      "size": 19443,
+      "sha256": "e7482fe706ef1a2919732df233fe3e34dece33654301178d96dce1c1ad0a9de3"
+    },
+    {
+      "path": "manifest.json",
+      "size": 7867,
+      "sha256": "16c1a1d9b561551cf37a4e9cf34ebc39057195fffa4d4481bf0ed3062d87f9ad"
+    },
+    {
+      "path": "README.md",
+      "size": 2089,
+      "sha256": "e7fa558e4b4893eed750b51de584ea2a8dd809745d3902ce159f4cb5fcbde22b"
+    },
+    {
+      "path": "copyright-dossier.html",
+      "size": 9505,
+      "sha256": "275d72b7d23c802d52b75b9fdafe7d5f09b270ce2943ed7242ea5871238c13aa"
+    },
+    {
+      "path": "pdfs/02_가락한상_투자제안서.pdf",
+      "size": 749970,
+      "sha256": "9ae250ca7ec32b06256591196bf1bb800f3fad5e0cbf0af782858699c47aa0dc"
+    },
+    {
+      "path": "pdfs/01_가락한상_사업계획서.pdf",
+      "size": 1424156,
+      "sha256": "e72f059bdb0c3b171971d8d57a45da8483923af6bfd1db6244601ec841dbeeef"
+    },
+    {
+      "path": "pdfs/03_가락한상_디자인저작권_브랜드북.pdf",
+      "size": 2352471,
+      "sha256": "4358fb53b2751813b6dbd36ad0270607d58a04f1f777a4488c9807cd7a96c96d"
+    },
+    {
+      "path": "pdfs/04_가락한상_저작권등록_준비서류.pdf",
+      "size": 465576,
+      "sha256": "e65b5880881efb9a2805da1ba42fc3445dedfd3d9137516947ce5623473df911"
+    },
+    {
+      "path": "css/site.css",
+      "size": 8270,
+      "sha256": "caebf4a369627c6cf644b146e550b197e9e9f0d977965c9efce9ddcd7a26d3f2"
+    },
+    {
+      "path": "documents/COPYRIGHT_REGISTRATION_GUIDE.md",
+      "size": 1125,
+      "sha256": "cda2dab9352eb08fd72f664b5c6272e193cd52d68b2b01056e7d0c117aa50577"
+    },
+    {
+      "path": "documents/QA_PDF_RENDER_LOG.txt",
+      "size": 306,
+      "sha256": "7cfa39a56f99d0b6e34e53e997254cf71cd762130a342c980e3aecef813b4756"
+    },
+    {
+      "path": "documents/CREATIVE_CONTRIBUTION_LOG_TEMPLATE.csv",
+      "size": 376,
+      "sha256": "fa496aad21ee1627df938f820ca7b3f992944f4d6c2aa86ba8903f3504b946a1"
+    },
+    {
+      "path": "documents/CREATIVE_PROVENANCE_MANIFEST.csv",
+      "size": 2500,
+      "sha256": "90201dc2934c394620e055cbf499c377ed311aae47084676251f626741f25a81"
+    },
+    {
+      "path": "documents/SOURCES.md",
+      "size": 1899,
+      "sha256": "6c0b98083c598ba422f6ddb40ea769b77dc815068c26ae27fb0f41dcc06df709"
+    },
+    {
+      "path": "documents/COPYRIGHT_APPLICATION_WORKS.csv",
+      "size": 1288,
+      "sha256": "165b9ba0bed45635e7c276f35cb834cf3e5a31b26d78b7a4c10dc54ad607af46"
+    },
+    {
+      "path": "documents/COPYRIGHT_EVIDENCE_STATEMENT_TEMPLATE.md",
+      "size": 950,
+      "sha256": "249fbf959314fad5e85d1ae6b20b92ac9a25f3ebb972afa30bc926c54f007c39"
+    },
+    {
+      "path": "documents/FINANCIAL_ASSUMPTIONS.csv",
+      "size": 544,
+      "sha256": "04c772970e6e98ee9b71bf00ff04bff6f1844316a6d9b6136fc9234aa8f75ee8"
+    },
+    {
+      "path": "documents/RIGHTS_CHAIN_CHECKLIST.csv",
+      "size": 1972,
+      "sha256": "da15e36fe608f5f0c8a22273b33deb204f23ed425d7e5d5bd15e6d2ac104f50c"
+    },
+    {
+      "path": "documents/QA_PACKAGE_LOG.txt",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "documents/LAUNCH_RISKS.md",
+      "size": 975,
+      "sha256": "8b6e474235f9fee9128ca5f91146d7b0fc8b53170b7f10f4d97d465647e2a7cb"
+    },
+    {
+      "path": "assets/logo-horizontal.png",
+      "size": 592964,
+      "sha256": "c19d2021b1f7d789490c826b83c0ce32f6b280263e3086d1d547c3c2c2bf2096"
+    },
+    {
+      "path": "assets/brand-ui-composite.jpg",
+      "size": 447319,
+      "sha256": "7e55b54e5296f7173ec4ce680b59e653d18531bd4f991f961ee0a7fb73e8fad9"
+    },
+    {
+      "path": "assets/gift-card-photo.jpg",
+      "size": 255029,
+      "sha256": "1e167b6fe460752c843382728611ee44b5258481ef2b496695382407038c4612"
+    },
+    {
+      "path": "assets/market-photo.jpg",
+      "size": 409956,
+      "sha256": "99c763580a735d9fd7857b9764ecbb6a8818fac2c6e45dd3e5e5de4696193f87"
+    },
+    {
+      "path": "assets/brand-system-board.jpg",
+      "size": 403338,
+      "sha256": "9a6165bf9c3917762db790301bc3b1558d733ebe96102cc4a49db275a4acb87a"
+    },
+    {
+      "path": "assets/logo-badge.png",
+      "size": 211758,
+      "sha256": "00e8a946d110b0bcda31e4d98972e5a9557b2faa8ff6831cb707c3e719479267"
+    },
+    {
+      "path": "assets/platform-home.jpg",
+      "size": 252376,
+      "sha256": "616d4e83d3e6cc70b16a5b1bae73c7da89831fe78bfc58684cd852e93269d2aa"
+    },
+    {
+      "path": "assets/platform-wallet.jpg",
+      "size": 112041,
+      "sha256": "99b465b60557b9c14b4f907d6877d65059c2dd421bccb49b00d65ac4829cce3a"
+    },
+    {
+      "path": "assets/website-concept.jpg",
+      "size": 361317,
+      "sha256": "ac3b3d225d81cbb92b0956656d2967651ce046e3e79fb8582dfb63a57edb7f4e"
+    },
+    {
+      "path": "assets/merchant-erp.jpg",
+      "size": 101006,
+      "sha256": "c80f9519d0eb8544d570e1c506be6b3e522181cc9d8fa2486b6a7dc2ec27b307"
+    },
+    {
+      "path": "originals/유저제공_가락한상_마스코트_배지.png",
+      "size": 231291,
+      "sha256": "e517b724be50933dcfd004efde237f99e0e81f965f3485eb036ae38cfe2cb406"
+    },
+    {
+      "path": "originals/유저제공_홈페이지_시안.png",
+      "size": 543359,
+      "sha256": "0301da1c9ca79fcab4e38f85a7ab1b3f68dbb49e2efa63e37995cf5e5a6b8ab5"
+    },
+    {
+      "path": "originals/유저제공_가락한상_가로형_로고.png",
+      "size": 917197,
+      "sha256": "ade596f85947222f3d73f1151430b9ea3f440f8c410f3e3ef7e460b8b4749f33"
+    },
+    {
+      "path": "originals/유저제공_메인컨셉_6개화면.png",
+      "size": 586193,
+      "sha256": "d7294e05bb0783ce97fe7ffbe08a007d61dc41a0731453d2de3e81e27d5ac79f"
+    },
+    {
+      "path": "originals/대화AI생성_가락한상_브랜드UI_시안.png",
+      "size": 2735321,
+      "sha256": "5080063adb2064638703f11efcaa07a320049d260766c100b5f17c96021182f3"
+    },
+    {
+      "path": "previews/04_가락한상_저작권등록_준비서류_contact.jpg",
+      "size": 94878,
+      "sha256": "c2fafe6a6838777a7552ed1e4d2732e2e7c21c8858ed60368f3274df7c52144b"
+    },
+    {
+      "path": "previews/brandbook-desktop.png",
+      "size": 835387,
+      "sha256": "1ae5a689a17c76aa5a9dcac96d677058e6330416347b635c7314946a22b1d78a"
+    },
+    {
+      "path": "previews/index-mobile.png",
+      "size": 234921,
+      "sha256": "3dbba3a1113d229e73dfbc335819a88177ced6a64cd549ffb44cc8d37e98d4a0"
+    },
+    {
+      "path": "previews/01_가락한상_사업계획서_contact.jpg",
+      "size": 204106,
+      "sha256": "d2205879aecd35b45c68191112218d1614a6bb21ce25f52220020236f3c382b6"
+    },
+    {
+      "path": "previews/03_가락한상_디자인저작권_브랜드북_contact.jpg",
+      "size": 198551,
+      "sha256": "ecf1cd1c4a44eb05f5467074ccf6a957c33b9a8d2c86ea6ac631be0cba0eec44"
+    },
+    {
+      "path": "previews/test.jpg",
+      "size": 101393,
+      "sha256": "88cd559fe4720aa41b626253f4f3f42c0f801e9c4456b21a9c127454022abec9"
+    },
+    {
+      "path": "previews/02_가락한상_투자제안서-cover.png",
+      "size": 836052,
+      "sha256": "667814b9799696bf26f51c377b982eaad3e484073cc7e646f5f553442b4ca922"
+    },
+    {
+      "path": "previews/brandbook-mobile.png",
+      "size": 246008,
+      "sha256": "3d406485ffd3fd3deb68c57970913ee55a6fe68c2fac377a101528684dcd6352"
+    },
+    {
+      "path": "previews/03_가락한상_디자인저작권_브랜드북-cover.png",
+      "size": 546741,
+      "sha256": "e34594a599853036031bc1c2c85a83564e88aa478253243f65c014b329691a99"
+    },
+    {
+      "path": "previews/index-desktop.png",
+      "size": 728201,
+      "sha256": "0ac1c6ff64f74ca9e3a14b087164c15786aece7b2976ec2502a615f9c619a24e"
+    },
+    {
+      "path": "previews/04_가락한상_저작권등록_준비서류-cover.png",
+      "size": 543913,
+      "sha256": "fa49aecbd2e7eca47ffb1e7a0b53ba5374caca2af9df77df4a95f7ac4cbbfdc7"
+    },
+    {
+      "path": "previews/02_가락한상_투자제안서_contact.jpg",
+      "size": 182377,
+      "sha256": "628e09145398a53923f5df0d0e0db49cfadffbb33cd51cb064af56e452a2f112"
+    },
+    {
+      "path": "previews/01_가락한상_사업계획서-cover.png",
+      "size": 832558,
+      "sha256": "4e5bf4e8a482c32d6583256e94dacc491b2eae87abcfcda26697f75b5a9c2c35"
+    },
+    {
+      "path": "js/site.js",
+      "size": 406,
+      "sha256": "e4747af290515709bdf33b43680498b472915b4259389b105cda90288b266124"
+    }
+  ]
+}
