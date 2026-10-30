@@ -26,4 +26,18 @@ if('serviceWorker'in navigator && (location.protocol==='https:'||location.hostna
   s.src=(window.GARAK_ROOT||'')+'auth/chip.mjs';
   document.head.append(s);
 })();
+(function injectMap(){
+  const href=(window.GARAK_ROOT||'')+'map.html';
+  function add(root, label){
+    if(!root||root.querySelector('[data-garak-map]'))return;
+    const a=document.createElement('a');
+    a.dataset.garakMap='1';
+    a.href=href;
+    a.textContent=label;
+    root.append(a);
+  }
+  add(document.querySelector('.nav'), '시장 지도');
+  add(document.querySelector('.story-nav-ribbon-inner'), '가락시장 지도');
+  add(document.querySelector('.mobile-menu'), '시장 지도');
+})();
 

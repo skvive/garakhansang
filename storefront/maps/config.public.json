@@ -1,0 +1,16 @@
+{
+  "project": "friendly-tower-507605-r0",
+  "keyId": "967147d7-102d-4262-a9a2-7a662d969a6a",
+  "mapsKey": "AIzaSyAsyNNCyBE0eoIuE1e7dVAU-tPR-jOhOpg",
+  "apis": [
+    "maps-backend.googleapis.com",
+    "places-backend.googleapis.com",
+    "geocoding-backend.googleapis.com"
+  ],
+  "center": {
+    "lat": 37.4935,
+    "lng": 127.1119,
+    "label": "가락시장"
+  },
+  "note": "HTTP referrer restricted Maps JS browser key."
+}

@@ -1,0 +1,17 @@
+.map-stage{padding:0 0 72px}
+.map-layout{display:grid;grid-template-columns:minmax(240px,320px) 1fr;min-height:62vh;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+.map-list{overflow:auto;max-height:62vh;border-right:1px solid var(--line);background:#f7faf8}
+.map-list h2{margin:0;padding:18px 18px 10px;font-size:15px;letter-spacing:-.04em}
+.map-list p.hint{margin:0 18px 12px;font-size:12px;color:var(--muted)}
+.map-pin{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid #e4ece9;background:transparent;padding:14px 18px}
+.map-pin:hover,.map-pin.active{background:#e7f4f0}
+.map-pin strong{display:block;font-size:14px;letter-spacing:-.03em}
+.map-pin span{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+#garak-map{min-height:62vh;width:100%;background:#dce8e4}
+.map-status{min-height:1.4em;margin:12px 0 0;font-size:13px;color:var(--muted)}
+.map-status.error{color:var(--red)}
+@media(max-width:720px){
+  .map-layout{grid-template-columns:1fr}
+  .map-list{max-height:38vh;border-right:0;border-bottom:1px solid var(--line)}
+  #garak-map{min-height:52vh}
+}
