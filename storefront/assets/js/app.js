@@ -26,6 +26,12 @@ if('serviceWorker'in navigator && (location.protocol==='https:'||location.hostna
   s.src=(window.GARAK_ROOT||'')+'auth/chip.mjs';
   document.head.append(s);
 })();
+(function injectBrand(){
+  const s=document.createElement('script');
+  s.type='module';
+  s.src=(window.GARAK_ROOT||'')+'assets/js/brand.mjs';
+  document.head.append(s);
+})();
 (function injectMap(){
   const href=(window.GARAK_ROOT||'')+'map.html';
   function add(root, label){

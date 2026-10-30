@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Song+Myung&display=swap');
+
+:root{
+  --navy:#123D2A;
+  --deep:#123D2A;
+  --ocean:#018F3B;
+  --mint:#F8F3E9;
+  --ivory:#F8F3E9;
+  --sand:#F8F3E9;
+  --line:#E4D6C3;
+  --ink:#123D2A;
+  --muted:#6B5A48;
+  --red:#C43D2F;
+  --shadow:0 14px 40px rgba(18,61,42,.12);
+  --garak:#018F3B;
+  --gold:#D4AF48;
+  --brown:#8B5E3C;
+  --cream:#F8F3E9;
+}
+html{scroll-padding-top:110px}
+body{background:var(--cream);color:var(--ink)}
+.top-strip{background:#018F3B;color:#f4ffe9;letter-spacing:-.02em}
+.top-strip b{color:#fff}
+.header{background:#123D2A;border-bottom:3px solid #D4AF48;color:#fff;box-shadow:0 6px 22px rgba(18,61,42,.22)}
+.header-row{gap:18px}
+.header .nav a{color:#F3EBDA;font-weight:700}
+.header .nav a:hover,.header .nav a[aria-current="page"]{color:#D4AF48;border-bottom:2px solid #D4AF48}
+.header .icon-btn{background:#0E2F20;color:#F8F3E9;border-color:#2E5A3C}
+.header .icon-btn:hover{background:#018F3B;border-color:#018F3B}
+.story-header-search{border:1px solid #E4D6C3;border-radius:999px;overflow:hidden;height:42px}
+.story-header-search button{background:#018F3B;border-radius:0}
+.story-nav-ribbon{background:#0E2F20;border-bottom:1px solid #2E5A3C}
+.story-nav-ribbon a:hover,.story-nav-ribbon a[aria-current="page"]{background:#018F3B;color:#fff}
+.mobile-menu{background:#123D2A}
+.mobile-menu a{color:#F8F3E9;border-bottom-color:#2E5A3C}
+
+.brand-lockup{display:inline-flex!important;align-items:center;gap:0;max-width:min(268px,52vw);height:58px;padding:3px 10px;background:#F8F3E9;border-radius:12px;box-shadow:0 2px 0 rgba(139,94,60,.28);font-size:0;color:transparent}
+.brand-lockup svg,.brand-lockup>span,.brand-lockup i{display:none!important}
+.brand-logo-img{height:52px;width:auto;max-width:240px;display:block;object-fit:contain}
+
+body.brand-home .header{background:#F8F3E9;color:#123D2A;border-bottom:3px solid #018F3B}
+body.brand-home .header .nav a{color:#123D2A}
+body.brand-home .header .nav a:hover,body.brand-home .header .nav a[aria-current="page"]{color:#018F3B;border-bottom-color:#018F3B}
+body.brand-home .header .icon-btn{background:#fff;color:#123D2A;border-color:#E4D6C3}
+body.brand-home .brand-lockup{background:transparent;box-shadow:none;padding:0;height:64px}
+body.brand-home .brand-logo-img{height:62px}
+
+.btn.primary,.btn.dark{background:#018F3B;border-color:#018F3B;color:#fff}
+.btn.primary:hover,.btn.dark:hover{background:#147A34}
+.btn.ghost{border-color:#C9B79A;color:#123D2A}
+.price,.product-card .price{color:#C43D2F}
+.kicker{color:#018F3B;font-family:'Song Myung',serif;letter-spacing:.12em}
+.section h2,.page-title{font-family:'Song Myung',serif;font-weight:400;letter-spacing:-.03em;color:#123D2A}
+.page-hero{background:linear-gradient(120deg,#E7F4E4,#F8F3E9 58%);border-bottom:1px solid #E4D6C3;position:relative;overflow:hidden}
+.callout{background:linear-gradient(112deg,#123D2A,#018F3B)}
+.footer{background:#123D2A;color:#EDE3CF}
+.footer a,.footer h4{color:#F8F3E9}
+.footer-bottom{border-color:#2E5A3C;color:#C9B79A}
+
+.story-hero{background:#123D2A}
+.story-hero:after{background:linear-gradient(90deg,#123D2Af2 0%,#123D2Ab8 36%,#123D2A14 82%)}
+.story-kicker{color:#D4AF48;font-family:'Song Myung',serif;letter-spacing:.18em}
+.story-hero h1{font-family:'Song Myung',serif;font-weight:400;letter-spacing:-.04em}
+.story-hero-inner{position:relative;grid-template-columns:minmax(0,1fr)!important}
+.story-hero-copy{max-width:min(560px,50vw);position:relative;z-index:4}
+.story-hero .btn.primary{background:#018F3B}
+.story-hero .btn.ghost{background:#F8F3E9;color:#123D2A!important}
+.story-feature-card{display:none}
+.story-shortcuts{background:#F8F3E9;border-bottom:1px solid #E4D6C3}
+.story-shortcut-row a{color:#123D2A}
+.story-shortcut-row a:hover{background:#E7F4E4;color:#018F3B}
+.story-shortcut-row i{width:54px;height:54px;border-radius:50%;background:#fff;border:2px solid #E4D6C3;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 0 rgba(139,94,60,.12)}
+.story-section-spotlight{background:#fffdf8}
+.story-spotlight-card:before{background:linear-gradient(0deg,#123D2Ad4,#123D2A22),var(--story-photo) center/cover}
+.story-market-quote{background:#E7F4E4;border-left:5px solid #D4AF48}
+.product-card{background:#fff;border-color:#E4D6C3}
+.section.soft,.section.kitchen-home{background:#EFE6D6}
+
+.brand-mascot-hero{position:absolute;right:3%;bottom:-6px;height:min(340px,62vh);z-index:2;pointer-events:none;filter:drop-shadow(0 10px 16px rgba(18,61,42,.28))}
+.brand-speech{position:absolute;right:4%;top:10%;z-index:3;max-width:210px;margin:0;padding:12px 16px;background:#F8F3E9;color:#123D2A;font-family:'Gaegu','Noto Sans KR',cursive;font-size:20px;font-weight:700;line-height:1.35;letter-spacing:-.03em;border-radius:18px 18px 18px 4px;box-shadow:0 8px 20px rgba(18,61,42,.16)}
+.brand-speech:after{content:"";position:absolute;left:22px;bottom:-8px;border:8px solid transparent;border-top-color:#F8F3E9}
+.brand-mascot-page{position:absolute;right:18px;bottom:-4px;height:128px;pointer-events:none;filter:drop-shadow(0 8px 10px rgba(18,61,42,.18))}
+.brand-seal-footer{width:72px;height:72px;object-fit:contain;border-radius:50%;background:#F8F3E9;padding:4px;margin:8px 0}
+.brand-mascot-auth{width:min(220px,42vw);position:absolute;right:-12px;bottom:-8px;pointer-events:none;filter:drop-shadow(0 10px 14px rgba(18,61,42,.2))}
+.auth-page{background:#F8F3E9!important;position:relative;overflow:hidden}
+.auth-card{border-color:#E4D6C3;box-shadow:0 18px 40px rgba(18,61,42,.1)}
+.auth-brand{color:#123D2A}
+.auth-card .primary{background:#018F3B;border-color:#018F3B;color:#fff}
+.google-btn:hover{border-color:#018F3B}
+
+@media(max-width:1050px){
+  .brand-mascot-hero{height:min(260px,48vh);right:-2%}
+  .brand-speech{right:8%;top:12%;font-size:17px;max-width:180px}
+}
+@media(max-width:720px){
+  .brand-lockup{height:46px;padding:2px 7px;max-width:min(168px,46vw)}
+  .brand-logo-img{height:40px}
+  body.brand-home .brand-lockup{height:48px}
+  body.brand-home .brand-logo-img{height:46px}
+  .brand-mascot-hero{height:140px;right:-12px}
+  .brand-speech{display:none}
+  .brand-mascot-page{height:84px;right:8px}
+  .header-row{min-height:64px}
+  .story-hero-copy{max-width:none;padding-bottom:72px}
+  .story-hero-cta{flex-wrap:wrap}
+  .story-hero-cta .btn{min-height:44px}
+  .top-strip{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+}
+@media(prefers-reduced-motion:reduce){
+  .brand-mascot-hero,.brand-mascot-page,.brand-mascot-auth{filter:none}
+}

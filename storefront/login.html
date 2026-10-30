@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#092b3b">
+  <meta name="theme-color" content="#123D2A">
   <title>로그인 · 가락한상</title>
   <link rel="icon" href="assets/images/icon-192.png">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="auth/login.css">
+  <link rel="stylesheet" href="assets/css/brand.css">
   <script>window.GARAK_ROOT="";</script>
 </head>
 <body class="auth-page">
+  <img class="brand-mascot-auth" src="assets/brand/mascot.webp" alt="가락한상 상인 캐릭터">
   <div class="auth-shell">
     <div class="auth-card">
       <a class="auth-brand" href="index.html">
-        <span>가락한상<small>NEON AUTH · GOOGLE</small></span>
+        <img class="brand-logo-img" src="assets/brand/logo-lockup.webp" alt="가락한상" width="240" height="90">
       </a>
       <div id="loggedPanel" hidden class="auth-logged">
         <h1>로그인됨</h1>
@@ -27,7 +29,7 @@
       <p class="auth-or">또는 이메일</p>
       <form id="authForm">
         <h1>가락한상 로그인</h1>
-        <p class="sub">Neon Auth(Managed Better Auth)로 고객 계정을 만듭니다. 관리자 화면과는 별도입니다.</p>
+        <p class="sub">오늘도 맛있는 하루, 가락한상이 함께합니다. 고객 계정은 Neon Auth로 연결됩니다.</p>
         <label for="email">이메일</label>
         <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
         <label for="password">비밀번호</label>
