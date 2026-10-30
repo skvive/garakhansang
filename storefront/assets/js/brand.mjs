@@ -1,6 +1,7 @@
 const root = window.GARAK_ROOT || '';
 const path = location.pathname.replace(/\\/g, '/');
 const isAdmin = path.includes('/admin');
+const isBrandSite = document.body.classList.contains('brand-site');
 const isHome = /\/$|\/index\.html$/i.test(path);
 const mascotPages = /map\.html|merchant|cart\.html|community|support\.html|prices\.html|chefs|stories/i.test(path);
 
@@ -136,9 +137,37 @@ function paintFooter() {
   col.append(seal);
 }
 
-if (!isAdmin) {
+function injectExploreNav() {
+  if (isBrandSite) return;
+  const base = window.GARAK_ROOT || '';
+  const items = [
+    ['stores.html', '매장 찾기'],
+    ['coupons.html', '쿠폰'],
+    ['events.html', '이벤트'],
+    ['market-map.html', '탐험 지도'],
+  ];
+  function add(nav) {
+    if (!nav) return;
+    items.forEach(([file, label]) => {
+      if ([...nav.querySelectorAll('a')].some(a => (a.getAttribute('href') || '').includes(file))) return;
+      const a = document.createElement('a');
+      a.href = base + file;
+      a.textContent = label;
+      a.dataset.garakExplore = '1';
+      nav.append(a);
+    });
+  }
+  add(document.querySelector('.nav'));
+  add(document.querySelector('.story-nav-ribbon-inner'));
+  add(document.querySelector('.mobile-menu'));
+}
+
+if (isBrandSite) {
+  injectShare();
+} else if (!isAdmin) {
   injectCss();
   injectShare();
+  injectExploreNav();
   replaceLogos();
   paintStrip();
   paintHome();

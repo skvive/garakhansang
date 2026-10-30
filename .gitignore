@@ -12,3 +12,7 @@ __pycache__/
 .env.*
 !.env.example
 .vercel/
+
+_zip_review/
+storefront/assets/editorial/ai-original-collage.jpg
+
