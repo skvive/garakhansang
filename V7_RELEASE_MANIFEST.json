@@ -1,0 +1,2524 @@
+{
+  "package": "GARAK_ADMIN_V7",
+  "created_at": "2026-10-30T04:15:50.248312+00:00",
+  "file_count": 629,
+  "files": {
+    "QA_EVIDENCE/v6_baseline_tests.log": {
+      "size": 37721,
+      "sha256": "a31b3e9af0fddb0274c94926ddf3351454d08ddd08e204084e330cfe205462b2"
+    },
+    "QA_EVIDENCE/v7_all_tests.log": {
+      "size": 72477,
+      "sha256": "3305aa6fa7cf9ea8766168f298db11fce7e6047ed5e1e7c9406b1cb9b7c3f779"
+    },
+    "QA_EVIDENCE/v7_concurrency.log": {
+      "size": 11179,
+      "sha256": "34e257d4469538c481ac3c97ee9110f62e51b5bb909f7483d0824b9bf90cae51"
+    },
+    "QA_EVIDENCE/v7_currency_tests.log": {
+      "size": 467,
+      "sha256": "31d84ce1e4d602b66b9a4888d949481c80d136d58938cf9da91131906f449478"
+    },
+    "QA_EVIDENCE/v7_static_qa.log": {
+      "size": 281,
+      "sha256": "74b2ff3335a4980cc0e9689bc80f9a393374cba271d218342fa17d9615e58193"
+    },
+    "README_먼저읽기.md": {
+      "size": 7339,
+      "sha256": "246d1c62187b6bf0a6f10ea8b373f840c0736e715328c0083187c41c1bc4ea86"
+    },
+    "RELEASE_MANIFEST.json": {
+      "size": 114166,
+      "sha256": "a26e063985d9978cee3d928434d178d57cdbf07b46a83bd45454ec90fe241422"
+    },
+    "admin_core/__init__.py": {
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "admin_core/database.py": {
+      "size": 12464,
+      "sha256": "3a841b86b49cb3a0c9745e55fc95697f3bb21cc967273e3b5b36290d30294587"
+    },
+    "admin_core/server.py": {
+      "size": 35818,
+      "sha256": "26f57746d2488a848a943a99d2665feeee8ba686202f8a4f0f5acf4aac8a23d4"
+    },
+    "docs/API_REFERENCE.md": {
+      "size": 3750,
+      "sha256": "128e3e7917c9572dc205716e6c940ddca6d1b59db06ae518e78b8ba0b109325f"
+    },
+    "docs/BACKEND_DESIGN.md": {
+      "size": 8382,
+      "sha256": "cfbd25d2429daa0e883b7e85ff140a7936d31da5559863d55eddcb59edca8bc4"
+    },
+    "docs/BETA_SCREENSHOTS/MOBILE_integrations.png": {
+      "size": 72265,
+      "sha256": "fe44caaff5d5d618746c3842d01c95183b7efd9a5955e01fc392b5b81fedc760"
+    },
+    "docs/BETA_SCREENSHOTS/MOBILE_orders.png": {
+      "size": 46120,
+      "sha256": "899b021ed1c73a84cd7cb57f707a99c5937b531da2489f1e9ab8442faa93a369"
+    },
+    "docs/BETA_SCREENSHOTS/MOBILE_overview.png": {
+      "size": 115874,
+      "sha256": "a42822dc1773af538f6212d7d0889d3804472e92ae79d16ee132667cc0ebe20f"
+    },
+    "docs/BETA_SCREENSHOTS/MOBILE_posts.png": {
+      "size": 44650,
+      "sha256": "5622887ae3d10bd74048c3200419534718f3e74b44bf8ed934eaddf820b501b2"
+    },
+    "docs/BETA_SCREENSHOTS/MOBILE_products.png": {
+      "size": 178032,
+      "sha256": "81fd4289ca44f185c3c7ea2f4d53e71d9eea8ffa8148f18a3ea9409f7adf7d7e"
+    },
+    "docs/BETA_SCREENSHOTS/MOBILE_recipes.png": {
+      "size": 469890,
+      "sha256": "3e129ea71cf32f430923620519c57a51c44ff310485e924be6ddde824258e90d"
+    },
+    "docs/BETA_SCREENSHOTS/MOBILE_reports.png": {
+      "size": 90157,
+      "sha256": "bfab3edff2bb9c960b00ef580d8db39b89d68b89fe26a3e21eb5aaa5cb45a636"
+    },
+    "docs/BETA_SCREENSHOTS/PC_integrations.png": {
+      "size": 132649,
+      "sha256": "c2f8dca7b9184524b6121d40fe751ca94caa0161097a61f507ed0704b554a095"
+    },
+    "docs/BETA_SCREENSHOTS/PC_orders.png": {
+      "size": 89450,
+      "sha256": "ecd2bdef1ac4ed29f922d358493bd1bb1061655cb8db929de9bfa68a7ab70a8b"
+    },
+    "docs/BETA_SCREENSHOTS/PC_overview.png": {
+      "size": 157523,
+      "sha256": "9417392abf79a96c379ff973095185b4b1d0155e914e06977314bed964af309b"
+    },
+    "docs/BETA_SCREENSHOTS/PC_posts.png": {
+      "size": 98282,
+      "sha256": "2db5057445bcd8a4422b6d15860251a53c04a004c1767db3561ffc724c3e4ea7"
+    },
+    "docs/BETA_SCREENSHOTS/PC_products.png": {
+      "size": 358944,
+      "sha256": "608956bfe55e7a7fd6d2edca4ec50320dd6fe2cb708d590acbc49fb6637a957a"
+    },
+    "docs/BETA_SCREENSHOTS/PC_recipes.png": {
+      "size": 913823,
+      "sha256": "0ddde85d63270b0e990761a9dfa45416b5d74da15bd68b8609f47a4e3728cc8b"
+    },
+    "docs/BETA_SCREENSHOTS/PC_reports.png": {
+      "size": 134754,
+      "sha256": "ebfaad3504474d704c08c7cc1511f298d7d54b46660f104ba0ba435fb76f0174"
+    },
+    "docs/BETA_TEST_REPORT.md": {
+      "size": 3729,
+      "sha256": "693d9e23d005b02dfd1a84b2f9b66fe6a2652a257fe28a2148b1a0d0b8b46b5c"
+    },
+    "docs/CHANGELOG_V6.md": {
+      "size": 1196,
+      "sha256": "a2f7ac49200115f464745124fc2d5269a5c10b6581acfb3715ecce7c54ee1f88"
+    },
+    "docs/EXECUTION_LOG_V7_20261030.md": {
+      "size": 1778,
+      "sha256": "dbb1ee93582454fff05e6719b2a22d46dc50c3a1fa8af34078994e0b95f03e01"
+    },
+    "docs/MASTER_RESCUE_PLAN_V7_20261030.html": {
+      "size": 16104,
+      "sha256": "3d5eda68589d2f4bec073af8952e0d96dbf66e0ceda25e36aadd01cdc3ef7399"
+    },
+    "docs/MASTER_RESCUE_PLAN_V7_20261030.md": {
+      "size": 11421,
+      "sha256": "e7325017c2f1e491c485c1f050eb2231b934665e56fedbe20350939f66e83757"
+    },
+    "docs/MASTER_RESCUE_PLAN_V7_20261030.pdf": {
+      "size": 388917,
+      "sha256": "23ae5fca9afe665f5800880e4880b450357f774223ee9d094f6b9b1bf0b0fcaf"
+    },
+    "docs/MODULE_INTEGRATION_MATRIX.md": {
+      "size": 2724,
+      "sha256": "b7a91959f7dc05eb0fef6fd6c776d42b7be06636ec5a5dc3f256fd8b255739ae"
+    },
+    "docs/NEON_SCHEMA_READONLY_AUDIT_20261030.md": {
+      "size": 1391,
+      "sha256": "af4ddd5a76fb2a5d10b795f46fc044b4c4abe7ae5812e0dcc94ee32ab2fa2332"
+    },
+    "docs/PRODUCTION_RELEASE_GATES.md": {
+      "size": 3093,
+      "sha256": "3ca5cd5a9c8b72d60729d4f8261df22b626771780e7c12b27232f0d27dbee0e5"
+    },
+    "docs/QA_CONCURRENCY.json": {
+      "size": 387,
+      "sha256": "7c2b3f48a2c307d596db9f3628ec3ea6e623ff833c92963563cb16e2dcf3f2fb"
+    },
+    "docs/QA_E2E_BROWSER.json": {
+      "size": 5311,
+      "sha256": "03c5af13d9669a5d451bf8b1a8a66fd07fc699efafab154d7e399c2210d0de27"
+    },
+    "docs/QA_STATIC_RELEASE.json": {
+      "size": 285,
+      "sha256": "94ba8f91fbcd20bbd436515f66b7ccedfc86b3a2545bc1053d14e72feaf508e9"
+    },
+    "docs/QA_V7_20261030.json": {
+      "size": 1925,
+      "sha256": "fc3a7e7050c5fdb6e9891571286bde92410f4df468978fc17c6bbae0b7779905"
+    },
+    "docs/RBAC_AND_SECURITY.md": {
+      "size": 3178,
+      "sha256": "c5390799bdb1018ce58dc2863bff70b9343e1583fad2b793b1517684d1d2fe15"
+    },
+    "docs/selected_design_reference.jpg": {
+      "size": 187275,
+      "sha256": "9e282c1f8c40db886bb373a9be7e167c66bcfbb0f84f4a7c789d44dc07edd84a"
+    },
+    "integrations/apply_ops_next_overlay.py": {
+      "size": 1086,
+      "sha256": "97f0e34355d39c2ccbdc462dab6f6f89c20b1da0bb46596da0d454737ee7f8e1"
+    },
+    "integrations/currency_contract.mjs": {
+      "size": 1170,
+      "sha256": "7d3ea2a8e2be76c92e6d582626b4ee85ed2ce0a16e4076ec298694a736db1aa2"
+    },
+    "integrations/neon_postgres_operations_schema.sql": {
+      "size": 7823,
+      "sha256": "2aa49b5f04e49a18a63d759960db2ca857956b692ca7cf79915a2475f02edeca"
+    },
+    "integrations/nextjs_overlay/lexistyle/src/app/[lng]/admin/operations/page.tsx": {
+      "size": 1828,
+      "sha256": "819ee36523955c3f81ec547277b985fbcaa9bb0a73e1eff5f94c2337e92a5431"
+    },
+    "integrations/nextjs_overlay/lexistyle/src/app/[lng]/api/garak-admin/health/route.ts": {
+      "size": 1020,
+      "sha256": "5b48714b7a357e1e89bc8009446c221a7422b24814554b3f25eb2c0c95450806"
+    },
+    "integrations/story_v5_patch/apply_story_v5.py": {
+      "size": 2527,
+      "sha256": "6989ef943c42b6566642debbb64bf0b57ccd5b8b5722a76c9458d2232b377f8a"
+    },
+    "integrations/story_v5_patch/integrate_into_garak.py": {
+      "size": 5350,
+      "sha256": "e388c6984d36423e278c790b933e4c801f5c4b9d126368d60923925fb8674cad"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-001.webp": {
+      "size": 91552,
+      "sha256": "3d7f74579e04250e42474b4fbbe21cde1fb71461e42a4120c70b8e6aca2300c5"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-002.webp": {
+      "size": 134684,
+      "sha256": "e4f2151dd73db9610ef4cd5586f1c134b41d82e41b01b9905fb06e882f89dfe0"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-003.webp": {
+      "size": 112270,
+      "sha256": "06e69f53907b10ecd9a7229cded137a663912410e91052a976a008774408f831"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-004.webp": {
+      "size": 138966,
+      "sha256": "2607cc809b7200b3b05e8eb4d97b7e6798f32bd359f057e934dd3130d9c82a1c"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-005.webp": {
+      "size": 86578,
+      "sha256": "f3f1c3cd524f9fa1a485df9a34c9e11b212b8dba1daecd32a81d84db154a417b"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-006.webp": {
+      "size": 124570,
+      "sha256": "5b37aa0356856500d4b6b5dac5be644b92de38536198ea014bf0e1684b6744e5"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-007.webp": {
+      "size": 87898,
+      "sha256": "fd0ab53053f6d5cfae52fd79b5eab76539ad8a39e79bdc002839615bb073a2f6"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-008.webp": {
+      "size": 143288,
+      "sha256": "1e05cdcb48c5bd53a44bd20ee1ffe193c7bd85868b57d0707e51d4b160b122ad"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-009.webp": {
+      "size": 100206,
+      "sha256": "2a6c7a9941e7a871672adc3cc024c9e9d0224f7bf5523cc9c0e4562c53f96c52"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-010.webp": {
+      "size": 87500,
+      "sha256": "5dc189816985b254972f6a9f9415234663660952cbb5fb08ac5b107a8d7be55a"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-011.webp": {
+      "size": 101022,
+      "sha256": "54de30cceadaeb9118601794fda5eceaedf1fda43f31291e8de36f6495067de4"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-012.webp": {
+      "size": 123380,
+      "sha256": "09a8dcf109855611809b54abc390ab1c8a02a98f187b8660209bd4e898b46b27"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-013.webp": {
+      "size": 99564,
+      "sha256": "18e878f821b27965af4a1b0fa5612ca4ed81ea4b2c6b4bad6e7d0de5fce96ab4"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-014.webp": {
+      "size": 116164,
+      "sha256": "0eb15e28aa4c4ac5e90adcf7a55cf20f299eaedb989001f81b58f89a3d88c323"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-015.webp": {
+      "size": 114230,
+      "sha256": "6e3b317a0f67df5a78e07037fdb6da5604bfd5477d0a1603104ff3b312101adc"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-016.webp": {
+      "size": 111030,
+      "sha256": "b72cd9d3fa5b5a2e0157c289d18918dbf1887c4a6942043defdc59ae6f778400"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-017.webp": {
+      "size": 86762,
+      "sha256": "af1fc9b6621ceb8bd33de1775e2fb744494c2f7805a645cb6d8f1031878a0469"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-018.webp": {
+      "size": 113200,
+      "sha256": "a9e07a163e420148fc22aff49607275dd7da71f389bbedeaa0c46a3e05d78e0d"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-019.webp": {
+      "size": 100948,
+      "sha256": "90881680c5d671806e92818ee4ad0de1e5e21b14ab691b9728ddc4dee96fd512"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-020.webp": {
+      "size": 87310,
+      "sha256": "4cff3a9a876f3c142667b494a2103775feae435295d9fa6decd956cba7fad581"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-021.webp": {
+      "size": 113324,
+      "sha256": "cdce7cf6b48d1472eb83d0d5b07530c452d1f6efa232808505a3dcbe3575d6ef"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-022.webp": {
+      "size": 80838,
+      "sha256": "177105bfd8177d7878403097038cd6d5c6af85bfb1543bb2c6ae3fffdf49f5b4"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-023.webp": {
+      "size": 100404,
+      "sha256": "f8633a06fe27333063c210666e00ee8c61f69b7d0f6f9a5a5dab2acff5f9f5f1"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-024.webp": {
+      "size": 119940,
+      "sha256": "6a5588d3eaa7ca49787b840997923c512c29a82c0f80d5209ad423ca519653da"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-025.webp": {
+      "size": 111916,
+      "sha256": "dd8640f3947a9698d28fd91581704814d4bae5ecebec318dfa109272efe1afbd"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-026.webp": {
+      "size": 108520,
+      "sha256": "436772e633b1aba885ea5e73480b83cc604733e223c6134fbb344a8ee4ae7502"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-027.webp": {
+      "size": 112824,
+      "sha256": "b7ea89c8ecdad2ebae8232bf39c5142e550901ec6098093b228c8250e548a7e9"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-028.webp": {
+      "size": 96630,
+      "sha256": "c29491cc9e71efde8c394b71c63d753cc1daa86440ad6f8dbbe5bdf295036804"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-029.webp": {
+      "size": 147868,
+      "sha256": "1d67a38ab86d6d63a60c486aa6b84bf82bedc2cbfc90981e9fb95cf0ccec7295"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-030.webp": {
+      "size": 120602,
+      "sha256": "ea801aa8c72f2f553ff10a244bcb319d04a8c52315071191988e55a045a1dd85"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-031.webp": {
+      "size": 89470,
+      "sha256": "cac43ef197e2ca19fc512e58a6fa37c4d97e12f4853fd2710582ca87537baf66"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-032.webp": {
+      "size": 104646,
+      "sha256": "3b0769bbae34eda9bf70a1a132d3946b93cd86bf7bd6edcd509a0db7d80ed34c"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-033.webp": {
+      "size": 124722,
+      "sha256": "bd035dd057022efb0128299a116fcfa2b79dc919499d1788cfa0ce3d3e4f5394"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-034.webp": {
+      "size": 144790,
+      "sha256": "00860e53516421e7600611546b5482befa1347846c84c3b6fefa0fca7fa39c27"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-035.webp": {
+      "size": 109652,
+      "sha256": "5d1f5860869acce0c8f771e32d9adea58cbd9f6cdc534a7fe6f8c4d3f3c4cda5"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-036.webp": {
+      "size": 145590,
+      "sha256": "b03d0e17f33738e5459f35bf34a0b6bf61ee48a19a6e540927d95b60ff1c7fd5"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-037.webp": {
+      "size": 95860,
+      "sha256": "e0a1ab769c01c478de2226bd3f9f7434e1ebb5769c34d5e2764f8297b6f981a4"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-038.webp": {
+      "size": 99086,
+      "sha256": "011cd6f51bb7393536076b413bda138e9addb08a57f65c351f63a1928e1da7d3"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-039.webp": {
+      "size": 120736,
+      "sha256": "0c1f859a879490e3e2e66281451fdfaca25a5a11143646002f84526092aa1975"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-040.webp": {
+      "size": 82474,
+      "sha256": "3fbacc9ec2eee643d1a077a198f6ec45639084cf923ad66d11cd732689e3fb38"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-041.webp": {
+      "size": 89494,
+      "sha256": "80797f79ee84e0eb057cd8a69a4268a420dfceb4a4224bf23cf4a58c3541a833"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-042.webp": {
+      "size": 114184,
+      "sha256": "c6b3af30efb64c3a9a9d7420e2a3ff8e09e3159988d4e95b66bf12cc61e4316d"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-043.webp": {
+      "size": 88810,
+      "sha256": "700280c815d197cc897df3238e84b342a15aa9b01d3d65ad3ae8ef80c93a632a"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-044.webp": {
+      "size": 139480,
+      "sha256": "a34c636dc7fd30049e6ca6bc4bda7199c80b6f35dd9994e623b04048b75f2011"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-045.webp": {
+      "size": 106206,
+      "sha256": "a9444dd550af2a8e52dbeb59e7e4fad8a35a33ac6eadb3f64ba027207c469c7a"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-046.webp": {
+      "size": 124408,
+      "sha256": "01dfe53934553ad8812cc2a4dd875fca29b9d5179996b0d20c00f4ce6cfa9418"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-047.webp": {
+      "size": 88024,
+      "sha256": "7d96fa3e7b6339739081b8975bc37619ff70883df82efb55a85e3ee76ce173b4"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-048.webp": {
+      "size": 119896,
+      "sha256": "337ad333a8073ac3f9b29cef584e90bea8adf70a25a07ac41cecab31dd234497"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-049.webp": {
+      "size": 82908,
+      "sha256": "115b9ee145e8b00946d83f8f6f11dbdf1974d94beb85b6195c1a113a079419a8"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-050.webp": {
+      "size": 108154,
+      "sha256": "433e42a655e2858dde6107bafa1c8e737699befcd24afa39d39dc555bf9a6e95"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-051.webp": {
+      "size": 113028,
+      "sha256": "9b139d0cafb62423540c8538328f1bd9e96070d63e582b626c68e6397d075ce2"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-052.webp": {
+      "size": 90188,
+      "sha256": "9df2d504a8ffa1bfa56f72482c55b08f5b690cd44908d06e90893915841ecb27"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-053.webp": {
+      "size": 110130,
+      "sha256": "034c11690a3b3f4ca7202dd2e77f86f2c078e0144a8f7eabdd65139177fab0cf"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-054.webp": {
+      "size": 117834,
+      "sha256": "703cfd1fd66d4a8b06c7050da2d22e3178a39ee61001df8aa93f5d7998fe66c8"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-055.webp": {
+      "size": 103972,
+      "sha256": "1538f73be83f6bc37acfa509356846a8d05ca8ed52e20ef224bb3c7747b427a2"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-056.webp": {
+      "size": 111438,
+      "sha256": "aa1650db48afb95e281e3b52269d6faf45f7c8492723b9d6290824d86ef4ba58"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-057.webp": {
+      "size": 114780,
+      "sha256": "fc0aa27ff479baddbcf63e499528407be4fa67519c31749d8ef8b58078735de9"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-058.webp": {
+      "size": 86532,
+      "sha256": "3be00309e4de866c07804e1df267d970fc964cd21e5e9f59470e1eea183ed4f1"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-059.webp": {
+      "size": 86244,
+      "sha256": "7402a34ffb89be5150e9c886162c1dc0183ae0b4178054e65d1d2f25672ae0f2"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-060.webp": {
+      "size": 115114,
+      "sha256": "b81e18d076441c6cc01b637d257e17759585c6166c0bafc768424a5f229fc8cd"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-061.webp": {
+      "size": 90714,
+      "sha256": "63c66f555e2e3e65b94c688c36a89c8d7bd18b5ae902c1d4aaa239fbae122e68"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-062.webp": {
+      "size": 85232,
+      "sha256": "bf93f1a42f4b824a6aeb2d0d15266f838e213f485267b04853882f903fea7daa"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-063.webp": {
+      "size": 114512,
+      "sha256": "663d30115108a341c7494b52019b819c80ac9547d79a19b7311ca849953a1e30"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-064.webp": {
+      "size": 147272,
+      "sha256": "c8b9c474074eefd75fdd55be4534f32d3bf9d913136d9bc9d3ee38d689818ead"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-065.webp": {
+      "size": 127380,
+      "sha256": "7024eb2e7779d84dfeb8df1cf1aa8ae4038fb8230c20478ee8d34c3198470d40"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-066.webp": {
+      "size": 118502,
+      "sha256": "c58dbdf938104275018b0fb331d0d2751f8902b2d09000c27bcc0e81590630d5"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-067.webp": {
+      "size": 93418,
+      "sha256": "0e100657965cb528535959b86202f07d3a4e624ba7bd200143afe20d144347da"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-068.webp": {
+      "size": 127416,
+      "sha256": "f9a7acc4e64cd7c3cd9e80befdb3d3842f149148b08f6872059c5bbcdfc65e5b"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-069.webp": {
+      "size": 117484,
+      "sha256": "8b37cdf3269f395cadc3038976beec4bfa26d5ab2f5ad95531db5c3315113d50"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-070.webp": {
+      "size": 119126,
+      "sha256": "bdb8a2e4302364758692628e408bebcbef242303bc91a8c45e513404bdc0478d"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-071.webp": {
+      "size": 113134,
+      "sha256": "2561f8eee3d7bca422bfd79c1eb4670057c352e753fa5fc1e3ad1904b1e73687"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-072.webp": {
+      "size": 124292,
+      "sha256": "3bde37521c71c237318b43b1c9d080e66dae15dd8cd02807484ab6f09286636f"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-073.webp": {
+      "size": 96720,
+      "sha256": "632140933b7ff97e73df763cdfda2b56d9ac84415dd853fdb382749b2f1bd27c"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-074.webp": {
+      "size": 102070,
+      "sha256": "01b87a84109c550737292ad7818188d1becce1444ffd3d1f031f2720452aea7e"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-075.webp": {
+      "size": 118530,
+      "sha256": "ffddbdc8c55996ad037f5d1faa40b4636cd11a3a67a22e7ac90742aa6061005a"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-076.webp": {
+      "size": 108162,
+      "sha256": "7c0aa0c5d3c86a45d0adc84d6bb35d67f2f4b309c44058b9d0287a231d38eb01"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-077.webp": {
+      "size": 130940,
+      "sha256": "acdb119029605c65501a7e1687ea54665e9d849f43c0798232c8d1f4213a05e8"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-078.webp": {
+      "size": 114106,
+      "sha256": "289b36b207b2293b28596896f221a93f0d4bdfc21f0b58d7e5f783fcca79b77c"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-079.webp": {
+      "size": 88234,
+      "sha256": "2acca34e2ff323d3231b07bfd1bd8ebbb64b546adf9df095b7584fb4054d8d7b"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-080.webp": {
+      "size": 150546,
+      "sha256": "daab555861c6a985c493a0d50ab20803aa44b6965a1aaf87b8f81abdffba782e"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-081.webp": {
+      "size": 126416,
+      "sha256": "653950188d56e7c83cfca6f141bee48189ec64c2fc85e3f2ed43959aa91a37fa"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-082.webp": {
+      "size": 127718,
+      "sha256": "cfc5df03910bd2cf808940468b4315f8bdee4de6a3064fb594647edcc979e636"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-083.webp": {
+      "size": 140646,
+      "sha256": "e47e5f8d39901f2b87240890a70c59830ba883de75ae5366d41e94ab7a96b561"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-084.webp": {
+      "size": 115644,
+      "sha256": "809eb57d769bac50f3ea526b218d4dd1186069901e6d619f5506ac1d1d0e81e8"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-085.webp": {
+      "size": 139604,
+      "sha256": "a86edcb5cf356ea65b72cb99bb4b21716a917f1dc8bc3538ba2e30ed5629a94c"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-086.webp": {
+      "size": 135948,
+      "sha256": "712956e2f44fd213575f3795a644dcccd60db7bd3138bfd1c8f483a58a132b72"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-087.webp": {
+      "size": 114004,
+      "sha256": "2454c93c983ed2f591165637f8eca73f837ff0c619c76e615d204482f093cbdb"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-088.webp": {
+      "size": 94864,
+      "sha256": "afc615757c8f15357ef3f4535c7f32db1258650315ee80476ae6464cd3cab34b"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-089.webp": {
+      "size": 96284,
+      "sha256": "63da4b8c20b9c0db0fc8277f1ff3421765f1c98645815662d5ecfd4392963aba"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-090.webp": {
+      "size": 91000,
+      "sha256": "da593b58b4d79070f9c07f25bb0d3282fafe8c131b20f581a986b9fbb0ccdc0a"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-091.webp": {
+      "size": 96972,
+      "sha256": "dc28d111a146b82cba4acebc0baa51dd8bc1290be704331f17eda9b0858ec3a1"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-092.webp": {
+      "size": 92810,
+      "sha256": "f404734d780ed78a3acf4fc1eaf2a4abc8c9e81341bcd5a16334268c718242a9"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-093.webp": {
+      "size": 120836,
+      "sha256": "e938e3209cc5d6a05e53a49510459982f6460b242fe9e12f21f05132bf7f601b"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-094.webp": {
+      "size": 89736,
+      "sha256": "ba25c97140127ab03e0a96903db5abd21b06301c29443849c4389e86fd28df71"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-095.webp": {
+      "size": 137384,
+      "sha256": "b729169df2968e70880d7029f67d10f9c6879ddf64305e914619f7673d2ddf90"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-096.webp": {
+      "size": 148704,
+      "sha256": "a97ab1a53e860d560740adef536f52243ba152d2e99c547faface582b0a55eff"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-097.webp": {
+      "size": 113096,
+      "sha256": "bc358c5f8766bba784128ed3d84b44496148c00d3cfda1d3472f720affdd58b8"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-098.webp": {
+      "size": 96542,
+      "sha256": "219b4218b58382532e7384bfc04404bbe695ca6ed575da507f37ff1693db6e1f"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-099.webp": {
+      "size": 120528,
+      "sha256": "639a290869e9c87f8e4e76a002c29c8668dc1bcae01421a98687a68bd45e988f"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-100.webp": {
+      "size": 146954,
+      "sha256": "6261f67ccb8c5d8be6bb82902ef54f7bbda33ed9863e8b62cd63ca65a1667957"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-101.webp": {
+      "size": 99184,
+      "sha256": "893e18ab7290c03d58da8184e9131b80cfa607bc5bb07857c76304feb1a382cc"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-102.webp": {
+      "size": 93564,
+      "sha256": "371e6e566af66dbd8fc6d3e777f7fc076ccc444a760d743046453e8a2d9bb4ae"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-103.webp": {
+      "size": 93310,
+      "sha256": "d92b9efa6d7c2f2a3baf7dc14aa6fe1c487c0252165a0efde183d83414ded530"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-104.webp": {
+      "size": 98620,
+      "sha256": "acad4834b60f2142bca70d11aafe74162a602171a6e4f97dc881f6e46ced7907"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-105.webp": {
+      "size": 86038,
+      "sha256": "101e6f658db66c40b723ce98d84828e41fbe41f403b3a66f676ba09a58fabeac"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-106.webp": {
+      "size": 102364,
+      "sha256": "909416a1787dd237f97998176ef3bf388dc3ab4b7b155f0160f36b03a6c224a2"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-107.webp": {
+      "size": 105670,
+      "sha256": "272ec87f2fa91146073a4fd1c9a3991857a5ef8346efa367cab6606d63ba7a86"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-108.webp": {
+      "size": 99400,
+      "sha256": "8d65b704e0a745534f689233d3767d9daa9cce6a7716ab967ee8e5dd42ecdb23"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-109.webp": {
+      "size": 97586,
+      "sha256": "3f55c5cdc72345c534fc6e016908f3e665c4ab3e815926ebd58c9bfe028bbe10"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-110.webp": {
+      "size": 93256,
+      "sha256": "ee02cbea02b98e5405db0c2f49c25ab04d7e2e7e75a5ed7d5ce9098b4d40268e"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-111.webp": {
+      "size": 94854,
+      "sha256": "f4de4eef1d625c4222734a027b64f9eab4f7df701ae791bab776b044033087a7"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-112.webp": {
+      "size": 103614,
+      "sha256": "50cce6f8c0207072fa5d3ef72233c62857bd363a0ab27300420acb7698f797f0"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-113.webp": {
+      "size": 90858,
+      "sha256": "83415a3326f3f2a16b1fd5123fd9ddac12932b99b0bd2010a55d512363a9e81b"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-114.webp": {
+      "size": 112312,
+      "sha256": "c9106ffc0c6bc2b9bb5c40a0105a4a9a4b754c01b2426a4c36e42b0121faffae"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-115.webp": {
+      "size": 101858,
+      "sha256": "0d73517045d0fa5998c594e3683df34884fcb2e4b8ddf9976ef68742b1a48e7a"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-116.webp": {
+      "size": 131768,
+      "sha256": "317c051497b4ba4a05c796b9e486deb086bbffabc812bd49c2d08953ba20b0fd"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-117.webp": {
+      "size": 120832,
+      "sha256": "3cc5d9b407fabe163e08ad667af4ed266245dd0cea07f0c28d6a857082d201bf"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-118.webp": {
+      "size": 105268,
+      "sha256": "6c7fe4a37b9a2c8ee0526b38997e140f37dfebc9027923bb432d8a3d5e5dbfa3"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-119.webp": {
+      "size": 109628,
+      "sha256": "082b6baf9c0da438845d4c49d10f096365790f03988c8ee3024bbbdaba36afc7"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-120.webp": {
+      "size": 114426,
+      "sha256": "2d06439fa7d5cf5dad33bb3c7256cb8d77c65aa55b3e4f26d59e7edc8a182012"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-121.webp": {
+      "size": 104716,
+      "sha256": "32d193b0077c9ed72a4a5f541044ae1999b5ecf353b43020d5ce52880794a59b"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-122.webp": {
+      "size": 102950,
+      "sha256": "7a4e9261da61a618d394b9676184d2fd37682e0c3274d1f97bb9ec399c0ef56c"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-123.webp": {
+      "size": 106194,
+      "sha256": "2a9ecb71b224e579db1558c6175541d022c09a79c81bf5abfef97e28af812903"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-124.webp": {
+      "size": 87390,
+      "sha256": "81e045c7227d043490fba04e9ab9b6a2fe5a2ed841992fa281d26ae091c9d27d"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-125.webp": {
+      "size": 93494,
+      "sha256": "f4bbceaf376ce5388365ccc61db32499c3768b8d6e880964aa4845b03cb647d1"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-126.webp": {
+      "size": 112634,
+      "sha256": "b4023289282fbccab02c38db89dac9a4dd541db45b3c83aa8b490576c144fd77"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-127.webp": {
+      "size": 109352,
+      "sha256": "219642222db5bd862f0ea91203ea36e9fb863f45cd6e465f465697c84cfaee7a"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-128.webp": {
+      "size": 95342,
+      "sha256": "28e2ab4a11a8ea2fe66de0576d8b50b7a56484d592955f6dca5bc217882ab6aa"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-129.webp": {
+      "size": 103400,
+      "sha256": "63140ea3f0191b0bfedd561929df7514b7be1b0c2331370f453e40be103e509b"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-130.webp": {
+      "size": 92280,
+      "sha256": "b5917cedabe04d1154c59a90459305a384049efca235e8b98c13d2e8d8bb7fcd"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-131.webp": {
+      "size": 119568,
+      "sha256": "d2946238a48eb9c1070e1c49844c20496209dda4028cb28889cbddefbc7de9fd"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/public/garak-recipes/recipe-132.webp": {
+      "size": 92054,
+      "sha256": "2342fb5efd06ec2a55393138369a2ce36920ba5a42215251d382c49c64930e9b"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/src/app/[lng]/api/garak-recipes/route.ts": {
+      "size": 688,
+      "sha256": "d8648a5a92b4df0c5680f075d5d5292c5f7943b718e3a0335c8af49d39a4aca7"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/src/app/[lng]/api/market-board/moderate/route.ts": {
+      "size": 1274,
+      "sha256": "ec0c6172a5fdddcf533e42e586cdc54238c1e32a197673ae65d1ddd88780ef5d"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/src/app/[lng]/api/market-board/route.ts": {
+      "size": 2092,
+      "sha256": "2372b78bca311af3e9fe22647505dae95321c2dddeedf48e2342135b8abd82a3"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/src/app/[lng]/market-board/page.tsx": {
+      "size": 1717,
+      "sha256": "47f9d7e888a2a0ca980f3de5afc907f2f4a9e32cbecaca718be41374f89a98c6"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/src/app/[lng]/partners/page.tsx": {
+      "size": 2035,
+      "sha256": "3027da11a53c6a653577d797e5d24596fde114174e82479d35b44c5e69150acc"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/src/app/[lng]/recipes/[id]/page.tsx": {
+      "size": 3680,
+      "sha256": "cf3476fc046b8664adb3a857c4eaad96df0d3d6850121a5c4cd9b09dc7c1fea5"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/src/app/[lng]/recipes/page.tsx": {
+      "size": 1889,
+      "sha256": "b8f56fa66d3558620e8d9167301d79ba5c61b0c1fdf3257439168dbcd1baf585"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/src/components/garak/market-board-form.tsx": {
+      "size": 2104,
+      "sha256": "794dde980574167d437297787ed8cc2142c33183f30d4546cb9c0db9751d9e7f"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/src/components/garak/recipe-browser.tsx": {
+      "size": 2805,
+      "sha256": "328fea6240ccf2039a72a708f71d71736fedc3d8f378c50c778302d4510f804f"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/src/components/garak/recipe-product-links.tsx": {
+      "size": 1165,
+      "sha256": "044dfb5d352fb7f596ca844ded00b91bfd29652cc4cb2f5c3891912555ec493b"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/src/components/garak/recipe-promo-strip.tsx": {
+      "size": 1081,
+      "sha256": "5f02b09b069b9ee5dbfc9a6e2d9b3774ed9c8b65aa210f7f31a753fed6d9bc82"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/src/data/garak-products.json": {
+      "size": 13086,
+      "sha256": "7b38e81eff10b2a5fef9b6f1988da5b6cc945d58131e8813a72015de1055ecfd"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/src/data/garak-recipes.json": {
+      "size": 230102,
+      "sha256": "2e30dee6deec1f49e2c5968fe0503a613ee3c91a2da0bde314071ca7368e0350"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/src/db/garak-board-schema.ts": {
+      "size": 450,
+      "sha256": "1008c0312ff0d13267fd9324afcc8a138f230fee32ce1e1e055da9077f661e52"
+    },
+    "integrations/story_v5_patch/overlay/lexistyle/src/lib/garak/recipes.ts": {
+      "size": 731,
+      "sha256": "895f38301b6f8f7205c925e0aa471ec5bb784dc36ea7a77d184368da13408fe6"
+    },
+    "integrations/story_v5_patch/replacements/lexistyle/src/app/[lng]/prices/page.tsx": {
+      "size": 2858,
+      "sha256": "ebe1dd7190047e514cc6cac0a5c6e6092aabfd93905a8bcdd4ad25988c847c86"
+    },
+    "integrations/story_v5_patch/replacements/lexistyle/src/components/sections/price-ticker.tsx": {
+      "size": 800,
+      "sha256": "c0a4969a72eea4d3a9cb655f54dbda5a472e1c2c71970b11d6fc079ae52ef271"
+    },
+    "integrations/story_v5_patch/story-next-overlay/lexistyle/public/garak-recipes/garak-story-hero.webp": {
+      "size": 318710,
+      "sha256": "ffe324c729a2369a62ddf5560541cf6e4bc895ca886e7a55aca2764817846ff3"
+    },
+    "integrations/story_v5_patch/story-next-overlay/lexistyle/src/app/market-story-v5.css": {
+      "size": 4335,
+      "sha256": "fdfb93802f067512d6c66f7c9014353c164acb1cfeb288e0de3aef5696f4a5a6"
+    },
+    "integrations/story_v5_patch/story-next-overlay/lexistyle/src/components/garak/garak-story-hero.tsx": {
+      "size": 2169,
+      "sha256": "00a623a88d3a7a115526e3701998edad1a29a66513e561658568de2086ea2613"
+    },
+    "run_beta_tests_windows.bat": {
+      "size": 100,
+      "sha256": "be9dcf70495277e2efdea081995c794937994f1d668fd1c6e95f8e0404c3a5a8"
+    },
+    "start_admin_mac_linux.sh": {
+      "size": 72,
+      "sha256": "9805353b713a4f5278cd7b44c4ee917ce66a7e83e961fab48a300cee3d77c8c0"
+    },
+    "start_admin_windows.bat": {
+      "size": 549,
+      "sha256": "5247a1faea676338db4b63778bf70c4e17ee098cf14b97c5ca0919a8bcd0dd55"
+    },
+    "storefront/admin/assets/admin.css": {
+      "size": 14074,
+      "sha256": "50eef75a212428ba24f24b1f7aacb2c78da6f7090fff0fb4f18d88f9b55d4ca7"
+    },
+    "storefront/admin/assets/admin.js": {
+      "size": 29140,
+      "sha256": "2f84d97cea43c3e6c82cfaee782030921902f079f6854e769b28961befbd8f62"
+    },
+    "storefront/admin/index.html": {
+      "size": 4239,
+      "sha256": "9a6cdf759480145c8276fb4e801c192c2253e83c8a839c1408c24b551035e793"
+    },
+    "storefront/admin/recipe-media.html": {
+      "size": 18002,
+      "sha256": "ebb5a2f9bcf9b9eddff76739930207c54d23fe3d9814d642e6d963467551f7cc"
+    },
+    "storefront/android/index.html": {
+      "size": 25316,
+      "sha256": "3ed876be926f043092bd202fe68a368174fbf5da87ded669ad98bb153ba8d816"
+    },
+    "storefront/assets/css/market-story-v5.css": {
+      "size": 12672,
+      "sha256": "c6e9f5349f80a275f2dc2863823bf396719abdefcbe5d8dbda9734b396af3243"
+    },
+    "storefront/assets/css/recipe-media.css": {
+      "size": 1229,
+      "sha256": "24b3a93b9cb41c52c1c793ea1b2d6ed23ab348804283748fa7173ec478015266"
+    },
+    "storefront/assets/css/style.css": {
+      "size": 27091,
+      "sha256": "b24dc4ff2491340fbf7ed8e4c603e883b1821eb88b25eb9f53788909673798cb"
+    },
+    "storefront/assets/images/beef.webp": {
+      "size": 77602,
+      "sha256": "ff81b941c1131c4b5b48be571df7d63f98b55f59704f0284f1abdde6cbb642e3"
+    },
+    "storefront/assets/images/fruit.webp": {
+      "size": 58078,
+      "sha256": "036dddc6d3034e7bec9766c46cd68ede98d272330077ccf990b0f74c0b151db9"
+    },
+    "storefront/assets/images/hero-market.webp": {
+      "size": 318710,
+      "sha256": "ffe324c729a2369a62ddf5560541cf6e4bc895ca886e7a55aca2764817846ff3"
+    },
+    "storefront/assets/images/icon-192.png": {
+      "size": 1373,
+      "sha256": "72aa5c77218a3adef424042edb72fb1c80fad0d94dcf092f6f15930af99a2251"
+    },
+    "storefront/assets/images/icon-512.png": {
+      "size": 3932,
+      "sha256": "a8e82e22187d3631a7b728ece6ea8b70ffa20f8004c3646d790df5fcc9f90684"
+    },
+    "storefront/assets/images/king-crab.webp": {
+      "size": 83300,
+      "sha256": "8e505393b54e9369abdbc516a465a3720d640f3522312f16a80d01ada6833537"
+    },
+    "storefront/assets/images/market.webp": {
+      "size": 58872,
+      "sha256": "638f3080f4714dd751cd698658be875d08d5cb2bb753ce70ae7d8229e01fa832"
+    },
+    "storefront/assets/images/product-bajirak.webp": {
+      "size": 64184,
+      "sha256": "6a45547919e1dfae48af135e5f16a958b919ed995f458fefb467143b44a57348"
+    },
+    "storefront/assets/images/product-bangeo-hoe.webp": {
+      "size": 71994,
+      "sha256": "82b596e9c99d7a4332fc1974f1d39b4e26aefc2a04449dc70dec579f7070678a"
+    },
+    "storefront/assets/images/product-chadol.webp": {
+      "size": 96596,
+      "sha256": "bd01a54cb76a6f3302f64744eb536265b031e7c16e6bb9539d2645203f80efff"
+    },
+    "storefront/assets/images/product-chamchi.webp": {
+      "size": 56454,
+      "sha256": "7b7e8299d68399de98850e478c5a4b60ccb43d766e8e2afd3fbb78f365fae979"
+    },
+    "storefront/assets/images/product-chamdom-hoe.webp": {
+      "size": 55502,
+      "sha256": "e22adbbdbe7382636abfb06695ffd12d95c2559868508fe32355cfc1ce653bff"
+    },
+    "storefront/assets/images/product-cheonggyul-cheong.webp": {
+      "size": 66662,
+      "sha256": "ed2a30f731bf7a70a52905f7e0dfc658176bd55a4514858c02b4266f913932e6"
+    },
+    "storefront/assets/images/product-chojang.webp": {
+      "size": 63750,
+      "sha256": "893fabd3461565f00300b3445c2b553e9142038921ad1688df1c2c48bd36e9b1"
+    },
+    "storefront/assets/images/product-corndog-cheese.webp": {
+      "size": 67546,
+      "sha256": "a33f13db55e8df0228330cba5e705006bb50a7817c6f82c337da76e3452bfab1"
+    },
+    "storefront/assets/images/product-daege.webp": {
+      "size": 91066,
+      "sha256": "b7ba85bcd45353e4f27957d06ae9f20d5d68de537e9e8b3f71db4a5f1a920eb1"
+    },
+    "storefront/assets/images/product-ddak-saeu.webp": {
+      "size": 94500,
+      "sha256": "277a0de1545ac1b4cfe6f61e57ba78e5f4e272b028cdfd3f3d390fe2eb7ec87f"
+    },
+    "storefront/assets/images/product-deungsim.webp": {
+      "size": 89816,
+      "sha256": "ebd7a8f3076d88dd34d78fe5ce20b7d2180491c15f071f6328d0f4150a2e9d72"
+    },
+    "storefront/assets/images/product-fri-hoesik.webp": {
+      "size": 58040,
+      "sha256": "d46d743b7bbdaffc93e1d32bc74d24389b6a3d75b9ca31081efb3307a02f641d"
+    },
+    "storefront/assets/images/product-gamgyul.webp": {
+      "size": 64866,
+      "sha256": "022787ee635b47d312b4fa9d19b40f888a501d2c0f167e8ac6a56cc13c431c2f"
+    },
+    "storefront/assets/images/product-gamtae-ssam.webp": {
+      "size": 57284,
+      "sha256": "e3634a3b56f911c9ae19f088c4514ac9e6d59f29ae336f40a0b41d3051f208c1"
+    },
+    "storefront/assets/images/product-garibi.webp": {
+      "size": 97994,
+      "sha256": "0c8edefe3d3be7e48fa1ae5d0e53532946cede7a6cd635d0794fce368b9baf95"
+    },
+    "storefront/assets/images/product-gwang-eo.webp": {
+      "size": 69678,
+      "sha256": "eebaae0f3f3caff6f524edbc3fd97bcc2bc56c2d43a9a9fb66dee6733a4bae65"
+    },
+    "storefront/assets/images/product-hanwoo-yukhoe.webp": {
+      "size": 92532,
+      "sha256": "5d2a86351879269b884ecba6557b6e89f03bbf0bc8283a659bf0c1d81b7e28dd"
+    },
+    "storefront/assets/images/product-highball-set.webp": {
+      "size": 66048,
+      "sha256": "bc5ee1c75af605f8e6423a76f5361d4b7c63f7a35cf0dc529e4c519390b3a940"
+    },
+    "storefront/assets/images/product-hoe-maeuntang.webp": {
+      "size": 56722,
+      "sha256": "c3af07b82daafa7bc4c54bab064308a343933fd0f5ada6cad364d8ec4803102e"
+    },
+    "storefront/assets/images/product-homakase-sub.webp": {
+      "size": 54704,
+      "sha256": "a60807a6d896fe5ab02e74c51e0fb40e40f5074e077788bf5d61180e85be7746"
+    },
+    "storefront/assets/images/product-huinsaeu.webp": {
+      "size": 92954,
+      "sha256": "7c04cc46c462cb48939b53a2a2107e1f8a8176bb484466e912db4127a384637c"
+    },
+    "storefront/assets/images/product-jeonbok.webp": {
+      "size": 95336,
+      "sha256": "6e5f5f492c106c03d35dd6672245961f0f7cd28611b736ae08266f8fe848e870"
+    },
+    "storefront/assets/images/product-king-crab-a.webp": {
+      "size": 97376,
+      "sha256": "f324d10fe9e8172c8b1391a85c9434921add4001b3b673f07515b6fde82f5113"
+    },
+    "storefront/assets/images/product-maesil-cheong.webp": {
+      "size": 62668,
+      "sha256": "622fcf7db52c24195f6b4b11f3c62190024478a51610ad34af63c11944c9b9db"
+    },
+    "storefront/assets/images/product-maeuntang-geori.webp": {
+      "size": 67410,
+      "sha256": "208ddd32b4332fd73fc9f94dedbb1b0371eb2d0957813ab5dd50d365af7b37ec"
+    },
+    "storefront/assets/images/product-maeuntang-sauce.webp": {
+      "size": 68510,
+      "sha256": "c01ff0091ac63181a203ad2822297ebdc535fb8461e3e54ff1b422268b1b0c19"
+    },
+    "storefront/assets/images/product-maeuntang-yachae.webp": {
+      "size": 61810,
+      "sha256": "6afc7b1f30f0e71a99a09a47e97c69f2bf57c740996919bd9c626207a0750ce0"
+    },
+    "storefront/assets/images/product-makjang.webp": {
+      "size": 66718,
+      "sha256": "8dfe0630654473507b671aeb16e64282d409fb1c8f3f66d36b9f5381157930af"
+    },
+    "storefront/assets/images/product-mulhoe-pack.webp": {
+      "size": 58240,
+      "sha256": "859de0ad3b08a5840af1ba64b99c13ce0bf39f04f92c202bd26ad79b5a42e2ce"
+    },
+    "storefront/assets/images/product-mun-eo.webp": {
+      "size": 68042,
+      "sha256": "01fb48b39f00b37531b1151d981692f2f5df6e50600b5aa253f84ef1687d332f"
+    },
+    "storefront/assets/images/product-o-jing-eo.webp": {
+      "size": 64774,
+      "sha256": "b6a64ebab7d134f4ea7c19b12e607d14f09d6ac71f5f39180c7b54535451593c"
+    },
+    "storefront/assets/images/product-office-lobster.webp": {
+      "size": 56180,
+      "sha256": "d89e11a891a3b60209f2d18f3a163bb71044c834b65c85ba8a3a2b89f8ac60f5"
+    },
+    "storefront/assets/images/product-saeng-wasabi.webp": {
+      "size": 64656,
+      "sha256": "6edfb9c5ffd1c6d3d110d886da0a23dd5db310cadefb42a8b408273e31ce7c85"
+    },
+    "storefront/assets/images/product-samgyeop.webp": {
+      "size": 96022,
+      "sha256": "5597faa59135983dfead303ad3e93ff813ad738d1f521db5ed6d61cc54cc9912"
+    },
+    "storefront/assets/images/product-shine-muscat.webp": {
+      "size": 66310,
+      "sha256": "215d7ec6624bd810af475bc973d828c3a5c2dad081bf67d9d78b0970ae1b8d23"
+    },
+    "storefront/assets/images/product-so-galbi.webp": {
+      "size": 91038,
+      "sha256": "d1531631403d0b168b0eb0dd1c1118e7e9329c093370a7913e572bfd0fe1d8dc"
+    },
+    "storefront/assets/images/product-sonjil-yachae.webp": {
+      "size": 63438,
+      "sha256": "cf47024f190fd5d9611c4f463bac6cf301e4f3f4dd89d6b95c14812b710fa458"
+    },
+    "storefront/assets/images/product-ssam-mo-dum.webp": {
+      "size": 66774,
+      "sha256": "d5635c94f65c924679141593d0ee36d96fb2e84914b6c0c44157b1ae9cd31218"
+    },
+    "storefront/assets/images/product-sushi-pack.webp": {
+      "size": 56878,
+      "sha256": "029d80031a0d090a380f64af2b64f617b4c9709a83f0776c2282b4381b5d232a"
+    },
+    "storefront/assets/images/product-teheran-premium.webp": {
+      "size": 59326,
+      "sha256": "6a53df9fe05dfa59a40762ff57007160fdc3a6fd9665e4fa95c1bd0d39b22c01"
+    },
+    "storefront/assets/images/product-ttalgi.webp": {
+      "size": 62196,
+      "sha256": "89d0a7b41b875e2175166a751d09bbc10dafc87f0a9c21a688b5e6b2dfb5a389"
+    },
+    "storefront/assets/images/product-uni.webp": {
+      "size": 69986,
+      "sha256": "b6236157cc8c56de0e3e2070bc01d02c3dba4b86d991339197ae24aa02c14bf7"
+    },
+    "storefront/assets/images/product-yeon-eo.webp": {
+      "size": 56242,
+      "sha256": "34f6afbee29eb64794b311bff514cc44468176d26b42c16c6dce7728f3b03b4b"
+    },
+    "storefront/assets/images/product-yuk-sashimi.webp": {
+      "size": 93394,
+      "sha256": "f1a64b96f2a164df676db7da7e91dbe405b83ddffe881d6b266f1c9e4004ec7f"
+    },
+    "storefront/assets/images/recipes/recipe-001.webp": {
+      "size": 91552,
+      "sha256": "3d7f74579e04250e42474b4fbbe21cde1fb71461e42a4120c70b8e6aca2300c5"
+    },
+    "storefront/assets/images/recipes/recipe-002.webp": {
+      "size": 134684,
+      "sha256": "e4f2151dd73db9610ef4cd5586f1c134b41d82e41b01b9905fb06e882f89dfe0"
+    },
+    "storefront/assets/images/recipes/recipe-003.webp": {
+      "size": 112270,
+      "sha256": "06e69f53907b10ecd9a7229cded137a663912410e91052a976a008774408f831"
+    },
+    "storefront/assets/images/recipes/recipe-004.webp": {
+      "size": 138966,
+      "sha256": "2607cc809b7200b3b05e8eb4d97b7e6798f32bd359f057e934dd3130d9c82a1c"
+    },
+    "storefront/assets/images/recipes/recipe-005.webp": {
+      "size": 86578,
+      "sha256": "f3f1c3cd524f9fa1a485df9a34c9e11b212b8dba1daecd32a81d84db154a417b"
+    },
+    "storefront/assets/images/recipes/recipe-006.webp": {
+      "size": 124570,
+      "sha256": "5b37aa0356856500d4b6b5dac5be644b92de38536198ea014bf0e1684b6744e5"
+    },
+    "storefront/assets/images/recipes/recipe-007.webp": {
+      "size": 87898,
+      "sha256": "fd0ab53053f6d5cfae52fd79b5eab76539ad8a39e79bdc002839615bb073a2f6"
+    },
+    "storefront/assets/images/recipes/recipe-008.webp": {
+      "size": 143288,
+      "sha256": "1e05cdcb48c5bd53a44bd20ee1ffe193c7bd85868b57d0707e51d4b160b122ad"
+    },
+    "storefront/assets/images/recipes/recipe-009.webp": {
+      "size": 100206,
+      "sha256": "2a6c7a9941e7a871672adc3cc024c9e9d0224f7bf5523cc9c0e4562c53f96c52"
+    },
+    "storefront/assets/images/recipes/recipe-010.webp": {
+      "size": 87500,
+      "sha256": "5dc189816985b254972f6a9f9415234663660952cbb5fb08ac5b107a8d7be55a"
+    },
+    "storefront/assets/images/recipes/recipe-011.webp": {
+      "size": 101022,
+      "sha256": "54de30cceadaeb9118601794fda5eceaedf1fda43f31291e8de36f6495067de4"
+    },
+    "storefront/assets/images/recipes/recipe-012.webp": {
+      "size": 123380,
+      "sha256": "09a8dcf109855611809b54abc390ab1c8a02a98f187b8660209bd4e898b46b27"
+    },
+    "storefront/assets/images/recipes/recipe-013.webp": {
+      "size": 99564,
+      "sha256": "18e878f821b27965af4a1b0fa5612ca4ed81ea4b2c6b4bad6e7d0de5fce96ab4"
+    },
+    "storefront/assets/images/recipes/recipe-014.webp": {
+      "size": 116164,
+      "sha256": "0eb15e28aa4c4ac5e90adcf7a55cf20f299eaedb989001f81b58f89a3d88c323"
+    },
+    "storefront/assets/images/recipes/recipe-015.webp": {
+      "size": 114230,
+      "sha256": "6e3b317a0f67df5a78e07037fdb6da5604bfd5477d0a1603104ff3b312101adc"
+    },
+    "storefront/assets/images/recipes/recipe-016.webp": {
+      "size": 111030,
+      "sha256": "b72cd9d3fa5b5a2e0157c289d18918dbf1887c4a6942043defdc59ae6f778400"
+    },
+    "storefront/assets/images/recipes/recipe-017.webp": {
+      "size": 86762,
+      "sha256": "af1fc9b6621ceb8bd33de1775e2fb744494c2f7805a645cb6d8f1031878a0469"
+    },
+    "storefront/assets/images/recipes/recipe-018.webp": {
+      "size": 113200,
+      "sha256": "a9e07a163e420148fc22aff49607275dd7da71f389bbedeaa0c46a3e05d78e0d"
+    },
+    "storefront/assets/images/recipes/recipe-019.webp": {
+      "size": 100948,
+      "sha256": "90881680c5d671806e92818ee4ad0de1e5e21b14ab691b9728ddc4dee96fd512"
+    },
+    "storefront/assets/images/recipes/recipe-020.webp": {
+      "size": 87310,
+      "sha256": "4cff3a9a876f3c142667b494a2103775feae435295d9fa6decd956cba7fad581"
+    },
+    "storefront/assets/images/recipes/recipe-021.webp": {
+      "size": 113324,
+      "sha256": "cdce7cf6b48d1472eb83d0d5b07530c452d1f6efa232808505a3dcbe3575d6ef"
+    },
+    "storefront/assets/images/recipes/recipe-022.webp": {
+      "size": 80838,
+      "sha256": "177105bfd8177d7878403097038cd6d5c6af85bfb1543bb2c6ae3fffdf49f5b4"
+    },
+    "storefront/assets/images/recipes/recipe-023.webp": {
+      "size": 100404,
+      "sha256": "f8633a06fe27333063c210666e00ee8c61f69b7d0f6f9a5a5dab2acff5f9f5f1"
+    },
+    "storefront/assets/images/recipes/recipe-024.webp": {
+      "size": 119940,
+      "sha256": "6a5588d3eaa7ca49787b840997923c512c29a82c0f80d5209ad423ca519653da"
+    },
+    "storefront/assets/images/recipes/recipe-025.webp": {
+      "size": 111916,
+      "sha256": "dd8640f3947a9698d28fd91581704814d4bae5ecebec318dfa109272efe1afbd"
+    },
+    "storefront/assets/images/recipes/recipe-026.webp": {
+      "size": 108520,
+      "sha256": "436772e633b1aba885ea5e73480b83cc604733e223c6134fbb344a8ee4ae7502"
+    },
+    "storefront/assets/images/recipes/recipe-027.webp": {
+      "size": 112824,
+      "sha256": "b7ea89c8ecdad2ebae8232bf39c5142e550901ec6098093b228c8250e548a7e9"
+    },
+    "storefront/assets/images/recipes/recipe-028.webp": {
+      "size": 96630,
+      "sha256": "c29491cc9e71efde8c394b71c63d753cc1daa86440ad6f8dbbe5bdf295036804"
+    },
+    "storefront/assets/images/recipes/recipe-029.webp": {
+      "size": 147868,
+      "sha256": "1d67a38ab86d6d63a60c486aa6b84bf82bedc2cbfc90981e9fb95cf0ccec7295"
+    },
+    "storefront/assets/images/recipes/recipe-030.webp": {
+      "size": 120602,
+      "sha256": "ea801aa8c72f2f553ff10a244bcb319d04a8c52315071191988e55a045a1dd85"
+    },
+    "storefront/assets/images/recipes/recipe-031.webp": {
+      "size": 89470,
+      "sha256": "cac43ef197e2ca19fc512e58a6fa37c4d97e12f4853fd2710582ca87537baf66"
+    },
+    "storefront/assets/images/recipes/recipe-032.webp": {
+      "size": 104646,
+      "sha256": "3b0769bbae34eda9bf70a1a132d3946b93cd86bf7bd6edcd509a0db7d80ed34c"
+    },
+    "storefront/assets/images/recipes/recipe-033.webp": {
+      "size": 124722,
+      "sha256": "bd035dd057022efb0128299a116fcfa2b79dc919499d1788cfa0ce3d3e4f5394"
+    },
+    "storefront/assets/images/recipes/recipe-034.webp": {
+      "size": 144790,
+      "sha256": "00860e53516421e7600611546b5482befa1347846c84c3b6fefa0fca7fa39c27"
+    },
+    "storefront/assets/images/recipes/recipe-035.webp": {
+      "size": 109652,
+      "sha256": "5d1f5860869acce0c8f771e32d9adea58cbd9f6cdc534a7fe6f8c4d3f3c4cda5"
+    },
+    "storefront/assets/images/recipes/recipe-036.webp": {
+      "size": 145590,
+      "sha256": "b03d0e17f33738e5459f35bf34a0b6bf61ee48a19a6e540927d95b60ff1c7fd5"
+    },
+    "storefront/assets/images/recipes/recipe-037.webp": {
+      "size": 95860,
+      "sha256": "e0a1ab769c01c478de2226bd3f9f7434e1ebb5769c34d5e2764f8297b6f981a4"
+    },
+    "storefront/assets/images/recipes/recipe-038.webp": {
+      "size": 99086,
+      "sha256": "011cd6f51bb7393536076b413bda138e9addb08a57f65c351f63a1928e1da7d3"
+    },
+    "storefront/assets/images/recipes/recipe-039.webp": {
+      "size": 120736,
+      "sha256": "0c1f859a879490e3e2e66281451fdfaca25a5a11143646002f84526092aa1975"
+    },
+    "storefront/assets/images/recipes/recipe-040.webp": {
+      "size": 82474,
+      "sha256": "3fbacc9ec2eee643d1a077a198f6ec45639084cf923ad66d11cd732689e3fb38"
+    },
+    "storefront/assets/images/recipes/recipe-041.webp": {
+      "size": 89494,
+      "sha256": "80797f79ee84e0eb057cd8a69a4268a420dfceb4a4224bf23cf4a58c3541a833"
+    },
+    "storefront/assets/images/recipes/recipe-042.webp": {
+      "size": 114184,
+      "sha256": "c6b3af30efb64c3a9a9d7420e2a3ff8e09e3159988d4e95b66bf12cc61e4316d"
+    },
+    "storefront/assets/images/recipes/recipe-043.webp": {
+      "size": 88810,
+      "sha256": "700280c815d197cc897df3238e84b342a15aa9b01d3d65ad3ae8ef80c93a632a"
+    },
+    "storefront/assets/images/recipes/recipe-044.webp": {
+      "size": 139480,
+      "sha256": "a34c636dc7fd30049e6ca6bc4bda7199c80b6f35dd9994e623b04048b75f2011"
+    },
+    "storefront/assets/images/recipes/recipe-045.webp": {
+      "size": 106206,
+      "sha256": "a9444dd550af2a8e52dbeb59e7e4fad8a35a33ac6eadb3f64ba027207c469c7a"
+    },
+    "storefront/assets/images/recipes/recipe-046.webp": {
+      "size": 124408,
+      "sha256": "01dfe53934553ad8812cc2a4dd875fca29b9d5179996b0d20c00f4ce6cfa9418"
+    },
+    "storefront/assets/images/recipes/recipe-047.webp": {
+      "size": 88024,
+      "sha256": "7d96fa3e7b6339739081b8975bc37619ff70883df82efb55a85e3ee76ce173b4"
+    },
+    "storefront/assets/images/recipes/recipe-048.webp": {
+      "size": 119896,
+      "sha256": "337ad333a8073ac3f9b29cef584e90bea8adf70a25a07ac41cecab31dd234497"
+    },
+    "storefront/assets/images/recipes/recipe-049.webp": {
+      "size": 82908,
+      "sha256": "115b9ee145e8b00946d83f8f6f11dbdf1974d94beb85b6195c1a113a079419a8"
+    },
+    "storefront/assets/images/recipes/recipe-050.webp": {
+      "size": 108154,
+      "sha256": "433e42a655e2858dde6107bafa1c8e737699befcd24afa39d39dc555bf9a6e95"
+    },
+    "storefront/assets/images/recipes/recipe-051.webp": {
+      "size": 113028,
+      "sha256": "9b139d0cafb62423540c8538328f1bd9e96070d63e582b626c68e6397d075ce2"
+    },
+    "storefront/assets/images/recipes/recipe-052.webp": {
+      "size": 90188,
+      "sha256": "9df2d504a8ffa1bfa56f72482c55b08f5b690cd44908d06e90893915841ecb27"
+    },
+    "storefront/assets/images/recipes/recipe-053.webp": {
+      "size": 110130,
+      "sha256": "034c11690a3b3f4ca7202dd2e77f86f2c078e0144a8f7eabdd65139177fab0cf"
+    },
+    "storefront/assets/images/recipes/recipe-054.webp": {
+      "size": 117834,
+      "sha256": "703cfd1fd66d4a8b06c7050da2d22e3178a39ee61001df8aa93f5d7998fe66c8"
+    },
+    "storefront/assets/images/recipes/recipe-055.webp": {
+      "size": 103972,
+      "sha256": "1538f73be83f6bc37acfa509356846a8d05ca8ed52e20ef224bb3c7747b427a2"
+    },
+    "storefront/assets/images/recipes/recipe-056.webp": {
+      "size": 111438,
+      "sha256": "aa1650db48afb95e281e3b52269d6faf45f7c8492723b9d6290824d86ef4ba58"
+    },
+    "storefront/assets/images/recipes/recipe-057.webp": {
+      "size": 114780,
+      "sha256": "fc0aa27ff479baddbcf63e499528407be4fa67519c31749d8ef8b58078735de9"
+    },
+    "storefront/assets/images/recipes/recipe-058.webp": {
+      "size": 86532,
+      "sha256": "3be00309e4de866c07804e1df267d970fc964cd21e5e9f59470e1eea183ed4f1"
+    },
+    "storefront/assets/images/recipes/recipe-059.webp": {
+      "size": 86244,
+      "sha256": "7402a34ffb89be5150e9c886162c1dc0183ae0b4178054e65d1d2f25672ae0f2"
+    },
+    "storefront/assets/images/recipes/recipe-060.webp": {
+      "size": 115114,
+      "sha256": "b81e18d076441c6cc01b637d257e17759585c6166c0bafc768424a5f229fc8cd"
+    },
+    "storefront/assets/images/recipes/recipe-061.webp": {
+      "size": 90714,
+      "sha256": "63c66f555e2e3e65b94c688c36a89c8d7bd18b5ae902c1d4aaa239fbae122e68"
+    },
+    "storefront/assets/images/recipes/recipe-062.webp": {
+      "size": 85232,
+      "sha256": "bf93f1a42f4b824a6aeb2d0d15266f838e213f485267b04853882f903fea7daa"
+    },
+    "storefront/assets/images/recipes/recipe-063.webp": {
+      "size": 114512,
+      "sha256": "663d30115108a341c7494b52019b819c80ac9547d79a19b7311ca849953a1e30"
+    },
+    "storefront/assets/images/recipes/recipe-064.webp": {
+      "size": 147272,
+      "sha256": "c8b9c474074eefd75fdd55be4534f32d3bf9d913136d9bc9d3ee38d689818ead"
+    },
+    "storefront/assets/images/recipes/recipe-065.webp": {
+      "size": 127380,
+      "sha256": "7024eb2e7779d84dfeb8df1cf1aa8ae4038fb8230c20478ee8d34c3198470d40"
+    },
+    "storefront/assets/images/recipes/recipe-066.webp": {
+      "size": 118502,
+      "sha256": "c58dbdf938104275018b0fb331d0d2751f8902b2d09000c27bcc0e81590630d5"
+    },
+    "storefront/assets/images/recipes/recipe-067.webp": {
+      "size": 93418,
+      "sha256": "0e100657965cb528535959b86202f07d3a4e624ba7bd200143afe20d144347da"
+    },
+    "storefront/assets/images/recipes/recipe-068.webp": {
+      "size": 127416,
+      "sha256": "f9a7acc4e64cd7c3cd9e80befdb3d3842f149148b08f6872059c5bbcdfc65e5b"
+    },
+    "storefront/assets/images/recipes/recipe-069.webp": {
+      "size": 117484,
+      "sha256": "8b37cdf3269f395cadc3038976beec4bfa26d5ab2f5ad95531db5c3315113d50"
+    },
+    "storefront/assets/images/recipes/recipe-070.webp": {
+      "size": 119126,
+      "sha256": "bdb8a2e4302364758692628e408bebcbef242303bc91a8c45e513404bdc0478d"
+    },
+    "storefront/assets/images/recipes/recipe-071.webp": {
+      "size": 113134,
+      "sha256": "2561f8eee3d7bca422bfd79c1eb4670057c352e753fa5fc1e3ad1904b1e73687"
+    },
+    "storefront/assets/images/recipes/recipe-072.webp": {
+      "size": 124292,
+      "sha256": "3bde37521c71c237318b43b1c9d080e66dae15dd8cd02807484ab6f09286636f"
+    },
+    "storefront/assets/images/recipes/recipe-073.webp": {
+      "size": 96720,
+      "sha256": "632140933b7ff97e73df763cdfda2b56d9ac84415dd853fdb382749b2f1bd27c"
+    },
+    "storefront/assets/images/recipes/recipe-074.webp": {
+      "size": 102070,
+      "sha256": "01b87a84109c550737292ad7818188d1becce1444ffd3d1f031f2720452aea7e"
+    },
+    "storefront/assets/images/recipes/recipe-075.webp": {
+      "size": 118530,
+      "sha256": "ffddbdc8c55996ad037f5d1faa40b4636cd11a3a67a22e7ac90742aa6061005a"
+    },
+    "storefront/assets/images/recipes/recipe-076.webp": {
+      "size": 108162,
+      "sha256": "7c0aa0c5d3c86a45d0adc84d6bb35d67f2f4b309c44058b9d0287a231d38eb01"
+    },
+    "storefront/assets/images/recipes/recipe-077.webp": {
+      "size": 130940,
+      "sha256": "acdb119029605c65501a7e1687ea54665e9d849f43c0798232c8d1f4213a05e8"
+    },
+    "storefront/assets/images/recipes/recipe-078.webp": {
+      "size": 114106,
+      "sha256": "289b36b207b2293b28596896f221a93f0d4bdfc21f0b58d7e5f783fcca79b77c"
+    },
+    "storefront/assets/images/recipes/recipe-079.webp": {
+      "size": 88234,
+      "sha256": "2acca34e2ff323d3231b07bfd1bd8ebbb64b546adf9df095b7584fb4054d8d7b"
+    },
+    "storefront/assets/images/recipes/recipe-080.webp": {
+      "size": 150546,
+      "sha256": "daab555861c6a985c493a0d50ab20803aa44b6965a1aaf87b8f81abdffba782e"
+    },
+    "storefront/assets/images/recipes/recipe-081.webp": {
+      "size": 126416,
+      "sha256": "653950188d56e7c83cfca6f141bee48189ec64c2fc85e3f2ed43959aa91a37fa"
+    },
+    "storefront/assets/images/recipes/recipe-082.webp": {
+      "size": 127718,
+      "sha256": "cfc5df03910bd2cf808940468b4315f8bdee4de6a3064fb594647edcc979e636"
+    },
+    "storefront/assets/images/recipes/recipe-083.webp": {
+      "size": 140646,
+      "sha256": "e47e5f8d39901f2b87240890a70c59830ba883de75ae5366d41e94ab7a96b561"
+    },
+    "storefront/assets/images/recipes/recipe-084.webp": {
+      "size": 115644,
+      "sha256": "809eb57d769bac50f3ea526b218d4dd1186069901e6d619f5506ac1d1d0e81e8"
+    },
+    "storefront/assets/images/recipes/recipe-085.webp": {
+      "size": 139604,
+      "sha256": "a86edcb5cf356ea65b72cb99bb4b21716a917f1dc8bc3538ba2e30ed5629a94c"
+    },
+    "storefront/assets/images/recipes/recipe-086.webp": {
+      "size": 135948,
+      "sha256": "712956e2f44fd213575f3795a644dcccd60db7bd3138bfd1c8f483a58a132b72"
+    },
+    "storefront/assets/images/recipes/recipe-087.webp": {
+      "size": 114004,
+      "sha256": "2454c93c983ed2f591165637f8eca73f837ff0c619c76e615d204482f093cbdb"
+    },
+    "storefront/assets/images/recipes/recipe-088.webp": {
+      "size": 94864,
+      "sha256": "afc615757c8f15357ef3f4535c7f32db1258650315ee80476ae6464cd3cab34b"
+    },
+    "storefront/assets/images/recipes/recipe-089.webp": {
+      "size": 96284,
+      "sha256": "63da4b8c20b9c0db0fc8277f1ff3421765f1c98645815662d5ecfd4392963aba"
+    },
+    "storefront/assets/images/recipes/recipe-090.webp": {
+      "size": 91000,
+      "sha256": "da593b58b4d79070f9c07f25bb0d3282fafe8c131b20f581a986b9fbb0ccdc0a"
+    },
+    "storefront/assets/images/recipes/recipe-091.webp": {
+      "size": 96972,
+      "sha256": "dc28d111a146b82cba4acebc0baa51dd8bc1290be704331f17eda9b0858ec3a1"
+    },
+    "storefront/assets/images/recipes/recipe-092.webp": {
+      "size": 92810,
+      "sha256": "f404734d780ed78a3acf4fc1eaf2a4abc8c9e81341bcd5a16334268c718242a9"
+    },
+    "storefront/assets/images/recipes/recipe-093.webp": {
+      "size": 120836,
+      "sha256": "e938e3209cc5d6a05e53a49510459982f6460b242fe9e12f21f05132bf7f601b"
+    },
+    "storefront/assets/images/recipes/recipe-094.webp": {
+      "size": 89736,
+      "sha256": "ba25c97140127ab03e0a96903db5abd21b06301c29443849c4389e86fd28df71"
+    },
+    "storefront/assets/images/recipes/recipe-095.webp": {
+      "size": 137384,
+      "sha256": "b729169df2968e70880d7029f67d10f9c6879ddf64305e914619f7673d2ddf90"
+    },
+    "storefront/assets/images/recipes/recipe-096.webp": {
+      "size": 148704,
+      "sha256": "a97ab1a53e860d560740adef536f52243ba152d2e99c547faface582b0a55eff"
+    },
+    "storefront/assets/images/recipes/recipe-097.webp": {
+      "size": 113096,
+      "sha256": "bc358c5f8766bba784128ed3d84b44496148c00d3cfda1d3472f720affdd58b8"
+    },
+    "storefront/assets/images/recipes/recipe-098.webp": {
+      "size": 96542,
+      "sha256": "219b4218b58382532e7384bfc04404bbe695ca6ed575da507f37ff1693db6e1f"
+    },
+    "storefront/assets/images/recipes/recipe-099.webp": {
+      "size": 120528,
+      "sha256": "639a290869e9c87f8e4e76a002c29c8668dc1bcae01421a98687a68bd45e988f"
+    },
+    "storefront/assets/images/recipes/recipe-100.webp": {
+      "size": 146954,
+      "sha256": "6261f67ccb8c5d8be6bb82902ef54f7bbda33ed9863e8b62cd63ca65a1667957"
+    },
+    "storefront/assets/images/recipes/recipe-101.webp": {
+      "size": 99184,
+      "sha256": "893e18ab7290c03d58da8184e9131b80cfa607bc5bb07857c76304feb1a382cc"
+    },
+    "storefront/assets/images/recipes/recipe-102.webp": {
+      "size": 93564,
+      "sha256": "371e6e566af66dbd8fc6d3e777f7fc076ccc444a760d743046453e8a2d9bb4ae"
+    },
+    "storefront/assets/images/recipes/recipe-103.webp": {
+      "size": 93310,
+      "sha256": "d92b9efa6d7c2f2a3baf7dc14aa6fe1c487c0252165a0efde183d83414ded530"
+    },
+    "storefront/assets/images/recipes/recipe-104.webp": {
+      "size": 98620,
+      "sha256": "acad4834b60f2142bca70d11aafe74162a602171a6e4f97dc881f6e46ced7907"
+    },
+    "storefront/assets/images/recipes/recipe-105.webp": {
+      "size": 86038,
+      "sha256": "101e6f658db66c40b723ce98d84828e41fbe41f403b3a66f676ba09a58fabeac"
+    },
+    "storefront/assets/images/recipes/recipe-106.webp": {
+      "size": 102364,
+      "sha256": "909416a1787dd237f97998176ef3bf388dc3ab4b7b155f0160f36b03a6c224a2"
+    },
+    "storefront/assets/images/recipes/recipe-107.webp": {
+      "size": 105670,
+      "sha256": "272ec87f2fa91146073a4fd1c9a3991857a5ef8346efa367cab6606d63ba7a86"
+    },
+    "storefront/assets/images/recipes/recipe-108.webp": {
+      "size": 99400,
+      "sha256": "8d65b704e0a745534f689233d3767d9daa9cce6a7716ab967ee8e5dd42ecdb23"
+    },
+    "storefront/assets/images/recipes/recipe-109.webp": {
+      "size": 97586,
+      "sha256": "3f55c5cdc72345c534fc6e016908f3e665c4ab3e815926ebd58c9bfe028bbe10"
+    },
+    "storefront/assets/images/recipes/recipe-110.webp": {
+      "size": 93256,
+      "sha256": "ee02cbea02b98e5405db0c2f49c25ab04d7e2e7e75a5ed7d5ce9098b4d40268e"
+    },
+    "storefront/assets/images/recipes/recipe-111.webp": {
+      "size": 94854,
+      "sha256": "f4de4eef1d625c4222734a027b64f9eab4f7df701ae791bab776b044033087a7"
+    },
+    "storefront/assets/images/recipes/recipe-112.webp": {
+      "size": 103614,
+      "sha256": "50cce6f8c0207072fa5d3ef72233c62857bd363a0ab27300420acb7698f797f0"
+    },
+    "storefront/assets/images/recipes/recipe-113.webp": {
+      "size": 90858,
+      "sha256": "83415a3326f3f2a16b1fd5123fd9ddac12932b99b0bd2010a55d512363a9e81b"
+    },
+    "storefront/assets/images/recipes/recipe-114.webp": {
+      "size": 112312,
+      "sha256": "c9106ffc0c6bc2b9bb5c40a0105a4a9a4b754c01b2426a4c36e42b0121faffae"
+    },
+    "storefront/assets/images/recipes/recipe-115.webp": {
+      "size": 101858,
+      "sha256": "0d73517045d0fa5998c594e3683df34884fcb2e4b8ddf9976ef68742b1a48e7a"
+    },
+    "storefront/assets/images/recipes/recipe-116.webp": {
+      "size": 131768,
+      "sha256": "317c051497b4ba4a05c796b9e486deb086bbffabc812bd49c2d08953ba20b0fd"
+    },
+    "storefront/assets/images/recipes/recipe-117.webp": {
+      "size": 120832,
+      "sha256": "3cc5d9b407fabe163e08ad667af4ed266245dd0cea07f0c28d6a857082d201bf"
+    },
+    "storefront/assets/images/recipes/recipe-118.webp": {
+      "size": 105268,
+      "sha256": "6c7fe4a37b9a2c8ee0526b38997e140f37dfebc9027923bb432d8a3d5e5dbfa3"
+    },
+    "storefront/assets/images/recipes/recipe-119.webp": {
+      "size": 109628,
+      "sha256": "082b6baf9c0da438845d4c49d10f096365790f03988c8ee3024bbbdaba36afc7"
+    },
+    "storefront/assets/images/recipes/recipe-120.webp": {
+      "size": 114426,
+      "sha256": "2d06439fa7d5cf5dad33bb3c7256cb8d77c65aa55b3e4f26d59e7edc8a182012"
+    },
+    "storefront/assets/images/recipes/recipe-121.webp": {
+      "size": 104716,
+      "sha256": "32d193b0077c9ed72a4a5f541044ae1999b5ecf353b43020d5ce52880794a59b"
+    },
+    "storefront/assets/images/recipes/recipe-122.webp": {
+      "size": 102950,
+      "sha256": "7a4e9261da61a618d394b9676184d2fd37682e0c3274d1f97bb9ec399c0ef56c"
+    },
+    "storefront/assets/images/recipes/recipe-123.webp": {
+      "size": 106194,
+      "sha256": "2a9ecb71b224e579db1558c6175541d022c09a79c81bf5abfef97e28af812903"
+    },
+    "storefront/assets/images/recipes/recipe-124.webp": {
+      "size": 87390,
+      "sha256": "81e045c7227d043490fba04e9ab9b6a2fe5a2ed841992fa281d26ae091c9d27d"
+    },
+    "storefront/assets/images/recipes/recipe-125.webp": {
+      "size": 93494,
+      "sha256": "f4bbceaf376ce5388365ccc61db32499c3768b8d6e880964aa4845b03cb647d1"
+    },
+    "storefront/assets/images/recipes/recipe-126.webp": {
+      "size": 112634,
+      "sha256": "b4023289282fbccab02c38db89dac9a4dd541db45b3c83aa8b490576c144fd77"
+    },
+    "storefront/assets/images/recipes/recipe-127.webp": {
+      "size": 109352,
+      "sha256": "219642222db5bd862f0ea91203ea36e9fb863f45cd6e465f465697c84cfaee7a"
+    },
+    "storefront/assets/images/recipes/recipe-128.webp": {
+      "size": 95342,
+      "sha256": "28e2ab4a11a8ea2fe66de0576d8b50b7a56484d592955f6dca5bc217882ab6aa"
+    },
+    "storefront/assets/images/recipes/recipe-129.webp": {
+      "size": 103400,
+      "sha256": "63140ea3f0191b0bfedd561929df7514b7be1b0c2331370f453e40be103e509b"
+    },
+    "storefront/assets/images/recipes/recipe-130.webp": {
+      "size": 92280,
+      "sha256": "b5917cedabe04d1154c59a90459305a384049efca235e8b98c13d2e8d8bb7fcd"
+    },
+    "storefront/assets/images/recipes/recipe-131.webp": {
+      "size": 119568,
+      "sha256": "d2946238a48eb9c1070e1c49844c20496209dda4028cb28889cbddefbc7de9fd"
+    },
+    "storefront/assets/images/recipes/recipe-132.webp": {
+      "size": 92054,
+      "sha256": "2342fb5efd06ec2a55393138369a2ce36920ba5a42215251d382c49c64930e9b"
+    },
+    "storefront/assets/images/tuna.webp": {
+      "size": 46424,
+      "sha256": "3a882c39a140d07a1e3fdd21a7361699c59b114b73bbe524737665905f400daf"
+    },
+    "storefront/assets/images/white-fish.webp": {
+      "size": 53510,
+      "sha256": "fbe8414a254a985a19c4720fff222dc39a03de8220ffd9a381d00ab7ac026e30"
+    },
+    "storefront/assets/js/app.js": {
+      "size": 4147,
+      "sha256": "17b70f32658bfbe97b9514be5182e9ba77d34f0c079440d4a9f556212f132f1f"
+    },
+    "storefront/assets/js/commerce-bridge-v6.js": {
+      "size": 3920,
+      "sha256": "c13a881d29b18ef75fa98a14bfb349a9b96bc4ec615aa41ddd65c08591feed43"
+    },
+    "storefront/assets/js/garak-v3.js": {
+      "size": 5640,
+      "sha256": "99012932f023439c37840a34779c9a33dc767b80ec36073c8c4a5666740cf305"
+    },
+    "storefront/assets/js/market-story-v5.js": {
+      "size": 1396,
+      "sha256": "1e6513692fb87da1d4c346cd0f69ef1eefac540218d2116d8b612412d08c9c1d"
+    },
+    "storefront/assets/js/recipe-media.js": {
+      "size": 3284,
+      "sha256": "2e392ce46f681bfcb0545da35b08800111c8ec5b77e3388902de27b908281904"
+    },
+    "storefront/assets/products.json": {
+      "size": 13085,
+      "sha256": "fc31887e5edc7a10946d0711fbcfeda3b0586771c416fa5596a3cd5e6225457a"
+    },
+    "storefront/assets/recipes.json": {
+      "size": 230101,
+      "sha256": "053b9f97d460f27e89f58f50b290e1730dc0b0e4921f7a15217fd25e00345b8a"
+    },
+    "storefront/cart.html": {
+      "size": 23696,
+      "sha256": "6d183fc9b24ea958ad1dc93c490e1ab9c46aada0bc6a8dafecce68ffa8bbbec6"
+    },
+    "storefront/category/extras.html": {
+      "size": 27093,
+      "sha256": "e3e4374e2e7834299f186cf0414b3cca6b438b9afa01ee956ef2b4c6d7e8ea28"
+    },
+    "storefront/category/meat.html": {
+      "size": 26103,
+      "sha256": "a840e434eec0d53084c4de45bfd0cba1dd5f48555c0e07c93f2aa22a460382cd"
+    },
+    "storefront/category/produce.html": {
+      "size": 26171,
+      "sha256": "1f585b8a816a00704eda60cf5291ae760ee12f6021124abb482bd3b7f4d74720"
+    },
+    "storefront/category/seafood.html": {
+      "size": 30386,
+      "sha256": "b4493c134bce5908d17e727f5f46c3cd3f0b265c018ce3c63d0c030a68fc9bc5"
+    },
+    "storefront/category/sets.html": {
+      "size": 27158,
+      "sha256": "de3cabbb26cdd9ecf63876b7a9f17a5ff77752f8f23eff00563df03a3493c44c"
+    },
+    "storefront/channels/baemin.html": {
+      "size": 24918,
+      "sha256": "2cc2a96245028b5a625e9d5a186252363e31df9f262173a21dc328e176c0208c"
+    },
+    "storefront/channels/coupang.html": {
+      "size": 24805,
+      "sha256": "bf3a9dc1930ba5da35946b397d71b877457c722d2f053da66ea22e7c7fd645a9"
+    },
+    "storefront/channels/coupangeats.html": {
+      "size": 24979,
+      "sha256": "88284086b73f5c00e9099326633c347d48e6a7b745685ce764694c735f02ae5b"
+    },
+    "storefront/channels/index.html": {
+      "size": 24654,
+      "sha256": "f85b996df3f4644d3955fd82bf177de3434e7311118603c97d123da4a9f0f5aa"
+    },
+    "storefront/chefs/apply.html": {
+      "size": 8649,
+      "sha256": "25f82306e2c397b15487a3de73ea65f8568e8c522a971dc9f5475de2d6c4415b"
+    },
+    "storefront/chefs/blogger.html": {
+      "size": 8066,
+      "sha256": "8a66db7f0e5e07b61da4dbdfc3fc5ab64a5a1b4e3f800f1d289e666a24aa1e9a"
+    },
+    "storefront/chefs/campaigns.html": {
+      "size": 7258,
+      "sha256": "114611b1311e21dcfaacabad8a0f81eb0854669539209dc1544416b00f06c2b8"
+    },
+    "storefront/chefs/index.html": {
+      "size": 8993,
+      "sha256": "9d2c301a2d4b0e30e486d53a276b97fbdafa99b95b4471d4769f1578cf803b63"
+    },
+    "storefront/chefs/shorts.html": {
+      "size": 7962,
+      "sha256": "484c2e00b9dd63d3dce01dd8e03ecc4e5b15f41798dd3a01ae266b53d3bacdba"
+    },
+    "storefront/community/advertising.html": {
+      "size": 7672,
+      "sha256": "f14c9f0c57344a0d7e4947c38d3e220145d638b32dfa58b9baeb20dc0c1d576a"
+    },
+    "storefront/community/associations.html": {
+      "size": 6917,
+      "sha256": "25923f7a55222f89fe1eb57cbe919a9b3cae031042c8fe1cb8a293bbc02a19ce"
+    },
+    "storefront/community/collaboration.html": {
+      "size": 6915,
+      "sha256": "c3145968ff7291bf555c9fea641d0abd4a44089cd318c1da76cf5c7b365dd2a3"
+    },
+    "storefront/community/distributors.html": {
+      "size": 6914,
+      "sha256": "9373dfe08ab50766c2505c7b2ecd486fbd6730b1eca34cd57337732623abfe89"
+    },
+    "storefront/community/index.html": {
+      "size": 7920,
+      "sha256": "d1109086422bb3cfd66dfd06c45f27e9b66e23503f8123f60a95e82fccbd1dd2"
+    },
+    "storefront/community/merchants.html": {
+      "size": 6917,
+      "sha256": "207adcd92416653ac2990c6f558e43b702d83e5e1969a59d932861966fef1b27"
+    },
+    "storefront/community/new.html": {
+      "size": 9087,
+      "sha256": "39d35a1a9f407b1f84c7a38da58ff84de0cd88a4e31ed88382e8a55c639b245e"
+    },
+    "storefront/community/policy.html": {
+      "size": 7393,
+      "sha256": "b37635ee4b12fe451a3ac3839dd23a6dbca27e42566322759987fbc4eadbe083"
+    },
+    "storefront/index.html": {
+      "size": 37375,
+      "sha256": "ee4f60a535ea427a750d72b43cbd1ae5740b10bd77555f4b387fc81c42f78058"
+    },
+    "storefront/legal/privacy.html": {
+      "size": 24288,
+      "sha256": "fdf005e470b35371b91e0293ab3e4a126ddf02422f1879398bf9b43242fe8872"
+    },
+    "storefront/manifest.webmanifest": {
+      "size": 602,
+      "sha256": "87e29f604ce6ae05f8d0f9e13aac867116dc60e04ed8e5e340b0a31bc4977728"
+    },
+    "storefront/merchant/apply.html": {
+      "size": 25988,
+      "sha256": "aa4113f52ad2367d0f293baf0bd9e2508ad3e3dcb48f03117c13dec8dc8d7778"
+    },
+    "storefront/merchant/dashboard.html": {
+      "size": 24238,
+      "sha256": "c5f9ab75f5e7148f34ef144d63a73fb34c8f20d81b27c67fa269132e2a8b9308"
+    },
+    "storefront/merchant/index.html": {
+      "size": 24692,
+      "sha256": "f0939c612b820129781c5c566963eb3c2bd616f7328cc0c261b6212c9e51598e"
+    },
+    "storefront/prices.html": {
+      "size": 30777,
+      "sha256": "60e76dd0e006ecada26370d0e48539bac15e7d8aa7b6186f2997081f4f1ba81d"
+    },
+    "storefront/product/bajirak.html": {
+      "size": 26723,
+      "sha256": "ab3194f7a8595f7f1678f084d2054680c9415263d167dacc9beddd253088f7bc"
+    },
+    "storefront/product/bangeo-hoe.html": {
+      "size": 26748,
+      "sha256": "4e19879db8a7c4d1985e01db52a1b30748c8c9f957c9ed7b61f67d8e0adb6a63"
+    },
+    "storefront/product/chadol.html": {
+      "size": 26712,
+      "sha256": "5f8a25ef2cf47bc3045b8bc4dac58ca75ebbd92604cf4151971d9b2621aee417"
+    },
+    "storefront/product/chamchi.html": {
+      "size": 26708,
+      "sha256": "a2db7f615563953f715877b6940c575cb55c88ac2a218408792640374c079978"
+    },
+    "storefront/product/chamdom-hoe.html": {
+      "size": 26699,
+      "sha256": "0ae58f82e433e667ca9b62b9e36a62fd97aa24170899f30f2c81991d3a951c61"
+    },
+    "storefront/product/cheonggyul-cheong.html": {
+      "size": 26033,
+      "sha256": "636db4ad17507e8f4908c15a3a2138abd88793130ffded878fad05b3068d7943"
+    },
+    "storefront/product/chojang.html": {
+      "size": 26023,
+      "sha256": "05ec9ae162ea153eb9f7df83f826397632390268fd90f50e6bfb113e42238549"
+    },
+    "storefront/product/corndog-cheese.html": {
+      "size": 26062,
+      "sha256": "235f8700e7f77120f18a96cfa180b67a2b638288e9dc7d036c1a129b91af5a73"
+    },
+    "storefront/product/daege.html": {
+      "size": 26704,
+      "sha256": "75fd1d4ac91bb97fb5d217ecfa5d617235de33e86bdaf600a4c78fb0d18c8ded"
+    },
+    "storefront/product/ddak-saeu.html": {
+      "size": 26715,
+      "sha256": "d8dae51fd8ed61ad6b1d3eb39b419667aab1240126259736b8af713e98ef37c8"
+    },
+    "storefront/product/deungsim.html": {
+      "size": 26711,
+      "sha256": "77063aa6d70e49b7a63f563594c2e1c293ff42428fb76f4d01ce2483386064cc"
+    },
+    "storefront/product/fri-hoesik.html": {
+      "size": 26119,
+      "sha256": "487faf2433de10e5febaf04802bfd75087da11d44e3b9ed1fd7ded944a65e839"
+    },
+    "storefront/product/gamgyul.html": {
+      "size": 26581,
+      "sha256": "9bc33dc2ffa4d98b8cc7e6b2c3b21847f5e8908803873e6e6317ed61966a82ca"
+    },
+    "storefront/product/gamtae-ssam.html": {
+      "size": 26106,
+      "sha256": "e33e1f1294f585e665496c6526b008c1dc28d562e3815ed9e872e45545427c61"
+    },
+    "storefront/product/garibi.html": {
+      "size": 26691,
+      "sha256": "d363f07c3514bf59b2bdeece366ce2cce4e9ecdb5089230b80fa63cb049db1c6"
+    },
+    "storefront/product/gwang-eo.html": {
+      "size": 26709,
+      "sha256": "c194c0911fb5c2bf3df6313eeb6586d3c73df6423bd8324074b905f0b6e9799e"
+    },
+    "storefront/product/hanwoo-yukhoe.html": {
+      "size": 26667,
+      "sha256": "6e4ee2bb12d9b493a1d82ad5dad0e649c1e9d23ae87ac45a916fba2b3cea2005"
+    },
+    "storefront/product/highball-set.html": {
+      "size": 26052,
+      "sha256": "9c6b900544e51a1cea555e9a5e0e98b76c25f9485ad8ac7ab413cad4133c719c"
+    },
+    "storefront/product/hoe-maeuntang.html": {
+      "size": 26088,
+      "sha256": "c3982a71a977d44490b8c275801804eeb56abe5c186a7a314caf2e3be3c0c64f"
+    },
+    "storefront/product/homakase-sub.html": {
+      "size": 26110,
+      "sha256": "1b0ed6892589bf98c1032f41db9eddd0fd211cb80ca695bb6fcf179aac50f0e4"
+    },
+    "storefront/product/huinsaeu.html": {
+      "size": 26713,
+      "sha256": "721f950deeab96449e83693690677b707071a224b6be54b9cb2c8d45bc2d4a20"
+    },
+    "storefront/product/jeonbok.html": {
+      "size": 26690,
+      "sha256": "740283db39fdd555ae4eceaff8dfe55d51e7932fff0dec65331a8229fcc202f8"
+    },
+    "storefront/product/king-crab-a.html": {
+      "size": 26762,
+      "sha256": "8ef188db34b70e93731d6be9847eccd73b23b1d0738904d1b66ce2b4d67cf323"
+    },
+    "storefront/product/maesil-cheong.html": {
+      "size": 26030,
+      "sha256": "7abc00a202145ce1516e1ef5b267673bbaf0e72d868f61de865696974bf6fd6d"
+    },
+    "storefront/product/maeuntang-geori.html": {
+      "size": 26754,
+      "sha256": "a25dc58477bb1e1a40ba689fc6f3e5e32163c29a9938355b3f20113460106f48"
+    },
+    "storefront/product/maeuntang-sauce.html": {
+      "size": 26055,
+      "sha256": "2fce66b253c33d19c245686905f2b42f9d7d429ba6cf3c68b7ace49572db380e"
+    },
+    "storefront/product/maeuntang-yachae.html": {
+      "size": 26643,
+      "sha256": "0ef29e1072adb9d0b7ce0cd2cf34e057ce03de725d4019c88a7ea8765f91bfab"
+    },
+    "storefront/product/makjang.html": {
+      "size": 26041,
+      "sha256": "067d1b5c51cb2d034c61959a5ee1141488ac8df381d99ade75becd82b3c02f24"
+    },
+    "storefront/product/mulhoe-pack.html": {
+      "size": 26099,
+      "sha256": "8845189cae88cc00e00f57fb7c67046f4c8f1d9eae607d1184e18f8315f8a160"
+    },
+    "storefront/product/mun-eo.html": {
+      "size": 26706,
+      "sha256": "f7c3ca989e2c80e07235137fc720f478392550ee7f1a88053ba52b1529da4c2f"
+    },
+    "storefront/product/o-jing-eo.html": {
+      "size": 26709,
+      "sha256": "4e823cdae01c3e4ebfaaafc93ff21f3ec91f983893d1aeea656ad7cc8ac62dfc"
+    },
+    "storefront/product/office-lobster.html": {
+      "size": 26129,
+      "sha256": "1210dbfb3f910da9fc086818996d7b02dd44d75adecd9ff06446fc4f5e07b45e"
+    },
+    "storefront/product/saeng-wasabi.html": {
+      "size": 26015,
+      "sha256": "60c7bd563170f8d7066ab09c88cbe4b1ea47923378acafd2e378dceca7de105a"
+    },
+    "storefront/product/samgyeop.html": {
+      "size": 26683,
+      "sha256": "4108817630d3689f8e6351b3ba82122dae70a6b8fb08a69e5e20b538a2ecbd14"
+    },
+    "storefront/product/shine-muscat.html": {
+      "size": 26645,
+      "sha256": "cfe9e5eecdbb61b0a5fe2b170243b93a68266952218412b0e10a1bb969b23d20"
+    },
+    "storefront/product/so-galbi.html": {
+      "size": 26665,
+      "sha256": "2fc60dc63665908b40396963831aab96865dbf4ac3aeff4e02ed295c42d88162"
+    },
+    "storefront/product/sonjil-yachae.html": {
+      "size": 26624,
+      "sha256": "fd989a83684d3d7784bf38a68ab52cb333955fdd207692ad079f3bc2101280fc"
+    },
+    "storefront/product/ssam-mo-dum.html": {
+      "size": 26637,
+      "sha256": "3eed0e96c34ff491638d392260dee4fa3df5fe12c444af8f9a7e6f02d6f595bf"
+    },
+    "storefront/product/sushi-pack.html": {
+      "size": 26100,
+      "sha256": "4a76973054dc33923d680fe618b033dbe05959dfd7699eb7b325dfd456f406aa"
+    },
+    "storefront/product/teheran-premium.html": {
+      "size": 26126,
+      "sha256": "3d30f9a8d1dea9ab508c55e3ea9f0beb0c2f49ad09664d7d3d56a8d62cfc43dd"
+    },
+    "storefront/product/ttalgi.html": {
+      "size": 26583,
+      "sha256": "6d2f58acade2a5f1bf2e8a9945eadf992138b2e63e81f16fa821f14284f25e57"
+    },
+    "storefront/product/uni.html": {
+      "size": 26167,
+      "sha256": "a0b7f992c919fac78636692735917a3d429cf65951f9767aaf7073d199042ff1"
+    },
+    "storefront/product/yeon-eo.html": {
+      "size": 26724,
+      "sha256": "7f6fd8210b8909b38a1f1fd390c206ca939d319dc06e2453cf0b7a328df5f701"
+    },
+    "storefront/product/yuk-sashimi.html": {
+      "size": 26665,
+      "sha256": "41e35c433468c5f65685145650c19a5c389339cf0ca18059b0c29a8aafbedcfb"
+    },
+    "storefront/recipes/index.html": {
+      "size": 89674,
+      "sha256": "da9e81572f0c84a67c5b43e3c7021838a039328f593e4be41418d8cc8b3eb8b0"
+    },
+    "storefront/recipes/meat.html": {
+      "size": 25393,
+      "sha256": "a89e65437552351711e44b0877624608c0bc18c5b28e94ac7c70fe62639f3355"
+    },
+    "storefront/recipes/photography.html": {
+      "size": 7421,
+      "sha256": "401b72ef8f4ba7e53f2aaf5b7a829b41d3ec03a3b876f3744c75af3ff6f70470"
+    },
+    "storefront/recipes/produce.html": {
+      "size": 35296,
+      "sha256": "86ac87cec3951524f0e246833c9918380dbf9af6d75a3fec212ac7c366491dc4"
+    },
+    "storefront/recipes/recipe-001.html": {
+      "size": 10671,
+      "sha256": "0d3fd79833e1a40f283419fb0f0ab7e7d5ca87e97c8890fc25b81526048d79d1"
+    },
+    "storefront/recipes/recipe-002.html": {
+      "size": 10616,
+      "sha256": "4f30b9513f7b3bbcda41909531f394b9e6a752570a82d264db8eb5c9daed8bc0"
+    },
+    "storefront/recipes/recipe-003.html": {
+      "size": 10657,
+      "sha256": "3dba202963db82dbb6f8bfe7eafdd5f45073ea0340f16a2a1a983106523a1f6d"
+    },
+    "storefront/recipes/recipe-004.html": {
+      "size": 10689,
+      "sha256": "8594dc45c41a74ae6c34c8151e3193175ee63985dd2178b7eb4cd4221a7abe05"
+    },
+    "storefront/recipes/recipe-005.html": {
+      "size": 10686,
+      "sha256": "464b2869067f9368c87e4c6790ecf730bf870474daa5839ddf2c8849194c2e5c"
+    },
+    "storefront/recipes/recipe-006.html": {
+      "size": 10630,
+      "sha256": "21d9ca67ed7b2501412b660fa8834076f0755f0fdd60b466473927588f7f4998"
+    },
+    "storefront/recipes/recipe-007.html": {
+      "size": 10669,
+      "sha256": "8fb73b45bbac272a0931b2bf9331f530ebbd1711c638c1a3f4604eed8ddceb80"
+    },
+    "storefront/recipes/recipe-008.html": {
+      "size": 10616,
+      "sha256": "4f25f1a276fa4c344a539a508c9f18eea99a3d11e3fbfd9b07b682d166903c29"
+    },
+    "storefront/recipes/recipe-009.html": {
+      "size": 10639,
+      "sha256": "84aead26fc4fce4b8b396b5bf273bb57746a78faa043986b550cbcecfb4eeab1"
+    },
+    "storefront/recipes/recipe-010.html": {
+      "size": 10655,
+      "sha256": "6e7448ee7d31a19fd0ecf3822cd5973dbfdeb96def1f0888ba730dfdcc0852a9"
+    },
+    "storefront/recipes/recipe-011.html": {
+      "size": 10579,
+      "sha256": "33c07a3bbf42360507c14129087029a9e1630e58caba24ebf2aef9a782666d56"
+    },
+    "storefront/recipes/recipe-012.html": {
+      "size": 10644,
+      "sha256": "09a3d0498c19c0e519b73dd2858621b8c42c0752bcf2d422db2d275f79c28d52"
+    },
+    "storefront/recipes/recipe-013.html": {
+      "size": 10678,
+      "sha256": "ca4a71552ee8282625880310b00a8edc173b8cc55832254f2898cd8139d7d71a"
+    },
+    "storefront/recipes/recipe-014.html": {
+      "size": 10632,
+      "sha256": "7c10a9b55a8eb81748e4c7f650a165ad205bc0dcea00eef794aae89f9af6145f"
+    },
+    "storefront/recipes/recipe-015.html": {
+      "size": 10683,
+      "sha256": "211badc0f3fc3ff1bcd32d10cb1dd98ac4da6c98f3e39f8e30769b8de5ad6c91"
+    },
+    "storefront/recipes/recipe-016.html": {
+      "size": 10445,
+      "sha256": "30dca416f2da63a8bda61dde902117d062e2316d58b6272d42b00c150ffb0fbd"
+    },
+    "storefront/recipes/recipe-017.html": {
+      "size": 10689,
+      "sha256": "b817eefaacb20a5b821c03f65777132f493cc8344abd100a34e7a54db10584dc"
+    },
+    "storefront/recipes/recipe-018.html": {
+      "size": 10685,
+      "sha256": "0ef142dc90f3da7a4fe96bc094cf7f58b9f6bc5d9ecd952d5ed60140a9b57748"
+    },
+    "storefront/recipes/recipe-019.html": {
+      "size": 10631,
+      "sha256": "59e00ad7dd399ac39d10438493793f0de936596c2a822d307cafa479771bba88"
+    },
+    "storefront/recipes/recipe-020.html": {
+      "size": 10711,
+      "sha256": "59a918bfc7842efbd6fb4d2947706aab66076aad9b30fa920e26d7dff135e87c"
+    },
+    "storefront/recipes/recipe-021.html": {
+      "size": 10658,
+      "sha256": "c046abcba143e1be086809395e1ecd3a58f6d16ae4c1a2145e02a565ca87da95"
+    },
+    "storefront/recipes/recipe-022.html": {
+      "size": 10657,
+      "sha256": "d934f6a2aab589e95064510ef359b7bd68f0e0dfdd3294f084c3eade9445e7e5"
+    },
+    "storefront/recipes/recipe-023.html": {
+      "size": 10687,
+      "sha256": "c0454fc108e99ae967e368a2f625ac7be869a7e4e41d2ba02ab5942c74448eeb"
+    },
+    "storefront/recipes/recipe-024.html": {
+      "size": 10652,
+      "sha256": "b4428c2e0fb9d50a556fd4b71215130160a7af30cc395df312f6268dcaf14eca"
+    },
+    "storefront/recipes/recipe-025.html": {
+      "size": 10456,
+      "sha256": "97548b10f83f6b3e35944ed7e0d734941f19f0bb68c9dc566714d168fe95e2bf"
+    },
+    "storefront/recipes/recipe-026.html": {
+      "size": 10485,
+      "sha256": "c0bd846699be1c740871bee5f0442fc6d478e4c75dd9876d1225319c4bdcfabc"
+    },
+    "storefront/recipes/recipe-027.html": {
+      "size": 10660,
+      "sha256": "40e3bb537d169241160579a5ca0d15305782fa860a123f49d224354d85bd9d28"
+    },
+    "storefront/recipes/recipe-028.html": {
+      "size": 10669,
+      "sha256": "7daee6931e071f38ea862f4b1775c621621dae23fa18c642eca2d87e1c0e2040"
+    },
+    "storefront/recipes/recipe-029.html": {
+      "size": 10654,
+      "sha256": "13f296702f4583f10861acb46968d40a2f09b9e94d926b042f3c5d6c1386f6c3"
+    },
+    "storefront/recipes/recipe-030.html": {
+      "size": 10690,
+      "sha256": "b9598accf9c751fe463b74d1da2d02bca1b96a669545e1133e76a9a29022fb78"
+    },
+    "storefront/recipes/recipe-031.html": {
+      "size": 10691,
+      "sha256": "830c20e3be53a8f3d81c2c188f4754d2f6212877c9db6e27c77f6e3abdbaefd2"
+    },
+    "storefront/recipes/recipe-032.html": {
+      "size": 10624,
+      "sha256": "409268efe44618e8472459177a470adbb6c3615d30046446a5c1af895e7f7aa0"
+    },
+    "storefront/recipes/recipe-033.html": {
+      "size": 10671,
+      "sha256": "3edd9c06a25e56708fc626ffd45ae88cf682914e22705c61bc03138c71b3b676"
+    },
+    "storefront/recipes/recipe-034.html": {
+      "size": 10569,
+      "sha256": "4aa5784cf20f97c77cbb080369bcf9c7ad90f2139eb2ebd90c6889343f4d1094"
+    },
+    "storefront/recipes/recipe-035.html": {
+      "size": 10627,
+      "sha256": "13b0532dfbd200359ec8c63fdc0278fbed667dbfb71d7e45e1040e396e9d00c0"
+    },
+    "storefront/recipes/recipe-036.html": {
+      "size": 10622,
+      "sha256": "674818545e0963bc1404e47b07988dc559d7a86254d9703bdc9c3d9f23c8b613"
+    },
+    "storefront/recipes/recipe-037.html": {
+      "size": 10623,
+      "sha256": "cbe7d47759f6b9aa0717f48fe19b6493873aaa9fdab18155fea75ebd6b6b826d"
+    },
+    "storefront/recipes/recipe-038.html": {
+      "size": 10624,
+      "sha256": "9838102a225b6b052ecd5cce3eac64a825f5b505de7335d95787b7962f6ef956"
+    },
+    "storefront/recipes/recipe-039.html": {
+      "size": 10678,
+      "sha256": "edefe6a6a7388296cf01d450d462b85a5ad5f9998f3fd2470727197cef3fda07"
+    },
+    "storefront/recipes/recipe-040.html": {
+      "size": 10562,
+      "sha256": "83ca968e02557fef9759af765011065c3332cb145500515b1de9286e5555fb35"
+    },
+    "storefront/recipes/recipe-041.html": {
+      "size": 10685,
+      "sha256": "63f11fcb3a9daf95acd58abb950870824f8a2dbe3ac5a6ca8d3c3511b86367da"
+    },
+    "storefront/recipes/recipe-042.html": {
+      "size": 10634,
+      "sha256": "fe09aa2a66c90d6d9aacc9efb8d219246f95f621a8a0c6bff898c68e1aa08d2f"
+    },
+    "storefront/recipes/recipe-043.html": {
+      "size": 10660,
+      "sha256": "4905290596a057972befd091ae67655d2e02f1946c264b1a0712dc09b7655939"
+    },
+    "storefront/recipes/recipe-044.html": {
+      "size": 10643,
+      "sha256": "9488e1a9230e288eccb49930b783271601064f6cc3a84167387568ff29d7226b"
+    },
+    "storefront/recipes/recipe-045.html": {
+      "size": 10648,
+      "sha256": "60a73bfab886039583c2e1f6e1da344764b42809ce6d1576551425a821296421"
+    },
+    "storefront/recipes/recipe-046.html": {
+      "size": 10620,
+      "sha256": "1c5e3ea5c6fd94b7283712a38fa7577b024148acd92ba67960350474b6f36c71"
+    },
+    "storefront/recipes/recipe-047.html": {
+      "size": 10656,
+      "sha256": "e4a036353ac93200eb2570e23ad960d0eae17c086df80a174922b2b8175132d2"
+    },
+    "storefront/recipes/recipe-048.html": {
+      "size": 10495,
+      "sha256": "af883b8069b0439c8254a3dc534ad3758b3f8513d5daa61da19c5f12adf7fd4c"
+    },
+    "storefront/recipes/recipe-049.html": {
+      "size": 10676,
+      "sha256": "ff61595b273497656c73deb794c17fce571d0ac4f8606f76b867239d46323fc4"
+    },
+    "storefront/recipes/recipe-050.html": {
+      "size": 10520,
+      "sha256": "eb9711a70d2facc84db81250982c3805eb4b9fe08996a612d903f8cc165c6bbc"
+    },
+    "storefront/recipes/recipe-051.html": {
+      "size": 10619,
+      "sha256": "4d35f365ba8104c58d9d934a7734df3ddc8b8e4c2bbc453f4c18c7e9b0b20bf4"
+    },
+    "storefront/recipes/recipe-052.html": {
+      "size": 10684,
+      "sha256": "6562e97b204656989a358c62dd5f4a0f349653b94fbd8b2114dbdcde5219c408"
+    },
+    "storefront/recipes/recipe-053.html": {
+      "size": 10759,
+      "sha256": "f5fd8f819213de316a1b4c89a5c6e0916c3f6e382aff2faea23fe3ce230972cd"
+    },
+    "storefront/recipes/recipe-054.html": {
+      "size": 10725,
+      "sha256": "c6e5cf2c7bcffbc0a4acd5e6f0e31a31368d32900baf49efb796923f592b42fa"
+    },
+    "storefront/recipes/recipe-055.html": {
+      "size": 10716,
+      "sha256": "8d99e87e31cb8bc2c70ec632ad79c18c80a9083a355d45042ead199ebf283e19"
+    },
+    "storefront/recipes/recipe-056.html": {
+      "size": 10724,
+      "sha256": "96e2eac8a75dbf08cacac08fef33e5ba68f73ac771d68e81fb0291498701606a"
+    },
+    "storefront/recipes/recipe-057.html": {
+      "size": 10726,
+      "sha256": "a09ce156342dd987a0ea3a6c2a5bddd9e0a50a2594a8ae1a5b255607e663c712"
+    },
+    "storefront/recipes/recipe-058.html": {
+      "size": 10700,
+      "sha256": "9663793322da26e7e31237bc7c814b726de2369e7ce22e0a754579592845066d"
+    },
+    "storefront/recipes/recipe-059.html": {
+      "size": 10716,
+      "sha256": "96e82be3b9404edd82e462243f2fd05fb425c251fa8d7ced4892581a983c8530"
+    },
+    "storefront/recipes/recipe-060.html": {
+      "size": 10640,
+      "sha256": "965e336d823b3a63d76cc4699f2e81bb8e83e7e82a729e44ac07f7f2a6aa1bc7"
+    },
+    "storefront/recipes/recipe-061.html": {
+      "size": 10736,
+      "sha256": "795d29e13cd9e43aa00dc1e989b8280f2667a432565984c83b930c559d359d9e"
+    },
+    "storefront/recipes/recipe-062.html": {
+      "size": 10781,
+      "sha256": "c028571cb921d4c9d3186a2f8a09e4c9694cf8ef9e13e238b0190dc6856f0ca3"
+    },
+    "storefront/recipes/recipe-063.html": {
+      "size": 10758,
+      "sha256": "458dbfc9162667b3292c4efc8f07499d7a65acb23403a2dfa3d20a8abf784fcb"
+    },
+    "storefront/recipes/recipe-064.html": {
+      "size": 10941,
+      "sha256": "a0df568330d640e6629454186987112ae74d4647ef1fd6789eca57d2b637b8fd"
+    },
+    "storefront/recipes/recipe-065.html": {
+      "size": 10740,
+      "sha256": "9b7c3dc405126840d2892bb18ff7febea61741a99aecbac0e545042600a4b806"
+    },
+    "storefront/recipes/recipe-066.html": {
+      "size": 10747,
+      "sha256": "494e8e0b112dc23df0edefb0a70a621ccc49d5798f9203169522639ed0368df1"
+    },
+    "storefront/recipes/recipe-067.html": {
+      "size": 10679,
+      "sha256": "77f66732728e45231796becdc247b7b53c1a262c997acfded7a73e5e873729b8"
+    },
+    "storefront/recipes/recipe-068.html": {
+      "size": 10893,
+      "sha256": "d4541d43ac0bf2477d6b725642dbe292cc11540eb111d10796cbe7e9a3439127"
+    },
+    "storefront/recipes/recipe-069.html": {
+      "size": 10846,
+      "sha256": "5a300347da559d50f582f0b37fcea2b4e76e9f070e5ce3aad07735e74af86515"
+    },
+    "storefront/recipes/recipe-070.html": {
+      "size": 10889,
+      "sha256": "f537833811459fde4d4bf60661bf62111d9e149f12fd5342ab0cbc37b8c169c3"
+    },
+    "storefront/recipes/recipe-071.html": {
+      "size": 10896,
+      "sha256": "a1cd59d4d4df7c8b262ee5ce64c671035c5988cfce03e2b8f59b0a44bb9e91ae"
+    },
+    "storefront/recipes/recipe-072.html": {
+      "size": 10877,
+      "sha256": "46f37d7553232f19e40797646ca861d1ab7910f0a676114198e2373e6131c4d9"
+    },
+    "storefront/recipes/recipe-073.html": {
+      "size": 10707,
+      "sha256": "e35d96a0a0da8bdf92814f1cafb0b767be376a4f72f5597377b3098864fffc06"
+    },
+    "storefront/recipes/recipe-074.html": {
+      "size": 10748,
+      "sha256": "88de949815f85d84d6a56af2919b1e02e503fa17fdfdbe6a55c6b1845b6ca84f"
+    },
+    "storefront/recipes/recipe-075.html": {
+      "size": 10718,
+      "sha256": "e3667f3ea2b38e7f38a603a6d47451e3a8b63313dd807410e504b94d9ef8c462"
+    },
+    "storefront/recipes/recipe-076.html": {
+      "size": 10527,
+      "sha256": "5495b490a3cd47ccb464b72aefe634ae0286e4cedecd0694fa6c643aaea7f905"
+    },
+    "storefront/recipes/recipe-077.html": {
+      "size": 10816,
+      "sha256": "a6f33dc524f3b881b46ede6fe78521dbb4145c8f28ab7de81b89671702af3c84"
+    },
+    "storefront/recipes/recipe-078.html": {
+      "size": 10796,
+      "sha256": "50f675aaf6184adaa2d21fb2ccbe2a6d788099eedb8426b7294908cf6911b2e0"
+    },
+    "storefront/recipes/recipe-079.html": {
+      "size": 10809,
+      "sha256": "55e5aa3e97c4bc7f560fd5a3044c4e59929b52a265618192f0b23a022a349a91"
+    },
+    "storefront/recipes/recipe-080.html": {
+      "size": 10775,
+      "sha256": "7577b7bc4162ee750483857c9713aa0d0116813fe80cd4edf251d80598dce4b9"
+    },
+    "storefront/recipes/recipe-081.html": {
+      "size": 10816,
+      "sha256": "676fad17d632787ee2badd3ae13b6f35363f066423be93d49298a1fc5ce2ebe9"
+    },
+    "storefront/recipes/recipe-082.html": {
+      "size": 10789,
+      "sha256": "e83266339509ebc919da097514047e8f404a1e299d219bf38a3b6f68476d997c"
+    },
+    "storefront/recipes/recipe-083.html": {
+      "size": 10720,
+      "sha256": "06fba60f3b66d04fa9ad07752931cf97c3c2993e9fc867926f4eb451cc18a712"
+    },
+    "storefront/recipes/recipe-084.html": {
+      "size": 10765,
+      "sha256": "0dc3753eb6e8288ff3618cdc61e4fa2213bcbf000f76ded0e7f630b832c793fb"
+    },
+    "storefront/recipes/recipe-085.html": {
+      "size": 10692,
+      "sha256": "f2b2628ee5ed921f88bfe681abe7d24e8fcb2ad0a182f47305c24233458de3b1"
+    },
+    "storefront/recipes/recipe-086.html": {
+      "size": 10697,
+      "sha256": "4088d448848cb3057071d991db5321f88454646387e104b882de9aa1bf2ba266"
+    },
+    "storefront/recipes/recipe-087.html": {
+      "size": 10601,
+      "sha256": "a795da1b8521063db640764f14216a3270b6aacdc1a49314cc5057103c82e106"
+    },
+    "storefront/recipes/recipe-088.html": {
+      "size": 10731,
+      "sha256": "37523c271118bfcb22247cae8ac532c9e7043609821e4abcd0f21486621fbc95"
+    },
+    "storefront/recipes/recipe-089.html": {
+      "size": 10488,
+      "sha256": "1d3ced53a4132dfeaf1c39e2cfd946c21db3d3387753135c4463b4dc4dfbda0a"
+    },
+    "storefront/recipes/recipe-090.html": {
+      "size": 10525,
+      "sha256": "5d66dc2e42be3c8ce04d3651ee8d770481e7260a27ca76084989203b02118579"
+    },
+    "storefront/recipes/recipe-091.html": {
+      "size": 10766,
+      "sha256": "0512a3c65696238098c6753841a4fb43f8f4727af7606aeeb01a88fd0794bbd8"
+    },
+    "storefront/recipes/recipe-092.html": {
+      "size": 10494,
+      "sha256": "06d2d5e8715eae9986d25c374beb75ea1698d7a4bf99ce7f644a283f70629a0c"
+    },
+    "storefront/recipes/recipe-093.html": {
+      "size": 10699,
+      "sha256": "ef9693f3b7da17753cfb0697e315ce952756be414add4eb94192e44b10561101"
+    },
+    "storefront/recipes/recipe-094.html": {
+      "size": 10644,
+      "sha256": "3fe68b9343173fa9f3fa21d908475a1f677ebb5bd19cbb6dff1d872c95ac340b"
+    },
+    "storefront/recipes/recipe-095.html": {
+      "size": 10714,
+      "sha256": "af4363ddef1734f1a1bb26a203b25adbadc1b8209d36cb42e417c1baf2f694c0"
+    },
+    "storefront/recipes/recipe-096.html": {
+      "size": 10733,
+      "sha256": "543b87d81106086bfaf1b209d234fcb204d829c62b4f03e94ea005d5c77c34fb"
+    },
+    "storefront/recipes/recipe-097.html": {
+      "size": 10710,
+      "sha256": "44ab9caffef978bb448e5ff715c0dd8621ba00c9de287f51de773092481dbbd2"
+    },
+    "storefront/recipes/recipe-098.html": {
+      "size": 10575,
+      "sha256": "2b42734a28d69cc72f837ff1e9dbb9260003f2fbce700150de404f79d4d68cb4"
+    },
+    "storefront/recipes/recipe-099.html": {
+      "size": 10656,
+      "sha256": "565c7edea027e6190677b4da5a4733f1a45ec478e58f6b6bffb45dd13dacb38c"
+    },
+    "storefront/recipes/recipe-100.html": {
+      "size": 10685,
+      "sha256": "0fc62f06596d46ad6fafc930bee524ddcf25b3d4cbd5870ec308c6fb8a0e7997"
+    },
+    "storefront/recipes/recipe-101.html": {
+      "size": 10597,
+      "sha256": "07bff9aa80fa93dba60e035b93e6c06e9373cd3cf5d3917b1e5248232332149e"
+    },
+    "storefront/recipes/recipe-102.html": {
+      "size": 10802,
+      "sha256": "a6c484d96340f9014bceae4f241fb07a60c760c6a8c3a238ab40920b2d393a30"
+    },
+    "storefront/recipes/recipe-103.html": {
+      "size": 10589,
+      "sha256": "5209dccd568f3aa6bce5b41506b4de771a22d462040084d35469d55824be4832"
+    },
+    "storefront/recipes/recipe-104.html": {
+      "size": 10550,
+      "sha256": "d057bfc91e74338d2c898247154641bf2288c788763738cd8d4de1f413c3b1b6"
+    },
+    "storefront/recipes/recipe-105.html": {
+      "size": 10450,
+      "sha256": "78192688af696bd18afd045d7f030b87461c1eee746f3e3f3b78cde8f507402a"
+    },
+    "storefront/recipes/recipe-106.html": {
+      "size": 10447,
+      "sha256": "5f7f1bc3d2f4092a42a296e0c144bedb57ad7a37647631cddcb6a52c296e833d"
+    },
+    "storefront/recipes/recipe-107.html": {
+      "size": 10488,
+      "sha256": "e8baf47a5aaa1c6bd69693a673e6d4f98fac25772246e60691d74c4f4149eee9"
+    },
+    "storefront/recipes/recipe-108.html": {
+      "size": 10679,
+      "sha256": "9efaa4f98121fc641d1c5ab01899c54bd6981d0c46dca90cfdfaf2a0c152dc4c"
+    },
+    "storefront/recipes/recipe-109.html": {
+      "size": 10460,
+      "sha256": "d8c0854369494fb5473ce8da5a5d1db60da7098100a6508f6e42424f4fd6eecd"
+    },
+    "storefront/recipes/recipe-110.html": {
+      "size": 10403,
+      "sha256": "3ae1994ee4f454695c367b186fc378ebbbfe20beb514598f63ddb3ebf8c4c4d6"
+    },
+    "storefront/recipes/recipe-111.html": {
+      "size": 10697,
+      "sha256": "1aaeb0fb032dd87120492096a235e08d9923f7fca77c10ef3b71f4b6bf85c051"
+    },
+    "storefront/recipes/recipe-112.html": {
+      "size": 10467,
+      "sha256": "3ec48ea6615b1723810c566c08b4d540e82cf2dc69e0ab257ffd2f887113ee02"
+    },
+    "storefront/recipes/recipe-113.html": {
+      "size": 10762,
+      "sha256": "1f59b5927320b162464a4cdf24fe9de90ffd9ca452790b3bf9ed771e717ee063"
+    },
+    "storefront/recipes/recipe-114.html": {
+      "size": 10744,
+      "sha256": "c45c3c6c6e8bca1fe1ae411078aff0bb231b3b1e54c9168fd7a3adbc3b342b49"
+    },
+    "storefront/recipes/recipe-115.html": {
+      "size": 10739,
+      "sha256": "60ad08d72af1af29b3b433ef6ed788fae20815f17ace2061130228a7d731320d"
+    },
+    "storefront/recipes/recipe-116.html": {
+      "size": 10717,
+      "sha256": "5b16c7b2a25a7057a24a478002c117d74fbe0d3482168d6c3f9695f4f700c629"
+    },
+    "storefront/recipes/recipe-117.html": {
+      "size": 10633,
+      "sha256": "cff62ffd01a86cfd4ce8b7b1fe9750fe4f46b71c6818ab531c9f17fef8783369"
+    },
+    "storefront/recipes/recipe-118.html": {
+      "size": 10587,
+      "sha256": "a37867366000595886c9e4e6f0dc18f5355dbc61302a16e18edd119f86c1f67e"
+    },
+    "storefront/recipes/recipe-119.html": {
+      "size": 10660,
+      "sha256": "3c1026df094e31cc379307afa60ac1fb8408c0e305e03670ae171e381b806e3b"
+    },
+    "storefront/recipes/recipe-120.html": {
+      "size": 10629,
+      "sha256": "cffc39eb5ca4109718ffec00f7fd2a133db51164b778019c868a559ae449e5a5"
+    },
+    "storefront/recipes/recipe-121.html": {
+      "size": 10565,
+      "sha256": "67088083682511226e967638a61d1955907830c08e4a24e21ddd18a543978087"
+    },
+    "storefront/recipes/recipe-122.html": {
+      "size": 10595,
+      "sha256": "e0e9e17105e1c531da852a7762741fe34d6dedd911edc79f58d45dbfb3350eb2"
+    },
+    "storefront/recipes/recipe-123.html": {
+      "size": 10741,
+      "sha256": "146ebfdd702c288ecb2fc845f232bdf6e3512c7a03f55c51ce5f72b41eb90a10"
+    },
+    "storefront/recipes/recipe-124.html": {
+      "size": 10696,
+      "sha256": "c1c6746f25a8c0da9475d6fffc7d52eaac665e07f0a42271c70a1f6250bd4e99"
+    },
+    "storefront/recipes/recipe-125.html": {
+      "size": 10759,
+      "sha256": "a48eff06519abedf4bb5c1cbfd5deb006736b62c96a9683648da249f6d8ad825"
+    },
+    "storefront/recipes/recipe-126.html": {
+      "size": 10739,
+      "sha256": "e496dee1b21d51e45c6794fd07578bc4158000310bce955b20bc2fab591b9cc7"
+    },
+    "storefront/recipes/recipe-127.html": {
+      "size": 10724,
+      "sha256": "494328001504f45b02d0509e0582120009a6a31320c2de9d3e270830dd617641"
+    },
+    "storefront/recipes/recipe-128.html": {
+      "size": 10754,
+      "sha256": "18fe3d6a75fdf20ac17dec9d9814e2b99673e4484bfc15b18e5159e895e5a9ea"
+    },
+    "storefront/recipes/recipe-129.html": {
+      "size": 10722,
+      "sha256": "767520138a0f559d071a855f5f11e25aa0c75ae3562bba006fa656249a24d5f0"
+    },
+    "storefront/recipes/recipe-130.html": {
+      "size": 10787,
+      "sha256": "aed621cc28c8cc70ca3258178aa074444bf635f0d023f0e8ac60422ed8bc57d7"
+    },
+    "storefront/recipes/recipe-131.html": {
+      "size": 10672,
+      "sha256": "8bcedd07d6820ef984d021201c675c5254bfbbea5a1858230cbebf593f20860c"
+    },
+    "storefront/recipes/recipe-132.html": {
+      "size": 10591,
+      "sha256": "5171d13b49893df0b6bef308706764a8bb91a8cf3ec538f7b6a8a16d987c1b9d"
+    },
+    "storefront/recipes/seafood.html": {
+      "size": 44826,
+      "sha256": "aa5a9a44690107be15c8be325b41459a6830d0a1c2b34900b69fe06508b9d80a"
+    },
+    "storefront/search.html": {
+      "size": 23373,
+      "sha256": "28b7417b133e3f8608046ae26ef50280cbd062b35ef9ba063dcb753d32ecdae1"
+    },
+    "storefront/service-worker.js": {
+      "size": 1047,
+      "sha256": "98d18f44a687ab55b4aecafc3afa6f104221d74d4e0a976602c9ea903a2262c4"
+    },
+    "storefront/stories/connect.html": {
+      "size": 25149,
+      "sha256": "012a7578f437db030478de446f09430d21f1ce9eabe6cbb140c527b50c81c9d1"
+    },
+    "storefront/stories/guide.html": {
+      "size": 24712,
+      "sha256": "11a90fdf715e81c45424c8b9603f8bbd76eac9aaaabbfde2b7b4e2e095df335f"
+    },
+    "storefront/stories/index.html": {
+      "size": 25126,
+      "sha256": "cd791c226c77caec6ccf21ed7167198750ec8b8c32147d798a785e9409d6de95"
+    },
+    "storefront/support.html": {
+      "size": 24600,
+      "sha256": "cadd948714086d378d770173dc589dabe359350a0505be1d6341dcf1d6bec27b"
+    },
+    "tests/concurrency_beta.py": {
+      "size": 2854,
+      "sha256": "7440ca40693538d2a13a8f97b34defb2e5145e1dbf4237a0db7d5a2c00bc64cb"
+    },
+    "tests/currency_contract.test.mjs": {
+      "size": 872,
+      "sha256": "afa53a0388aff935a290152017b92b2cd2a62a1a30e0e64e5a7f7731201c73a5"
+    },
+    "tests/e2e_browser_injected.py": {
+      "size": 6694,
+      "sha256": "911b7162c4861e01bedc361594c37ad96408a0ef8a1a9e604aabe6a6f7910fca"
+    },
+    "tests/release_audit.py": {
+      "size": 2859,
+      "sha256": "fc4075b846bb8466a98e9c96bf570596b402c6b58df9f62953357814418d1570"
+    },
+    "tests/test_beta_api.py": {
+      "size": 12583,
+      "sha256": "c72454dc0374728b93ef817ec806f2af24fb64edaba03c20d8c8e1606f5a11ad"
+    },
+    "tests/test_security_media.py": {
+      "size": 781,
+      "sha256": "72a3ed30489c514e73f32647aa09164de7f98ffc305449e1df212a2eeae931d6"
+    },
+    "tests/test_v7_backup.py": {
+      "size": 1177,
+      "sha256": "ff14689c280d9eeaeab9121ceb43c7d96478da629d8b98cad77ea47d1b22a5a7"
+    },
+    "tests/test_v7_regressions.py": {
+      "size": 5302,
+      "sha256": "775d0bfe790fb9104fce176d0b5f1f033455feb78fc435f2bdd28a6a054bd180"
+    },
+    "tools/db_snapshot.py": {
+      "size": 3987,
+      "sha256": "4ec775ebb81968eb2caaa2977771de506d427982e771d73ada119572edafbad8"
+    }
+  },
+  "warning": "Not the complete skvive/garak checkout. No production writes performed."
+}

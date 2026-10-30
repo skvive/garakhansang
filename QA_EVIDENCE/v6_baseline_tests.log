@@ -1,0 +1,507 @@
+test_01_health (test_beta_api.BetaTests.test_01_health) ... ok
+test_02_seed_content (test_beta_api.BetaTests.test_02_seed_content) ... ok
+test_03_site (test_beta_api.BetaTests.test_03_site) ... ok
+test_04_unauthorized (test_beta_api.BetaTests.test_04_unauthorized) ... /usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a616f5b0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a616f790>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a616f3d0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_05_invalid_login (test_beta_api.BetaTests.test_05_invalid_login) ... ok
+test_06_login_and_me (test_beta_api.BetaTests.test_06_login_and_me) ... ok
+test_07_csrf_required (test_beta_api.BetaTests.test_07_csrf_required) ... ok
+test_08_overview (test_beta_api.BetaTests.test_08_overview) ... ok
+test_09_products_patch (test_beta_api.BetaTests.test_09_products_patch) ... ok
+test_10_stock_direct_blocked (test_beta_api.BetaTests.test_10_stock_direct_blocked) ... ok
+test_11_stock_adjust (test_beta_api.BetaTests.test_11_stock_adjust) ... ok
+test_12_stock_insufficient (test_beta_api.BetaTests.test_12_stock_insufficient) ... ok
+test_13_order_reserves (test_beta_api.BetaTests.test_13_order_reserves) ... ok
+test_14_order_out_of_stock (test_beta_api.BetaTests.test_14_order_out_of_stock) ... ok
+test_15_order_state_invalid (test_beta_api.BetaTests.test_15_order_state_invalid) ... /usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a616f3d0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a616f5b0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a616f790>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8ac50>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8ad40>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8a7a0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8ae30>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b100>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8aa70>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b1f0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8af20>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b010>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8a980>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b3d0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b4c0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b5b0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b2e0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b790>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b880>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8ba60>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8bb50>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8bc40>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8bd30>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b970>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8be20>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8bf10>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8040>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b6a0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f896c0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8130>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8220>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8310>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f88f40>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8400>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed85e0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed86d0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed87c0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_16_cancel_restock (test_beta_api.BetaTests.test_16_cancel_restock) ... ok
+test_17_shipping_requires_tracking (test_beta_api.BetaTests.test_17_shipping_requires_tracking) ... ok
+test_18_delivery (test_beta_api.BetaTests.test_18_delivery) ... ok
+test_19_settlement (test_beta_api.BetaTests.test_19_settlement) ... ok
+test_20_settlement_idempotence (test_beta_api.BetaTests.test_20_settlement_idempotence) ... /usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed88b0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8a90>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8b80>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8c70>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8d60>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8e50>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8f40>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed9030>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed89a0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed9210>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed9300>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed9120>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed94e0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed95d0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed96c0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed97b0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed98a0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed9990>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed9a80>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_21_unverified_merchant_block (test_beta_api.BetaTests.test_21_unverified_merchant_block) ... ok
+test_22_unverified_posts_block (test_beta_api.BetaTests.test_22_unverified_posts_block) ... ok
+test_23_verified_posts (test_beta_api.BetaTests.test_23_verified_posts) ... ok
+test_24_unreviewed_recipe_block (test_beta_api.BetaTests.test_24_unreviewed_recipe_block) ... ok
+test_25_reviewed_recipe (test_beta_api.BetaTests.test_25_reviewed_recipe) ... ok
+test_26_integration_no_fake_connected (test_beta_api.BetaTests.test_26_integration_no_fake_connected) ... ok
+test_27_roles (test_beta_api.BetaTests.test_27_roles) ... ok
+test_28_user_audit (test_beta_api.BetaTests.test_28_user_audit) ... /usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8a7a0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8ac50>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8ad40>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b5b0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8ae30>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8aa70>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b1f0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8af20>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b010>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8a980>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b3d0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b4c0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b2e0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8bd30>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b790>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b100>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8ba60>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8bb50>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8bc40>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b880>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b970>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8be20>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8bf10>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f88f40>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f896c0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed9a80>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed9990>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f8b6a0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed97b0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed96c0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed95d0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed98a0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed9120>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed9300>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed9210>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed94e0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed9030>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8f40>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8e50>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed89a0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8c70>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8b80>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8a90>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed85e0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed88b0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8040>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed8130>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_29_report_from_db (test_beta_api.BetaTests.test_29_report_from_db) ... ok
+test_30_public_stock (test_beta_api.BetaTests.test_30_public_stock) ... ok
+test_31_logout (test_beta_api.BetaTests.test_31_logout) ... ok
+test_32_change_password (test_beta_api.BetaTests.test_32_change_password) ... ok
+test_33_sql_injection_search_safe (test_beta_api.BetaTests.test_33_sql_injection_search_safe) ... ok
+test_34_reject_product_negative_price (test_beta_api.BetaTests.test_34_reject_product_negative_price) ... ok
+test_35_create_post_and_public_moderation (test_beta_api.BetaTests.test_35_create_post_and_public_moderation) ... ok
+test_36_strict_origin (test_beta_api.BetaTests.test_36_strict_origin) ... ok
+test_37_session_hash_db (test_beta_api.BetaTests.test_37_session_hash_db) ... ok
+test_38_demo_report_no_real (test_beta_api.BetaTests.test_38_demo_report_no_real) ... /usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5f89f30>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a616f4c0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed84f0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f44a5ed93f0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_39_status_double_cancel_blocked (test_beta_api.BetaTests.test_39_status_double_cancel_blocked) ... ok
+test_40_role_must_not_self_promote (test_beta_api.BetaTests.test_40_role_must_not_self_promote) ... ok
+test_41_create_product_as_draft (test_beta_api.BetaTests.test_41_create_product_as_draft) ... ok
+test_42_create_recipe_as_draft (test_beta_api.BetaTests.test_42_create_recipe_as_draft) ... ok
+test_43_order_details (test_beta_api.BetaTests.test_43_order_details) ... ok
+test_44_public_event_reporting (test_beta_api.BetaTests.test_44_public_event_reporting) ... ok
+test_45_public_event_rejects_pii_in_path (test_beta_api.BetaTests.test_45_public_event_rejects_pii_in_path) ... ok
+test_media_requires_session (test_security_media.MediaAuthTest.test_media_requires_session) ... ok
+
+----------------------------------------------------------------------
+Ran 46 tests in 15.959s
+
+OK
+[2026-10-30T04:04:03+00:00] "GET /api/health HTTP/1.1" 200 -
+[2026-10-30T04:04:04+00:00] "GET /index.html HTTP/1.1" 200 -
+[2026-10-30T04:04:04+00:00] "GET /admin/ HTTP/1.1" 200 -
+[2026-10-30T04:04:04+00:00] "GET /recipes/index.html HTTP/1.1" 200 -
+[2026-10-30T04:04:04+00:00] "GET /product/bangeo-hoe.html HTTP/1.1" 200 -
+[2026-10-30T04:04:04+00:00] "GET /api/admin/products HTTP/1.1" 401 -
+[2026-10-30T04:04:05+00:00] auth attempt
+[2026-10-30T04:04:05+00:00] auth attempt
+[2026-10-30T04:04:05+00:00] "GET /api/auth/me HTTP/1.1" 200 -
+[2026-10-30T04:04:05+00:00] auth attempt
+[2026-10-30T04:04:05+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 403 -
+[2026-10-30T04:04:05+00:00] auth attempt
+[2026-10-30T04:04:05+00:00] "GET /api/admin/overview HTTP/1.1" 200 -
+[2026-10-30T04:04:06+00:00] auth attempt
+[2026-10-30T04:04:06+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 200 -
+[2026-10-30T04:04:06+00:00] auth attempt
+[2026-10-30T04:04:06+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 400 -
+[2026-10-30T04:04:07+00:00] auth attempt
+[2026-10-30T04:04:07+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 200 -
+[2026-10-30T04:04:07+00:00] auth attempt
+[2026-10-30T04:04:07+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 400 -
+[2026-10-30T04:04:07+00:00] auth attempt
+[2026-10-30T04:04:07+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:04:08+00:00] auth attempt
+[2026-10-30T04:04:08+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -
+[2026-10-30T04:04:08+00:00] auth attempt
+[2026-10-30T04:04:08+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:04:08+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 400 -
+[2026-10-30T04:04:08+00:00] auth attempt
+[2026-10-30T04:04:08+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:04:08+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:04:09+00:00] auth attempt
+[2026-10-30T04:04:09+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:04:09+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:04:09+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:04:09+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 400 -
+[2026-10-30T04:04:09+00:00] auth attempt
+[2026-10-30T04:04:09+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:04:09+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:04:09+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:04:09+00:00] "PATCH /api/admin/shipments/1 HTTP/1.1" 200 -
+[2026-10-30T04:04:09+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:04:09+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:04:09+00:00] auth attempt
+[2026-10-30T04:04:09+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:04:09+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:04:09+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:04:09+00:00] "PATCH /api/admin/shipments/1 HTTP/1.1" 200 -
+[2026-10-30T04:04:09+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:04:09+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:04:09+00:00] "POST /api/admin/settlements/generate HTTP/1.1" 200 -
+[2026-10-30T04:04:09+00:00] "GET /api/admin/settlements HTTP/1.1" 200 -
+[2026-10-30T04:04:10+00:00] auth attempt
+[2026-10-30T04:04:10+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:04:10+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:04:10+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:04:10+00:00] "PATCH /api/admin/shipments/1 HTTP/1.1" 200 -
+[2026-10-30T04:04:10+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:04:10+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:04:10+00:00] "POST /api/admin/settlements/generate HTTP/1.1" 200 -
+[2026-10-30T04:04:10+00:00] "POST /api/admin/settlements/generate HTTP/1.1" 200 -
+[2026-10-30T04:04:10+00:00] auth attempt
+[2026-10-30T04:04:10+00:00] "PATCH /api/admin/merchants/1 HTTP/1.1" 400 -
+[2026-10-30T04:04:10+00:00] auth attempt
+[2026-10-30T04:04:10+00:00] "PATCH /api/admin/posts/1 HTTP/1.1" 400 -
+[2026-10-30T04:04:11+00:00] auth attempt
+[2026-10-30T04:04:11+00:00] "PATCH /api/admin/posts/1 HTTP/1.1" 200 -
+[2026-10-30T04:04:11+00:00] "GET /api/public/posts HTTP/1.1" 200 -
+[2026-10-30T04:04:11+00:00] auth attempt
+[2026-10-30T04:04:11+00:00] "PATCH /api/admin/recipes/1 HTTP/1.1" 400 -
+[2026-10-30T04:04:11+00:00] auth attempt
+[2026-10-30T04:04:11+00:00] "PATCH /api/admin/recipes/1 HTTP/1.1" 200 -
+[2026-10-30T04:04:11+00:00] "GET /api/public/recipes HTTP/1.1" 200 -
+[2026-10-30T04:04:11+00:00] auth attempt
+[2026-10-30T04:04:11+00:00] "PATCH /api/admin/integrations/1 HTTP/1.1" 400 -
+[2026-10-30T04:04:12+00:00] auth attempt
+[2026-10-30T04:04:12+00:00] "POST /api/admin/users/create HTTP/1.1" 201 -
+[2026-10-30T04:04:12+00:00] auth attempt
+[2026-10-30T04:04:12+00:00] "POST /api/admin/orders/create HTTP/1.1" 403 -
+[2026-10-30T04:04:12+00:00] "GET /api/admin/recipes HTTP/1.1" 200 -
+[2026-10-30T04:04:12+00:00] auth attempt
+[2026-10-30T04:04:12+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 200 -
+[2026-10-30T04:04:12+00:00] "GET /api/admin/audit_logs HTTP/1.1" 200 -
+[2026-10-30T04:04:13+00:00] auth attempt
+[2026-10-30T04:04:13+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:04:13+00:00] "GET /api/admin/reports HTTP/1.1" 200 -
+[2026-10-30T04:04:13+00:00] auth attempt
+[2026-10-30T04:04:13+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 200 -
+[2026-10-30T04:04:13+00:00] "GET /api/public/product/bangeo-hoe HTTP/1.1" 200 -
+[2026-10-30T04:04:13+00:00] auth attempt
+[2026-10-30T04:04:13+00:00] "POST /api/auth/logout HTTP/1.1" 200 -
+[2026-10-30T04:04:13+00:00] "GET /api/admin/products HTTP/1.1" 401 -
+[2026-10-30T04:04:14+00:00] auth attempt
+[2026-10-30T04:04:14+00:00] "POST /api/auth/password HTTP/1.1" 200 -
+[2026-10-30T04:04:14+00:00] auth attempt
+[2026-10-30T04:04:14+00:00] auth attempt
+[2026-10-30T04:04:14+00:00] "GET /api/admin/products?q=%27%20OR%201%3D1%20-- HTTP/1.1" 200 -
+[2026-10-30T04:04:14+00:00] auth attempt
+[2026-10-30T04:04:14+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 400 -
+[2026-10-30T04:04:15+00:00] auth attempt
+[2026-10-30T04:04:15+00:00] "POST /api/admin/posts HTTP/1.1" 201 -
+[2026-10-30T04:04:15+00:00] "GET /api/public/posts HTTP/1.1" 200 -
+[2026-10-30T04:04:15+00:00] auth attempt
+[2026-10-30T04:04:15+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 403 -
+[2026-10-30T04:04:15+00:00] auth attempt
+[2026-10-30T04:04:16+00:00] auth attempt
+[2026-10-30T04:04:16+00:00] "GET /api/admin/reports HTTP/1.1" 200 -
+[2026-10-30T04:04:16+00:00] auth attempt
+[2026-10-30T04:04:16+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:04:16+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:04:16+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 400 -
+[2026-10-30T04:04:16+00:00] auth attempt
+[2026-10-30T04:04:16+00:00] "PATCH /api/admin/users/1 HTTP/1.1" 400 -
+[2026-10-30T04:04:17+00:00] auth attempt
+[2026-10-30T04:04:17+00:00] "POST /api/admin/products HTTP/1.1" 201 -
+[2026-10-30T04:04:17+00:00] "GET /api/public/product/test-fish-pack HTTP/1.1" 404 -
+[2026-10-30T04:04:17+00:00] auth attempt
+[2026-10-30T04:04:17+00:00] "POST /api/admin/recipes HTTP/1.1" 201 -
+[2026-10-30T04:04:17+00:00] auth attempt
+[2026-10-30T04:04:17+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:04:17+00:00] "GET /api/admin/orders/1/details HTTP/1.1" 200 -
+[2026-10-30T04:04:18+00:00] "POST /api/public/events HTTP/1.1" 202 -
+[2026-10-30T04:04:18+00:00] auth attempt
+[2026-10-30T04:04:18+00:00] "GET /api/admin/reports HTTP/1.1" 200 -
+[2026-10-30T04:04:18+00:00] "POST /api/public/events HTTP/1.1" 400 -
+[2026-10-30T04:04:19+00:00] "GET /admin/recipe-media.html HTTP/1.1" 401 -

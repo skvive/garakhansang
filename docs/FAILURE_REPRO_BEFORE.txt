@@ -1,0 +1,9 @@
+LOGIN 200
+PUBLIC_BEFORE 200 20
+FRACTIONAL_REPRO 200 {'ok': True, 'stock': 21}
+SUSPEND 200 suspended
+PUBLIC_AFTER_SUSPENSION 200 21
+ORDER_AFTER_SUSPENSION 201 {'ok': True, 'order_id': 1, 'reference': 'BETA-B3113E8CE6', 'subtotal': 55000, 'payment_mode': 'simulation'}
+NEW_USER 201 True
+EDIT_USER 200 content
+AUDIT_PASSWORD_HASH_LEAK True

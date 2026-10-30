@@ -1,0 +1,14 @@
+{
+  "mode": "static-local-beta",
+  "html_files": 218,
+  "storefront_html_files": 217,
+  "products": 44,
+  "recipes": 132,
+  "recipe_webp": 132,
+  "html_link_errors": 0,
+  "missing_bridge": 0,
+  "invalid_images": 0,
+  "js_syntax_errors": 0,
+  "text_bad_utf8": 0,
+  "passed": true
+}

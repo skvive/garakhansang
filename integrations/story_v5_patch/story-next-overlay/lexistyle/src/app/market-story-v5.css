@@ -1,0 +1,31 @@
+/* Garak Hansang story concept #2. Imported after existing globals; scoped to storefront. */
+:root { --paper:#ffffff; --ink:#122b41; --fog:#edf3f7; --line:#e0e9ee; --dim:#607484; --coral:#df392d; --express:#20778c; --sage:#26795e; }
+body.story-next { background:#fbfcfd; color:#132c3e; font-family: Pretendard, 'Noto Sans KR', 'Malgun Gothic', system-ui, sans-serif; }
+.story-next header.sticky { background:#061a30!important; border-color:#1f3b54!important; color:#fff!important; }
+.story-next header.sticky a, .story-next header.sticky button { color:#fff!important; }
+.story-next header.sticky nav a:hover { color:#ffc7af!important; }
+.story-next header.sticky a:focus-visible { outline:3px solid #ffd35d; }
+.story-next footer { background:#071c32!important; color:#e4edf4!important; }
+.story-next footer a { color:#e4edf4; }
+.story-next a { scroll-margin-top:90px; }
+.story-next button:focus-visible, .story-next a:focus-visible {outline:3px solid #ffb452;outline-offset:2px}
+.story-next .text-coral { color:#d7372e!important; }
+.story-next .bg-ink { background:#0a2946!important; }
+.story-next .bg-fog { background:#edf4f7!important; }
+.garak-story-next-hero { min-height:520px;position:relative;isolation:isolate;color:white;display:flex;align-items:stretch;overflow:hidden;background:#081b30; }
+.garak-story-next-hero:before {content:"";position:absolute;z-index:-2;inset:0;background:url('/garak-recipes/garak-story-hero.webp') center 48%/cover}
+.garak-story-next-hero:after {content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,#031528eb,#031528ad 37%,#0315282a 88%)}
+.garak-story-next-hero-inner {max-width:1200px;margin:auto;padding:58px 22px 55px;width:100%;display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:36px;align-items:end}
+.garak-story-next-copy {align-self:center;max-width:650px}.garak-next-eyebrow{font-size:12px!important;letter-spacing:2.3px;color:#f7d4a1!important;font-weight:800}
+.garak-story-next-copy h1{font-size:clamp(38px,4.6vw,67px);font-weight:900;line-height:1.16;letter-spacing:-2.6px;margin:17px 0;color:#fff}
+.garak-story-next-copy>p{font-size:15px;max-width:460px;line-height:1.85;color:#e4edf5}
+.garak-story-next-copy small{font-size:10px;color:#d3e1e9;display:block;max-width:490px;line-height:1.7}
+.garak-next-actions{display:flex;gap:10px;margin:27px 0 17px}.garak-next-actions a{background:#de392f;color:white;border-radius:6px;padding:12px 22px;font-size:13px;font-weight:850}.garak-next-actions a+a{background:white;color:#0c304b}
+.garak-story-next-feature{border:1px solid #ffffff55;background:#081c30cb;backdrop-filter:blur(6px);padding:15px;border-radius:10px}
+.garak-story-next-feature img{width:100%;height:145px;object-fit:cover;border-radius:7px}.garak-story-next-feature b{display:block;font-size:18px;margin:10px 0}.garak-story-next-feature p{font-size:11px;color:#c5d7e4;margin:4px 0 11px}
+.garak-story-next-feature a{background:white;color:#062d43;font-size:11px;font-weight:800;padding:9px 12px;border-radius:5px;display:inline-block}
+.garak-story-next-shortcuts{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));max-width:1200px;margin:0 auto;padding:16px 8px 12px;background:white}
+.garak-story-next-shortcuts a{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;text-align:center;font-size:11px;font-weight:850;color:#284a60!important;padding:8px 3px;border-right:1px solid #e9edf2}
+.garak-story-next-shortcuts a:hover{color:#b8332d!important;background:#f4f8fb}.garak-story-next-shortcuts a:last-child{border-right:0}.garak-story-next-shortcuts span{font-size:26px}
+.story-next .garak-story-next-shortcuts{box-shadow:0 4px 16px #06182710}
+@media(max-width:768px){.garak-story-next-hero{min-height:490px}.garak-story-next-hero:after{background:linear-gradient(0deg,#03182bec,#03182b9b 63%,#03182b24)}.garak-story-next-hero-inner{display:block;align-self:end;padding:42px 20px 28px}.garak-story-next-copy h1{font-size:40px;letter-spacing:-1.8px}.garak-story-next-copy>p{font-size:13px}.garak-story-next-feature{display:none}.garak-story-next-shortcuts{grid-template-columns:repeat(4,1fr);padding:7px}.garak-story-next-shortcuts a{padding:11px 2px;font-size:10px}.garak-story-next-shortcuts span{font-size:23px}.garak-next-actions a{padding:11px 14px}.story-next header.sticky nav{display:none}}

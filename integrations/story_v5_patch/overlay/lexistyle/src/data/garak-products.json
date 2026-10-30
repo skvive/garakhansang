@@ -1,0 +1,398 @@
+[
+  {
+    "slug": "bangeo-hoe",
+    "name": "제철 대방어회 (1kg, 뱃살 두툼)",
+    "merchant": "온달수산",
+    "category": "seafood",
+    "price": 55000,
+    "image": "product-bangeo-hoe",
+    "summary": "손질 방식과 구성 중량을 선택하기 전에 출고 당일의 수급 상황을 확인하세요."
+  },
+  {
+    "slug": "chamdom-hoe",
+    "name": "자연산 참돔회 (800g)",
+    "merchant": "온달수산",
+    "category": "seafood",
+    "price": 65000,
+    "image": "product-chamdom-hoe",
+    "summary": "손질 방식과 구성 중량을 선택하기 전에 출고 당일의 수급 상황을 확인하세요."
+  },
+  {
+    "slug": "gwang-eo",
+    "name": "국내산 광어회 (1kg)",
+    "merchant": "영재수산",
+    "category": "seafood",
+    "price": 42000,
+    "image": "product-gwang-eo",
+    "summary": "손질 방식과 구성 중량을 선택하기 전에 출고 당일의 수급 상황을 확인하세요."
+  },
+  {
+    "slug": "yeon-eo",
+    "name": "노르웨이 생연어회 (600g)",
+    "merchant": "영재수산",
+    "category": "seafood",
+    "price": 38000,
+    "image": "product-yeon-eo",
+    "summary": "손질 방식과 구성 중량을 선택하기 전에 출고 당일의 수급 상황을 확인하세요."
+  },
+  {
+    "slug": "king-crab-a",
+    "name": "러시아 킹크랩 (살수율 A급 2.5kg)",
+    "merchant": "온달수산",
+    "category": "seafood",
+    "price": 149000,
+    "image": "product-king-crab-a",
+    "summary": "손질 방식과 구성 중량을 선택하기 전에 출고 당일의 수급 상황을 확인하세요."
+  },
+  {
+    "slug": "daege",
+    "name": "영덕 대게 3마리 (1.5kg)",
+    "merchant": "가락대게",
+    "category": "seafood",
+    "price": 89000,
+    "image": "product-daege",
+    "summary": "손질 방식과 구성 중량을 선택하기 전에 출고 당일의 수급 상황을 확인하세요."
+  },
+  {
+    "slug": "jeonbok",
+    "name": "완도 활전복 10미 (중)",
+    "merchant": "남도수산",
+    "category": "seafood",
+    "price": 59000,
+    "image": "product-jeonbok",
+    "summary": "손질 방식과 구성 중량을 선택하기 전에 출고 당일의 수급 상황을 확인하세요."
+  },
+  {
+    "slug": "o-jing-eo",
+    "name": "동해 산오징어회 (500g)",
+    "merchant": "동해수산",
+    "category": "seafood",
+    "price": 27000,
+    "image": "product-o-jing-eo",
+    "summary": "손질 방식과 구성 중량을 선택하기 전에 출고 당일의 수급 상황을 확인하세요."
+  },
+  {
+    "slug": "ddak-saeu",
+    "name": "제주 딱새우회 (500g)",
+    "merchant": "제주직송",
+    "category": "seafood",
+    "price": 34000,
+    "image": "product-ddak-saeu",
+    "summary": "손질 방식과 구성 중량을 선택하기 전에 출고 당일의 수급 상황을 확인하세요."
+  },
+  {
+    "slug": "garibi",
+    "name": "통영 가리비 2kg",
+    "merchant": "남해수산",
+    "category": "seafood",
+    "price": 22000,
+    "image": "product-garibi",
+    "summary": "손질 방식과 구성 중량을 선택하기 전에 출고 당일의 수급 상황을 확인하세요."
+  },
+  {
+    "slug": "huinsaeu",
+    "name": "흰다리새우 1kg (급냉)",
+    "merchant": "서해수산",
+    "category": "seafood",
+    "price": 25000,
+    "image": "product-huinsaeu",
+    "summary": "손질 방식과 구성 중량을 선택하기 전에 출고 당일의 수급 상황을 확인하세요."
+  },
+  {
+    "slug": "uni",
+    "name": "성게알(우니) 200g 트레이",
+    "merchant": "제주직송",
+    "category": "seafood",
+    "price": 48000,
+    "image": "product-uni",
+    "summary": "손질 방식과 구성 중량을 선택하기 전에 출고 당일의 수급 상황을 확인하세요."
+  },
+  {
+    "slug": "chamchi",
+    "name": "참치회 모둠 (특상 500g)",
+    "merchant": "바다정원",
+    "category": "seafood",
+    "price": 45000,
+    "image": "product-chamchi",
+    "summary": "손질 방식과 구성 중량을 선택하기 전에 출고 당일의 수급 상황을 확인하세요."
+  },
+  {
+    "slug": "mun-eo",
+    "name": "자숙 문어 숙회 (700g)",
+    "merchant": "동해수산",
+    "category": "seafood",
+    "price": 39000,
+    "image": "product-mun-eo",
+    "summary": "손질 방식과 구성 중량을 선택하기 전에 출고 당일의 수급 상황을 확인하세요."
+  },
+  {
+    "slug": "bajirak",
+    "name": "서산 바지락 1.5kg (해감 완료)",
+    "merchant": "서해수산",
+    "category": "seafood",
+    "price": 13000,
+    "image": "product-bajirak",
+    "summary": "손질 방식과 구성 중량을 선택하기 전에 출고 당일의 수급 상황을 확인하세요."
+  },
+  {
+    "slug": "maeuntang-geori",
+    "name": "매운탕거리 모둠 (우럭+미더덕)",
+    "merchant": "가락한상",
+    "category": "seafood",
+    "price": 18000,
+    "image": "product-maeuntang-geori",
+    "summary": "손질 방식과 구성 중량을 선택하기 전에 출고 당일의 수급 상황을 확인하세요."
+  },
+  {
+    "slug": "teheran-premium",
+    "name": "테헤란 프리미엄 한 상 (3~4인)",
+    "merchant": "가락한상",
+    "category": "sets",
+    "price": 119000,
+    "image": "product-teheran-premium",
+    "summary": "구성 품목과 인원 기준은 판매자 확인 후 확정됩니다."
+  },
+  {
+    "slug": "office-lobster",
+    "name": "사무실 랍스터 플레이트 (2~3인)",
+    "merchant": "가락한상",
+    "category": "sets",
+    "price": 89000,
+    "image": "product-office-lobster",
+    "summary": "구성 품목과 인원 기준은 판매자 확인 후 확정됩니다."
+  },
+  {
+    "slug": "hoe-maeuntang",
+    "name": "회+매운탕 한 상 (2인)",
+    "merchant": "가락한상",
+    "category": "sets",
+    "price": 69000,
+    "image": "product-hoe-maeuntang",
+    "summary": "구성 품목과 인원 기준은 판매자 확인 후 확정됩니다."
+  },
+  {
+    "slug": "sushi-pack",
+    "name": "한 상 가득 수산 초밥 12pcs",
+    "merchant": "가락한상",
+    "category": "sets",
+    "price": 16000,
+    "image": "product-sushi-pack",
+    "summary": "구성 품목과 인원 기준은 판매자 확인 후 확정됩니다."
+  },
+  {
+    "slug": "mulhoe-pack",
+    "name": "가락 명품 물회 팩 (싱글)",
+    "merchant": "가락한상",
+    "category": "sets",
+    "price": 14000,
+    "image": "product-mulhoe-pack",
+    "summary": "구성 품목과 인원 기준은 판매자 확인 후 확정됩니다."
+  },
+  {
+    "slug": "homakase-sub",
+    "name": "홈마카세 정기구독 (월 2회)",
+    "merchant": "가락한상",
+    "category": "sets",
+    "price": 99000,
+    "image": "product-homakase-sub",
+    "summary": "구성 품목과 인원 기준은 판매자 확인 후 확정됩니다."
+  },
+  {
+    "slug": "fri-hoesik",
+    "name": "금요 사무실 회식 한 상 (4~6인)",
+    "merchant": "가락한상",
+    "category": "sets",
+    "price": 159000,
+    "image": "product-fri-hoesik",
+    "summary": "구성 품목과 인원 기준은 판매자 확인 후 확정됩니다."
+  },
+  {
+    "slug": "gamtae-ssam",
+    "name": "감태 쌈 세트 (회와 함께)",
+    "merchant": "초장집 마루",
+    "category": "sets",
+    "price": 9000,
+    "image": "product-gamtae-ssam",
+    "summary": "구성 품목과 인원 기준은 판매자 확인 후 확정됩니다."
+  },
+  {
+    "slug": "hanwoo-yukhoe",
+    "name": "1++ 한우 육회 (200g)",
+    "merchant": "가락축산",
+    "category": "meat",
+    "price": 42000,
+    "image": "product-hanwoo-yukhoe",
+    "summary": "부위, 등급, 원산지, 냉장·냉동 상태를 확인한 뒤 주문하세요."
+  },
+  {
+    "slug": "chadol",
+    "name": "매운탕용 한우 차돌박이 (300g)",
+    "merchant": "가락축산",
+    "category": "meat",
+    "price": 29000,
+    "image": "product-chadol",
+    "summary": "부위, 등급, 원산지, 냉장·냉동 상태를 확인한 뒤 주문하세요."
+  },
+  {
+    "slug": "so-galbi",
+    "name": "한우 소갈비 찜용 (1kg)",
+    "merchant": "가락축산",
+    "category": "meat",
+    "price": 59000,
+    "image": "product-so-galbi",
+    "summary": "부위, 등급, 원산지, 냉장·냉동 상태를 확인한 뒤 주문하세요."
+  },
+  {
+    "slug": "samgyeop",
+    "name": "제주 흑돼지 삼겹살 (600g)",
+    "merchant": "제주직송",
+    "category": "meat",
+    "price": 27000,
+    "image": "product-samgyeop",
+    "summary": "부위, 등급, 원산지, 냉장·냉동 상태를 확인한 뒤 주문하세요."
+  },
+  {
+    "slug": "deungsim",
+    "name": "1++ 한우 등심 스테이크 (300g)",
+    "merchant": "가락축산",
+    "category": "meat",
+    "price": 64000,
+    "image": "product-deungsim",
+    "summary": "부위, 등급, 원산지, 냉장·냉동 상태를 확인한 뒤 주문하세요."
+  },
+  {
+    "slug": "yuk-sashimi",
+    "name": "한우 육사시미 (250g)",
+    "merchant": "가락축산",
+    "category": "meat",
+    "price": 38000,
+    "image": "product-yuk-sashimi",
+    "summary": "부위, 등급, 원산지, 냉장·냉동 상태를 확인한 뒤 주문하세요."
+  },
+  {
+    "slug": "ssam-mo-dum",
+    "name": "모둠 쌈채소 팩 (회 전용)",
+    "merchant": "가락청과",
+    "category": "produce",
+    "price": 8000,
+    "image": "product-ssam-mo-dum",
+    "summary": "크기, 수량, 산지, 숙도 및 보관법을 확인하세요."
+  },
+  {
+    "slug": "sonjil-yachae",
+    "name": "매운탕용 손질 야채 팩",
+    "merchant": "가락청과",
+    "category": "produce",
+    "price": 7000,
+    "image": "product-sonjil-yachae",
+    "summary": "크기, 수량, 산지, 숙도 및 보관법을 확인하세요."
+  },
+  {
+    "slug": "shine-muscat",
+    "name": "샤인머스캣 2송이 (특)",
+    "merchant": "가락청과",
+    "category": "produce",
+    "price": 35000,
+    "image": "product-shine-muscat",
+    "summary": "크기, 수량, 산지, 숙도 및 보관법을 확인하세요."
+  },
+  {
+    "slug": "ttalgi",
+    "name": "설향 딸기 1kg (특)",
+    "merchant": "가락청과",
+    "category": "produce",
+    "price": 22000,
+    "image": "product-ttalgi",
+    "summary": "크기, 수량, 산지, 숙도 및 보관법을 확인하세요."
+  },
+  {
+    "slug": "gamgyul",
+    "name": "제주 노지 감귤 5kg",
+    "merchant": "제주직송",
+    "category": "produce",
+    "price": 19000,
+    "image": "product-gamgyul",
+    "summary": "크기, 수량, 산지, 숙도 및 보관법을 확인하세요."
+  },
+  {
+    "slug": "maeuntang-yachae",
+    "name": "매운탕 야채 모둠 (무+미나리)",
+    "merchant": "가락청과",
+    "category": "produce",
+    "price": 6000,
+    "image": "product-maeuntang-yachae",
+    "summary": "크기, 수량, 산지, 숙도 및 보관법을 확인하세요."
+  },
+  {
+    "slug": "makjang",
+    "name": "초장집 특제 막장 (300g)",
+    "merchant": "초장집 마루",
+    "category": "extras",
+    "price": 9000,
+    "image": "product-makjang",
+    "summary": "원재료와 알레르기 유발 성분, 보관 방법을 확인하세요."
+  },
+  {
+    "slug": "corndog-cheese",
+    "name": "콘치즈 세트 (회 곁들임)",
+    "merchant": "초장집 마루",
+    "category": "extras",
+    "price": 12000,
+    "image": "product-corndog-cheese",
+    "summary": "원재료와 알레르기 유발 성분, 보관 방법을 확인하세요."
+  },
+  {
+    "slug": "saeng-wasabi",
+    "name": "생와사비 (40g)",
+    "merchant": "초장집 마루",
+    "category": "extras",
+    "price": 8000,
+    "image": "product-saeng-wasabi",
+    "summary": "원재료와 알레르기 유발 성분, 보관 방법을 확인하세요."
+  },
+  {
+    "slug": "maeuntang-sauce",
+    "name": "매운탕 양념장 (4인분)",
+    "merchant": "초장집 마루",
+    "category": "extras",
+    "price": 10000,
+    "image": "product-maeuntang-sauce",
+    "summary": "원재료와 알레르기 유발 성분, 보관 방법을 확인하세요."
+  },
+  {
+    "slug": "chojang",
+    "name": "회 초장 소스 (300g)",
+    "merchant": "초장집 마루",
+    "category": "extras",
+    "price": 7000,
+    "image": "product-chojang",
+    "summary": "원재료와 알레르기 유발 성분, 보관 방법을 확인하세요."
+  },
+  {
+    "slug": "highball-set",
+    "name": "수제 하이볼 시럽 세트",
+    "merchant": "초장집 마루",
+    "category": "extras",
+    "price": 15000,
+    "image": "product-highball-set",
+    "summary": "원재료와 알레르기 유발 성분, 보관 방법을 확인하세요."
+  },
+  {
+    "slug": "maesil-cheong",
+    "name": "수제 매실청 (1kg)",
+    "merchant": "초장집 마루",
+    "category": "extras",
+    "price": 18000,
+    "image": "product-maesil-cheong",
+    "summary": "원재료와 알레르기 유발 성분, 보관 방법을 확인하세요."
+  },
+  {
+    "slug": "cheonggyul-cheong",
+    "name": "제주 청귤청 (600g)",
+    "merchant": "제주직송",
+    "category": "extras",
+    "price": 16000,
+    "image": "product-cheonggyul-cheong",
+    "summary": "원재료와 알레르기 유발 성분, 보관 방법을 확인하세요."
+  }
+]

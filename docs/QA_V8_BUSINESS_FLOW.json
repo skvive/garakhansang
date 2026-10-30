@@ -1,0 +1,260 @@
+{
+  "mode": "REAL_HTTP_LOCAL_BETA",
+  "checks": [
+    {
+      "step": "health_endpoint",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "login_admin",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "module_overview",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "module_reports",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "module_products",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "module_inventory_moves",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "module_orders",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "module_shipments",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "module_settlements",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "module_merchants",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "module_recipes",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "module_creators",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "module_posts",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "module_campaigns",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "module_customers",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "module_tickets",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "module_integrations",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "module_users",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "module_audit_logs",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "step": "merchant_verified_activated_in_simulation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "new_product_draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "draft_not_public",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "publish_product",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "new_product_public",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "inventory_adjust",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "order_created",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "reservation_stock_3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "reject_early_delivery",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "mark_paid_simulated",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "order_processing",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "order_details",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "shipment_tracking_set",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "order_shipped",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "order_delivered",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "settlement_generated",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "settlement_8pct",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "settlement_idempotent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "recipe_draft",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "recipe_review_then_publish",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "approved_recipe_public",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "community_post_pending",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "unverified_post_rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "verified_post_published",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "public_post_visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "external_fake_connected_denied",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "report_contains_order",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "overview_count",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "logout",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "session_revoked",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "step": "sqlite_integrity",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "total": 50,
+  "passed_count": 50,
+  "all_passed": true,
+  "live_payments": false,
+  "real_shipping": false
+}

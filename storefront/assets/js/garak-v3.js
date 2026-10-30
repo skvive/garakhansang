@@ -1,0 +1,25 @@
+/* GARAK v3 browser UX. No fabricated accounts, sales figures, videos, or server submissions. */
+(()=>{
+ 'use strict';
+ const $=(q)=>document.querySelector(q);
+ function report(msg){const e=$('#board-feedback')||$('#creator-feedback');if(e)e.textContent=msg;}
+ function setPhotoFallback(img){let f=img.getAttribute('data-photo-fallback');if(!f)return;function swap(){img.removeAttribute('data-photo-fallback');img.src=f;img.alt='AI 연출 식재료 대체 이미지 · 실제 요리 완성 사진 아님';}
+ img.addEventListener('error',swap,{once:true});if(img.complete && img.naturalWidth===0)swap();}
+ document.querySelectorAll('img[data-photo-fallback]').forEach(setPhotoFallback);
+ function filterRecipes(){let q=($('#recipe-query')?.value||'').normalize('NFKC').trim().toLowerCase();let max=$('#recipe-time')?.value||'all',visible=0;
+ document.querySelectorAll('.recipe-card').forEach(card=>{let text=(card.dataset.text||'').normalize('NFKC').toLowerCase();let mins=Number(card.dataset.minutes||'999');let show=text.includes(q)&&(max==='all'||mins<=Number(max));card.hidden=!show;if(show)visible++;});
+ if($('#recipe-visible'))$('#recipe-visible').textContent=String(visible);if($('#recipe-empty'))$('#recipe-empty').style.display=visible?'none':'block';}
+ $('#recipe-query')?.addEventListener('input',filterRecipes);$('#recipe-time')?.addEventListener('change',filterRecipes);
+ let savedMemory=[]; const recipes=()=>{try{return JSON.parse(localStorage.getItem('garak-v3-saved-recipes')||'[]')}catch{return savedMemory}}; const saveRecipes=(list)=>{savedMemory=list;try{localStorage.setItem('garak-v3-saved-recipes',JSON.stringify(list))}catch{}};
+ document.querySelectorAll('[data-recipe-save]').forEach(btn=>{let id=btn.dataset.recipeSave;try{if(recipes().includes(id))btn.textContent='★ 저장됨';}catch{}
+ btn.addEventListener('click',()=>{try{let data=recipes();if(data.includes(id)){data=data.filter(x=>x!==id);btn.textContent='☆ 레시피 저장';}else{data.push(id);btn.textContent='★ 저장됨';}saveRecipes(data)}catch{btn.textContent='브라우저 저장 불가';}})});
+ document.querySelectorAll('[data-copy-list]').forEach(btn=>btn.addEventListener('click',()=>{const lines=[...document.querySelectorAll('#ingredients .ingredient-list span')].map(x=>'□ '+x.textContent).join('\n');const text='[가락한상 장보기 목록]\n'+lines;
+ if(navigator.clipboard?.writeText){navigator.clipboard.writeText(text).then(()=>btn.textContent='복사 완료 ✓').catch(()=>window.prompt('장보기 목록을 복사하세요',text));}else{window.prompt('장보기 목록을 복사하세요',text);}}));
+ const preview=$('[data-creator-preview]');preview?.addEventListener('submit',e=>{e.preventDefault();let fd=new FormData(preview);let box=$('#creator-result');if(!box)return;box.replaceChildren();let title=document.createElement('strong');title.textContent=String(fd.get('name')||'');let kind=document.createElement('p');kind.textContent=String(fd.get('kind')||'');let intro=document.createElement('p');intro.textContent=String(fd.get('url')||'')+' · '+String(fd.get('creator-intro')||'');box.append(title,kind,intro);box.hidden=false;report('프로필 미리보기만 생성되었습니다. 실제 회원 가입이나 심사 접수는 아닙니다.');});
+ const params=new URLSearchParams(location.search);let type=params.get('type');if(['merchants','distributors','associations','collaboration'].includes(type)&&$('#board-type'))$('#board-type').value=type;
+ const form=$('#board-post-form');form?.addEventListener('submit',async e=>{e.preventDefault();let fd=new FormData(form);let payload={type:fd.get('type'),organization:fd.get('organization'),title:fd.get('title'),body:fd.get('body'),url:fd.get('url'),is_ad:!!$('#board-ad')?.checked};if(!$('#board-consent')?.checked){report('운영 정책에 동의해 주세요.');return;}
+ if(location.protocol==='file:'){report('로컬 HTML 시연 상태입니다. 서버에 제출하지 않았습니다. 데모 서버 실행 시 검수 대기 접수를 테스트할 수 있습니다.');return;}
+ try{const res=await fetch('/api/posts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});if(!res.ok)throw new Error('서버 연결 또는 입력 검증 오류');const data=await res.json();report('요청 ID '+data.id+' · 상태: '+data.status+'. 게시 공개나 본인 인증이 완료된 것은 아닙니다.');form.reset();}
+ catch{report('실제 접수되지 않았습니다. API 서버가 연결되지 않았거나 입력을 확인해야 합니다.');}});
+ const feed=$('#board-public-feed');if(feed&&location.protocol!=='file:'){const type=feed.dataset.board||'all';fetch('/api/posts?type='+encodeURIComponent(type)).then(r=>{if(!r.ok)throw Error('bad');return r.json()}).then(data=>{if(!Array.isArray(data.posts)||!data.posts.length)return;feed.replaceChildren();data.posts.forEach(p=>{const el=document.createElement('article');el.className='board-post';let meta=document.createElement('small');meta.textContent=p.organization+' · '+new Date(p.created_at).toLocaleDateString('ko-KR')+' · 등록자 검증 완료';const h=document.createElement('h3');h.textContent=p.title;let body=document.createElement('p');body.textContent=p.body;el.append(meta,h,body);if(p.is_ad){let ad=document.createElement('span');ad.className='ad-label';ad.textContent='광고 / 협찬';el.append(ad)}if(p.url&&/^https:\/\//.test(p.url)){let a=document.createElement('a');a.href=p.url;a.target='_blank';a.rel='noopener noreferrer nofollow sponsored';a.textContent='원문 사이트 보기 →';el.append(a)}feed.append(el)})}).catch(()=>{});}
+})();

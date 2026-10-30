@@ -1,0 +1,195 @@
+[2026-10-30T10:39:28+00:00] "GET /api/health HTTP/1.1" 200 -
+[2026-10-30T10:39:29+00:00] "GET /index.html HTTP/1.1" 200 -
+[2026-10-30T10:39:29+00:00] "GET /admin/ HTTP/1.1" 200 -
+[2026-10-30T10:39:29+00:00] "GET /recipes/index.html HTTP/1.1" 200 -
+[2026-10-30T10:39:29+00:00] "GET /product/bangeo-hoe.html HTTP/1.1" 200 -
+[2026-10-30T10:39:29+00:00] "GET /api/admin/products HTTP/1.1" 401 -
+[2026-10-30T10:39:29+00:00] auth attempt
+[2026-10-30T10:39:30+00:00] auth attempt
+[2026-10-30T10:39:30+00:00] "GET /api/auth/me HTTP/1.1" 200 -
+[2026-10-30T10:39:30+00:00] auth attempt
+[2026-10-30T10:39:30+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 403 -
+[2026-10-30T10:39:30+00:00] auth attempt
+[2026-10-30T10:39:30+00:00] "GET /api/admin/overview HTTP/1.1" 200 -
+[2026-10-30T10:39:30+00:00] auth attempt
+[2026-10-30T10:39:30+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 200 -
+[2026-10-30T10:39:31+00:00] auth attempt
+[2026-10-30T10:39:31+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 400 -
+[2026-10-30T10:39:31+00:00] auth attempt
+[2026-10-30T10:39:31+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 200 -
+[2026-10-30T10:39:31+00:00] auth attempt
+[2026-10-30T10:39:31+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 400 -
+[2026-10-30T10:39:32+00:00] auth attempt
+[2026-10-30T10:39:32+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T10:39:32+00:00] auth attempt
+[2026-10-30T10:39:32+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -
+[2026-10-30T10:39:32+00:00] auth attempt
+[2026-10-30T10:39:32+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T10:39:32+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 400 -
+[2026-10-30T10:39:33+00:00] auth attempt
+[2026-10-30T10:39:33+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T10:39:33+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:33+00:00] auth attempt
+[2026-10-30T10:39:33+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T10:39:33+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:33+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:33+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 400 -
+[2026-10-30T10:39:33+00:00] auth attempt
+[2026-10-30T10:39:33+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T10:39:33+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:33+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:33+00:00] "PATCH /api/admin/shipments/1 HTTP/1.1" 200 -
+[2026-10-30T10:39:33+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:33+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:33+00:00] auth attempt
+[2026-10-30T10:39:33+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T10:39:33+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:33+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:33+00:00] "PATCH /api/admin/shipments/1 HTTP/1.1" 200 -
+[2026-10-30T10:39:33+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:33+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:33+00:00] "POST /api/admin/settlements/generate HTTP/1.1" 200 -
+[2026-10-30T10:39:33+00:00] "GET /api/admin/settlements HTTP/1.1" 200 -
+[2026-10-30T10:39:34+00:00] auth attempt
+[2026-10-30T10:39:34+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T10:39:34+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:34+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:34+00:00] "PATCH /api/admin/shipments/1 HTTP/1.1" 200 -
+[2026-10-30T10:39:34+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:34+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:34+00:00] "POST /api/admin/settlements/generate HTTP/1.1" 200 -
+[2026-10-30T10:39:34+00:00] "POST /api/admin/settlements/generate HTTP/1.1" 200 -
+[2026-10-30T10:39:34+00:00] auth attempt
+[2026-10-30T10:39:34+00:00] "PATCH /api/admin/merchants/1 HTTP/1.1" 400 -
+[2026-10-30T10:39:34+00:00] auth attempt
+[2026-10-30T10:39:34+00:00] "PATCH /api/admin/posts/1 HTTP/1.1" 400 -
+[2026-10-30T10:39:35+00:00] auth attempt
+[2026-10-30T10:39:35+00:00] "PATCH /api/admin/posts/1 HTTP/1.1" 200 -
+[2026-10-30T10:39:35+00:00] "GET /api/public/posts HTTP/1.1" 200 -
+[2026-10-30T10:39:35+00:00] auth attempt
+[2026-10-30T10:39:35+00:00] "PATCH /api/admin/recipes/1 HTTP/1.1" 400 -
+[2026-10-30T10:39:35+00:00] auth attempt
+[2026-10-30T10:39:35+00:00] "PATCH /api/admin/recipes/1 HTTP/1.1" 200 -
+[2026-10-30T10:39:35+00:00] "GET /api/public/recipes HTTP/1.1" 200 -
+[2026-10-30T10:39:36+00:00] auth attempt
+[2026-10-30T10:39:36+00:00] "PATCH /api/admin/integrations/1 HTTP/1.1" 400 -
+[2026-10-30T10:39:36+00:00] auth attempt
+[2026-10-30T10:39:36+00:00] "POST /api/admin/users/create HTTP/1.1" 201 -
+[2026-10-30T10:39:36+00:00] auth attempt
+[2026-10-30T10:39:36+00:00] "POST /api/admin/orders/create HTTP/1.1" 403 -
+[2026-10-30T10:39:36+00:00] "GET /api/admin/recipes HTTP/1.1" 200 -
+[2026-10-30T10:39:36+00:00] auth attempt
+[2026-10-30T10:39:37+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 200 -
+[2026-10-30T10:39:37+00:00] "GET /api/admin/audit_logs HTTP/1.1" 200 -
+[2026-10-30T10:39:37+00:00] auth attempt
+[2026-10-30T10:39:37+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T10:39:37+00:00] "GET /api/admin/reports HTTP/1.1" 200 -
+[2026-10-30T10:39:37+00:00] auth attempt
+[2026-10-30T10:39:37+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 200 -
+[2026-10-30T10:39:37+00:00] "GET /api/public/product/bangeo-hoe HTTP/1.1" 200 -
+[2026-10-30T10:39:37+00:00] auth attempt
+[2026-10-30T10:39:37+00:00] "POST /api/auth/logout HTTP/1.1" 200 -
+[2026-10-30T10:39:37+00:00] "GET /api/admin/products HTTP/1.1" 401 -
+[2026-10-30T10:39:38+00:00] auth attempt
+[2026-10-30T10:39:38+00:00] "POST /api/auth/password HTTP/1.1" 200 -
+[2026-10-30T10:39:38+00:00] auth attempt
+[2026-10-30T10:39:38+00:00] auth attempt
+[2026-10-30T10:39:38+00:00] "GET /api/admin/products?q=%27%20OR%201%3D1%20-- HTTP/1.1" 200 -
+[2026-10-30T10:39:39+00:00] auth attempt
+[2026-10-30T10:39:39+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 400 -
+[2026-10-30T10:39:39+00:00] auth attempt
+[2026-10-30T10:39:39+00:00] "POST /api/admin/posts HTTP/1.1" 201 -
+[2026-10-30T10:39:39+00:00] "GET /api/public/posts HTTP/1.1" 200 -
+[2026-10-30T10:39:39+00:00] auth attempt
+[2026-10-30T10:39:39+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 403 -
+[2026-10-30T10:39:40+00:00] auth attempt
+[2026-10-30T10:39:40+00:00] auth attempt
+[2026-10-30T10:39:40+00:00] "GET /api/admin/reports HTTP/1.1" 200 -
+[2026-10-30T10:39:40+00:00] auth attempt
+[2026-10-30T10:39:40+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T10:39:40+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:40+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 400 -
+[2026-10-30T10:39:40+00:00] auth attempt
+[2026-10-30T10:39:40+00:00] "PATCH /api/admin/users/1 HTTP/1.1" 400 -
+[2026-10-30T10:39:41+00:00] auth attempt
+[2026-10-30T10:39:41+00:00] "POST /api/admin/products HTTP/1.1" 201 -
+[2026-10-30T10:39:41+00:00] "GET /api/public/product/test-fish-pack HTTP/1.1" 404 -
+[2026-10-30T10:39:41+00:00] auth attempt
+[2026-10-30T10:39:41+00:00] "POST /api/admin/recipes HTTP/1.1" 201 -
+[2026-10-30T10:39:41+00:00] auth attempt
+[2026-10-30T10:39:41+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T10:39:41+00:00] "GET /api/admin/orders/1/details HTTP/1.1" 200 -
+[2026-10-30T10:39:42+00:00] "POST /api/public/events HTTP/1.1" 202 -
+[2026-10-30T10:39:42+00:00] auth attempt
+[2026-10-30T10:39:42+00:00] "GET /api/admin/reports HTTP/1.1" 200 -
+[2026-10-30T10:39:42+00:00] "POST /api/public/events HTTP/1.1" 400 -
+[2026-10-30T10:39:42+00:00] "GET /admin/recipe-media.html HTTP/1.1" 401 -
+[2026-10-30T10:39:44+00:00] auth attempt
+[2026-10-30T10:39:44+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -
+[2026-10-30T10:39:44+00:00] auth attempt
+[2026-10-30T10:39:44+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -----------------------------------------------------------------------
+Ran 69 tests in 22.538s
+
+OK
+
+[2026-10-30T10:39:44+00:00] auth attempt
+[2026-10-30T10:39:44+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T10:39:45+00:00] auth attempt
+[2026-10-30T10:39:45+00:00] "PATCH /api/admin/merchants/1 HTTP/1.1" 200 -
+[2026-10-30T10:39:45+00:00] "PATCH /api/admin/merchants/1 HTTP/1.1" 400 -
+[2026-10-30T10:39:45+00:00] auth attempt
+[2026-10-30T10:39:45+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -
+[2026-10-30T10:39:45+00:00] auth attempt
+[2026-10-30T10:39:45+00:00] "POST /api/admin/products HTTP/1.1" 201 -
+[2026-10-30T10:39:45+00:00] "PATCH /api/admin/products/45 HTTP/1.1" 400 -
+[2026-10-30T10:39:45+00:00] "PATCH /api/admin/merchants/1 HTTP/1.1" 200 -
+[2026-10-30T10:39:45+00:00] "PATCH /api/admin/products/45 HTTP/1.1" 200 -
+[2026-10-30T10:39:45+00:00] auth attempt
+[2026-10-30T10:39:45+00:00] auth attempt
+[2026-10-30T10:39:46+00:00] "POST /api/auth/password HTTP/1.1" 200 -
+[2026-10-30T10:39:46+00:00] "GET /api/admin/products HTTP/1.1" 401 -
+[2026-10-30T10:39:46+00:00] "GET /api/admin/products HTTP/1.1" 401 -
+[2026-10-30T10:39:46+00:00] auth attempt
+[2026-10-30T10:39:46+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T10:39:46+00:00] "PATCH /api/admin/shipments/1 HTTP/1.1" 400 -
+[2026-10-30T10:39:46+00:00] auth attempt
+[2026-10-30T10:39:46+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -
+[2026-10-30T10:39:46+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -
+[2026-10-30T10:39:46+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -
+[2026-10-30T10:39:47+00:00] auth attempt
+[2026-10-30T10:39:47+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 400 -
+[2026-10-30T10:39:47+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 400 -
+[2026-10-30T10:39:47+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 400 -
+[2026-10-30T10:39:47+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 400 -
+[2026-10-30T10:39:47+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 400 -
+[2026-10-30T10:39:47+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 400 -
+[2026-10-30T10:39:47+00:00] auth attempt
+[2026-10-30T10:39:47+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 400 -
+[2026-10-30T10:39:47+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 400 -
+[2026-10-30T10:39:47+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 400 -
+[2026-10-30T10:39:48+00:00] auth attempt
+[2026-10-30T10:39:48+00:00] "PATCH /api/admin/merchants/1 HTTP/1.1" 200 -
+[2026-10-30T10:39:48+00:00] "GET /api/public/product/bangeo-hoe HTTP/1.1" 404 -
+[2026-10-30T10:39:48+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -
+[2026-10-30T10:39:48+00:00] auth attempt
+[2026-10-30T10:39:48+00:00] "PATCH /api/admin/merchants/1 HTTP/1.1" 200 -
+[2026-10-30T10:39:48+00:00] "PATCH /api/admin/merchants/1 HTTP/1.1" 200 -
+[2026-10-30T10:39:48+00:00] "GET /api/public/product/bangeo-hoe HTTP/1.1" 404 -
+[2026-10-30T10:39:48+00:00] auth attempt
+[2026-10-30T10:39:48+00:00] "PATCH /api/admin/merchants/1 HTTP/1.1" 200 -
+[2026-10-30T10:39:48+00:00] "GET /api/public/products HTTP/1.1" 200 -
+[2026-10-30T10:39:48+00:00] auth attempt
+[2026-10-30T10:39:48+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -
+[2026-10-30T10:39:48+00:00] "GET /api/public/product/bangeo-hoe HTTP/1.1" 404 -
+[2026-10-30T10:39:49+00:00] auth attempt
+[2026-10-30T10:39:49+00:00] "POST /api/admin/users/create HTTP/1.1" 201 -
+[2026-10-30T10:39:49+00:00] "PATCH /api/admin/users/2 HTTP/1.1" 200 -
+[2026-10-30T10:39:49+00:00] auth attempt
+[2026-10-30T10:39:49+00:00] "PATCH /api/admin/merchants/1 HTTP/1.1" 200 -
+[2026-10-30T10:39:49+00:00] auth attempt
+[2026-10-30T10:39:49+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 200 -
+[2026-10-30T10:39:50+00:00] auth attempt
+[2026-10-30T10:39:50+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T10:39:50+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T10:39:50+00:00] auth attempt
+[2026-10-30T10:39:50+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 403 -

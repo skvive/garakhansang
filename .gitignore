@@ -1,0 +1,14 @@
+# User data: NEVER include a runtime database or local first-login credentials in git/packages
+runtime/
+QA_V9_RESULTS/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+.env
+.env.*
+!.env.example
+.vercel/

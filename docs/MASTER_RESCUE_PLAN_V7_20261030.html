@@ -1,0 +1,305 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>가락한상 개발 마스터 점검 보고서</title><style>
+@page { size:A4; margin: 17mm 16mm 17mm 16mm; @bottom-left {content:"GARAK HANSANG • DEVELOPMENT AUDIT • 2026.10.30"; font:8pt 'Noto Sans CJK KR'; color:#74818f;} @bottom-right {content:counter(page) " / " counter(pages);font:8pt 'Noto Sans CJK KR';color:#74818f;} }
+*{box-sizing:border-box} html,body{font-family:'Noto Sans CJK KR','NanumGothic',sans-serif;color:#17283a;font-size:9pt;line-height:1.68;}body{margin:0} h1{font-size:21pt;line-height:1.32;color:#0c2e49;padding:0 0 12px;border-bottom:3px solid #0c5177;margin:0 0 17px;} h2{font-size:13.5pt;color:#073a5b;border-bottom:1px solid #dbe6ec;margin:20px 0 9px;page-break-after:avoid;}h3{font-size:11pt;color:#0c5177;margin:15px 0 6px;page-break-after:avoid;}p{margin:7px 0}blockquote{border-left:3px solid #ef4b43;background:#f3f7f9;padding:7px 12px;margin:10px 0;font-size:9pt}table{border-collapse:collapse;width:100%;table-layout:fixed;margin:10px 0 12px;page-break-inside:auto}thead{display:table-header-group}tr{page-break-inside:avoid}th,td{padding:5px 6px;vertical-align:top;border-bottom:1px solid #dde5eb;overflow-wrap:anywhere;word-break:keep-all;font-size:7.45pt;line-height:1.42;}th{background:#103d59;color:#fff;text-align:left;font-weight:600;}tr:nth-child(even){background:#f4f8fb;}table:nth-of-type(2) td:first-child{font-weight:600}ul,ol{padding-left:21px}li{margin:3px 0;page-break-inside:avoid}strong{color:#b32924}code{font-family:monospace;font-size:8pt;background:#edf3f7;padding:1px 3px;border-radius:2px;} hr{border:0;border-top:1px solid #cbd5e1}
+</style></head><body><h1>가락한상 미완료 작업 전수 점검 및 순차 실행 마스터 보고서</h1>
+<p><strong>버전:</strong> v7.0 / <strong>기준일:</strong> 2026-10-30  <strong>판정:</strong> 로컬 베타 보강 완료 / 상용 출시 NO-GO<br />
+<strong>서비스:</strong> 가락시장 상인 중심 종합 신선식품 쇼핑몰 포털 (수산 우선·축산·농산, 간편 레시피, 요리사·상인 홍보, 광고, 다채널 판매)</p>
+<blockquote>
+<p>이 문서는 이전 v1~v6 산출물과 현재 접근 가능한 GitHub·Vercel·Neon 메타데이터를 비교해 작성했다. 실행한 것은 로컬 베타의 실제 코드 개선·자동 테스트와 연결 서비스의 읽기 전용 점검이다. <code>garak.lexid.site</code>의 코드를 수정하거나 실결제를 진행한 기록은 없다.</p>
+</blockquote>
+<h2>1. 현재 자산과 검증 근거</h2>
+<table>
+<thead>
+<tr>
+  <th>대상</th>
+  <th>조사 결과</th>
+  <th>신뢰 수준/주의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>원본 GitHub</td>
+  <td><code>skvive/garak</code>, 기본 브랜치 <code>main</code>, 확인된 최신 커밋 <code>4552fdc7482d5814f37e2fcdc382eb93ba89717d</code></td>
+  <td>연결된 GitHub 읽기 전용 조회</td>
+</tr>
+<tr>
+  <td>실제 도메인/Vercel</td>
+  <td><code>garak.lexid.site</code> → <code>garakhs</code>, READY; 배포는 CLI 소스, 참조 커밋 <code>0ebeb50a58fcc54d334f0bda62aaab2ebcbcb2fc</code></td>
+  <td>Vercel 배포 메타데이터 조회. READY는 거래 정상 동작의 증거가 아님</td>
+</tr>
+<tr>
+  <td>Vercel 환경</td>
+  <td><code>DATABASE_URL</code>, <code>NEON_AUTH_BASE_URL</code>, <code>NEON_AUTH_COOKIE_SECRET</code> 존재</td>
+  <td><strong>값을 열지 않았으므로 연결 DB 프로젝트 ID 미확정</strong></td>
+</tr>
+<tr>
+  <td>Neon 프로젝트 <code>garakhansang</code></td>
+  <td><code>mute-darkness-67529424</code>, 상품·주문·정산·사용자 테이블 존재. 조회 시점 집계: 상품 0, 주문 5, 카테고리 0, 콘텐츠 0, 정산 0</td>
+  <td>읽기 전용 스키마·집계. <strong>운영 도메인이 이 DB를 사용한다는 검증은 아직 없음</strong></td>
+</tr>
+<tr>
+  <td>별도 Neon <code>garakland</code></td>
+  <td><code>ancient-grass-26115554</code>, 상인/게임/지갑 등 별도 테이블 구조</td>
+  <td><strong>다른 프로젝트</strong>. 잘못된 데이터 혼합 금지</td>
+</tr>
+<tr>
+  <td>로컬 v6/v7</td>
+  <td>쇼핑몰 정적 HTML 217 + 관리자 1, 샘플 상품 44, 레시피 132, 로컬 SQLite/HTTP 관리자</td>
+  <td>시연/샘플 데이터. 정식 판매·재고·상인으로 취급 불가</td>
+</tr>
+<tr>
+  <td>이미지</td>
+  <td>레시피 WebP 132개, 해시 중복 0</td>
+  <td>메뉴별 정확한 완성 요리 사진이라는 증빙 없음. 기존 AI 연출 시안</td>
+</tr>
+</tbody>
+</table>
+<h3>실운영과 모의 환경이 서로 다른 이유</h3>
+<ul>
+<li>기존 Neon <code>products</code>는 <strong><code>price_usd</code></strong>, <code>orders</code>는 <strong><code>total_usd</code>·<code>amount_krw</code></strong>, <code>settlements</code>는 <strong>USD 및 외부 소싱 정산 중심</strong>이다.</li>
+<li>로컬 v7 관리자는 <strong>정수 KRW 가격·상인별 정산·가상 주문</strong> 모델이다. 컬럼이 존재한다고 바로 양방향 동기화하면 환율·매출·원장 오류가 발생한다.</li>
+<li>Vercel 프로덕션 데이터베이스가 어느 Neon 프로젝트를 가리키는지 확정한 후, <strong>기존 테이블 덮어쓰기 금지, <code>garak_ops</code> 분리 스키마, 검증된 외부 ID로 참조</strong> 원칙을 적용한다.</li>
+</ul>
+<h2>2. 전체 미완료 백로그 (우선순위순)</h2>
+<p>표기: <code>LOCAL DONE</code> 로컬 코드 및 테스트 완료, <code>READ ONLY</code> 조사만 완료, <code>BLOCKED</code> 외부 자격·승인·운영 환경 필요, <code>TO DO</code> 개발 대기.</p>
+<table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>우선</th>
+  <th>미완료/위험 항목</th>
+  <th>의존성 및 완료 판정</th>
+  <th>현재</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>G-01</td>
+  <td>P0</td>
+  <td>운영 배포 커밋 vs GitHub 최신 비교 및 원본 체크아웃</td>
+  <td>실제 clone, 브랜치 차이 분석, 빌드/미리보기 배포, 롤백 검증</td>
+  <td>READ ONLY</td>
+</tr>
+<tr>
+  <td>G-02</td>
+  <td>P0</td>
+  <td>Vercel DATABASE_URL의 실제 Neon 프로젝트 연결 확인</td>
+  <td>연결 대상·환경별 분리, 마스킹된 검증·운영자 승인</td>
+  <td>BLOCKED</td>
+</tr>
+<tr>
+  <td>G-03</td>
+  <td>P0</td>
+  <td>운영 데이터 모델(USD/KRW·상품·주문·정산) 분리</td>
+  <td>정본 지정, 스테이징/마이그레이션 계획, 단위 테스트, 데이터 0 손실</td>
+  <td>계약 설계/일부 가드 LOCAL DONE</td>
+</tr>
+<tr>
+  <td>G-04</td>
+  <td>P0</td>
+  <td>관리자 Neon Auth SSO/MFA, 역할·테넌트 접근</td>
+  <td>계정/상인 소속 격리, MFA, RLS, 감사로그, 침투 테스트</td>
+  <td>BLOCKED</td>
+</tr>
+<tr>
+  <td>G-05</td>
+  <td>P0</td>
+  <td>실제 결제·중복 Webhook·취소/부분환불</td>
+  <td>Toss 테스트 계정·서명 검증·금액 재계산·멱등 처리/대사</td>
+  <td>BLOCKED</td>
+</tr>
+<tr>
+  <td>G-06</td>
+  <td>P0</td>
+  <td>재고 예약·취소·반품 동시성 통합</td>
+  <td>실 Neon에서 동시 결제·재고 0미만 금지, 재시도/보상 트랜잭션</td>
+  <td>로컬 보강 LOCAL DONE / 실운영 BLOCKED</td>
+</tr>
+<tr>
+  <td>G-07</td>
+  <td>P0</td>
+  <td>상인 신원·원산지·식품표시·가격·실사진 확인</td>
+  <td>실제 사업자 및 상품 표시 기준 검토, 승인 이력, 상품 공개 조건</td>
+  <td>로컬 승인 규칙 보강 DONE / 실자료 BLOCKED</td>
+</tr>
+<tr>
+  <td>G-08</td>
+  <td>P0</td>
+  <td>냉장/냉동/활어/3시간 배송 약관과 현장 이행</td>
+  <td>물류 계약·배송 가능 지역·마감·보상·송장 실제 검증</td>
+  <td>BLOCKED</td>
+</tr>
+<tr>
+  <td>G-09</td>
+  <td>P0</td>
+  <td>지급 정산·세금증빙·이중 송금·취소금 대사</td>
+  <td>PG·은행·세무 파트너 확인, 실송금 대신 샌드박스 검증</td>
+  <td>BLOCKED</td>
+</tr>
+<tr>
+  <td>G-10</td>
+  <td>P0</td>
+  <td>고객 PII·비밀정보·외부 노출 보안</td>
+  <td>비밀관리, 감사, CSRF/XSS/IDOR, 접근키 회전, 삭제 정책</td>
+  <td>로컬 일부 LOCAL DONE / 운영 BLOCKED</td>
+</tr>
+<tr>
+  <td>G-11</td>
+  <td>P0</td>
+  <td>백업·복원·관측·배포 롤백</td>
+  <td>로컬 SQLite 복원 테스트 + Neon PITR/분기·운영 알람·실배포 롤백</td>
+  <td>로컬 백업 LOCAL DONE / Neon BLOCKED</td>
+</tr>
+<tr>
+  <td>G-12</td>
+  <td>P1</td>
+  <td>44개 상품 가상 점포·가격·사진 교체</td>
+  <td>실제 상품 입점·원산지·중량·재고 확인 전 공개 금지</td>
+  <td>TO DO</td>
+</tr>
+<tr>
+  <td>G-13</td>
+  <td>P1</td>
+  <td>132개 레시피 전문 감수</td>
+  <td>조리법/분량/알레르기/식중독/재료·결과 사진 일치 확인</td>
+  <td>TO DO</td>
+</tr>
+<tr>
+  <td>G-14</td>
+  <td>P1</td>
+  <td>레시피별 독립 AI 완성 사진 132장</td>
+  <td>요리 내용과 이미지의 1:1 육안 검수·상업 이용권 확인</td>
+  <td>BLOCKED (기존 합성 시안만 있음)</td>
+</tr>
+<tr>
+  <td>G-15</td>
+  <td>P1</td>
+  <td>Blogger Google OAuth·게시물 소유권·동기화</td>
+  <td>동의, 토큰 암호화·철회, 소유자 권한, 저작권 검수</td>
+  <td>BLOCKED</td>
+</tr>
+<tr>
+  <td>G-16</td>
+  <td>P1</td>
+  <td>YouTube Shorts·요리사 프로필 실연동</td>
+  <td>공식 API/임베드, 동영상 권리, 광고 표시</td>
+  <td>BLOCKED</td>
+</tr>
+<tr>
+  <td>G-17</td>
+  <td>P1</td>
+  <td>상인·협회·유통업체 게시판 운영화</td>
+  <td>사업자/단체 확인, 광고·협찬 표기, 신고/삭제/제재, 리뷰 조작 방지</td>
+  <td>로컬 검수 API DONE / 운영 BLOCKED</td>
+</tr>
+<tr>
+  <td>G-18</td>
+  <td>P1</td>
+  <td>쿠팡 WING 외부 판매 채널</td>
+  <td>사업자 API 승인, SKU·재고·주문·배송 대사</td>
+  <td>BLOCKED</td>
+</tr>
+<tr>
+  <td>G-19</td>
+  <td>P1</td>
+  <td>배민·쿠팡이츠 입점 및 허용 API 범위</td>
+  <td>가맹/제휴 계약, 승인 가능한 기능만 구현</td>
+  <td>BLOCKED</td>
+</tr>
+<tr>
+  <td>G-20</td>
+  <td>P1</td>
+  <td>공신력 있는 경매 시세/판매가 분리</td>
+  <td>공식 데이터 출처·갱신시각·불확실성 표시</td>
+  <td>TO DO</td>
+</tr>
+<tr>
+  <td>G-21</td>
+  <td>P1</td>
+  <td>홈페이지 2번 시안 전 페이지 정합성</td>
+  <td>실제 Next.js 217+ 화면 렌더·이미지/한글/모바일·접근성 검수</td>
+  <td>정적 시연본 완료 / 운영 TO DO</td>
+</tr>
+<tr>
+  <td>G-22</td>
+  <td>P2</td>
+  <td>Google 검색·쇼핑 구조화 데이터·AEO</td>
+  <td>한국어 canonical·Product/Recipe/Organization 검증</td>
+  <td>TO DO</td>
+</tr>
+<tr>
+  <td>G-23</td>
+  <td>P2</td>
+  <td>안드로이드 앱/상인 앱</td>
+  <td>PWA/TWA 또는 네이티브, OAuth·딥링크·결제 정책, 실제 APK 빌드</td>
+  <td>TO DO</td>
+</tr>
+<tr>
+  <td>G-24</td>
+  <td>P2</td>
+  <td>실제 통계·광고비·ROAS·결제 전환 계측</td>
+  <td>서버 검증 이벤트 + GA4 + 운영 주문/광고 원장 대조</td>
+  <td>LOCAL 샘플 집계 / 운영 TO DO</td>
+</tr>
+<tr>
+  <td>G-25</td>
+  <td>P2</td>
+  <td>종합 E2E·성능·복구/장애 훈련</td>
+  <td>브라우저 실 URL·최소 3기기·동시 주문·Webhooks·배포 롤백</td>
+  <td>LOCAL 일부 / 운영 BLOCKED</td>
+</tr>
+</tbody>
+</table>
+<h2>3. 권장 순차 실행 로드맵 및 게이트</h2>
+<h3>0단계. 원본/배포/DB 정본 확인 (최우선)</h3>
+<ul>
+<li>GitHub <code>main</code> 대 Vercel 배포 커밋 차이표 확보.</li>
+<li><code>DATABASE_URL</code> <strong>값은 공개하지 않고</strong> 연결 프로젝트 ID만 검증.</li>
+<li>운영 데이터 백업을 확인하고 읽기 전용 기준선(상품·주문·카테고리/결제 상태 집계)을 고정.</li>
+<li><strong>완료 기준:</strong> 실제 소스 체크아웃·Next.js <code>npm ci &amp;&amp; npm run build</code> 통과, 스테이징 분리, 롤백 절차 검증.</li>
+</ul>
+<h3>1단계. 백엔드 보안·주문 원장 안정화</h3>
+<ul>
+<li>주문 SKU 중복 합산, 원자적 재고 조건 차감, 상태 머신 우회 차단.</li>
+<li>비밀번호 변경 후 세션 폐기, 사업자 확인 상태 강제, 감사 로그.</li>
+<li>실결제는 Toss Sandbox 금액·중복 webhook 확인 전에 절대 활성화하지 않음.</li>
+<li><strong>완료 기준:</strong> 실제 Neon 스테이징 100+ 동시 주문·취소·반품 테스트, 결제 불일치 0건, 중복 송금 0건.</li>
+</ul>
+<h3>2단계. 데이터·상품·콘텐츠 이식</h3>
+<ul>
+<li>신선식품 카테고리 정리, 실판매 상품만 공개, 132 레시피 사진·문구 감수.</li>
+<li><code>garak_ops</code> 분리 스키마와 외부 ID를 적용, DB 마이그레이션 dry-run, 보안/복원 실험.</li>
+<li><strong>완료 기준:</strong> 실상품 100% 상품 속성 확인, 운영 데이터와 대시보드 가격/재고·주문 합계 불일치 0건.</li>
+</ul>
+<h3>3단계. 판매자·미디어·광고·외부 채널</h3>
+<ul>
+<li>상인/요리사 로그인과 신원 검증; Blogger·YouTube OAuth; 게시물 승인·광고 라벨.</li>
+<li>쿠팡 WING API 통합, 배민/쿠팡이츠는 공식 제휴 승인 범위에서만.</li>
+<li><strong>완료 기준:</strong> 토큰 취소·게시물 비공개·API 실패·재시도 시나리오 검증, 허위 광고/노출 수치 0건.</li>
+</ul>
+<h3>4단계. 실제 운영 품질·앱·출시</h3>
+<ul>
+<li>2번 시장스토리 디자인 전체 라우트 테스트, 모바일 375/390/430 및 데스크톱.</li>
+<li>접근성·검색 구조화 데이터, 안드로이드 앱, 성능·모니터링, 샌드박스 결제 후 운영 배포.</li>
+<li><strong>완료 기준:</strong> 핵심 구매·취소·환불·배송·정산 실운영 조건 모두 Go 판정.</li>
+</ul>
+<h2>4. 이 보고서대로 이번 세션에 실제 수행한 작업</h2>
+<ol>
+<li><strong>읽기 전용 외부 실사:</strong> GitHub/Vercel/Neon 두 프로젝트의 상태·스키마·테이블 존재 확인, 운영 DB 연결 프로젝트 미확정 기록.</li>
+<li><strong>기존 v6 자동 테스트 재실행:</strong> 베이스라인 통과.</li>
+<li><strong>로컬 베타 주문 안정화:</strong> 중복 SKU 합산·주문 수량 상한·조건부 재고 차감 적용. 기존 SQLite <code>stock&gt;=0</code> 제약이 음수 재고를 이미 방지한다는 점도 실제 재현 검증.</li>
+<li><strong>관리자 보안:</strong> 비밀번호 회전시 기존 모든 세션 폐기, 신규 상품 공개시 상인 인증 조건, 활성 점포의 인증 철회 차단, 배송 상태 변경은 주문 상태 머신 경유.</li>
+<li><strong>백업/복원:</strong> <code>tools/db_snapshot.py</code> 개발. 스냅샷, 무결성 SHA256, 별도 경로 복원, 변조 거부, 덮어쓰기 거부 테스트.</li>
+<li><strong>통화 오류 방지:</strong> <code>integrations/currency_contract.mjs</code> 개발. 통화 단위 강제, 결제 금액 불일치 거부, 정수 원화 검증; 이 함수는 실 PG를 호출하지 않음.</li>
+<li><strong>자동 검증:</strong> Python 57건 + Node 통화 단위 테스트 3건, 동시 주문 50건, 공개 API 조회 100건, HTML 218개 링크·JS·UTF-8, 레시피 WebP 132개 점검.</li>
+</ol>
+<h2>5. 현재 최종 판단</h2>
+<ul>
+<li><strong>로컬 베타:</strong> 코드 개선 및 자동 테스트 통과.</li>
+<li><strong>GitHub 최신 저장소 통합 빌드:</strong> <strong>미완료</strong> (연결 도구로 파일 내용은 조회했으나 완전한 소스 체크아웃/빌드 없음).</li>
+<li><strong>Vercel 프로덕션 배포·실결제·송금:</strong> <strong>미완료</strong>.</li>
+<li><strong>Neon 구조 조사:</strong> 읽기 전용 확인; <strong>스키마 쓰기/마이그레이션 미실행</strong>.</li>
+<li><strong>실상품·실점포·132장 실제 완성 요리 사진:</strong> <strong>미완료</strong>.</li>
+</ul>
+<p><strong>최종 판정: NO-GO FOR LIVE SALES.</strong> 실결제와 데이터 파괴 위험이 있는 운영 변경을 테스트 성과만으로 자동 승인하지 않는다. 다음 실운영 작업의 첫 단계는 DB 연결 프로젝트 확인 및 별도 스테이징 분기 검증이다.</p>
+</body></html>

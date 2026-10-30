@@ -1,0 +1,25 @@
+{
+  "product": "Garak Hansang V8 local beta",
+  "status": "LOCAL_BETA_QA_PASS__REAL_COMMERCE_NO_GO",
+  "date": "2026-10-30",
+  "checks": {
+    "python_api": 69,
+    "currency_node": 3,
+    "business_flow": 50,
+    "admin_screen": 32,
+    "cart_browser": 10,
+    "html_static": 218,
+    "concurrent_requests": 50,
+    "allowed_orders": 20,
+    "rejected_orders": 30
+  },
+  "operating_services_changed": false,
+  "limitations": [
+    "not full Next.js repository build",
+    "not Vercel deployment",
+    "not Neon production DB migration",
+    "not real payments/shipping/settlement",
+    "not individually validated 132 food images"
+  ],
+  "files": 649
+}

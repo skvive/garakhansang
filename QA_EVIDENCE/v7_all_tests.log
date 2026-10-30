@@ -1,0 +1,770 @@
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425c5f5b0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425c5f790>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425c5f3d0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425c5f3d0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425c5f5b0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425c5f790>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1af20>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b010>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1aa70>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b100>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b3d0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1ac50>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b4c0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b1f0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b2e0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1ad40>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b6a0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b790>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b880>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b5b0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1ba60>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1bb50>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1bc40>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1be20>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1bf10>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880040>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b970>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880130>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880220>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880310>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1bd30>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b196c0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880400>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258804f0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258805e0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b189a0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258806d0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258808b0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258809a0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880a90>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b196c0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1bd30>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b970>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1bf10>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1be20>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b189a0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1bb50>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1ba60>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b5b0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b880>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b790>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1bc40>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b6a0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b2e0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b1f0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b4c0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1ac50>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b3d0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b100>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1aa70>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b010>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1af20>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1ad40>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425c5f5b0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425c5f3d0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880a90>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258809a0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258808b0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258806d0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258805e0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425c5f790>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880400>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880310>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880220>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880130>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880040>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880b80>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258804f0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880d60>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880e50>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880f40>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881030>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881120>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881210>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881300>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258813f0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258814e0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258815d0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258816c0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258817b0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258818a0>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881990>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881a80>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881b70>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881c60>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:82: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881d50>
+  m=con.execute('SELECT id FROM merchants WHERE name=?',(p['merchant'],)).fetchone()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1ad40>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1af20>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b010>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1aa70>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b100>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1ac50>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b4c0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b1f0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b2e0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b6a0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1bc40>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b880>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b3d0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b5b0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1ba60>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b790>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b189a0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1be20>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1bf10>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1bb50>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1bd30>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b196c0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881d50>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b970>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881b70>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881a80>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881990>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881c60>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258817b0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258816c0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258815d0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258818a0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258813f0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881300>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881210>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258814e0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881030>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880f40>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880e50>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881120>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258804f0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880b80>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880040>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880130>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880220>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880310>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880400>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1a200>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425c5f4c0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258807c0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880c70>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880d60>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880b80>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880e50>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880f40>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881030>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881210>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258814e0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881300>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881120>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258818a0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258813f0>
+  _iterencode = c_make_encoder(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+[2026-10-30T04:08:01+00:00] "GET /api/health HTTP/1.1" 200 -
+[2026-10-30T04:08:01+00:00] "GET /index.html HTTP/1.1" 200 -
+[2026-10-30T04:08:01+00:00] "GET /admin/ HTTP/1.1" 200 -
+[2026-10-30T04:08:01+00:00] "GET /recipes/index.html HTTP/1.1" 200 -
+[2026-10-30T04:08:01+00:00] "GET /product/bangeo-hoe.html HTTP/1.1" 200 -
+[2026-10-30T04:08:01+00:00] "GET /api/admin/products HTTP/1.1" 401 -
+[2026-10-30T04:08:02+00:00] auth attempt
+[2026-10-30T04:08:02+00:00] auth attempt
+[2026-10-30T04:08:02+00:00] "GET /api/auth/me HTTP/1.1" 200 -
+[2026-10-30T04:08:02+00:00] auth attempt
+[2026-10-30T04:08:02+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 403 -
+[2026-10-30T04:08:02+00:00] auth attempt
+[2026-10-30T04:08:02+00:00] "GET /api/admin/overview HTTP/1.1" 200 -
+[2026-10-30T04:08:03+00:00] auth attempt
+[2026-10-30T04:08:03+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 200 -
+[2026-10-30T04:08:03+00:00] auth attempt
+[2026-10-30T04:08:03+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 400 -
+[2026-10-30T04:08:03+00:00] auth attempt
+[2026-10-30T04:08:03+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 200 -
+[2026-10-30T04:08:04+00:00] auth attempt
+[2026-10-30T04:08:04+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 400 -
+[2026-10-30T04:08:04+00:00] auth attempt
+[2026-10-30T04:08:04+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:08:04+00:00] auth attempt
+[2026-10-30T04:08:04+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -
+[2026-10-30T04:08:05+00:00] auth attempt
+[2026-10-30T04:08:05+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:08:05+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 400 -
+[2026-10-30T04:08:05+00:00] auth attempt
+[2026-10-30T04:08:05+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:08:05+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:08:05+00:00] auth attempt
+[2026-10-30T04:08:05+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:08:05+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:08:05+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:08:05+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 400 -
+[2026-10-30T04:08:06+00:00] auth attempt
+[2026-10-30T04:08:06+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:08:06+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] "PATCH /api/admin/shipments/1 HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] auth attempt
+[2026-10-30T04:08:06+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:08:06+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] "PATCH /api/admin/shipments/1 HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] "POST /api/admin/settlements/generate HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] "GET /api/admin/settlements HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] auth attempt
+[2026-10-30T04:08:06+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:08:06+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] "PATCH /api/admin/shipments/1 HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] "POST /api/admin/settlements/generate HTTP/1.1" 200 -
+[2026-10-30T04:08:06+00:00] "POST /api/admin/settlements/generate HTTP/1.1" 200 -
+[2026-10-30T04:08:07+00:00] auth attempt
+[2026-10-30T04:08:07+00:00] "PATCH /api/admin/merchants/1 HTTP/1.1" 400 -
+[2026-10-30T04:08:07+00:00] auth attempt
+[2026-10-30T04:08:07+00:00] "PATCH /api/admin/posts/1 HTTP/1.1" 400 -
+[2026-10-30T04:08:07+00:00] auth attempt
+[2026-10-30T04:08:07+00:00] "PATCH /api/admin/posts/1 HTTP/1.1" 200 -
+[2026-10-30T04:08:07+00:00] "GET /api/public/posts HTTP/1.1" 200 -
+[2026-10-30T04:08:08+00:00] auth attempt
+[2026-10-30T04:08:08+00:00] "PATCH /api/admin/recipes/1 HTTP/1.1" 400 -
+[2026-10-30T04:08:08+00:00] auth attempt
+[2026-10-30T04:08:08+00:00] "PATCH /api/admin/recipes/1 HTTP/1.1" 200 -
+[2026-10-30T04:08:08+00:00] "GET /api/public/recipes HTTP/1.1" 200 -
+[2026-10-30T04:08:08+00:00] auth attempt
+[2026-10-30T04:08:08+00:00] "PATCH /api/admin/integrations/1 HTTP/1.1" 400 -
+[2026-10-30T04:08:09+00:00] auth attempt
+[2026-10-30T04:08:09+00:00] "POST /api/admin/users/create HTTP/1.1" 201 -
+[2026-10-30T04:08:09+00:00] auth attempt
+[2026-10-30T04:08:09+00:00] "POST /api/admin/orders/create HTTP/1.1" 403 -
+[2026-10-30T04:08:09+00:00] "GET /api/admin/recipes HTTP/1.1" 200 -
+[2026-10-30T04:08:09+00:00] auth attempt
+[2026-10-30T04:08:09+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 200 -
+[2026-10-30T04:08:09+00:00] "GET /api/admin/audit_logs HTTP/1.1" 200 -
+[2026-10-30T04:08:09+00:00] auth attempt
+[2026-10-30T04:08:09+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:08:09+00:00] "GET /api/admin/reports HTTP/1.1" 200 -
+[2026-10-30T04:08:10+00:00] auth attempt
+[2026-10-30T04:08:10+00:00] "POST /api/admin/inventory/adjust HTTP/1.1" 200 -
+[2026-10-30T04:08:10+00:00] "GET /api/public/product/bangeo-hoe HTTP/1.1" 200 -
+[2026-10-30T04:08:10+00:00] auth attempt
+[2026-10-30T04:08:10+00:00] "POST /api/auth/logout HTTP/1.1" 200 -
+[2026-10-30T04:08:10+00:00] "GET /api/admin/products HTTP/1.1" 401 -
+[2026-10-30T04:08:10+00:00] auth attempt
+[2026-10-30T04:08:10+00:00] "POST /api/auth/password HTTP/1.1" 200 -
+[2026-10-30T04:08:10+00:00] auth attempt
+[2026-10-30T04:08:11+00:00] auth attempt
+[2026-10-30T04:08:11+00:00] "GET /api/admin/products?q=%27%20OR%201%3D1%20-- HTTP/1.1" 200 -
+[2026-10-30T04:08:11+00:00] auth attempt
+[2026-10-30T04:08:11+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 400 -
+[2026-10-30T04:08:11+00:00] auth attempt
+[2026-10-30T04:08:11+00:00] "POST /api/admin/posts HTTP/1.1" 201 -
+[2026-10-30T04:08:11+00:00] "GET /api/public/posts HTTP/1.1" 200 -
+[2026-10-30T04:08:12+00:00] auth attempt
+[2026-10-30T04:08:12+00:00] "PATCH /api/admin/products/1 HTTP/1.1" 403 -
+[2026-10-30T04:08:12+00:00] auth attempt
+[2026-10-30T04:08:12+00:00] auth attempt
+[2026-10-30T04:08:12+00:00] "GET /api/admin/reports HTTP/1.1" 200 -
+[2026-10-30T04:08:13+00:00] auth attempt
+[2026-10-30T04:08:13+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:08:13+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 200 -
+[2026-10-30T04:08:13+00:00] "POST /api/admin/orders/1/transition HTTP/1.1" 400 -
+[2026-10-30T04:08:13+00:00] auth attempt
+[2026-10-30T04:08:13+00:00] "PATCH /api/admin/users/1 HTTP/1.1" 400 -
+[2026-10-30T04:08:13+00:00] auth attempt
+[2026-10-30T04:08:13+00:00] "POST /api/admin/products HTTP/1.1" 201 -
+[2026-10-30T04:08:13+00:00] "GET /api/public/product/test-fish-pack HTTP/1.1" 404 -
+[2026-10-30T04:08:13+00:00] auth attempt
+[2026-10-30T04:08:13+00:00] "POST /api/admin/recipes HTTP/1.1" 201 -
+[2026-10-30T04:08:14+00:00] auth attempt
+[2026-10-30T04:08:14+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:08:14+00:00] "GET /api/admin/orders/1/details HTTP/1.1" 200 -
+[2026-10-30T04:08:14+00:00] "POST /api/public/events HTTP/1.1" 202 -
+[2026-10-30T04:08:14+00:00] auth attempt
+[2026-10-30T04:08:14+00:00] "GET /api/admin/reports HTTP/1.1" 200 -
+[2026-10-30T04:08:14+00:00] "POST /api/public/events HTTP/1.1" 400 -
+[2026-10-30T04:08:15+00:00] "GET /admin/recipe-media.html HTTP/1.1" 401 -
+[2026-10-30T04:08:16+00:00] auth attempt
+[2026-10-30T04:08:16+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -
+[2026-10-30T04:08:16+00:00] auth attempt
+[2026-10-30T04:08:16+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258815d0>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425c5f5b0>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425c5f790>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425c5f4c0>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425c5f3d0>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1ad40>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1bc40>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b010>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1aa70>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b100>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b4c0>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1ac50>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1af20>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b2e0>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b6a0>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b189a0>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b1f0>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b3d0>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b5b0>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1ba60>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b880>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b970>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1be20>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1bf10>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1b790>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1bd30>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b196c0>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1a200>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258813f0>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258818a0>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425b1bb50>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881300>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258814e0>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881210>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881030>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425881120>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880f40>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880e50>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880400>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880130>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880b80>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880310>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880d60>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880c70>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f3425880220>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/garak_v7_audit/GARAK_ADMIN_V7/admin_core/database.py:87: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f34258807c0>
+  con.execute('INSERT INTO products(slug,name,category,merchant_id,price,stock,status,image,updated_at) VALUES(?,?,?,?,?,?,?,?,?)',(p['slug'],p['name'],p['category'],mid,p['price'],20,'published',f"assets/images/{p['image']}.webp",now()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+----------------------------------------------------------------------
+Ran 57 tests in 18.690s
+
+OK
+
+[2026-10-30T04:08:17+00:00] auth attempt
+[2026-10-30T04:08:17+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:08:17+00:00] auth attempt
+[2026-10-30T04:08:17+00:00] "PATCH /api/admin/merchants/1 HTTP/1.1" 200 -
+[2026-10-30T04:08:17+00:00] "PATCH /api/admin/merchants/1 HTTP/1.1" 400 -
+[2026-10-30T04:08:17+00:00] auth attempt
+[2026-10-30T04:08:17+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -
+[2026-10-30T04:08:17+00:00] auth attempt
+[2026-10-30T04:08:17+00:00] "POST /api/admin/products HTTP/1.1" 201 -
+[2026-10-30T04:08:17+00:00] "PATCH /api/admin/products/45 HTTP/1.1" 400 -
+[2026-10-30T04:08:17+00:00] "PATCH /api/admin/merchants/1 HTTP/1.1" 200 -
+[2026-10-30T04:08:17+00:00] "PATCH /api/admin/products/45 HTTP/1.1" 200 -
+[2026-10-30T04:08:18+00:00] auth attempt
+[2026-10-30T04:08:18+00:00] auth attempt
+[2026-10-30T04:08:18+00:00] "POST /api/auth/password HTTP/1.1" 200 -
+[2026-10-30T04:08:18+00:00] "GET /api/admin/products HTTP/1.1" 401 -
+[2026-10-30T04:08:18+00:00] "GET /api/admin/products HTTP/1.1" 401 -
+[2026-10-30T04:08:18+00:00] auth attempt
+[2026-10-30T04:08:18+00:00] "POST /api/admin/orders/create HTTP/1.1" 201 -
+[2026-10-30T04:08:18+00:00] "PATCH /api/admin/shipments/1 HTTP/1.1" 400 -
+[2026-10-30T04:08:19+00:00] auth attempt
+[2026-10-30T04:08:19+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -
+[2026-10-30T04:08:19+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -
+[2026-10-30T04:08:19+00:00] "POST /api/admin/orders/create HTTP/1.1" 400 -

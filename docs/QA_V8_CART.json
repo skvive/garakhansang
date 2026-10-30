@@ -1,0 +1,56 @@
+{
+  "tests": [
+    [
+      "desktop",
+      "hidden_denied",
+      true
+    ],
+    [
+      "desktop",
+      "out_of_stock_denied",
+      true
+    ],
+    [
+      "desktop",
+      "valid_2_units_added",
+      true
+    ],
+    [
+      "desktop",
+      "over_stock_denied",
+      true
+    ],
+    [
+      "desktop",
+      "stock_change_in_cart_zero_total",
+      true
+    ],
+    [
+      "mobile",
+      "hidden_denied",
+      true
+    ],
+    [
+      "mobile",
+      "out_of_stock_denied",
+      true
+    ],
+    [
+      "mobile",
+      "valid_2_units_added",
+      true
+    ],
+    [
+      "mobile",
+      "over_stock_denied",
+      true
+    ],
+    [
+      "mobile",
+      "stock_change_in_cart_zero_total",
+      true
+    ]
+  ],
+  "total": 10,
+  "passed": true
+}

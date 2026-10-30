@@ -1,0 +1,208 @@
+{
+  "method": "injected-browser-DOM-with-backend-HTTP-bridge",
+  "pages": [
+    {
+      "device": "PC",
+      "module": "products",
+      "horizontal_overflow": false,
+      "title": "상품·가격 관리"
+    },
+    {
+      "device": "PC",
+      "module": "inventory_moves",
+      "horizontal_overflow": false,
+      "title": "재고·입출고"
+    },
+    {
+      "device": "PC",
+      "module": "orders",
+      "horizontal_overflow": false,
+      "title": "주문·결제 상태"
+    },
+    {
+      "device": "PC",
+      "module": "shipments",
+      "horizontal_overflow": false,
+      "title": "배송·운송장"
+    },
+    {
+      "device": "PC",
+      "module": "settlements",
+      "horizontal_overflow": false,
+      "title": "정산 관리"
+    },
+    {
+      "device": "PC",
+      "module": "merchants",
+      "horizontal_overflow": false,
+      "title": "상인·점포 관리"
+    },
+    {
+      "device": "PC",
+      "module": "recipes",
+      "horizontal_overflow": false,
+      "title": "레시피 132개"
+    },
+    {
+      "device": "PC",
+      "module": "creators",
+      "horizontal_overflow": false,
+      "title": "요리사·블로거"
+    },
+    {
+      "device": "PC",
+      "module": "posts",
+      "horizontal_overflow": false,
+      "title": "커뮤니티·홍보"
+    },
+    {
+      "device": "PC",
+      "module": "campaigns",
+      "horizontal_overflow": false,
+      "title": "광고·프로모션"
+    },
+    {
+      "device": "PC",
+      "module": "customers",
+      "horizontal_overflow": false,
+      "title": "고객 관리"
+    },
+    {
+      "device": "PC",
+      "module": "tickets",
+      "horizontal_overflow": false,
+      "title": "고객 문의"
+    },
+    {
+      "device": "PC",
+      "module": "integrations",
+      "horizontal_overflow": false,
+      "title": "외부 연동 현황"
+    },
+    {
+      "device": "PC",
+      "module": "users",
+      "horizontal_overflow": false,
+      "title": "관리자 권한"
+    },
+    {
+      "device": "PC",
+      "module": "audit_logs",
+      "horizontal_overflow": false,
+      "title": "운영 감사 로그"
+    },
+    {
+      "device": "PC",
+      "module": "reports",
+      "horizontal_overflow": false,
+      "title": "매출·통계 분석"
+    },
+    {
+      "device": "MOBILE",
+      "module": "products",
+      "horizontal_overflow": false,
+      "title": "상품·가격 관리"
+    },
+    {
+      "device": "MOBILE",
+      "module": "inventory_moves",
+      "horizontal_overflow": false,
+      "title": "재고·입출고"
+    },
+    {
+      "device": "MOBILE",
+      "module": "orders",
+      "horizontal_overflow": false,
+      "title": "주문·결제 상태"
+    },
+    {
+      "device": "MOBILE",
+      "module": "shipments",
+      "horizontal_overflow": false,
+      "title": "배송·운송장"
+    },
+    {
+      "device": "MOBILE",
+      "module": "settlements",
+      "horizontal_overflow": false,
+      "title": "정산 관리"
+    },
+    {
+      "device": "MOBILE",
+      "module": "merchants",
+      "horizontal_overflow": false,
+      "title": "상인·점포 관리"
+    },
+    {
+      "device": "MOBILE",
+      "module": "recipes",
+      "horizontal_overflow": false,
+      "title": "레시피 132개"
+    },
+    {
+      "device": "MOBILE",
+      "module": "creators",
+      "horizontal_overflow": false,
+      "title": "요리사·블로거"
+    },
+    {
+      "device": "MOBILE",
+      "module": "posts",
+      "horizontal_overflow": false,
+      "title": "커뮤니티·홍보"
+    },
+    {
+      "device": "MOBILE",
+      "module": "campaigns",
+      "horizontal_overflow": false,
+      "title": "광고·프로모션"
+    },
+    {
+      "device": "MOBILE",
+      "module": "customers",
+      "horizontal_overflow": false,
+      "title": "고객 관리"
+    },
+    {
+      "device": "MOBILE",
+      "module": "tickets",
+      "horizontal_overflow": false,
+      "title": "고객 문의"
+    },
+    {
+      "device": "MOBILE",
+      "module": "integrations",
+      "horizontal_overflow": false,
+      "title": "외부 연동 현황"
+    },
+    {
+      "device": "MOBILE",
+      "module": "users",
+      "horizontal_overflow": false,
+      "title": "관리자 권한"
+    },
+    {
+      "device": "MOBILE",
+      "module": "audit_logs",
+      "horizontal_overflow": false,
+      "title": "운영 감사 로그"
+    },
+    {
+      "device": "MOBILE",
+      "module": "reports",
+      "horizontal_overflow": false,
+      "title": "매출·통계 분석"
+    }
+  ],
+  "actions": {
+    "PC_login": "admin · superadmin",
+    "PC_price_edit": "저장되었습니다.",
+    "PC_order_create": "저장되었습니다.",
+    "PC_report": "베타 주문 금액\n￦\n110,000원\n취소 주문 제외\n전체 주문\n▣\n1건\n취소 포함\n페이지 이벤트\n◫\n2건\n분석용 이벤트만 집계\n등록 캠페인\n◉\n1건\n실제 광고 노출 연동 없음",
+    "MOBILE_login": "admin · superadmin",
+    "MOBILE_price_edit": "저장되었습니다.",
+    "MOBILE_order_create": "저장되었습니다.",
+    "MOBILE_report": "베타 주문 금액\n￦\n220,000원\n취소 주문 제외\n전체 주문\n▣\n2건\n취소 포함\n페이지 이벤트\n◫\n2건\n분석용 이벤트만 집계\n등록 캠페인\n◉\n1건\n실제 광고 노출 연동 없음"
+  },
+  "console_errors": []
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#092b3b">
+  <title>로그인 · 가락한상</title>
+  <link rel="icon" href="assets/images/icon-192.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="auth/login.css">
+  <script>window.GARAK_ROOT="";</script>
+</head>
+<body class="auth-page">
+  <div class="auth-shell">
+    <div class="auth-card">
+      <a class="auth-brand" href="index.html">
+        <span>가락한상<small>NEON AUTH · GOOGLE</small></span>
+      </a>
+      <div id="loggedPanel" hidden class="auth-logged">
+        <h1>로그인됨</h1>
+        <p class="sub">Google 계정으로 연결되었습니다. 장보기와 레시피는 시연 모드입니다.</p>
+        <p class="email" id="userEmail"></p>
+        <button type="button" class="btn primary" id="signOutBtn">로그아웃</button>
+        <a class="auth-back" href="index.html">홈으로 이동 →</a>
+      </div>
+      <button type="button" class="google-btn" id="googleBtn">Google 계정으로 계속</button>
+      <p class="auth-or">또는 이메일</p>
+      <form id="authForm">
+        <h1>가락한상 로그인</h1>
+        <p class="sub">Neon Auth(Managed Better Auth)로 고객 계정을 만듭니다. 관리자 화면과는 별도입니다.</p>
+        <label for="email">이메일</label>
+        <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+        <label for="password">비밀번호</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required minlength="8" placeholder="8자 이상">
+        <button type="submit" class="btn primary">이메일로 로그인 / 가입</button>
+        <p id="authMsg" class="auth-msg" role="status"></p>
+        <p class="auth-note">Powered by Neon Managed Better Auth. 시연 서비스이며 실결제·실명 검증과 별개입니다.</p>
+      </form>
+      <a class="auth-back" href="index.html">← 쇼핑몰 홈</a>
+    </div>
+  </div>
+  <script type="module" src="auth/login.mjs"></script>
+</body>
+</html>

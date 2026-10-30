@@ -1,0 +1,5007 @@
+[
+  {
+    "id": "recipe-001",
+    "title": "광어 레몬버터구이",
+    "category": "수산",
+    "main": "광어",
+    "main_amount": "광어 순살 250g",
+    "method": "팬구이",
+    "seasoning": "레몬·버터",
+    "time": 20,
+    "servings": 2,
+    "sku": "gwang-eo",
+    "photo": "assets/images/recipes/recipe-001.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-gwang-eo.webp",
+    "ingredients": [
+      "광어 순살 250g",
+      "레몬 ½개",
+      "버터 1큰술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "광어를 1~2cm 두께로 준비하고 키친타월로 수분을 제거합니다.",
+      "팬을 중불로 달궈 식용유 1큰술을 두르고 광어를 고르게 펼칩니다.",
+      "앞뒤로 뒤집으며 속까지 익힌 뒤 레몬과 버터를 넣어 마지막 1~2분간 향을 입힙니다.",
+      "한 조각을 잘라 익힘 정도를 확인하고 바로 접시에 담아냅니다."
+    ],
+    "intro": "광어로 만드는 팬구이 요리입니다. 레몬·버터 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "팬구이",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-002",
+    "title": "광어 간장무조림",
+    "category": "수산",
+    "main": "광어",
+    "main_amount": "광어 순살 250g",
+    "method": "조림",
+    "seasoning": "간장·무",
+    "time": 30,
+    "servings": 2,
+    "sku": "gwang-eo",
+    "photo": "assets/images/recipes/recipe-002.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-gwang-eo.webp",
+    "ingredients": [
+      "광어 순살 250g",
+      "간장 1큰술",
+      "무 150g",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "광어를 손질합니다. 단단한 채소는 1cm 두께로 썰어둡니다.",
+      "냄비에 물 250mL와 간장·무를 넣고 양념장을 풉니다.",
+      "광어를 넣어 중불로 끓이다가 끓으면 약불로 줄입니다.",
+      "중간에 양념을 끼얹어가며 충분히 익히고 국물이 자작하게 남으면 불을 끕니다."
+    ],
+    "intro": "광어로 만드는 조림 요리입니다. 간장·무 조합으로 맛을 내고 약 30분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "조림",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-003",
+    "title": "광어 맑은 생선탕",
+    "category": "수산",
+    "main": "광어",
+    "main_amount": "광어 순살 250g",
+    "method": "맑은탕",
+    "seasoning": "대파·무",
+    "time": 25,
+    "servings": 2,
+    "sku": "gwang-eo",
+    "photo": "assets/images/recipes/recipe-003.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-gwang-eo.webp",
+    "ingredients": [
+      "광어 순살 250g",
+      "대파 ½대",
+      "무 150g",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "광어를 손질하고, 대파 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "광어를 넣고 다시 끓어오르면 거품을 걷고 국물이 다시 끓으면 간을 조절합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "광어로 만드는 맑은탕 요리입니다. 대파·무 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "맑은탕",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-004",
+    "title": "광어 바삭한 생선전",
+    "category": "수산",
+    "main": "광어",
+    "main_amount": "광어 순살 250g",
+    "method": "전",
+    "seasoning": "달걀·밀가루",
+    "time": 20,
+    "servings": 2,
+    "sku": "gwang-eo",
+    "photo": "assets/images/recipes/recipe-004.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-gwang-eo.webp",
+    "ingredients": [
+      "광어 순살 250g",
+      "달걀 2개",
+      "부침가루 또는 밀가루 ½컵",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "광어를 잘게 썰고 달걀을 섞어 반죽을 준비합니다.",
+      "달걀 1~2개와 부침가루 또는 밀가루 ½컵을 넣고 물을 조금씩 더해 되직하게 섞습니다.",
+      "중불로 달군 팬에 기름을 두르고 반죽을 얇게 나누어 올립니다.",
+      "한 면이 단단하게 익으면 뒤집어 속까지 충분히 익힌 뒤 기름을 털어냅니다."
+    ],
+    "intro": "광어로 만드는 전 요리입니다. 달걀·밀가루 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "전",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-005",
+    "title": "방어 마늘간장구이",
+    "category": "수산",
+    "main": "방어",
+    "main_amount": "방어 살 250g",
+    "method": "팬구이",
+    "seasoning": "마늘·간장",
+    "time": 18,
+    "servings": 2,
+    "sku": "bangeo-hoe",
+    "photo": "assets/images/recipes/recipe-005.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-bangeo-hoe.webp",
+    "ingredients": [
+      "방어 살 250g",
+      "다진 마늘 1작은술",
+      "간장 1큰술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "방어를 1~2cm 두께로 준비하고 키친타월로 수분을 제거합니다.",
+      "팬을 중불로 달궈 식용유 1큰술을 두르고 방어를 고르게 펼칩니다.",
+      "앞뒤로 뒤집으며 속까지 익힌 뒤 마늘과 간장를 넣어 마지막 1~2분간 향을 입힙니다.",
+      "한 조각을 잘라 익힘 정도를 확인하고 바로 접시에 담아냅니다."
+    ],
+    "intro": "방어로 만드는 팬구이 요리입니다. 마늘·간장 조합으로 맛을 내고 약 18분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "팬구이",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-006",
+    "title": "방어 김치찌개",
+    "category": "수산",
+    "main": "방어",
+    "main_amount": "방어 살 250g",
+    "method": "찌개",
+    "seasoning": "묵은지·두부",
+    "time": 25,
+    "servings": 2,
+    "sku": "bangeo-hoe",
+    "photo": "assets/images/recipes/recipe-006.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-bangeo-hoe.webp",
+    "ingredients": [
+      "방어 살 250g",
+      "묵은지 120g",
+      "두부 ½모",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "방어를 손질하고, 묵은지 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "방어를 넣고 다시 끓어오르면 거품을 걷고 두부를 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "방어로 만드는 찌개 요리입니다. 묵은지·두부 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "찌개",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-007",
+    "title": "방어 생선살 볶음밥",
+    "category": "수산",
+    "main": "방어",
+    "main_amount": "방어 살 250g",
+    "method": "볶음밥",
+    "seasoning": "대파·달걀",
+    "time": 20,
+    "servings": 2,
+    "sku": "bangeo-hoe",
+    "photo": "assets/images/recipes/recipe-007.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-bangeo-hoe.webp",
+    "ingredients": [
+      "방어 살 250g",
+      "대파 ½대",
+      "달걀 2개",
+      "따뜻한 밥 2공기",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "방어를 잘게 썰고 곁들일 재료를 준비합니다.",
+      "팬에서 방어를 먼저 충분히 익힌 뒤 대파를 더합니다.",
+      "밥 2공기를 넣고 덩어리 없이 풀어가며 2~3분 볶습니다.",
+      "달걀을 넣어 간을 조절하고 한 번 더 섞어 완성합니다."
+    ],
+    "intro": "방어로 만드는 볶음밥 요리입니다. 대파·달걀 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "볶음밥",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-008",
+    "title": "방어 무조림",
+    "category": "수산",
+    "main": "방어",
+    "main_amount": "방어 살 250g",
+    "method": "조림",
+    "seasoning": "무·고춧가루",
+    "time": 30,
+    "servings": 2,
+    "sku": "bangeo-hoe",
+    "photo": "assets/images/recipes/recipe-008.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-bangeo-hoe.webp",
+    "ingredients": [
+      "방어 살 250g",
+      "무 150g",
+      "고춧가루 1큰술",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "방어를 손질합니다. 단단한 채소는 1cm 두께로 썰어둡니다.",
+      "냄비에 물 250mL와 무·고춧가루를 넣고 양념장을 풉니다.",
+      "방어를 넣어 중불로 끓이다가 끓으면 약불로 줄입니다.",
+      "중간에 양념을 끼얹어가며 충분히 익히고 국물이 자작하게 남으면 불을 끕니다."
+    ],
+    "intro": "방어로 만드는 조림 요리입니다. 무·고춧가루 조합으로 맛을 내고 약 30분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "조림",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-009",
+    "title": "연어 레몬 오븐구이",
+    "category": "수산",
+    "main": "연어",
+    "main_amount": "연어 살 250g",
+    "method": "오븐구이",
+    "seasoning": "레몬·허브",
+    "time": 25,
+    "servings": 2,
+    "sku": "yeon-eo",
+    "photo": "assets/images/recipes/recipe-009.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-yeon-eo.webp",
+    "ingredients": [
+      "연어 살 250g",
+      "레몬 ½개",
+      "말린 허브 ⅓작은술"
+    ],
+    "steps": [
+      "연어를 먹기 좋게 손질하고 물기를 종이타월로 눌러 제거합니다.",
+      "오븐을 190℃로 예열합니다. 레몬과 허브를 올리고 가볍게 간합니다.",
+      "내열 용기에 담아 약 15분 굽고, 두꺼운 부분을 확인하며 필요한 만큼 추가 조리합니다.",
+      "겉면만 보고 판단하지 말고 중심까지 충분히 익힌 다음 따뜻할 때 담아냅니다."
+    ],
+    "intro": "연어로 만드는 오븐구이 요리입니다. 레몬·허브 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "오븐구이",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-010",
+    "title": "연어 간장버터덮밥",
+    "category": "수산",
+    "main": "연어",
+    "main_amount": "연어 살 250g",
+    "method": "덮밥",
+    "seasoning": "간장·버터",
+    "time": 20,
+    "servings": 2,
+    "sku": "yeon-eo",
+    "photo": "assets/images/recipes/recipe-010.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-yeon-eo.webp",
+    "ingredients": [
+      "연어 살 250g",
+      "간장 1큰술",
+      "버터 1큰술",
+      "따뜻한 밥 2공기",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "연어를 잘게 썰고 곁들일 재료를 준비합니다.",
+      "팬에서 연어를 먼저 충분히 익힌 뒤 간장을 더합니다.",
+      "따뜻한 밥 2공기를 그릇에 담고 볶은 재료를 올립니다.",
+      "버터를 넣어 간을 조절하고 한 번 더 섞어 완성합니다."
+    ],
+    "intro": "연어로 만드는 덮밥 요리입니다. 간장·버터 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "덮밥",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-011",
+    "title": "연어 감자수프",
+    "category": "수산",
+    "main": "연어",
+    "main_amount": "연어 살 250g",
+    "method": "수프",
+    "seasoning": "감자·우유",
+    "time": 30,
+    "servings": 2,
+    "sku": "yeon-eo",
+    "photo": "assets/images/recipes/recipe-011.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-yeon-eo.webp",
+    "ingredients": [
+      "연어 살 250g",
+      "감자 1개",
+      "우유 200mL",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "연어를 작게 썰고 감자를 준비합니다.",
+      "냄비에 기름을 두르고 채소와 연어를 먼저 익힙니다.",
+      "물 또는 육수 450mL와 우유를 넣고 중약불에서 12~20분 저으며 끓입니다.",
+      "입자가 원하는 만큼 부드러워지면 간을 맞춰 따뜻하게 제공합니다."
+    ],
+    "intro": "연어로 만드는 수프 요리입니다. 감자·우유 조합으로 맛을 내고 약 30분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "수프",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-012",
+    "title": "연어 달걀볶음밥",
+    "category": "수산",
+    "main": "연어",
+    "main_amount": "연어 살 250g",
+    "method": "볶음밥",
+    "seasoning": "달걀·대파",
+    "time": 20,
+    "servings": 2,
+    "sku": "yeon-eo",
+    "photo": "assets/images/recipes/recipe-012.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-yeon-eo.webp",
+    "ingredients": [
+      "연어 살 250g",
+      "달걀 2개",
+      "대파 ½대",
+      "따뜻한 밥 2공기",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "연어를 잘게 썰고 곁들일 재료를 준비합니다.",
+      "팬에서 연어를 먼저 충분히 익힌 뒤 달걀을 더합니다.",
+      "밥 2공기를 넣고 덩어리 없이 풀어가며 2~3분 볶습니다.",
+      "대파를 넣어 간을 조절하고 한 번 더 섞어 완성합니다."
+    ],
+    "intro": "연어로 만드는 볶음밥 요리입니다. 달걀·대파 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "볶음밥",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-013",
+    "title": "참돔 소금구이",
+    "category": "수산",
+    "main": "참돔",
+    "main_amount": "참돔 순살 250g",
+    "method": "팬구이",
+    "seasoning": "천일염·레몬",
+    "time": 20,
+    "servings": 2,
+    "sku": "chamdom-hoe",
+    "photo": "assets/images/recipes/recipe-013.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-chamdom-hoe.webp",
+    "ingredients": [
+      "참돔 순살 250g",
+      "소금 ⅓작은술",
+      "레몬 ½개",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "참돔을 1~2cm 두께로 준비하고 키친타월로 수분을 제거합니다.",
+      "팬을 중불로 달궈 식용유 1큰술을 두르고 참돔을 고르게 펼칩니다.",
+      "앞뒤로 뒤집으며 속까지 익힌 뒤 천일염·레몬 재료를 넣어 마지막 1~2분간 향을 입힙니다.",
+      "한 조각을 잘라 익힘 정도를 확인하고 바로 접시에 담아냅니다."
+    ],
+    "intro": "참돔으로 만드는 팬구이 요리입니다. 천일염·레몬 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "팬구이",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-014",
+    "title": "참돔 미역국",
+    "category": "수산",
+    "main": "참돔",
+    "main_amount": "참돔 순살 250g",
+    "method": "국",
+    "seasoning": "미역·국간장",
+    "time": 30,
+    "servings": 2,
+    "sku": "chamdom-hoe",
+    "photo": "assets/images/recipes/recipe-014.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-chamdom-hoe.webp",
+    "ingredients": [
+      "참돔 순살 250g",
+      "불린 미역 50g",
+      "국간장 1작은술",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "참돔을 손질하고, 미역 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "참돔을 넣고 다시 끓어오르면 거품을 걷고 국간장을 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "참돔으로 만드는 국 요리입니다. 미역·국간장 조합으로 맛을 내고 약 30분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "국",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-015",
+    "title": "참돔 데리야키 조림",
+    "category": "수산",
+    "main": "참돔",
+    "main_amount": "참돔 순살 250g",
+    "method": "조림",
+    "seasoning": "간장·올리고당",
+    "time": 25,
+    "servings": 2,
+    "sku": "chamdom-hoe",
+    "photo": "assets/images/recipes/recipe-015.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-chamdom-hoe.webp",
+    "ingredients": [
+      "참돔 순살 250g",
+      "간장 1큰술",
+      "올리고당 1작은술",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "참돔을 손질합니다. 단단한 채소는 1cm 두께로 썰어둡니다.",
+      "냄비에 물 250mL와 간장·올리고당을 넣고 양념장을 풉니다.",
+      "참돔을 넣어 중불로 끓이다가 끓으면 약불로 줄입니다.",
+      "중간에 양념을 끼얹어가며 충분히 익히고 국물이 자작하게 남으면 불을 끕니다."
+    ],
+    "intro": "참돔으로 만드는 조림 요리입니다. 간장·올리고당 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "조림",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-016",
+    "title": "참돔 채소찜",
+    "category": "수산",
+    "main": "참돔",
+    "main_amount": "참돔 순살 250g",
+    "method": "찜",
+    "seasoning": "양파·애호박",
+    "time": 30,
+    "servings": 2,
+    "sku": "chamdom-hoe",
+    "photo": "assets/images/recipes/recipe-016.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-chamdom-hoe.webp",
+    "ingredients": [
+      "참돔 순살 250g",
+      "양파 ½개",
+      "애호박 ½개"
+    ],
+    "steps": [
+      "참돔과 양파·애호박을 준비합니다.",
+      "냄비에 물을 끓이고 찜기에 재료를 가지런히 올립니다.",
+      "뚜껑을 덮어 재료가 충분히 익을 때까지 찝니다.",
+      "불을 끄고 1~2분 뜸을 들인 뒤 그릇에 담습니다."
+    ],
+    "intro": "참돔으로 만드는 찜 요리입니다. 양파·애호박 조합으로 맛을 내고 약 30분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "찜",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-017",
+    "title": "가리비 치즈버터구이",
+    "category": "수산",
+    "main": "가리비",
+    "main_amount": "손질한 가리비 살 250g",
+    "method": "오븐구이",
+    "seasoning": "모차렐라·버터",
+    "time": 18,
+    "servings": 2,
+    "sku": "garibi",
+    "photo": "assets/images/recipes/recipe-017.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-garibi.webp",
+    "ingredients": [
+      "손질한 가리비 살 250g",
+      "모차렐라 치즈 60g",
+      "버터 1큰술"
+    ],
+    "steps": [
+      "가리비를 먹기 좋게 손질하고 물기를 종이타월로 눌러 제거합니다.",
+      "오븐을 190℃로 예열합니다. 모차렐라와 버터를 올리고 가볍게 간합니다.",
+      "내열 용기에 담아 약 12분 굽고, 두꺼운 부분을 확인하며 필요한 만큼 추가 조리합니다.",
+      "겉면만 보고 판단하지 말고 중심까지 충분히 익힌 다음 따뜻할 때 담아냅니다."
+    ],
+    "intro": "가리비로 만드는 오븐구이 요리입니다. 모차렐라·버터 조합으로 맛을 내고 약 18분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "오븐구이",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-018",
+    "title": "가리비 마늘볶음",
+    "category": "수산",
+    "main": "가리비",
+    "main_amount": "손질한 가리비 살 250g",
+    "method": "볶음",
+    "seasoning": "마늘·올리브유",
+    "time": 15,
+    "servings": 2,
+    "sku": "garibi",
+    "photo": "assets/images/recipes/recipe-018.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-garibi.webp",
+    "ingredients": [
+      "손질한 가리비 살 250g",
+      "다진 마늘 1작은술",
+      "올리브유 1큰술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "가리비와 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 마늘을 먼저 볶아 향을 냅니다.",
+      "가리비를 넣고 중강불에서 저어가며 익힙니다. 올리브유를 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "가리비로 만드는 볶음 요리입니다. 마늘·올리브유 조합으로 맛을 내고 약 15분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-019",
+    "title": "가리비 맑은국",
+    "category": "수산",
+    "main": "가리비",
+    "main_amount": "손질한 가리비 살 250g",
+    "method": "맑은탕",
+    "seasoning": "무·대파",
+    "time": 20,
+    "servings": 2,
+    "sku": "garibi",
+    "photo": "assets/images/recipes/recipe-019.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-garibi.webp",
+    "ingredients": [
+      "손질한 가리비 살 250g",
+      "무 150g",
+      "대파 ½대",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "가리비를 손질하고, 무 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "가리비를 넣고 다시 끓어오르면 거품을 걷고 대파를 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "가리비로 만드는 맑은탕 요리입니다. 무·대파 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "맑은탕",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-020",
+    "title": "가리비 토마토파스타",
+    "category": "수산",
+    "main": "가리비",
+    "main_amount": "손질한 가리비 살 250g",
+    "method": "토마토파스타",
+    "seasoning": "토마토·마늘",
+    "time": 25,
+    "servings": 2,
+    "sku": "garibi",
+    "photo": "assets/images/recipes/recipe-020.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-garibi.webp",
+    "ingredients": [
+      "손질한 가리비 살 250g",
+      "토마토 2개",
+      "다진 마늘 1작은술",
+      "파스타면 160g"
+    ],
+    "steps": [
+      "소금 약간을 넣은 끓는 물에 파스타면 160g을 포장에 적힌 시간만큼 삶습니다.",
+      "팬에 기름 1큰술과 토마토를 넣고 약불에서 향을 냅니다.",
+      "가리비를 충분히 익힌 뒤 면을 넣고 잘게 썬 토마토 1개를 더합니다.",
+      "면과 소스를 1~2분 섞고 소금·후추로 간을 맞춰 냅니다."
+    ],
+    "intro": "가리비로 만드는 토마토파스타 요리입니다. 토마토·마늘 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "토마토파스타",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-021",
+    "title": "새우 마늘버터볶음",
+    "category": "수산",
+    "main": "새우",
+    "main_amount": "껍질 벗긴 새우 250g",
+    "method": "볶음",
+    "seasoning": "마늘·버터",
+    "time": 15,
+    "servings": 2,
+    "sku": "huinsaeu",
+    "photo": "assets/images/recipes/recipe-021.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-huinsaeu.webp",
+    "ingredients": [
+      "껍질 벗긴 새우 250g",
+      "다진 마늘 1작은술",
+      "버터 1큰술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "새우와 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 마늘을 먼저 볶아 향을 냅니다.",
+      "새우를 넣고 중강불에서 저어가며 익힙니다. 버터를 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "새우로 만드는 볶음 요리입니다. 마늘·버터 조합으로 맛을 내고 약 15분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-022",
+    "title": "새우 달걀볶음밥",
+    "category": "수산",
+    "main": "새우",
+    "main_amount": "껍질 벗긴 새우 250g",
+    "method": "볶음밥",
+    "seasoning": "달걀·대파",
+    "time": 18,
+    "servings": 2,
+    "sku": "huinsaeu",
+    "photo": "assets/images/recipes/recipe-022.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-huinsaeu.webp",
+    "ingredients": [
+      "껍질 벗긴 새우 250g",
+      "달걀 2개",
+      "대파 ½대",
+      "따뜻한 밥 2공기",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "새우를 잘게 썰고 곁들일 재료를 준비합니다.",
+      "팬에서 새우를 먼저 충분히 익힌 뒤 달걀을 더합니다.",
+      "밥 2공기를 넣고 덩어리 없이 풀어가며 2~3분 볶습니다.",
+      "대파를 넣어 간을 조절하고 한 번 더 섞어 완성합니다."
+    ],
+    "intro": "새우로 만드는 볶음밥 요리입니다. 달걀·대파 조합으로 맛을 내고 약 18분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "볶음밥",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-023",
+    "title": "새우 토마토파스타",
+    "category": "수산",
+    "main": "새우",
+    "main_amount": "껍질 벗긴 새우 250g",
+    "method": "토마토파스타",
+    "seasoning": "토마토·마늘",
+    "time": 25,
+    "servings": 2,
+    "sku": "huinsaeu",
+    "photo": "assets/images/recipes/recipe-023.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-huinsaeu.webp",
+    "ingredients": [
+      "껍질 벗긴 새우 250g",
+      "토마토 2개",
+      "다진 마늘 1작은술",
+      "파스타면 160g"
+    ],
+    "steps": [
+      "소금 약간을 넣은 끓는 물에 파스타면 160g을 포장에 적힌 시간만큼 삶습니다.",
+      "팬에 기름 1큰술과 토마토를 넣고 약불에서 향을 냅니다.",
+      "새우를 충분히 익힌 뒤 면을 넣고 잘게 썬 토마토 1개를 더합니다.",
+      "면과 소스를 1~2분 섞고 소금·후추로 간을 맞춰 냅니다."
+    ],
+    "intro": "새우로 만드는 토마토파스타 요리입니다. 토마토·마늘 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "토마토파스타",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-024",
+    "title": "새우 애호박전",
+    "category": "수산",
+    "main": "새우",
+    "main_amount": "껍질 벗긴 새우 250g",
+    "method": "전",
+    "seasoning": "애호박·달걀",
+    "time": 20,
+    "servings": 2,
+    "sku": "huinsaeu",
+    "photo": "assets/images/recipes/recipe-024.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-huinsaeu.webp",
+    "ingredients": [
+      "껍질 벗긴 새우 250g",
+      "애호박 ½개",
+      "달걀 2개",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "새우를 잘게 썰고 애호박을 섞어 반죽을 준비합니다.",
+      "달걀 1~2개와 부침가루 또는 밀가루 ½컵을 넣고 물을 조금씩 더해 되직하게 섞습니다.",
+      "중불로 달군 팬에 기름을 두르고 반죽을 얇게 나누어 올립니다.",
+      "한 면이 단단하게 익으면 뒤집어 속까지 충분히 익힌 뒤 기름을 털어냅니다."
+    ],
+    "intro": "새우로 만드는 전 요리입니다. 애호박·달걀 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "전",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-025",
+    "title": "바지락 술찜",
+    "category": "수산",
+    "main": "바지락",
+    "main_amount": "해감한 바지락 400g",
+    "method": "찜",
+    "seasoning": "마늘·청주",
+    "time": 20,
+    "servings": 2,
+    "sku": "bajirak",
+    "photo": "assets/images/recipes/recipe-025.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-bajirak.webp",
+    "ingredients": [
+      "해감한 바지락 400g",
+      "다진 마늘 1작은술",
+      "청주 2큰술"
+    ],
+    "steps": [
+      "바지락과 마늘·청주를 준비합니다.",
+      "냄비에 물을 끓이고 찜기에 재료를 가지런히 올립니다.",
+      "뚜껑을 덮어 재료가 충분히 익을 때까지 찝니다.",
+      "불을 끄고 1~2분 뜸을 들인 뒤 그릇에 담습니다."
+    ],
+    "intro": "바지락으로 만드는 찜 요리입니다. 마늘·청주 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "찜",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-026",
+    "title": "바지락 칼국수",
+    "category": "수산",
+    "main": "바지락",
+    "main_amount": "해감한 바지락 400g",
+    "method": "국수",
+    "seasoning": "칼국수면·애호박",
+    "time": 30,
+    "servings": 2,
+    "sku": "bajirak",
+    "photo": "assets/images/recipes/recipe-026.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-bajirak.webp",
+    "ingredients": [
+      "해감한 바지락 400g",
+      "칼국수면 2인분",
+      "애호박 ½개"
+    ],
+    "steps": [
+      "바지락과 칼국수면·애호박을 준비합니다.",
+      "재료의 크기를 맞춰 손질합니다.",
+      "팬이나 냄비에서 재료를 순서대로 익히며 간을 합니다.",
+      "중심까지 충분히 익었는지 확인한 뒤 바로 먹습니다."
+    ],
+    "intro": "바지락으로 만드는 국수 요리입니다. 칼국수면·애호박 조합으로 맛을 내고 약 30분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "국수",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-027",
+    "title": "바지락 된장국",
+    "category": "수산",
+    "main": "바지락",
+    "main_amount": "해감한 바지락 400g",
+    "method": "된장국",
+    "seasoning": "애호박·된장",
+    "time": 20,
+    "servings": 2,
+    "sku": "bajirak",
+    "photo": "assets/images/recipes/recipe-027.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-bajirak.webp",
+    "ingredients": [
+      "해감한 바지락 400g",
+      "애호박 ½개",
+      "된장 1큰술",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "바지락을 손질하고, 애호박 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "바지락을 넣고 다시 끓어오르면 거품을 걷고 된장을 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "바지락으로 만드는 된장국 요리입니다. 애호박·된장 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "된장국",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-028",
+    "title": "바지락 봉골레",
+    "category": "수산",
+    "main": "바지락",
+    "main_amount": "해감한 바지락 400g",
+    "method": "오일파스타",
+    "seasoning": "마늘·올리브유",
+    "time": 25,
+    "servings": 2,
+    "sku": "bajirak",
+    "photo": "assets/images/recipes/recipe-028.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-bajirak.webp",
+    "ingredients": [
+      "해감한 바지락 400g",
+      "다진 마늘 1작은술",
+      "올리브유 1큰술",
+      "파스타면 160g"
+    ],
+    "steps": [
+      "소금 약간을 넣은 끓는 물에 파스타면 160g을 포장에 적힌 시간만큼 삶습니다.",
+      "팬에 기름 1큰술과 마늘을 넣고 약불에서 향을 냅니다.",
+      "바지락을 충분히 익힌 뒤 면을 넣고 면수 4큰술를 더합니다.",
+      "면과 소스를 1~2분 섞고 소금·후추로 간을 맞춰 냅니다."
+    ],
+    "intro": "바지락으로 만드는 오일파스타 요리입니다. 마늘·올리브유 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "오일파스타",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-029",
+    "title": "오징어 간장볶음",
+    "category": "수산",
+    "main": "오징어",
+    "main_amount": "손질한 오징어 250g",
+    "method": "볶음",
+    "seasoning": "양파·간장",
+    "time": 18,
+    "servings": 2,
+    "sku": "o-jing-eo",
+    "photo": "assets/images/recipes/recipe-029.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-o-jing-eo.webp",
+    "ingredients": [
+      "손질한 오징어 250g",
+      "양파 ½개",
+      "간장 1큰술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "오징어와 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 양파를 먼저 볶아 향을 냅니다.",
+      "오징어를 넣고 중강불에서 저어가며 익힙니다. 간장을 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "오징어로 만드는 볶음 요리입니다. 양파·간장 조합으로 맛을 내고 약 18분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-030",
+    "title": "오징어 고추장볶음",
+    "category": "수산",
+    "main": "오징어",
+    "main_amount": "손질한 오징어 250g",
+    "method": "매콤볶음",
+    "seasoning": "양파·고추장",
+    "time": 20,
+    "servings": 2,
+    "sku": "o-jing-eo",
+    "photo": "assets/images/recipes/recipe-030.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-o-jing-eo.webp",
+    "ingredients": [
+      "손질한 오징어 250g",
+      "양파 ½개",
+      "고추장 1큰술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "오징어와 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 양파를 먼저 볶아 향을 냅니다.",
+      "오징어를 넣고 중강불에서 저어가며 익힙니다. 고추장을 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "오징어로 만드는 매콤볶음 요리입니다. 양파·고추장 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "매콤볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-031",
+    "title": "오징어 부추전",
+    "category": "수산",
+    "main": "오징어",
+    "main_amount": "손질한 오징어 250g",
+    "method": "전",
+    "seasoning": "부추·밀가루",
+    "time": 20,
+    "servings": 2,
+    "sku": "o-jing-eo",
+    "photo": "assets/images/recipes/recipe-031.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-o-jing-eo.webp",
+    "ingredients": [
+      "손질한 오징어 250g",
+      "부추 적당량",
+      "부침가루 또는 밀가루 ½컵",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "오징어를 잘게 썰고 부추를 섞어 반죽을 준비합니다.",
+      "달걀 1~2개와 부침가루 또는 밀가루 ½컵을 넣고 물을 조금씩 더해 되직하게 섞습니다.",
+      "중불로 달군 팬에 기름을 두르고 반죽을 얇게 나누어 올립니다.",
+      "한 면이 단단하게 익으면 뒤집어 속까지 충분히 익힌 뒤 기름을 털어냅니다."
+    ],
+    "intro": "오징어로 만드는 전 요리입니다. 부추·밀가루 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "전",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-032",
+    "title": "오징어 무국",
+    "category": "수산",
+    "main": "오징어",
+    "main_amount": "손질한 오징어 250g",
+    "method": "맑은탕",
+    "seasoning": "무·대파",
+    "time": 25,
+    "servings": 2,
+    "sku": "o-jing-eo",
+    "photo": "assets/images/recipes/recipe-032.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-o-jing-eo.webp",
+    "ingredients": [
+      "손질한 오징어 250g",
+      "무 150g",
+      "대파 ½대",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "오징어를 손질하고, 무 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "오징어를 넣고 다시 끓어오르면 거품을 걷고 대파를 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "오징어로 만드는 맑은탕 요리입니다. 무·대파 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "맑은탕",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-033",
+    "title": "전복 버터구이",
+    "category": "수산",
+    "main": "전복",
+    "main_amount": "손질한 전복 살 200g",
+    "method": "팬구이",
+    "seasoning": "버터·마늘",
+    "time": 18,
+    "servings": 2,
+    "sku": "jeonbok",
+    "photo": "assets/images/recipes/recipe-033.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-jeonbok.webp",
+    "ingredients": [
+      "손질한 전복 살 200g",
+      "버터 1큰술",
+      "다진 마늘 1작은술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "전복을 1~2cm 두께로 준비하고 키친타월로 수분을 제거합니다.",
+      "팬을 중불로 달궈 식용유 1큰술을 두르고 전복을 고르게 펼칩니다.",
+      "앞뒤로 뒤집으며 속까지 익힌 뒤 버터·마늘 재료를 넣어 마지막 1~2분간 향을 입힙니다.",
+      "한 조각을 잘라 익힘 정도를 확인하고 바로 접시에 담아냅니다."
+    ],
+    "intro": "전복으로 만드는 팬구이 요리입니다. 버터·마늘 조합으로 맛을 내고 약 18분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "팬구이",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-034",
+    "title": "전복 달걀죽",
+    "category": "수산",
+    "main": "전복",
+    "main_amount": "손질한 전복 살 200g",
+    "method": "죽",
+    "seasoning": "쌀·달걀",
+    "time": 35,
+    "servings": 2,
+    "sku": "jeonbok",
+    "photo": "assets/images/recipes/recipe-034.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-jeonbok.webp",
+    "ingredients": [
+      "손질한 전복 살 200g",
+      "쌀 ½컵",
+      "달걀 2개",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "전복을 작게 썰고 쌀을 준비합니다.",
+      "냄비에 기름을 두르고 채소와 전복을 먼저 익힙니다.",
+      "불린 쌀 ½컵과 물 600mL를 넣고 쌀알이 푹 퍼지도록 20~25분 천천히 끓입니다.",
+      "입자가 원하는 만큼 부드러워지면 간을 맞춰 따뜻하게 제공합니다."
+    ],
+    "intro": "전복으로 만드는 죽 요리입니다. 쌀·달걀 조합으로 맛을 내고 약 35분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "죽",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-035",
+    "title": "전복 미역국",
+    "category": "수산",
+    "main": "전복",
+    "main_amount": "손질한 전복 살 200g",
+    "method": "국",
+    "seasoning": "미역·국간장",
+    "time": 30,
+    "servings": 2,
+    "sku": "jeonbok",
+    "photo": "assets/images/recipes/recipe-035.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-jeonbok.webp",
+    "ingredients": [
+      "손질한 전복 살 200g",
+      "불린 미역 50g",
+      "국간장 1작은술",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "전복을 손질하고, 미역 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "전복을 넣고 다시 끓어오르면 거품을 걷고 국간장을 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "전복으로 만드는 국 요리입니다. 미역·국간장 조합으로 맛을 내고 약 30분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "국",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-036",
+    "title": "전복 간장조림",
+    "category": "수산",
+    "main": "전복",
+    "main_amount": "손질한 전복 살 200g",
+    "method": "조림",
+    "seasoning": "간장·생강",
+    "time": 25,
+    "servings": 2,
+    "sku": "jeonbok",
+    "photo": "assets/images/recipes/recipe-036.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-jeonbok.webp",
+    "ingredients": [
+      "손질한 전복 살 200g",
+      "간장 1큰술",
+      "생강 약간",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "전복을 손질합니다. 단단한 채소는 1cm 두께로 썰어둡니다.",
+      "냄비에 물 250mL와 간장·생강을 넣고 양념장을 풉니다.",
+      "전복을 넣어 중불로 끓이다가 끓으면 약불로 줄입니다.",
+      "중간에 양념을 끼얹어가며 충분히 익히고 국물이 자작하게 남으면 불을 끕니다."
+    ],
+    "intro": "전복으로 만드는 조림 요리입니다. 간장·생강 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "조림",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-037",
+    "title": "문어 숙주볶음",
+    "category": "수산",
+    "main": "문어",
+    "main_amount": "자숙 문어 250g",
+    "method": "볶음",
+    "seasoning": "숙주·굴소스",
+    "time": 15,
+    "servings": 2,
+    "sku": "mun-eo",
+    "photo": "assets/images/recipes/recipe-037.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-mun-eo.webp",
+    "ingredients": [
+      "자숙 문어 250g",
+      "숙주 150g",
+      "굴소스 1작은술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "문어와 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 숙주를 먼저 볶아 향을 냅니다.",
+      "문어를 넣고 중강불에서 저어가며 익힙니다. 굴소스를 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "문어로 만드는 볶음 요리입니다. 숙주·굴소스 조합으로 맛을 내고 약 15분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-038",
+    "title": "문어 감자샐러드",
+    "category": "수산",
+    "main": "문어",
+    "main_amount": "자숙 문어 250g",
+    "method": "샐러드",
+    "seasoning": "감자·오이",
+    "time": 20,
+    "servings": 2,
+    "sku": "mun-eo",
+    "photo": "assets/images/recipes/recipe-038.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-mun-eo.webp",
+    "ingredients": [
+      "자숙 문어 250g",
+      "감자 1개",
+      "오이 ½개",
+      "드레싱(올리브유·레몬즙 등) 적당량"
+    ],
+    "steps": [
+      "문어를 깨끗이 세척하고 물기를 제거합니다. 육류·어패류를 곁들이면 먼저 완전히 익힙니다.",
+      "감자를 손질해 그릇에 담습니다.",
+      "문어와 오이를 더해 가볍게 섞습니다.",
+      "올리브유·레몬즙 또는 요구르트 드레싱을 취향에 맞춰 곁들입니다."
+    ],
+    "intro": "문어로 만드는 샐러드 요리입니다. 감자·오이 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "샐러드",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-039",
+    "title": "문어 마늘오일파스타",
+    "category": "수산",
+    "main": "문어",
+    "main_amount": "자숙 문어 250g",
+    "method": "오일파스타",
+    "seasoning": "마늘·올리브유",
+    "time": 25,
+    "servings": 2,
+    "sku": "mun-eo",
+    "photo": "assets/images/recipes/recipe-039.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-mun-eo.webp",
+    "ingredients": [
+      "자숙 문어 250g",
+      "다진 마늘 1작은술",
+      "올리브유 1큰술",
+      "파스타면 160g"
+    ],
+    "steps": [
+      "소금 약간을 넣은 끓는 물에 파스타면 160g을 포장에 적힌 시간만큼 삶습니다.",
+      "팬에 기름 1큰술과 마늘을 넣고 약불에서 향을 냅니다.",
+      "문어를 충분히 익힌 뒤 면을 넣고 면수 4큰술를 더합니다.",
+      "면과 소스를 1~2분 섞고 소금·후추로 간을 맞춰 냅니다."
+    ],
+    "intro": "문어로 만드는 오일파스타 요리입니다. 마늘·올리브유 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "오일파스타",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-040",
+    "title": "문어 김치볶음밥",
+    "category": "수산",
+    "main": "문어",
+    "main_amount": "자숙 문어 250g",
+    "method": "볶음밥",
+    "seasoning": "김치·밥",
+    "time": 20,
+    "servings": 2,
+    "sku": "mun-eo",
+    "photo": "assets/images/recipes/recipe-040.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-mun-eo.webp",
+    "ingredients": [
+      "자숙 문어 250g",
+      "잘게 썬 김치 100g",
+      "밥 2공기",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "문어를 잘게 썰고 곁들일 재료를 준비합니다.",
+      "팬에서 문어를 먼저 충분히 익힌 뒤 김치를 더합니다.",
+      "밥 2공기를 넣고 덩어리 없이 풀어가며 2~3분 볶습니다.",
+      "밥을 넣어 간을 조절하고 한 번 더 섞어 완성합니다."
+    ],
+    "intro": "문어로 만드는 볶음밥 요리입니다. 김치·밥 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "볶음밥",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-041",
+    "title": "참치 스테이크",
+    "category": "수산",
+    "main": "참치",
+    "main_amount": "익혀 먹을 참치 살 250g",
+    "method": "팬구이",
+    "seasoning": "후추·올리브유",
+    "time": 18,
+    "servings": 2,
+    "sku": "chamchi",
+    "photo": "assets/images/recipes/recipe-041.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-chamchi.webp",
+    "ingredients": [
+      "익혀 먹을 참치 살 250g",
+      "후추 약간",
+      "올리브유 1큰술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "참치를 1~2cm 두께로 준비하고 키친타월로 수분을 제거합니다.",
+      "팬을 중불로 달궈 식용유 1큰술을 두르고 참치를 고르게 펼칩니다.",
+      "앞뒤로 뒤집으며 속까지 익힌 뒤 후추·올리브유 재료를 넣어 마지막 1~2분간 향을 입힙니다.",
+      "한 조각을 잘라 익힘 정도를 확인하고 바로 접시에 담아냅니다."
+    ],
+    "intro": "참치로 만드는 팬구이 요리입니다. 후추·올리브유 조합으로 맛을 내고 약 18분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "팬구이",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-042",
+    "title": "참치 김치찌개",
+    "category": "수산",
+    "main": "참치",
+    "main_amount": "익혀 먹을 참치 살 250g",
+    "method": "찌개",
+    "seasoning": "김치·두부",
+    "time": 25,
+    "servings": 2,
+    "sku": "chamchi",
+    "photo": "assets/images/recipes/recipe-042.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-chamchi.webp",
+    "ingredients": [
+      "익혀 먹을 참치 살 250g",
+      "잘게 썬 김치 100g",
+      "두부 ½모",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "참치를 손질하고, 김치 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "참치를 넣고 다시 끓어오르면 거품을 걷고 두부를 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "참치로 만드는 찌개 요리입니다. 김치·두부 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "찌개",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-043",
+    "title": "참치 채소볶음밥",
+    "category": "수산",
+    "main": "참치",
+    "main_amount": "익혀 먹을 참치 살 250g",
+    "method": "볶음밥",
+    "seasoning": "당근·양파",
+    "time": 20,
+    "servings": 2,
+    "sku": "chamchi",
+    "photo": "assets/images/recipes/recipe-043.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-chamchi.webp",
+    "ingredients": [
+      "익혀 먹을 참치 살 250g",
+      "당근 ⅓개",
+      "양파 ½개",
+      "따뜻한 밥 2공기",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "참치를 잘게 썰고 곁들일 재료를 준비합니다.",
+      "팬에서 참치를 먼저 충분히 익힌 뒤 당근을 더합니다.",
+      "밥 2공기를 넣고 덩어리 없이 풀어가며 2~3분 볶습니다.",
+      "양파를 넣어 간을 조절하고 한 번 더 섞어 완성합니다."
+    ],
+    "intro": "참치로 만드는 볶음밥 요리입니다. 당근·양파 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "볶음밥",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-044",
+    "title": "참치 토마토조림",
+    "category": "수산",
+    "main": "참치",
+    "main_amount": "익혀 먹을 참치 살 250g",
+    "method": "조림",
+    "seasoning": "토마토·양파",
+    "time": 25,
+    "servings": 2,
+    "sku": "chamchi",
+    "photo": "assets/images/recipes/recipe-044.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-chamchi.webp",
+    "ingredients": [
+      "익혀 먹을 참치 살 250g",
+      "토마토 2개",
+      "양파 ½개",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "참치를 손질합니다. 단단한 채소는 1cm 두께로 썰어둡니다.",
+      "냄비에 물 250mL와 토마토·양파를 넣고 양념장을 풉니다.",
+      "참치를 넣어 중불로 끓이다가 끓으면 약불로 줄입니다.",
+      "중간에 양념을 끼얹어가며 충분히 익히고 국물이 자작하게 남으면 불을 끕니다."
+    ],
+    "intro": "참치로 만드는 조림 요리입니다. 토마토·양파 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "조림",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-045",
+    "title": "대게 달걀볶음밥",
+    "category": "수산",
+    "main": "대게",
+    "main_amount": "손질한 대게 살 200g",
+    "method": "볶음밥",
+    "seasoning": "달걀·대파",
+    "time": 20,
+    "servings": 2,
+    "sku": "daege",
+    "photo": "assets/images/recipes/recipe-045.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-daege.webp",
+    "ingredients": [
+      "손질한 대게 살 200g",
+      "달걀 2개",
+      "대파 ½대",
+      "따뜻한 밥 2공기",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "대게를 잘게 썰고 곁들일 재료를 준비합니다.",
+      "팬에서 대게를 먼저 충분히 익힌 뒤 달걀을 더합니다.",
+      "밥 2공기를 넣고 덩어리 없이 풀어가며 2~3분 볶습니다.",
+      "대파를 넣어 간을 조절하고 한 번 더 섞어 완성합니다."
+    ],
+    "intro": "대게로 만드는 볶음밥 요리입니다. 달걀·대파 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "볶음밥",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-046",
+    "title": "대게 된장국",
+    "category": "수산",
+    "main": "대게",
+    "main_amount": "손질한 대게 살 200g",
+    "method": "된장국",
+    "seasoning": "두부·애호박",
+    "time": 25,
+    "servings": 2,
+    "sku": "daege",
+    "photo": "assets/images/recipes/recipe-046.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-daege.webp",
+    "ingredients": [
+      "손질한 대게 살 200g",
+      "두부 ½모",
+      "애호박 ½개",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "대게를 손질하고, 두부 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "대게를 넣고 다시 끓어오르면 거품을 걷고 애호박을 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "대게로 만드는 된장국 요리입니다. 두부·애호박 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "된장국",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-047",
+    "title": "대게 치즈오븐구이",
+    "category": "수산",
+    "main": "대게",
+    "main_amount": "손질한 대게 살 200g",
+    "method": "오븐구이",
+    "seasoning": "모차렐라·버터",
+    "time": 20,
+    "servings": 2,
+    "sku": "daege",
+    "photo": "assets/images/recipes/recipe-047.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-daege.webp",
+    "ingredients": [
+      "손질한 대게 살 200g",
+      "모차렐라 치즈 60g",
+      "버터 1큰술"
+    ],
+    "steps": [
+      "대게를 먹기 좋게 손질하고 물기를 종이타월로 눌러 제거합니다.",
+      "오븐을 190℃로 예열합니다. 모차렐라와 버터를 올리고 가볍게 간합니다.",
+      "내열 용기에 담아 약 12분 굽고, 두꺼운 부분을 확인하며 필요한 만큼 추가 조리합니다.",
+      "겉면만 보고 판단하지 말고 중심까지 충분히 익힌 다음 따뜻할 때 담아냅니다."
+    ],
+    "intro": "대게로 만드는 오븐구이 요리입니다. 모차렐라·버터 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "오븐구이",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-048",
+    "title": "대게 크림리조또",
+    "category": "수산",
+    "main": "대게",
+    "main_amount": "손질한 대게 살 200g",
+    "method": "리조또",
+    "seasoning": "밥·우유",
+    "time": 30,
+    "servings": 2,
+    "sku": "daege",
+    "photo": "assets/images/recipes/recipe-048.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-daege.webp",
+    "ingredients": [
+      "손질한 대게 살 200g",
+      "밥 2공기",
+      "우유 200mL"
+    ],
+    "steps": [
+      "대게를 작게 썰고 밥을 준비합니다.",
+      "냄비에 기름을 두르고 채소와 대게를 먼저 익힙니다.",
+      "밥 2공기와 우유 150mL를 넣고 약불에서 5~7분 저어가며 끓입니다.",
+      "입자가 원하는 만큼 부드러워지면 간을 맞춰 따뜻하게 제공합니다."
+    ],
+    "intro": "대게로 만드는 리조또 요리입니다. 밥·우유 조합으로 맛을 내고 약 30분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "리조또",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-049",
+    "title": "킹크랩 버터볶음",
+    "category": "수산",
+    "main": "킹크랩",
+    "main_amount": "익힌 킹크랩 살 200g",
+    "method": "볶음",
+    "seasoning": "버터·마늘",
+    "time": 15,
+    "servings": 2,
+    "sku": "king-crab-a",
+    "photo": "assets/images/recipes/recipe-049.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-king-crab-a.webp",
+    "ingredients": [
+      "익힌 킹크랩 살 200g",
+      "버터 1큰술",
+      "다진 마늘 1작은술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "킹크랩과 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 버터를 먼저 볶아 향을 냅니다.",
+      "킹크랩을 넣고 중강불에서 저어가며 익힙니다. 마늘을 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "킹크랩으로 만드는 볶음 요리입니다. 버터·마늘 조합으로 맛을 내고 약 15분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-050",
+    "title": "킹크랩 계란찜",
+    "category": "수산",
+    "main": "킹크랩",
+    "main_amount": "익힌 킹크랩 살 200g",
+    "method": "계란찜",
+    "seasoning": "달걀·대파",
+    "time": 20,
+    "servings": 2,
+    "sku": "king-crab-a",
+    "photo": "assets/images/recipes/recipe-050.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-king-crab-a.webp",
+    "ingredients": [
+      "익힌 킹크랩 살 200g",
+      "달걀 2개",
+      "대파 ½대"
+    ],
+    "steps": [
+      "달걀 3개에 물 150mL를 섞어 체에 한번 거릅니다.",
+      "킹크랩을 잘게 찢어 달걀물에 섞고 달걀·대파로 간합니다.",
+      "약불에서 뚜껑을 덮어 10~12분 익힌 뒤 가운데가 흐르지 않는지 확인합니다.",
+      "불을 끄고 2분 뜸을 들여 완성합니다."
+    ],
+    "intro": "킹크랩으로 만드는 계란찜 요리입니다. 달걀·대파 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "계란찜",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-051",
+    "title": "킹크랩 마늘볶음밥",
+    "category": "수산",
+    "main": "킹크랩",
+    "main_amount": "익힌 킹크랩 살 200g",
+    "method": "볶음밥",
+    "seasoning": "밥·마늘",
+    "time": 20,
+    "servings": 2,
+    "sku": "king-crab-a",
+    "photo": "assets/images/recipes/recipe-051.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-king-crab-a.webp",
+    "ingredients": [
+      "익힌 킹크랩 살 200g",
+      "밥 2공기",
+      "다진 마늘 1작은술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "킹크랩을 잘게 썰고 곁들일 재료를 준비합니다.",
+      "팬에서 킹크랩을 먼저 충분히 익힌 뒤 밥을 더합니다.",
+      "밥 2공기를 넣고 덩어리 없이 풀어가며 2~3분 볶습니다.",
+      "마늘을 넣어 간을 조절하고 한 번 더 섞어 완성합니다."
+    ],
+    "intro": "킹크랩으로 만드는 볶음밥 요리입니다. 밥·마늘 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "볶음밥",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-052",
+    "title": "킹크랩 크림파스타",
+    "category": "수산",
+    "main": "킹크랩",
+    "main_amount": "익힌 킹크랩 살 200g",
+    "method": "크림파스타",
+    "seasoning": "우유·마늘",
+    "time": 25,
+    "servings": 2,
+    "sku": "king-crab-a",
+    "photo": "assets/images/recipes/recipe-052.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-king-crab-a.webp",
+    "ingredients": [
+      "익힌 킹크랩 살 200g",
+      "우유 200mL",
+      "다진 마늘 1작은술",
+      "파스타면 160g"
+    ],
+    "steps": [
+      "소금 약간을 넣은 끓는 물에 파스타면 160g을 포장에 적힌 시간만큼 삶습니다.",
+      "팬에 기름 1큰술과 우유를 넣고 약불에서 향을 냅니다.",
+      "킹크랩을 충분히 익힌 뒤 면을 넣고 우유 150mL를 더합니다.",
+      "면과 소스를 1~2분 섞고 소금·후추로 간을 맞춰 냅니다."
+    ],
+    "intro": "킹크랩으로 만드는 크림파스타 요리입니다. 우유·마늘 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "크림파스타",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-053",
+    "title": "얼큰한 생선매운탕",
+    "category": "수산",
+    "main": "매운탕 생선",
+    "main_amount": "손질한 매운탕용 생선 400g",
+    "method": "매운탕",
+    "seasoning": "무·고춧가루",
+    "time": 30,
+    "servings": 2,
+    "sku": "maeuntang-geori",
+    "photo": "assets/images/recipes/recipe-053.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-maeuntang-geori.webp",
+    "ingredients": [
+      "손질한 매운탕용 생선 400g",
+      "무 150g",
+      "고춧가루 1큰술",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "매운탕 생선을 손질하고, 무 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 700mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "매운탕 생선을 넣고 다시 끓어오르면 거품을 걷고 고춧가루를 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "매운탕 생선으로 만드는 매운탕 요리입니다. 무·고춧가루 조합으로 맛을 내고 약 30분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "매운탕",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-054",
+    "title": "맑은 생선지리",
+    "category": "수산",
+    "main": "매운탕 생선",
+    "main_amount": "손질한 매운탕용 생선 400g",
+    "method": "맑은탕",
+    "seasoning": "무·미나리",
+    "time": 25,
+    "servings": 2,
+    "sku": "maeuntang-geori",
+    "photo": "assets/images/recipes/recipe-054.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-maeuntang-geori.webp",
+    "ingredients": [
+      "손질한 매운탕용 생선 400g",
+      "무 150g",
+      "미나리 적당량",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "매운탕 생선을 손질하고, 무 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "매운탕 생선을 넣고 다시 끓어오르면 거품을 걷고 미나리를 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "매운탕 생선으로 만드는 맑은탕 요리입니다. 무·미나리 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "맑은탕",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-055",
+    "title": "두부 생선찌개",
+    "category": "수산",
+    "main": "매운탕 생선",
+    "main_amount": "손질한 매운탕용 생선 400g",
+    "method": "찌개",
+    "seasoning": "두부·대파",
+    "time": 30,
+    "servings": 2,
+    "sku": "maeuntang-geori",
+    "photo": "assets/images/recipes/recipe-055.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-maeuntang-geori.webp",
+    "ingredients": [
+      "손질한 매운탕용 생선 400g",
+      "두부 ½모",
+      "대파 ½대",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "매운탕 생선을 손질하고, 두부 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "매운탕 생선을 넣고 다시 끓어오르면 거품을 걷고 대파를 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "매운탕 생선으로 만드는 찌개 요리입니다. 두부·대파 조합으로 맛을 내고 약 30분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "찌개",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-056",
+    "title": "생선 된장국",
+    "category": "수산",
+    "main": "매운탕 생선",
+    "main_amount": "손질한 매운탕용 생선 400g",
+    "method": "된장국",
+    "seasoning": "된장·애호박",
+    "time": 25,
+    "servings": 2,
+    "sku": "maeuntang-geori",
+    "photo": "assets/images/recipes/recipe-056.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-maeuntang-geori.webp",
+    "ingredients": [
+      "손질한 매운탕용 생선 400g",
+      "된장 1큰술",
+      "애호박 ½개",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "매운탕 생선을 손질하고, 된장 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "매운탕 생선을 넣고 다시 끓어오르면 거품을 걷고 애호박을 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "매운탕 생선으로 만드는 된장국 요리입니다. 된장·애호박 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "된장국",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-057",
+    "title": "딱새우 갈릭버터구이",
+    "category": "수산",
+    "main": "딱새우",
+    "main_amount": "손질한 딱새우 살 220g",
+    "method": "팬구이",
+    "seasoning": "마늘·버터",
+    "time": 18,
+    "servings": 2,
+    "sku": "ddak-saeu",
+    "photo": "assets/images/recipes/recipe-057.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ddak-saeu.webp",
+    "ingredients": [
+      "손질한 딱새우 살 220g",
+      "다진 마늘 1작은술",
+      "버터 1큰술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "딱새우를 1~2cm 두께로 준비하고 키친타월로 수분을 제거합니다.",
+      "팬을 중불로 달궈 식용유 1큰술을 두르고 딱새우를 고르게 펼칩니다.",
+      "앞뒤로 뒤집으며 속까지 익힌 뒤 마늘과 버터를 넣어 마지막 1~2분간 향을 입힙니다.",
+      "한 조각을 잘라 익힘 정도를 확인하고 바로 접시에 담아냅니다."
+    ],
+    "intro": "딱새우로 만드는 팬구이 요리입니다. 마늘·버터 조합으로 맛을 내고 약 18분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "팬구이",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-058",
+    "title": "딱새우 오일파스타",
+    "category": "수산",
+    "main": "딱새우",
+    "main_amount": "손질한 딱새우 살 220g",
+    "method": "오일파스타",
+    "seasoning": "마늘·올리브유",
+    "time": 23,
+    "servings": 2,
+    "sku": "ddak-saeu",
+    "photo": "assets/images/recipes/recipe-058.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ddak-saeu.webp",
+    "ingredients": [
+      "손질한 딱새우 살 220g",
+      "다진 마늘 1작은술",
+      "올리브유 1큰술",
+      "파스타면 160g"
+    ],
+    "steps": [
+      "소금 약간을 넣은 끓는 물에 파스타면 160g을 포장에 적힌 시간만큼 삶습니다.",
+      "팬에 기름 1큰술과 마늘을 넣고 약불에서 향을 냅니다.",
+      "딱새우를 충분히 익힌 뒤 면을 넣고 면수 4큰술를 더합니다.",
+      "면과 소스를 1~2분 섞고 소금·후추로 간을 맞춰 냅니다."
+    ],
+    "intro": "딱새우로 만드는 오일파스타 요리입니다. 마늘·올리브유 조합으로 맛을 내고 약 23분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "오일파스타",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-059",
+    "title": "딱새우 채소튀김전",
+    "category": "수산",
+    "main": "딱새우",
+    "main_amount": "손질한 딱새우 살 220g",
+    "method": "전",
+    "seasoning": "당근·밀가루",
+    "time": 22,
+    "servings": 2,
+    "sku": "ddak-saeu",
+    "photo": "assets/images/recipes/recipe-059.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ddak-saeu.webp",
+    "ingredients": [
+      "손질한 딱새우 살 220g",
+      "당근 ⅓개",
+      "부침가루 또는 밀가루 ½컵",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "딱새우를 잘게 썰고 당근을 섞어 반죽을 준비합니다.",
+      "달걀 1~2개와 부침가루 또는 밀가루 ½컵을 넣고 물을 조금씩 더해 되직하게 섞습니다.",
+      "중불로 달군 팬에 기름을 두르고 반죽을 얇게 나누어 올립니다.",
+      "한 면이 단단하게 익으면 뒤집어 속까지 충분히 익힌 뒤 기름을 털어냅니다."
+    ],
+    "intro": "딱새우로 만드는 전 요리입니다. 당근·밀가루 조합으로 맛을 내고 약 22분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "전",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-060",
+    "title": "딱새우 맑은탕",
+    "category": "수산",
+    "main": "딱새우",
+    "main_amount": "손질한 딱새우 살 220g",
+    "method": "맑은탕",
+    "seasoning": "무·대파",
+    "time": 24,
+    "servings": 2,
+    "sku": "ddak-saeu",
+    "photo": "assets/images/recipes/recipe-060.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ddak-saeu.webp",
+    "ingredients": [
+      "손질한 딱새우 살 220g",
+      "무 150g",
+      "대파 ½대",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "딱새우를 손질하고, 무 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "딱새우를 넣고 다시 끓어오르면 거품을 걷고 대파를 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "딱새우로 만드는 맑은탕 요리입니다. 무·대파 조합으로 맛을 내고 약 24분 안에 2인분을 완성해 보세요.",
+    "safety": "어패류를 가열할 때는 중심온도 85℃에서 1분 이상 익히세요. 냉장·해동·손질 상태는 반드시 판매자에게 확인하세요.",
+    "tags": [
+      "수산",
+      "맑은탕",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-061",
+    "title": "한우 등심 채소볶음",
+    "category": "축산",
+    "main": "한우 등심",
+    "main_amount": "등심 250g",
+    "method": "볶음",
+    "seasoning": "양파·피망",
+    "time": 18,
+    "servings": 2,
+    "sku": "deungsim",
+    "photo": "assets/images/recipes/recipe-061.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-deungsim.webp",
+    "ingredients": [
+      "등심 250g",
+      "양파 ½개",
+      "피망 ½개",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "한우 등심과 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 양파를 먼저 볶아 향을 냅니다.",
+      "한우 등심을 넣고 중강불에서 저어가며 익힙니다. 피망을 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "한우 등심으로 만드는 볶음 요리입니다. 양파·피망 조합으로 맛을 내고 약 18분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-062",
+    "title": "한우 등심 스테이크",
+    "category": "축산",
+    "main": "한우 등심",
+    "main_amount": "등심 250g",
+    "method": "팬구이",
+    "seasoning": "소금·후추",
+    "time": 20,
+    "servings": 2,
+    "sku": "deungsim",
+    "photo": "assets/images/recipes/recipe-062.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-deungsim.webp",
+    "ingredients": [
+      "등심 250g",
+      "소금 ⅓작은술",
+      "후추 약간",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "한우 등심을 1~2cm 두께로 준비하고 키친타월로 수분을 제거합니다.",
+      "팬을 중불로 달궈 식용유 1큰술을 두르고 한우 등심을 고르게 펼칩니다.",
+      "앞뒤로 뒤집으며 속까지 익힌 뒤 소금·후추 재료를 넣어 마지막 1~2분간 향을 입힙니다.",
+      "한 조각을 잘라 익힘 정도를 확인하고 바로 접시에 담아냅니다."
+    ],
+    "intro": "한우 등심으로 만드는 팬구이 요리입니다. 소금·후추 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "팬구이",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-063",
+    "title": "한우 등심 간장덮밥",
+    "category": "축산",
+    "main": "한우 등심",
+    "main_amount": "등심 250g",
+    "method": "덮밥",
+    "seasoning": "양파·간장",
+    "time": 20,
+    "servings": 2,
+    "sku": "deungsim",
+    "photo": "assets/images/recipes/recipe-063.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-deungsim.webp",
+    "ingredients": [
+      "등심 250g",
+      "양파 ½개",
+      "간장 1큰술",
+      "따뜻한 밥 2공기",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "한우 등심을 잘게 썰고 곁들일 재료를 준비합니다.",
+      "팬에서 한우 등심을 먼저 충분히 익힌 뒤 양파를 더합니다.",
+      "따뜻한 밥 2공기를 그릇에 담고 볶은 재료를 올립니다.",
+      "간장을 넣어 간을 조절하고 한 번 더 섞어 완성합니다."
+    ],
+    "intro": "한우 등심으로 만드는 덮밥 요리입니다. 양파·간장 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "덮밥",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-064",
+    "title": "한우 등심 버섯전골",
+    "category": "축산",
+    "main": "한우 등심",
+    "main_amount": "등심 250g",
+    "method": "전골",
+    "seasoning": "느타리버섯·배추",
+    "time": 28,
+    "servings": 2,
+    "sku": "deungsim",
+    "photo": "assets/images/recipes/recipe-064.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-deungsim.webp",
+    "ingredients": [
+      "등심 250g",
+      "느타리버섯 100g",
+      "배추 2장",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "한우 등심을 손질하고, 느타리버섯 등 채소를 먹기 좋은 크기로 썹니다.",
+      "두꺼운 갈비는 찬물에 잠시 담가 핏물을 빼고, 필요하면 한 차례 데쳐 불순물을 걷어냅니다.",
+      "냄비에 물 700mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "한우 등심을 넣고 다시 끓어오르면 거품을 걷고 배추를 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "한우 등심으로 만드는 전골 요리입니다. 느타리버섯·배추 조합으로 맛을 내고 약 28분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "전골",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-065",
+    "title": "차돌박이 숙주볶음",
+    "category": "축산",
+    "main": "차돌박이",
+    "main_amount": "차돌박이 250g",
+    "method": "볶음",
+    "seasoning": "숙주·굴소스",
+    "time": 15,
+    "servings": 2,
+    "sku": "chadol",
+    "photo": "assets/images/recipes/recipe-065.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-chadol.webp",
+    "ingredients": [
+      "차돌박이 250g",
+      "숙주 150g",
+      "굴소스 1작은술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "차돌박이와 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 숙주를 먼저 볶아 향을 냅니다.",
+      "차돌박이를 넣고 중강불에서 저어가며 익힙니다. 굴소스를 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "차돌박이로 만드는 볶음 요리입니다. 숙주·굴소스 조합으로 맛을 내고 약 15분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-066",
+    "title": "차돌박이 된장찌개",
+    "category": "축산",
+    "main": "차돌박이",
+    "main_amount": "차돌박이 250g",
+    "method": "된장국",
+    "seasoning": "된장·애호박",
+    "time": 22,
+    "servings": 2,
+    "sku": "chadol",
+    "photo": "assets/images/recipes/recipe-066.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-chadol.webp",
+    "ingredients": [
+      "차돌박이 250g",
+      "된장 1큰술",
+      "애호박 ½개",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "차돌박이를 손질하고, 된장 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "차돌박이를 넣고 다시 끓어오르면 거품을 걷고 애호박을 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "차돌박이로 만드는 된장국 요리입니다. 된장·애호박 조합으로 맛을 내고 약 22분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "된장국",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-067",
+    "title": "차돌박이 김치볶음밥",
+    "category": "축산",
+    "main": "차돌박이",
+    "main_amount": "차돌박이 250g",
+    "method": "볶음밥",
+    "seasoning": "김치·밥",
+    "time": 18,
+    "servings": 2,
+    "sku": "chadol",
+    "photo": "assets/images/recipes/recipe-067.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-chadol.webp",
+    "ingredients": [
+      "차돌박이 250g",
+      "잘게 썬 김치 100g",
+      "밥 2공기",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "차돌박이를 잘게 썰고 곁들일 재료를 준비합니다.",
+      "팬에서 차돌박이를 먼저 충분히 익힌 뒤 김치를 더합니다.",
+      "밥 2공기를 넣고 덩어리 없이 풀어가며 2~3분 볶습니다.",
+      "밥을 넣어 간을 조절하고 한 번 더 섞어 완성합니다."
+    ],
+    "intro": "차돌박이로 만드는 볶음밥 요리입니다. 김치·밥 조합으로 맛을 내고 약 18분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "볶음밥",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-068",
+    "title": "차돌박이 채소전골",
+    "category": "축산",
+    "main": "차돌박이",
+    "main_amount": "차돌박이 250g",
+    "method": "전골",
+    "seasoning": "배추·버섯",
+    "time": 28,
+    "servings": 2,
+    "sku": "chadol",
+    "photo": "assets/images/recipes/recipe-068.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-chadol.webp",
+    "ingredients": [
+      "차돌박이 250g",
+      "배추 2장",
+      "버섯 120g",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "차돌박이를 손질하고, 배추 등 채소를 먹기 좋은 크기로 썹니다.",
+      "두꺼운 갈비는 찬물에 잠시 담가 핏물을 빼고, 필요하면 한 차례 데쳐 불순물을 걷어냅니다.",
+      "냄비에 물 700mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "차돌박이를 넣고 다시 끓어오르면 거품을 걷고 버섯을 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "차돌박이로 만드는 전골 요리입니다. 배추·버섯 조합으로 맛을 내고 약 28분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "전골",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-069",
+    "title": "간단 소갈비찜",
+    "category": "축산",
+    "main": "소갈비",
+    "main_amount": "손질한 소갈비 450g",
+    "method": "갈비찜",
+    "seasoning": "무·당근",
+    "time": 65,
+    "servings": 2,
+    "sku": "so-galbi",
+    "photo": "assets/images/recipes/recipe-069.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-so-galbi.webp",
+    "ingredients": [
+      "손질한 소갈비 450g",
+      "무 150g",
+      "당근 ⅓개",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "소갈비를 손질합니다. 단단한 채소는 1cm 두께로 썰어둡니다.",
+      "냄비에 물 250mL와 무·당근을 넣고 양념장을 풉니다.",
+      "갈비 크기에 따라 40~60분 이상 뭉근히 끓이면서 부드러움과 익힘 상태를 확인합니다.",
+      "소갈비를 넣어 중불로 끓이다가 끓으면 약불로 줄입니다.",
+      "중간에 양념을 끼얹어가며 충분히 익히고 국물이 자작하게 남으면 불을 끕니다."
+    ],
+    "intro": "소갈비로 만드는 갈비찜 요리입니다. 무·당근 조합으로 맛을 내고 약 65분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "갈비찜",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-070",
+    "title": "소갈비 맑은탕",
+    "category": "축산",
+    "main": "소갈비",
+    "main_amount": "손질한 소갈비 450g",
+    "method": "갈비탕",
+    "seasoning": "대파·무",
+    "time": 70,
+    "servings": 2,
+    "sku": "so-galbi",
+    "photo": "assets/images/recipes/recipe-070.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-so-galbi.webp",
+    "ingredients": [
+      "손질한 소갈비 450g",
+      "대파 ½대",
+      "무 150g",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "소갈비를 손질하고, 대파 등 채소를 먹기 좋은 크기로 썹니다.",
+      "두꺼운 갈비는 찬물에 잠시 담가 핏물을 빼고, 필요하면 한 차례 데쳐 불순물을 걷어냅니다.",
+      "냄비에 물 700mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "소갈비를 넣고 다시 끓어오르면 거품을 걷고 국물이 다시 끓으면 간을 조절합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "소갈비로 만드는 갈비탕 요리입니다. 대파·무 조합으로 맛을 내고 약 70분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "갈비탕",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-071",
+    "title": "소갈비 매콤조림",
+    "category": "축산",
+    "main": "소갈비",
+    "main_amount": "손질한 소갈비 450g",
+    "method": "갈비찜",
+    "seasoning": "고춧가루·양파",
+    "time": 60,
+    "servings": 2,
+    "sku": "so-galbi",
+    "photo": "assets/images/recipes/recipe-071.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-so-galbi.webp",
+    "ingredients": [
+      "손질한 소갈비 450g",
+      "고춧가루 1큰술",
+      "양파 ½개",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "소갈비를 손질합니다. 단단한 채소는 1cm 두께로 썰어둡니다.",
+      "냄비에 물 250mL와 고춧가루·양파를 넣고 양념장을 풉니다.",
+      "갈비 크기에 따라 40~60분 이상 뭉근히 끓이면서 부드러움과 익힘 상태를 확인합니다.",
+      "소갈비를 넣어 중불로 끓이다가 끓으면 약불로 줄입니다.",
+      "중간에 양념을 끼얹어가며 충분히 익히고 국물이 자작하게 남으면 불을 끕니다."
+    ],
+    "intro": "소갈비로 만드는 갈비찜 요리입니다. 고춧가루·양파 조합으로 맛을 내고 약 60분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "갈비찜",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-072",
+    "title": "소갈비 버섯전골",
+    "category": "축산",
+    "main": "소갈비",
+    "main_amount": "손질한 소갈비 450g",
+    "method": "전골",
+    "seasoning": "버섯·대파",
+    "time": 55,
+    "servings": 2,
+    "sku": "so-galbi",
+    "photo": "assets/images/recipes/recipe-072.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-so-galbi.webp",
+    "ingredients": [
+      "손질한 소갈비 450g",
+      "버섯 120g",
+      "대파 ½대",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "소갈비를 손질하고, 버섯 등 채소를 먹기 좋은 크기로 썹니다.",
+      "두꺼운 갈비는 찬물에 잠시 담가 핏물을 빼고, 필요하면 한 차례 데쳐 불순물을 걷어냅니다.",
+      "냄비에 물 700mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "소갈비를 넣고 다시 끓어오르면 거품을 걷고 대파를 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "소갈비로 만드는 전골 요리입니다. 버섯·대파 조합으로 맛을 내고 약 55분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "전골",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-073",
+    "title": "삼겹살 김치볶음",
+    "category": "축산",
+    "main": "삼겹살",
+    "main_amount": "삼겹살 300g",
+    "method": "볶음",
+    "seasoning": "김치·양파",
+    "time": 20,
+    "servings": 2,
+    "sku": "samgyeop",
+    "photo": "assets/images/recipes/recipe-073.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-samgyeop.webp",
+    "ingredients": [
+      "삼겹살 300g",
+      "잘게 썬 김치 100g",
+      "양파 ½개",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "삼겹살과 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 김치를 먼저 볶아 향을 냅니다.",
+      "삼겹살을 넣고 중강불에서 저어가며 익힙니다. 양파를 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "삼겹살로 만드는 볶음 요리입니다. 김치·양파 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-074",
+    "title": "삼겹살 된장구이",
+    "category": "축산",
+    "main": "삼겹살",
+    "main_amount": "삼겹살 300g",
+    "method": "팬구이",
+    "seasoning": "된장·마늘",
+    "time": 22,
+    "servings": 2,
+    "sku": "samgyeop",
+    "photo": "assets/images/recipes/recipe-074.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-samgyeop.webp",
+    "ingredients": [
+      "삼겹살 300g",
+      "된장 1큰술",
+      "다진 마늘 1작은술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "삼겹살을 1~2cm 두께로 준비하고 키친타월로 수분을 제거합니다.",
+      "팬을 중불로 달궈 식용유 1큰술을 두르고 삼겹살을 고르게 펼칩니다.",
+      "앞뒤로 뒤집으며 속까지 익힌 뒤 된장·마늘 재료를 넣어 마지막 1~2분간 향을 입힙니다.",
+      "한 조각을 잘라 익힘 정도를 확인하고 바로 접시에 담아냅니다."
+    ],
+    "intro": "삼겹살로 만드는 팬구이 요리입니다. 된장·마늘 조합으로 맛을 내고 약 22분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "팬구이",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-075",
+    "title": "삼겹살 숙주덮밥",
+    "category": "축산",
+    "main": "삼겹살",
+    "main_amount": "삼겹살 300g",
+    "method": "덮밥",
+    "seasoning": "숙주·간장",
+    "time": 20,
+    "servings": 2,
+    "sku": "samgyeop",
+    "photo": "assets/images/recipes/recipe-075.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-samgyeop.webp",
+    "ingredients": [
+      "삼겹살 300g",
+      "숙주 150g",
+      "간장 1큰술",
+      "따뜻한 밥 2공기",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "삼겹살을 잘게 썰고 곁들일 재료를 준비합니다.",
+      "팬에서 삼겹살을 먼저 충분히 익힌 뒤 숙주를 더합니다.",
+      "따뜻한 밥 2공기를 그릇에 담고 볶은 재료를 올립니다.",
+      "간장을 넣어 간을 조절하고 한 번 더 섞어 완성합니다."
+    ],
+    "intro": "삼겹살로 만드는 덮밥 요리입니다. 숙주·간장 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "덮밥",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-076",
+    "title": "삼겹살 양배추찜",
+    "category": "축산",
+    "main": "삼겹살",
+    "main_amount": "삼겹살 300g",
+    "method": "찜",
+    "seasoning": "양배추·간장",
+    "time": 28,
+    "servings": 2,
+    "sku": "samgyeop",
+    "photo": "assets/images/recipes/recipe-076.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-samgyeop.webp",
+    "ingredients": [
+      "삼겹살 300g",
+      "양배추 100g",
+      "간장 1큰술"
+    ],
+    "steps": [
+      "삼겹살과 양배추·간장을 준비합니다.",
+      "냄비에 물을 끓이고 찜기에 재료를 가지런히 올립니다.",
+      "뚜껑을 덮어 재료가 충분히 익을 때까지 찝니다.",
+      "불을 끄고 1~2분 뜸을 들인 뒤 그릇에 담습니다."
+    ],
+    "intro": "삼겹살로 만드는 찜 요리입니다. 양배추·간장 조합으로 맛을 내고 약 28분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "찜",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-077",
+    "title": "한우 다짐육 채소볶음",
+    "category": "축산",
+    "main": "한우 살코기",
+    "main_amount": "한우 살코기 250g (가열 조리용 확인)",
+    "method": "볶음",
+    "seasoning": "당근·양파",
+    "time": 20,
+    "servings": 2,
+    "sku": "hanwoo-yukhoe",
+    "photo": "assets/images/recipes/recipe-077.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-hanwoo-yukhoe.webp",
+    "ingredients": [
+      "한우 살코기 250g (가열 조리용 확인)",
+      "당근 ⅓개",
+      "양파 ½개",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "한우 살코기와 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 당근을 먼저 볶아 향을 냅니다.",
+      "한우 살코기를 넣고 중강불에서 저어가며 익힙니다. 양파를 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "한우 살코기로 만드는 볶음 요리입니다. 당근·양파 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-078",
+    "title": "한우 달걀덮밥",
+    "category": "축산",
+    "main": "한우 살코기",
+    "main_amount": "한우 살코기 250g (가열 조리용 확인)",
+    "method": "덮밥",
+    "seasoning": "달걀·간장",
+    "time": 22,
+    "servings": 2,
+    "sku": "hanwoo-yukhoe",
+    "photo": "assets/images/recipes/recipe-078.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-hanwoo-yukhoe.webp",
+    "ingredients": [
+      "한우 살코기 250g (가열 조리용 확인)",
+      "달걀 2개",
+      "간장 1큰술",
+      "따뜻한 밥 2공기",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "한우 살코기를 잘게 썰고 곁들일 재료를 준비합니다.",
+      "팬에서 한우 살코기를 먼저 충분히 익힌 뒤 달걀을 더합니다.",
+      "따뜻한 밥 2공기를 그릇에 담고 볶은 재료를 올립니다.",
+      "간장을 넣어 간을 조절하고 한 번 더 섞어 완성합니다."
+    ],
+    "intro": "한우 살코기로 만드는 덮밥 요리입니다. 달걀·간장 조합으로 맛을 내고 약 22분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "덮밥",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-079",
+    "title": "한우 두부완자전",
+    "category": "축산",
+    "main": "한우 살코기",
+    "main_amount": "한우 살코기 250g (가열 조리용 확인)",
+    "method": "완자전",
+    "seasoning": "두부·달걀",
+    "time": 30,
+    "servings": 2,
+    "sku": "hanwoo-yukhoe",
+    "photo": "assets/images/recipes/recipe-079.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-hanwoo-yukhoe.webp",
+    "ingredients": [
+      "한우 살코기 250g (가열 조리용 확인)",
+      "두부 ½모",
+      "달걀 2개",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "한우 살코기를 잘게 썰고 두부를 섞어 반죽을 준비합니다.",
+      "달걀 1~2개와 부침가루 또는 밀가루 ½컵을 넣고 물을 조금씩 더해 되직하게 섞습니다.",
+      "중불로 달군 팬에 기름을 두르고 반죽을 얇게 나누어 올립니다.",
+      "한 면이 단단하게 익으면 뒤집어 속까지 충분히 익힌 뒤 기름을 털어냅니다."
+    ],
+    "intro": "한우 살코기로 만드는 완자전 요리입니다. 두부·달걀 조합으로 맛을 내고 약 30분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "완자전",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-080",
+    "title": "한우 감자조림",
+    "category": "축산",
+    "main": "한우 살코기",
+    "main_amount": "한우 살코기 250g (가열 조리용 확인)",
+    "method": "조림",
+    "seasoning": "감자·간장",
+    "time": 30,
+    "servings": 2,
+    "sku": "hanwoo-yukhoe",
+    "photo": "assets/images/recipes/recipe-080.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-hanwoo-yukhoe.webp",
+    "ingredients": [
+      "한우 살코기 250g (가열 조리용 확인)",
+      "감자 1개",
+      "간장 1큰술",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "한우 살코기를 손질합니다. 단단한 채소는 1cm 두께로 썰어둡니다.",
+      "냄비에 물 250mL와 감자·간장을 넣고 양념장을 풉니다.",
+      "한우 살코기를 넣어 중불로 끓이다가 끓으면 약불로 줄입니다.",
+      "중간에 양념을 끼얹어가며 충분히 익히고 국물이 자작하게 남으면 불을 끕니다."
+    ],
+    "intro": "한우 살코기로 만드는 조림 요리입니다. 감자·간장 조합으로 맛을 내고 약 30분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "조림",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-081",
+    "title": "한우 표고버섯볶음",
+    "category": "축산",
+    "main": "한우 살코기",
+    "main_amount": "한우 살코기 250g (가열 조리용 확인)",
+    "method": "볶음",
+    "seasoning": "표고버섯·대파",
+    "time": 20,
+    "servings": 2,
+    "sku": "yuk-sashimi",
+    "photo": "assets/images/recipes/recipe-081.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-yuk-sashimi.webp",
+    "ingredients": [
+      "한우 살코기 250g (가열 조리용 확인)",
+      "표고버섯 2개",
+      "대파 ½대",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "한우 살코기와 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 표고버섯을 먼저 볶아 향을 냅니다.",
+      "한우 살코기를 넣고 중강불에서 저어가며 익힙니다. 대파를 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "한우 살코기로 만드는 볶음 요리입니다. 표고버섯·대파 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-082",
+    "title": "한우 간장불고기",
+    "category": "축산",
+    "main": "한우 살코기",
+    "main_amount": "한우 살코기 250g (가열 조리용 확인)",
+    "method": "불고기",
+    "seasoning": "양파·간장",
+    "time": 25,
+    "servings": 2,
+    "sku": "yuk-sashimi",
+    "photo": "assets/images/recipes/recipe-082.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-yuk-sashimi.webp",
+    "ingredients": [
+      "한우 살코기 250g (가열 조리용 확인)",
+      "양파 ½개",
+      "간장 1큰술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "한우 살코기와 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 양파를 먼저 볶아 향을 냅니다.",
+      "한우 살코기를 넣고 중강불에서 저어가며 익힙니다. 간장을 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "한우 살코기로 만드는 불고기 요리입니다. 양파·간장 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "불고기",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-083",
+    "title": "한우 채소죽",
+    "category": "축산",
+    "main": "한우 살코기",
+    "main_amount": "한우 살코기 250g (가열 조리용 확인)",
+    "method": "죽",
+    "seasoning": "쌀·당근",
+    "time": 35,
+    "servings": 2,
+    "sku": "yuk-sashimi",
+    "photo": "assets/images/recipes/recipe-083.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-yuk-sashimi.webp",
+    "ingredients": [
+      "한우 살코기 250g (가열 조리용 확인)",
+      "쌀 ½컵",
+      "당근 ⅓개",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "한우 살코기를 작게 썰고 쌀을 준비합니다.",
+      "냄비에 기름을 두르고 채소와 한우 살코기를 먼저 익힙니다.",
+      "불린 쌀 ½컵과 물 600mL를 넣고 쌀알이 푹 퍼지도록 20~25분 천천히 끓입니다.",
+      "입자가 원하는 만큼 부드러워지면 간을 맞춰 따뜻하게 제공합니다."
+    ],
+    "intro": "한우 살코기로 만드는 죽 요리입니다. 쌀·당근 조합으로 맛을 내고 약 35분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "죽",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-084",
+    "title": "한우 소고기뭇국",
+    "category": "축산",
+    "main": "한우 살코기",
+    "main_amount": "한우 살코기 250g (가열 조리용 확인)",
+    "method": "국",
+    "seasoning": "무·대파",
+    "time": 30,
+    "servings": 2,
+    "sku": "yuk-sashimi",
+    "photo": "assets/images/recipes/recipe-084.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-yuk-sashimi.webp",
+    "ingredients": [
+      "한우 살코기 250g (가열 조리용 확인)",
+      "무 150g",
+      "대파 ½대",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "한우 살코기를 손질하고, 무 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "한우 살코기를 넣고 다시 끓어오르면 거품을 걷고 대파를 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "한우 살코기로 만드는 국 요리입니다. 무·대파 조합으로 맛을 내고 약 30분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "국",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-085",
+    "title": "소고기 토마토스튜",
+    "category": "축산",
+    "main": "소고기",
+    "main_amount": "소고기 250g",
+    "method": "스튜",
+    "seasoning": "토마토·감자",
+    "time": 40,
+    "servings": 2,
+    "sku": "deungsim",
+    "photo": "assets/images/recipes/recipe-085.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-deungsim.webp",
+    "ingredients": [
+      "소고기 250g",
+      "토마토 2개",
+      "감자 1개",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "소고기를 작게 썰고 토마토를 준비합니다.",
+      "냄비에 기름을 두르고 채소와 소고기를 먼저 익힙니다.",
+      "물 또는 육수 450mL와 감자를 넣고 중약불에서 12~20분 저으며 끓입니다.",
+      "입자가 원하는 만큼 부드러워지면 간을 맞춰 따뜻하게 제공합니다."
+    ],
+    "intro": "소고기로 만드는 스튜 요리입니다. 토마토·감자 조합으로 맛을 내고 약 40분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "스튜",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-086",
+    "title": "소고기 고추잡채",
+    "category": "축산",
+    "main": "소고기",
+    "main_amount": "소고기 250g",
+    "method": "볶음",
+    "seasoning": "피망·양파",
+    "time": 25,
+    "servings": 2,
+    "sku": "deungsim",
+    "photo": "assets/images/recipes/recipe-086.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-deungsim.webp",
+    "ingredients": [
+      "소고기 250g",
+      "피망 ½개",
+      "양파 ½개",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "소고기와 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 피망을 먼저 볶아 향을 냅니다.",
+      "소고기를 넣고 중강불에서 저어가며 익힙니다. 양파를 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "소고기로 만드는 볶음 요리입니다. 피망·양파 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-087",
+    "title": "소고기 감자카레",
+    "category": "축산",
+    "main": "소고기",
+    "main_amount": "소고기 250g",
+    "method": "카레",
+    "seasoning": "감자·카레가루",
+    "time": 30,
+    "servings": 2,
+    "sku": "deungsim",
+    "photo": "assets/images/recipes/recipe-087.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-deungsim.webp",
+    "ingredients": [
+      "소고기 250g",
+      "감자 1개",
+      "카레가루 2큰술"
+    ],
+    "steps": [
+      "소고기를 작게 썰고 감자를 준비합니다.",
+      "냄비에 기름을 두르고 채소와 소고기를 먼저 익힙니다.",
+      "물 450mL를 붓고 재료가 익으면 카레가루 2큰술을 풀어 3분 더 끓입니다.",
+      "입자가 원하는 만큼 부드러워지면 간을 맞춰 따뜻하게 제공합니다."
+    ],
+    "intro": "소고기로 만드는 카레 요리입니다. 감자·카레가루 조합으로 맛을 내고 약 30분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "카레",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-088",
+    "title": "소고기 양파구이",
+    "category": "축산",
+    "main": "소고기",
+    "main_amount": "소고기 250g",
+    "method": "팬구이",
+    "seasoning": "양파·버터",
+    "time": 20,
+    "servings": 2,
+    "sku": "deungsim",
+    "photo": "assets/images/recipes/recipe-088.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-deungsim.webp",
+    "ingredients": [
+      "소고기 250g",
+      "양파 ½개",
+      "버터 1큰술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "소고기를 1~2cm 두께로 준비하고 키친타월로 수분을 제거합니다.",
+      "팬을 중불로 달궈 식용유 1큰술을 두르고 소고기를 고르게 펼칩니다.",
+      "앞뒤로 뒤집으며 속까지 익힌 뒤 양파과 버터를 넣어 마지막 1~2분간 향을 입힙니다.",
+      "한 조각을 잘라 익힘 정도를 확인하고 바로 접시에 담아냅니다."
+    ],
+    "intro": "소고기로 만드는 팬구이 요리입니다. 양파·버터 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "육류는 중심온도 75℃에서 1분 이상 충분히 가열하세요. 생식용 육회·육사시미 상품을 조리용으로 대체하려면 판매자에게 용도와 손질 상태를 확인하세요.",
+    "tags": [
+      "축산",
+      "팬구이",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-089",
+    "title": "쌈채소 참치 비빔밥",
+    "category": "농산",
+    "main": "쌈채소",
+    "main_amount": "쌈채소 100g",
+    "method": "비빔밥",
+    "seasoning": "밥·고추장",
+    "time": 15,
+    "servings": 2,
+    "sku": "ssam-mo-dum",
+    "photo": "assets/images/recipes/recipe-089.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ssam-mo-dum.webp",
+    "ingredients": [
+      "쌈채소 100g",
+      "밥 2공기",
+      "고추장 1큰술"
+    ],
+    "steps": [
+      "쌈채소를 씻어 물기를 충분히 털고 먹기 좋게 썹니다.",
+      "밥 2공기를 그릇에 나누어 담습니다.",
+      "쌈채소와 밥·고추장을 올립니다.",
+      "간장이나 고추장으로 간을 맞춰 골고루 비벼 먹습니다."
+    ],
+    "intro": "쌈채소로 만드는 비빔밥 요리입니다. 밥·고추장 조합으로 맛을 내고 약 15분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "비빔밥",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-090",
+    "title": "쌈채소 달걀말이",
+    "category": "농산",
+    "main": "쌈채소",
+    "main_amount": "쌈채소 100g",
+    "method": "달걀말이",
+    "seasoning": "달걀·소금",
+    "time": 18,
+    "servings": 2,
+    "sku": "ssam-mo-dum",
+    "photo": "assets/images/recipes/recipe-090.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ssam-mo-dum.webp",
+    "ingredients": [
+      "쌈채소 100g",
+      "달걀 2개",
+      "소금 ⅓작은술"
+    ],
+    "steps": [
+      "쌈채소를 잘게 썰어둡니다.",
+      "달걀 3개를 풀고 소금 한 꼬집과 채소를 섞습니다.",
+      "기름을 두른 약불 팬에 달걀물을 얇게 붓고 가장자리부터 말아줍니다.",
+      "남은 달걀물을 나누어 부어 말고 속까지 익힌 뒤 썰어냅니다."
+    ],
+    "intro": "쌈채소로 만드는 달걀말이 요리입니다. 달걀·소금 조합으로 맛을 내고 약 18분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "달걀말이",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-091",
+    "title": "쌈채소 닭가슴살 샐러드",
+    "category": "농산",
+    "main": "쌈채소",
+    "main_amount": "쌈채소 100g",
+    "method": "샐러드",
+    "seasoning": "익힌 닭가슴살·올리브유",
+    "time": 15,
+    "servings": 2,
+    "sku": "ssam-mo-dum",
+    "photo": "assets/images/recipes/recipe-091.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ssam-mo-dum.webp",
+    "ingredients": [
+      "쌈채소 100g",
+      "익힌 닭가슴살 100g",
+      "올리브유 1큰술",
+      "드레싱(올리브유·레몬즙 등) 적당량"
+    ],
+    "steps": [
+      "쌈채소를 깨끗이 세척하고 물기를 제거합니다. 육류·어패류를 곁들이면 먼저 완전히 익힙니다.",
+      "익힌 닭가슴살을 손질해 그릇에 담습니다.",
+      "쌈채소와 올리브유를 더해 가볍게 섞습니다.",
+      "올리브유·레몬즙 또는 요구르트 드레싱을 취향에 맞춰 곁들입니다."
+    ],
+    "intro": "쌈채소로 만드는 샐러드 요리입니다. 익힌 닭가슴살·올리브유 조합으로 맛을 내고 약 15분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "샐러드",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-092",
+    "title": "쌈채소 두부쌈",
+    "category": "농산",
+    "main": "쌈채소",
+    "main_amount": "쌈채소 100g",
+    "method": "쌈",
+    "seasoning": "두부·된장",
+    "time": 15,
+    "servings": 2,
+    "sku": "ssam-mo-dum",
+    "photo": "assets/images/recipes/recipe-092.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ssam-mo-dum.webp",
+    "ingredients": [
+      "쌈채소 100g",
+      "두부 ½모",
+      "된장 1큰술"
+    ],
+    "steps": [
+      "쌈채소를 세척하고 물기를 제거합니다. 가열이 필요한 재료는 먼저 충분히 익힙니다.",
+      "두부를 손질해 쌈채소와 섞습니다.",
+      "간장 1작은술, 참기름 1작은술을 더해 가볍게 무칩니다.",
+      "간을 보고 바로 접시에 담습니다."
+    ],
+    "intro": "쌈채소로 만드는 쌈 요리입니다. 두부·된장 조합으로 맛을 내고 약 15분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "쌈",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-093",
+    "title": "손질채소 된장국",
+    "category": "농산",
+    "main": "손질 채소",
+    "main_amount": "손질 채소 200g",
+    "method": "된장국",
+    "seasoning": "된장·두부",
+    "time": 18,
+    "servings": 2,
+    "sku": "sonjil-yachae",
+    "photo": "assets/images/recipes/recipe-093.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-sonjil-yachae.webp",
+    "ingredients": [
+      "손질 채소 200g",
+      "된장 1큰술",
+      "두부 ½모",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "손질 채소를 손질하고, 된장 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "손질 채소를 넣고 다시 끓어오르면 거품을 걷고 두부를 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "손질 채소로 만드는 된장국 요리입니다. 된장·두부 조합으로 맛을 내고 약 18분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "된장국",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-094",
+    "title": "손질채소 달걀볶음밥",
+    "category": "농산",
+    "main": "손질 채소",
+    "main_amount": "손질 채소 200g",
+    "method": "볶음밥",
+    "seasoning": "밥·달걀",
+    "time": 20,
+    "servings": 2,
+    "sku": "sonjil-yachae",
+    "photo": "assets/images/recipes/recipe-094.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-sonjil-yachae.webp",
+    "ingredients": [
+      "손질 채소 200g",
+      "밥 2공기",
+      "달걀 2개",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "손질 채소를 잘게 썰고 곁들일 재료를 준비합니다.",
+      "팬에서 손질 채소를 먼저 충분히 익힌 뒤 밥을 더합니다.",
+      "밥 2공기를 넣고 덩어리 없이 풀어가며 2~3분 볶습니다.",
+      "달걀을 넣어 간을 조절하고 한 번 더 섞어 완성합니다."
+    ],
+    "intro": "손질 채소로 만드는 볶음밥 요리입니다. 밥·달걀 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "볶음밥",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-095",
+    "title": "손질채소 간장볶음",
+    "category": "농산",
+    "main": "손질 채소",
+    "main_amount": "손질 채소 200g",
+    "method": "볶음",
+    "seasoning": "간장·마늘",
+    "time": 15,
+    "servings": 2,
+    "sku": "sonjil-yachae",
+    "photo": "assets/images/recipes/recipe-095.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-sonjil-yachae.webp",
+    "ingredients": [
+      "손질 채소 200g",
+      "간장 1큰술",
+      "다진 마늘 1작은술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "손질 채소와 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 간장을 먼저 볶아 향을 냅니다.",
+      "손질 채소를 넣고 중강불에서 저어가며 익힙니다. 마늘을 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "손질 채소로 만드는 볶음 요리입니다. 간장·마늘 조합으로 맛을 내고 약 15분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-096",
+    "title": "손질 채소전",
+    "category": "농산",
+    "main": "손질 채소",
+    "main_amount": "손질 채소 200g",
+    "method": "전",
+    "seasoning": "밀가루·달걀",
+    "time": 20,
+    "servings": 2,
+    "sku": "sonjil-yachae",
+    "photo": "assets/images/recipes/recipe-096.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-sonjil-yachae.webp",
+    "ingredients": [
+      "손질 채소 200g",
+      "부침가루 또는 밀가루 ½컵",
+      "달걀 2개",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "손질 채소를 잘게 썰고 밀가루를 섞어 반죽을 준비합니다.",
+      "달걀 1~2개와 부침가루 또는 밀가루 ½컵을 넣고 물을 조금씩 더해 되직하게 섞습니다.",
+      "중불로 달군 팬에 기름을 두르고 반죽을 얇게 나누어 올립니다.",
+      "한 면이 단단하게 익으면 뒤집어 속까지 충분히 익힌 뒤 기름을 털어냅니다."
+    ],
+    "intro": "손질 채소로 만드는 전 요리입니다. 밀가루·달걀 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "전",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-097",
+    "title": "미나리 무국",
+    "category": "농산",
+    "main": "무와 미나리",
+    "main_amount": "무 150g·미나리 50g",
+    "method": "국",
+    "seasoning": "대파·국간장",
+    "time": 20,
+    "servings": 2,
+    "sku": "maeuntang-yachae",
+    "photo": "assets/images/recipes/recipe-097.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-maeuntang-yachae.webp",
+    "ingredients": [
+      "무 150g·미나리 50g",
+      "대파 ½대",
+      "국간장 1작은술",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "무와 미나리를 손질하고, 대파 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "무와 미나리를 넣고 다시 끓어오르면 거품을 걷고 국간장을 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "무와 미나리로 만드는 국 요리입니다. 대파·국간장 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "국",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-098",
+    "title": "미나리 두부무침",
+    "category": "농산",
+    "main": "무와 미나리",
+    "main_amount": "무 150g·미나리 50g",
+    "method": "무침",
+    "seasoning": "두부·간장",
+    "time": 15,
+    "servings": 2,
+    "sku": "maeuntang-yachae",
+    "photo": "assets/images/recipes/recipe-098.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-maeuntang-yachae.webp",
+    "ingredients": [
+      "무 150g·미나리 50g",
+      "두부 ½모",
+      "간장 1큰술"
+    ],
+    "steps": [
+      "무와 미나리를 세척하고 물기를 제거합니다. 가열이 필요한 재료는 먼저 충분히 익힙니다.",
+      "두부를 손질해 무와 미나리와 섞습니다.",
+      "간장 1작은술, 참기름 1작은술을 더해 가볍게 무칩니다.",
+      "간을 보고 바로 접시에 담습니다."
+    ],
+    "intro": "무와 미나리로 만드는 무침 요리입니다. 두부·간장 조합으로 맛을 내고 약 15분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "무침",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-099",
+    "title": "무 미나리 볶음밥",
+    "category": "농산",
+    "main": "무와 미나리",
+    "main_amount": "무 150g·미나리 50g",
+    "method": "볶음밥",
+    "seasoning": "밥·달걀",
+    "time": 20,
+    "servings": 2,
+    "sku": "maeuntang-yachae",
+    "photo": "assets/images/recipes/recipe-099.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-maeuntang-yachae.webp",
+    "ingredients": [
+      "무 150g·미나리 50g",
+      "밥 2공기",
+      "달걀 2개",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "무와 미나리를 잘게 썰고 곁들일 재료를 준비합니다.",
+      "팬에서 무와 미나리를 먼저 충분히 익힌 뒤 밥을 더합니다.",
+      "밥 2공기를 넣고 덩어리 없이 풀어가며 2~3분 볶습니다.",
+      "달걀을 넣어 간을 조절하고 한 번 더 섞어 완성합니다."
+    ],
+    "intro": "무와 미나리로 만드는 볶음밥 요리입니다. 밥·달걀 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "볶음밥",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-100",
+    "title": "무 채소조림",
+    "category": "농산",
+    "main": "무와 미나리",
+    "main_amount": "무 150g·미나리 50g",
+    "method": "조림",
+    "seasoning": "간장·물",
+    "time": 25,
+    "servings": 2,
+    "sku": "maeuntang-yachae",
+    "photo": "assets/images/recipes/recipe-100.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-maeuntang-yachae.webp",
+    "ingredients": [
+      "무 150g·미나리 50g",
+      "간장 1큰술",
+      "물 350mL",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "무와 미나리를 손질합니다. 단단한 채소는 1cm 두께로 썰어둡니다.",
+      "냄비에 물 250mL와 간장·물을 넣고 양념장을 풉니다.",
+      "무와 미나리를 넣어 중불로 끓이다가 끓으면 약불로 줄입니다.",
+      "중간에 양념을 끼얹어가며 충분히 익히고 국물이 자작하게 남으면 불을 끕니다."
+    ],
+    "intro": "무와 미나리로 만드는 조림 요리입니다. 간장·물 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "조림",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-101",
+    "title": "샤인머스캣 요거트볼",
+    "category": "농산",
+    "main": "샤인머스캣",
+    "main_amount": "씻은 샤인머스캣 150g",
+    "method": "요거트볼",
+    "seasoning": "플레인요거트·견과류",
+    "time": 7,
+    "servings": 2,
+    "sku": "shine-muscat",
+    "photo": "assets/images/recipes/recipe-101.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-shine-muscat.webp",
+    "ingredients": [
+      "씻은 샤인머스캣 150g",
+      "플레인 요거트 150g",
+      "견과류 20g"
+    ],
+    "steps": [
+      "샤인머스캣을 흐르는 물로 씻고 먹기 좋은 크기로 자릅니다.",
+      "그릇에 플레인 요거트 150g을 담습니다.",
+      "샤인머스캣과 플레인요거트·견과류를 골고루 올립니다.",
+      "차갑게 준비해 바로 먹습니다."
+    ],
+    "intro": "샤인머스캣으로 만드는 요거트볼 요리입니다. 플레인요거트·견과류 조합으로 맛을 내고 약 7분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "요거트볼",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-102",
+    "title": "샤인머스캣 치즈샐러드",
+    "category": "농산",
+    "main": "샤인머스캣",
+    "main_amount": "씻은 샤인머스캣 150g",
+    "method": "과일샐러드",
+    "seasoning": "리코타치즈·채소",
+    "time": 10,
+    "servings": 2,
+    "sku": "shine-muscat",
+    "photo": "assets/images/recipes/recipe-102.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-shine-muscat.webp",
+    "ingredients": [
+      "씻은 샤인머스캣 150g",
+      "리코타치즈 80g",
+      "채소 적당량",
+      "드레싱(올리브유·레몬즙 등) 적당량"
+    ],
+    "steps": [
+      "샤인머스캣을 깨끗이 세척하고 물기를 제거합니다. 육류·어패류를 곁들이면 먼저 완전히 익힙니다.",
+      "리코타치즈를 손질해 그릇에 담습니다.",
+      "샤인머스캣과 채소를 더해 가볍게 섞습니다.",
+      "올리브유·레몬즙 또는 요구르트 드레싱을 취향에 맞춰 곁들입니다."
+    ],
+    "intro": "샤인머스캣으로 만드는 과일샐러드 요리입니다. 리코타치즈·채소 조합으로 맛을 내고 약 10분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "과일샐러드",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-103",
+    "title": "샤인머스캣 과일꼬치",
+    "category": "농산",
+    "main": "샤인머스캣",
+    "main_amount": "씻은 샤인머스캣 150g",
+    "method": "과일꼬치",
+    "seasoning": "바나나·딸기",
+    "time": 10,
+    "servings": 2,
+    "sku": "shine-muscat",
+    "photo": "assets/images/recipes/recipe-103.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-shine-muscat.webp",
+    "ingredients": [
+      "씻은 샤인머스캣 150g",
+      "바나나 1개",
+      "딸기 100g"
+    ],
+    "steps": [
+      "샤인머스캣과 곁들일 과일을 충분히 씻고 물기를 닦습니다.",
+      "먹기 좋은 한입 크기로 자릅니다.",
+      "뾰족한 꼬치에 과일을 번갈아 끼웁니다.",
+      "어린이에게 제공할 때는 꼬치를 제거하고 과일을 작게 잘라 제공합니다."
+    ],
+    "intro": "샤인머스캣으로 만드는 과일꼬치 요리입니다. 바나나·딸기 조합으로 맛을 내고 약 10분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "과일꼬치",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-104",
+    "title": "샤인머스캣 탄산에이드",
+    "category": "농산",
+    "main": "샤인머스캣",
+    "main_amount": "씻은 샤인머스캣 150g",
+    "method": "에이드",
+    "seasoning": "탄산수·레몬",
+    "time": 5,
+    "servings": 2,
+    "sku": "shine-muscat",
+    "photo": "assets/images/recipes/recipe-104.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-shine-muscat.webp",
+    "ingredients": [
+      "씻은 샤인머스캣 150g",
+      "탄산수 300mL",
+      "레몬 ½개"
+    ],
+    "steps": [
+      "샤인머스캣을 깨끗이 세척하고 반 정도 으깹니다.",
+      "잔에 얼음을 넣고 손질한 과일을 담습니다.",
+      "탄산수를 넣은 다음 탄산수 300mL를 부어줍니다.",
+      "한 번 저어 신선할 때 마십니다."
+    ],
+    "intro": "샤인머스캣으로 만드는 에이드 요리입니다. 탄산수·레몬 조합으로 맛을 내고 약 5분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "에이드",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-105",
+    "title": "딸기 요거트볼",
+    "category": "농산",
+    "main": "딸기",
+    "main_amount": "씻은 딸기 200g",
+    "method": "요거트볼",
+    "seasoning": "요거트·시리얼",
+    "time": 7,
+    "servings": 2,
+    "sku": "ttalgi",
+    "photo": "assets/images/recipes/recipe-105.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ttalgi.webp",
+    "ingredients": [
+      "씻은 딸기 200g",
+      "플레인 요거트 150g",
+      "시리얼 40g"
+    ],
+    "steps": [
+      "딸기를 흐르는 물로 씻고 먹기 좋은 크기로 자릅니다.",
+      "그릇에 플레인 요거트 150g을 담습니다.",
+      "딸기와 요거트·시리얼을 골고루 올립니다.",
+      "차갑게 준비해 바로 먹습니다."
+    ],
+    "intro": "딸기로 만드는 요거트볼 요리입니다. 요거트·시리얼 조합으로 맛을 내고 약 7분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "요거트볼",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-106",
+    "title": "딸기 우유스무디",
+    "category": "농산",
+    "main": "딸기",
+    "main_amount": "씻은 딸기 200g",
+    "method": "스무디",
+    "seasoning": "우유·꿀",
+    "time": 8,
+    "servings": 2,
+    "sku": "ttalgi",
+    "photo": "assets/images/recipes/recipe-106.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ttalgi.webp",
+    "ingredients": [
+      "씻은 딸기 200g",
+      "우유 200mL",
+      "꿀 1큰술"
+    ],
+    "steps": [
+      "딸기를 깨끗이 세척해 먹기 좋게 손질합니다.",
+      "믹서에 딸기와 우유·꿀을 넣습니다.",
+      "우유 150mL와 얼음 몇 개를 더해 20~30초 갈아줍니다.",
+      "농도를 확인해 우유를 조금 더한 뒤 잔에 따릅니다."
+    ],
+    "intro": "딸기로 만드는 스무디 요리입니다. 우유·꿀 조합으로 맛을 내고 약 8분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "스무디",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-107",
+    "title": "딸기 치즈토스트",
+    "category": "농산",
+    "main": "딸기",
+    "main_amount": "씻은 딸기 200g",
+    "method": "토스트",
+    "seasoning": "식빵·크림치즈",
+    "time": 10,
+    "servings": 2,
+    "sku": "ttalgi",
+    "photo": "assets/images/recipes/recipe-107.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ttalgi.webp",
+    "ingredients": [
+      "씻은 딸기 200g",
+      "식빵 2장",
+      "크림치즈 2큰술"
+    ],
+    "steps": [
+      "딸기와 식빵을 먹기 좋게 손질합니다.",
+      "식빵 2장을 가볍게 굽거나 준비합니다.",
+      "딸기와 크림치즈를 식빵 위에 고르게 얹습니다.",
+      "반으로 잘라 바로 내고 냉장 보관한 재료는 오래 방치하지 않습니다."
+    ],
+    "intro": "딸기로 만드는 토스트 요리입니다. 식빵·크림치즈 조합으로 맛을 내고 약 10분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "토스트",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-108",
+    "title": "딸기 과일 샐러드",
+    "category": "농산",
+    "main": "딸기",
+    "main_amount": "씻은 딸기 200g",
+    "method": "과일샐러드",
+    "seasoning": "바나나·요거트",
+    "time": 10,
+    "servings": 2,
+    "sku": "ttalgi",
+    "photo": "assets/images/recipes/recipe-108.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ttalgi.webp",
+    "ingredients": [
+      "씻은 딸기 200g",
+      "바나나 1개",
+      "플레인 요거트 150g",
+      "드레싱(올리브유·레몬즙 등) 적당량"
+    ],
+    "steps": [
+      "딸기를 깨끗이 세척하고 물기를 제거합니다. 육류·어패류를 곁들이면 먼저 완전히 익힙니다.",
+      "바나나를 손질해 그릇에 담습니다.",
+      "딸기와 요거트를 더해 가볍게 섞습니다.",
+      "올리브유·레몬즙 또는 요구르트 드레싱을 취향에 맞춰 곁들입니다."
+    ],
+    "intro": "딸기로 만드는 과일샐러드 요리입니다. 바나나·요거트 조합으로 맛을 내고 약 10분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "과일샐러드",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-109",
+    "title": "감귤 요거트볼",
+    "category": "농산",
+    "main": "감귤",
+    "main_amount": "껍질 벗긴 감귤 3개",
+    "method": "요거트볼",
+    "seasoning": "요거트·견과류",
+    "time": 7,
+    "servings": 2,
+    "sku": "gamgyul",
+    "photo": "assets/images/recipes/recipe-109.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-gamgyul.webp",
+    "ingredients": [
+      "껍질 벗긴 감귤 3개",
+      "플레인 요거트 150g",
+      "견과류 20g"
+    ],
+    "steps": [
+      "감귤을 흐르는 물로 씻고 먹기 좋은 크기로 자릅니다.",
+      "그릇에 플레인 요거트 150g을 담습니다.",
+      "감귤과 요거트·견과류를 골고루 올립니다.",
+      "차갑게 준비해 바로 먹습니다."
+    ],
+    "intro": "감귤로 만드는 요거트볼 요리입니다. 요거트·견과류 조합으로 맛을 내고 약 7분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "요거트볼",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-110",
+    "title": "감귤 꿀차",
+    "category": "농산",
+    "main": "감귤",
+    "main_amount": "껍질 벗긴 감귤 3개",
+    "method": "과일차",
+    "seasoning": "꿀·따뜻한 물",
+    "time": 8,
+    "servings": 2,
+    "sku": "gamgyul",
+    "photo": "assets/images/recipes/recipe-110.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-gamgyul.webp",
+    "ingredients": [
+      "껍질 벗긴 감귤 3개",
+      "꿀 1큰술",
+      "따뜻한 물 250mL"
+    ],
+    "steps": [
+      "감귤을 깨끗이 세척해 얇게 썹니다.",
+      "컵에 과일과 꿀 1작은술을 담습니다.",
+      "따뜻한 물 250mL를 부어 2~3분 우립니다.",
+      "잘 저은 뒤 기호에 맞춰 따뜻하게 마십니다."
+    ],
+    "intro": "감귤로 만드는 과일차 요리입니다. 꿀·따뜻한 물 조합으로 맛을 내고 약 8분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "과일차",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-111",
+    "title": "감귤 채소샐러드",
+    "category": "농산",
+    "main": "감귤",
+    "main_amount": "껍질 벗긴 감귤 3개",
+    "method": "과일샐러드",
+    "seasoning": "어린잎·올리브유",
+    "time": 12,
+    "servings": 2,
+    "sku": "gamgyul",
+    "photo": "assets/images/recipes/recipe-111.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-gamgyul.webp",
+    "ingredients": [
+      "껍질 벗긴 감귤 3개",
+      "어린잎 채소 50g",
+      "올리브유 1큰술",
+      "드레싱(올리브유·레몬즙 등) 적당량"
+    ],
+    "steps": [
+      "감귤을 깨끗이 세척하고 물기를 제거합니다. 육류·어패류를 곁들이면 먼저 완전히 익힙니다.",
+      "어린잎을 손질해 그릇에 담습니다.",
+      "감귤과 올리브유를 더해 가볍게 섞습니다.",
+      "올리브유·레몬즙 또는 요구르트 드레싱을 취향에 맞춰 곁들입니다."
+    ],
+    "intro": "감귤로 만드는 과일샐러드 요리입니다. 어린잎·올리브유 조합으로 맛을 내고 약 12분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "과일샐러드",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-112",
+    "title": "감귤 시원한 에이드",
+    "category": "농산",
+    "main": "감귤",
+    "main_amount": "껍질 벗긴 감귤 3개",
+    "method": "에이드",
+    "seasoning": "탄산수·얼음",
+    "time": 5,
+    "servings": 2,
+    "sku": "gamgyul",
+    "photo": "assets/images/recipes/recipe-112.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-gamgyul.webp",
+    "ingredients": [
+      "껍질 벗긴 감귤 3개",
+      "탄산수 300mL",
+      "얼음 한 컵"
+    ],
+    "steps": [
+      "감귤을 깨끗이 세척하고 반 정도 으깹니다.",
+      "잔에 얼음을 넣고 손질한 과일을 담습니다.",
+      "탄산수를 넣은 다음 탄산수 300mL를 부어줍니다.",
+      "한 번 저어 신선할 때 마십니다."
+    ],
+    "intro": "감귤로 만드는 에이드 요리입니다. 탄산수·얼음 조합으로 맛을 내고 약 5분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "에이드",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-113",
+    "title": "애호박 달걀전",
+    "category": "농산",
+    "main": "애호박",
+    "main_amount": "애호박 1개",
+    "method": "전",
+    "seasoning": "달걀·밀가루",
+    "time": 18,
+    "servings": 2,
+    "sku": "sonjil-yachae",
+    "photo": "assets/images/recipes/recipe-113.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-sonjil-yachae.webp",
+    "ingredients": [
+      "애호박 1개",
+      "달걀 2개",
+      "부침가루 또는 밀가루 ½컵",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "애호박을 잘게 썰고 달걀을 섞어 반죽을 준비합니다.",
+      "달걀 1~2개와 부침가루 또는 밀가루 ½컵을 넣고 물을 조금씩 더해 되직하게 섞습니다.",
+      "중불로 달군 팬에 기름을 두르고 반죽을 얇게 나누어 올립니다.",
+      "한 면이 단단하게 익으면 뒤집어 속까지 충분히 익힌 뒤 기름을 털어냅니다."
+    ],
+    "intro": "애호박으로 만드는 전 요리입니다. 달걀·밀가루 조합으로 맛을 내고 약 18분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "전",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "category_only",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-114",
+    "title": "애호박 새우볶음",
+    "category": "농산",
+    "main": "애호박",
+    "main_amount": "애호박 1개",
+    "method": "볶음",
+    "seasoning": "새우·마늘",
+    "time": 18,
+    "servings": 2,
+    "sku": "sonjil-yachae",
+    "photo": "assets/images/recipes/recipe-114.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-sonjil-yachae.webp",
+    "ingredients": [
+      "애호박 1개",
+      "새우 적당량",
+      "다진 마늘 1작은술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "애호박과 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 새우를 먼저 볶아 향을 냅니다.",
+      "애호박을 넣고 중강불에서 저어가며 익힙니다. 마늘을 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "애호박으로 만드는 볶음 요리입니다. 새우·마늘 조합으로 맛을 내고 약 18분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "category_only",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-115",
+    "title": "애호박 된장찌개",
+    "category": "농산",
+    "main": "애호박",
+    "main_amount": "애호박 1개",
+    "method": "된장국",
+    "seasoning": "된장·두부",
+    "time": 20,
+    "servings": 2,
+    "sku": "sonjil-yachae",
+    "photo": "assets/images/recipes/recipe-115.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-sonjil-yachae.webp",
+    "ingredients": [
+      "애호박 1개",
+      "된장 1큰술",
+      "두부 ½모",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "애호박을 손질하고, 된장 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "애호박을 넣고 다시 끓어오르면 거품을 걷고 두부를 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "애호박으로 만드는 된장국 요리입니다. 된장·두부 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "된장국",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "category_only",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-116",
+    "title": "애호박 밥전",
+    "category": "농산",
+    "main": "애호박",
+    "main_amount": "애호박 1개",
+    "method": "밥전",
+    "seasoning": "밥·달걀",
+    "time": 20,
+    "servings": 2,
+    "sku": "sonjil-yachae",
+    "photo": "assets/images/recipes/recipe-116.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-sonjil-yachae.webp",
+    "ingredients": [
+      "애호박 1개",
+      "밥 2공기",
+      "달걀 2개",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "애호박을 잘게 썰고 밥을 섞어 반죽을 준비합니다.",
+      "달걀 1~2개와 부침가루 또는 밀가루 ½컵을 넣고 물을 조금씩 더해 되직하게 섞습니다.",
+      "중불로 달군 팬에 기름을 두르고 반죽을 얇게 나누어 올립니다.",
+      "한 면이 단단하게 익으면 뒤집어 속까지 충분히 익힌 뒤 기름을 털어냅니다."
+    ],
+    "intro": "애호박으로 만드는 밥전 요리입니다. 밥·달걀 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "밥전",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "category_only",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-117",
+    "title": "무 간장조림",
+    "category": "농산",
+    "main": "무",
+    "main_amount": "무 250g",
+    "method": "조림",
+    "seasoning": "간장·올리고당",
+    "time": 25,
+    "servings": 2,
+    "sku": "maeuntang-yachae",
+    "photo": "assets/images/recipes/recipe-117.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-maeuntang-yachae.webp",
+    "ingredients": [
+      "무 250g",
+      "간장 1큰술",
+      "올리고당 1작은술",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "무를 손질합니다. 단단한 채소는 1cm 두께로 썰어둡니다.",
+      "냄비에 물 250mL와 간장·올리고당을 넣고 양념장을 풉니다.",
+      "무를 넣어 중불로 끓이다가 끓으면 약불로 줄입니다.",
+      "중간에 양념을 끼얹어가며 충분히 익히고 국물이 자작하게 남으면 불을 끕니다."
+    ],
+    "intro": "무로 만드는 조림 요리입니다. 간장·올리고당 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "조림",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-118",
+    "title": "무 달걀국",
+    "category": "농산",
+    "main": "무",
+    "main_amount": "무 250g",
+    "method": "국",
+    "seasoning": "달걀·대파",
+    "time": 18,
+    "servings": 2,
+    "sku": "maeuntang-yachae",
+    "photo": "assets/images/recipes/recipe-118.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-maeuntang-yachae.webp",
+    "ingredients": [
+      "무 250g",
+      "달걀 2개",
+      "대파 ½대",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "무를 손질하고, 달걀 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "무를 넣고 다시 끓어오르면 거품을 걷고 대파를 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "무로 만드는 국 요리입니다. 달걀·대파 조합으로 맛을 내고 약 18분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "국",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-119",
+    "title": "무와 소고기뭇국",
+    "category": "농산",
+    "main": "무",
+    "main_amount": "무 250g",
+    "method": "국",
+    "seasoning": "익힌 소고기·대파",
+    "time": 30,
+    "servings": 2,
+    "sku": "maeuntang-yachae",
+    "photo": "assets/images/recipes/recipe-119.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-maeuntang-yachae.webp",
+    "ingredients": [
+      "무 250g",
+      "익힌 소고기 100g",
+      "대파 ½대",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "무를 손질하고, 익힌 소고기 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "무를 넣고 다시 끓어오르면 거품을 걷고 대파를 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "무로 만드는 국 요리입니다. 익힌 소고기·대파 조합으로 맛을 내고 약 30분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "국",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-120",
+    "title": "무 들깨볶음",
+    "category": "농산",
+    "main": "무",
+    "main_amount": "무 250g",
+    "method": "볶음",
+    "seasoning": "들깨가루·대파",
+    "time": 20,
+    "servings": 2,
+    "sku": "maeuntang-yachae",
+    "photo": "assets/images/recipes/recipe-120.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-maeuntang-yachae.webp",
+    "ingredients": [
+      "무 250g",
+      "들깨가루 1큰술",
+      "대파 ½대",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "무와 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 들깨가루를 먼저 볶아 향을 냅니다.",
+      "무를 넣고 중강불에서 저어가며 익힙니다. 대파를 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "무로 만드는 볶음 요리입니다. 들깨가루·대파 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "direct_example",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-121",
+    "title": "오이 새콤무침",
+    "category": "농산",
+    "main": "오이",
+    "main_amount": "오이 1개",
+    "method": "무침",
+    "seasoning": "식초·고춧가루",
+    "time": 10,
+    "servings": 2,
+    "sku": "ssam-mo-dum",
+    "photo": "assets/images/recipes/recipe-121.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ssam-mo-dum.webp",
+    "ingredients": [
+      "오이 1개",
+      "식초 1큰술",
+      "고춧가루 1큰술"
+    ],
+    "steps": [
+      "오이를 세척하고 물기를 제거합니다. 가열이 필요한 재료는 먼저 충분히 익힙니다.",
+      "식초를 손질해 오이와 섞습니다.",
+      "간장 1작은술, 참기름 1작은술을 더해 가볍게 무칩니다.",
+      "간을 보고 바로 접시에 담습니다."
+    ],
+    "intro": "오이로 만드는 무침 요리입니다. 식초·고춧가루 조합으로 맛을 내고 약 10분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "무침",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "category_only",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-122",
+    "title": "오이 참치 샌드위치",
+    "category": "농산",
+    "main": "오이",
+    "main_amount": "오이 1개",
+    "method": "샌드위치",
+    "seasoning": "식빵·참치통조림",
+    "time": 12,
+    "servings": 2,
+    "sku": "ssam-mo-dum",
+    "photo": "assets/images/recipes/recipe-122.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ssam-mo-dum.webp",
+    "ingredients": [
+      "오이 1개",
+      "식빵 2장",
+      "참치통조림 100g"
+    ],
+    "steps": [
+      "오이와 식빵을 먹기 좋게 손질합니다.",
+      "식빵 2장을 가볍게 굽거나 준비합니다.",
+      "오이와 참치통조림을 식빵 위에 고르게 얹습니다.",
+      "반으로 잘라 바로 내고 냉장 보관한 재료는 오래 방치하지 않습니다."
+    ],
+    "intro": "오이로 만드는 샌드위치 요리입니다. 식빵·참치통조림 조합으로 맛을 내고 약 12분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "샌드위치",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "category_only",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-123",
+    "title": "오이 요거트샐러드",
+    "category": "농산",
+    "main": "오이",
+    "main_amount": "오이 1개",
+    "method": "샐러드",
+    "seasoning": "요거트·레몬",
+    "time": 10,
+    "servings": 2,
+    "sku": "ssam-mo-dum",
+    "photo": "assets/images/recipes/recipe-123.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ssam-mo-dum.webp",
+    "ingredients": [
+      "오이 1개",
+      "플레인 요거트 150g",
+      "레몬 ½개",
+      "드레싱(올리브유·레몬즙 등) 적당량"
+    ],
+    "steps": [
+      "오이를 깨끗이 세척하고 물기를 제거합니다. 육류·어패류를 곁들이면 먼저 완전히 익힙니다.",
+      "요거트를 손질해 그릇에 담습니다.",
+      "오이와 레몬을 더해 가볍게 섞습니다.",
+      "올리브유·레몬즙 또는 요구르트 드레싱을 취향에 맞춰 곁들입니다."
+    ],
+    "intro": "오이로 만드는 샐러드 요리입니다. 요거트·레몬 조합으로 맛을 내고 약 10분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "샐러드",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "category_only",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-124",
+    "title": "오이 달걀볶음",
+    "category": "농산",
+    "main": "오이",
+    "main_amount": "오이 1개",
+    "method": "볶음",
+    "seasoning": "달걀·소금",
+    "time": 12,
+    "servings": 2,
+    "sku": "ssam-mo-dum",
+    "photo": "assets/images/recipes/recipe-124.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ssam-mo-dum.webp",
+    "ingredients": [
+      "오이 1개",
+      "달걀 2개",
+      "소금 ⅓작은술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "오이와 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 달걀을 먼저 볶아 향을 냅니다.",
+      "오이를 넣고 중강불에서 저어가며 익힙니다. 소금을 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "오이로 만드는 볶음 요리입니다. 달걀·소금 조합으로 맛을 내고 약 12분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "category_only",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-125",
+    "title": "양배추 달걀전",
+    "category": "농산",
+    "main": "양배추",
+    "main_amount": "양배추 200g",
+    "method": "전",
+    "seasoning": "달걀·밀가루",
+    "time": 18,
+    "servings": 2,
+    "sku": "sonjil-yachae",
+    "photo": "assets/images/recipes/recipe-125.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-sonjil-yachae.webp",
+    "ingredients": [
+      "양배추 200g",
+      "달걀 2개",
+      "부침가루 또는 밀가루 ½컵",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "양배추를 잘게 썰고 달걀을 섞어 반죽을 준비합니다.",
+      "달걀 1~2개와 부침가루 또는 밀가루 ½컵을 넣고 물을 조금씩 더해 되직하게 섞습니다.",
+      "중불로 달군 팬에 기름을 두르고 반죽을 얇게 나누어 올립니다.",
+      "한 면이 단단하게 익으면 뒤집어 속까지 충분히 익힌 뒤 기름을 털어냅니다."
+    ],
+    "intro": "양배추로 만드는 전 요리입니다. 달걀·밀가루 조합으로 맛을 내고 약 18분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "전",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "category_only",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-126",
+    "title": "양배추 간장볶음",
+    "category": "농산",
+    "main": "양배추",
+    "main_amount": "양배추 200g",
+    "method": "볶음",
+    "seasoning": "간장·마늘",
+    "time": 15,
+    "servings": 2,
+    "sku": "sonjil-yachae",
+    "photo": "assets/images/recipes/recipe-126.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-sonjil-yachae.webp",
+    "ingredients": [
+      "양배추 200g",
+      "간장 1큰술",
+      "다진 마늘 1작은술",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "양배추와 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 간장을 먼저 볶아 향을 냅니다.",
+      "양배추를 넣고 중강불에서 저어가며 익힙니다. 마늘을 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "양배추로 만드는 볶음 요리입니다. 간장·마늘 조합으로 맛을 내고 약 15분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "category_only",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-127",
+    "title": "양배추 된장국",
+    "category": "농산",
+    "main": "양배추",
+    "main_amount": "양배추 200g",
+    "method": "된장국",
+    "seasoning": "두부·된장",
+    "time": 20,
+    "servings": 2,
+    "sku": "sonjil-yachae",
+    "photo": "assets/images/recipes/recipe-127.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-sonjil-yachae.webp",
+    "ingredients": [
+      "양배추 200g",
+      "두부 ½모",
+      "된장 1큰술",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "양배추를 손질하고, 두부 등 채소를 먹기 좋은 크기로 썹니다.",
+      "냄비에 물 550mL를 붓고 단단한 채소부터 넣어 끓입니다.",
+      "양배추를 넣고 다시 끓어오르면 거품을 걷고 된장을 더합니다.",
+      "중약불에서 재료가 속까지 익을 때까지 끓이고 마지막에 간을 조절합니다."
+    ],
+    "intro": "양배추로 만드는 된장국 요리입니다. 두부·된장 조합으로 맛을 내고 약 20분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "된장국",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "category_only",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-128",
+    "title": "양배추 코울슬로",
+    "category": "농산",
+    "main": "양배추",
+    "main_amount": "양배추 200g",
+    "method": "샐러드",
+    "seasoning": "요거트·식초",
+    "time": 12,
+    "servings": 2,
+    "sku": "sonjil-yachae",
+    "photo": "assets/images/recipes/recipe-128.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-sonjil-yachae.webp",
+    "ingredients": [
+      "양배추 200g",
+      "플레인 요거트 150g",
+      "식초 1큰술",
+      "드레싱(올리브유·레몬즙 등) 적당량"
+    ],
+    "steps": [
+      "양배추를 깨끗이 세척하고 물기를 제거합니다. 육류·어패류를 곁들이면 먼저 완전히 익힙니다.",
+      "요거트를 손질해 그릇에 담습니다.",
+      "양배추와 식초를 더해 가볍게 섞습니다.",
+      "올리브유·레몬즙 또는 요구르트 드레싱을 취향에 맞춰 곁들입니다."
+    ],
+    "intro": "양배추로 만드는 샐러드 요리입니다. 요거트·식초 조합으로 맛을 내고 약 12분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "샐러드",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "category_only",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-129",
+    "title": "토마토 달걀볶음",
+    "category": "농산",
+    "main": "토마토",
+    "main_amount": "토마토 2개",
+    "method": "볶음",
+    "seasoning": "달걀·대파",
+    "time": 12,
+    "servings": 2,
+    "sku": "ssam-mo-dum",
+    "photo": "assets/images/recipes/recipe-129.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ssam-mo-dum.webp",
+    "ingredients": [
+      "토마토 2개",
+      "달걀 2개",
+      "대파 ½대",
+      "식용유 1큰술"
+    ],
+    "steps": [
+      "토마토와 곁들일 채소를 비슷한 크기로 준비합니다.",
+      "팬에 기름 1큰술을 두르고 달걀을 먼저 볶아 향을 냅니다.",
+      "토마토를 넣고 중강불에서 저어가며 익힙니다. 대파를 넣어 간을 맞춥니다.",
+      "물기가 많으면 불을 잠시 올려 졸이고, 재료가 충분히 익으면 불을 끕니다."
+    ],
+    "intro": "토마토로 만드는 볶음 요리입니다. 달걀·대파 조합으로 맛을 내고 약 12분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "볶음",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "category_only",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-130",
+    "title": "토마토 치즈 샐러드",
+    "category": "농산",
+    "main": "토마토",
+    "main_amount": "토마토 2개",
+    "method": "과일샐러드",
+    "seasoning": "모차렐라·바질",
+    "time": 10,
+    "servings": 2,
+    "sku": "ssam-mo-dum",
+    "photo": "assets/images/recipes/recipe-130.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ssam-mo-dum.webp",
+    "ingredients": [
+      "토마토 2개",
+      "모차렐라 치즈 60g",
+      "바질 약간",
+      "드레싱(올리브유·레몬즙 등) 적당량"
+    ],
+    "steps": [
+      "토마토를 깨끗이 세척하고 물기를 제거합니다. 육류·어패류를 곁들이면 먼저 완전히 익힙니다.",
+      "모차렐라를 손질해 그릇에 담습니다.",
+      "토마토와 바질을 더해 가볍게 섞습니다.",
+      "올리브유·레몬즙 또는 요구르트 드레싱을 취향에 맞춰 곁들입니다."
+    ],
+    "intro": "토마토로 만드는 과일샐러드 요리입니다. 모차렐라·바질 조합으로 맛을 내고 약 10분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "과일샐러드",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "category_only",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-131",
+    "title": "토마토 수프",
+    "category": "농산",
+    "main": "토마토",
+    "main_amount": "토마토 2개",
+    "method": "수프",
+    "seasoning": "양파·우유",
+    "time": 25,
+    "servings": 2,
+    "sku": "ssam-mo-dum",
+    "photo": "assets/images/recipes/recipe-131.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ssam-mo-dum.webp",
+    "ingredients": [
+      "토마토 2개",
+      "양파 ½개",
+      "우유 200mL",
+      "물 또는 육수 450~700mL"
+    ],
+    "steps": [
+      "토마토를 작게 썰고 양파를 준비합니다.",
+      "냄비에 기름을 두르고 채소와 토마토를 먼저 익힙니다.",
+      "물 또는 육수 450mL와 우유를 넣고 중약불에서 12~20분 저으며 끓입니다.",
+      "입자가 원하는 만큼 부드러워지면 간을 맞춰 따뜻하게 제공합니다."
+    ],
+    "intro": "토마토로 만드는 수프 요리입니다. 양파·우유 조합으로 맛을 내고 약 25분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "수프",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "category_only",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  },
+  {
+    "id": "recipe-132",
+    "title": "토마토 오픈 샌드위치",
+    "category": "농산",
+    "main": "토마토",
+    "main_amount": "토마토 2개",
+    "method": "토스트",
+    "seasoning": "식빵·치즈",
+    "time": 12,
+    "servings": 2,
+    "sku": "ssam-mo-dum",
+    "photo": "assets/images/recipes/recipe-132.webp",
+    "photo_caption": "AI 이미지 기반 조리 콘셉트 시안 · 해당 메뉴의 실제 조리 완성 사진 아님",
+    "photo_license": "프로젝트 AI 원본 재구성 시안",
+    "photo_fallback": "assets/images/product-ssam-mo-dum.webp",
+    "ingredients": [
+      "토마토 2개",
+      "식빵 2장",
+      "치즈 적당량"
+    ],
+    "steps": [
+      "토마토와 식빵을 먹기 좋게 손질합니다.",
+      "식빵 2장을 가볍게 굽거나 준비합니다.",
+      "토마토와 치즈를 식빵 위에 고르게 얹습니다.",
+      "반으로 잘라 바로 내고 냉장 보관한 재료는 오래 방치하지 않습니다."
+    ],
+    "intro": "토마토로 만드는 토스트 요리입니다. 식빵·치즈 조합으로 맛을 내고 약 12분 안에 2인분을 완성해 보세요.",
+    "safety": "과일과 채소는 흐르는 물로 충분히 씻고, 가열한 재료는 상온에 오래 두지 마세요. 도마와 칼은 식재료별로 구분하세요.",
+    "tags": [
+      "농산",
+      "토스트",
+      "2인분"
+    ],
+    "editorial_status": "편집 초안 / 요리 전문가 검수 전",
+    "product_link_type": "category_only",
+    "image_review": "요리 결과 동일성 미검증 · 공개 전 이미지 교체 필요"
+  }
+]

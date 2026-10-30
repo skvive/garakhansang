@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-30",
+  "package": "GARAK_ADMIN_V7",
+  "type": "LOCAL_BETA_AND_READ_ONLY_AUDIT",
+  "production_release": "NO_GO",
+  "sources": {
+    "github_repo": "skvive/garak",
+    "github_latest_sha_observed": "4552fdc7482d5814f37e2fcdc382eb93ba89717d",
+    "vercel_project": "garakhs",
+    "vercel_deployment_sha_observed": "0ebeb50a58fcc54d334f0bda62aaab2ebcbcb2fc",
+    "vercel_domain": "garak.lexid.site",
+    "neon_project_named_garakhansang": "mute-darkness-67529424",
+    "production_database_connection_confirmed": false,
+    "neon_row_counts_read_only": {
+      "products": 0,
+      "orders": 5,
+      "categories": 0,
+      "content_documents": 0,
+      "settlements": 0
+    }
+  },
+  "tests": {
+    "python_unit_cases": 57,
+    "python_unit_passed": true,
+    "node_currency_cases": 3,
+    "node_currency_passed": true,
+    "concurrent_order_requests": 50,
+    "concurrent_order_success": 20,
+    "concurrent_order_rejected": 30,
+    "final_stock": 0,
+    "static_html_files": 218,
+    "static_links_missing": 0,
+    "recipe_images_webp": 132,
+    "total_recipe_records": 132,
+    "example_products": 44,
+    "static_passed": true
+  },
+  "implemented_v7": [
+    "aggregate duplicate SKUs",
+    "atomic stock conditional UPDATE",
+    "revoke sessions on password change",
+    "merchant verification invariant",
+    "new product publication requires verified merchant",
+    "shipment status via order state machine only",
+    "offline SQLite snapshot verify restore",
+    "explicit KRW unit validation"
+  ],
+  "not_verified": [
+    "live Next.js full build",
+    "live Neon linked database identity",
+    "real Toss payment refund",
+    "live shipment and settlement",
+    "Google OAuth/YouTube",
+    "Coupang and delivery app integration",
+    "132 recipe-specific verified completion photos",
+    "live domain end-to-end testing",
+    "actual GitHub main branch modified",
+    "real Vercel deployment"
+  ]
+}
