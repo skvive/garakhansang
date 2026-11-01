@@ -345,18 +345,37 @@ function couponsPage() {
 
 function mapPage() {
   return `<section class="page-hero page-hero-map"><div class="container"><span class="eyebrow">DISCOVER GARAK MARKET</span>
-    <h1>시장 구역을 누르면, 이야기가 펼쳐져요.</h1>
-    <p>아래 지도는 <b>실제 지형이 아닌 테마형 도식</b>입니다. 실외 이동은 Google 지도로 확인하세요.</p>${mascot('page-mascot')}</div></section>
-    <section class="container section map-layout"><div class="schematic">
-      <div class="schematic-top"><b>가락한상 시장 탐험 지도</b><span>ILLUSTRATIVE MAP · NOT TO SCALE</span></div>
-      <div class="schematic-scene" role="group" aria-label="테마형 구역 선택 지도">
-        <div class="road road-1"></div><div class="road road-2"></div>
-        <button class="zone z-fruit" data-zone="청과" type="button"><span>🍎</span><b>청과 구역</b><small>과일·채소</small></button>
-        <button class="zone z-sea" data-zone="수산" type="button"><span>🐟</span><b>수산 구역</b><small>신선 수산물</small></button>
-        <button class="zone z-meat" data-zone="축산" type="button"><span>🥩</span><b>축산 구역</b><small>고기·정육</small></button>
-        <button class="zone z-food" data-zone="먹거리" type="button"><span>🍜</span><b>가락몰</b><small>한상·곁들임</small></button>
-        <span class="path-label">테마 지도 · 정확한 구역 배치는 현장자료 확인 필요</span>
+    <h1>가락몰 1층, 한눈에 둘러보세요.</h1>
+    <p>현장 안내판 참고 자료를 토대로 리터치한 1층 안내 시안입니다. 실외 이동은 Google 지도로 확인하세요.</p>${mascot('page-mascot')}</div></section>
+    <section class="container section map-layout"><div class="schematic floor-guide">
+      <div class="schematic-top"><b>가락 수산시장 1층 안내도</b><span>실내 안내도 · 참고 시안</span></div>
+      <div class="floor-map-track" role="region" tabindex="0" aria-label="가락몰 지상 1층 안내도 시안, 모바일에서는 좌우로 스크롤하여 확인">
+        <img class="floor-map-art" src="assets/maps/garakmall-1f-user-concept-v1.webp" alt="가락몰 지상 1층을 가로로 표현한 참고 지도 시안: 가락몰 5관부터 1관, 수산직판, 패류직판, 건어직판, 축산직판, 에스컬레이터와 피난구가 표시되어 있습니다. 표시된 현위치는 사용자 GPS가 아닙니다." width="926" height="417" fetchpriority="high" decoding="async">
       </div>
+      <div class="floor-map-controlbar">
+        <span class="floor-map-control-hint">모바일에서는 안내도를 좌우로 밀어 확인하세요.</span>
+        <button type="button" data-floor-map-open aria-label="가락몰 1층 안내도 크게 보기">⤢ 안내도 확대 보기</button>
+      </div>
+      <div class="floor-map-legend" aria-label="안내도 범례">
+        <span><i class="floor-map-symbol exit" aria-hidden="true">↗</i> 피난구(출입구)</span>
+        <span><i class="floor-map-symbol fire" aria-hidden="true">!</i> 소화기</span>
+        <span><i class="floor-map-symbol aed" aria-hidden="true">♥</i> 자동심장충격기(AED)</span>
+        <span><i class="floor-map-symbol esc" aria-hidden="true">↗</i> 에스컬레이터</span>
+        <span><i class="floor-map-symbol sea" aria-hidden="true"></i> 수산 관련 구역</span>
+      </div>
+      <div class="floor-map-info"><span class="fish" aria-hidden="true">🐟</span><b>수산 구역 안내</b><p>수산직판·패류직판·건어직판 등의 구역을 참고용으로 표시했습니다.</p></div>
+      <p class="floor-map-caution">ⓘ 제공받은 안내판 사진을 바탕으로 만든 <b>리터치 시안</b>입니다. 지도 내 ‘현위치’는 촬영 당시 안내판을 참고한 시안 표기이며, 방문자의 실시간 GPS 위치가 아닙니다. 피난·안전 시설 위치와 매장 호수는 반드시 현장 안내판으로 재확인하세요.</p>
+      <div class="floor-map-chips" role="group" aria-label="오른쪽 관련 시연 매장 필터">
+        <button type="button" data-zone="수산" aria-label="수산 관련 매장만 보기">🐟 수산 관련 매장 보기</button>
+        <button type="button" data-zone="축산" aria-label="축산 관련 매장만 보기">🥩 축산 관련 매장 보기</button>
+      </div>
+      <dialog id="floor-map-dialog" class="floor-map-dialog" aria-label="가락몰 지상 1층 안내도 확대 보기">
+        <div class="floor-map-dialog-head"><h2>가락몰 지상 1층 · 참고 안내도</h2><button type="button" data-floor-map-close>닫기 ✕</button></div>
+        <div class="floor-map-dialog-body">
+          <img src="assets/maps/garakmall-1f-user-concept-v1.webp" alt="가락몰 판매동 1층 실내 안내도 참고 시안, 가락몰 1관부터 5관과 주요 구역 및 피난 시설이 표기되어 있습니다." width="926" height="417">
+          <p>시안의 ‘현위치’ 표시는 실시간 위치가 아닙니다. 정확한 대피 동선은 현장의 공식 안내를 따르세요.</p>
+        </div>
+      </dialog>
       <div class="map-actions">
         <a class="btn btn-primary" href="map.html">Google 실제 지도 열기 ↗</a>
         <a class="btn btn-secondary" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent('가락시장 서울 송파구 양재대로 932')}&travelmode=walking&dir_action=navigate" target="_blank" rel="noopener noreferrer">도보 길찾기 ↗</a>
@@ -375,12 +394,12 @@ function mapPage() {
         </div>
         <div id="garak-map" class="live-map-canvas" data-map-mode="market-only" role="region" aria-label="가락시장 대표 위치 Google 지도"></div>
         <p id="map-status" class="live-map-status" role="status" aria-live="polite">Google 지도를 준비하고 있습니다.</p>
-        <p class="live-map-disclaimer">위 테마형 지도는 실제 건물 배치가 아닙니다. 개별 시연 매장의 정확한 좌표가 확인되지 않아 실제 지도에는 표시하지 않습니다.</p>
+        <p class="live-map-disclaimer">위 실내 안내도는 사용자 제공 이미지의 리터치 시안입니다. 실제 시설 좌표와 개별 시연 매장의 위치는 검증되지 않아 Google 지도에는 표시하지 않습니다.</p>
       </section>
       <div class="building-guide">${BUILDINGS.map(b=>`<article><b>${safe(b.name)}</b><small>${safe(b.floors)}</small><p>${safe(b.note)}</p></article>`).join('')}<p class="data-caution">층별 안내는 공식 가락몰 소개를 요약한 탐방 메모이며, 실내 도면·호실 좌표가 아닙니다.</p></div>
       </div>
       <aside class="map-detail">
-        <div class="mascot-tip map-bubble">${mascot('tip-mascot')}<div><b>어느 구역을 둘러보실래요?</b><p>지도에서 구역을 선택하면 관련 시연 매장이 나타나요.</p></div></div>
+        <div class="mascot-tip map-bubble">${mascot('tip-mascot')}<div><b>어느 구역을 둘러보실래요?</b><p>안내도 아래의 구역 버튼을 선택하면 관련 시연 매장이 나타나요.</p></div></div>
         <div id="zone-results">${D.shops.map(zoneShop).join('')}</div>
         <div class="map-note">📍 <b>GPS 안내 범위</b><p>시연 매장에는 검증된 위치 좌표가 없습니다. 길찾기는 가락시장 공통 주소로 연결됩니다.</p></div>
       </aside></section>`;
