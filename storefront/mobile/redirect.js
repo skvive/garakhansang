@@ -3,7 +3,8 @@
 (function () {
   "use strict";
   var params=new URLSearchParams(location.search);
-  if(params.get("desktop")==="1" || sessionStorage.getItem("garak-pc-mode")==="1") return;
+  if(params.get("desktop")==="1") { try { sessionStorage.setItem("garak-pc-mode","1"); } catch (_) {} return; }
+  try { if(sessionStorage.getItem("garak-pc-mode")==="1") return; } catch (_) {}
   var touch=Boolean(navigator.maxTouchPoints>0 && matchMedia("(pointer:coarse)").matches);
   var isPhone=/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent||"");
   var isTouchTablet=touch && screen.width<=1200;
