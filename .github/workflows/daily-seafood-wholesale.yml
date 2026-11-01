@@ -1,0 +1,36 @@
+name: Daily Seoul Seafood Wholesale Reference Prices
+on:
+  schedule:
+    # 04:10 UTC = 13:10 KST, daily incl. holidays
+    - cron: "10 4 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: garak-official-price-sync
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Retrieve verified KAMIS Seoul seafood WHOLESALE reference
+        env:
+          KAMIS_CERT_KEY: ${{ secrets.KAMIS_CERT_KEY }}
+          KAMIS_CERT_ID: ${{ secrets.KAMIS_CERT_ID }}
+        run: python3 tools/sync_seafood_wholesale.py
+      - name: Commit valid new observations only
+        run: |
+          git config user.name "garak-official-prices[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add storefront/data/seoul-seafood-wholesale-latest.json
+          if git diff --cached --quiet; then
+            echo "Data unchanged, no commit needed"
+            exit 0
+          fi
+          git commit -m "data: refresh verified KAMIS Seoul seafood wholesale reference"
+          git push origin HEAD:main
