@@ -31,12 +31,28 @@ class BloggerPackTests(unittest.TestCase):
 
     def test_source_schema_refusal(self):
         with self.assertRaises(ValueError):
-            normalized({"id": "unknown", "location": {}, "menus": []})
+            normalized({"id": "../../secrets", "location": {}, "menus": []})
 
     def test_asset_path_escape(self):
         for value in ("https://another-site/image.png", "/etc/passwd", "../private.jpg"):
             with self.subTest(value=value), self.assertRaises(ValueError):
                 image_link(value, "https://garakmall.lexid.site")
+
+    def test_third_merchant_from_json(self):
+        from build import ROOT
+        data = json.loads((ROOT / "storefront/merchant/yonggi-susan.json").read_text())
+        data["id"] = "new-merchant"
+        data["name"] = "샘플 신규 상인"
+        with tempfile.TemporaryDirectory() as tmp:
+            source = Path(tmp) / "merchant.json"
+            source.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+            out = Path(tmp) / "kit"
+            result = build("new-merchant", out, "https://garakmall.lexid.site", source_json=source)
+            self.assertEqual(result["merchant_id"], "new-merchant")
+            self.assertEqual(result["menus"], 24)
+            self.assertIn("샘플 신규 상인", (out / "post.html").read_text())
+            self.assertIn("샘플 신규 상인", (out / "theme.xml").read_text())
+            ElementTree.parse(out / "theme.xml")
 
     def test_merchant_location_uncertainty(self):
         from build import ROOT, normalized
