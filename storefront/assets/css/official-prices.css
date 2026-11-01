@@ -1,0 +1,10 @@
+.official-prices-panel{margin:28px 0 38px;background:#fff;border:1px solid #ccdcca;border-radius:18px;padding:clamp(17px,3vw,27px);color:#183a2c}
+.official-prices-panel h2{font-size:clamp(20px,3vw,26px);margin:0 0 14px}
+.official-prices-panel p{line-height:1.7;font-size:14px}
+.official-price-lead{color:#315644}
+.official-price-important{background:#f4f7ee;border-left:4px solid #197448;padding:12px 15px}
+.official-prices-table-wrap{overflow-x:auto}
+.official-prices-table-wrap .data-table{width:100%;min-width:570px}
+.official-price-source{font-size:12px!important;color:#526b58}
+.official-price-source a{color:#0a6a42;text-decoration:underline}
+@media(max-width:600px){.official-prices-panel{margin:18px 0 26px;padding:17px}.official-prices-panel p{font-size:13px}.official-prices-table-wrap{margin:0 -7px}}
