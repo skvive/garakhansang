@@ -1,4 +1,4 @@
-import { createAuthClient } from 'https://esm.sh/@neondatabase/neon-js@1/auth';
+import { createAuthClient } from 'https://esm.sh/@neondatabase/auth@0.7.0-beta?bundle';
 
 let clientPromise;
 
