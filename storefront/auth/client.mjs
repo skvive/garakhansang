@@ -27,6 +27,6 @@ export async function signInWithGoogle() {
   const auth = await getAuthClient();
   return auth.signIn.social({
     provider: 'google',
-    callbackURL: window.location.origin + (window.GARAK_ROOT || '') + 'login.html',
+    callbackURL: window.location.origin + (window.GARAK_ROOT || '') + 'mypage.html',
   });
 }
