@@ -341,6 +341,19 @@ function mapPage() {
         <a class="btn btn-secondary" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent('가락시장 서울 송파구 양재대로 932')}&travelmode=walking&dir_action=navigate" target="_blank" rel="noopener noreferrer">도보 길찾기 ↗</a>
         <a class="btn btn-light" href="https://www.garak.co.kr/homepage/M0000212/market/findStore.do" target="_blank" rel="noopener noreferrer">가락몰 공식 매장찾기 ↗</a>
       </div>
+      <section class="live-market-panel" aria-label="가락시장 실제 Google 지도">
+        <div class="live-market-heading">
+          <div>
+            <span class="eyebrow">GOOGLE MAPS · GARAK MARKET</span>
+            <h2>실제 Google 지도로 가락시장 찾기</h2>
+            <p>서울 송파구 양재대로 932 · 지도에는 확인된 시장 대표 위치만 표시합니다.</p>
+          </div>
+          <a class="btn btn-sm btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B0%80%EB%9D%BD%EC%8B%9C%EC%9E%A5%20%EC%84%9C%EC%9A%B8%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EC%96%91%EC%9E%AC%EB%8C%80%EB%A1%9C%20932" target="_blank" rel="noopener noreferrer">Google 지도에서 열기 ↗</a>
+        </div>
+        <div id="garak-map" class="live-map-canvas" data-map-mode="market-only" role="region" aria-label="가락시장 대표 위치 Google 지도"></div>
+        <p id="map-status" class="live-map-status" role="status" aria-live="polite">Google 지도를 준비하고 있습니다.</p>
+        <p class="live-map-disclaimer">위 테마형 지도는 실제 건물 배치가 아닙니다. 개별 시연 매장의 정확한 좌표가 확인되지 않아 실제 지도에는 표시하지 않습니다.</p>
+      </section>
       <div class="building-guide">${BUILDINGS.map(b=>`<article><b>${safe(b.name)}</b><small>${safe(b.floors)}</small><p>${safe(b.note)}</p></article>`).join('')}<p class="data-caution">층별 안내는 공식 가락몰 소개를 요약한 탐방 메모이며, 실내 도면·호실 좌표가 아닙니다.</p></div>
       </div>
       <aside class="map-detail">

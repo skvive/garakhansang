@@ -14,6 +14,8 @@ const PINS = [
 const statusEl = document.querySelector('#map-status');
 const listEl = document.querySelector('#map-list-pins');
 const mapEl = document.querySelector('#garak-map');
+// Market-only mode avoids presenting unverified demo shops as real GPS locations.
+const activePins = mapEl?.dataset.mapMode === 'market-only' ? PINS.slice(0, 1) : PINS;
 
 function setStatus(msg, isError) {
   if (!statusEl) return;
@@ -24,7 +26,7 @@ function setStatus(msg, isError) {
 function renderList(onPick) {
   if (!listEl) return;
   listEl.replaceChildren();
-  for (const pin of PINS) {
+  for (const pin of activePins) {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'map-pin';
@@ -45,13 +47,14 @@ function loadMapsScript(key) {
       resolve(window.google.maps);
       return;
     }
-    window.__garakMapsReady = () => resolve(window.google.maps);
-    window.gm_authFailure = () => reject(new Error('Maps key rejected'));
+    const timer = setTimeout(() => reject(new Error('Google Maps callback timeout')), 15000);
+    window.__garakMapsReady = () => { clearTimeout(timer); window.google?.maps ? resolve(window.google.maps) : reject(new Error('Maps library unavailable')); };
+    window.gm_authFailure = () => { clearTimeout(timer); reject(new Error('Google Maps key rejected')); };
     const s = document.createElement('script');
     s.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(key) + '&language=ko&region=KR&v=weekly&callback=__garakMapsReady';
     s.async = true;
     s.defer = true;
-    s.onerror = () => reject(new Error('Maps JS failed to load'));
+    s.onerror = () => { clearTimeout(timer); reject(new Error('Google Maps script failed to load')); };
     document.head.append(s);
   });
 }
@@ -67,7 +70,7 @@ async function boot() {
     if (!cfg.mapsKey) throw new Error('mapsKey missing');
     setStatus('지도를 불러오는 중입니다…');
     const maps = await loadMapsScript(cfg.mapsKey);
-    const center = cfg.center || PINS[0];
+    const center = cfg.center || activePins[0];
     const map = new maps.Map(mapEl, {
       center: { lat: center.lat, lng: center.lng },
       zoom: 16,
@@ -79,7 +82,7 @@ async function boot() {
     const markers = new Map();
     const info = new maps.InfoWindow();
     function activate(id) {
-      const pin = PINS.find((p) => p.id === id);
+      const pin = activePins.find((p) => p.id === id);
       if (!pin) return;
       listEl?.querySelectorAll('.map-pin').forEach((el) => el.classList.toggle('active', el.dataset.id === id));
       map.panTo({ lat: pin.lat, lng: pin.lng });
@@ -87,7 +90,7 @@ async function boot() {
       info.setContent('<strong>' + pin.name + '</strong><br>' + pin.kind + '<br>' + pin.addr);
       info.open({ map, anchor: markers.get(id) });
     }
-    for (const pin of PINS) {
+    for (const pin of activePins) {
       const marker = new maps.Marker({
         position: { lat: pin.lat, lng: pin.lng },
         map,
@@ -98,9 +101,24 @@ async function boot() {
     }
     renderList(activate);
     activate('market');
-    setStatus('Google Maps · 가락시장 상인 위치는 시연용 좌표입니다.');
+    setStatus(mapEl.dataset.mapMode === 'market-only'
+      ? 'Google Maps 연결 완료 · 가락시장 대표 위치만 표시합니다.'
+      : 'Google Maps · 개별 상인 위치는 시연용 좌표입니다.');
   } catch (err) {
-    setStatus('지도를 열 수 없습니다. API 키 제한 또는 결제 계정을 확인하세요.', true);
+    setStatus('Google 지도 로딩 실패 · API 키의 도메인 제한과 Google Cloud 결제 설정을 확인하세요.', true);
+    if (mapEl) {
+      const fallback = document.createElement('div');
+      fallback.className = 'garak-map-fallback';
+      const heading = document.createElement('strong');
+      heading.textContent = '지도 연결이 지연되고 있습니다.';
+      const link = document.createElement('a');
+      link.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('가락시장 서울 송파구 양재대로 932');
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = 'Google 지도에서 가락시장 열기 ↗';
+      fallback.append(heading, link);
+      mapEl.replaceChildren(fallback);
+    }
     console.warn('garak maps', err);
   }
 }
