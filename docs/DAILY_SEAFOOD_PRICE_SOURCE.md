@@ -22,3 +22,9 @@
 
 ## 테스트
 python3 -m unittest tests/test_sync_seafood_wholesale.py
+
+## 가락시장 직접 경매 낙찰가 후속 연동
+- 서울시농수산식품공사 경매결과(가락시장): https://www.data.go.kr/data/15076020/openapi.do (API 신청·승인 필요).
+- 농림수산식품교육문화정보원 수산물도매시장별도매경락가격조회: https://www.data.go.kr/data/15109049/openapi.do (시장/일자/단위 코드 검증 후 연결).
+- 기존 KAMIS API가 반환하는 서울 도매 참고가격을 가락시장 경매 낙찰가격이라고 표기하지 않는다.
+- 첫 실데이터 성공·품종/등급/단위 확인 전까지 주기적 갱신이 정상 가동 중이라고 주장하지 않는다.
