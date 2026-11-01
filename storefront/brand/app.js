@@ -93,6 +93,16 @@ function eventsFromCats() {
 
 const D = { shops: shopsFromProducts() };
 D.coupons = couponsFromShops(D.shops);
+
+/* 현장 확인 매장은 시연 매장과 구분합니다. 실제 결제와 제휴는 미연동입니다. */
+D.shops.unshift({
+  id:'ilwol-susan', name:'일월수산', category:'수산', catKey:'seafood', zone:'수산',
+  fieldMerchant:true, photo:'assets/editorial/seafood.webp',
+  intro:'가락몰 판매동 1층 수산 C-15호 · 실제 간판 확인 · 제공 사진 기준 메뉴판',
+  products:["프리미엄(특수부위) 활모듬회","활새우회(손질 O) + 찍먹 소스","1인 모듬회(4~5구성)","(1인) 들깨전어회","활새우(손질 X)","들깨전어회","들깨전어모듬회","자연산 대농어(2인분)","최고급 생참치회(스페인)","생참치 트리오회","생참치 활모듬회","꽃게탕용 밀키트","서해산 가을 활암꽃게(특대)","치즈폭탄 갈릭마요 꽃게찜(특대)","지구방어회(특대방어)","지구방어생참치회","지구방어모듬회","지구방광참회","지구방어삼색회","지구방광우회","지구방광연회","줄무늬전갱이회","줄무늬전갱이모듬회","줄무늬전갱이삼색회","(1인) 대광어회","(1인) 연어회","(1인) 세꼬시회","(1인) 광어참돔회","(1인) 광어우럭회","(1인) 광어연어회","생물의 끝 - 시그니처모듬회","조합의 끝 - 오마카세","들기름 깻잎 막회","쥐치 1kg","A급 러시아 프리모리 대게","A급 러시아 레드킹크랩","연어 타르타르 소스"].map((name,i)=>({name,slug:'ilwol-menu-'+i})),
+  coupon:null
+});
+function shopHref(s) { return s.fieldMerchant ? 'ilwol-susan.html' : 'store.html?id=' + encodeURIComponent(s.id); }
 D.events = eventsFromCats();
 const store = id => D.shops.find(s => s.id === id);
 const coupon = id => D.coupons.find(c => c.id === id);
@@ -134,13 +144,13 @@ function lowerNav() {
 }
 function title(eyebrow,h,p=''){return `<div class="section-title"><div><span class="eyebrow">${eyebrow}</span><h2>${h}</h2>${p?`<p>${p}</p>`:''}</div></div>`;}
 function card(s) {
-  const photo = (CAT[s.catKey] && CAT[s.catKey].photo) || s.photo;
-  return `<article class="shop-card"><a class="thumb" href="store.html?id=${encodeURIComponent(s.id)}"><img src="${photo}" alt="${safe(s.category)} 분위기 이미지" loading="lazy"><span class="photo-label">시연 이미지</span></a>
+  const photo = s.fieldMerchant ? s.photo : ((CAT[s.catKey] && CAT[s.catKey].photo) || s.photo);
+  return `<article class="shop-card"><a class="thumb" href="${shopHref(s)}"><img src="${photo}" alt="${safe(s.category)} 대표 이미지" loading="lazy"><span class="photo-label">${s.fieldMerchant ? '현장 확인 업체 · 이미지 예시' : '시연 이미지'}</span></a>
     <div class="shop-card-body"><small>${safe(s.category)} · ${safe(s.products.length)}개 상품</small>
-    <div class="card-row"><a class="shop-title" href="store.html?id=${encodeURIComponent(s.id)}">${safe(s.name)}</a>
+    <div class="card-row"><a class="shop-title" href="${shopHref(s)}">${safe(s.name)}</a>
     <button class="like ${liked().includes(s.id)?'is-liked':''}" data-like="${safe(s.id)}" type="button" aria-label="관심 매장">${liked().includes(s.id)?'♥':'♡'}</button></div>
     <p>${safe(s.intro)}</p>
-    <div class="card-actions"><a class="btn btn-sm btn-green" href="store.html?id=${encodeURIComponent(s.id)}">상세 보기</a>
+    <div class="card-actions"><a class="btn btn-sm btn-green" href="${shopHref(s)}">${s.fieldMerchant ? "메뉴판 보기" : "상세 보기"}</a>
     <button class="btn btn-sm btn-light" data-route="${safe(s.id)}" type="button">길찾기 ↗</button></div></div></article>`;
 }
 function featuredShops() {
@@ -262,12 +272,13 @@ function stores() {
     </div>
     <div class="shop-grid" id="shop-results"></div>
     <div class="empty hidden" id="shop-empty">조건에 맞는 매장이 없습니다. <button id="reset-search" class="btn btn-sm btn-primary" type="button">전체 보기</button></div>
-    <p class="data-caution">* 표기된 매장·상품·가격은 시연 데이터입니다. 실판매 정보가 아닙니다.</p></section>`;
+    <p class="data-caution">* 대부분의 매장은 시연 데이터입니다. 일월수산은 제공된 실제 점포 사진과 메뉴 캡처 기반 참고 정보이며, 제휴·판매·예약은 미연동입니다.</p></section>`;
 }
 
 function storeDetail() {
-  const id = new URLSearchParams(location.search).get('id') || (D.shops[0] && D.shops[0].id);
-  const s = store(id) || D.shops[0];
+  const id = new URLSearchParams(location.search).get('id') || (D.shops.find(s=>!s.fieldMerchant) && D.shops.find(s=>!s.fieldMerchant).id);
+  if (id === "ilwol-susan") return `<section class="container section"><h1>일월수산</h1><p>실매장 전용 메뉴판을 확인하세요.</p><a class="btn btn-primary" href="ilwol-susan.html">일월수산 메뉴판 보기 →</a></section>`;
+  const s = store(id) || D.shops.find(s=>!s.fieldMerchant);
   if (!s) return `<section class="container section"><p>매장을 찾을 수 없습니다. <a href="stores.html">목록으로</a></p></section>`;
   const c = coupon(s.coupon);
   return `<section class="container detail-wrap"><div class="crumb"><a href="index.html">홈</a> / <a href="stores.html">매장 찾기</a> / ${safe(s.name)}</div>
@@ -340,6 +351,7 @@ function mapPage() {
         <a class="btn btn-primary" href="map.html">Google 실제 지도 열기 ↗</a>
         <a class="btn btn-secondary" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent('가락시장 서울 송파구 양재대로 932')}&travelmode=walking&dir_action=navigate" target="_blank" rel="noopener noreferrer">도보 길찾기 ↗</a>
         <a class="btn btn-light" href="https://www.garak.co.kr/homepage/M0000212/market/findStore.do" target="_blank" rel="noopener noreferrer">가락몰 공식 매장찾기 ↗</a>
+        <a class="btn btn-light" href="ilwol-susan.html">🐟 일월수산 C-15 메뉴판 ↗</a>
       </div>
       <section class="live-market-panel" aria-label="가락시장 실제 Google 지도">
         <div class="live-market-heading">
@@ -363,7 +375,7 @@ function mapPage() {
       </aside></section>`;
 }
 function zoneShop(s) {
-  return `<a class="zone-shop" href="store.html?id=${encodeURIComponent(s.id)}"><img src="${s.photo}" alt=""><div><b>${safe(s.name)}</b><small>${safe(s.category)} · ${s.products.length}개</small></div><span>↗</span></a>`;
+  return `<a class="zone-shop" href="${shopHref(s)}"><img src="${s.photo}" alt=""><div><b>${safe(s.name)}</b><small>${safe(s.category)} · ${s.products.length}개</small></div><span>↗</span></a>`;
 }
 
 function eventsPage() {
