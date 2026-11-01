@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
+:root{font-family:'Noto Sans KR','Malgun Gothic',sans-serif;color:#193b2d;background:#f8f7ef;font-size:16px}
+*{box-sizing:border-box}body{margin:0;min-width:320px}a{color:inherit;text-decoration:none}button,input{font:inherit}
+button,a,input{outline-offset:3px}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #198658}
+h1,h2,h3,p{margin:0}h1{font-size:clamp(32px,5vw,52px);letter-spacing:-.055em}h2{font-size:clamp(20px,3vw,27px);letter-spacing:-.05em}h3{font-size:18px}.small{font-size:13px;color:#687e70;line-height:1.75}
+[hidden]{display:none!important}.skip{position:absolute;left:-10000px}.skip:focus{left:12px;top:10px;z-index:200;background:white;padding:12px}
+.site-head{display:flex;align-items:center;justify-content:space-between;gap:15px;background:#fffdf6;border-bottom:1px solid #e9e9db;padding:13px max(18px,calc((100% - 1120px)/2));min-height:83px}
+.brand img{width:166px;max-width:36vw;height:54px;object-fit:contain;object-position:left}.head-links{display:flex;align-items:center;gap:clamp(10px,2vw,25px);font-size:14px;font-weight:800}.head-links button{background:transparent;border:0;color:#9b4036;cursor:pointer;min-height:44px}
+.page-banner{background:linear-gradient(110deg,#103f2c,#176246);color:white;position:relative;overflow:hidden}
+.banner-inner{max-width:1120px;margin:auto;padding:38px 22px 46px;position:relative;z-index:1}.page-banner p{color:#ddede2;margin-top:5px;line-height:1.6}.eyebrow{font-size:11px;letter-spacing:.13em;font-weight:900;color:#158d63!important}.page-banner .eyebrow{color:#eace89!important}.page-banner .mascot{position:absolute;object-fit:contain;right:max(0px,calc((100% - 1170px)/2));height:206px;bottom:-17px;pointer-events:none}
+main{max-width:1120px;margin:0 auto;padding:29px 22px 70px;min-height:50vh}.status-box,.guest-card{background:white;border:1px solid #dfe9db;padding:30px;border-radius:18px;line-height:1.7}
+.guest-card{text-align:center}.guest-card h2{margin-bottom:10px}.guest-card p{color:#698172;margin-bottom:20px}
+.button{border:0;min-height:46px;display:inline-flex;align-items:center;justify-content:center;border-radius:11px;padding:11px 18px;font-size:14px;font-weight:800;cursor:pointer}
+.button.primary{background:#087c51;color:white}.button.pale{background:#e9f5e9;color:#165e40}.button.secondary{background:white;border:1px solid #b4ccb9;color:#195841}
+.welcome{display:flex;align-items:center;gap:18px;background:#fff;border:1px solid #e4e9dc;border-radius:19px;padding:23px;margin-bottom:18px}
+.avatar{display:grid;place-items:center;width:67px;height:67px;flex:none;border-radius:50%;color:#0e6342;background:#dbf2e1;font-size:31px;font-weight:900}
+.welcome h2{margin:3px 0}.welcome p{color:#7a8c7c;font-size:13px;overflow-wrap:anywhere}
+.account-nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-bottom:18px}
+.account-nav a{border:1px solid #e2e9dd;border-radius:12px;background:#fff;padding:16px 5px;display:flex;gap:4px;align-items:center;justify-content:center;font-size:13px;font-weight:850;min-height:58px}
+.account-nav a span{font-size:20px}.account-nav a.active{color:white;background:#0b734d;border-color:#0b734d}
+.content-panel{min-height:310px;background:white;border:1px solid #e0e9de;border-radius:19px;padding:clamp(19px,3vw,32px)}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:20px}.section-title p{font-size:14px;color:#667e6f}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 25px}.stat{border:1px solid #e2ede4;background:#f6faf5;border-radius:14px;padding:17px}.stat b{font-size:27px;color:#0b7951;display:block}.stat small{color:#698474;font-size:12px}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.tile{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #dfeade;border-radius:13px;padding:18px;font-weight:800;min-height:72px}
+.notice{padding:15px 17px;margin:12px 0;border-radius:12px;background:#f1f7eb;color:#516d55;border:1px solid #e1ecd8;font-size:14px;line-height:1.8}
+.empty{background:#f7faf6;border:1px dashed #bdd1c1;padding:25px;border-radius:14px;text-align:center;line-height:1.9;color:#688070}.empty strong{display:block;color:#235c43;font-size:18px}.empty .button{margin-top:11px}
+.line{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #e9eee9;align-items:center}.line img{width:77px;height:77px;object-fit:cover;border-radius:10px;background:#eaf0ea}.line .info{flex:1;min-width:0}.line b{display:block;font-size:15px}.line p{font-size:13px;color:#789080}.line button{color:#a04f3f;border:1px solid #e2c9c5;background:white;border-radius:9px;min-height:44px;padding:8px;cursor:pointer}.total{font-size:19px;text-align:right;font-weight:800;padding:16px 0}
+.profile-form{max-width:510px;display:grid;gap:12px}.profile-form label{font-weight:800;font-size:14px}.profile-form input{border:1px solid #cbddd2;border-radius:9px;min-height:49px;padding:11px 13px;width:100%;background:#fff}.profile-form input[readonly]{background:#f6f7f5;color:#667368}.profile-form button{justify-self:start}
+#account-message{font-size:14px;min-height:22px;margin-top:10px;color:#206945}.footer{text-align:center;background:#eff3e9;padding:28px 16px;font-size:12px;line-height:1.8;color:#6c806d}
+@media(max-width:760px){.page-banner .mascot{height:130px;opacity:.8;right:-10px}.banner-inner{padding:30px 18px 36px;padding-right:112px}.banner-inner>p:not(.eyebrow){font-size:13px}.site-head{padding:8px 14px;min-height:68px}.head-links{gap:9px;font-size:12px}.head-links>a:nth-child(2){display:none}.brand img{width:135px;height:46px}.account-nav{grid-template-columns:repeat(3,minmax(0,1fr))}.account-nav a{font-size:12px}.welcome{padding:17px}.avatar{width:53px;height:53px;font-size:23px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.tiles{grid-template-columns:1fr}.line{flex-wrap:wrap}}
+@media(max-width:380px){.brand img{width:115px}.head-links{font-size:11px}.account-nav a{padding:11px 3px}.banner-inner{padding-right:92px}}
