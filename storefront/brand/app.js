@@ -210,10 +210,10 @@ function home() {
   return `<section class="hero" aria-labelledby="hero-heading"><div class="container hero-grid"><div class="hero-copy">
     <span class="eyebrow hero-kicker">GARAK MARKET · AUCTION DESK · FRESH SHOP</span>
     <h1 id="hero-heading">가락시장의 신선함을<br><em>우리 집 식탁으로.</em></h1>
-    <p>수산 경매 시세와 제철 장보기를 한 화면에서.<br>상인과 요리사가 들려주는 오늘을 만나보세요.</p>
+    <p>수산 상품 참고가격과 공식 도매가격 안내를 한 화면에서.<br>상인과 요리사가 들려주는 오늘을 만나보세요.</p>
     <div class="hero-ctas"><a class="btn btn-primary" href="category/seafood.html">지금 장보기 →</a>
     <a class="btn btn-outline-white" href="prices.html">오늘의 시세 보기</a></div>
-    <div class="hero-labels"><span>✦ 수산 시연 시세 ${quotes.length}품목</span><span>✦ 상품 ${(window.GARAK_PRODUCTS||[]).length}개</span><span>✦ 공식 경매 API 아님</span></div>
+    <div class="hero-labels"><span>✦ 수산 시연 상품 ${quotes.length}품목</span><span>✦ 상품 ${(window.GARAK_PRODUCTS||[]).length}개</span><span>✦ 공식 경매 API 아님</span></div>
     </div><div class="hero-art">${mascot('hero-mascot')}<div class="quote-bubble">“오늘도 좋은 먹거리,<br>가락한상에서 만나요!”</div>
     <div class="hero-floating"><span>오늘의 장보기</span><b>시세 확인하고, 길을 찾아보세요</b></div></div></div></section>
     <div class="quote-ticker" aria-label="수산 시연 시세 티커"><div class="quote-ticker-track"><span>${ticker}   ·   ${ticker}</span></div></div>
@@ -222,13 +222,13 @@ function home() {
         .map(a=>`<a href="${a[2]}" class="${a[3]}"><span>${a[0]}</span><b>${a[1]}</b><small>바로가기 ↗</small></a>`).join('')}
     </div></section>
     <section class="section container auction-desk" aria-labelledby="auction-heading">
-      <div class="pick-head">${title('TODAY’S AUCTION DESK','오늘의 수산 경매 시세','가락시장 공식 경매가가 아닙니다. 시연 상품 가격으로 장보기 경로만 안내합니다.')}
+      <div class="pick-head">${title('DEMO PRICE GUIDE','수산 상품 예시가격','아래 가격은 판매·경매 실거래가가 아닌 개발용 예시입니다. 공식 참고가격은 별도 페이지에서 확인하세요.')}
         <a class="btn btn-sm btn-primary" href="prices.html">시세 전체 보기</a></div>
       <div class="auction-wrap"><table class="quote-table">
-        <thead><tr><th>품목</th><th>시연 시세</th><th>상인</th><th>장보기</th></tr></thead>
+        <thead><tr><th>품목</th><th>예시 상품가격</th><th>상인</th><th>장보기</th></tr></thead>
         <tbody>${quotes.map(quoteRow).join('')}</tbody>
       </table></div>
-      <p class="data-caution">※ 실시간 경매·전일 대비 등락은 연결된 API가 없어 표시하지 않습니다.</p>
+      <p class="data-caution">※ 이 표는 실시간 경매가나 상인 판매가가 아닙니다. <a href="prices.html">공식 서울 도매 참고가격 확인 ↗</a></p>
     </section>
     <section class="brand-v10-promo home-promo" aria-label="시장 바로가기"><div class="brand-v10-promo-grid">
       <a href="category/seafood.html"><span class="symbol" aria-hidden="true">🐟</span><span><strong>제철 상품 둘러보기</strong><small>수산·축산·농산을 한곳에서</small></span><span class="arrow" aria-hidden="true">↗</span></a>
