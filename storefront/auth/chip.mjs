@@ -5,7 +5,7 @@ if (link) {
   getSession()
     .then((data) => {
       if (data?.user) {
-        link.textContent = data.user.name || data.user.email || '내 계정';
+        link.textContent = '마이페이지'; link.href = (window.GARAK_ROOT || '') + 'mypage.html';
       }
     })
     .catch(() => {});

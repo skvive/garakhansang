@@ -126,7 +126,7 @@ function header() {
       <a href="coupons.html">🎟️ <span>내 쿠폰 <b id="wallet-qty">0</b></span></a>
       <a href="stores.html?favorites=1">♡ <span>찜한 매장</span></a>
       <a href="cart.html">🛒 <span>장바구니 <b data-cart-count>0</b></span></a>
-      <a href="login.html">로그인</a>
+      <a href="mypage.html">마이페이지</a><a href="login.html">로그인</a>
       <button id="menu-toggle" class="mobile-menu" type="button" aria-label="메뉴 열기" aria-expanded="false">☰</button>
     </div></div>
     <nav class="primary-nav" id="primary-nav" aria-label="주 메뉴"><div class="container nav-inner">
@@ -137,7 +137,7 @@ function header() {
 }
 function footer() {
   return `<footer class="site-footer"><div class="container foot-grid"><div>${logo}<p>시장의 신선함과 사람의 이야기를 더 가까이 잇습니다.<br>상품·가격·매장은 시연 데이터이며 실판매가 아닙니다.</p></div>
-    <div><b>둘러보기</b><a href="prices.html">오늘의 시세</a><a href="stores.html">매장 찾기</a><a href="market-map.html">시장 지도</a><a href="category/seafood.html">장보기</a></div>
+    <div><b>둘러보기</b><a href="prices.html">오늘의 시세</a><a href="stores.html">매장 찾기</a><a href="market-map.html">시장 지도</a><a href="category/seafood.html">장보기</a><a href="mypage.html">마이페이지</a></div>
     <div><b>혜택과 상인</b><a href="coupons.html">쿠폰 지갑</a><a href="events.html">기획전</a><a href="merchant-center.html">상인센터</a><a href="blogger-service.html">상인용 구글 블로그 제작</a></div>
     <div><b>안내</b><p>지도와 상호·메뉴·가격은 시연용입니다. 실제 방문 전 위치·영업 여부를 확인하세요.</p><a href="map.html">Google 지도에서 가락시장 보기 ↗</a><a href="ir/index.html">브랜드·IR 자료실</a><a href="legal/privacy.html">개인정보 안내</a></div>
     </div><div class="container foot-bottom">© 2026 GARAK HANSANG · 시연 프로토타입 <span>공식 가락시장 운영 서비스 아님</span></div></footer>`;
