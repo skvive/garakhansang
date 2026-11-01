@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#123f2d">
+<meta name="description" content="가락한상 내 계정·장바구니·주문·배송·쿠폰·개인정보 관리">
+<title>마이페이지 | 가락한상</title>
+<link rel="icon" href="assets/images/icon-192.png?v=4">
+<link rel="stylesheet" href="account/mypage.css?v=1">
+<script type="module" src="account/mypage.mjs?v=1"></script>
+</head>
+<body>
+<a href="#account-main" class="skip">본문으로 건너뛰기</a>
+<header class="site-head">
+  <a href="index.html" class="brand" aria-label="가락한상 홈"><img src="assets/brand/wordmark.png" alt="가락한상"></a>
+  <div class="head-links"><a href="index.html">홈</a><a href="stores.html">매장 찾기</a><a href="cart.html">장바구니</a><button id="logout" type="button" hidden>로그아웃</button></div>
+</header>
+<div class="page-banner">
+  <div class="banner-inner">
+    <p class="eyebrow">GARAK HANSANG · MY ACCOUNT</p>
+    <h1>나의 가락한상</h1>
+    <p>내 장바구니부터 쿠폰, 주문과 배송까지 한곳에서 확인하세요.</p>
+  </div>
+  <img src="assets/brand/mascot.webp?v=17" alt="" class="mascot">
+</div>
+<main id="account-main">
+  <div id="auth-loading" role="status" class="status-box">Neon 계정 로그인 상태를 확인하고 있습니다…</div>
+  <div id="guest" class="guest-card" hidden>
+    <h2>로그인이 필요합니다</h2><p>구글 계정 또는 이메일로 가입하면 내 계정을 확인할 수 있습니다.</p>
+    <a class="button primary" href="login.html?next=mypage.html">Google 또는 이메일로 로그인·가입</a>
+    <p class="small">주문·배송 정보는 실제 계정 연동된 내역만 표시합니다.</p>
+  </div>
+  <div id="account" hidden>
+    <section class="welcome" aria-label="내 계정">
+      <span class="avatar" id="avatar" aria-hidden="true">손</span>
+      <div><p class="eyebrow">WELCOME BACK</p><h2 id="display-name">회원님, 반갑습니다.</h2><p id="email-address"></p></div>
+    </section>
+    <nav class="account-nav" aria-label="마이페이지 메뉴">
+      <a href="#overview" data-view="overview"><span>⌂</span> 대시보드</a>
+      <a href="#cart" data-view="cart"><span>🛒</span> 장바구니</a>
+      <a href="#orders" data-view="orders"><span>▤</span> 주문조회</a>
+      <a href="#shipping" data-view="shipping"><span>📦</span> 배송조회</a>
+      <a href="#coupons" data-view="coupons"><span>🎟️</span> 쿠폰함</a>
+      <a href="#profile" data-view="profile"><span>♙</span> 내 정보</a>
+    </nav>
+    <section id="view-panel" class="content-panel" tabindex="-1" aria-live="polite"></section>
+  </div>
+</main>
+<footer class="footer">
+  <p>© 2026 가락한상 · 회원 정보는 Neon Auth 인증을 이용합니다.</p>
+  <p>현재 상품·쿠폰은 시연 자료이며, 실제 주문·결제·배송 기능이 제공되는 것으로 표시하지 않습니다.</p>
+  <a href="legal/privacy.html">개인정보 안내</a> · <a href="index.html">홈으로 돌아가기</a>
+</footer>
+</body></html>
