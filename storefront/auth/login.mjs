@@ -19,6 +19,7 @@ function showSignIn(){
 }
 function setMode(next){
  mode=next;
+ document.querySelector('#authForm h1').textContent=mode==='signup'?'가락한상 회원가입':'가락한상 로그인';
  nameGroup.hidden=mode!=='signup';
  submit.textContent=mode==='signup'?'새 계정으로 회원가입':'이메일로 로그인';
  toggle.textContent=mode==='signup'?'이미 계정이 있나요? 로그인':'처음이신가요? 회원가입';
