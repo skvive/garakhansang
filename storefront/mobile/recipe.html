@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d382b">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="모바일 전용 가락한상. 가락시장 매장, 제철 수산, 참고 시세, 요리 레시피를 편리하게 확인하세요.">
+<title>뚝딱 요리 레시피 | 가락한상 모바일</title>
+<link rel="icon" href="../assets/images/icon-192.png?v=4">
+<link rel="stylesheet" href="mobile.css?v=1">
+</head>
+<body data-mobile-page="recipe">
+<a href="#main" class="skip">본문으로 건너뛰기</a>
+<div class="screen">
+<div class="topstrip">가락시장 정보 허브 <span aria-hidden="true">·</span> 실제 구매·현재 시세는 개별 확인</div>
+<header class="mhead">
+ <a href="index.html" class="brand" aria-label="가락한상 모바일 홈"><img src="../assets/brand/wordmark.png" alt="가락한상"></a>
+ <a href="index.html?view=stores" class="head-action" aria-label="매장 찾기">⌕</a>
+ <button class="head-action menu-button" id="menu-button" aria-controls="mobile-drawer" aria-expanded="false" aria-label="메뉴 열기" type="button">☰</button>
+</header>
+<nav id="mobile-drawer" class="mdrawer" aria-label="모바일 전체 메뉴" inert>
+ <a href="index.html">홈</a><a href="index.html?view=stores">매장 찾기</a>
+ <a href="index.html?view=prices">참고 시세</a><a href="index.html?view=recipes">레시피</a>
+ <a href="../market-map.html">시장 지도</a><a href="../blogger-service.html">블로그 제작</a>
+ <a href="../merchant-center.html">상인센터</a><a href="../index.html?desktop=1">PC 버전</a>
+</nav>
+<main id="main" tabindex="-1"><div class="section"><p class="note" role="status">페이지를 불러오는 중입니다.</p></div></main>
+<footer class="footer-note">가락한상 모바일 · 상품·가격은 안내 및 시연 자료입니다. 실시간 공식 경매 API가 아니며 매장 영업·주문·배송 상태는 별도로 확인해야 합니다.<br><a href="../index.html?desktop=1" style="font-weight:800;color:#146346">PC 버전으로 보기 ↗</a></footer>
+</div>
+<nav class="bottom-nav" aria-label="모바일 빠른 이동">
+ <a href="index.html" data-nav="home"><span>⌂</span>홈</a>
+ <a href="index.html?view=stores" data-nav="stores"><span>▣</span>매장</a>
+ <a href="index.html?view=prices" data-nav="prices"><span>▥</span>시세</a>
+ <a href="index.html?view=recipes" data-nav="recipes"><span>☷</span>레시피</a>
+ <a href="../market-map.html" data-nav="map"><span>⌖</span>지도</a>
+</nav>
+<script defer src="mobile.js?v=1"></script>
+</body>
+</html>
