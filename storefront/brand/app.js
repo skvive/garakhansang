@@ -102,7 +102,16 @@ D.shops.unshift({
   products:["프리미엄(특수부위) 활모듬회","활새우회(손질 O) + 찍먹 소스","1인 모듬회(4~5구성)","(1인) 들깨전어회","활새우(손질 X)","들깨전어회","들깨전어모듬회","자연산 대농어(2인분)","최고급 생참치회(스페인)","생참치 트리오회","생참치 활모듬회","꽃게탕용 밀키트","서해산 가을 활암꽃게(특대)","치즈폭탄 갈릭마요 꽃게찜(특대)","지구방어회(특대방어)","지구방어생참치회","지구방어모듬회","지구방광참회","지구방어삼색회","지구방광우회","지구방광연회","줄무늬전갱이회","줄무늬전갱이모듬회","줄무늬전갱이삼색회","(1인) 대광어회","(1인) 연어회","(1인) 세꼬시회","(1인) 광어참돔회","(1인) 광어우럭회","(1인) 광어연어회","생물의 끝 - 시그니처모듬회","조합의 끝 - 오마카세","들기름 깻잎 막회","쥐치 1kg","A급 러시아 프리모리 대게","A급 러시아 레드킹크랩","연어 타르타르 소스"].map((name,i)=>({name,slug:'ilwol-menu-'+i})),
   coupon:null
 });
-function shopHref(s) { return s.fieldMerchant ? 'ilwol-susan.html' : 'store.html?id=' + encodeURIComponent(s.id); }
+/* 용기수산: 실제 매장 간판·제공된 메뉴 캡처 기반 정보. 현장 계약·가격·호수 검증 별개. */
+D.shops.splice(1,0,{
+  id:'yonggi-susan', name:'용기수산', category:'수산', catKey:'seafood', zone:'수산',
+  fieldMerchant:true,detailHref:'yonggi-susan.html',
+  photo:'assets/merchant/yonggi-susan-storefront.webp',
+  intro:'가락몰 판매동 1층 수산 · C-28호 외부 등록(현재 호수 확인 필요) · 전화 010-3233-3695 · 캡처 기준 참고 메뉴',
+  products:["활 새우회(400g 손질)","프리미엄 모듬회","전어회","하얀살 모듬회","가을 전어모듬회","오마카세 초밥","돌돔회","돌돔+오마카세","겨울방어+오마카세","줄무늬전갱이+오마카세","겨울 방어회","겨울 방어모듬회","겨울방어+참돔","생새우(생물포장 1kg)","생 새우찜(500g)","생새우회+모듬회","무늬오징어회","프리미엄 스페셜모듬회","회는 용기(오마카세)","고급어종 오마카세","참치 대뱃살","스페셜 물회","1인 메뉴","줄무늬전갱이+참치 대뱃살"].map((name,i)=>({name,slug:'yonggi-menu-'+i})),
+  coupon:null
+});
+function shopHref(s) { return s.fieldMerchant ? (s.detailHref || 'ilwol-susan.html') : 'store.html?id=' + encodeURIComponent(s.id); }
 D.events = eventsFromCats();
 const store = id => D.shops.find(s => s.id === id);
 const coupon = id => D.coupons.find(c => c.id === id);
@@ -145,7 +154,7 @@ function lowerNav() {
 function title(eyebrow,h,p=''){return `<div class="section-title"><div><span class="eyebrow">${eyebrow}</span><h2>${h}</h2>${p?`<p>${p}</p>`:''}</div></div>`;}
 function card(s) {
   const photo = s.fieldMerchant ? s.photo : ((CAT[s.catKey] && CAT[s.catKey].photo) || s.photo);
-  return `<article class="shop-card"><a class="thumb" href="${shopHref(s)}"><img src="${photo}" alt="${s.fieldMerchant ? '일월수산 C-15 실제 매장 사진' : safe(s.category) + ' 대표 이미지'}" loading="lazy"><span class="photo-label">${s.fieldMerchant ? '일월수산 실제 매장 · 사진 크롭' : '시연 이미지'}</span></a>
+  return `<article class="shop-card"><a class="thumb" href="${shopHref(s)}"><img src="${photo}" alt="${s.fieldMerchant ? '일월수산 C-15 실제 매장 사진' : safe(s.category) + ' 대표 이미지'}" loading="lazy"><span class="photo-label">${s.fieldMerchant ? safe(s.name)+' 실제 매장 사진 · 크롭' : '시연 이미지'}</span></a>
     <div class="shop-card-body"><small>${safe(s.category)} · ${safe(s.products.length)}개 상품</small>
     <div class="card-row"><a class="shop-title" href="${shopHref(s)}">${safe(s.name)}</a>
     <button class="like ${liked().includes(s.id)?'is-liked':''}" data-like="${safe(s.id)}" type="button" aria-label="관심 매장">${liked().includes(s.id)?'♥':'♡'}</button></div>
@@ -352,6 +361,7 @@ function mapPage() {
         <a class="btn btn-secondary" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent('가락시장 서울 송파구 양재대로 932')}&travelmode=walking&dir_action=navigate" target="_blank" rel="noopener noreferrer">도보 길찾기 ↗</a>
         <a class="btn btn-light" href="https://www.garak.co.kr/homepage/M0000212/market/findStore.do" target="_blank" rel="noopener noreferrer">가락몰 공식 매장찾기 ↗</a>
         <a class="btn btn-light" href="ilwol-susan.html">🐟 일월수산 C-15 메뉴판 ↗</a>
+        <a class="btn btn-light" href="yonggi-susan.html">🐟 용기수산 메뉴판 · 1층 ↗</a>
       </div>
       <section class="live-market-panel" aria-label="가락시장 실제 Google 지도">
         <div class="live-market-heading">
