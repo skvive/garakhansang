@@ -22,7 +22,7 @@ function setMode(next){
  nameGroup.hidden=mode!=='signup';
  submit.textContent=mode==='signup'?'새 계정으로 회원가입':'이메일로 로그인';
  toggle.textContent=mode==='signup'?'이미 계정이 있나요? 로그인':'처음이신가요? 회원가입';
- form.password.autocomplete=mode==='signup'?'new-password':'current-password';
+ form.elements.password.autocomplete=mode==='signup'?'new-password':'current-password';
  status('');
 }
 function setBusy(value){
