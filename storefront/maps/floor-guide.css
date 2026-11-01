@@ -1,0 +1,56 @@
+/* Garak Mall floor 1 retouched-image map — screenshot-based reference, NOT an official floorplan. */
+.page-hero-map .container p{max-width:690px}
+.map-layout{min-width:0}
+.map-layout>*{min-width:0}
+.schematic.floor-guide{background:#fff;border-radius:23px}
+.floor-guide .schematic-top{display:flex;align-items:flex-end;flex-wrap:wrap;gap:9px;padding:24px 24px 17px}
+.floor-guide .schematic-top b{font-size:clamp(20px,2.4vw,27px);line-height:1.3;color:#173c2d;letter-spacing:-.04em}
+.floor-guide .schematic-top span{color:#798779;font-size:12px;letter-spacing:0;font-weight:650}
+.floor-map-track{overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:thin;scrollbar-color:#a3c5b5 transparent;background:radial-gradient(ellipse at 60% 40%,#f7f9f5,#fff);scroll-snap-type:x proximity}
+.floor-map-art{display:block;width:100%;height:auto;min-width:0;aspect-ratio:926/417;object-fit:contain;scroll-snap-align:start}
+.floor-map-controlbar{display:flex;gap:9px;align-items:center;justify-content:flex-end;flex-wrap:wrap;padding:8px 20px 13px}
+.floor-map-controlbar button{font:750 13px/1.2 inherit;min-height:42px;border-radius:12px;border:1px solid #cbded1;background:#f2f8f3;color:#126443;padding:10px 16px;cursor:pointer}
+.floor-map-controlbar button:hover,.floor-map-controlbar button:focus-visible{background:#e1f0e6;outline:2px solid #176746;outline-offset:2px}
+.floor-map-controlbar .floor-map-control-hint{margin-right:auto;color:#637869;font-size:12px}
+.floor-map-legend{display:flex;align-items:center;gap:13px 17px;flex-wrap:wrap;background:#f0f5ec;margin:0 16px 13px;padding:12px 15px;border-radius:12px;color:#3a5143;font-size:12px}
+.floor-map-legend span{display:flex;align-items:center;gap:6px}
+.floor-map-symbol{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:6px;color:#fff;font-size:15px;font-style:normal;font-weight:800}
+.floor-map-symbol.exit{background:#269359}.floor-map-symbol.fire{background:#c93039}.floor-map-symbol.aed{background:#d74855}.floor-map-symbol.esc{background:#7d8888}.floor-map-symbol.sea{background:#a4dafa}
+.floor-map-info{display:flex;align-items:center;gap:14px;background:#eff6ed;border-radius:12px;padding:14px 17px;margin:0 16px 10px;color:#385b43;font-size:13px}
+.floor-map-info b{font-size:15px;white-space:nowrap;color:#146547}
+.floor-map-info p{margin:0;line-height:1.65;color:#4f6355}
+.floor-map-info .fish{font-size:24px}
+.floor-map-caution{margin:7px 20px 0;color:#66766b;font-size:12px;line-height:1.7}
+.floor-map-chips{padding:13px 16px 0;display:flex;gap:8px;flex-wrap:wrap}
+.floor-map-chips button{border:1px solid #bdd6c6;background:#f6faf6;border-radius:99px;color:#245c42;min-height:43px;padding:10px 15px;font-size:13px;font-weight:800;cursor:pointer}
+.floor-map-chips button.selected,.floor-map-chips button:hover{background:#0c784d;color:#fff;border-color:#0c784d}
+.floor-guide .map-actions{padding:16px 18px 21px;gap:10px}
+.floor-guide .map-actions .btn{min-height:43px}
+.floor-map-dialog{max-width:min(1100px,calc(100vw - 24px));width:100%;max-height:calc(100dvh - 26px);border:0;border-radius:18px;padding:0;box-shadow:0 20px 70px #061d1780;background:#fff;color:#17392b}
+.floor-map-dialog::backdrop{background:#081c19d9}
+.floor-map-dialog-head{position:sticky;top:0;z-index:2;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 16px;border-bottom:1px solid #dce8df}
+.floor-map-dialog-head h2{margin:0;font-size:17px}
+.floor-map-dialog-head button{min-height:44px;padding:8px 16px;background:#0a7d51;color:#fff;border:0;border-radius:9px;cursor:pointer}
+.floor-map-dialog-body{overflow:auto;max-height:calc(100dvh - 120px);padding:16px}
+.floor-map-dialog-body img{display:block;width:100%;min-width:760px;height:auto}
+.floor-map-dialog-body p{font-size:12px;color:#5f7364;margin:8px 0 0}
+@media(max-width:1150px){.map-layout{grid-template-columns:minmax(0,1fr)}.map-detail{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.map-detail .map-bubble,.map-detail .map-note{grid-column:1/-1}#zone-results{display:contents}#zone-results>.zone-shop{margin-top:14px}}
+@media(max-width:700px){
+.floor-guide .schematic-top{padding:19px 16px 13px}.floor-guide .schematic-top b{font-size:21px}
+.floor-guide .schematic-top span{font-size:11px}
+.floor-map-art{min-width:730px}
+.floor-map-legend{gap:9px 12px;padding:12px;margin:0 10px 12px;font-size:12px}
+.floor-map-info{align-items:flex-start;gap:8px;flex-wrap:wrap;margin:0 10px 8px;padding:12px;font-size:12px}
+.floor-map-info b{font-size:13px}
+.floor-map-caution{margin:6px 13px 0;font-size:12px}
+.floor-map-controlbar{padding:8px 12px 10px}
+.floor-map-controlbar .floor-map-control-hint{flex:1 1 100%}
+.floor-map-chips{padding:12px 10px 0}
+.floor-guide .map-actions{padding:12px 10px 16px}
+.floor-guide .map-actions .btn{flex:1 1 180px;text-align:center}
+.map-detail{display:flex}
+#zone-results{display:block}
+.floor-map-dialog{max-height:calc(100dvh - 16px)}
+.floor-map-dialog-body img{min-width:760px}
+}
+@media(prefers-reduced-motion:reduce){.floor-map-track{scroll-behavior:auto}}
