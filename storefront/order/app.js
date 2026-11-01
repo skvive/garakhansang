@@ -2,7 +2,7 @@
 (() => {
 'use strict';
 const ROOT = '../assets/images/';
-const BRAND = '../assets/brand/'; const RIDER = 'mascot-rider.svg';
+const BRAND = '../assets/brand/'; const RIDER = 'mascot-rider.webp';
 const MARKETS = [
  {id:'garak',name:'가락시장',caption:'과일·채소·정육·식자재',icon:'🥬',theme:'가락시장 채소부터 정육까지, 한 장바구니로',delivery:'신선식품 공동배송',min:3900,add:600,cold:1000,flag:'합배송 실증 1순위',types:['채소·과일','정육','수산','반찬']},
  {id:'noryang',name:'노량진수산시장',caption:'활어·회·해산물',icon:'🐟',theme:'횟감 손질하고, 냉장으로 신선하게',delivery:'냉장 포장 · 손질 옵션',min:5200,add:800,cold:1000,flag:'수산물 특화',types:['횟감','수산','갑각류']},
