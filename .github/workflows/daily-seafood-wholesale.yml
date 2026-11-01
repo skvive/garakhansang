@@ -18,12 +18,26 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Check if credentials are provisioned
+        id: credentials
+        env:
+          KAMIS_CERT_KEY: ${{ secrets.KAMIS_CERT_KEY }}
+          KAMIS_CERT_ID: ${{ secrets.KAMIS_CERT_ID }}
+        run: |
+          if [ -n "$KAMIS_CERT_KEY" ] && [ -n "$KAMIS_CERT_ID" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::KAMIS API credentials unavailable; skipping scheduled refresh without publishing sample data."
+          fi
       - name: Retrieve verified KAMIS Seoul seafood WHOLESALE reference
+        if: steps.credentials.outputs.configured == 'true'
         env:
           KAMIS_CERT_KEY: ${{ secrets.KAMIS_CERT_KEY }}
           KAMIS_CERT_ID: ${{ secrets.KAMIS_CERT_ID }}
         run: python3 tools/sync_seafood_wholesale.py
       - name: Commit valid new observations only
+        if: steps.credentials.outputs.configured == 'true'
         run: |
           git config user.name "garak-official-prices[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
