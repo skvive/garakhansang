@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#b80c1d">
+<meta name="description" content="가락한상 오더 — 우리 동네 전통시장의 신선함을 한 번에. 시장 상인 공동장보기와 합배송 시연 앱.">
+<title>가락한상 오더 | 전통시장 공동장보기</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="app-header">
+  <div class="topline">
+    <button class="brand-button" id="goHome" aria-label="홈으로 이동"><span class="wordmark">가락한상 <b>오더</b></span><span class="brand-sub">GARAK HANSANG ORDER</span></button>
+    <button class="location-button" id="chooseMarket"><span>📍</span><span id="locationText">가락시장</span><span aria-hidden="true">⌄</span></button>
+    <button class="header-alert" id="openHelp" aria-label="안내 및 서비스 상태">ⓘ</button>
+  </div>
+  <form id="searchForm" class="search-box" role="search"><span aria-hidden="true">⌕</span><input type="search" id="searchInput" placeholder="시장, 상점, 상품을 검색해보세요" aria-label="시장, 상점, 상품 검색" autocomplete="off"><button type="submit" aria-label="검색">검색</button></form>
+</header>
+<div id="announcement" class="notice" role="status"><span>안내</span> 입점·가격·배송비·할인 모두 시연용 예시입니다. 실제 주문은 불가합니다.</div>
+<main id="mainContent" tabindex="-1"></main>
+<nav class="tabbar" aria-label="하단 메뉴">
+  <button data-tab="home" class="active"><span aria-hidden="true">⌂</span>홈</button>
+  <button data-tab="markets"><span aria-hidden="true">▦</span>시장</button>
+  <button data-tab="coupons"><span aria-hidden="true">♧</span>쿠폰</button>
+  <button data-tab="cart"><span aria-hidden="true">🛒</span>장바구니 <i id="cartBadge" hidden>0</i></button>
+  <button data-tab="my"><span aria-hidden="true">☻</span>MY</button>
+</nav>
+<div id="modalRoot"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+</div>
+<script defer src="app.js"></script>
+</body>
+</html>
