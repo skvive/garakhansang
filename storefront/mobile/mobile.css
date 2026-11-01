@@ -106,3 +106,49 @@ button{border:0}
 @media(min-width:701px) and (pointer:coarse){:root{font-size:22px}.screen{max-width:100%}.brand img{height:52px;width:170px}.hero{min-height:620px}.hero h1{font-size:64px}.hero-copy p{font-size:24px}.hero-mascot{height:400px}.section{padding:40px 26px}.quicklinks{padding:24px;grid-template-columns:repeat(3,1fr)}.quicklinks a{font-size:22px;min-height:145px}.quicklinks a small{font-size:16px}.store-copy h3{font-size:29px}.store-copy p{font-size:19px}.product-row b{font-size:22px}.product-row strong{font-size:23px}}
 @media(max-width:359px){.brand img{width:112px}.hero-mascot{height:195px}.hero-actions{max-width:100%}.hero h1{font-size:30px}.product-row{grid-template-columns:92px minmax(0,1fr)}.product-row img{width:92px;height:100px}.pill{font-size:13px;padding:10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* Chrome 'Desktop site' mode on a physical touch handset may expose a 980px
+   CSS viewport. Upscale every key control, not only the root font size. */
+@media(min-width:701px) and (pointer:coarse){
+ .topstrip{font-size:18px;padding:13px}
+ .mhead{height:90px;padding:12px 25px}
+ .head-action{min-height:62px;min-width:62px;font-size:27px}
+ .brand img{height:61px;width:210px}
+ .mdrawer{top:90px;padding:19px 25px}
+ .mdrawer a{font-size:22px;padding:20px}
+ h1{font-size:62px}
+ h2{font-size:36px}
+ h3{font-size:26px}
+ p{font-size:20px}
+ .eyebrow{font-size:17px}
+ .pill{font-size:21px;min-height:62px;padding:18px 24px}
+ .note{font-size:17px}
+ .hero-copy p{font-size:24px}
+ .hero .note{font-size:17px}
+ .titlebar p{font-size:19px}
+ .quicklinks a span{font-size:36px}
+ .store-copy .eyebrow{font-size:16px}
+ .card-actions .pill{font-size:19px}
+ .searchbox{min-height:64px;font-size:22px;padding-inline:20px}
+ .chip{min-height:62px;font-size:20px;padding:13px 21px}
+ .mhero h1{font-size:52px}
+ .mhero p{font-size:21px}
+ .metric small{font-size:16px}
+ .metric strong{font-size:20px}
+ .metric div{padding:19px 6px}
+ .product-row{grid-template-columns:155px minmax(0,1fr);padding:15px;gap:17px}
+ .product-row img{height:160px;width:155px}
+ .product-row p{font-size:18px;max-height:none}
+ .product-row small{font-size:16px}
+ .notice{font-size:18px;padding:20px}
+ .row-link{font-size:21px;min-height:90px}
+ .row-link small{font-size:17px!important}
+ .recipe-cover{height:330px}
+ .recipe-step p{font-size:21px}
+ .ingredients label{font-size:21px;min-height:65px}
+ .footer-note{font-size:17px}
+ .bottom-nav a{font-size:17px;min-height:75px}
+ .bottom-nav a span{font-size:32px}
+ .screen{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
+}
