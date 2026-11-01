@@ -1,0 +1,520 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "garakmall-field-photo-survey-20261101",
+  "project": "skvive/garakhansang",
+  "site": "https://garakmall.lexid.site/market-map.html",
+  "ingested_on": "2026-11-01",
+  "photo_capture_date": null,
+  "provenance": "사용자가 ChatGPT 대화에 제공한 가락몰 현장 사진 10장; 원본 사진은 GitHub에 게시하지 않고 별도 전달 ZIP에 포함",
+  "status": "photo_observation_only_not_geocoded_or_merchant_verified",
+  "rules": [
+    "층별 안내는 사진 촬영 당시 간판 표기이며 현재 영업/실제 입점 사실을 보증하지 않음",
+    "사진상 실내 평면도는 지리좌표·진북·축척·최신 상태가 확인되지 않아 길찾기 좌표로 사용 금지",
+    "피난 안내도는 안전 참고자료로 분류하며 실시간 피난 지침으로 사용 금지",
+    "모든 매장/연락처는 추후 운영 주체 확인 후 공개 사용"
+  ],
+  "photos": [
+    {
+      "file": "31031.jpg",
+      "type": "wayfinding",
+      "description": "가락몰 3관 층별 입점·시설 안내판",
+      "building": "3관",
+      "floors": [
+        "3F",
+        "2F",
+        "1F",
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "file": "31033.jpg",
+      "type": "emergency_map",
+      "description": "가락몰 지상 1층 피난 안내도, 건물·직판 구역·소방시설 표시",
+      "building": "전체",
+      "floors": [
+        "1F"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "file": "31034.jpg",
+      "type": "exterior",
+      "description": "3관·수산시장 외부 연결 통로 및 출입구, 공사 가림막",
+      "building": "3관",
+      "floors": [],
+      "review_status": "reviewed"
+    },
+    {
+      "file": "31035.jpg",
+      "type": "exterior",
+      "description": "가락몰 4관 출입구 외관 및 보행 동선·공사 가림막",
+      "building": "4관",
+      "floors": [],
+      "review_status": "reviewed"
+    },
+    {
+      "file": "31038.jpg",
+      "type": "merchant_facade",
+      "description": "광천 토굴젓갈 수산 계열 매장 간판과 식품 진열",
+      "building": "미확인",
+      "floors": [],
+      "review_status": "reviewed"
+    },
+    {
+      "file": "31039.jpg",
+      "type": "merchant_facade",
+      "description": "광양수산 매대 및 활어회 메뉴·수조",
+      "building": "판매동",
+      "floors": [
+        "1F"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "file": "31040.jpg",
+      "type": "business_cards",
+      "description": "광양수산 및 거북수산 명함·호수·사업장 연락처",
+      "building": "판매동",
+      "floors": [
+        "1F"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "file": "31044.jpg",
+      "type": "wayfinding",
+      "description": "가락몰 5관 층별 입점·시설 안내판",
+      "building": "5관",
+      "floors": [
+        "3F",
+        "2F",
+        "1F",
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "file": "31046.jpg",
+      "type": "interior_map",
+      "description": "가락몰 B1층 안내도 및 시설 범례, 층별 업종",
+      "building": "전체",
+      "floors": [
+        "3F",
+        "2F",
+        "1F",
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "file": "31047.jpg",
+      "type": "promotion",
+      "description": "가락몰유통인연합회 카카오톡 채널 단골 추가 QR 안내",
+      "building": "전체",
+      "floors": [],
+      "review_status": "reviewed"
+    }
+  ],
+  "floors": [
+    {
+      "building": "3관",
+      "floor": "3F",
+      "category": "전문식당가",
+      "tenants": [
+        "다미정",
+        "소정",
+        "이디야 가락몰점"
+      ],
+      "source_photo": "31031.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "3관",
+      "floor": "2F",
+      "category": "식자재 매장",
+      "tenants": [
+        "새농 푸드마켓"
+      ],
+      "source_photo": "31031.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "3관",
+      "floor": "1F",
+      "category": "식당·식자재 매장",
+      "tenants": [
+        "다오세 사람들",
+        "리얼펍",
+        "정진농산"
+      ],
+      "source_photo": "31031.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "3관",
+      "floor": "B1",
+      "category": "채소·과일 매장·주차장",
+      "tenants": [],
+      "source_photo": "31031.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "3관",
+      "floor": "B2",
+      "category": "축산부산물매장·가공처리장·주차장",
+      "tenants": [],
+      "source_photo": "31031.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "3관",
+      "floor": "B3",
+      "category": "고객전용 주차장",
+      "tenants": [],
+      "source_photo": "31031.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "5관",
+      "floor": "3F",
+      "category": "전문식당가",
+      "tenants": [
+        "돌고래",
+        "만찬",
+        "서울식당",
+        "해금강"
+      ],
+      "source_photo": "31044.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "5관",
+      "floor": "2F",
+      "category": "전문식당가",
+      "tenants": [
+        "거북선",
+        "구룡각",
+        "일품"
+      ],
+      "source_photo": "31044.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "5관",
+      "floor": "1F",
+      "category": "가락올레 회센터",
+      "tenants": [],
+      "source_photo": "31044.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "5관",
+      "floor": "B1",
+      "category": "채소·과일 매장·주차장",
+      "tenants": [
+        "우주식품"
+      ],
+      "source_photo": "31044.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "5관",
+      "floor": "B2",
+      "category": "축산부산물매장·가공처리장·주차장",
+      "tenants": [],
+      "source_photo": "31044.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "5관",
+      "floor": "B3",
+      "category": "고객전용 주차장",
+      "tenants": [],
+      "source_photo": "31044.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "공통층안내",
+      "floor": "3F",
+      "category": "전문식당가·건어물 도소매 종합상가",
+      "tenants": [],
+      "source_photo": "31046.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "공통층안내",
+      "floor": "2F",
+      "category": "종합식품·주방용품",
+      "tenants": [],
+      "source_photo": "31046.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "공통층안내",
+      "floor": "1F",
+      "category": "수산·건어물·축산",
+      "tenants": [],
+      "source_photo": "31046.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "공통층안내",
+      "floor": "B1",
+      "category": "과일·채소·먹거리광장",
+      "tenants": [],
+      "source_photo": "31046.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "공통층안내",
+      "floor": "B2",
+      "category": "축산부산물매장·가공처리장·창고",
+      "tenants": [],
+      "source_photo": "31046.jpg",
+      "confidence": "high",
+      "verified_current": false
+    },
+    {
+      "building": "공통층안내",
+      "floor": "B3",
+      "category": "승용차 전용 주차장",
+      "tenants": [],
+      "source_photo": "31046.jpg",
+      "confidence": "high",
+      "verified_current": false
+    }
+  ],
+  "merchants": [
+    {
+      "id": "merchant-gwangyang-susan",
+      "name": "광양수산",
+      "category": "수산·활어회",
+      "location": "가락몰 판매동 1층 수산부 54호",
+      "landmark": "엘리베이터 10호기 앞",
+      "phone": null,
+      "phone_note": "명함의 마지막 자리가 손가락에 가려져 전체 번호 미검증",
+      "source_photos": [
+        "31039.jpg",
+        "31040.jpg"
+      ],
+      "confidence": "high",
+      "verified_current": false,
+      "geo": null
+    },
+    {
+      "id": "merchant-geobuk-susan",
+      "name": "거북수산",
+      "category": "수산·활어",
+      "person_on_card": "김경수",
+      "location": "가락몰 판매동 1층 수산 17호",
+      "address": "서울특별시 송파구 양재대로 932",
+      "phone": "02-449-1070",
+      "mobile": "010-4346-1070",
+      "products": [
+        "돔",
+        "광어",
+        "우럭",
+        "각종 활어"
+      ],
+      "source_photos": [
+        "31040.jpg"
+      ],
+      "confidence": "high",
+      "verified_current": false,
+      "geo": null
+    },
+    {
+      "id": "merchant-gwangcheon-jeotgal",
+      "name": "광천 토굴젓갈 수산 (간판 표기 추출)",
+      "category": "젓갈·수산 가공식품",
+      "location": null,
+      "mobile": "010-4622-2736",
+      "additional_phone_fragment": "407-2877",
+      "note": "추가 전화번호의 지역번호 및 독립 상호명 불명확, 간판 원문 재확인 권장",
+      "source_photos": [
+        "31038.jpg"
+      ],
+      "confidence": "medium",
+      "verified_current": false,
+      "geo": null
+    }
+  ],
+  "zones": [
+    {
+      "name": "가락몰 1관",
+      "type": "건물",
+      "photo": "31033.jpg",
+      "geo": null
+    },
+    {
+      "name": "가락몰 2관",
+      "type": "건물",
+      "photo": "31033.jpg",
+      "geo": null
+    },
+    {
+      "name": "가락몰 3관",
+      "type": "건물",
+      "photo": "31031.jpg",
+      "geo": null
+    },
+    {
+      "name": "가락몰 4관",
+      "type": "건물",
+      "photo": "31035.jpg",
+      "geo": null
+    },
+    {
+      "name": "가락몰 5관",
+      "type": "건물",
+      "photo": "31044.jpg",
+      "geo": null
+    },
+    {
+      "name": "수산직판",
+      "type": "판매구역",
+      "photo": "31033.jpg",
+      "geo": null
+    },
+    {
+      "name": "패류직판",
+      "type": "판매구역",
+      "photo": "31033.jpg",
+      "geo": null
+    },
+    {
+      "name": "건어직판",
+      "type": "판매구역",
+      "photo": "31033.jpg",
+      "geo": null
+    },
+    {
+      "name": "축산직판",
+      "type": "판매구역",
+      "photo": "31033.jpg",
+      "geo": null
+    },
+    {
+      "name": "선큰",
+      "type": "공간",
+      "photo": "31033.jpg",
+      "geo": null
+    },
+    {
+      "name": "업무동",
+      "type": "업무시설",
+      "photo": "31033.jpg",
+      "geo": null
+    }
+  ],
+  "amenities": [
+    {
+      "name": "주차장",
+      "floor": "B1/B2/B3 일부",
+      "photos": [
+        "31031.jpg",
+        "31044.jpg",
+        "31046.jpg"
+      ],
+      "status": "floor_sign_only"
+    },
+    {
+      "name": "엘리베이터",
+      "floor": "B1 및 지도 표기 구역",
+      "photos": [
+        "31033.jpg",
+        "31046.jpg"
+      ],
+      "status": "pictogram_only"
+    },
+    {
+      "name": "화장실",
+      "floor": "B1 지도",
+      "photos": [
+        "31046.jpg"
+      ],
+      "status": "pictogram_only"
+    },
+    {
+      "name": "장애인화장실",
+      "floor": "B1 지도",
+      "photos": [
+        "31046.jpg"
+      ],
+      "status": "pictogram_only"
+    },
+    {
+      "name": "무빙워크",
+      "floor": "B1 지도",
+      "photos": [
+        "31046.jpg"
+      ],
+      "status": "pictogram_only"
+    },
+    {
+      "name": "계단",
+      "floor": "B1 지도",
+      "photos": [
+        "31046.jpg"
+      ],
+      "status": "pictogram_only"
+    },
+    {
+      "name": "피난구·소화전·소화기·자동심장충격기",
+      "floor": "지상 1층 피난 안내도",
+      "photos": [
+        "31033.jpg"
+      ],
+      "status": "historical_emergency_map_only"
+    },
+    {
+      "name": "공사 안전제일 가림막",
+      "floor": null,
+      "photos": [
+        "31034.jpg",
+        "31035.jpg"
+      ],
+      "status": "photo_time_only_not_live"
+    }
+  ],
+  "social": [
+    {
+      "name": "가락몰유통인연합회",
+      "platform": "Kakao Channel",
+      "channel_url": "http://pf.kakao.com/_xexoiwX/friend?from=qr",
+      "url_extraction": "decoded from supplied photo QR using QRCodeDetector",
+      "source_photo": "31047.jpg",
+      "url_open_tested": false
+    }
+  ],
+  "unresolved": [
+    "사진 촬영일과 층별 현행 입점 정보 확인 필요",
+    "3관과 5관의 지층 안내는 판별 가능한 범위만 수록",
+    "일부 점포 간판이 업체명인지 업종 조합인지 확인 필요",
+    "매장별 위경도 또는 현장 지도상의 위치 식별자 없음",
+    "카카오톡 채널 QR 링크의 실접속은 아직 검증하지 않음"
+  ]
+}
