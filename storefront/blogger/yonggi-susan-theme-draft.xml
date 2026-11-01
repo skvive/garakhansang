@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version="2" class="v2" expr:dir="data:blog.languageDirection" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr">
+<head>
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<b:include data="blog" name="all-head-content"/>
+<title><data:blog.pageTitle/></title>
+<b:skin><![CDATA[
+/* Garak Hansang premium merchant Blogger theme draft. Validate inside actual Blogger account before using. */
+:root{--deep:#0d443b;--accent:#13845e;--cream:#f8f7ef;--ink:#1b3b35}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--cream);color:var(--ink);font-family:'Malgun Gothic','Noto Sans KR',Arial,sans-serif;line-height:1.8}
+a{color:var(--accent);text-decoration:none}img{max-width:100%;height:auto}
+.yg-top{padding:8px 20px;background:var(--deep);color:#ddf3e6;text-align:center;font-size:12px;font-weight:bold}
+.yg-header{background:white;border-bottom:1px solid #e5e9dc;padding:16px 20px}.yg-shell{max-width:1100px;margin:0 auto}
+.yg-brand{font-weight:900;color:#124c3e;font-size:27px;letter-spacing:-.06em}.yg-brand small{color:#718d80;font-size:12px;letter-spacing:0}
+.yg-links{display:flex;gap:15px;flex-wrap:wrap;margin-top:8px;font-size:12px;font-weight:bold}
+.yg-cover{background:linear-gradient(125deg,#0e443c,#123c54);padding:70px 20px 65px;color:#fff}.yg-cover h1{color:#fff;font-size:clamp(34px,5vw,56px);letter-spacing:-.07em;line-height:1.25;margin:0 0 13px}
+.yg-cover p{color:#c8e5da;margin:0 0 24px}.yg-cover a{display:inline-block;border-radius:11px;background:#a5ebc9;color:#073f36;padding:11px 20px;font-weight:900;font-size:12px}
+.yg-content{padding:50px 20px 80px;display:grid;grid-template-columns:minmax(0,1fr) 285px;gap:35px}
+.yg-main{min-width:0}
+.yg-sidebar{background:#fff;border:1px solid #e0e9db;border-radius:17px;padding:24px;height:max-content;position:sticky;top:20px}
+.yg-sidebar h3{margin:0 0 10px;color:var(--deep);font-size:18px}
+.yg-sidebar p{font-size:12px;color:#6c8175}
+.yg-button{display:block;background:#117954;color:white;font-size:12px;font-weight:900;padding:11px 14px;border-radius:9px;text-align:center;margin:8px 0}
+.post-outer,.post{background:#fff;border:1px solid #e1e9e2;border-radius:17px;padding:25px;margin-bottom:22px}
+.post-title,.entry-title{font-size:clamp(24px,3vw,36px);letter-spacing:-.055em;line-height:1.35}
+.post-body{font-size:15px;line-height:1.9;overflow-wrap:anywhere}
+.blog-pager a{display:inline-block;margin:10px}
+.yg-footer{background:#082d25;color:#d3e4d7;padding:28px 20px;font-size:12px}
+@media(max-width:810px){.yg-content{grid-template-columns:1fr}.yg-sidebar{position:static}.yg-cover{padding:48px 18px}.post-outer,.post{padding:16px}.yg-brand{font-size:23px}}
+]]></b:skin>
+</head>
+<body>
+<div class="yg-top">가락몰 수산시장 · 용기수산 소식과 제철 메뉴</div>
+<div class="yg-header"><div class="yg-shell"><a class="yg-brand" href="https://garakmall.lexid.site/yonggi-susan.html">용기수산 <small>Garak Market Seafood</small></a>
+<nav class="yg-links"><a href="https://garakmall.lexid.site/yonggi-susan.html">메뉴판</a><a href="https://garakmall.lexid.site/stores.html">가락몰 매장</a><a href="https://garakmall.lexid.site/market-map.html">시장 지도</a><a href="tel:01032333695">전화 문의</a></nav>
+</div></div>
+<section class="yg-cover"><div class="yg-shell"><h1>바다가 준비한 오늘,<br />용기수산이 전합니다.</h1><p>활어회 · 모둠회 · 오마카세 · 계절 수산 정보</p><a href="https://garakmall.lexid.site/yonggi-susan.html">용기수산 24가지 참고 메뉴판 보기 →</a></div></section>
+<div class="yg-content yg-shell"><main class="yg-main" id="mainContent"><b:section class="main" id="main" maxwidgets="1" showaddelement="no"><b:widget id="Blog1" locked="true" title="블로그 게시글" type="Blog"/></b:section></main>
+<aside class="yg-sidebar"><h3>용기수산 매장 안내</h3><img src="https://garakmall.lexid.site/assets/merchant/yonggi-susan-storefront.webp" alt="용기수산 가락몰 현장 간판"/><p>서울 송파구 양재대로 932 가락몰 판매동 1층, C-28호는 외부등록 기준 확인 필요</p><a class="yg-button" href="tel:01032333695">010-3233-3695 전화 문의</a><a class="yg-button" href="https://garakmall.lexid.site/yonggi-susan.html">전체 메뉴판 보기</a><p>가격은 이전 메뉴 화면 참고가입니다. 매장과 Google Blogger는 공식 제휴 관계가 아닙니다.</p></aside></div>
+<footer class="yg-footer"><div class="yg-shell">용기수산 · 가락몰 · Blogger용 브랜디드 테마 초안. 블로그 운영계정 소유·사진 사용승인·실계정 검수 후 적용.</div></footer>
+</body>
+</html>
