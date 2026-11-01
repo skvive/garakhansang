@@ -131,14 +131,14 @@ function header() {
     </div></div>
     <nav class="primary-nav" id="primary-nav" aria-label="주 메뉴"><div class="container nav-inner">
       ${nav.map(([k,v]) => `<a href="${routes[k]}" class="${page===k?'active':''}">${v}</a>`).join('')}
-      <a class="nav-beta" href="category/seafood.html">장보기 →</a>
+      <a class="nav-beta" href="category/seafood.html">장보기 →</a><a class="nav-beta" href="blogger-service.html">블로그 제작 ↗</a>
     </div></nav>
   </header>`;
 }
 function footer() {
   return `<footer class="site-footer"><div class="container foot-grid"><div>${logo}<p>시장의 신선함과 사람의 이야기를 더 가까이 잇습니다.<br>상품·가격·매장은 시연 데이터이며 실판매가 아닙니다.</p></div>
     <div><b>둘러보기</b><a href="prices.html">오늘의 시세</a><a href="stores.html">매장 찾기</a><a href="market-map.html">시장 지도</a><a href="category/seafood.html">장보기</a></div>
-    <div><b>혜택과 상인</b><a href="coupons.html">쿠폰 지갑</a><a href="events.html">기획전</a><a href="merchant-center.html">상인센터</a></div>
+    <div><b>혜택과 상인</b><a href="coupons.html">쿠폰 지갑</a><a href="events.html">기획전</a><a href="merchant-center.html">상인센터</a><a href="blogger-service.html">상인용 구글 블로그 제작</a></div>
     <div><b>안내</b><p>지도와 상호·메뉴·가격은 시연용입니다. 실제 방문 전 위치·영업 여부를 확인하세요.</p><a href="map.html">Google 지도에서 가락시장 보기 ↗</a><a href="ir/index.html">브랜드·IR 자료실</a><a href="legal/privacy.html">개인정보 안내</a></div>
     </div><div class="container foot-bottom">© 2026 GARAK HANSANG · 시연 프로토타입 <span>공식 가락시장 운영 서비스 아님</span></div></footer>`;
 }
@@ -154,7 +154,7 @@ function lowerNav() {
 function title(eyebrow,h,p=''){return `<div class="section-title"><div><span class="eyebrow">${eyebrow}</span><h2>${h}</h2>${p?`<p>${p}</p>`:''}</div></div>`;}
 function card(s) {
   const photo = s.fieldMerchant ? s.photo : ((CAT[s.catKey] && CAT[s.catKey].photo) || s.photo);
-  return `<article class="shop-card"><a class="thumb" href="${shopHref(s)}"><img src="${photo}" alt="${s.fieldMerchant ? '일월수산 C-15 실제 매장 사진' : safe(s.category) + ' 대표 이미지'}" loading="lazy"><span class="photo-label">${s.fieldMerchant ? safe(s.name)+' 실제 매장 사진 · 크롭' : '시연 이미지'}</span></a>
+  return `<article class="shop-card"><a class="thumb" href="${shopHref(s)}"><img src="${photo}" alt="${s.fieldMerchant ? safe(s.name)+' 실제 매장 간판 사진' : safe(s.category) + ' 대표 이미지'}" loading="lazy"><span class="photo-label">${s.fieldMerchant ? safe(s.name)+' 실제 매장 사진 · 크롭' : '시연 이미지'}</span></a>
     <div class="shop-card-body"><small>${safe(s.category)} · ${safe(s.products.length)}개 상품</small>
     <div class="card-row"><a class="shop-title" href="${shopHref(s)}">${safe(s.name)}</a>
     <button class="like ${liked().includes(s.id)?'is-liked':''}" data-like="${safe(s.id)}" type="button" aria-label="관심 매장">${liked().includes(s.id)?'♥':'♡'}</button></div>
@@ -281,11 +281,12 @@ function stores() {
     </div>
     <div class="shop-grid" id="shop-results"></div>
     <div class="empty hidden" id="shop-empty">조건에 맞는 매장이 없습니다. <button id="reset-search" class="btn btn-sm btn-primary" type="button">전체 보기</button></div>
-    <p class="data-caution">* 대부분의 매장은 시연 데이터입니다. 일월수산은 제공된 실제 점포 사진과 메뉴 캡처 기반 참고 정보이며, 제휴·판매·예약은 미연동입니다.</p></section>`;
+    <p class="data-caution">* 대부분의 매장은 시연 데이터입니다. 일월수산·용기수산은 제공된 현장사진 및 메뉴 캡처를 기반으로 하며, 가격·매장 위치 확인과 실제 제휴·판매·예약은 별개입니다.</p></section>`;
 }
 
 function storeDetail() {
   const id = new URLSearchParams(location.search).get('id') || (D.shops.find(s=>!s.fieldMerchant) && D.shops.find(s=>!s.fieldMerchant).id);
+  if (id === "yonggi-susan") return `<section class="container section"><h1>용기수산</h1><p>실매장 전용 메뉴판을 확인하세요.</p><a class="btn btn-primary" href="yonggi-susan.html">용기수산 메뉴판 보기 →</a></section>`;
   if (id === "ilwol-susan") return `<section class="container section"><h1>일월수산</h1><p>실매장 전용 메뉴판을 확인하세요.</p><a class="btn btn-primary" href="ilwol-susan.html">일월수산 메뉴판 보기 →</a></section>`;
   const s = store(id) || D.shops.find(s=>!s.fieldMerchant);
   if (!s) return `<section class="container section"><p>매장을 찾을 수 없습니다. <a href="stores.html">목록으로</a></p></section>`;
