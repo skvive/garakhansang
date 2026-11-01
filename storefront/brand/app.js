@@ -31,7 +31,7 @@ const storage = (key, initial) => { try { return JSON.parse(localStorage.getItem
 const save = (key, v) => localStorage.setItem('garak-brand-'+key, JSON.stringify(v));
 const liked = () => storage('likes', []);
 const wallet = () => storage('wallet', []);
-const routes = {home:'index.html', prices:'prices.html', map:'market-map.html', stores:'stores.html', coupons:'coupons.html', events:'events.html', merchant:'merchant-center.html', guide:'market-guide.html'};
+const routes = {home:'index.html', prices:'prices.html', map:'market-map.html', stores:'stores.html', coupons:'coupons.html', events:'events.html', merchant:'merchant-center.html', guide:'market-guide.html', merchantPreview:'merchant-showcase/index.html', merchantApply:'merchant-showcase/apply.html', merchantCommunity:'merchant-showcase/community.html'};
 const img = p => 'assets/images/' + p + '.webp';
 const mascot = (cls='') => `<img class="mascot ${cls}" src="assets/brand/mascot.webp?v=17" alt="가락한상 상인 마스코트"/>`;
 const logo = `<a class="logo" href="index.html" aria-label="가락한상 홈"><img class="logo-wordmark" src="assets/brand/wordmark.png" alt="가락한상"/></a>`;
@@ -117,7 +117,7 @@ const store = id => D.shops.find(s => s.id === id);
 const coupon = id => D.coupons.find(c => c.id === id);
 
 function header() {
-  const nav = [['home','홈'],['prices','오늘의 시세'],['map','시장 지도'],['stores','매장 찾기'],['coupons','쿠폰'],['events','이벤트'],['guide','시장 이야기'],['merchant','상인센터']];
+  const nav = [['home','홈'],['prices','오늘의 시세'],['map','시장 지도'],['stores','매장 찾기'],['coupons','쿠폰'],['events','이벤트'],['guide','시장 이야기'],['merchant','상인센터'],['merchantPreview','입점 준비 매장'],['merchantApply','입점 신청'],['merchantCommunity','커뮤니티']];
   return `<div class="top-notice">가락시장 <b>수산 경매 시세</b>와 신선한 장보기 허브 <span>· 시세·상품은 시연 데이터 · 공식 경매 API 아님</span></div>
   <header class="site-header"><div class="container head-inner">${logo}
     <form class="search-global" id="global-search"><label class="sr-only" for="search-top">매장 또는 상품 검색</label>
