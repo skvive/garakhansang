@@ -1,3 +1,5 @@
+/* On recipe detail pages, mobile users receive the readable one-column experience. */
+(function(){var m=location.pathname.match(/\/recipes\/(recipe-\d{3})\.html$/);if(!m)return;var q=new URLSearchParams(location.search);if(q.get("desktop")==="1")return;var touch=navigator.maxTouchPoints>0&&matchMedia("(pointer:coarse)").matches;var phone=/Android|iPhone|iPad|Mobile/i.test(navigator.userAgent||"")||(touch&&screen.width<=1200);if(phone||q.get("mobile")==="1")location.replace("../mobile/recipe.html?id="+encodeURIComponent(m[1]));})();
 /* GARAK v3 browser UX. No fabricated accounts, sales figures, videos, or server submissions. */
 (()=>{
  'use strict';
