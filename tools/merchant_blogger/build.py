@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Build portable Blogger post, theme, CSV and manifest from merchant JSON. No Google account writes."""
-import argparse,csv,html,json
+import argparse,csv,html,json,re
 from pathlib import Path
 from collections import defaultdict
 from urllib.parse import quote
@@ -13,7 +13,7 @@ def image_link(path,origin):
     if not path or '://' in path or path.startswith(('/', '\\','..')):raise ValueError('Unsupported image path '+str(path))
     return origin.rstrip('/')+'/'+path
 def normalized(source):
-    if source['id'] not in MERCHANTS:raise ValueError('Unknown merchant')
+    if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',source.get('id','')):raise ValueError('Invalid merchant id')
     loc=source['location'];phone=source.get('phone') or source.get('contact',{}).get('display') or ''
     menus=[]
     for m in source['menus']:
@@ -23,6 +23,8 @@ def normalized(source):
                           screenshot=m.get('sourceScreenshot','')))
     if len(set(x['id'] for x in menus))!=len(menus):raise ValueError('Duplicate IDs')
     images=source.get('images',{})
+    if source['id'] not in MERCHANTS and not images.get('storefront'):
+        raise ValueError('New merchants require a verified storefront image path')
     return dict(id=source['id'],name=source['name'],phone=phone,address=loc.get('address') or source.get('address'),
                 building=loc.get('building','가락몰 판매동'),floor=loc.get('floor','1F'),
                 unit=loc.get('unit','확인 필요'),unit_unverified=loc.get('unitStatus')=='external_listing_not_field_verified',
@@ -70,7 +72,7 @@ def build_theme(m,origin):
     src=(FRONT/'blogger/yonggi-susan-theme-draft.xml').read_text()
     src=src.replace('용기수산',escape(m['name']))
     src=src.replace('yonggi-susan.html',escape(m['id'])+'.html')
-    src=src.replace('yonggi-susan-storefront.webp',escape(m['id'])+'-storefront.webp')
+    src=src.replace('assets/merchant/yonggi-susan-storefront.webp',escape(m['storefront']))
     src=src.replace('24가지',str(len(m['menus']))+'가지')
     src=src.replace('010-3233-3695',escape(m['phone'] or '전화 확인 필요'))
     src=src.replace('01032333695',escape(m['phone'].replace('-','')))
@@ -79,8 +81,8 @@ def build_theme(m,origin):
         src=src.replace('활어회 · 모둠회 · 오마카세 · 계절 수산 정보','가락몰 수산 · 제철 회 · 메뉴 안내')
     ET.fromstring(src)
     return src
-def build(merchant,out,origin):
-    src=FRONT/'merchant'/ (merchant+'.json')
+def build(merchant,out,origin,source_json=None):
+    src=Path(source_json) if source_json else FRONT/'merchant'/ (merchant+'.json')
     m=normalized(json.loads(src.read_text(encoding='utf-8')))
     out.mkdir(parents=True,exist_ok=True)
     (out/'post.html').write_text(build_post(m,origin),encoding='utf-8')
@@ -103,8 +105,11 @@ def build(merchant,out,origin):
         '이 도구는 파일만 생성하며 게시/테마 적용은 수행하지 않습니다.\n',encoding='utf-8')
     return manifest
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--merchant',required=True,choices=MERCHANTS)
+    p=argparse.ArgumentParser();p.add_argument('--merchant',required=True)
     p.add_argument('--out');p.add_argument('--origin',default='https://garakmall.lexid.site')
+    p.add_argument('--source-json',help='External merchant JSON file for a new seller')
     a=p.parse_args();out=Path(a.out) if a.out else ROOT/'dist/blogger'/a.merchant
-    print(json.dumps(build(a.merchant,out,a.origin),ensure_ascii=False,indent=2))
+    info=build(a.merchant,out,a.origin,source_json=a.source_json)
+    if info['merchant_id']!=a.merchant: raise ValueError('Merchant ID mismatch with source JSON')
+    print(json.dumps(info,ensure_ascii=False,indent=2))
 if __name__=='__main__': main()
