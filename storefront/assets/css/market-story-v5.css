@@ -15,3 +15,19 @@ html{scroll-padding-top:110px}body{background:#fbfcfc;color:#172d3c;font-size:14
 
 .callout h2,.callout .eyebrow{color:white!important}.callout p{color:#d3e5ee!important}.story-hero .btn.ghost{background:#fff;color:#0a2b43!important}
 @media(max-width:720px){.header .header-actions .nav-mobile[data-menu]{display:inline-flex!important;align-items:center;justify-content:center;min-width:38px}}
+
+
+/* 2026-11 mobile/design QA: recipe hero should not vertically center a large photo
+   against a short heading. Preserve reading order and reduce dead space. */
+.recipe-detail-hero{padding-top:32px;padding-bottom:40px}
+.recipe-detail-layout{align-items:start;grid-template-columns:minmax(0,1fr) minmax(0,.93fr);gap:clamp(22px,3.5vw,44px)}
+.recipe-detail-layout>div:first-child{padding-top:22px}
+.recipe-cover img{width:100%;height:clamp(245px,33vw,430px);aspect-ratio:4/3;object-fit:cover;object-position:center}
+@media(max-width:720px){
+ .recipe-detail-hero{padding:22px 0 32px}
+ .recipe-detail-layout{grid-template-columns:minmax(0,1fr);gap:20px}
+ .recipe-detail-layout>div:first-child{padding-top:0}
+ .recipe-cover img{height:235px;aspect-ratio:16/10}
+ .recipe-detail-layout h1{font-size:clamp(29px,7.6vw,37px)}
+ .recipe-intro{font-size:15px}
+}
