@@ -97,7 +97,7 @@ D.coupons = couponsFromShops(D.shops);
 /* 현장 확인 매장은 시연 매장과 구분합니다. 실제 결제와 제휴는 미연동입니다. */
 D.shops.unshift({
   id:'ilwol-susan', name:'일월수산', category:'수산', catKey:'seafood', zone:'수산',
-  fieldMerchant:true, photo:'assets/editorial/seafood.webp',
+  fieldMerchant:true, photo:'assets/merchant/ilwol-susan-storefront.webp',
   intro:'가락몰 판매동 1층 수산 C-15호 · 실제 간판 확인 · 제공 사진 기준 메뉴판',
   products:["프리미엄(특수부위) 활모듬회","활새우회(손질 O) + 찍먹 소스","1인 모듬회(4~5구성)","(1인) 들깨전어회","활새우(손질 X)","들깨전어회","들깨전어모듬회","자연산 대농어(2인분)","최고급 생참치회(스페인)","생참치 트리오회","생참치 활모듬회","꽃게탕용 밀키트","서해산 가을 활암꽃게(특대)","치즈폭탄 갈릭마요 꽃게찜(특대)","지구방어회(특대방어)","지구방어생참치회","지구방어모듬회","지구방광참회","지구방어삼색회","지구방광우회","지구방광연회","줄무늬전갱이회","줄무늬전갱이모듬회","줄무늬전갱이삼색회","(1인) 대광어회","(1인) 연어회","(1인) 세꼬시회","(1인) 광어참돔회","(1인) 광어우럭회","(1인) 광어연어회","생물의 끝 - 시그니처모듬회","조합의 끝 - 오마카세","들기름 깻잎 막회","쥐치 1kg","A급 러시아 프리모리 대게","A급 러시아 레드킹크랩","연어 타르타르 소스"].map((name,i)=>({name,slug:'ilwol-menu-'+i})),
   coupon:null
@@ -145,7 +145,7 @@ function lowerNav() {
 function title(eyebrow,h,p=''){return `<div class="section-title"><div><span class="eyebrow">${eyebrow}</span><h2>${h}</h2>${p?`<p>${p}</p>`:''}</div></div>`;}
 function card(s) {
   const photo = s.fieldMerchant ? s.photo : ((CAT[s.catKey] && CAT[s.catKey].photo) || s.photo);
-  return `<article class="shop-card"><a class="thumb" href="${shopHref(s)}"><img src="${photo}" alt="${safe(s.category)} 대표 이미지" loading="lazy"><span class="photo-label">${s.fieldMerchant ? '현장 확인 업체 · 이미지 예시' : '시연 이미지'}</span></a>
+  return `<article class="shop-card"><a class="thumb" href="${shopHref(s)}"><img src="${photo}" alt="${s.fieldMerchant ? '일월수산 C-15 실제 매장 사진' : safe(s.category) + ' 대표 이미지'}" loading="lazy"><span class="photo-label">${s.fieldMerchant ? '일월수산 실제 매장 · 사진 크롭' : '시연 이미지'}</span></a>
     <div class="shop-card-body"><small>${safe(s.category)} · ${safe(s.products.length)}개 상품</small>
     <div class="card-row"><a class="shop-title" href="${shopHref(s)}">${safe(s.name)}</a>
     <button class="like ${liked().includes(s.id)?'is-liked':''}" data-like="${safe(s.id)}" type="button" aria-label="관심 매장">${liked().includes(s.id)?'♥':'♡'}</button></div>

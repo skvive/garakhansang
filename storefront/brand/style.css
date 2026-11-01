@@ -145,3 +145,4 @@ body,h1,h2,h3,p,a,button,li,td,th,.quote-bubble,.page-hero h1{
   .page-mascot{width:128px;right:-18px;bottom:-16px}
   .join-mascot{width:150px;opacity:.7}
 }
+\n/* Ilwol Susan: show the actual C-15 storefront crop, not the generic seafood photo. */\n.shop-card .thumb img[src*="ilwol-susan-storefront.webp"]{object-position:50% 52%;}\n
