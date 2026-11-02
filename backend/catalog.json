@@ -1,0 +1,285 @@
+{
+  "markets": [
+    {
+      "id": "garak",
+      "name": "가락시장",
+      "caption": "과일·채소·정육·식자재",
+      "icon": "🥬",
+      "theme": "가락시장 채소부터 정육까지, 한 장바구니로",
+      "delivery": "신선식품 공동배송",
+      "min": 3900,
+      "add": 600,
+      "cold": 1000,
+      "flag": "합배송 실증 1순위",
+      "types": [
+        "채소·과일",
+        "정육",
+        "수산",
+        "반찬"
+      ]
+    },
+    {
+      "id": "noryang",
+      "name": "노량진수산시장",
+      "caption": "활어·회·해산물",
+      "icon": "🐟",
+      "theme": "횟감 손질하고, 냉장으로 신선하게",
+      "delivery": "냉장 포장 · 손질 옵션",
+      "min": 5200,
+      "add": 800,
+      "cold": 1000,
+      "flag": "수산물 특화",
+      "types": [
+        "횟감",
+        "수산",
+        "갑각류"
+      ]
+    },
+    {
+      "id": "nam",
+      "name": "남대문시장",
+      "caption": "반찬·먹거리·생활잡화",
+      "icon": "🍱",
+      "theme": "시장 골목의 맛과 생활을 바로 주문",
+      "delivery": "반찬·먹거리 근거리 배송",
+      "min": 3500,
+      "add": 600,
+      "cold": 0,
+      "flag": "먹거리 & 잡화",
+      "types": [
+        "반찬",
+        "먹거리",
+        "잡화"
+      ]
+    },
+    {
+      "id": "dong",
+      "name": "동대문시장",
+      "caption": "원단·부자재·소상공인",
+      "icon": "🧵",
+      "theme": "원단 한 마부터 도매 주문까지",
+      "delivery": "원단 B2B · 퀵배송",
+      "min": 5200,
+      "add": 1300,
+      "cold": 0,
+      "flag": "사업자 B2B · 견적",
+      "types": [
+        "원단",
+        "부자재",
+        "B2B"
+      ]
+    },
+    {
+      "id": "region",
+      "name": "지역 명소시장",
+      "caption": "전국 특산물·로컬 먹거리",
+      "icon": "🏞️",
+      "theme": "전국 전통시장의 특산물을 한자리에",
+      "delivery": "택배형 주문 · 지역별 별도 배송",
+      "min": 4500,
+      "add": 4500,
+      "cold": 0,
+      "flag": "전국 특산품",
+      "types": [
+        "특산물",
+        "먹거리"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "g1",
+      "m": "garak",
+      "store": "가락청과 (샘플)",
+      "name": "당일 딸기 500g",
+      "cat": "채소·과일",
+      "price": 9900,
+      "img": "product-ttalgi.webp",
+      "tag": "당일 입고",
+      "cold": 1
+    },
+    {
+      "id": "g2",
+      "m": "garak",
+      "store": "가락정육 (샘플)",
+      "name": "한우 등심 300g",
+      "cat": "정육",
+      "price": 29900,
+      "img": "product-deungsim.webp",
+      "tag": "신선 정육",
+      "cold": 1
+    },
+    {
+      "id": "g3",
+      "m": "garak",
+      "store": "가락수산 (샘플)",
+      "name": "손질 광어회 400g",
+      "cat": "수산",
+      "price": 29900,
+      "img": "product-gwang-eo.webp",
+      "tag": "손질 가능",
+      "cold": 1,
+      "process": 1
+    },
+    {
+      "id": "g4",
+      "m": "garak",
+      "store": "가락청과 (샘플)",
+      "name": "샤인머스캣 1송이",
+      "cat": "채소·과일",
+      "price": 14900,
+      "img": "product-shine-muscat.webp",
+      "tag": "과일",
+      "cold": 0
+    },
+    {
+      "id": "g5",
+      "m": "garak",
+      "store": "가락반찬 (샘플)",
+      "name": "한상 채소 쌈 모둠",
+      "cat": "반찬",
+      "price": 7900,
+      "img": "product-ssam-mo-dum.webp",
+      "tag": "오늘의 장보기",
+      "cold": 1
+    },
+    {
+      "id": "n1",
+      "m": "noryang",
+      "store": "노량진 OO수산 (샘플)",
+      "name": "광어회 400g",
+      "cat": "횟감",
+      "price": 29900,
+      "img": "product-gwang-eo.webp",
+      "tag": "손질 선택",
+      "cold": 1,
+      "process": 1
+    },
+    {
+      "id": "n2",
+      "m": "noryang",
+      "store": "노량진 바다상회 (샘플)",
+      "name": "국산 전복 5미",
+      "cat": "수산",
+      "price": 23900,
+      "img": "product-jeonbok.webp",
+      "tag": "냉장 배송",
+      "cold": 1
+    },
+    {
+      "id": "n3",
+      "m": "noryang",
+      "store": "노량진 바다상회 (샘플)",
+      "name": "킹크랩 1kg 기준",
+      "cat": "갑각류",
+      "price": 69900,
+      "img": "product-king-crab-a.webp",
+      "tag": "실중량 정산 필요",
+      "cold": 1,
+      "process": 1
+    },
+    {
+      "id": "n4",
+      "m": "noryang",
+      "store": "노량진 OO수산 (샘플)",
+      "name": "참돔회 350g",
+      "cat": "횟감",
+      "price": 32900,
+      "img": "product-chamdom-hoe.webp",
+      "tag": "손질 선택",
+      "cold": 1,
+      "process": 1
+    },
+    {
+      "id": "s1",
+      "m": "nam",
+      "store": "남대문 반찬집 (샘플)",
+      "name": "해물 매운탕 밀키트",
+      "cat": "반찬",
+      "price": 12900,
+      "img": "product-hoe-maeuntang.webp",
+      "tag": "우리 시장 먹거리",
+      "cold": 1
+    },
+    {
+      "id": "s2",
+      "m": "nam",
+      "store": "남대문 분식집 (샘플)",
+      "name": "모둠 간식 세트",
+      "cat": "먹거리",
+      "price": 8900,
+      "img": "product-corndog-cheese.webp",
+      "tag": "시장 먹거리",
+      "cold": 0
+    },
+    {
+      "id": "s3",
+      "m": "nam",
+      "store": "남대문 반찬집 (샘플)",
+      "name": "손질 바지락 500g",
+      "cat": "반찬",
+      "price": 8900,
+      "img": "product-bajirak.webp",
+      "tag": "반찬 재료",
+      "cold": 1
+    },
+    {
+      "id": "d1",
+      "m": "dong",
+      "store": "동대문 원단상회 (샘플)",
+      "name": "면 100% 원단 1마",
+      "cat": "원단",
+      "price": 5200,
+      "img": "../editorial/merchant.webp",
+      "tag": "B2B 견적 가능",
+      "cold": 0,
+      "b2b": 1
+    },
+    {
+      "id": "d2",
+      "m": "dong",
+      "store": "동대문 원단상회 (샘플)",
+      "name": "프리미엄 원단 1마",
+      "cat": "원단",
+      "price": 8900,
+      "img": "../editorial/market.webp",
+      "tag": "퀵배송",
+      "cold": 0,
+      "b2b": 1
+    },
+    {
+      "id": "d3",
+      "m": "dong",
+      "store": "동대문 부자재 (샘플)",
+      "name": "부자재 꾸러미 1세트",
+      "cat": "부자재",
+      "price": 3900,
+      "img": "../editorial/merchant.webp",
+      "tag": "소량 주문",
+      "cold": 0,
+      "b2b": 1
+    },
+    {
+      "id": "r1",
+      "m": "region",
+      "store": "제주 시장 상인 (샘플)",
+      "name": "제주 감귤 2kg",
+      "cat": "특산물",
+      "price": 15900,
+      "img": "product-gamgyul.webp",
+      "tag": "택배형 주문",
+      "cold": 0
+    },
+    {
+      "id": "r2",
+      "m": "region",
+      "store": "지역 청과상 (샘플)",
+      "name": "국산 과일 선물 꾸러미",
+      "cat": "특산물",
+      "price": 29900,
+      "img": "fruit.webp",
+      "tag": "산지 특산물",
+      "cold": 0
+    }
+  ]
+}

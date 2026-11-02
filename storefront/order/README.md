@@ -11,7 +11,7 @@ python -m http.server 8768
 # http://localhost:8768/order/
 ```
 
-GitHub 기본 운영 본문 페이지는 건드리지 않습니다. CDN·외부 라이브러리 불필요. `order/`의 이미지 참조는 기존 `storefront/assets/`의 브랜드 및 상품 에셋입니다.
+GitHub 기본 운영 본문 페이지는 건드리지 않습니다. CDN·외부 라이브러리 불필요. `order/`의 이미지 참조는 기존 `storefront/assets/`의 브랜드 및 상품 에셋입니다. 승인 레드 A 오토바이 마스코트 `mascot-rider.webp`와 앱 아이콘 `approved-app-icon.webp`는 신규 자산입니다.
 
 ## 구현 상태
 - 화면: 홈, 시장 선택, 시장별 카탈로그, 검색, 상품 상세, 쿠폰센터, 장바구니, My/시연 주문 내역, 도움말 모달.

@@ -85,7 +85,7 @@ const couponDiscount=t=>couponResult(t).discount;
 function renderCart(){const t=calc();if(!state.cart.length)return `<div class="empty"><div class="big">🛵</div><h3>장바구니가 비어 있어요</h3><p>시장 상품을 담고 여러 점포를 한 번에 장보기해 보세요.</p><button class="primary" data-tab="home">시장 상품 둘러보기</button></div>`;
 const groups=[...t.groups].map(([id,ls])=>`<div class="cart-group"><h3>${market(id).icon} ${market(id).name} · ${market(id).delivery}</h3>${ls.map(x=>`<div class="cart-item"><img src="${photo(x.p)}" alt=""><div><b>${safe(x.p.name)}</b><p>${safe(x.p.store)}${x.proc==='sliced'?' · 회 슬라이스 (+3,000원)':''}</p><span class="cart-item-price">${money(priceOf(x)*x.qty)}</span></div><div class="stepper"><button data-qty="${x.p.id}" data-proc="${x.proc||''}" data-delta="-1" aria-label="${safe(x.p.name)} 수량 감소">−</button><span>${x.qty}</span><button data-qty="${x.p.id}" data-proc="${x.proc||''}" data-delta="1" aria-label="${safe(x.p.name)} 수량 증가">＋</button></div></div>`).join('')}<div class="total-line" style="padding:12px 14px;margin:0"><span>이 시장 배송비 (예시)</span><b>${money(shippingFor(id,ls))}</b></div></div>`).join('');
 const discount=couponDiscount(t);return `<section class="section"><div class="section-h"><h2>🛒 공동장바구니</h2><button class="minor" data-clear-cart style="border:0;background:transparent">전체 비우기</button></div><p class="title-desc">같은 시장 여러 점포는 공동배송비로 계산합니다. 서로 다른 시장은 각각 배송합니다.</p>${groups}</section><section class="section"><div class="section-h"><h2>쿠폰 적용</h2><button class="minor" data-tab="coupons" style="border:0;background:none">쿠폰 받기 ›</button></div><div class="options"><label><span>사용할 시연 쿠폰</span><select id="couponSelect" aria-label="쿠폰 선택"><option value="">사용하지 않음</option>${COUPONS.filter(c=>state.claimed.includes(c.id)).map(c=>`<option value="${c.id}" ${state.coupon===c.id?'selected':''}>${safe(c.title)}</option>`).join('')}</select></label></div></section><div class="totals"><div class="total-line"><span>상품금액</span><b>${money(t.subtotal)}</b></div><div class="total-line"><span>시장별 배송비 (시연)</span><b>${money(t.shipping)}</b></div><div class="total-line"><span>쿠폰 할인</span><b>−${money(discount)}</b></div>${t.savings>0?`<div class="savings">✓ 점포별 개별배송 대비 예상 절약 ${money(t.savings)} (시연 가정)</div>`:''}<div class="total-line strong"><span>합계</span><b>${money(t.subtotal+t.shipping-discount)}</b></div><p class="delivery-note">계산식: 같은 시장 기본 배송비 + 추가 점포비 + 필요시 냉장 포장비. 실제 운영 배송비·묶음 가능 여부는 미정입니다.</p></div><div class="cart-bottom"><button class="primary full" data-checkout>모의 주문하기 · ${money(t.subtotal+t.shipping-discount)}</button></div>`}
-function renderMy(){return `<section class="section"><h2>My 가락한상</h2><p class="sub">시연 앱이므로 계정·개인정보·실제 결제 정보는 수집하지 않습니다.</p><div class="my-card"><h3>🛵 전통시장의 신선함을 집까지!</h3><p>가락한상 캐릭터와 함께 우리 동네 시장을 응원하세요.</p></div><div class="my-card"><h3>내 시연 정보</h3><p>받은 쿠폰 ${state.claimed.length}장 · 장바구니 ${state.cart.length}종 · 시연 주문 ${state.orders.length}건</p></div><div class="section-h"><h2>시연 주문 내역</h2></div>${state.orders.length?state.orders.map(o=>`<article class="order-card"><div class="map-badge">접수 시연 · 실제 배송 아님</div><h3>${safe(market(o.market).name)} · ${money(o.total)}</h3><p>${safe(o.date)} · ${o.count}개 상품 · 주문번호 ${safe(o.id)}</p></article>`).join(''):'<div class="empty"><div class="big">📦</div><h3>아직 시연 주문이 없어요</h3><p>상품을 담아 주문 흐름을 테스트해 보세요.</p></div>'}</section>`}
+function renderMy(){return `<section class="section"><h2>My 가락한상</h2><p class="sub">시연 앱이므로 계정·개인정보·실제 결제 정보는 수집하지 않습니다.</p><div class="my-card"><h3>🛵 전통시장의 신선함을 집까지!</h3><p>가락한상 캐릭터와 함께 우리 동네 시장을 응원하세요.</p></div><div class="my-card"><h3>내 시연 정보</h3><p>받은 쿠폰 ${state.claimed.length}장 · 장바구니 ${state.cart.length}종 · 시연 주문 ${state.orders.length}건</p></div><div class="section-h"><h2>시연 주문 내역</h2></div>${state.orders.length?state.orders.map(o=>`<article class="order-card"><div class="map-badge">${safe(o.status||'접수 시연')} · 실제 배송 아님</div><h3>${safe(market(o.market).name)} · ${money(o.total)}</h3><p>${safe(o.date)} · ${o.count}개 상품 · 주문번호 ${safe(o.id)}</p></article>`).join(''):'<div class="empty"><div class="big">📦</div><h3>아직 시연 주문이 없어요</h3><p>상품을 담아 주문 흐름을 테스트해 보세요.</p></div>'}</section>`}
 function renderSearch(){const q=state.search.trim().toLowerCase();const arr=q?ITEMS.filter(p=>(p.name+' '+p.store+' '+p.cat+' '+market(p.m).name).toLowerCase().includes(q)):ITEMS.filter(p=>p.m===state.market);return `<section class="section"><h2>검색 ${q?'결과':'추천'}</h2><p class="sub">${q?`‘${safe(state.search)}’ 검색 결과 ${arr.length}건`:'시장에서 인기 있는 상품을 찾아보세요.'}</p>${arr.length?`<div class="products">${arr.map(productCard).join('')}</div>`:`<div class="empty"><div class="big">🔍</div><h3>검색 결과가 없습니다</h3><p>다른 시장이나 검색어를 입력해 주세요.</p></div>`}</section>`}
 function render(){updateBadges();const views={home:renderHome,markets:renderMarkets,coupons:renderCoupons,cart:renderCart,my:renderMy,search:renderSearch};$('#mainContent').innerHTML=(views[state.tab]||renderHome)();}
 function add(id,proc=''){const p=ITEMS.find(x=>x.id===id);if(!p)return;const found=state.cart.find(x=>x.id===id&&x.proc===proc);if(found){if(found.qty>=99)return notify('상품당 최대 99개입니다');found.qty++}else state.cart.push({id,qty:1,proc});saveCart();render();notify(`${p.name} 장바구니에 담았어요`)}
@@ -95,16 +95,46 @@ function closeModal(){if($('#modalRoot').innerHTML){$('#modalRoot').innerHTML=''
 function showDetail(id){const p=ITEMS.find(x=>x.id===id);if(!p)return;const m=market(p.m);modal(`<div class="modal-title"><h2>${safe(p.name)}</h2><button class="xbtn" data-close aria-label="닫기">×</button></div><img class="modal-photo" src="${photo(p)}" alt="${safe(p.name)} 상품 시연 이미지"><div style="display:flex;justify-content:space-between;gap:8px;margin:12px 0"><span class="pill">${safe(m.name)}</span><b style="color:var(--red)">${money(p.price)}</b></div><div class="chipset"><span class="tag">${safe(p.store)}</span><span class="tag">${p.cold?'❄ 냉장 보관':'📦 일반 배송'}</span><span class="tag">시연용 상품</span></div><p class="detail-note">${m.delivery}. 상품 이미지·가격·재고·출고시간은 실제 상인 데이터가 아닌 UI 검수용 샘플입니다.</p><div class="options">${p.process?`<label><span>손질 방식</span><select id="procChoice"><option value="">기본 · 손질 없음</option><option value="sliced">회 슬라이스 +3,000원</option></select></label>`:''}${p.b2b?'<div class="tag">🧵 원단·부자재는 실제 재고 단위, 폭, 색상, 최소 주문수량 확인 후 주문하도록 상용화합니다.</div>':''}${p.m==='region'?'<div class="tag">🚚 지역별 별도 택배 · 합배송 불가</div>':''}</div><div class="modal-actions"><button class="secondary" data-close>계속 둘러보기</button><button class="primary" data-add-detail="${id}">장바구니 담기</button></div>`)}
 function showMarketPicker(){modal(`<div class="modal-title"><h2>시장 선택</h2><button class="xbtn" data-close aria-label="닫기">×</button></div><p class="title-desc">지역·상품군에 맞는 시장을 선택하세요. 운영 점포는 현재 시연 데이터입니다.</p>${marketCards()}`)}
 function showHelp(){modal(`<div class="modal-title"><h2>가락한상 오더 안내</h2><button class="xbtn" data-close aria-label="닫기">×</button></div><div class="my-card"><h3>서비스 상태: 디자인·기능 시연</h3><p>실제 가맹점 계약, 주문 접수, 결제, 라이더 배차, 실시간 배송, 할인권 발급, 신선식품 품질 보증이 연결되지 않았습니다. 저장되는 장바구니·시연 주문은 현재 브라우저에만 보관됩니다.</p></div><div class="my-card"><h3>한국 전통시장 특화</h3><p>가락시장 합배송, 노량진 수산물 옵션, 남대문 반찬·먹거리, 동대문 원단 B2B, 전국 특산물 택배를 별도 운영 정책으로 설계했습니다.</p></div><button class="primary full" data-close>확인</button>`)}
-function checkout(){
- const t=calc();if(!state.cart.length)return;
- const {discount,target}=couponResult(t),date=new Date().toLocaleString('ko-KR',{timeZone:'Asia/Seoul'}),lines=[...t.groups];
- for(const [mid,ls] of lines){
-  const sub=ls.reduce((a,x)=>a+priceOf(x)*x.qty,0),ship=shippingFor(mid,ls);
-  state.orders.unshift({id:'DEMO-'+Date.now().toString(36)+'-'+mid,date,market:mid,count:ls.reduce((a,x)=>a+x.qty,0),total:sub+ship-(mid===target?discount:0)});
- }
- state.orders=state.orders.slice(0,30);persist('orders',state.orders);
- state.hasOrdered=true;persist('hasOrdered',true);state.cart=[];saveCart();state.coupon='';persist('coupon','');
- setTab('my');notify(`${lines.length}개 시장별 시연 주문이 저장되었습니다`);
+let checkoutBusy=false;
+async function checkout(){
+ if(checkoutBusy || !state.cart.length)return;
+ checkoutBusy=true;
+ const t=calc(), {discount,target}=couponResult(t);
+ const date=new Date().toLocaleString('ko-KR',{timeZone:'Asia/Seoul'});
+ try{
+  let backend=false;
+  try{const health=await fetch('./api/v1/health',{cache:'no-store'});backend=health.ok;}catch{}
+  if(backend){
+   // Local-only demo server; server recalculates prices, stock and coupon rules.
+   const lines=state.cart.map(x=>({id:x.id,qty:x.qty,proc:x.proc||''}));
+   const payload={lines,coupon_id:state.coupon&&state.claimed.includes(state.coupon)?state.coupon:''};
+   const signature=JSON.stringify(payload);
+   const prev=read('checkoutAttempt',null);
+   const idem=prev?.signature===signature?prev.key:'gho-'+(crypto.randomUUID?.()||Date.now().toString(36)+Math.random().toString(36).slice(2));
+   persist('checkoutAttempt',{signature,key:idem});
+   const resp=await fetch('./api/v1/orders',{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':idem},body:JSON.stringify(payload)});
+   const result=await resp.json();
+   if(!resp.ok)throw Error(result.error||'서버 주문 검증 실패');
+   for(const order of result.orders){
+    const pay=await fetch('./api/v1/orders/'+encodeURIComponent(order.id)+'/mock-pay',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+result.customer_action_token},body:'{}'});
+    if(!pay.ok){const data=await pay.json();if(data.error!=='모의 결제 대기 주문만 처리 가능')throw Error(data.error||'모의 결제 실패')}
+   }
+   for(const o of result.orders){
+    state.orders.unshift({id:o.id,date,market:o.market_id,count:state.cart.filter(x=>ITEMS.find(p=>p.id===x.id)?.m===o.market_id).reduce((v,x)=>v+x.qty,0),total:o.total,status:'모의 결제 완료 (로컬 API)'});
+   }
+   persist('checkoutAttempt',null);
+  }else{
+   // Offline mode: historical client-only simulation, no server order.
+   for(const [mid,ls] of t.groups){
+    const sub=ls.reduce((a,x)=>a+priceOf(x)*x.qty,0),ship=shippingFor(mid,ls);
+    state.orders.unshift({id:'DEMO-'+Date.now().toString(36)+'-'+mid,date,market:mid,count:ls.reduce((a,x)=>a+x.qty,0),total:sub+ship-(mid===target?discount:0),status:'브라우저 저장 시연'});
+   }
+  }
+  state.orders=state.orders.slice(0,30);persist('orders',state.orders);
+  state.hasOrdered=true;persist('hasOrdered',true);state.cart=[];saveCart();state.coupon='';persist('coupon','');
+  setTab('my');notify('시장별 모의 주문을 저장했습니다. 실제 결제·배송은 진행되지 않습니다');
+ }catch(e){notify('주문 시연 오류: '+String(e.message||e).slice(0,95))}
+ finally{checkoutBusy=false}
 }
 function chooseMarket(id){if(!MARKETS.some(x=>x.id===id))return;state.market=id;state.cat='전체';state.search='';persist('market',id);closeModal();setTab('home')}
 function clickHandler(event){const target=event.target.closest('button');if(!target)return;if(target.hasAttribute('data-close'))return closeModal();if(target.dataset.market)return chooseMarket(target.dataset.market);if(target.dataset.tab)return closeModal(),setTab(target.dataset.tab);if(target.dataset.category){const c=target.dataset.category;if(c==='전체'||market(state.market).types.includes(c))state.cat=c;else{const found=MARKETS.find(m=>m.types.includes(c));if(found){state.market=found.id;persist('market',state.market);state.cat=c}else state.cat='전체'}render();return}
