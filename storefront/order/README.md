@@ -1,27 +1,33 @@
-# 가락한상 오더 | K-Market Delivery UI v1 (DEMO)
+# 가락한상 오더 (Garak Hansang Order) — V3 개발 브랜치
 
-브랜드: **가락한상 오더 (Garak Hansang Order)**, 레드 시안 A 계열 (#B80C1D).
+한국 전통시장 상인 전용 배달·합배송 시연 앱입니다. 공식 레드 A 오토바이 캐릭터 및 기존 가락한상 브랜딩을 유지합니다.
 
 ## 실행
-저장소 `skvive/garakhansang` 루트의 `storefront/order/index.html`으로 독립 설치하도록 구성했습니다. 실행:
 
 ```bash
-cd storefront
-python -m http.server 8768
-# http://localhost:8768/order/
+python backend/server.py --port 8768
 ```
 
-GitHub 기본 운영 본문 페이지는 건드리지 않습니다. CDN·외부 라이브러리 불필요. `order/`의 이미지 참조는 기존 `storefront/assets/`의 브랜드 및 상품 에셋입니다. 승인 레드 A 오토바이 마스코트 `mascot-rider.webp`와 앱 아이콘 `approved-app-icon.webp`는 신규 자산입니다.
+- 고객: http://127.0.0.1:8768/order/
+- 운영: http://127.0.0.1:8768/order/ops.html
+- 운영 콘솔에 **로컬 서버 터미널에 표시되는 관리자 토큰**을 입력합니다. 코드를 수정하여 고정 비밀번호를 넣지 마세요.
 
-## 구현 상태
-- 화면: 홈, 시장 선택, 시장별 카탈로그, 검색, 상품 상세, 쿠폰센터, 장바구니, My/시연 주문 내역, 도움말 모달.
-- 특화: 가락시장 공동장보기, 노량진 수산물 냉장/손질, 남대문 먹거리, 동대문 원단/B2B 안내, 전국 특산품 택배.
-- 쿠폰: 시장·최소 주문금액·첫 주문·최대 할인·복수 할인 제한을 재계산하는 **클라이언트 시연 로직**.
-- 합배송: 같은 시장의 서로 다른 점포에만 공동배송비 계산. 다른 시장은 별도 배송. 예시 계산식으로 실제 요금 아님.
-- 시연 주문: localStorage 저장만 수행. 서버 주문 생성·결제·배차·입점 계약 등은 없음.
+## 테스트
 
-## 상용화 전 막힌 단계
-실제 상인 동의/사업자 인증, 실재고·가격 승인, 알레르겐/원산지/중량 표시, 주문 분할 및 재고 잠금, 국내 PG, 개인정보보호, 배차·배송파트너, 냉장/식품 안전 및 취소/환불 기준, 이벤트 예산, 백엔드 멱등성·원장 검증.
+```bash
+python -m unittest discover -s tests -p 'gho_test_domain.py' -v
+python tests/gho_http_api_qa.py
+```
 
-## 주의
-샘플 상호명·가격·배송비·쿠폰·재고·평가는 허구·시연용입니다. 사용자 생성 콘텐츠, PII, 실제 결제정보는 저장하지 않습니다.
+브라우저 UI 검사는 Playwright와 Chromium이 설치된 로컬 환경에서 `python tests/gho_browser_qa.py`로 실행하며, 브라우저→HTTP 서버의 종단간 테스트가 아니라 Python 도메인 브리지 기반의 렌더링 검사입니다.
+
+## 실제 지원 범위
+
+- 시장별 상품/상인, 서버 가격 검증, 시장별 합배송 견적, 쿠폰 시연, 재고 차감
+- 상인 신청/승인, 가상 결제, 점포 준비, 공동집하, 라이더 배정/배송완료 모의 흐름
+- 로컬 운영 토큰, 고객별 주문 접근 토큰, Origin 제한
+- Neon 개발 브랜치 `dev-garak-hansang-order-20261102`의 `gho` 스키마 적용 검증
+
+**아직 없는 것:** Neon DB에 실제 주문 저장, Neon Auth, 실결제/환불, 위치 추적, Android APK, 운영 배포. 현재 API는 **SQLite 로컬 시연**만 지원합니다.
+
+상세: [V3 인수인계](docs/PHASE3_DEV_HANDOFF.md), [QA](docs/QA_V3.md), [2차 명세서](docs/PHASE2_DEV_SPEC.md).
