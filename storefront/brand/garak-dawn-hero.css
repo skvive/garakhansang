@@ -1,0 +1,93 @@
+/* Garak Mall hero: sourced from the user's https://garak.lexid.site/garak/hero-dawn.webp
+   Adapted as a locally hosted AVIF; do not duplicate the source site's overlaid words.
+   Original market.webp remains a browser fallback. */
+.hero {
+  min-height: clamp(520px, 43vw, 630px);
+  background-image:
+    linear-gradient(90deg,
+      rgba(6, 26, 26, .83) 0%,
+      rgba(6, 32, 29, .64) 29%,
+      rgba(6, 32, 29, .31) 55%,
+      rgba(6, 32, 29, .04) 86%),
+    url('../assets/editorial/market.webp');
+  background-size: cover;
+  background-position: center 47%;
+}
+@supports (background-image: url('../assets/editorial/garak-market-dawn-hero.avif')) {
+  .hero {
+    background-image:
+      linear-gradient(90deg,
+        rgba(6, 26, 26, .83) 0%,
+        rgba(6, 32, 29, .64) 29%,
+        rgba(6, 32, 29, .31) 55%,
+        rgba(6, 32, 29, .04) 86%),
+      url('../assets/editorial/garak-market-dawn-hero.avif');
+  }
+}
+.hero-art { display: none !important; }
+.hero-grid {
+  grid-template-columns: minmax(0, 1fr);
+  min-height: clamp(520px, 43vw, 630px);
+}
+.hero-copy {
+  position: relative;
+  max-width: min(740px, 75%);
+  padding-block: 105px 113px;
+}
+.hero h1 {
+  max-width: 750px;
+  font-size: clamp(39px, 4.9vw, 71px);
+  text-shadow: 0 2px 16px rgba(1, 18, 20, .32);
+}
+.hero h1 em { color: #f6e09b; }
+.hero-copy p { max-width: 620px; text-shadow: 0 1px 8px rgba(4, 20, 20, .4); }
+.hero-kicker { color: #f2dbac; }
+.hero-labels { color: #f4f1e6; text-shadow: 0 1px 5px rgba(4, 20, 20, .6); }
+.hero:after { height: 80px; background: linear-gradient(transparent,rgba(5,31,27,.16)); }
+@media(max-width: 1020px) {
+ .hero-grid { grid-template-columns: minmax(0, 1fr); }
+ .hero-copy { max-width: min(620px, 78%); }
+}
+@media(max-width: 700px) {
+  .hero {
+    min-height: 545px;
+    background-image:
+      linear-gradient(180deg,
+        rgba(7, 28, 25, .45) 0%,
+        rgba(7, 28, 25, .57) 40%,
+        rgba(4, 25, 22, .9) 100%),
+      url('../assets/editorial/market.webp');
+    background-position: 63% center;
+  }
+  @supports (background-image: url('../assets/editorial/garak-market-dawn-hero.avif')) {
+    .hero {
+      background-image:
+        linear-gradient(180deg,
+          rgba(7, 28, 25, .45) 0%,
+          rgba(7, 28, 25, .57) 40%,
+          rgba(4, 25, 22, .9) 100%),
+        url('../assets/editorial/garak-market-dawn-hero.avif');
+    }
+  }
+  .hero-grid { min-height: 545px; }
+  .hero-copy {
+    max-width: 100%;
+    padding: 68px 0 116px;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 9vw, 55px);
+    line-height: 1.16;
+  }
+  .hero-copy p { font-size: 14px; line-height: 1.7; }
+  .hero-ctas .btn { min-height: 44px; }
+  .hero-labels { gap: 9px; font-size: 11px; }
+}
+@media(max-width: 375px) {
+  .hero { min-height: 580px; }
+  .hero-grid { min-height: 580px; }
+  .hero-copy { padding-top: 62px; }
+  .hero h1 { font-size: 36px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero,.hero-copy { transition: none; }
+}
