@@ -3,6 +3,8 @@ package site.lexid.garakhansang.order;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.os.Build;
+import android.view.WindowInsets;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -59,6 +61,17 @@ public class MainActivity extends Activity {
     private void open(String p){page=p;render();}
     private void render(){
         app=column();app.setBackgroundColor(CREAM);setContentView(app);
+        // Android 15+ enforces edge-to-edge for target SDK 35+. Respect system bars
+        // so the cart button and navigation labels do not overlap system UI.
+        if (Build.VERSION.SDK_INT >= 35) {
+            app.setOnApplyWindowInsetsListener((view, insets) -> {
+                android.graphics.Insets bars = insets.getInsets(
+                    WindowInsets.Type.statusBars() | WindowInsets.Type.navigationBars());
+                view.setPadding(0, bars.top, 0, bars.bottom);
+                return insets;
+            });
+            app.requestApplyInsets();
+        }
         header();
         ScrollView sc=new ScrollView(this);sc.setFillViewport(true);sc.setVerticalScrollBarEnabled(false);
         app.addView(sc,new LinearLayout.LayoutParams(-1,0,1));
