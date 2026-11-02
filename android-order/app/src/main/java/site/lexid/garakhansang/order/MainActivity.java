@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.os.Bundle;
 import android.os.Build;
 import android.view.WindowInsets;
+import android.view.WindowInsetsController;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -40,6 +41,13 @@ public class MainActivity extends Activity {
         super.onCreate(b);
         getWindow().setStatusBarColor(RED);
         getWindow().setNavigationBarColor(CREAM);
+        // Android 15+ uses a transparent status bar. Dark status icons are readable on cream.
+        if (Build.VERSION.SDK_INT >= 35) {
+            WindowInsetsController controller = getWindow().getInsetsController();
+            if (controller != null) controller.setSystemBarsAppearance(
+                WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
+                WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS);
+        }
         prefs = getSharedPreferences("order_preview",MODE_PRIVATE);
         for (int i=0;i<cart.length;i++) cart[i]=Math.max(0,Math.min(99,prefs.getInt("q"+i,0)));
         render();

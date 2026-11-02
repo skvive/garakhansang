@@ -75,12 +75,30 @@ jobs:
             adb shell uiautomator dump /sdcard/garakhansang-window.xml
             adb pull /sdcard/garakhansang-window.xml smoke-window.xml
             grep -q '가락한상 오더' smoke-window.xml
+            adb shell input tap 320 2250
+            sleep 2
+            adb shell screencap -p /sdcard/products.png
+            adb pull /sdcard/products.png smoke-products.png
+            adb shell uiautomator dump /sdcard/products.xml
+            adb pull /sdcard/products.xml smoke-products.xml
+            grep -q '상품 탐색' smoke-products.xml
+            adb shell input tap 665 2250
+            sleep 2
+            adb shell screencap -p /sdcard/cart.png
+            adb pull /sdcard/cart.png smoke-cart.png
+            adb shell uiautomator dump /sdcard/cart.xml
+            adb pull /sdcard/cart.xml smoke-cart.xml
+            grep -q '장바구니' smoke-cart.xml
+            adb shell input tap 945 2250
+            sleep 2
+            adb shell screencap -p /sdcard/info.png
+            adb pull /sdcard/info.png smoke-info.png
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: GarakHansang-Order-emulator-smoke
           path: |
-            smoke-home.png
-            smoke-window.xml
+            smoke-*.png
+            smoke-*.xml
           if-no-files-found: ignore
           retention-days: 14
