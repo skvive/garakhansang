@@ -1,0 +1,24 @@
+name: Garak Hansang Order V4 isolated dev tests
+on:
+  push:
+    branches: ['chatgpt/garakhansang-order-20261102']
+    paths:
+      - 'services/order-v4/**'
+      - '.github/workflows/garak-order-v4-ci.yml'
+  workflow_dispatch:
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: services/order-v4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: python -m pip install -r requirements-v4.txt httpx cryptography
+      - run: python -m compileall -q backend tests
+      - run: python -m unittest discover -s tests -v
+      - run: python -m json.tool backend/catalog.json > /dev/null
+      - name: Confirm no real payment integration
+        run: python -c "from backend.api_v4 import app; print(app.title)"
