@@ -1,6 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://garakmall.lexid.site/</loc>
+  </url>
+  <url>
     <loc>https://garakmall.lexid.site/blogger-service.html</loc>
   </url>
   <url>
@@ -22,6 +25,9 @@
     <loc>https://garakmall.lexid.site/community/index.html</loc>
   </url>
   <url>
+    <loc>https://garakmall.lexid.site/community/merchants.html</loc>
+  </url>
+  <url>
     <loc>https://garakmall.lexid.site/coupons.html</loc>
   </url>
   <url>
@@ -29,9 +35,6 @@
   </url>
   <url>
     <loc>https://garakmall.lexid.site/ilwol-susan.html</loc>
-  </url>
-  <url>
-    <loc>https://garakmall.lexid.site/</loc>
   </url>
   <url>
     <loc>https://garakmall.lexid.site/map.html</loc>
@@ -46,7 +49,7 @@
     <loc>https://garakmall.lexid.site/merchant-center.html</loc>
   </url>
   <url>
-    <loc>https://garakmall.lexid.site/merchant-showcase/index.html</loc>
+    <loc>https://garakmall.lexid.site/merchant/index.html</loc>
   </url>
   <url>
     <loc>https://garakmall.lexid.site/prices.html</loc>
