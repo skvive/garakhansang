@@ -43,3 +43,44 @@ jobs:
             android-order/app/build/outputs/apk/debug/app-debug.apk
             SHA256.txt
           retention-days: 30
+
+  emulator-smoke:
+    needs: android
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: GarakHansang-Order-debug-apk
+      - name: Enable KVM
+        run: |
+          if test -e /dev/kvm; then sudo chmod 666 /dev/kvm; fi
+      - name: Install, launch and inspect on Android 15 emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_7
+          emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
+          script: |
+            adb install -r android-order/app/build/outputs/apk/debug/app-debug.apk
+            adb shell am start -W -n site.lexid.garakhansang.order/.MainActivity
+            sleep 8
+            adb shell pidof site.lexid.garakhansang.order
+            adb shell screencap -p /sdcard/garakhansang-home.png
+            adb pull /sdcard/garakhansang-home.png smoke-home.png
+            adb shell uiautomator dump /sdcard/garakhansang-window.xml
+            adb pull /sdcard/garakhansang-window.xml smoke-window.xml
+            grep -q '가락한상 오더' smoke-window.xml
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: GarakHansang-Order-emulator-smoke
+          path: |
+            smoke-home.png
+            smoke-window.xml
+          if-no-files-found: ignore
+          retention-days: 14
