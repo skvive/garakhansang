@@ -24,14 +24,14 @@ python -m unittest discover -s tests -v
 
 ```bash
 GHO_V4_MODE=isolated-dev \
-GHO_NEON_DSN='postgresql://...@...neon.tech/neondb?sslmode=require' \
+GHO_NEON_DSN='postgresql://...@ep-gentle-wind-b5ir41pn.c-7.us-east-2.aws.neon.tech/neondb?sslmode=verify-full' \
 GHO_OIDC_ISSUER='https://<your-approved-oidc-issuer>' \
 GHO_OIDC_JWKS_URL='https://<your-approved-oidc-jwks-url>' \
 GHO_OIDC_AUDIENCE='gho-order-v4' \
 uvicorn backend.api_v4:app --host 127.0.0.1 --port 8780
 ```
 
-설정값은 서버 환경에만 저장하고, 커밋하거나 브라우저에 전달하지 않습니다. `GHO_NEON_DSN`이 없거나 `GHO_V4_MODE`가 `isolated-dev`가 아니면 DB 접근을 막습니다. **현재 실행 환경에는 psycopg 드라이버와 외부 Neon 연결이 없어, Python→Neon HTTP end-to-end는 별도로 검증해야 합니다.** Neon connector로 실행한 SQL의 실제 저장·취소는 `docs/NEON_V4_QA.md`에 기록했습니다.
+Neon 접속은 개발 브랜치의 직접 연결 호스트로 고정되어 있으며 다른 Neon 브랜치 호스트는 거부합니다. 설정값은 서버 환경에만 저장하고, 커밋하거나 브라우저에 전달하지 않습니다. `GHO_NEON_DSN`이 없거나 `GHO_V4_MODE`가 `isolated-dev`가 아니면 DB 접근을 막습니다. **현재 실행 환경에는 psycopg 드라이버와 외부 Neon 연결이 없어, Python→Neon HTTP end-to-end는 별도로 검증해야 합니다.** Neon connector로 실행한 SQL의 실제 저장·취소는 `docs/NEON_V4_QA.md`에 기록했습니다.
 
 ## API
 

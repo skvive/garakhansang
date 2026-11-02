@@ -81,6 +81,18 @@ class TestV4(unittest.TestCase):
             with self.assertRaises(repo.StorageUnavailable):
                 with repo.open_db():pass
 
+    def test_rejects_production_neon_endpoint_even_in_dev_mode(self):
+        with patch.dict(os.environ,{'GHO_V4_MODE':'isolated-dev',
+            'GHO_NEON_DSN':'postgres://user:fake@ep-production.c-7.us-east-2.aws.neon.tech/neondb?sslmode=verify-full'}):
+            with self.assertRaises(repo.StorageUnavailable):
+                with repo.open_db():pass
+
+    def test_rejects_unverified_tls_mode(self):
+        with patch.dict(os.environ,{'GHO_V4_MODE':'isolated-dev',
+            'GHO_NEON_DSN':'postgres://user:fake@ep-gentle-wind-b5ir41pn.c-7.us-east-2.aws.neon.tech/neondb?sslmode=require'}):
+            with self.assertRaises(repo.StorageUnavailable):
+                with repo.open_db():pass
+
     def test_oidc_is_fail_closed_without_config(self):
         with patch.dict(os.environ,{'GHO_OIDC_ISSUER':'','GHO_OIDC_AUDIENCE':'','GHO_OIDC_JWKS_URL':''}):
             with self.assertRaises(AuthenticationError):verify_oidc('test')

@@ -6,7 +6,7 @@ import os
 import json
 import uuid
 from contextlib import contextmanager
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit,parse_qs
 
 class StorageUnavailable(Exception):
     pass
@@ -27,10 +27,14 @@ def open_db():
     dsn=os.getenv('GHO_NEON_DSN','')
     if not dsn:
         raise StorageUnavailable('GHO_NEON_DSN is not configured')
-    # Neon-host guard prevents accidentally attaching a local/other production DSN.
+    # Hard-pin V4 to the *verified isolated development branch* endpoint, not just any Neon project.
+    # To rotate compute host, verify the new host via Neon list_branch_computes and update this allowlist.
     parsed=urlsplit(dsn)
-    if parsed.scheme not in ('postgres','postgresql') or not (parsed.hostname or '').endswith('.neon.tech'):
-        raise StorageUnavailable('Only a Neon PostgreSQL endpoint is allowed')
+    DEV_HOST='ep-gentle-wind-b5ir41pn.c-7.us-east-2.aws.neon.tech'
+    if parsed.scheme not in ('postgres','postgresql') or parsed.hostname!=DEV_HOST:
+        raise StorageUnavailable('V4 will only connect to the verified isolated development Neon compute')
+    if parse_qs(parsed.query).get('sslmode',[''])[0]!='verify-full':
+        raise StorageUnavailable('sslmode=verify-full is required for Neon V4 development')
     try:
         import psycopg
         from psycopg.rows import dict_row
