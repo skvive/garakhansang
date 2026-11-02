@@ -1,0 +1,48 @@
+name: Garak Hansang Order V3 CI
+on:
+  push:
+    branches:
+      - chatgpt/garakhansang-order-20261102
+    paths:
+      - "backend/**"
+      - "storefront/order/**"
+      - "tests/gho_*"
+      - "db/gho/**"
+      - ".github/workflows/garak-order-v3-ci.yml"
+  pull_request:
+    paths:
+      - "backend/**"
+      - "storefront/order/**"
+      - "tests/gho_*"
+      - "db/gho/**"
+      - ".github/workflows/garak-order-v3-ci.yml"
+permissions:
+  contents: read
+jobs:
+  order-unit-http:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Python syntax
+        run: python -m compileall -q backend
+      - name: JSON validity
+        run: |
+          python -c "import json; json.load(open('backend/catalog.json',encoding='utf8')); json.load(open('storefront/order/manifest.webmanifest',encoding='utf8'))"
+      - name: JavaScript syntax
+        run: |
+          node --check storefront/order/app.js
+          node --check storefront/order/ops.js
+      - name: Domain unit tests
+        run: python -m unittest discover -s tests -p "gho_test_domain.py" -v
+      - name: Loopback HTTP tests
+        run: python tests/gho_http_api_qa.py
