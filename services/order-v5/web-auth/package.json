@@ -1,0 +1,14 @@
+{
+  "name": "garak-hansang-order-v5-auth",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@neondatabase/auth": "0.7.0-beta"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  }
+}
