@@ -1,0 +1,24 @@
+{
+  "slug": "gwangyang-susan",
+  "name": "광양수산",
+  "market": "가락시장",
+  "category": "수산",
+  "status": "pending",
+  "statusLabel": "입점대기",
+  "verified": false,
+  "publicListing": false,
+  "allowOrder": false,
+  "sourceStoreUrl": "https://tpirates.com/store/0000001217",
+  "sourcePhoto": "기존 가락한상 현장사진에서 4:3 크롭",
+  "photoReviewStatus": "관리자 검토용 내부 이미지. 외부 사이트 이미지 복제·배포 금지",
+  "overview": "가락시장 수산 상인 입점 검토 후보입니다. 기존 샘플 페이지와 외부 점포 링크를 확인하여 관리자 전용으로 관리합니다.",
+  "sampleMenuKeywords": [
+    "모둠회",
+    "전어",
+    "참돔",
+    "대게"
+  ],
+  "caveat": "메뉴·가격·영업시간·매장 호수·입점 권한은 업체와 최종 확인 필요",
+  "createdFrom": "기존 사용자 제공 현장 촬영 자료 및 사용자 제공 외부 URL",
+  "imageApi": "/api/admin/merchant-preview/gwangyang-susan/image"
+}
