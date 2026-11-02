@@ -24,6 +24,7 @@
       url('../assets/editorial/garak-market-dawn-hero.avif');
   }
 }
+.hero-art { display: none !important; }
 .hero-grid {
   grid-template-columns: minmax(0, 1fr);
   min-height: clamp(520px, 43vw, 630px);
