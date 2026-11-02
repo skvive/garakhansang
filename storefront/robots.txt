@@ -1,0 +1,9 @@
+# Garak Hansang - search indexing policy
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /merchant/dashboard.html
+
+Sitemap: https://garakmall.lexid.site/sitemap.xml
