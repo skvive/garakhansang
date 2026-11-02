@@ -1,0 +1,80 @@
+/* User-selected Garak Hansang mobile chrome (2026-11-02)
+   Applied to mobile home, merchant detail and recipe detail via shared HTML.
+   Existing filters, data and routing remain unchanged. */
+:root{--mobile-olive:#174f35;--mobile-cream:#fffbf4}
+body{background:#fffefa}
+.screen{padding-bottom:calc(112px + env(safe-area-inset-bottom));background:#fffefa}
+.topstrip{background:#0c4634;color:#ecf6e9;font-weight:800;letter-spacing:.005em}
+.mhead{
+ height:92px;min-height:92px;padding:10px 12px;
+ background:#fff;border-bottom:1px solid #e5e8dd;
+ display:flex;align-items:center;gap:9px;
+}
+.mhead .brand{display:flex;flex:1 1 auto;min-width:0;align-items:center;overflow:hidden;line-height:1}
+.mhead .brand img{
+ width:100%;height:auto;max-height:75px;max-width:275px;
+ aspect-ratio:554/155;object-fit:contain;object-position:left center;
+}
+.mhead .head-action{
+ width:50px;min-width:50px;height:55px;min-height:55px;
+ border-radius:17px;background:#eff8f2;
+ color:#08744c;box-shadow:none;display:grid;place-items:center;
+}
+.mhead .menu-button{background:#f8f4e8;color:#0b6946}
+.mhead .head-action svg{display:block;max-width:28px;max-height:28px}
+.mhead .head-action:hover{filter:brightness(.97)}
+.mdrawer{top:92px;border-top:1px solid #edf0e7}
+.bottom-nav{
+ position:fixed;left:50%;bottom:calc(9px + env(safe-area-inset-bottom));
+ transform:translateX(-50%);z-index:90;
+ display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+ gap:4px;width:calc(100% - 16px);max-width:700px;
+ border:1px solid #f0efe6;border-radius:25px;
+ padding:8px 7px;box-shadow:0 8px 30px #113d281e,0 -3px 16px #173f1611;
+ background:#fff;align-items:stretch;
+}
+.bottom-nav a{
+ display:flex;flex-direction:column;justify-content:center;align-items:center;
+ gap:3px;min-height:77px;min-width:0;border-radius:20px;
+ padding:7px 3px 5px;background:#fffcf6;color:#174e38;
+ font-size:13px;font-weight:900;line-height:1.1;
+ transition:background-color .2s ease,transform .2s ease;
+}
+.bottom-nav .tab-art{display:grid;place-items:center;height:42px;width:44px;min-width:0;flex:none}
+.bottom-nav .tab-art svg{width:40px;height:40px;display:block;overflow:visible}
+.bottom-nav .tab-label{display:block;font-size:13px;letter-spacing:-.045em;white-space:nowrap}
+.bottom-nav a.active{
+ color:#06482f;background:linear-gradient(155deg,#f3fbbf 0%,#e0f5a5 100%);
+ box-shadow:inset 0 0 0 1px #e7eeaa;
+}
+.bottom-nav a.active .tab-label{
+ color:#fff;background:#095739;padding:5px 10px;
+ border-radius:100px;line-height:1.1;
+}
+.bottom-nav a:hover:not(.active){background:#f1f7ed}
+.bottom-nav a:focus-visible{outline:3px solid #067850;outline-offset:2px}
+@media(min-width:701px) and (pointer:coarse){
+ .mhead{height:105px;min-height:105px;padding:12px 22px}
+ .mhead .brand img{max-width:325px;max-height:90px}
+ .mhead .head-action{width:60px;min-width:60px;height:62px}
+ .mdrawer{top:105px}
+ .bottom-nav{max-width:760px}
+ .bottom-nav a{min-height:90px}
+ .bottom-nav .tab-art svg{width:46px;height:46px}
+ .bottom-nav .tab-art{width:50px;height:52px}
+ .bottom-nav .tab-label{font-size:16px}
+ .screen{padding-bottom:calc(140px + env(safe-area-inset-bottom))}
+}
+@media(max-width:360px){
+ .mhead{height:78px;min-height:78px;gap:5px;padding:7px 10px}
+ .mhead .brand img{max-height:61px}
+ .mhead .head-action{width:43px;min-width:43px;height:48px;min-height:48px;border-radius:14px}
+ .mdrawer{top:78px}
+ .bottom-nav{width:calc(100% - 10px);gap:2px;padding:6px 4px;border-radius:20px}
+ .bottom-nav a{border-radius:17px;min-height:73px;padding:4px 1px}
+ .bottom-nav .tab-art{width:38px;height:40px}
+ .bottom-nav .tab-art svg{height:35px;width:35px}
+ .bottom-nav .tab-label{font-size:11px}
+ .bottom-nav a.active .tab-label{padding:5px 6px}
+}
+@media(prefers-reduced-motion:reduce){.bottom-nav a{transition:none}}
