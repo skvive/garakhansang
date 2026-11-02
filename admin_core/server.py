@@ -131,18 +131,43 @@ class Handler(SimpleHTTPRequestHandler):
   if path=='/api/auth/me':
    s=self.session()
    return self.respond({'authenticated':bool(s),'user':{'id':s['id'],'username':s['username'],'role':s['role']} if s else None,'csrf':s['csrf'] if s else None,'demo':True})
+  # Private pending merchant preview: never expose the data/photo from storefront static assets.
+  if path.startswith('/api/admin/merchant-preview/'):
+   if path not in {'/api/admin/merchant-preview/gwangyang-susan','/api/admin/merchant-preview/gwangyang-susan/image'}:
+    return self.error_json(404,'미등록 관리자 검토 자료')
+   session=self.require('merchants','GET')
+   if not session:return
+   if path.endswith('/image'):
+    import base64
+    image_path=HERE/'admin_core'/'private_media'/'gwangyang-susan.webp.b64'
+    try:image=base64.b64decode(image_path.read_text(encoding='ascii').strip(),validate=True)
+    except (OSError,ValueError,base64.binascii.Error):return self.error_json(404,'이미지 검토 자료 없음')
+    self.send_response(200)
+    self.send_header('Content-Type','image/webp')
+    self.send_header('Content-Length',str(len(image)))
+    self.send_header('Content-Security-Policy',"default-src 'none'; sandbox")
+    self.end_headers()
+    self.wfile.write(image)
+    return
+   profile=HERE/'admin_core'/'private_merchants'/'gwangyang_susan.json'
+   try:d=json.loads(profile.read_text(encoding='utf-8'))
+   except (OSError,ValueError):return self.error_json(404,'검토 자료 없음')
+   with connect(dbpath(self.server)) as con:
+    row=con.execute('SELECT id,status,verified FROM merchants WHERE name=?',('광양수산',)).fetchone()
+   d['registration']={'id':row['id'],'status':row['status'],'verified':bool(row['verified'])} if row else None
+   return self.respond({'item':d,'adminOnly':True})
   if path.startswith('/api/public/'):
    con=connect(dbpath(self.server))
    try:
     if path=='/api/public/products':
      rows=con.execute('''SELECT p.slug,p.name,p.price,p.stock,p.status,p.image,p.category
        FROM products p LEFT JOIN merchants m ON m.id=p.merchant_id
-       WHERE p.status='published' AND (m.status IS NULL OR m.status NOT IN ('suspended','rejected'))
+       WHERE p.status='published' AND (m.status='active' AND m.verified=1)
        ORDER BY p.id LIMIT 100''').fetchall()
      return self.respond({'items':[dict(r) for r in rows],'mode':'LOCAL_BETA','price_warning':'샘플 가격이며 실제 판매가격이 아닙니다.'})
     if path.startswith('/api/public/product/'):
      slug=path.split('/')[-1]
-     r=con.execute("""SELECT p.slug,p.name,p.price,p.stock,p.status,p.image FROM products p LEFT JOIN merchants m ON m.id=p.merchant_id WHERE p.slug=? AND p.status='published' AND (m.status IS NULL OR m.status NOT IN ('suspended','rejected'))""",(slug,)).fetchone()
+     r=con.execute("""SELECT p.slug,p.name,p.price,p.stock,p.status,p.image FROM products p LEFT JOIN merchants m ON m.id=p.merchant_id WHERE p.slug=? AND p.status='published' AND (m.status='active' AND m.verified=1)""",(slug,)).fetchone()
      if not r:return self.error_json(404,'판매 중인 상품 없음')
      return self.respond({'product':dict(r),'mode':'LOCAL_BETA'})
     if path=='/api/public/posts':
