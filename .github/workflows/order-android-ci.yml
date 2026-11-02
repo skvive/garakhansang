@@ -1,0 +1,39 @@
+name: Garak Hansang Order Android Debug APK
+on:
+  push:
+    branches: ['chatgpt/garakhansang-order-android-20261102']
+    paths: ['android-order/**', '.github/workflows/order-android-ci.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - run: sdkmanager --install 'platforms;android-36' 'build-tools;36.0.0' 'platform-tools'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
+      - name: Build actual debug APK
+        working-directory: android-order
+        run: gradle --no-daemon :app:assembleDebug --stacktrace
+      - name: Inspect APK
+        run: |
+          test -s android-order/app/build/outputs/apk/debug/app-debug.apk
+          $ANDROID_HOME/build-tools/36.0.0/aapt dump badging android-order/app/build/outputs/apk/debug/app-debug.apk | head -20
+          $ANDROID_HOME/build-tools/36.0.0/apksigner verify --verbose android-order/app/build/outputs/apk/debug/app-debug.apk
+          sha256sum android-order/app/build/outputs/apk/debug/app-debug.apk > SHA256.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: GarakHansang-Order-debug-apk
+          path: |
+            android-order/app/build/outputs/apk/debug/app-debug.apk
+            SHA256.txt
+          retention-days: 30
