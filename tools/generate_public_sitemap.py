@@ -9,7 +9,7 @@ PUBLIC_ROOT = [
     "index.html", "stores.html", "prices.html", "market-map.html",
     "market-guide.html", "map.html", "events.html", "coupons.html",
     "merchant-center.html", "blogger-service.html", "ilwol-susan.html",
-    "yonggi-susan.html", "community/index.html", "merchant-showcase/index.html",
+    "yonggi-susan.html", "community/index.html", "community/merchants.html", "merchant/index.html",
     "recipes/index.html", "recipes/meat.html", "recipes/produce.html",
     "category/seafood.html", "category/meat.html", "category/produce.html",
     "category/sets.html", "category/extras.html",
@@ -21,7 +21,15 @@ def make():
     candidates = [ROOT / p for p in PUBLIC_ROOT]
     for pattern in PUBLIC_GLOBS:
         candidates.extend(sorted(ROOT.glob(pattern)))
-    paths = sorted({p.relative_to(ROOT).as_posix() for p in candidates if p.is_file()})
+    # Noindex sample/detail pages must not be submitted for indexing.
+    def indexable(p: Path) -> bool:
+        if not p.is_file():
+            return False
+        import re
+        head = p.read_text(encoding="utf-8-sig", errors="replace")[:5000].lower()
+        return not any("noindex" in tag and re.search(r'name\s*=\s*["\x27]robots["\x27]', tag)
+                       for tag in re.findall(r"<meta\b[^>]*>", head))
+    paths = sorted({p.relative_to(ROOT).as_posix() for p in candidates if indexable(p)})
     assert "index.html" in paths and len(paths) >= 150
     ET.register_namespace("", NS)
     urlset = ET.Element(f"{{{NS}}}urlset")
