@@ -139,6 +139,9 @@ def create_application(user, d):
         raise RequestError(400,"이메일 또는 전화번호 형식 오류")
     with connect() as con:
         rate(con,"merchant_applications",user["id"],3)
+        pending=con.execute("SELECT id FROM merchant_applications WHERE author_id=? AND shop_name=? AND status='pending' ORDER BY id DESC LIMIT 1",(user["id"],shop)).fetchone()
+        if pending:
+            raise RequestError(409,"동일 상호의 입점 신청이 검토 대기 중입니다.")
         row=con.execute("INSERT INTO merchant_applications "
                         "(author_id,shop_name,contact_name,phone,email,category,shop_location,description,consent_at) "
                         "VALUES(?,?,?,?,?,?,?,?,CURRENT_TIMESTAMP) RETURNING id",
