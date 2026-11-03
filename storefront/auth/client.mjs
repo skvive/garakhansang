@@ -43,11 +43,11 @@ export async function signOut() {
   if (result?.error) throw new Error('Neon Auth sign out failed');
 }
 
-export async function signInWithGoogle() {
+export async function signInWithGoogle(nextPath = '/mypage.html') {
   const auth = await getAuthClient();
   return auth.signIn.social({
     provider: 'google',
     // Do not concatenate location.origin with a relative pathname: it omits '/'.
-    callbackURL: new URL('/mypage.html', window.location.origin).href,
+    callbackURL: new URL(['/merchant-showcase/apply.html','/merchant-showcase/community.html'].includes(nextPath)?nextPath:'/mypage.html',window.location.origin).href,
   });
 }
