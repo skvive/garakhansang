@@ -14,6 +14,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from admin_core.server import Handler, setup  # noqa: E402
+from admin_core.merchant_community import handle as merchant_handle  # noqa: E402
 
 _INITIALIZED = False
 
@@ -56,6 +57,8 @@ def _parse_http(raw: bytes):
 
 
 def _invoke(method: str, path: str, headers: dict, body: bytes):
+    if path.split('?', 1)[0].rstrip('/') in ('/api/merchant-applications','/api/community/posts','/api/community/comments','/api/community/moderation'):
+        return merchant_handle(method, path, headers, body)
     out = BytesIO()
 
     class OneShot(Handler):
