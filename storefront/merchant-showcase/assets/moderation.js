@@ -1,0 +1,10 @@
+(()=>{'use strict';const status=document.querySelector('#status'),root=document.querySelector('#items');let csrf='';const e=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=String(text);return n};
+async function req(url,opt={}){const r=await fetch(url,{cache:'no-store',credentials:'same-origin',...opt});const d=await r.json().catch(()=>({}));if(!r.ok)throw Error(d.error||'요청 실패 '+r.status);return d;}
+async function boot(){try{const a=await req('/api/auth/me');if(!a.authenticated||!['superadmin','ops','content'].includes(a.user?.role))throw Error('관리자 로그인이 필요합니다. /admin/ 에서 먼저 로그인하세요.');csrf=a.csrf;const d=await req('/api/community/moderation');root.replaceChildren();let total=0;
+ for(const [type,name] of [['applications','입점 신청'],['posts','게시글'],['comments','댓글']]){const section=e('section'),h=e('h2',name),items=d[type]||[];section.append(h);if(!items.length)section.append(e('p','대기 항목 없음'));
+ for(const entry of items){total++;const card=e('article');card.append(e('h3','#'+entry.id+' · '+(entry.shop_name||entry.title||'댓글')));
+ for(const field of (type==='applications'?['contact_name','phone','email','category','shop_location','description']:type==='posts'?['category','author_label','body']:['post_id','author_label','body']))card.append(e('p',field+': '+String(entry[field]??'')));
+ for(const [value,label] of [['approved',type==='applications'?'검토 완료':'승인'],['rejected','반려']]){const button=e('button',label);button.type='button';if(value==='rejected')button.className='reject';button.addEventListener('click',async()=>{button.disabled=true;try{const r=await req('/api/community/moderation',{method:'POST',headers:{'Content-Type':'application/json','X-Garak-CSRF':csrf},body:JSON.stringify({kind:type,id:entry.id,status:value})});status.textContent='처리 결과 #'+r.id+': '+r.status;await boot();}catch(error){status.textContent=error.message;button.disabled=false;}});card.append(button);}
+ section.append(card);}root.append(section);}status.textContent='검토 대기 '+total+'건';
+ }catch(error){status.textContent='접근 또는 처리 오류: '+error.message;root.replaceChildren();}}
+ boot();})();
