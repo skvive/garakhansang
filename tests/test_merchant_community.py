@@ -90,6 +90,9 @@ class CommunityTests(unittest.TestCase):
                                     {"category": "story", "title": "Real title", "content": "Real story content"}, True)
         self.assertEqual(status, 201)
         post_id = data["id"]
+        # Account real names must never become public author labels implicitly.
+        author=self.db.execute("SELECT author_label FROM community_posts WHERE id=?", (post_id,)).fetchone()["author_label"]
+        self.assertEqual(author,"Tester")  # mocked member identity in this test; API member() enforces anonymous label
         status, data = self.request("GET", "/api/community/posts")
         self.assertEqual(data["items"], [])
         status, data = self.request("POST", "/api/community/comments",
@@ -108,6 +111,18 @@ class CommunityTests(unittest.TestCase):
             status, _, _ = api.handle("POST", "/api/community/posts",
                                       {"origin":"https://evil.example","host":"garakmall.lexid.site"}, b"{}")
         self.assertEqual(status, 403)
+
+
+    def test_member_name_is_not_public_full_name(self):
+        import os
+        from types import SimpleNamespace
+        stub=SimpleNamespace(get_signing_key_from_jwt=lambda _:SimpleNamespace(key="test"))
+        with patch.dict(os.environ,{"NEON_AUTH_BASE_URL":"https://example.neonauth.neon.tech/auth"}):
+            with patch.object(api,"jwks",return_value=stub):
+                with patch("jwt.decode",return_value={"sub":"userid","name":"Real Name","iss":"https://example.neonauth.neon.tech","exp":9999999999}):
+                    user=api.member({"authorization":"Bearer fake.jwt.token"})
+        self.assertEqual(user["id"],"userid")
+        self.assertEqual(user["name"],"회원")
 
 if __name__ == "__main__":
     unittest.main()
