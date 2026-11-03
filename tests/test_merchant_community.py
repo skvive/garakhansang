@@ -84,6 +84,9 @@ class CommunityTests(unittest.TestCase):
         self.assertEqual(len(result["items"]), 1)
         self.assertNotIn("phone", result["items"][0])
         self.assertNotIn("email", result["items"][0])
+        repeat_status, repeat_data = self.request("POST", "/api/merchant-applications", values, True)
+        self.assertEqual(repeat_status, 409)
+        self.assertEqual(len(self.request("GET", "/api/merchant-applications", authenticated=True)[1]["items"]), 1)
 
     def test_post_and_comment_require_approval(self):
         status, data = self.request("POST", "/api/community/posts",
