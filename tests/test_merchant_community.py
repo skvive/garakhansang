@@ -112,5 +112,17 @@ class CommunityTests(unittest.TestCase):
                                       {"origin":"https://evil.example","host":"garakmall.lexid.site"}, b"{}")
         self.assertEqual(status, 403)
 
+
+    def test_member_name_is_not_public_full_name(self):
+        import os
+        from types import SimpleNamespace
+        stub=SimpleNamespace(get_signing_key_from_jwt=lambda _:SimpleNamespace(key="test"))
+        with patch.dict(os.environ,{"NEON_AUTH_BASE_URL":"https://example.neonauth.neon.tech/auth"}):
+            with patch.object(api,"jwks",return_value=stub):
+                with patch("jwt.decode",return_value={"sub":"userid","name":"Real Name","iss":"https://example.neonauth.neon.tech","exp":9999999999}):
+                    user=api.member({"authorization":"Bearer fake.jwt.token"})
+        self.assertEqual(user["id"],"userid")
+        self.assertEqual(user["name"],"회원")
+
 if __name__ == "__main__":
     unittest.main()
