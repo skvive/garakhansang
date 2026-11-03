@@ -32,8 +32,16 @@ async function request(url,{method='GET',body,auth=false}={}){
   const headers={Accept:'application/json'};
   if(body!==undefined)headers['Content-Type']='application/json';
   if(auth)headers.Authorization='Bearer '+await bearer();
-  const r=await fetch(url,{method,headers,credentials:'same-origin',cache:'no-store',
-    body:body===undefined?undefined:JSON.stringify(body)});
+  const controller=new AbortController();
+  const timer=setTimeout(()=>controller.abort(),15000);
+  let r;
+  try{
+    r=await fetch(url,{method,headers,credentials:'same-origin',cache:'no-store',signal:controller.signal,
+      body:body===undefined?undefined:JSON.stringify(body)});
+  }catch(error){
+    if(error?.name==='AbortError')throw Error('서버 응답이 지연되고 있습니다. 접수 내역을 확인한 후 다시 시도해 주세요.');
+    throw Error('서버에 연결하지 못했습니다. 네트워크 상태를 확인해 주세요.');
+  }finally{clearTimeout(timer);}
   const data=await r.json().catch(()=>({}));
   if(!r.ok)throw Error(data.error||'요청 처리 실패 ('+r.status+')');
   return data;
