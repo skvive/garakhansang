@@ -48,6 +48,6 @@ export async function signInWithGoogle() {
   return auth.signIn.social({
     provider: 'google',
     // Do not concatenate location.origin with a relative pathname: it omits '/'.
-    callbackURL: new URL('/mypage.html', window.location.origin).href,
+    callbackURL: new URL('/'+(['merchant-showcase/apply.html','merchant-showcase/community.html'].includes(new URLSearchParams(location.search).get('next')) ? new URLSearchParams(location.search).get('next') : 'mypage.html'), window.location.origin).href,
   });
 }
