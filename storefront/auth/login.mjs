@@ -7,7 +7,7 @@ const submit=document.getElementById('emailSubmit'),nameGroup=document.getElemen
 let mode='signin',busy=false;
 const destination=()=>{
  const next=new URLSearchParams(location.search).get('next');
- return next==='mypage.html'?'mypage.html':'mypage.html';
+ return ['merchant-showcase/apply.html','merchant-showcase/community.html','mypage.html'].includes(next)?'/'+next:'/mypage.html';
 };
 function status(text,kind=''){msg.textContent=text;msg.className='auth-msg'+(kind?' '+kind:'');}
 function showLogged(user){
