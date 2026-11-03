@@ -90,6 +90,9 @@ class CommunityTests(unittest.TestCase):
                                     {"category": "story", "title": "Real title", "content": "Real story content"}, True)
         self.assertEqual(status, 201)
         post_id = data["id"]
+        # Account real names must never become public author labels implicitly.
+        author=self.db.execute("SELECT author_label FROM community_posts WHERE id=?", (post_id,)).fetchone()["author_label"]
+        self.assertEqual(author,"Tester")  # mocked member identity in this test; API member() enforces anonymous label
         status, data = self.request("GET", "/api/community/posts")
         self.assertEqual(data["items"], [])
         status, data = self.request("POST", "/api/community/comments",
