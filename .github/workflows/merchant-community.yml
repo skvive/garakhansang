@@ -1,0 +1,29 @@
+name: Merchant intake and community checks
+on:
+  push:
+    branches: [chatgpt/garak-community-live-20261103]
+  pull_request:
+    paths:
+      - 'admin_core/merchant_community.py'
+      - 'api/**'
+      - 'storefront/merchant-showcase/**'
+      - 'tests/test_merchant_community_api.py'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Python compile
+        run: python3 -m py_compile admin_core/merchant_community.py api/index.py tests/test_merchant_community_api.py
+      - name: API regression suite
+        run: python3 -m unittest discover -s tests -p test_merchant_community_api.py -v
+      - name: JavaScript module validation
+        run: |
+          node --check storefront/merchant-showcase/assets/merchant-online.mjs
+          node --check storefront/merchant-showcase/assets/moderation.js
+          node --check storefront/auth/login.mjs
+          node --check storefront/auth/client.mjs
