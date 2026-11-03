@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#124632">
+<meta name="description" content="가락한상 B2B 수산물 도매·식당 납품 서비스 기획. 공급자 사업자 검증, 산지·원산지·품질 관리, 견적·냉장배송·정산 프로세스 및 마진 계산기.">
+<link rel="canonical" href="https://garakmall.lexid.site/wholesale.html">
+<title>B2B 수산물 도매·식당 납품 기획 | 가락한상</title>
+<link rel="icon" href="assets/images/icon-192.png?v=4">
+<link rel="stylesheet" href="merchant-marketing.css?v=1">
+<link rel="stylesheet" href="hybrid-business.css?v=1">
+<script defer src="wholesale-quote.js?v=1"></script>
+</head><body>
+<a class="skip" href="#main">본문 바로가기</a>
+<header class="site-head"><div class="nav-inner">
+ <a class="site-brand" href="index.html" aria-label="가락한상 홈"><img src="assets/brand/wordmark.png" alt="가락한상"></a>
+ <nav aria-label="도매 기획 안내"><a href="merchant-marketing.html#three-pillars">3대 사업모델</a><a href="#partners">거래 대상</a><a href="#quote">마진 계산</a><a href="#workflow">운영 절차</a></nav>
+ <a class="head-cta" href="merchant-center.html">상인센터 ↗</a>
+</div></header>
+<main id="main">
+<section class="wholesale-hero"><div class="container wholesale-grid">
+ <div><p class="eyebrow">GARAK HANSANG · B2B WHOLESALE PLANNING</p>
+ <h1>산지에서 식당까지,<br><em>수산물 도매를</em><br>더 투명하게.</h1>
+ <p class="subhead">가락시장·산지 공급자와 횟집·식당·외식업체를 연결하는 기업간 수산물 공급 서비스의 설계안입니다. 공급원가, 검수, 원산지 증빙, 콜드체인과 납품정산을 한 흐름으로 관리합니다.</p>
+ <div class="hero-actions"><a class="btn yellow" href="#quote">도매 공급 마진 계산하기</a><a class="btn" href="merchant-center.html">상인센터로 이동</a></div>
+ <p class="muted">※ 현재는 도매 업무 기획·견적 계산 시연 단계입니다. 실제 상품 공급, 발주, 배송예약, 공급가 계약·결제는 제공하지 않습니다.</p>
+ </div>
+ <div class="wholesale-icon-grid" aria-label="핵심 관리 영역"><div><span aria-hidden="true">🐟</span>산지·상품 검증</div><div><span aria-hidden="true">🧾</span>사업자 전용 견적</div><div><span aria-hidden="true">❄️</span>콜드체인·검수</div><div><span aria-hidden="true">📦</span>납품·거래 정산</div></div>
+</div></section>
+<section class="section container" id="partners">
+ <p class="eyebrow green">SOURCE & BUYER NETWORK</p><h2>공급자와 식당을 직접 연결하는 B2B 구조</h2>
+ <p class="lead">초기에는 자체 재고를 무리하게 확보하기보다 검증된 협력 공급자와 거래처의 소량 발주를 연결하는 단계적 도입을 제안합니다. 수익모델은 중개수수료형과 직접 매입·재판매형을 계약 단위로 분리해야 합니다.</p>
+ <div class="b2b-two-columns">
+  <article class="b2b-card"><h3>🐟 공급자·수산시장 상인</h3><p>산지·수산시장·중도매 사업자가 품질과 가격을 증빙하고 도매 납품 견적을 제안하는 구조입니다.</p>
+   <ul><li>사업자·영업·거래 자격 검토</li><li>종·중량·선도·규격·등급 및 원산지 증빙</li><li>공급 가능 수량, 최소 발주량 및 납기</li><li>냉장·냉동·활어 배송 가능 조건 확인</li></ul>
+   <a class="btn outline" href="merchant/apply.html">공급자 입점 절차 확인 ↗</a>
+  </article>
+  <article class="b2b-card"><h3>🍣 횟집·식당·프랜차이즈 구매처</h3><p>승인된 사업자 구매처가 맞춤 공급 견적과 배송·검수 조건을 비교하고 정기 발주할 수 있도록 계획합니다.</p>
+   <ul><li>사업자 인증 후 도매 단가 열람</li><li>원산지·입고·유통이력 및 거래명세</li><li>납품 희망일, 발주 마감·수령 검수</li><li>반품·클레임·정산·세금 증빙</li></ul>
+   <a class="btn outline" href="#quote">예상 도매 손익 계산 ↗</a>
+  </article>
+ </div>
+</section>
+<section class="section wholesale-calc" id="quote"><div class="container">
+ <p class="eyebrow green">B2B MARGIN CALCULATOR · DEMO</p><h2>도매 납품 예상 수익 시뮬레이터</h2>
+ <p class="lead">공급원가와 납품가격, 물류·손실비를 포함한 건당 기여이익을 계산합니다. 입력값은 브라우저에서만 계산되며 저장·견적 요청·실제 매입 계약에 사용하지 않습니다.</p>
+ <div class="quote-grid">
+  <form class="quote-form" id="wholesale-calculator">
+   <label>납품 단가 (원)<input id="wh-sale" type="number" min="0" max="10000000" step="1000" value="48000" required></label>
+   <label>매입원가 (원)<input id="wh-cost" type="number" min="0" max="10000000" step="1000" value="40000" required></label>
+   <label>건당 물류·포장 비용 (원)<input id="wh-logistics" type="number" min="0" max="10000000" step="500" value="5000" required></label>
+   <label>건당 예상 검수·손실비 (원)<input id="wh-loss" type="number" min="0" max="10000000" step="500" value="1000" required></label>
+   <label>월 납품 건수 (건)<input id="wh-count" type="number" min="0" max="100000" step="1" value="100" required></label>
+   <button class="btn reset" type="reset">예시값으로 초기화</button>
+  </form>
+  <div class="quote-result" aria-live="polite" aria-atomic="true">
+   <span>건당 예상 기여이익 (세금·인건비·고정비 제외)</span>
+   <strong id="wh-margin">2,000원</strong>
+   <div class="result-row"><span>공급가 대비 기여이익률</span><strong id="wh-rate">4.2%</strong></div>
+   <div class="result-row"><span>월 납품 매출 (가정)</span><strong id="wh-revenue">4,800,000원</strong></div>
+   <div class="result-row"><span>월 예상 기여이익</span><strong id="wh-monthly">200,000원</strong></div>
+   <div class="result-row"><span>손익분기점 도매 단가 / 건</span><strong id="wh-break-even">46,000원</strong></div>
+   <p class="warn" id="wh-status">예시 계산입니다. 수산물 매입 시세·원산지·물류비·실재고·폐기율에 따라 실제 손익이 달라집니다.</p>
+  </div>
+ </div>
+</div></section>
+<section class="section container" id="workflow">
+ <p class="eyebrow green">IMPLEMENTATION ROADMAP</p><h2>도매 모듈 단계별 추진</h2>
+ <div class="wholesale-progress">
+ <div><b>1</b><strong>정보·입점 검증</strong><p>공급자 인증, 상품 규격·원산지·시세 이력을 DB에 저장합니다.</p></div>
+ <div><b>2</b><strong>견적·발주 관리</strong><p>사업자별 가격 권한과 견적 승인, 최소 발주량, 거래명세를 구현합니다.</p></div>
+ <div><b>3</b><strong>물류·검수 연계</strong><p>냉장·냉동·활어 배송 파트너와 출고·수령·클레임 증빙을 연결합니다.</p></div>
+ <div><b>4</b><strong>결제·정산 자동화</strong><p>거래조건·원가·배송비·환불과 세금 증빙, 정산 권한을 검증한 뒤 상용화합니다.</p></div>
+ </div>
+ <div class="wholesale-status"><span>현재: 사업설계 / 수익 계산기 구현</span><span>미연동: 승인 사업자 전용 가격 DB</span><span>미연동: 발주·결제·배송·정산</span></div>
+ <p class="note">원산지 표시, 냉장 유통, 식품안전 관리, 각 공급자와의 계약 및 인허가 적용 여부를 품목·거래형태별로 검토해야 합니다. 다른 플랫폼의 상품 이미지·매장정보·가격 DB를 무단 복제하지 않으며, 가락한상 자체 자료 및 이용 허락을 받은 정보만 사용합니다.</p>
+</section>
+<section class="final-cta"><div class="container final-inner"><div><p class="eyebrow">SEAFOOD TRUST · GARAK HANSANG</p><h2>시세의 신뢰를 B2C 거래와<br>B2B 납품으로 연결합니다.</h2><p>3대 사업 구조를 확인하고, 거래·물류가 준비된 이후 순차적으로 정식 서비스를 도입하겠습니다.</p></div><a class="btn yellow" href="merchant-marketing.html#three-pillars">3대 수익모델 보기 ↗</a></div></section>
+</main>
+<footer class="footer"><div class="container"><b>가락한상 · B2B 도매 서비스 기획</b><p>현재 표시된 견적·마진은 시뮬레이션이며 실공급가나 실제 주문 가능 상태를 의미하지 않습니다.</p><div><a href="merchant-center.html">상인센터</a><a href="index.html">홈으로</a></div></div></footer>
+</body></html>
