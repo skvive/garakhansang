@@ -7,7 +7,7 @@ const submit=document.getElementById('emailSubmit'),nameGroup=document.getElemen
 let mode='signin',busy=false;
 const destination=()=>{
  const next=new URLSearchParams(location.search).get('next');
- return next==='mypage.html'?'mypage.html':'mypage.html';
+ return ['merchant-showcase/apply.html','merchant-showcase/community.html','mypage.html'].includes(next)?next:'mypage.html';
 };
 function status(text,kind=''){msg.textContent=text;msg.className='auth-msg'+(kind?' '+kind:'');}
 function showLogged(user){
@@ -38,7 +38,7 @@ googleBtn.addEventListener('click',async()=>{
  if(busy)return;
  setBusy(true);status('Google 로그인 창으로 이동합니다…');
  try{
-   const result=await signInWithGoogle();
+   const result=await signInWithGoogle(destination());
    if(result?.error)throw new Error(result.error.message||'Google 로그인 실패');
  }catch(error){status('Google 로그인 연결에 실패했습니다. 다시 시도해 주세요.','error');}
  finally{setBusy(false);}
