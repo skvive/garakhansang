@@ -56,6 +56,10 @@ def _parse_http(raw: bytes):
 
 
 def _invoke(method: str, path: str, headers: dict, body: bytes):
+    route = path.split('?', 1)[0].rstrip('/')
+    if route == '/api/merchant-applications' or route.startswith('/api/community/'):
+        from admin_core.merchant_community import handle as merchant_handle
+        return merchant_handle(method, path, headers, body)
     out = BytesIO()
 
     class OneShot(Handler):
