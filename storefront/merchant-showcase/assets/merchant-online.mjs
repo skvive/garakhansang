@@ -118,8 +118,8 @@ function card(post,mine){
   const item=make('article',null,'live-post');
   item.dataset.boardCat=post.category;
   const text=categories[post.category]||post.category;
-  const pending=mine&&post.status!=='approved';
-  item.append(make('span',text+' · '+(post.author_label||'회원')+(pending?' · 검토 대기':' · 회원 게시글'),'sample-tag'),
+  const reviewState=mine ? (post.status==='rejected'?'반려':post.status==='pending'?'검토 대기':'공개') : '회원 게시글';
+  item.append(make('span',text+' · '+(post.author_label||'회원')+(' · '+reviewState),'sample-tag'),
     make('h3',post.title),make('p',post.body));
   if(post.status==='approved'){
     const button=make('button','댓글 보기 / 작성','extra-submit');button.type='button';
