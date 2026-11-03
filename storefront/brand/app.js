@@ -447,7 +447,10 @@ function guide() {
 function merchant() {
   return `<section class="page-hero page-hero-merchant"><div class="container"><span class="eyebrow">FOR GARAK MERCHANTS</span>
     <h1>사장님의 오늘이, 더 빛나도록.</h1><p>점포 소개부터 상품, 쿠폰·이벤트, 운영 점검까지.</p>${mascot('page-mascot')}</div></section>
-    <section class="container section"><div class="merchant-stats">
+    <section class="container section"><div class="merchant-marketing-entry" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;border-radius:18px;background:linear-gradient(110deg,#0d6042,#0a4934);color:#fff;padding:22px 25px;margin-bottom:28px">
+      <div><span style="font-size:12px;letter-spacing:.12em;color:#f8d98e;font-weight:900">MERCHANT MARKETING SUBSCRIPTION</span><h2 style="color:#fff;font-size:clamp(21px,2.6vw,29px);margin:5px 0">쿠폰 고객 유입 + 월 마케팅 구독제</h2><p style="color:#deeee5;margin:0">월 11만~110만 원 · 5개 상품 · 실사용 쿠폰 성과수수료 계산</p></div>
+      <a href="merchant-marketing.html" class="btn" style="background:#fce18a;color:#164b34;border-radius:11px;font-weight:900;min-height:46px;padding:12px 18px">구독 서비스·마진 구조 보기 ↗</a>
+    </div><div class="merchant-stats">
       <div><span>시연 상인</span><strong>${D.shops.length}</strong><small>가상 매장</small></div>
       <div><span>시연 상품</span><strong>${(window.GARAK_PRODUCTS||[]).length}</strong><small>장보기 카탈로그</small></div>
       <div><span>운영 모드</span><strong>DEMO</strong><small>실정산 비활성</small></div>
@@ -456,6 +459,7 @@ function merchant() {
     ${title('MERCHANT TOOLS','상인 운영 도구')}
     <div class="tool-grid">${[
       ['🏷️','상품·가격 관리','시연 카탈로그와 판매자 센터에서 상품 구조를 확인합니다.','merchant/index.html'],
+      ['📈','월 구독 마케팅','5단계 월 광고대행·쿠폰 성과수수료 비교를 확인합니다.','merchant-marketing.html'],
       ['🎟️','쿠폰 지갑','고객 시연 쿠폰 동선을 미리 살펴봅니다.','coupons.html'],
       ['📍','점포 지도 등록','Google 지도에서 가락시장 위치를 확인합니다.','map.html'],
       ['🍳','레시피 연결','132가지 레시피와 식재료를 잇습니다.','recipes/index.html'],

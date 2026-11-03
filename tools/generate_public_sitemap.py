@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1] / "storefront"
 PUBLIC_ROOT = [
     "index.html", "stores.html", "prices.html", "market-map.html",
     "market-guide.html", "map.html", "events.html", "coupons.html",
-    "merchant-center.html", "blogger-service.html", "ilwol-susan.html",
+    "merchant-center.html", "merchant-marketing.html", "blogger-service.html", "ilwol-susan.html",
     "yonggi-susan.html", "community/index.html", "community/merchants.html", "merchant/index.html",
     "recipes/index.html", "recipes/meat.html", "recipes/produce.html",
     "category/seafood.html", "category/meat.html", "category/produce.html",
