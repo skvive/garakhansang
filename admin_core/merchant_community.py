@@ -90,7 +90,7 @@ def member(headers):
         uid = claims.get("sub")
         if not isinstance(uid,str) or not 1 <= len(uid) <= 128:
             raise ValueError("invalid identity")
-        return {"id":uid,"name":str(claims.get("name") or "회원")[:60]}
+        return {"id":uid,"name":"회원"}  # Never publish account real names by default.
     except Exception:
         raise RequestError(401,"인증이 만료되었거나 유효하지 않습니다. 다시 로그인하세요.") from None
 
