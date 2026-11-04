@@ -19,6 +19,16 @@ class MobileBootstrapContractTests(unittest.TestCase):
         self.assertIsNone(body["delivery_eta_minutes"])
         self.assertIn("실제 주문", body["message"])
 
+    def test_fastapi_mobile_route_is_read_only(self):
+        from fastapi.testclient import TestClient
+        from backend.api_v5 import app
+        with TestClient(app) as client:
+            response = client.get("/order/api/v5/mobile/bootstrap")
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.json()["demo_mode"])
+        self.assertFalse(response.json()["features"]["real_checkout_enabled"])
+        self.assertFalse(response.json()["features"]["payments_enabled"])
+
     def test_returns_fresh_mutation_safe_response(self):
         first = build_mobile_bootstrap()
         first["features"]["payments_enabled"] = True
