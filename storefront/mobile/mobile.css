@@ -152,3 +152,8 @@ button{border:0}
  .bottom-nav a span{font-size:32px}
  .screen{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 }
+
+/* Mobile discovery CTA: seventh shortcut spans the final row; no orphan tile. */
+.quicklinks a[href="../market-live.html"]{grid-column:1/-1;min-height:88px;flex-direction:row;gap:16px;background:linear-gradient(110deg,#e4f3e8,#fff6dc);border-color:#c8dec5;color:#18563e;box-shadow:0 7px 19px #154c2414}
+.quicklinks a[href="../market-live.html"] span{font-size:28px}
+@media(min-width:701px) and (pointer:coarse){.quicklinks a[href="../market-live.html"]{min-height:112px}}
