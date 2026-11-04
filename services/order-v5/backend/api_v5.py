@@ -10,6 +10,7 @@ import os
 import uuid
 from .auth_v5 import verify_oidc, AuthenticationError
 from . import repository_v5 as repo
+from .mobile_app_contract import build_mobile_bootstrap
 
 app=FastAPI(title='Garak Hansang Order V5 (DEVELOPMENT DEMO)',docs_url=None,redoc_url=None,openapi_url=None)
 security=HTTPBearer(auto_error=False)
@@ -66,6 +67,11 @@ async def security_headers(request:Request,call_next):
     response.headers.update({'Cache-Control':'no-store','X-Content-Type-Options':'nosniff',
                              'Referrer-Policy':'no-referrer','X-Frame-Options':'DENY'})
     return response
+
+@app.get('/order/api/v5/mobile/bootstrap')
+def mobile_bootstrap():
+    """Non-sensitive feature flags: always disabled for real commerce in V5."""
+    return build_mobile_bootstrap()
 
 @app.get('/order/api/v5/health')
 def health():
