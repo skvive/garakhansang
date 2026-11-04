@@ -187,3 +187,24 @@ A01 KPI/운영현황; A02 점포·사업자 승인; A03 상품·시세·원산�
 - 기존 `storefront/order` 과 `android-order` 기능 중복 여부를 표로 관리하고, 화면 계약부터 점진 통합.
 - 사용자 명시 승인 없이는 운영 DB SQL 실행, 결제 활성화, 개인정보 수집, 공개 도메인 배포, 외부 상인 통지 금지.
 - Git 브랜치 `chatgpt/garakhansang-order-unified-v2-20261104`; 의미단위 커밋·읽기검증·테스트 결과·릴리스 차단조건 기록.
+
+## 10. 공개 배달앱 UI 및 오픈소스 벤치마크 (2026-11-04 조회)
+
+### 실화면 참고 근거(레퍼런스별 게시 시점 구분)
+
+1. [요즘IT 쿠팡이츠 UX 분석: 주문·포장 선택 및 장바구니 화면](https://yozm.wishket.com/magazine/detail/1405/) — 배송/픽업 전환, 상품별 수량, 하단 고정 결제 CTA를 관찰. 게시된 **과거 화면**이며 2026년 현행 앱 레이아웃으로 단정 금지.
+2. [뉴스1 요기요 앱 리디자인 체험 화면](https://www.news1.kr/industry/sb-founded/5319288) (2024-02) — 카테고리 탐색, 진행상태 타임라인, 주문내역/재주문 분리를 관찰. 현재 운영 상태와 다를 수 있음.
+3. [배달의민족 공식 Google Play 앱 소개](https://play.google.com/store/apps/details?gl=kr&hl=ko&id=com.sampleapp) — 홈 탐색, 쿠폰·혜택 정보의 노출 위치와 공개 스토어 설명 참고. 화면 개편 가능성을 전제로 참고.
+
+### 오픈소스 실제 재사용 판단
+
+| 코드 후보 | 공개 라이선스·범위 | 이식 판단 |
+|---|---|---|
+| [Ashwinbicholiya/Food-delivery-app](https://github.com/Ashwinbicholiya/Food-delivery-app) | MIT, Flutter/Firebase 기반. 2022년 이후 핵심 업데이트가 오래됨 | **레이아웃·이동 흐름만 참고.** Android/Neon/Auth를 Flutter/Firebase로 교체 금지 |
+| [mdossantosdev/food-delivery-app](https://github.com/mdossantosdev/food-delivery-app) | MIT, React Native/Expo, 인증·검색·주문·오퍼·추적 화면 구현 | **화면 상태/오류 UX 참고**, 재사용 시 소스 라이선스 고지와 코드 검토 필수 |
+| [jssuthahar/food-delivery-app](https://github.com/jssuthahar/food-delivery-app) | MIT, Flutter+BLoC/GoRouter, 의존성 분리 및 Firebase 기본 비활성 | **테스트 가능 아키텍처 참고**, 즉시 포크·전체 도입 불필요 |
+| [Enatega 공개 프런트엔드](https://github.com/hector-jewell/react-native-food-delivery-app-with-backend) | 프런트 MIT이나 API/백엔드는 **독점/유료**라고 명시 | 독점 백엔드·에셋·화면 복제 금지, 일반 UX 휴리스틱만 참고 |
+
+**반영된 모바일 인터페이스 의사결정:** ① 상단 주소/검색 고정 ② 상인·상품 카테고리 카드 ③ 상품 옵션·수량 바텀시트 ④ 시장별 합배송과 총액 명시 ⑤ 하단 장바구니/주문내역 ⑥ 주문상태 타임라인 ⑦ 쿠폰은 홈/마이 진입 ⑧ 실제 주문·결제/배송 불가 시 즉시 차단.
+
+**디자인 검수 기준:** 참조 스크린샷은 분석 링크로만 기록하고 앱의 이미지·아이콘·로고에 복제/재배포하지 않는다. 실제 가락한상 자체 화면 스크린샷은 새 브랜치 실행/테스트에서 별도로 획득하고, 모바일 360/390/430/600dp 와 다크모드/대형 폰트, 전체 클릭 동작을 검사한다. 이 단계의 실제 브라우저 렌더/스크린샷은 아직 확보되지 않았으므로 구현 완료로 표기하지 않는다.
