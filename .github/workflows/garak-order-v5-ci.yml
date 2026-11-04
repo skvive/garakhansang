@@ -1,7 +1,7 @@
 name: GHO V5 auth & RLS tests
 on:
   push:
-    branches: ['chatgpt/garakhansang-order-v5-*']
+    branches: ['chatgpt/garakhansang-order-v5-*', 'chatgpt/garakhansang-order-unified-v2-*']
   workflow_dispatch:
 jobs:
   test:
