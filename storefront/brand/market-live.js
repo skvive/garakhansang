@@ -38,7 +38,7 @@ function detailPage() {
   const related = items.filter(x=>x.id!==id).sort((a,b)=>Number(b.cat===article.cat)-Number(a.cat===article.cat)).slice(0,3);
   return `<section class="ml-detail-top"><div class="container"><a class="ml-back" href="market-live.html">← 맛집·시장정보 목록</a><p class="ml-eyebrow">GARAK LOCAL JOURNAL · ${esc(article.catName)}</p>
     <h1>${esc(article.title)}</h1><p class="ml-detail-deck">${esc(article.summary)}</p><div class="ml-detail-meta"><span>📍 ${esc(article.area)}</span><span>2026.11.05 편집</span><span>가락한상 콘텐츠</span></div></div></section>
-    <div class="container ml-detail-layout"><main class="ml-detail-main" id="ml-article" tabindex="-1"><figure class="ml-detail-image"><img src="${esc(article.image)}" alt="${esc(article.imageAlt)}" width="1120" height="620">
+    <div class="container ml-detail-layout"><article class="ml-detail-main" id="ml-article" tabindex="-1"><figure class="ml-detail-image"><img src="${esc(article.image)}" alt="${esc(article.imageAlt)}" width="1120" height="620">
       <figcaption>${imageDisclaimer}</figcaption></figure>
       <p class="ml-detail-lead">${esc(article.lead)}</p>
       <div class="ml-facts"><h2>방문 전에 먼저 체크</h2><ul>${article.facts.map(t=>`<li>${esc(t)}</li>`).join("")}</ul></div>
@@ -46,7 +46,7 @@ function detailPage() {
       <div class="ml-checklist"><h2>체크리스트</h2><ul>${article.tips.map(x=>`<li><span aria-hidden="true">✓</span>${esc(x)}</li>`).join("")}</ul></div>
       <div class="ml-sources"><h2>참고·확인 경로</h2><p>공개 안내 및 지도 정보를 정리한 편집 콘텐츠이며, 당일 운영 상태와 계약·제휴 여부를 보장하지 않습니다.</p>
         <a href="${esc(article.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(article.sourceName)} <span aria-hidden="true">↗</span></a></div>
-      <div class="ml-post-actions"><button type="button" class="ml-btn ml-btn-primary" data-ml-share>이 글 공유하기 ↗</button><a class="ml-btn ml-btn-outline" href="market-live.html">다른 이야기 보기</a><p id="ml-share-status" role="status" aria-live="polite"></p></div></main>
+      <div class="ml-post-actions"><button type="button" class="ml-btn ml-btn-primary" data-ml-share>이 글 공유하기 ↗</button><a class="ml-btn ml-btn-outline" href="market-live.html">다른 이야기 보기</a><p id="ml-share-status" role="status" aria-live="polite"></p></div></article>
       <aside class="ml-detail-side" aria-label="관련 방문 안내"><div class="ml-side-box"><span class="ml-eyebrow">PLAN YOUR VISIT</span><h2>시장에 가기 전</h2><p>가락시장 방문은 실제 영업·가격·반입·좌석 조건을 확인하는 것이 우선입니다.</p>
         <a href="${mapsUrl(article.mapQuery)}" target="_blank" rel="noopener noreferrer">지도에서 위치 검색 ↗</a><a href="market-map.html">가락한상 시장 지도 ↗</a><a href="stores.html">가락한상 매장 안내 ↗</a></div>
         <div class="ml-side-brand"><img src="assets/brand/mascot.webp?v=17" alt="가락한상 상인 마스코트" width="140" height="140"><p>좋은 먹거리가<br><strong>만나는 곳, 가락한상</strong></p></div></aside></div>
