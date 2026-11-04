@@ -46,3 +46,15 @@ jobs:
         run: python -m unittest discover -s tests -p "gho_test_domain.py" -v
       - name: Loopback HTTP tests
         run: python tests/gho_http_api_qa.py
+  order-v5-api-unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r services/order-v5/requirements-v5.txt
+      - working-directory: services/order-v5
+        run: python -m unittest discover -s tests -p "test*.py" -v
+      - run: python -m compileall -q services/order-v5/backend
