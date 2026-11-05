@@ -1,0 +1,7 @@
+{
+  "enabled": false,
+  "base_url": "",
+  "allowed_hosts": [],
+  "note": "개발용 API와 로그인 모두 기본 비활성화. OAuth public client/App Links·개발브랜치·TLS 검증 전에는 활성화 금지.",
+  "oauth_enabled": false
+}
