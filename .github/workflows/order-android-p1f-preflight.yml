@@ -1,0 +1,62 @@
+name: Garak Hansang P1F - Source Gate Preflight (No APK)
+
+on:
+  push:
+    branches:
+      - chatgpt/garakhansang-order-android-p1f-20261105
+    paths:
+      - .github/workflows/order-android-p1f-preflight.yml
+      - android-order-p1f/README.md
+      - android-order-p1f/tools/verify_source_archive.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-source-gate:
+    name: Validate source verifier; no APK built
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Python syntax and fail-closed checks
+        run: |
+          set -euo pipefail
+          python3 -m py_compile android-order-p1f/tools/verify_source_archive.py
+          python3 - <<'PY'
+          import importlib.util
+          import tempfile
+          import zipfile
+          from pathlib import Path
+          p=Path('android-order-p1f/tools/verify_source_archive.py')
+          spec=importlib.util.spec_from_file_location('source_gate',p)
+          m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+          with tempfile.TemporaryDirectory() as td:
+              root=Path(td)
+              for filename, contents in [('missing.zip',None),('invalid.zip',b'not a ZIP')]:
+                  source=root/filename
+                  if contents is not None: source.write_bytes(contents)
+                  try:
+                      m.verify_and_extract(source,root/'output')
+                  except (ValueError, FileNotFoundError):
+                      pass
+                  else:
+                      raise AssertionError('Unsafe archive was accepted: '+filename)
+          print('PASS: source validator refuses missing and malformed archives')
+          PY
+      - name: Source upload readiness
+        run: |
+          set -euo pipefail
+          p=android-order-p1f/GarakHansang_Order_Android_v1_9_P1E_Source_20261105.zip
+          if [ -s "$p" ]; then
+            python3 android-order-p1f/tools/verify_source_archive.py --archive "$p" --extract-dir "$RUNNER_TEMP/gho-preflight"
+            echo 'SOURCE_READY=YES' >> "$GITHUB_STEP_SUMMARY"
+            echo 'Verified source archive present. Separate APK build workflow must succeed before publishing.' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'SOURCE_READY=NO; APK_NOT_BUILT' >> "$GITHUB_STEP_SUMMARY"
+            echo 'The private v1.9 ZIP has not been uploaded to this branch. This preflight checks only the safety gate.' >> "$GITHUB_STEP_SUMMARY"
+          fi
