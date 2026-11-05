@@ -1,19 +1,28 @@
-# Garak Hansang Order Android P1F — verifiable v1.9 build source
+# 가락한상오더 Android P1F — v1.9 APK 빌드 브랜치
 
-This isolated development branch does not modify production `main`.
+**상태: GitHub 브랜치와 CI/검증기 반영 완료. v1.9 소스 ZIP은 아직 이 브랜치에 업로드되지 않았으며 APK 빌드는 실행되지 않았음.** 기존 운영 `main` 및 이전 소스는 변경하지 않았습니다.
 
-## Source of truth
-- Source archive: `android-order-p1f/source-parts/part-000.b64` through `part-024.b64`, each containing a base64-encoded sequential segment of **GarakHansang_Order_Android_v1_9_P1E_Source_20261105.zip**.
-- Archive SHA-256: `5c3c03ab5412e6aec03dc489f3a55d36d48d1baa6339370c84f83ac1e2741f7e`.
-- Original archive size: **4,754,258 bytes**; **147 files**, including the existing 47 menu images.
-- Original private Google Drive backup: https://drive.google.com/file/d/1AsXu_zJBFRWj-8Tp1M-yNY9YONg0_p6O/view
+## 원본 및 무결성
+- 원본 ZIP: `GarakHansang_Order_Android_v1_9_P1E_Source_20261105.zip` (4,754,258바이트)
+- SHA-256: `5c3c03ab5412e6aec03dc489f3a55d36d48d1baa6339370c84f83ac1e2741f7e`
+- 원본 구성: 147개 파일 / 47개 메뉴 이미지 포함
+- 확인된 [비공개 Google Drive 원본](https://drive.google.com/file/d/1AsXu_zJBFRWj-8Tp1M-yNY9YONg0_p6O/view)
+- GitHub에 필요한 업로드 위치: `android-order-p1f/GarakHansang_Order_Android_v1_9_P1E_Source_20261105.zip`
 
-## Build
-The branch's `.github/workflows/order-android-p1f.yml` reconstructs the original ZIP, verifies its SHA-256, unpacks it into a temporary project, runs Python and Java security/contract tests, builds and verifies an actual debug APK, and runs an Android emulator smoke test. Any missing/mismatched chunk or APK signature fails the job.
+## 이미 반영된 항목
+- `.github/workflows/order-android-p1f.yml`: 위 ZIP이 새로 추가되는 push에만 반응하는 빌드/에뮬레이터 파이프라인
+- `android-order-p1f/tools/verify_source_archive.py`: 원본 SHA-256, 바이트 수, 압축 파일 수, 파일 경로와 47개 메뉴 이미지 검사 후에만 추출
 
-The older `android-order/` tree on the base branch is an earlier prototype and **does not contain the v1.9 47-image catalog**. Do not build it as P1F; use the workflow's verified ZIP only.
+## ZIP이 준비됐을 때의 다음 절차
+1. GitHub 저장소에서 **이 P1F 브랜치**를 선택해 `android-order-p1f/`로 이동합니다.
+2. Add file → Upload files로 **위 정확한 이름의 ZIP**을 넣고 해당 브랜치에 커밋합니다. 실사용자 정보·결제비밀키·개인 서명키는 포함하지 마세요.
+3. Actions에서 `Garak Hansang Order Android P1F - Verified v1.9 APK` 실행이 생성되는지 확인합니다.
+4. 성공한 경우 Actions 아티팩트 `GarakHansang-Order-v19-debug-apk`의 APK·서명 검증 JSON·SHA256을 내려받고, 에뮬레이터 화면 검증까지 확인합니다.
+5. 실패했다면 Logs에 나온 문제를 해결하기 전에는 APK 성공이나 상용 출시를 주장하지 않습니다.
 
-## Security
-Demo only. Google OAuth login, live Neon access, real payment, order acceptance, and rider dispatch remain disabled. The debug certificate fingerprint cannot by itself establish Android App Link domain ownership. Do not release commercially from this workflow.
+이전 `android-order/` 디렉터리는 47개 메뉴 이미지가 없는 과거 실험 버전입니다. P1F는 ZIP 안의 v1.9 프로젝트만 빌드합니다.
 
-Never upload private API secrets, signing keys, or personal customer data into the repository.
+## 보안과 출시
+Google 실로그인, Neon 운영 API, PG 결제, 실제 주문·배송·정산은 아직 비활성화입니다. **GO-LIVE = NO**. 디버그 서명은 Google Play 출시 서명 또는 App Link 소유권 검증을 대체하지 않습니다.
+
+**전송 한계:** 이 세션의 Drive→GitHub 원본 ZIP 직접 업로드는 연결에서 차단됐습니다. 이 문서의 경로에 ZIP을 실제 업로드하기 전까지 CI 자동 빌드는 시작되지 않습니다.
