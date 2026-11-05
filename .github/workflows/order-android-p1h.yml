@@ -6,6 +6,7 @@ on:
       - chatgpt/garakhansang-order-android-p1h-20261106
     paths:
       - android-order-p1h/GarakHansang_Order_Android_v1_11_P1H_Source_20261106.zip
+      - 'android-order-p1h/source-b64/**'
   workflow_dispatch:
 
 permissions:
@@ -17,6 +18,14 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+      - name: Reassemble exact verified source ZIP from GitHub source chunks
+        shell: bash
+        run: |
+          set -euo pipefail
+          count="$(find android-order-p1h/source-b64 -maxdepth 1 -type f -name 'part-*.txt' | wc -l)"
+          if test "$count" -ne 98; then echo "Expected 98 parts, got $count"; exit 1; fi
+          cat android-order-p1h/source-b64/part-*.txt | base64 --decode > android-order-p1h/GarakHansang_Order_Android_v1_11_P1H_Source_20261106.zip
+          sha256sum android-order-p1h/GarakHansang_Order_Android_v1_11_P1H_Source_20261106.zip
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -90,6 +99,14 @@ jobs:
     timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
+      - name: Reassemble exact verified source ZIP from GitHub source chunks
+        shell: bash
+        run: |
+          set -euo pipefail
+          count="$(find android-order-p1h/source-b64 -maxdepth 1 -type f -name 'part-*.txt' | wc -l)"
+          if test "$count" -ne 98; then echo "Expected 98 parts, got $count"; exit 1; fi
+          cat android-order-p1h/source-b64/part-*.txt | base64 --decode > android-order-p1h/GarakHansang_Order_Android_v1_11_P1H_Source_20261106.zip
+          sha256sum android-order-p1h/GarakHansang_Order_Android_v1_11_P1H_Source_20261106.zip
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
