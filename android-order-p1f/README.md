@@ -4,6 +4,8 @@
 
 ## P1F 진행 현황 (2026-11-06)
 - **v1.9 텍스트 소스 36개를 `android-order-p1f/src/`에 별도 커밋**: MainActivity, API, OAuth, 카탈로그 JSON, Gradle 설정, 오프라인 단위테스트·QA 도구. 원본 4개 핵심 소스의 Git blob SHA가 v1.9 ZIP과 일치합니다.
+- **GitHub 원본 해시 검증**: 텍스트 소스 **36/36개**가 v1.9 ZIP의 Git blob SHA-1과 일치함을 확인했습니다. 임시 전송 폴더는 검증 후 삭제했으며, 원본 ZIP은 보존했습니다.
+- **원격 실행 성공**: [Source and OAuth Tests GitHub Actions #42093188290](https://github.com/skvive/garakhansang/actions/runs/42093188290) — Python 46/46, OAuth JVM 66/66. **APK 빌드 아님**.
 - **텍스트 전용 CI**: `.github/workflows/order-android-p1f-source-ci.yml`. 오프라인 모바일 API 46개와 OAuth JVM 66개 검증용. Android APK를 만드는 워크플로가 아닙니다.
 - **원본 메뉴 이미지 47개와 리소스 아이콘 PNG는 아직 v1.9 전체 ZIP으로만 보관**돼 있으며, 새 GitHub 텍스트 소스 디렉터리에는 포함되지 않습니다.
 - 실제 APK 빌드용 `order-android-p1f.yml`은 아래 원본 ZIP이 지정 경로에 커밋돼야 실행되며, 진행 전까지 **GO-LIVE = NO**입니다.
