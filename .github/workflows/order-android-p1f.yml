@@ -1,0 +1,115 @@
+name: Garak Hansang Order Android P1F - Verified v1.9 APK
+
+on:
+  push:
+    branches:
+      - chatgpt/garakhansang-order-android-p1f-20261105
+    paths:
+      - android-order-p1f/GarakHansang_Order_Android_v1_9_P1E_Source_20261105.zip
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-debug-apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Verify v1.9 ZIP and 47 images before extraction
+        run: |
+          python3 android-order-p1f/tools/verify_source_archive.py \
+            --archive android-order-p1f/GarakHansang_Order_Android_v1_9_P1E_Source_20261105.zip \
+            --extract-dir "$RUNNER_TEMP/gho-android"
+      - name: Run security and mobile API tests
+        run: |
+          cd "$RUNNER_TEMP/gho-android"
+          python3 -m pip install -r requirements-dev.txt
+          python3 tools/qa_v19_static.py
+          python3 -m pytest -q tests/test_mobile_p1.py tests/test_mobile_p16_catalog.py tests/test_mobile_p17_auth.py tests/test_mobile_p18_assetlinks.py tests/test_mobile_p19_apk_gate.py tests/test_mobile_p19_emulator_gate.py
+          mkdir -p "$RUNNER_TEMP/gho-jvm"
+          javac -d "$RUNNER_TEMP/gho-jvm" app/src/main/java/site/lexid/garakhansang/order/OAuthPkce.java tests/jvm/OAuthPkceSelfTest.java
+          javac -cp "$RUNNER_TEMP/gho-jvm" -d "$RUNNER_TEMP/gho-jvm" app/src/main/java/site/lexid/garakhansang/order/OAuthCodeExchange.java app/src/main/java/site/lexid/garakhansang/order/OAuthLoginFlow.java tests/jvm/OAuthExchangeSelfTest.java tests/jvm/OAuthLoginFlowSelfTest.java
+          java -cp "$RUNNER_TEMP/gho-jvm" OAuthPkceSelfTest
+          java -cp "$RUNNER_TEMP/gho-jvm" OAuthExchangeSelfTest
+          java -cp "$RUNNER_TEMP/gho-jvm" OAuthLoginFlowSelfTest
+      - name: Install Android API 36 and build tools
+        run: |
+          SDKMGR="$(command -v sdkmanager || find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | head -n1)"
+          test -x "$SDKMGR"
+          yes | "$SDKMGR" --licenses >/dev/null || true
+          "$SDKMGR" --install 'platforms;android-36' 'build-tools;36.0.0' 'platform-tools'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
+      - name: Build real debug APK
+        run: |
+          cd "$RUNNER_TEMP/gho-android"
+          gradle --no-daemon :app:assembleDebug --stacktrace
+      - name: Verify real APK signing, package and Android SDK metadata
+        run: |
+          mkdir -p dist
+          cp "$RUNNER_TEMP/gho-android/app/build/outputs/apk/debug/app-debug.apk" dist/app-debug.apk
+          python3 "$RUNNER_TEMP/gho-android/tools/verify_debug_apk.py" \
+            --apk dist/app-debug.apk \
+            --aapt "$ANDROID_HOME/build-tools/36.0.0/aapt" \
+            --apksigner "$ANDROID_HOME/build-tools/36.0.0/apksigner" \
+            --receipt dist/debug-apk-verified.json
+          sha256sum dist/app-debug.apk > dist/SHA256.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: GarakHansang-Order-v19-debug-apk
+          path: dist/
+          if-no-files-found: error
+          retention-days: 30
+
+  emulator-smoke:
+    needs: build-debug-apk
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify and unpack the same source
+        run: |
+          python3 android-order-p1f/tools/verify_source_archive.py \
+            --archive android-order-p1f/GarakHansang_Order_Android_v1_9_P1E_Source_20261105.zip \
+            --extract-dir "$RUNNER_TEMP/gho-android"
+      - uses: actions/download-artifact@v4
+        with:
+          name: GarakHansang-Order-v19-debug-apk
+          path: dist
+      - name: Ensure APK artifact exists
+        run: test -s dist/app-debug.apk
+      - name: Enable KVM if available
+        run: |
+          if test -e /dev/kvm; then sudo chmod 666 /dev/kvm; fi
+      - name: Install and test four tabs on Android 15 emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_7
+          emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
+          script: |
+            python3 "$RUNNER_TEMP/gho-android/tools/emulator_smoke.py" \
+              --apk "$GITHUB_WORKSPACE/dist/app-debug.apk" \
+              --out "$GITHUB_WORKSPACE/smoke-evidence"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: GarakHansang-Order-v19-emulator-evidence
+          path: smoke-evidence/
+          if-no-files-found: ignore
+          retention-days: 14
