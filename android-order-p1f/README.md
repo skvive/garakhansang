@@ -2,6 +2,12 @@
 
 **상태: GitHub 브랜치와 CI/검증기 반영 완료. v1.9 소스 ZIP은 아직 이 브랜치에 업로드되지 않았으며 APK 빌드는 실행되지 않았음.** 기존 운영 `main` 및 이전 소스는 변경하지 않았습니다.
 
+## P1F 진행 현황 (2026-11-06)
+- **v1.9 텍스트 소스 36개를 `android-order-p1f/src/`에 별도 커밋**: MainActivity, API, OAuth, 카탈로그 JSON, Gradle 설정, 오프라인 단위테스트·QA 도구. 원본 4개 핵심 소스의 Git blob SHA가 v1.9 ZIP과 일치합니다.
+- **텍스트 전용 CI**: `.github/workflows/order-android-p1f-source-ci.yml`. 오프라인 모바일 API 46개와 OAuth JVM 66개 검증용. Android APK를 만드는 워크플로가 아닙니다.
+- **원본 메뉴 이미지 47개와 리소스 아이콘 PNG는 아직 v1.9 전체 ZIP으로만 보관**돼 있으며, 새 GitHub 텍스트 소스 디렉터리에는 포함되지 않습니다.
+- 실제 APK 빌드용 `order-android-p1f.yml`은 아래 원본 ZIP이 지정 경로에 커밋돼야 실행되며, 진행 전까지 **GO-LIVE = NO**입니다.
+
 ## 원본 및 무결성
 - 원본 ZIP: `GarakHansang_Order_Android_v1_9_P1E_Source_20261105.zip` (4,754,258바이트)
 - SHA-256: `5c3c03ab5412e6aec03dc489f3a55d36d48d1baa6339370c84f83ac1e2741f7e`
