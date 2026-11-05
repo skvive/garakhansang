@@ -1,0 +1,79 @@
+name: Garak Hansang Android P1F - Source and OAuth Tests (No APK)
+
+on:
+  push:
+    branches:
+      - chatgpt/garakhansang-order-android-p1f-20261105
+    paths:
+      - 'android-order-p1f/src/**'
+      - '.github/workflows/order-android-p1f-source-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-contract:
+    name: Verify v1.9 text sources - no APK build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: android-order-p1f/src
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Check expected text-only source and fail closed on missing code
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f app/src/main/java/site/lexid/garakhansang/order/MainActivity.java
+          test -f app/src/main/java/site/lexid/garakhansang/order/OAuthPkce.java
+          test -f app/src/main/java/site/lexid/garakhansang/order/OAuthCodeExchange.java
+          test -f integrations/v5/mobile_api_p1.py
+          test -f catalog/menus_47.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          items=json.loads(Path('catalog/menus_47.json').read_text())['items']
+          assert len(items)==47 and all(not x['is_orderable'] for x in items)
+          print('Verified 47 unorderable catalog references (image media not present).')
+          PY
+      - name: Install Python contract test dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Test 46 offline mobile API and security contracts
+        run: |
+          python -m pytest -q \
+            tests/test_mobile_p1.py \
+            tests/test_mobile_p16_catalog.py \
+            tests/test_mobile_p17_auth.py \
+            tests/test_mobile_p18_assetlinks.py \
+            tests/test_mobile_p19_apk_gate.py \
+            tests/test_mobile_p19_emulator_gate.py
+      - name: Test 66 Java OAuth/PKCE security checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/garak-order-jvm"
+          javac -d "$RUNNER_TEMP/garak-order-jvm" \
+            app/src/main/java/site/lexid/garakhansang/order/OAuthPkce.java \
+            tests/jvm/OAuthPkceSelfTest.java
+          javac -cp "$RUNNER_TEMP/garak-order-jvm" -d "$RUNNER_TEMP/garak-order-jvm" \
+            app/src/main/java/site/lexid/garakhansang/order/OAuthCodeExchange.java \
+            app/src/main/java/site/lexid/garakhansang/order/OAuthLoginFlow.java \
+            tests/jvm/OAuthExchangeSelfTest.java \
+            tests/jvm/OAuthLoginFlowSelfTest.java
+          java -cp "$RUNNER_TEMP/garak-order-jvm" OAuthPkceSelfTest
+          java -cp "$RUNNER_TEMP/garak-order-jvm" OAuthExchangeSelfTest
+          java -cp "$RUNNER_TEMP/garak-order-jvm" OAuthLoginFlowSelfTest
+      - name: Explicit no-APK status
+        run: |
+          echo 'Text-source tests passed. The verified v1.9 source ZIP with 47 original menu images is still required for the separate signed APK build.'
