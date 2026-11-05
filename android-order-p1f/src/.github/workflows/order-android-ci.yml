@@ -1,0 +1,96 @@
+name: Garak Hansang Order Android Debug APK
+on:
+  push:
+    branches: ['chatgpt/garakhansang-order-android-20261102', 'chatgpt/garakhansang-order-android-p1-20261105', 'chatgpt/garakhansang-order-android-p1b-20261105', 'chatgpt/garakhansang-order-android-p1c-20261105', 'chatgpt/garakhansang-order-android-p1d-20261105', 'chatgpt/garakhansang-order-android-p1e-20261105', 'chatgpt/garakhansang-order-android-p1g-20261106']
+    paths: ['android-order/**', '.github/workflows/order-android-ci.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: P1 source and mobile API contract checks
+        working-directory: android-order
+        run: |
+          python -m pip install -r requirements-dev.txt
+          python tools/qa_v20_static.py
+          python -m pytest -q tests/test_mobile_p1.py tests/test_mobile_p16_catalog.py tests/test_mobile_p17_auth.py tests/test_mobile_p18_assetlinks.py tests/test_mobile_p19_apk_gate.py tests/test_mobile_p19_emulator_gate.py tests/test_mobile_p1g_regressions.py
+          mkdir -p "$RUNNER_TEMP/gho-oauth-jvm"
+          javac -d "$RUNNER_TEMP/gho-oauth-jvm" app/src/main/java/site/lexid/garakhansang/order/OAuthPkce.java tests/jvm/OAuthPkceSelfTest.java
+          java -cp "$RUNNER_TEMP/gho-oauth-jvm" OAuthPkceSelfTest
+          javac -cp "$RUNNER_TEMP/gho-oauth-jvm" -d "$RUNNER_TEMP/gho-oauth-jvm" app/src/main/java/site/lexid/garakhansang/order/OAuthCodeExchange.java app/src/main/java/site/lexid/garakhansang/order/OAuthLoginFlow.java tests/jvm/OAuthExchangeSelfTest.java tests/jvm/OAuthLoginFlowSelfTest.java
+          java -cp "$RUNNER_TEMP/gho-oauth-jvm" OAuthExchangeSelfTest
+          java -cp "$RUNNER_TEMP/gho-oauth-jvm" OAuthLoginFlowSelfTest
+          javac -d "$RUNNER_TEMP/gho-oauth-jvm" app/src/main/java/site/lexid/garakhansang/order/CatalogFilters.java tests/jvm/CatalogFiltersSelfTest.java
+          java -cp "$RUNNER_TEMP/gho-oauth-jvm" CatalogFiltersSelfTest
+      - name: Install SDK packages
+        run: |
+          SM="$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | head -n1)"
+          yes | "$SM" --licenses >/dev/null || true
+          "$SM" --install 'platforms;android-36' 'build-tools;36.0.0' 'platform-tools'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
+      - name: Build actual debug APK
+        working-directory: android-order
+        run: gradle --no-daemon :app:assembleDebug --stacktrace
+      - name: Inspect actual signed debug APK (fail closed)
+        working-directory: android-order
+        run: |
+          python tools/verify_debug_apk.py \
+            --apk app/build/outputs/apk/debug/app-debug.apk \
+            --aapt "$ANDROID_HOME/build-tools/36.0.0/aapt" \
+            --apksigner "$ANDROID_HOME/build-tools/36.0.0/apksigner" \
+            --receipt app/build/outputs/apk/debug/debug-apk-verified.json
+          sha256sum app/build/outputs/apk/debug/app-debug.apk > app/build/outputs/apk/debug/SHA256.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: GarakHansang-Order-debug-apk
+          path: |
+            android-order/app/build/outputs/apk/debug/app-debug.apk
+            android-order/app/build/outputs/apk/debug/debug-apk-verified.json
+            android-order/app/build/outputs/apk/debug/SHA256.txt
+          retention-days: 30
+  emulator-smoke:
+    needs: android
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: GarakHansang-Order-debug-apk
+      - name: Enable KVM
+        run: |
+          if test -e /dev/kvm; then sudo chmod 666 /dev/kvm; fi
+      - name: Install, launch and inspect on Android 15 emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_7
+          emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
+          script: |
+            python android-order/tools/emulator_smoke.py \
+              --apk android-order/app/build/outputs/apk/debug/app-debug.apk \
+              --out android-order/smoke-evidence
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: GarakHansang-Order-emulator-smoke
+          path: |
+            android-order/smoke-evidence/*.png
+            android-order/smoke-evidence/*.xml
+          if-no-files-found: ignore
+          retention-days: 14

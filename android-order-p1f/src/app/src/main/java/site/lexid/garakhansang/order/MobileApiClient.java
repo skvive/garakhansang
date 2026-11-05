@@ -130,7 +130,7 @@ public final class MobileApiClient {
                 int status=connection.getResponseCode();
                 if(status!=200)throw new IOException("HTTP "+status+" · 서비스 API 이용 불가");
                 String contentType=connection.getContentType();
-                if(contentType==null || !contentType.toLowerCase(java.util.Locale.ROOT).contains("application/json"))
+                if(contentType==null || !contentType.split(";",2)[0].trim().equalsIgnoreCase("application/json"))
                     throw new IOException("JSON API 응답이 아닙니다.");
                 try(InputStream input=connection.getInputStream()){
                     ByteArrayOutputStream buffer=new ByteArrayOutputStream();

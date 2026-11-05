@@ -7,8 +7,8 @@ android {
         applicationId = "site.lexid.garakhansang.order"
         minSdk = 26
         targetSdk = 36
-        versionCode = 19
-        versionName = "1.9.0-p1e-ci-gate"
+        versionCode = 20
+        versionName = "1.10.0-p1g-accessibility-demo"
     }
     buildTypes {
         getByName("release") { isMinifyEnabled = false }

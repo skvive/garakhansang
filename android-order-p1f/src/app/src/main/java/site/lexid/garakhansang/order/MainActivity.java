@@ -262,6 +262,7 @@ public class MainActivity extends Activity {
     private String selectedRemoteMarketId="", selectedRemoteMarketName="";
     private String selectedRemoteMerchantName="";
     private int remoteRequestSerial=0;
+    private int addressRequestSerial=0, authRequestSerial=0, apiRequestSerial=0;
     // Bounded thumbnail cache avoids decoding 47 full-resolution images on each navigation.
     private final LruCache<String,Bitmap> thumbnails=new LruCache<String,Bitmap>(12*1024){
         @Override protected int sizeOf(String key, Bitmap bitmap){
@@ -331,8 +332,22 @@ public class MainActivity extends Activity {
         im.setContentDescription(file.startsWith("menu_")?"AI 생성 메뉴 참고 이미지":"브랜드 참고 이미지");
         return im;
     }
-    private TextView pill(String label,boolean active,Runnable onClick){TextView b=text(label,13,active?WHITE:INK,true);b.setGravity(Gravity.CENTER);b.setPadding(d(14),0,d(14),0);b.setBackground(shape(active?RED:0xFFF6EDE5,28));b.setOnClickListener(v->onClick.run());return b;}
-    private TextView button(String label,int color,Runnable click){TextView b=text(label,15,WHITE,true);b.setGravity(Gravity.CENTER);b.setPadding(d(12),0,d(12),0);b.setBackground(shape(color,14));b.setOnClickListener(v->click.run());return b;}
+    private TextView pill(String label,boolean active,Runnable onClick){
+        Button b=new Button(this);
+        b.setText(label);b.setAllCaps(false);b.setTextSize(13);
+        b.setTextColor(active?WHITE:INK);b.setTypeface(Typeface.DEFAULT,Typeface.BOLD);
+        b.setGravity(Gravity.CENTER);b.setPadding(d(14),0,d(14),0);
+        b.setBackground(shape(active?RED:0xFFF6EDE5,28));
+        b.setMinWidth(d(48));b.setMinHeight(d(48));b.setOnClickListener(v->onClick.run());return b;
+    }
+    private TextView button(String label,int color,Runnable click){
+        Button b=new Button(this);
+        b.setText(label);b.setAllCaps(false);b.setTextSize(15);
+        b.setTextColor(WHITE);b.setTypeface(Typeface.DEFAULT,Typeface.BOLD);
+        b.setGravity(Gravity.CENTER);b.setPadding(d(12),0,d(12),0);
+        b.setBackground(shape(color,14));b.setMinHeight(d(48));
+        b.setOnClickListener(v->click.run());return b;
+    }
     private int count(){int c=0;for(int n:cart)c+=n;return c;}
     private long cartTotal(){long sum=0;for(int i=0;i<cart.length;i++)sum+=(long)cart[i]*prices[i];return sum;}
     private String won(long price){return String.format(java.util.Locale.KOREA,"%,d원",price);}
@@ -365,6 +380,8 @@ public class MainActivity extends Activity {
     }
     private void open(String p){page=p;render();}
     private void render(){
+        // Every navigation invalidates replies belonging to detached views.
+        ++remoteRequestSerial; ++addressRequestSerial; ++authRequestSerial; ++apiRequestSerial;
         app=column();app.setBackgroundColor(CREAM);setContentView(app);
         // Android 15+ enforces edge-to-edge for target SDK 35+. Respect system bars
         // so the cart button and navigation labels do not overlap system UI.
@@ -403,7 +420,7 @@ public class MainActivity extends Activity {
         ImageView icon=photo("order_brand_512",48,48);bar.addView(icon);icon.setOnClickListener(v->open("home"));
         LinearLayout labels=column();labels.setPadding(d(10),0,0,0);bar.addView(labels,new LinearLayout.LayoutParams(0,-2,1));
         labels.addView(text("가락한상 오더",20,INK,true));labels.addView(text("시장에서 식탁까지, 간편하게",11,MUTED,false));
-        TextView bag=pill("장바구니 "+count(),true,()->open("cart"));bar.addView(bag,lp(-2,38));
+        TextView bag=pill("장바구니 "+count(),true,()->open("cart"));bar.addView(bag,lp(-2,48));
         LinearLayout location=row();location.setPadding(d(18),d(7),d(18),d(8));
         location.setBackgroundColor(WHITE);app.addView(location,lp(-1,52));
         LinearLayout block=column();location.addView(block,new LinearLayout.LayoutParams(0,-2,1));
@@ -416,7 +433,7 @@ public class MainActivity extends Activity {
     private void footer(){
         LinearLayout bar=row();bar.setPadding(d(10),d(5),d(10),d(8));bar.setBackground(bordered(WHITE,LINE,0));app.addView(bar,lp(-1,66));
         String[][] nav={{"⌂","홈","home"},{"▦","메뉴","products"},{"▤","장바구니","cart"},{"☷","주문내역","orders"},{"◉","마이","my"}};
-        for(String[] item:nav){LinearLayout segment=column();segment.setGravity(Gravity.CENTER);TextView ico=text(item[0],22,page.equals(item[2])?RED:MUTED,true);ico.setGravity(Gravity.CENTER);segment.addView(ico);TextView t=text(item[1],11,page.equals(item[2])?RED:MUTED,true);t.setGravity(Gravity.CENTER);segment.addView(t);bar.addView(segment,new LinearLayout.LayoutParams(0,-1,1));segment.setOnClickListener(v->open(item[2]));}
+        for(String[] item:nav){LinearLayout segment=column();segment.setGravity(Gravity.CENTER);TextView ico=text(item[0],22,page.equals(item[2])?RED:MUTED,true);ico.setGravity(Gravity.CENTER);segment.addView(ico);TextView t=text(item[1],11,page.equals(item[2])?RED:MUTED,true);t.setGravity(Gravity.CENTER);segment.addView(t);bar.addView(segment,new LinearLayout.LayoutParams(0,-1,1));segment.setContentDescription(item[1]+" 탭");segment.setFocusable(true);segment.setOnClickListener(v->open(item[2]));}
     }
     private void section(String title,String sub){TextView h=text(title,22,INK,true);content.addView(h,lp(-1,34));if(sub!=null){TextView s=text(sub,13,MUTED,false);s.setLineSpacing(d(2),1);content.addView(s,lp(-1,-2));}gap(content,14);}
     private void home(){
@@ -435,7 +452,7 @@ public class MainActivity extends Activity {
         gap(content,18);
         section("어떤 메뉴를 찾으세요?","가락한상 오더 47종 메뉴를 둘러보세요");
         LinearLayout cats=row();content.addView(cats,lp(-1,150));String[] tags={"오늘의 한상","회·모둠","광양수산 인기"};String[] files={"menu_01.jpg","menu_04.jpg","menu_11.jpg"};
-        for(int i=0;i<3;i++){final String kind=tags[i];LinearLayout card=column();card.setPadding(d(4),d(4),d(4),d(4));cats.addView(card,new LinearLayout.LayoutParams(0,-1,1));ImageView ph=photo(files[i],-1,100);card.addView(ph,new LinearLayout.LayoutParams(-1,d(100)));TextView title=text(tags[i],15,INK,true);title.setGravity(Gravity.CENTER);card.addView(title,lp(-1,30));card.setOnClickListener(v->{category=kind;open("products");});}
+        for(int i=0;i<3;i++){final String kind=tags[i];LinearLayout card=column();card.setPadding(d(4),d(4),d(4),d(4));cats.addView(card,new LinearLayout.LayoutParams(0,-1,1));ImageView ph=photo(files[i],-1,100);card.addView(ph,new LinearLayout.LayoutParams(-1,d(100)));TextView title=text(tags[i],15,INK,true);title.setGravity(Gravity.CENTER);card.addView(title,lp(-1,30));card.setOnClickListener(v->{category=kind;query="";open("products");});}
         gap(content,24);section("가락한상 추천", "AI 이미지 시안 · 운영가격 및 실제 구성 확인 필요");
         for(int i:new int[]{0,3,6}) addProduct(i);
         gap(content,14);TextView order=button("장바구니 확인  ·  "+count()+"개",RED,()->open("cart"));content.addView(order,lp(-1,52));
@@ -471,27 +488,30 @@ public class MainActivity extends Activity {
         content.addView(button("메뉴 47종 보기",RED,()->{category="전체";open("products");}),lp(-1,52));
         gap(content,8);content.addView(button("장바구니 보기",GREEN,()->open("cart")),lp(-1,48));
     }
-    private void categoryBar(){HorizontalScrollView hs=new HorizontalScrollView(this);hs.setHorizontalScrollBarEnabled(false);LinearLayout row=row();hs.addView(row);for(String kind:kinds){TextView b=pill(kind,category.equals(kind),()->{category=kind;render();});row.addView(b,lp(-2,38));sideMargins(b,0,0,8,0);}content.addView(hs,lp(-1,40));gap(content,15);}
+    private void categoryBar(){HorizontalScrollView hs=new HorizontalScrollView(this);hs.setHorizontalScrollBarEnabled(false);LinearLayout row=row();hs.addView(row);for(String kind:kinds){TextView b=pill(kind,category.equals(kind),()->{if(!category.equals(kind))query="";category=kind;render();});row.addView(b,lp(-2,48));sideMargins(b,0,0,8,0);}content.addView(hs,lp(-1,52));gap(content,15);}
     private void products(){section("상품 탐색","47개 메뉴 표시 · 가격은 제공된 목록 기준 · 실주문 불가");categoryBar();
-        EditText search=new EditText(this);search.setSingleLine(true);search.setHint("상품명 검색");search.setTextSize(15);search.setPadding(d(14),d(8),d(14),d(8));search.setBackground(bordered(WHITE,LINE,14));search.setText(query);content.addView(search,lp(-1,48));gap(content,13);
+        EditText search=new EditText(this);search.setSingleLine(true);search.setHint("상품명 검색");search.setTextSize(15);search.setPadding(d(14),d(8),d(14),d(8));search.setBackground(bordered(WHITE,LINE,14));search.setFilters(new InputFilter[]{new InputFilter.LengthFilter(80)});search.setText(query);content.addView(search,lp(-1,48));gap(content,13);
         LinearLayout results=column();content.addView(results,lp(-1,-2));renderResults(results);
         search.addTextChangedListener(new TextWatcher(){public void beforeTextChanged(CharSequence s,int st,int c,int a){}public void onTextChanged(CharSequence s,int st,int before,int count){query=s.toString();renderResults(results);}public void afterTextChanged(Editable e){}});
     }
-    private void renderResults(LinearLayout l){l.removeAllViews();int found=0;for(int i=0;i<names.length;i++)if((category.equals("전체")||catalogCategories[i].equals(category))&&(names[i].contains(query.trim())||descriptions[i].contains(query.trim()))){addProductInto(i,l);found++;}if(found==0)l.addView(text("검색 결과가 없습니다.",15,MUTED,false),lp(-1,60));}
+    private void renderResults(LinearLayout l){l.removeAllViews();int found=0;for(int i=0;i<names.length;i++)if(CatalogFilters.matches(category,catalogCategories[i],names[i],descriptions[i],query)){addProductInto(i,l);found++;}if(found==0){
+        l.addView(text("검색 결과가 없습니다. 검색어 또는 분류를 변경하세요.",15,MUTED,false),lp(-1,60));
+        l.addView(button("전체 상품 다시 보기",GREEN,()->{category="전체";query="";render();}),lp(-1,48));
+    }}
     private void addProduct(int i){addProductInto(i,content);}
     private void addProductInto(int i,LinearLayout root){
-        LinearLayout card=row();card.setPadding(d(9),d(9),d(9),d(9));card.setBackground(bordered(WHITE,LINE,16));root.addView(card,lp(-1,148));sideMargins(card,0,0,0,10);
+        LinearLayout card=row();card.setPadding(d(9),d(9),d(9),d(9));card.setBackground(bordered(WHITE,LINE,16));root.addView(card,lp(-1,180));sideMargins(card,0,0,0,10);
         card.addView(photo(String.format(java.util.Locale.ROOT,"menu_%02d.jpg",i+1),95,95));
         LinearLayout details=column();details.setPadding(d(12),0,0,0);card.addView(details,new LinearLayout.LayoutParams(0,-1,1));
         LinearLayout productTop=row();details.addView(productTop,lp(-1,-2));
         TextView productName=text(names[i],16,INK,true);productName.setMaxLines(2);
         productTop.addView(productName,new LinearLayout.LayoutParams(0,-2,1));
         TextView favorite=pill(favorites.contains(i)?"♥":"♡",favorites.contains(i),()->toggleFavorite(i));
-        productTop.addView(favorite,lp(-2,34));
+        productTop.addView(favorite,lp(-2,48));
         favorite.setContentDescription(names[i]+(favorites.contains(i)?" 찜 해제":" 찜하기"));
         details.addView(text(units[i],11,MUTED,false));
         details.addView(text(won(prices[i])+"  ·  미승인 시연",14,RED,true));gap(details,2);
-        TextView add=button(cart[i]>0?"담김 "+cart[i]+"  +":"담기 +",RED,()->{cart[i]=Math.min(99,cart[i]+1);save();Toast.makeText(this,names[i]+" 시연 장바구니에 담음",Toast.LENGTH_SHORT).show();render();});details.addView(add,lp(-1,36));
+        TextView add=button(cart[i]>0?"담김 "+cart[i]+"  +":"담기 +",RED,()->{cart[i]=Math.min(99,cart[i]+1);save();Toast.makeText(this,names[i]+" 시연 장바구니에 담음",Toast.LENGTH_SHORT).show();render();});details.addView(add,lp(-1,48));
         card.setOnClickListener(v->new AlertDialog.Builder(this).setTitle(names[i]+" · "+won(prices[i]))
             .setMessage(descriptions[i]+"\n\nAI 콘셉트 이미지이며 실제 상품 사진이 아닙니다. 판매 승인·재고·배송비 검증 전 상품입니다. 담기는 기기 내 시연만 가능합니다.")
             .setPositiveButton("데모 장바구니 담기",(dg,w)->{cart[i]=Math.min(99,cart[i]+1);save();render();})
@@ -501,7 +521,7 @@ public class MainActivity extends Activity {
         fulfillmentChooser();gap(content,14);
         int total=count();if(total==0){TextView msg=text("장바구니가 비었습니다.\n상품 목록에서 재료를 담아보세요.",16,MUTED,false);msg.setGravity(Gravity.CENTER);content.addView(msg,lp(-1,120));content.addView(button("상품 둘러보기",RED,()->open("products")),lp(-1,52));return;}
         for(int i=0;i<names.length;i++)if(cart[i]>0){final int id=i;LinearLayout cell=row();cell.setPadding(d(12),d(12),d(12),d(12));cell.setBackground(bordered(WHITE,LINE,14));content.addView(cell,lp(-1,74));sideMargins(cell,0,0,0,9);
-           TextView t=text(names[i]+"\n"+won(prices[i])+" × "+cart[i]+" = "+won((long)prices[i]*cart[i]),13,INK,true);cell.addView(t,new LinearLayout.LayoutParams(0,-1,1));TextView minus=pill("−",false,()->{cart[id]=Math.max(0,cart[id]-1);save();render();});cell.addView(minus,lp(-2,42));TextView num=text("  "+cart[i]+"  ",17,INK,true);cell.addView(num);TextView plus=pill("+",true,()->{cart[id]=Math.min(99,cart[id]+1);save();render();});cell.addView(plus,lp(-2,42));}
+           TextView t=text(names[i]+"\n"+won(prices[i])+" × "+cart[i]+" = "+won((long)prices[i]*cart[i]),13,INK,true);cell.addView(t,new LinearLayout.LayoutParams(0,-1,1));TextView minus=pill("−",false,()->{cart[id]=Math.max(0,cart[id]-1);save();render();});cell.addView(minus,lp(-2,48));TextView num=text("  "+cart[i]+"  ",17,INK,true);cell.addView(num);TextView plus=pill("+",true,()->{cart[id]=Math.min(99,cart[id]+1);save();render();});cell.addView(plus,lp(-2,48));}
         gap(content,15);TextView note=text("선택 수량 "+total+"개\n상품 합계 "+won(cartTotal())+"\n\n배송비·할인 전 금액입니다. 실제 주문·결제·배송 접수는 제공되지 않습니다.",15,INK,true);content.addView(note);
         gap(content,14);content.addView(button("주문서 미리보기 · 실제 결제 불가",RED,()->open("checkout")),lp(-1,52));
         gap(content,8);content.addView(button("선택 초기화",GREEN,()->new AlertDialog.Builder(this).setTitle("장바구니 비우기").setMessage("저장한 상품 수량을 지울까요?").setPositiveButton("초기화",(dialog,w)->{Arrays.fill(cart,0);save();render();}).setNegativeButton("취소",null).show()),lp(-1,48));
@@ -547,9 +567,10 @@ public class MainActivity extends Activity {
         TextView output=text("서버 상태: "+mobileApi.status(),13,MUTED,false);
         content.addView(output,lp(-1,-2));gap(content,12);
         content.addView(button("배송 가능 지역 조회 (읽기 전용)",RED,()->{
+            final int requestId=++addressRequestSerial;
             output.setText("조회 중…");
             mobileApi.serviceability(postal.getText().toString(),(data,error)->{
-                if(!page.equals("address")||isFinishing())return;
+                if(requestId!=addressRequestSerial || !page.equals("address") || isFinishing() || isDestroyed())return;
                 if(error!=null){output.setText("확인 불가: "+error);return;}
                 boolean verified=data.optBoolean("verified",false);
                 boolean serviceable=data.optBoolean("serviceable",false);
@@ -569,9 +590,10 @@ public class MainActivity extends Activity {
         TextView result=text("개발 API 설정: "+mobileApi.status(),14,MUTED,false);
         content.addView(result,lp(-1,-2));gap(content,14);
         content.addView(button("서버 로그인 준비 상태 확인",RED,()->{
+            final int requestId=++authRequestSerial;
             result.setText("로그인 준비 상태 조회 중…");
             mobileApi.authStatus((data,error)->{
-                if(!page.equals("auth_preview")||isFinishing())return;
+                if(requestId!=authRequestSerial || !page.equals("auth_preview") || isFinishing() || isDestroyed())return;
                 if(error!=null){result.setText("상태 조회 실패 · "+error);return;}
                 result.setText("실제 로그인: "+(data.optBoolean("login_enabled",false)?"서버 설정 검토 필요":"비활성화")
                     +"\n"+data.optString("reason","추가 검증 필요"));
@@ -594,9 +616,10 @@ public class MainActivity extends Activity {
         content.addView(text("고객 로그인·실제 주소·실결제·실주문 API는 아직 활성화되지 않았습니다.",13,RED,true));
     }
     private void apiRequest(String what, TextView output){
+        final int requestId=++apiRequestSerial;
         output.setText("조회 중…");
         MobileApiClient.Callback callback=(data,error)->{
-            if(!page.equals("api") || isFinishing())return;
+            if(requestId!=apiRequestSerial || !page.equals("api") || isFinishing() || isDestroyed())return;
             if(error!=null){output.setText("API 조회 실패: "+error);return;}
             if(what.equals("bootstrap")){
                 output.setText("서버 모드: "+data.optString("mode","정보 없음")
@@ -612,7 +635,7 @@ public class MainActivity extends Activity {
             StringBuilder summary=new StringBuilder("개발용 "+what+" 조회: "+arr.length()+"건\n");
             for(int i=0;i<Math.min(8,arr.length());i++){
                 JSONObject item=arr.optJSONObject(i); if(item==null)continue;
-                summary.append("• ").append(item.optString("name","이름 없음"))
+                summary.append("• ").append(safeRemoteText(item.optString("name","이름 없음"),80))
                     .append(" · 시연/주문 불가\n");
             }
             if(arr.length()>8)summary.append("외 ").append(arr.length()-8).append("건");
@@ -650,7 +673,16 @@ public class MainActivity extends Activity {
         gap(content,18);
         content.addView(text("원본 47종 로컬 카탈로그와 서버의 개발 상품은 서로 다른 데이터입니다. 서버 상품은 장바구니·결제 화면으로 이동할 수 없습니다.",12,RED,true));
     }
-    private void remoteMessage(TextView status, String message){status.setText(message);}
+    private static String safeRemoteText(String raw,int limit){
+        if(raw==null || limit<1)return "";
+        StringBuilder clean=new StringBuilder(Math.min(limit,raw.length()));
+        for(int i=0;i<raw.length() && clean.length()<limit;i++){
+            char c=raw.charAt(i);
+            clean.append(Character.isISOControl(c)?' ':c);
+        }
+        return clean.toString().trim();
+    }
+    private void remoteMessage(TextView status, String message){status.setText(safeRemoteText(message,220));}
     private void remoteError(LinearLayout list,TextView status,String error){
         list.removeAllViews();
         remoteMessage(status,"조회 실패 · "+error+"\n주문·배달 가능 여부는 확인되지 않았습니다.");
@@ -680,7 +712,7 @@ public class MainActivity extends Activity {
                 JSONObject item=items.optJSONObject(i);if(item==null)continue;
                 String id=item.optString("id","");
                 if(!id.matches("[A-Za-z0-9_-]{1,60}"))continue;
-                String title=item.optString("name","시장 이름 없음");
+                String title=safeRemoteText(item.optString("name","시장 이름 없음"),80);
                 remoteItem(list,title,"배송 미검증 · 판매 불가 · 매장 둘러보기",
                     ()->loadRemoteMerchants(id,title,list,status));
             }
@@ -700,7 +732,7 @@ public class MainActivity extends Activity {
             if(items.length()==0)remoteItem(list,"시연 매장 없음","판매 승인과 영업 현황이 아닙니다.",null);
             for(int i=0;i<Math.min(200,items.length());i++){
                 JSONObject item=items.optJSONObject(i);if(item==null)continue;
-                String name=item.optString("name","");if(name.trim().isEmpty()||name.length()>90)continue;
+                String name=safeRemoteText(item.optString("name",""),90);if(name.isEmpty())continue;
                 remoteItem(list,name,"시연 매장 · 배달/주문 불가 · 상품 보기",
                     ()->loadRemoteProducts(marketId,marketName,name,list,status));
             }
@@ -722,7 +754,7 @@ public class MainActivity extends Activity {
             if(items.length()==0)remoteItem(list,"시연 상품 없음","아직 조회 가능한 상품이 없습니다.",null);
             for(int i=0;i<Math.min(200,items.length());i++){
                 JSONObject item=items.optJSONObject(i);if(item==null)continue;
-                String name=item.optString("name","상품 이름 없음");
+                String name=safeRemoteText(item.optString("name","상품 이름 없음"),100);
                 // Never trust remote 'orderable' or 'price' flags to enable checkout.
                 long krw=item.optLong("price_krw",-1);
                 remoteItem(list,name,(krw>=0?won(krw)+" · ":"")+"서버 시연 상품 · 판매 불가 · AI 참고 이미지",null);
@@ -762,7 +794,7 @@ public class MainActivity extends Activity {
         gap(content,13);content.addView(text("테스트용 데이터는 기기 내에만 보관됩니다. 카드 번호, 휴대폰 번호, 상세 주소 등은 수집하지 않습니다.",12,MUTED,false));
     }
     private void info(){section("가락한상 오더","공식 캐릭터를 활용한 Android 네이티브 47개 메뉴 시연 앱");ImageView image=photo("garakhansang_official_logo",-1,230);content.addView(image,lp(-1,230));gap(content,18);
-        content.addView(text("47개 시연 메뉴 · 12개 카테고리 탐색\n시연용 지역 선택 · 배달/포장 화면 전환 · 찜 목록\n장바구니 · 주문서 미리보기 (실접수 차단)\n\n모든 메뉴는 원본상 '숨김'이며 AI 콘셉트 이미지를 사용합니다. 실제 입점·판매가·결제·배달은 연결되지 않았습니다.\n\n테스트 버전 1.9.0-p1e-ci-gate · 47종 메뉴",14,INK,false));gap(content,12);
+        content.addView(text("47개 시연 메뉴 · 12개 카테고리 탐색\n시연용 지역 선택 · 배달/포장 화면 전환 · 찜 목록\n장바구니 · 주문서 미리보기 (실접수 차단)\n\n모든 메뉴는 원본상 '숨김'이며 AI 콘셉트 이미지를 사용합니다. 실제 입점·판매가·결제·배달은 연결되지 않았습니다.\n\n테스트 버전 1.10.0-p1g-accessibility-demo · 47종 메뉴",14,INK,false));gap(content,12);
         content.addView(button("상품 보러가기",RED,()->open("products")),lp(-1,52));
     }
     @Override public void onBackPressed(){

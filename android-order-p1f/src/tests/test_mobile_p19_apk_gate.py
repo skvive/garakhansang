@@ -7,7 +7,7 @@ spec=importlib.util.spec_from_file_location('verify_p1e_apk',source)
 apk=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(apk)
 
-BADGING="""package: name='site.lexid.garakhansang.order' versionCode='19' versionName='1.9.0-p1e-ci-gate'
+BADGING="""package: name='site.lexid.garakhansang.order' versionCode='20' versionName='1.10.0-p1g-accessibility-demo'
 sdkVersion:'26'
 targetSdkVersion:'36'
 """
@@ -20,7 +20,7 @@ Signer #1 certificate SHA-256 digest: 1234567890abcdef1234567890abcdef1234567890
 def test_realistic_aapt_data():
     d=apk.parse_badging(BADGING)
     assert d['package_name']=='site.lexid.garakhansang.order'
-    assert d['version_code']==19
+    assert d['version_code']==20
     assert d['target_sdk']==36
 
 def test_realistic_signer_info():
@@ -29,8 +29,8 @@ def test_realistic_signer_info():
 
 @pytest.mark.parametrize('text',[
     '',BADGING.replace('site.lexid.garakhansang.order','site.lexid.other'),
-    BADGING.replace("versionCode='19'","versionCode='18'"),
-    BADGING.replace('1.9.0-','1.8.0-'),
+    BADGING.replace("versionCode='20'","versionCode='19'"),
+    BADGING.replace('1.10.0-','1.9.0-'),
     BADGING.replace("sdkVersion:'26'","sdkVersion:'21'"),
     BADGING.replace("targetSdkVersion:'36'","targetSdkVersion:'35'"),
     BADGING.replace("targetSdkVersion:'36'",''),

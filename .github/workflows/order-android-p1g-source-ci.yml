@@ -1,0 +1,66 @@
+name: Garak Hansang Android P1G - Source regression (No APK)
+
+on:
+  push:
+    branches:
+      - chatgpt/garakhansang-order-android-p1g-20261106
+    paths:
+      - 'android-order-p1f/src/**'
+      - '.github/workflows/order-android-p1g-source-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  p1g-offline-tests:
+    name: P1G Android source security and catalog checks - no APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: android-order-p1f/src
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Check P1G source presence and order safety
+        run: |
+          test -f app/src/main/java/site/lexid/garakhansang/order/CatalogFilters.java
+          test -f tests/jvm/CatalogFiltersSelfTest.java
+          test -f tests/test_mobile_p1g_regressions.py
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("app/build.gradle.kts").read_text()
+          assert "versionCode = 20" in p and "1.10.0-p1g-accessibility-demo" in p
+          items=json.loads(Path("catalog/menus_47.json").read_text())["items"]
+          assert len(items)==47 and all(x["is_orderable"] is False for x in items)
+          config=json.loads(Path("app/src/main/assets/mobile_api_config.json").read_text())
+          assert config["enabled"] is False and config["oauth_enabled"] is False
+          print("P1G version, 47 demo-only products, and disabled network login verified")
+          PY
+      - name: Install Python test dependencies
+        run: python3 -m pip install -r requirements-dev.txt
+      - name: Run 52 offline Python API and UI regression checks
+        run: |
+          python3 -m pytest -q tests/test_mobile_p1.py tests/test_mobile_p16_catalog.py tests/test_mobile_p17_auth.py tests/test_mobile_p18_assetlinks.py tests/test_mobile_p19_apk_gate.py tests/test_mobile_p19_emulator_gate.py tests/test_mobile_p1g_regressions.py
+      - name: Run 82 Java OAuth PKCE and catalog search checks
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/garak-p1g-jvm"
+          javac -d "$RUNNER_TEMP/garak-p1g-jvm" app/src/main/java/site/lexid/garakhansang/order/OAuthPkce.java tests/jvm/OAuthPkceSelfTest.java
+          javac -cp "$RUNNER_TEMP/garak-p1g-jvm" -d "$RUNNER_TEMP/garak-p1g-jvm" app/src/main/java/site/lexid/garakhansang/order/OAuthCodeExchange.java app/src/main/java/site/lexid/garakhansang/order/OAuthLoginFlow.java tests/jvm/OAuthExchangeSelfTest.java tests/jvm/OAuthLoginFlowSelfTest.java
+          javac -cp "$RUNNER_TEMP/garak-p1g-jvm" -d "$RUNNER_TEMP/garak-p1g-jvm" app/src/main/java/site/lexid/garakhansang/order/CatalogFilters.java tests/jvm/CatalogFiltersSelfTest.java
+          java -cp "$RUNNER_TEMP/garak-p1g-jvm" OAuthPkceSelfTest
+          java -cp "$RUNNER_TEMP/garak-p1g-jvm" OAuthExchangeSelfTest
+          java -cp "$RUNNER_TEMP/garak-p1g-jvm" OAuthLoginFlowSelfTest
+          java -cp "$RUNNER_TEMP/garak-p1g-jvm" CatalogFiltersSelfTest
+      - name: Explicit no-APK status
+        run: |
+          echo 'Offline contract checks passed; no APK, emulator or Neon login verification performed.'

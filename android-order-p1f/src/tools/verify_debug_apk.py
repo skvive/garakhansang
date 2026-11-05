@@ -25,8 +25,8 @@ def parse_badging(output: str) -> dict:
     package, version, version_name = match.groups()
     if package != PACKAGE or min_sdk.group(1) != MIN_SDK or target.group(1) != TARGET_SDK:
         raise ValueError('Unexpected applicationId or Android SDK levels')
-    if not version.isdecimal() or int(version)<19 or not version_name.startswith('1.9.0-'):
-        raise ValueError('Not the v1.9 P1E build')
+    if not version.isdecimal() or int(version)!=20 or not version_name.startswith('1.10.0-'):
+        raise ValueError('Not the v1.10 P1G build')
     return {'package_name':package,'version_code':int(version),'version_name':version_name,
             'min_sdk':int(min_sdk.group(1)),'target_sdk':int(target.group(1))}
 
