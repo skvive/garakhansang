@@ -7,6 +7,7 @@ on:
     paths:
       - android-order-p1h/GarakHansang_Order_Android_v1_11_P1H_Source_20261106.zip
       - 'android-order-p1h/source-b64/**'
+      - '.github/workflows/order-android-p1h.yml'
   workflow_dispatch:
 
 permissions:
@@ -63,7 +64,9 @@ jobs:
           java -cp "$RUNNER_TEMP/garak-p1h-jvm" HttpResponseGuardsSelfTest
       - name: Re-test the original V5 backend
         working-directory: ${{ runner.temp }}/garak-p1h-app
-        run: python3 -m unittest discover -s _v5_verify/GARAK_HANSANG_ORDER_V5/tests -p 'test*.py' -q
+        run: |
+          python3 -m pip install -r _v5_verify/GARAK_HANSANG_ORDER_V5/requirements-v5.txt
+          python3 -m unittest discover -s _v5_verify/GARAK_HANSANG_ORDER_V5/tests -p 'test*.py' -q
       - name: Prepare Android SDK 36
         run: |
           SDKMGR="$(command -v sdkmanager || find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | head -n1)"
