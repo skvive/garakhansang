@@ -8,7 +8,7 @@ BUILD=(ROOT/'app/build.gradle.kts').read_text()
 CAT=json.loads((ROOT/'catalog/menus_47.json').read_text())['items']
 
 def test_version_and_safe_catalog():
-    assert 'versionCode = 20' in BUILD
+    assert 'versionCode = 21' in BUILD
     assert len(CAT)==47 and all(x['is_orderable'] is False for x in CAT)
 
 def test_accessibility_native_controls_and_touch_size():
@@ -34,7 +34,7 @@ def test_error_state_and_request_race():
 def test_sanitized_catalog_api_presentation():
     assert 'Character.isISOControl(c)' in SRC
     assert 'safeRemoteText(item.optString("name"' in SRC
-    assert 'contentType.split(";",2)[0].trim().equalsIgnoreCase("application/json")' in CLIENT
+    assert 'HttpResponseGuards.isStrictJson(contentType)' in CLIENT
 
 def test_no_live_order_api_or_oauth_autostart():
     assert '주문·결제 기능 준비 중' in SRC
