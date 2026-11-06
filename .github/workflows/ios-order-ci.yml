@@ -1,0 +1,81 @@
+name: Garak Hansang Order iOS - SwiftUI Native Build (Demo)
+
+on:
+  push:
+    branches:
+      - chatgpt/garakhansang-order-ios-p1-20261106
+    paths:
+      - 'ios-order/**'
+      - '.github/workflows/ios-order-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-ios-simulator:
+    runs-on: macos-15
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Restore exact original 47-image Android catalog source
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import base64, hashlib
+          from pathlib import Path
+          d=Path('android-order-p1h/source-b64')
+          chunks=sorted(d.glob('part-*.txt'))
+          assert len(chunks)==98, 'Required 98 original source chunks missing'
+          encoded=''.join(p.read_text(encoding='ascii') for p in chunks)
+          payload=base64.b64decode(encoded,validate=True)
+          assert len(payload)==4771371, 'Source archive size mismatch'
+          assert hashlib.sha256(payload).hexdigest()=='5508cf1ebac0c84975068bacb7febddb7ae56e7b2a1d51c353fb24e630a1a3d8', 'Untrusted source archive'
+          Path('ios-order/verified_android_source.zip').write_bytes(payload)
+          print('Verified original 159-entry Android archive and 98 GitHub chunks.')
+          PY
+      - name: Hydrate original media for SwiftUI assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install Pillow
+          python3 ios-order/Tools/hydrate_assets.py --source-zip ios-order/verified_android_source.zip --project ios-order
+          python3 ios-order/Tools/check_project.py
+      - name: Swift Foundation catalog domain unit tests
+        run: swift test --package-path ios-order --parallel
+      - name: Check Xcode toolchain / project and plist
+        run: |
+          xcodebuild -version
+          plutil -lint ios-order/GarakHansangOrder.xcodeproj/project.pbxproj ios-order/GarakHansangOrder/Info.plist
+          xcodebuild -list -project ios-order/GarakHansangOrder.xcodeproj
+      - name: Compile genuine unsigned iOS Simulator app
+        shell: bash
+        run: |
+          set -euo pipefail
+          xcodebuild \
+            -project ios-order/GarakHansangOrder.xcodeproj \
+            -scheme GarakHansangOrder \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath "$RUNNER_TEMP/GarakHansangIOSBuild" \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+          APP="$RUNNER_TEMP/GarakHansangIOSBuild/Build/Products/Debug-iphonesimulator/GarakHansangOrder.app"
+          test -f "$APP/Info.plist"
+          test -f "$APP/Assets.car"
+          test -f "$APP/menu_catalog.json"
+          /usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$APP/Info.plist" | grep -Fx 'site.lexid.garakhansang.order.ios'
+          mkdir -p ios-dist
+          ditto -c -k --keepParent "$APP" ios-dist/GarakHansangOrder-iOS-Simulator.app.zip
+          shasum -a 256 ios-dist/*.zip > ios-dist/SHA256.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: GarakHansangOrder-iOS-Simulator-Demo
+          path: ios-dist/
+          if-no-files-found: error
+          retention-days: 30
