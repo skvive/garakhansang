@@ -134,7 +134,7 @@ jobs:
           arch: x86_64
           profile: pixel_7
           emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
-          script: python3 "$RUNNER_TEMP/garak-p1h-app/tools/emulator_smoke.py" --apk "$GITHUB_WORKSPACE/dist/GarakHansang-Order-v111-debug.apk" --out "$GITHUB_WORKSPACE/smoke-evidence"
+          script: python3 "$RUNNER_TEMP/garak-p1h-app/tools/emulator_smoke.py" --apk "$GITHUB_WORKSPACE/dist/GarakHansang-Order-v111-debug.apk" --out "$GITHUB_WORKSPACE/smoke-evidence" || { adb logcat -d -t 150; exit 1; }
       - uses: actions/upload-artifact@v4
         if: always()
         with:
