@@ -1,0 +1,10 @@
+.build/
+.DS_Store
+*.xcuserstate
+**/xcuserdata/
+DerivedData/
+build/
+.swiftpm/
+# Avoid committing generated media twice; canonical original stays in the inherited Android ZIP chunks.
+GarakHansangOrder/Assets.xcassets/
+Tools/asset_verification.json
