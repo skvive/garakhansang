@@ -134,7 +134,7 @@ jobs:
           arch: x86_64
           profile: pixel_7
           emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
-          script: python3 "$RUNNER_TEMP/garak-p1h-app/tools/emulator_smoke.py" --apk "$GITHUB_WORKSPACE/dist/GarakHansang-Order-v111-debug.apk" --out "$GITHUB_WORKSPACE/smoke-evidence" || { adb shell am start -W -n site.lexid.garakhansang.order/.MainActivity; adb logcat -d -v brief | grep -E 'AndroidRuntime|FATAL EXCEPTION|Process: site\.lexid\.garakhansang|site\.lexid\.garakhansang|ActivityTaskManager|ActivityManager|ClassNotFoundException|NoClassDefFoundError|Fatal signal' | tail -n 130; exit 1; }
+          script: python3 "$RUNNER_TEMP/garak-p1h-app/tools/emulator_smoke.py" --apk "$GITHUB_WORKSPACE/dist/GarakHansang-Order-v111-debug.apk" --out "$GITHUB_WORKSPACE/smoke-evidence" || { adb shell am start -W -n site.lexid.garakhansang.order/.MainActivity; adb logcat -d -v brief | grep -E 'AndroidRuntime|FATAL EXCEPTION|Process.*site\.lexid\.garakhansang|site\.lexid\.garakhansang|ActivityTaskManager|ActivityManager|ClassNotFoundException|NoClassDefFoundError|Fatal signal' | tail -n 130; exit 1; }
       - uses: actions/upload-artifact@v4
         if: always()
         with:
