@@ -42,6 +42,10 @@ jobs:
               assert not p.is_absolute() and ".." not in p.parts, "Unsafe ZIP path"
               assert stat.S_IFMT(member.external_attr>>16)!=stat.S_IFLNK, "ZIP symlink not allowed"
           z.extractall(path)
+          old_folder=path/"GarakHansangOrder/GHSContent"
+          assert old_folder.is_dir(), "Original resource folder missing"
+          old_folder.rename(path/"GarakHansangOrder/GHSContent")
+          print("Migrated iOS bundle resources to non-reserved GHSContent directory")
           assert (path/"GarakHansangOrder.xcodeproj/project.pbxproj").is_file()
           print("Verified exact iOS archive",len(data),"bytes,",len(members),"files")
           PY
@@ -55,7 +59,7 @@ jobs:
           import hashlib, json, os
           from pathlib import Path
           root=Path(os.environ["RUNNER_TEMP"])/"garak-ios-source"
-          p=root/"GarakHansangOrder/Resources"
+          p=root/"GarakHansangOrder/GHSContent"
           source=json.loads((root/"SOURCE_PROVENANCE.json").read_text())
           data=(p/"Catalog/menus_47.json").read_bytes()
           assert hashlib.sha256(data).hexdigest()==source["catalog_sha256"]
@@ -91,9 +95,10 @@ jobs:
           set -euo pipefail
           APP="$RUNNER_TEMP/garak-ios-derived/Build/Products/Debug-iphonesimulator/GarakHansangOrder.app"
           test -d "$APP"
-          test -f "$APP/Resources/Catalog/menus_47.json"
-          test "$(find "$APP/Resources/MenuImages" -type f -name 'menu_*.jpg' | wc -l | tr -d ' ')" = 47
-          test -f "$APP/Resources/Brand/garakhansang-logo.png"
+          test -f "$APP/GHSContent/Catalog/menus_47.json"
+          test ! -d "$APP/Resources"
+          test "$(find "$APP/GHSContent/MenuImages" -type f -name 'menu_*.jpg' | wc -l | tr -d ' ')" = 47
+          test -f "$APP/GHSContent/Brand/garakhansang-logo.png"
           IDENTIFIER="$(plutil -extract CFBundleIdentifier raw "$APP/Info.plist")"
           test "$IDENTIFIER" = 'site.lexid.garakhansang.order.ios'
           # Ad-hoc signing for Simulator only; no Apple Developer provisioning or release IPA.

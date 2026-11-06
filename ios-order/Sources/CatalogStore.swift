@@ -19,7 +19,7 @@ final class CatalogStore: ObservableObject {
 
     init() {
         do {
-            guard let url = Bundle.main.url(forResource: "menus_47", withExtension: "json", subdirectory: "Resources/Catalog") else {
+            guard let url = Bundle.main.url(forResource: "menus_47", withExtension: "json", subdirectory: "GHSContent/Catalog") else {
                 throw NSError(domain: "OfflineCatalog", code: 404)
             }
             items = try OfflineCatalog.load(Data(contentsOf: url)).items

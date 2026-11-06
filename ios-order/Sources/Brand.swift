@@ -16,7 +16,7 @@ struct BundledImage: View {
 
     var body: some View {
         Group {
-            if let path = Bundle.main.path(forResource: filename, ofType: nil, inDirectory: "Resources/" + subdirectory),
+            if let path = Bundle.main.path(forResource: filename, ofType: nil, inDirectory: "GHSContent/" + subdirectory),
                let image = UIImage(contentsOfFile: path) {
                 Image(uiImage: image)
                     .resizable()

@@ -21,7 +21,7 @@
 		5ED0AB536B48915436F556D7 /* CatalogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogStore.swift; sourceTree = "<group>"; };
 		80BCF5FDE7B3446314AF9C85 /* GarakHansangOrderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarakHansangOrderApp.swift; sourceTree = "<group>"; };
 		61337DDE6DCBDE4052309BBF /* MainViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViews.swift; sourceTree = "<group>"; };
-		DEC8F62AFEB8BD21C868CCC3 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		DEC8F62AFEB8BD21C868CCC3 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GHSContent; sourceTree = "<group>"; };
 		3B008B301114FFB8FFDCA4D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55D895336C59A20D6EC2C577 /* GarakHansangOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarakHansangOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
