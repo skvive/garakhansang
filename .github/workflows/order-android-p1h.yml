@@ -79,7 +79,7 @@ jobs:
       - name: Build real native APK
         working-directory: ${{ runner.temp }}/garak-p1h-app
         run: gradle --no-daemon :app:assembleDebug --stacktrace
-      - name: Verify APK signature, applicationId and version 20
+      - name: Verify APK signature, applicationId and version 21
         run: |
           mkdir -p dist
           cp "$RUNNER_TEMP/garak-p1h-app/app/build/outputs/apk/debug/app-debug.apk" dist/GarakHansang-Order-v111-debug.apk
@@ -134,10 +134,7 @@ jobs:
           arch: x86_64
           profile: pixel_7
           emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
-          script: |
-            python3 "$RUNNER_TEMP/garak-p1h-app/tools/emulator_smoke.py" \
-              --apk "$GITHUB_WORKSPACE/dist/GarakHansang-Order-v111-debug.apk" \
-              --out "$GITHUB_WORKSPACE/smoke-evidence"
+          script: python3 "$RUNNER_TEMP/garak-p1h-app/tools/emulator_smoke.py" --apk "$GITHUB_WORKSPACE/dist/GarakHansang-Order-v111-debug.apk" --out "$GITHUB_WORKSPACE/smoke-evidence"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
