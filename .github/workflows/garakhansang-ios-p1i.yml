@@ -42,7 +42,7 @@ jobs:
               assert not p.is_absolute() and ".." not in p.parts, "Unsafe ZIP path"
               assert stat.S_IFMT(member.external_attr>>16)!=stat.S_IFLNK, "ZIP symlink not allowed"
           z.extractall(path)
-          old_folder=path/"GarakHansangOrder/GHSContent"
+          old_folder=path/"GarakHansangOrder/Resources"
           assert old_folder.is_dir(), "Original resource folder missing"
           old_folder.rename(path/"GarakHansangOrder/GHSContent")
           print("Migrated iOS bundle resources to non-reserved GHSContent directory")
