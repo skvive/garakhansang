@@ -96,6 +96,9 @@ jobs:
           test -f "$APP/Resources/Brand/garakhansang-logo.png"
           IDENTIFIER="$(plutil -extract CFBundleIdentifier raw "$APP/Info.plist")"
           test "$IDENTIFIER" = 'site.lexid.garakhansang.order.ios'
+          # Ad-hoc signing for Simulator only; no Apple Developer provisioning or release IPA.
+          codesign --force --deep --sign - "$APP"
+          codesign --verify --deep --strict "$APP"
           mkdir -p output
           ditto -c -k --sequesterRsrc --keepParent "$APP" output/GarakHansangOrder-P1I-Simulator.app.zip
           shasum -a 256 output/GarakHansangOrder-P1I-Simulator.app.zip > output/SHA256.txt
@@ -124,6 +127,10 @@ jobs:
           mkdir -p unpacked screenshots
           ditto -x -k download/GarakHansangOrder-P1I-Simulator.app.zip unpacked
           test -d unpacked/GarakHansangOrder.app
+          test -f unpacked/GarakHansangOrder.app/Info.plist
+          plutil -lint unpacked/GarakHansangOrder.app/Info.plist
+          test "$(plutil -extract CFBundleIdentifier raw unpacked/GarakHansangOrder.app/Info.plist)" = 'site.lexid.garakhansang.order.ios'
+          codesign --verify --deep --strict unpacked/GarakHansangOrder.app
       - name: Install, launch and take iPhone Simulator screenshot
         shell: bash
         run: |
