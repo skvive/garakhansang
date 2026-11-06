@@ -79,3 +79,55 @@ jobs:
           path: ios-dist/
           if-no-files-found: error
           retention-days: 30
+
+  simulator-smoke:
+    needs: build-ios-simulator
+    runs-on: macos-15
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: GarakHansangOrder-iOS-Simulator-Demo
+          path: ios-dist
+      - name: Restore genuine compiled iOS app
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s ios-dist/GarakHansangOrder-iOS-Simulator.app.zip
+          mkdir -p "$RUNNER_TEMP/ios-smoke"
+          ditto -x -k ios-dist/GarakHansangOrder-iOS-Simulator.app.zip "$RUNNER_TEMP/ios-smoke"
+          test -f "$RUNNER_TEMP/ios-smoke/GarakHansangOrder.app/Info.plist"
+          /usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$RUNNER_TEMP/ios-smoke/GarakHansangOrder.app/Info.plist" | grep -Fx 'site.lexid.garakhansang.order.ios'
+      - name: Select available iPhone Simulator
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess
+          devices=json.loads(subprocess.check_output(['xcrun','simctl','list','devices','available','-j'],text=True))
+          candidates=[item for entries in devices['devices'].values() for item in entries if item.get('isAvailable') and 'iPhone' in item.get('name','')]
+          if not candidates: raise SystemExit('No available iPhone Simulator; smoke test cannot pass')
+          uuid=candidates[0]['udid']
+          print('Selected simulator',candidates[0]['name'],uuid)
+          with open(os.environ['GITHUB_ENV'],'a') as f: f.write('IOS_SIM_UUID='+uuid+'\n')
+          PY
+      - name: Boot, install, launch and capture UI
+        shell: bash
+        run: |
+          set -euo pipefail
+          xcrun simctl boot "$IOS_SIM_UUID"
+          xcrun simctl bootstatus "$IOS_SIM_UUID" -b
+          xcrun simctl install "$IOS_SIM_UUID" "$RUNNER_TEMP/ios-smoke/GarakHansangOrder.app"
+          xcrun simctl launch "$IOS_SIM_UUID" site.lexid.garakhansang.order.ios
+          sleep 6
+          mkdir -p ios-smoke-evidence
+          xcrun simctl io "$IOS_SIM_UUID" screenshot ios-smoke-evidence/launch.png
+          test "$(stat -f%z ios-smoke-evidence/launch.png)" -gt 20000
+          xcrun simctl spawn "$IOS_SIM_UUID" launchctl list | grep -F 'site.lexid.garakhansang.order.ios'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: GarakHansangOrder-iOS-Simulator-Smoke-Evidence
+          path: ios-smoke-evidence/
+          if-no-files-found: ignore
+          retention-days: 14
