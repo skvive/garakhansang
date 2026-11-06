@@ -25,8 +25,8 @@ def parse_badging(output: str) -> dict:
     package, version, version_name = match.groups()
     if package != PACKAGE or min_sdk.group(1) != MIN_SDK or target.group(1) != TARGET_SDK:
         raise ValueError('Unexpected applicationId or Android SDK levels')
-    if not version.isdecimal() or int(version)!=20 or not version_name.startswith('1.10.0-'):
-        raise ValueError('Not the v1.10 P1G build')
+    if not version.isdecimal() or int(version)!=21 or not version_name.startswith('1.11.0-'):
+        raise ValueError('Not the v1.11 P1H build')
     return {'package_name':package,'version_code':int(version),'version_name':version_name,
             'min_sdk':int(min_sdk.group(1)),'target_sdk':int(target.group(1))}
 
@@ -34,6 +34,11 @@ def parse_badging(output: str) -> dict:
 def parse_signature(output: str) -> dict:
     if not re.search(r'^Verifies\s*$',output,re.M):
         raise ValueError('APK signature has not been verified')
+    # Android API 26+ requires a cryptographic APK signing scheme; an output
+    # that only says "Verifies" but reports all modern schemes false is invalid.
+    v2_or_newer = re.findall(r'^Verified using v(?:2|3|3\.1|4) scheme[^\n:]*:\s*(true|false)\s*$', output, re.M | re.I)
+    if not any(value.lower() == 'true' for value in v2_or_newer):
+        raise ValueError('APK does not have a verified v2-or-newer signing scheme')
     digests=re.findall(r'Signer #\d+ certificate SHA-256 digest:\s*([0-9a-fA-F]{64})',output)
     if len(digests)!=1:
         raise ValueError('APK must have exactly one verified signing certificate')
@@ -60,7 +65,7 @@ def inspect(apk: Path, aapt: str, apksigner: str) -> dict:
 
 
 def main():
-    p=argparse.ArgumentParser(description='Verify actual P1E signed Android debug APK')
+    p=argparse.ArgumentParser(description='Verify actual P1H signed Android debug APK')
     p.add_argument('--apk',required=True,type=Path)
     p.add_argument('--aapt',required=True)
     p.add_argument('--apksigner',required=True)

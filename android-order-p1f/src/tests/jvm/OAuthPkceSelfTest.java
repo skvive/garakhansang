@@ -45,6 +45,12 @@ public class OAuthPkceSelfTest {
         OAuthPkce.Pending dupe=OAuthPkce.begin(issuer,authorize,"public-test-client",callback,resource);
         Map<String,String> dupeParam=params(dupe.authorizationUrl);
         rejects(()->dupe.consumeCallback(callback+"?code=a&state="+dupeParam.get("state")+"&state="+dupeParam.get("state")),"duplicate state");
+        OAuthPkce.Pending nullCode=OAuthPkce.begin(issuer,authorize,"public-test-client",callback,resource);
+        Map<String,String> nullArgs=params(nullCode.authorizationUrl);
+        rejects(()->nullCode.consumeCallback(callback+"?code=a%00b&state="+nullArgs.get("state")),"NUL control code");
+        OAuthPkce.Pending delCode=OAuthPkce.begin(issuer,authorize,"public-test-client",callback,resource);
+        Map<String,String> delArgs=params(delCode.authorizationUrl);
+        rejects(()->delCode.consumeCallback(callback+"?code=a%7Fb&state="+delArgs.get("state")),"DEL control code");
         rejects(()->OAuthPkce.begin("http://example.com/a","http://example.com/a/authorize","public-id",callback,resource),"http issuer");
         rejects(()->OAuthPkce.begin(issuer,"https://evil.neonauth.aws.neon.tech/oauth","public-id",callback,resource),"issuer mismatch");
         rejects(()->OAuthPkce.begin(issuer,authorize,"public-id","http://garak.lexid.site/callback",resource),"http redirect");

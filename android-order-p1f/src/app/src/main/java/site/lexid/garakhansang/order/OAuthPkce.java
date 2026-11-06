@@ -120,8 +120,12 @@ public final class OAuthPkce {
                 if (receivedState==null || !MessageDigest.isEqual(state.getBytes(StandardCharsets.UTF_8),
                         receivedState.getBytes(StandardCharsets.UTF_8)))
                     throw new IllegalArgumentException("OAuth state mismatch");
-                if (code==null || code.isEmpty() || code.length()>4096 || code.indexOf('\n')>=0 || code.indexOf('\r')>=0)
+                if (code==null || code.isEmpty() || code.length()>4096)
                     throw new IllegalArgumentException("Invalid authorization code");
+                for (int i=0;i<code.length();i++) {
+                    if (Character.isISOControl(code.charAt(i)))
+                        throw new IllegalArgumentException("Invalid authorization code control character");
+                }
                 return new Result(code,verifier);
             } catch (java.net.URISyntaxException | java.io.UnsupportedEncodingException | NullPointerException e) {
                 throw new IllegalArgumentException("Malformed OAuth callback",e);

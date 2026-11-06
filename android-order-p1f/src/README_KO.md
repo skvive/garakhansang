@@ -73,3 +73,13 @@ APK 실빌드: Android Studio SDK36, JDK17, Gradle8.11.1 환경에서 `gradle :a
 - 접근성 터치 영역, 카테고리 검색어 리셋, 비동기 응답 경합 차단, 서버 출력 길이 제한 개선.
 - v1.10 (20), 실주문·결제·Google 로그인 미연동 · GO-LIVE=NO.
 - 인수인계: docs/ANDROID_ORDER_V1_10_P1G_HANDOFF_KO.md
+
+
+## v1.11 P1H — API/OAuth 응답 검증 강화
+
+- 'HttpResponseGuards' 순수 Java 공통 검사기를 사용해 모바일 카탈로그 API 및 OAuth 토큰 응답의 JSON Content-Type을 **정확하게** 검증합니다. `application/json-unsafe`, charset 혼란, 중복 MIME 파라미터를 거부하며, 모든 JSON은 UTF-8로 파싱합니다.
+- OAuth 콜백의 NUL 및 제어문자를 허용하지 않습니다. 일회성 PKCE·state·HTTPS·10분 만료 요건은 유지합니다.
+- 실제 APK 서명 검사 시 `apksigner`의 출력에 **v2 이상 서명 확인**이 없으면 성공을 인정하지 않습니다.
+- v1.11 / versionCode 21. 테스트: `python tools/qa_v21_static.py`, Python 56건, JVM 102건, V5 47건.
+- 원본 47개 AI 참고 메뉴 이미지는 모두 보존, 주문/결제/실제 OAuth 로그인은 비활성.
+- **APK 없음**, 운영 DB 수정·상용 배포 없음.

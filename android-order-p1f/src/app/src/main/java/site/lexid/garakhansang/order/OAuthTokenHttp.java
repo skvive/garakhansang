@@ -9,7 +9,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import javax.net.ssl.HttpsURLConnection;
@@ -48,7 +47,7 @@ public final class OAuthTokenHttp {
                 try(OutputStream output=connection.getOutputStream()){output.write(form);}
                 if(connection.getResponseCode()!=200)throw new IOException("OAuth token endpoint rejected request");
                 String type=connection.getContentType();
-                if(type==null || !type.toLowerCase(Locale.ROOT).startsWith("application/json"))
+                if(type==null || !HttpResponseGuards.isStrictJson(type))
                     throw new IOException("Unexpected OAuth token format");
                 try(InputStream input=connection.getInputStream()){
                     ByteArrayOutputStream bytes=new ByteArrayOutputStream();

@@ -57,6 +57,10 @@ public final class OAuthCodeExchange {
             || !callback.codeVerifier.matches("[A-Za-z0-9_-]{43,128}")) {
             throw new IllegalArgumentException("OAuth token exchange configuration rejected");
         }
+        for (int i=0;i<callback.authorizationCode.length();i++) {
+            if (Character.isISOControl(callback.authorizationCode.charAt(i)))
+                throw new IllegalArgumentException("Authorization code control character");
+        }
         String body = "grant_type=authorization_code&code="+encoded(callback.authorizationCode)
             +"&client_id="+encoded(publicClientId)
             +"&redirect_uri="+encoded(redirect.toString())
