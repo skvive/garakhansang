@@ -1,0 +1,165 @@
+name: Garak Hansang Order iOS P1I - verified SwiftUI simulator build
+on:
+  push:
+    branches:
+      - chatgpt/garakhansang-order-ios-p1i-20261106
+    paths:
+      - 'ios-order/**'
+      - '.github/workflows/garakhansang-ios-p1i.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build-ios-simulator:
+    name: Verify sources and build unsigned iOS Simulator app
+    runs-on: macos-15
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify and restore exact archived iOS source
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path, PurePosixPath
+          import base64, hashlib, os, stat, zipfile, io
+          chunks=sorted(Path("ios-order/source-b64").glob("part-*.txt"))
+          assert len(chunks)==52, "Expected exactly 52 encoded source chunks"
+          for i, f in enumerate(chunks):
+              assert f.name == f"part-{i:03d}.txt"
+          encoded="".join(f.read_text(encoding="ascii") for f in chunks)
+          assert len(encoded)==6762668
+          data=base64.b64decode(encoded, validate=True)
+          expected="02c9094a36edc7f7da06ce0a14c7ccd8982da3537d394f14f1865f1c425facd1"
+          assert len(data)==5072001 and hashlib.sha256(data).hexdigest()==expected, "ZIP byte count/hash mismatch"
+          path=Path(os.environ["RUNNER_TEMP"])/"garak-ios-source"
+          path.mkdir(exist_ok=True)
+          z=zipfile.ZipFile(io.BytesIO(data))
+          members=z.infolist()
+          assert len(members)==63 and z.testzip() is None, "ZIP missing or damaged"
+          for member in members:
+              p=PurePosixPath(member.filename)
+              assert not p.is_absolute() and ".." not in p.parts, "Unsafe ZIP path"
+              assert stat.S_IFMT(member.external_attr>>16)!=stat.S_IFLNK, "ZIP symlink not allowed"
+          z.extractall(path)
+          old_folder=path/"GarakHansangOrder/Resources"
+          assert old_folder.is_dir(), "Original resource folder missing"
+          old_folder.rename(path/"GarakHansangOrder/GHSContent")
+          print("Migrated iOS bundle resources to non-reserved GHSContent directory")
+          assert (path/"GarakHansangOrder.xcodeproj/project.pbxproj").is_file()
+          print("Verified exact iOS archive",len(data),"bytes,",len(members),"files")
+          PY
+          cp ios-order/Sources/*.swift "$RUNNER_TEMP/garak-ios-source/GarakHansangOrder/Sources/"
+          cp ios-order/project.pbxproj "$RUNNER_TEMP/garak-ios-source/GarakHansangOrder.xcodeproj/project.pbxproj"
+      - name: Validate offline catalog and 47 image hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          root=Path(os.environ["RUNNER_TEMP"])/"garak-ios-source"
+          p=root/"GarakHansangOrder/GHSContent"
+          source=json.loads((root/"SOURCE_PROVENANCE.json").read_text())
+          data=(p/"Catalog/menus_47.json").read_bytes()
+          assert hashlib.sha256(data).hexdigest()==source["catalog_sha256"]
+          items=json.loads(data)["items"]
+          assert len(items)==47 and len(set(x["id"] for x in items))==47
+          assert len(set(x["category"] for x in items))==12
+          assert all(x["is_orderable"] is False and x["image_is_ai_concept"] is True and x["catalog_visibility"]=="needs_merchandising_approval" for x in items)
+          names=set(x["image"] for x in items)
+          assert names==set(source["menu_image_sha256"])
+          for name,expect in source["menu_image_sha256"].items():
+              assert hashlib.sha256((p/"MenuImages"/name).read_bytes()).hexdigest()==expect
+          print("Verified 47 original images and demo-only product safety")
+          PY
+          plutil -lint "$RUNNER_TEMP/garak-ios-source/GarakHansangOrder.xcodeproj/project.pbxproj"
+      - name: Show Xcode and project schemes
+        shell: bash
+        run: |
+          xcodebuild -version
+          xcodebuild -list -project "$RUNNER_TEMP/garak-ios-source/GarakHansangOrder.xcodeproj"
+      - name: Compile and link actual SwiftUI iOS Simulator app (unsigned)
+        shell: bash
+        run: |
+          set -euo pipefail
+          xcodebuild \
+            -project "$RUNNER_TEMP/garak-ios-source/GarakHansangOrder.xcodeproj" \
+            -scheme GarakHansangOrder -configuration Debug \
+            -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath "$RUNNER_TEMP/garak-ios-derived" \
+            CODE_SIGNING_ALLOWED=NO build 2>&1 | tee "$RUNNER_TEMP/garak-ios-build.log"
+      - name: Verify built .app assets and app bundle identifier
+        shell: bash
+        run: |
+          set -euo pipefail
+          APP="$RUNNER_TEMP/garak-ios-derived/Build/Products/Debug-iphonesimulator/GarakHansangOrder.app"
+          test -d "$APP"
+          test -f "$APP/GHSContent/Catalog/menus_47.json"
+          test ! -d "$APP/Resources"
+          test "$(find "$APP/GHSContent/MenuImages" -type f -name 'menu_*.jpg' | wc -l | tr -d ' ')" = 47
+          test -f "$APP/GHSContent/Brand/garakhansang-logo.png"
+          IDENTIFIER="$(plutil -extract CFBundleIdentifier raw "$APP/Info.plist")"
+          test "$IDENTIFIER" = 'site.lexid.garakhansang.order.ios'
+          # Ad-hoc signing for Simulator only; no Apple Developer provisioning or release IPA.
+          codesign --force --deep --sign - "$APP"
+          codesign --verify --deep --strict "$APP"
+          mkdir -p output
+          ditto -c -k --sequesterRsrc --keepParent "$APP" output/GarakHansangOrder-P1I-Simulator.app.zip
+          shasum -a 256 output/GarakHansangOrder-P1I-Simulator.app.zip > output/SHA256.txt
+          echo "Bundle id: $IDENTIFIER; version: $(plutil -extract CFBundleShortVersionString raw "$APP/Info.plist")" > output/build_receipt.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: GarakHansangOrder-iOS-P1I-Simulator-App
+          path: output/
+          retention-days: 30
+          if-no-files-found: error
+
+  simulator-launch-smoke:
+    name: Install and launch on iPhone Simulator
+    needs: build-ios-simulator
+    runs-on: macos-15
+    timeout-minutes: 35
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: GarakHansangOrder-iOS-P1I-Simulator-App
+          path: download
+      - name: Unpack signed-free simulator app
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p unpacked screenshots
+          ditto -x -k download/GarakHansangOrder-P1I-Simulator.app.zip unpacked
+          test -d unpacked/GarakHansangOrder.app
+          test -f unpacked/GarakHansangOrder.app/Info.plist
+          plutil -lint unpacked/GarakHansangOrder.app/Info.plist
+          test "$(plutil -extract CFBundleIdentifier raw unpacked/GarakHansangOrder.app/Info.plist)" = 'site.lexid.garakhansang.order.ios'
+          codesign --verify --deep --strict unpacked/GarakHansangOrder.app
+      - name: Install, launch and take iPhone Simulator screenshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          UDID="$(python3 - <<'PY'
+          import json,subprocess
+          data=json.loads(subprocess.check_output(["xcrun","simctl","list","-j","devices","available"]))
+          phones=[device for devices in data["devices"].values() for device in devices if "iPhone" in device["name"] and device.get("isAvailable", True)]
+          print(phones[0]["udid"] if phones else "")
+          PY
+          )"
+          test -n "$UDID"
+          xcrun simctl boot "$UDID"
+          xcrun simctl bootstatus "$UDID" -b
+          xcrun simctl install "$UDID" unpacked/GarakHansangOrder.app
+          xcrun simctl launch "$UDID" site.lexid.garakhansang.order.ios
+          sleep 5
+          xcrun simctl io "$UDID" screenshot screenshots/ios-home.png
+          test -s screenshots/ios-home.png
+          echo "Simulator iPhone launch and home screenshot captured." > screenshots/result.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: GarakHansangOrder-iOS-P1I-Simulator-Screenshot
+          path: screenshots/
+          retention-days: 14
+          if-no-files-found: ignore
