@@ -1,0 +1,69 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C5665E177186C39B2870DB0F /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264F9D07DF695A4B3BC296BC /* Brand.swift */; };
+		2CF6F9B0F17D05578E26BB88 /* CatalogModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D02F431128CB7F5DE8C3EF /* CatalogModels.swift */; };
+		0E06E160B7830410DC062887 /* CatalogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED0AB536B48915436F556D7 /* CatalogStore.swift */; };
+		5732D2EC285BEEE9B71A8F96 /* GarakHansangOrderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BCF5FDE7B3446314AF9C85 /* GarakHansangOrderApp.swift */; };
+		8050ABF922FBD047AF065FC4 /* MainViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61337DDE6DCBDE4052309BBF /* MainViews.swift */; };
+		59F7990891626B936BD93911 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = DEC8F62AFEB8BD21C868CCC3 /* Resources */; };
+		11AD60138465847F31034657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B008B301114FFB8FFDCA4D1 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		264F9D07DF695A4B3BC296BC /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		53D02F431128CB7F5DE8C3EF /* CatalogModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogModels.swift; sourceTree = "<group>"; };
+		5ED0AB536B48915436F556D7 /* CatalogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogStore.swift; sourceTree = "<group>"; };
+		80BCF5FDE7B3446314AF9C85 /* GarakHansangOrderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarakHansangOrderApp.swift; sourceTree = "<group>"; };
+		61337DDE6DCBDE4052309BBF /* MainViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViews.swift; sourceTree = "<group>"; };
+		DEC8F62AFEB8BD21C868CCC3 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		3B008B301114FFB8FFDCA4D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55D895336C59A20D6EC2C577 /* GarakHansangOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarakHansangOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		571D590DC70D3DF5B58C3133 /* Root */ = {isa = PBXGroup; children = (DC3AE85E0CFC3C1E4B81748C /* GarakHansangOrder */, E92ECCBB2B543C534BC8C4C5 /* Products */, ); sourceTree = "<group>"; };
+		DC3AE85E0CFC3C1E4B81748C /* GarakHansangOrder */ = {isa = PBXGroup; children = (57F900AD8907AF0EA893FC08 /* Sources */, DEC8F62AFEB8BD21C868CCC3 /* Resources */, 3B008B301114FFB8FFDCA4D1 /* Assets.xcassets */, ); path = GarakHansangOrder; sourceTree = "<group>"; };
+		57F900AD8907AF0EA893FC08 /* Sources */ = {isa = PBXGroup; children = (264F9D07DF695A4B3BC296BC /* Brand.swift */,53D02F431128CB7F5DE8C3EF /* CatalogModels.swift */,5ED0AB536B48915436F556D7 /* CatalogStore.swift */,80BCF5FDE7B3446314AF9C85 /* GarakHansangOrderApp.swift */,61337DDE6DCBDE4052309BBF /* MainViews.swift */,); path = Sources; sourceTree = "<group>"; };
+		E92ECCBB2B543C534BC8C4C5 /* Products */ = {isa = PBXGroup; children = (55D895336C59A20D6EC2C577 /* GarakHansangOrder.app */,); name = Products; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04596E9605BBA98FEF679EE9 /* GarakHansangOrder */ = {isa = PBXNativeTarget; buildConfigurationList = DD8656B7340FC291330230FD /* Build configuration list for PBXNativeTarget */; buildPhases = (902506D4B76A79D0E766105A /* Sources */, DD05868D2582FA785369D2DA /* Frameworks */, D37A9448F18A8EA691E1AB87 /* Resources */,); buildRules = (); dependencies = (); name = GarakHansangOrder; productName = GarakHansangOrder; productReference = 55D895336C59A20D6EC2C577 /* GarakHansangOrder.app */; productType = "com.apple.product-type.application"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4397F74B6CB59CDD07DCE562 /* Project object */ = {isa = PBXProject; attributes = {LastUpgradeCheck = 1600; TargetAttributes = {04596E9605BBA98FEF679EE9 = {CreatedOnToolsVersion = 16.0; }; }; }; buildConfigurationList = 89662BFE91D5579576B56717 /* Build configuration list for PBXProject */; compatibilityVersion = "Xcode 14.0"; developmentRegion = ko; hasScannedForEncodings = 0; knownRegions = (ko, en, Base); mainGroup = 571D590DC70D3DF5B58C3133 /* Root */; productRefGroup = E92ECCBB2B543C534BC8C4C5 /* Products */; projectDirPath = ""; projectRoot = ""; targets = (04596E9605BBA98FEF679EE9 /* GarakHansangOrder */,); };
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D37A9448F18A8EA691E1AB87 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (59F7990891626B936BD93911 /* Resources in Resources */, 11AD60138465847F31034657 /* Assets.xcassets in Resources */,); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		902506D4B76A79D0E766105A /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (C5665E177186C39B2870DB0F /* Brand.swift in Sources */,2CF6F9B0F17D05578E26BB88 /* CatalogModels.swift in Sources */,0E06E160B7830410DC062887 /* CatalogStore.swift in Sources */,5732D2EC285BEEE9B71A8F96 /* GarakHansangOrderApp.swift in Sources */,8050ABF922FBD047AF065FC4 /* MainViews.swift in Sources */,); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD05868D2582FA785369D2DA /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		157237454B7796B28F00F91B /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; GCC_OPTIMIZATION_LEVEL = 0; IPHONEOS_DEPLOYMENT_TARGET = 16.0; SDKROOT = iphoneos; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)"; SWIFT_VERSION = 5.0; DEBUG_INFORMATION_FORMAT = dwarf; ENABLE_TESTABILITY = YES; CODE_SIGNING_ALLOWED = NO;}; name = Debug; };
+		2CD0EB4A5E079402B056E3CC /* Release */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; IPHONEOS_DEPLOYMENT_TARGET = 16.0; SDKROOT = iphoneos; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_VERSION = 5.0; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; CODE_SIGNING_ALLOWED = NO;}; name = Release; };
+		E1C1BFA381F7575B8FB2E563 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = "가락한상 오더"; INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink"; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; INFOPLIST_KEY_UILaunchScreen_Generation = YES; IPHONEOS_DEPLOYMENT_TARGET = 16.0; MARKETING_VERSION = 1.0.0; PRODUCT_BUNDLE_IDENTIFIER = site.lexid.garakhansang.order.ios; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; ENABLE_USER_SCRIPT_SANDBOXING = YES; SWIFT_OPTIMIZATION_LEVEL = "-Onone";}; name = Debug; };
+		68002F320940566AB690A666 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = "가락한상 오더"; INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink"; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; INFOPLIST_KEY_UILaunchScreen_Generation = YES; IPHONEOS_DEPLOYMENT_TARGET = 16.0; MARKETING_VERSION = 1.0.0; PRODUCT_BUNDLE_IDENTIFIER = site.lexid.garakhansang.order.ios; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; ENABLE_USER_SCRIPT_SANDBOXING = YES; SWIFT_OPTIMIZATION_LEVEL = "-O";}; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89662BFE91D5579576B56717 /* Build configuration list for PBXProject */ = {isa = XCConfigurationList; buildConfigurations = (157237454B7796B28F00F91B /* Debug */, 2CD0EB4A5E079402B056E3CC /* Release */,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		DD8656B7340FC291330230FD /* Build configuration list for PBXNativeTarget */ = {isa = XCConfigurationList; buildConfigurations = (E1C1BFA381F7575B8FB2E563 /* Debug */, 68002F320940566AB690A666 /* Release */,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = 4397F74B6CB59CDD07DCE562 /* Project object */;
+}
