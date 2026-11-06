@@ -8,6 +8,7 @@ on:
       - android-order-p1h/GarakHansang_Order_Android_v1_11_P1H_Source_20261106.zip
       - 'android-order-p1h/source-b64/**'
       - '.github/workflows/order-android-p1h.yml'
+      - 'android-order-p1h/hotfix/**'
   workflow_dispatch:
 
 permissions:
@@ -39,6 +40,15 @@ jobs:
           python3 android-order-p1h/tools/verify_source_archive.py \
             --archive android-order-p1h/GarakHansang_Order_Android_v1_11_P1H_Source_20261106.zip \
             --extract-dir "$RUNNER_TEMP/garak-p1h-app"
+      - name: Apply SHA-verified Android 15 launch hotfix after original ZIP verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          APP_MAIN="$RUNNER_TEMP/garak-p1h-app/app/src/main/java/site/lexid/garakhansang/order/MainActivity.java"
+          test "$(sha256sum "$APP_MAIN" | cut -d' ' -f1)" = "d57d38a684d0d2716125ef03f2d47e2af0a48d89d78a192ca14825818f91f448"
+          cp android-order-p1h/hotfix/MainActivity.java "$APP_MAIN"
+          test "$(sha256sum "$APP_MAIN" | cut -d' ' -f1)" = "1c634a38e9ece295bda20691506f42f8efe8721d4f87550c9a802c0e65ed3c3a"
+          echo "P1H Android 15 window insets hotfix applied and verified."
       - name: Verify v1.11 source, media and demo-only restrictions
         working-directory: ${{ runner.temp }}/garak-p1h-app
         run: |
