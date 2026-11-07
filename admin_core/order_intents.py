@@ -31,8 +31,19 @@ def _validated_payload(payload):
         raise ValueError("JSON object required")
     if set(payload) - {"items", "delivery_type"}:
         raise ValueError("unexpected fields (PII, payment data and client totals are forbidden)")
-    if "items" not in payload:
-        raise ValueError("items are required")
+    items = payload.get("items")
+    if not isinstance(items, list) or not 1 <= len(items) <= 30:
+        raise ValueError("cart items must be a nonempty bounded array")
+    for item in items:
+        if not isinstance(item, dict) or set(item) - {"slug", "qty", "options"}:
+            raise ValueError("unexpected cart line fields")
+        if "options" in item:
+            selections = item["options"]
+            if not isinstance(selections, list) or len(selections) > 8:
+                raise ValueError("invalid option selection payload")
+            for group in selections:
+                if not isinstance(group, dict) or set(group) != {"group_id", "choice_ids"}:
+                    raise ValueError("unexpected option selection fields")
     return {
         "items": payload["items"],
         "delivery_type": payload.get("delivery_type", "delivery"),
