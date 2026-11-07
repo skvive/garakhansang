@@ -12,6 +12,18 @@ CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY, username TEXT NOT NULL 
 CREATE TABLE IF NOT EXISTS sessions(id_hash TEXT PRIMARY KEY,user_id INTEGER NOT NULL REFERENCES users(id),csrf TEXT NOT NULL,expires_at TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS merchants(id INTEGER PRIMARY KEY,name TEXT NOT NULL UNIQUE,kind TEXT NOT NULL CHECK(kind IN ('seafood','meat','produce','other')),contact TEXT NOT NULL DEFAULT '', commission_bps INTEGER NOT NULL DEFAULT 800 CHECK(commission_bps BETWEEN 0 AND 4000),verified INTEGER NOT NULL DEFAULT 0,status TEXT NOT NULL DEFAULT 'pending' CHECK(status IN ('pending','active','rejected','suspended')),created_at TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS products(id INTEGER PRIMARY KEY,slug TEXT NOT NULL UNIQUE,name TEXT NOT NULL,category TEXT NOT NULL,merchant_id INTEGER REFERENCES merchants(id),price INTEGER NOT NULL CHECK(price>=0),stock INTEGER NOT NULL CHECK(stock>=0),status TEXT NOT NULL DEFAULT 'draft' CHECK(status IN ('draft','published','hidden')),image TEXT NOT NULL DEFAULT '',origin TEXT NOT NULL DEFAULT '',updated_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS product_option_sets(
+ id INTEGER PRIMARY KEY,
+ product_id INTEGER NOT NULL REFERENCES products(id),
+ version INTEGER NOT NULL CHECK(version>=1),
+ status TEXT NOT NULL DEFAULT 'draft' CHECK(status IN ('draft','approved','superseded')),
+ groups_json TEXT NOT NULL,
+ author_id INTEGER REFERENCES users(id),
+ created_at TEXT NOT NULL,
+ approved_at TEXT,
+ UNIQUE(product_id,version)
+);
+CREATE INDEX IF NOT EXISTS idx_product_option_status ON product_option_sets(product_id,status);
 CREATE TABLE IF NOT EXISTS inventory_moves(id INTEGER PRIMARY KEY,product_id INTEGER NOT NULL REFERENCES products(id),delta INTEGER NOT NULL,reason TEXT NOT NULL,reference TEXT NOT NULL DEFAULT '',created_at TEXT NOT NULL,actor_id INTEGER REFERENCES users(id));
 CREATE TABLE IF NOT EXISTS customers(id INTEGER PRIMARY KEY,name TEXT NOT NULL,email TEXT NOT NULL DEFAULT '',consent INTEGER NOT NULL DEFAULT 0,created_at TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS orders(id INTEGER PRIMARY KEY,customer_id INTEGER REFERENCES customers(id),reference TEXT NOT NULL UNIQUE,status TEXT NOT NULL DEFAULT 'new' CHECK(status IN ('new','paid_test','processing','shipped','delivered','canceled')),payment_mode TEXT NOT NULL DEFAULT 'simulation',subtotal INTEGER NOT NULL CHECK(subtotal>=0),delivery_fee INTEGER NOT NULL DEFAULT 0,created_at TEXT NOT NULL,updated_at TEXT NOT NULL);

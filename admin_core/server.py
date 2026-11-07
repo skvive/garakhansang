@@ -9,6 +9,7 @@ from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 from .database import connect,init_db,now,password_hash,password_valid,HERE,DEFAULT_DB,backend_name
 from .mobile_commerce import public_product,quote_cart,verified_merchants,list_verified_products
+from .product_options import approved_options,draft_options,create_revision,approve_revision
 
 SITE=HERE/'storefront'
 ROLE_RULES={
@@ -180,6 +181,20 @@ class Handler(SimpleHTTPRequestHandler):
      return self.respond({'items':[dict(r) for r in rows]})
    finally:con.close()
    return self.error_json(404,'공개 API가 없습니다.')
+  if path.startswith('/api/admin/product-options/'):
+   parts=path.strip('/').split('/')
+   if len(parts)!=4:return self.error_json(404,'관리자 옵션 조회 API 없음')
+   session=self.require('products','GET')
+   if not session:return
+   slug=parts[3]
+   with connect(dbpath(self.server)) as con:
+    product=con.execute('SELECT id,name FROM products WHERE slug=?',(slug,)).fetchone()
+    if product is None:return self.error_json(404,'상품 없음')
+    ver,groups=approved_options(con,product['id'])
+    draft=draft_options(con,product['id'])
+   return self.respond({'product':{'slug':slug,'name':product['name']},
+                        'approved':{'version':ver,'groups':groups},'latest_draft':draft,
+                        'mode':'LOCAL_BETA','checkout_enabled':False})
   if path.startswith('/api/admin/'):
    parts=path.strip('/').split('/');module=parts[2] if len(parts)>2 else ''
    if module not in TABLES|{'overview','reports','orders','settlements'}:return self.error_json(404,'모듈을 찾을 수 없습니다.')
@@ -210,6 +225,8 @@ class Handler(SimpleHTTPRequestHandler):
      items=[{k:v for k,v in dict(r).items() if k not in PRIVATE_FIELDS} for r in rows]
      return self.respond({'items':items,'count':len(items),'module':module,'demo':True,'editable':sorted(FIELDS.get(module,[]))})
   # Keep login shell and public assets readable, protect legacy media operator tool.
+  if path=='/admin/menu-options.html' and not self.session():
+   return self.error_json(401,'상품 옵션 관리 기능은 관리자 로그인 후 이용하세요.')
   if path=='/admin/recipe-media.html' and not self.session():
    return self.error_json(401,'레시피 이미지 관리 도구는 관리자 로그인 후 이용하세요.')
   if path=='/':self.path='/index.html'
@@ -224,6 +241,37 @@ class Handler(SimpleHTTPRequestHandler):
     with connect(dbpath(self.server)) as con: quote=quote_cart(con,body)
    except (ValueError,TypeError,json.JSONDecodeError) as e:return self.error_json(400,str(e))
    return self.respond({'data':quote,'mode':'LOCAL_BETA','checkout_enabled':False})
+  if path.startswith('/api/admin/product-options/'):
+   parts=path.strip('/').split('/')
+   if len(parts) not in (5,7) or parts[:3]!=['api','admin','product-options'] or parts[4]!='revisions':
+    return self.error_json(404,'옵션 변경 API 없음')
+   session=self.require('products','POST')
+   if not session:return
+   if backend_name()!='sqlite':return self.error_json(503,'옵션 편집은 독립 테스트 DB에서만 허용합니다.')
+   if len(parts)==7 and (parts[6]!='approve' or not parts[5].isdigit()):
+    return self.error_json(404,'옵션 승인 API 없음')
+   if len(parts)==7 and session['role']!='superadmin':
+    return self.error_json(403,'최종 옵션 승인은 최고관리자만 가능합니다.')
+   try:
+    slug=parts[3]
+    body=self.parse_body()
+    status=200
+    with connect(dbpath(self.server)) as con:
+     con.execute('BEGIN IMMEDIATE')
+     if len(parts)==5:
+      result=create_revision(con,slug,body.get('groups'),session['id'],now())
+      record(con,session['id'],'product_options_revision_created','products',None,None,
+             {'slug':slug,'version':result['version'],'count':len(result['groups'])})
+      status=201
+     else:
+      result=approve_revision(con,slug,int(parts[5]),now())
+      record(con,session['id'],'product_options_revision_approved','products',None,None,result)
+    # The DB connection must commit before any HTTP success can reach the client.
+    # Otherwise an immediate customer GET may still observe unapproved options.
+    return self.respond({'data':result,'checkout_enabled':False},status)
+   except LookupError:return self.error_json(404,'상품 없음')
+   except (ValueError,TypeError,sqlite3.IntegrityError) as e:
+    return self.error_json(400,str(e))
   if path=='/api/public/events':
    if not self.request_origin_ok():return self.error_json(403,'출처 오류')
    try:

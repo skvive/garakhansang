@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>가락한상 | 상품 옵션 관리</title>
+<style>
+:root{color-scheme:light;--red:#c81932;--bg:#f7f4ef;--ink:#2c2522;--muted:#746862;--line:#e9e0d7;--cream:#fff9f1;--green:#1c6c51;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink)}a{color:inherit}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}
+.layout{min-height:100vh;display:grid;grid-template-columns:minmax(210px,240px) minmax(0,1fr)}aside{background:#2e201f;color:#fff;padding:27px 19px;display:flex;flex-direction:column;gap:26px}
+.brand{display:flex;align-items:center;gap:11px;font-size:20px;font-weight:900}.brand .seal{background:var(--red);padding:11px;border-radius:15px}
+aside nav{display:grid;gap:9px}aside nav a{text-decoration:none;padding:13px 14px;border-radius:12px;color:#eddfd7}aside nav a[aria-current]{background:#59322e;color:white;font-weight:700}
+.asidefoot{margin-top:auto;font-size:12px;line-height:1.8;color:#d6c1b3}main{padding:30px clamp(17px,4vw,55px) 80px;max-width:1400px;width:100%;margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.eyebrow{font-size:12px;letter-spacing:.16em;font-weight:900;color:var(--red)}h1{font-size:clamp(25px,3vw,37px);letter-spacing:-.04em;margin:9px 0}p{line-height:1.55;color:var(--muted)}.chip{background:#efe2d1;color:#5c4034;border-radius:99px;padding:9px 15px;font-size:12px;font-weight:800}
+.banner{border-left:4px solid var(--red);background:#fff3ee;padding:12px 16px;border-radius:8px;margin:23px 0;color:#8c3128;font-weight:700}
+.panel{background:#fff;border:1px solid var(--line);border-radius:21px;padding:22px;margin:18px 0;box-shadow:0 7px 28px #3c19060a}
+.panelhead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.panelhead h2{font-size:19px;letter-spacing:-.02em;margin:0}
+.two{display:grid;grid-template-columns:1.1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-size:13px;font-weight:800;color:var(--muted)}
+input,select{width:100%;border:1px solid #dacfc5;border-radius:10px;background:#fff;min-height:45px;padding:10px 12px;color:var(--ink)}
+input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid #efb4af;outline-offset:2px}
+.small{font-size:12px;color:var(--muted)}.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.btn{border:1px solid var(--line);border-radius:10px;padding:11px 15px;min-height:44px;background:white;font-weight:750}
+.btn.primary{background:var(--red);color:white;border-color:var(--red)}.btn.green{background:var(--green);color:white;border-color:var(--green)}
+.btn.danger{color:var(--red);border-color:#f4c9c6}.badge{padding:6px 11px;border-radius:20px;background:#f3ede6;font-size:12px;color:#79594a;font-weight:800}
+.editor-empty{padding:34px 14px;text-align:center;border:1px dashed #d9c7be;border-radius:13px;color:var(--muted)}
+.group{background:#fffaf5;border:1px solid #e7d8cb;border-radius:16px;padding:16px;margin-top:15px}.group-header{display:flex;gap:10px;justify-content:space-between;align-items:center}.group-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:12px}
+.choice{background:white;border:1px solid #e6dbd0;border-radius:12px;padding:12px;margin-top:10px;display:grid;grid-template-columns:.75fr 1.35fr .75fr .75fr auto;gap:9px;align-items:end}
+.choice button{min-width:45px}.checkrow{display:flex;align-items:center;gap:10px;margin-top:13px}.checkrow input{width:18px;min-height:18px}
+.status{margin-top:15px;font-weight:700;min-height:22px}.status.good{color:var(--green)}.status.bad{color:#a31d2c}
+footer{font-size:12px;color:var(--muted);margin-top:28px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}aside{padding:14px 18px;flex-direction:row;flex-wrap:wrap;justify-content:space-between;gap:12px}aside nav{display:flex;gap:6px;flex-wrap:wrap}.asidefoot{display:none}main{padding-top:19px}}
+@media(max-width:660px){.two,.group-fields{grid-template-columns:1fr}.choice{grid-template-columns:1fr 1fr}.choice .wide{grid-column:span 2}.choice button{grid-column:span 2}}
+</style></head>
+<body>
+<div class="layout"><aside><div class="brand"><span class="seal">가</span><span>가락한상<br><small style="font-size:11px;font-weight:500">운영센터 · P1M</small></span></div>
+<nav aria-label="관리 페이지"><a href="/admin/">운영 대시보드</a><a href="/admin/menu-options.html" aria-current="page">상품 옵션 관리</a><a href="/index.html">쇼핑몰 보기</a></nav>
+<div class="asidefoot">LOCAL BETA · 실매출 및 결제 비활성<br>상품 수정은 승인 기록을 보존합니다.</div></aside>
+<main>
+<div class="top"><div><div class="eyebrow">MERCHANT PRODUCT CONFIGURATION</div><h1>상품 옵션 및 가격 관리</h1><p>옵션 종류·추가 금액을 등록하고 버전별로 검수하세요. 변경 이력은 유지됩니다.</p></div><div class="chip" id="accountStatus">계정 확인 중</div></div>
+<div class="banner">운영 검수 단계 · 이 화면은 로컬 베타 전용입니다. 옵션을 승인해도 실제 주문 또는 결제는 활성화되지 않습니다.</div>
+<div id="authRequired" class="panel" hidden><h2>관리자 로그인이 필요합니다</h2><p>상품 수정 권한은 승인된 운영자만 사용할 수 있습니다.</p><a href="/admin/">운영 대시보드에서 로그인하기</a></div>
+<div id="workspace" hidden>
+<section class="panel"><div class="panelhead"><h2>1. 상품 선택</h2><span class="badge" id="productCount">조회 중</span></div>
+<div class="two" style="margin-top:17px"><div class="field"><label for="lookup">상품명/슬러그 검색</label><input id="lookup" placeholder="예: 방어, 연어, bangeo-hoe" autocomplete="off"></div>
+<div class="field"><label for="product">상품 선택</label><select id="product"><option value="">상품을 선택하세요</option></select></div></div>
+<div id="productFacts" class="small" style="margin-top:14px">판매 승인된 상인과 상품만 고객 API에 노출됩니다.</div></section>
+<section class="panel"><div class="panelhead"><h2>2. 구성 및 선택 옵션</h2><span class="badge" id="revision">승인 버전 없음</span></div>
+<p class="small">옵션 그룹당 필수 선택 여부, 최소/최대 선택 수, 각 선택 항목의 추가금액과 테스트 재고를 지정합니다.</p>
+<div id="groups"><div class="editor-empty">상품을 선택하면 옵션 구성을 편집할 수 있습니다.</div></div>
+<div class="toolbar" style="margin-top:18px"><button id="addGroup" class="btn" type="button">+ 옵션 그룹 추가</button><button id="save" class="btn primary" type="button">새 변경 버전 저장</button></div></section>
+<section class="panel"><div class="panelhead"><h2>3. 검수 및 승인</h2><span class="badge">버전 보존</span></div>
+<p>운영자가 초안을 저장하면 최고관리자가 확인 후 승인합니다. 고객에게는 승인된 옵션만 표시됩니다.</p>
+<div class="toolbar"><button id="approve" class="btn green" type="button">저장된 최신 초안 승인</button><button id="reload" class="btn" type="button">서버 값 다시 조회</button></div>
+<div id="message" role="status" aria-live="polite" class="status"></div></section>
+</div><footer>GARAK HANSANG · 상품 카탈로그 정본은 서버 DB · 브라우저 입력값은 서버에서 다시 검증</footer>
+</main></div>
+<script>
+"use strict";
+const state={csrf:"",role:"",products:[],slug:"",groups:[],draft:null,approved:null};
+const $=id=>document.getElementById(id);
+const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const msg=(t,bad=false)=>{const el=$("message");el.textContent=t;el.className="status "+(bad?"bad":"good")};
+async function api(path,method="GET",data){
+ const response=await fetch(path,{method,credentials:"same-origin",headers:{"Content-Type":"application/json",...(method!=="GET"?{"X-Garak-CSRF":state.csrf}:{})},body:data===undefined?undefined:JSON.stringify(data),cache:"no-store"});
+ const json=await response.json().catch(()=>({error:"서버 응답 형식 오류"}));
+ if(!response.ok)throw Error(json.error||"서버 요청 오류");
+ return json;
+}
+function drawProductOptions(){
+ const q=$("lookup").value.trim().toLowerCase();const select=$("product"),current=state.slug;
+ select.replaceChildren();const empty=document.createElement("option");empty.value="";empty.textContent="상품을 선택하세요";select.appendChild(empty);
+ const found=state.products.filter(p=>(p.name+" "+p.slug).toLowerCase().includes(q));
+ for(const p of found){const opt=document.createElement("option");opt.value=p.slug;opt.textContent=p.name+" · "+p.slug;select.appendChild(opt)}
+ select.value=found.some(p=>p.slug===current)?current:"";
+ $("productCount").textContent=found.length+"개 상품";
+}
+function collect(){
+ return [...document.querySelectorAll("#groups .group")].map(g=>({
+  id:g.querySelector("[data-k=gid]").value.trim(),
+  title:g.querySelector("[data-k=title]").value.trim(),
+  required:g.querySelector("[data-k=required]").checked,
+  min_select:Number(g.querySelector("[data-k=min]").value),
+  max_select:Number(g.querySelector("[data-k=max]").value),
+  choices:[...g.querySelectorAll(".choice")].map(c=>({
+    id:c.querySelector("[data-k=cid]").value.trim(),
+    label:c.querySelector("[data-k=clabel]").value.trim(),
+    additional_krw:Number(c.querySelector("[data-k=price]").value),
+    stock:c.querySelector("[data-k=stock]").value===""?null:Number(c.querySelector("[data-k=stock]").value)
+  }))
+ }));
+}
+function sync(){state.groups=collect()}
+function addChoice(group){
+ group.choices.push({id:"",label:"",additional_krw:0,stock:null});
+}
+function redraw(){
+ const root=$("groups");root.replaceChildren();
+ if(state.groups.length===0){const e=document.createElement("div");e.className="editor-empty";e.textContent="현재 옵션 그룹이 없습니다. 필요하면 새 그룹을 추가하세요.";root.appendChild(e);return}
+ state.groups.forEach((g,gi)=>{
+  const article=document.createElement("section");article.className="group";
+  article.innerHTML=`<div class="group-header"><strong>옵션 그룹 ${gi+1}</strong><button type="button" class="btn danger" data-action="remove-group">그룹 삭제 (초안)</button></div>
+  <div class="group-fields">
+  <div class="field"><label>그룹 ID</label><input data-k="gid" maxlength="48" value="${esc(g.id)}" placeholder="예: prepare"></div>
+  <div class="field"><label>그룹명</label><input data-k="title" maxlength="100" value="${esc(g.title)}" placeholder="예: 손질 방식"></div>
+  <div class="field"><label>최소 선택</label><input type="number" min="0" max="20" data-k="min" value="${Number(g.min_select)}"></div>
+  <div class="field"><label>최대 선택</label><input type="number" min="1" max="20" data-k="max" value="${Number(g.max_select)}"></div>
+  </div><label class="checkrow"><input type="checkbox" data-k="required" ${g.required?"checked":""}> 이 그룹에서 선택 필수</label>
+  <div class="small" style="margin-top:13px">선택지 · 기준 가격에 추가되는 금액은 원화 정수입니다.</div>
+  <div class="choice-list"></div><button type="button" class="btn" data-action="add-choice" style="margin-top:10px">+ 선택지 추가</button>`;
+  const list=article.querySelector(".choice-list");
+  g.choices.forEach((c,ci)=>{
+    const row=document.createElement("div");row.className="choice";
+    row.innerHTML=`<div class="field"><label>선택 ID</label><input data-k="cid" maxlength="48" value="${esc(c.id)}" placeholder="cut"></div>
+      <div class="field wide"><label>선택지명</label><input data-k="clabel" maxlength="100" value="${esc(c.label)}" placeholder="손질 후"></div>
+      <div class="field"><label>추가금액 (원)</label><input data-k="price" type="number" min="0" max="1000000" value="${Number(c.additional_krw)}"></div>
+      <div class="field"><label>옵션 재고 (선택)</label><input data-k="stock" type="number" min="0" value="${c.stock==null?"":Number(c.stock)}" placeholder="제한없음"></div>
+      <button class="btn danger" type="button" data-action="remove-choice" data-ci="${ci}" aria-label="선택지 삭제">×</button>`;
+    list.appendChild(row);
+  });
+  article.addEventListener("click",e=>{
+   const btn=e.target.closest("[data-action]");if(!btn)return;
+   sync();const action=btn.dataset.action;
+   if(action==="remove-group")state.groups.splice(gi,1);
+   if(action==="add-choice")addChoice(state.groups[gi]);
+   if(action==="remove-choice")state.groups[gi].choices.splice(Number(btn.dataset.ci),1);
+   redraw();
+  });
+  root.appendChild(article);
+ });
+}
+function updateRevision(){
+ const a=state.approved?.version||0;
+ $("revision").textContent="승인 v"+a+(state.draft?" · 초안 v"+state.draft.version:"");
+ $("approve").disabled=!state.draft||state.role!=="superadmin";
+}
+async function loadSelected(){
+ state.slug=$("product").value;state.groups=[];state.draft=null;state.approved=null;updateRevision();redraw();
+ if(!state.slug)return;
+ const product=state.products.find(p=>p.slug===state.slug);
+ $("productFacts").textContent=product?`${product.name} · ${product.status} · ${Number(product.price).toLocaleString("ko-KR")}원 (테스트 가격) · 재고 ${product.stock}`:"";
+ const r=await api("/api/admin/product-options/"+encodeURIComponent(state.slug));
+ state.draft=r.latest_draft;state.approved=r.approved;
+ state.groups=JSON.parse(JSON.stringify(state.draft?.groups||state.approved?.groups||[]));
+ updateRevision();redraw();msg("옵션 구성을 읽었습니다.");
+}
+async function init(){
+ try{
+  const auth=await api("/api/auth/me");
+  if(!auth.authenticated){$("authRequired").hidden=false;$("accountStatus").textContent="로그인 필요";return}
+  state.role=auth.user.role;state.csrf=auth.csrf;
+  $("accountStatus").textContent=state.role+" 로그인";
+  $("workspace").hidden=false;
+  const products=await api("/api/admin/products");
+  state.products=products.items||[];drawProductOptions();
+  msg("상품을 선택한 후 옵션을 편집하세요.");
+ }catch(error){$("authRequired").hidden=false;$("accountStatus").textContent="접근 확인 필요";msg(error.message,true)}
+}
+$("lookup").addEventListener("input",drawProductOptions);
+$("product").addEventListener("change",()=>loadSelected().catch(e=>msg(e.message,true)));
+$("addGroup").addEventListener("click",()=>{
+ if(!state.slug){msg("상품을 먼저 선택하세요.",true);return}
+ sync();state.groups.push({id:"",title:"",required:false,min_select:0,max_select:1,
+  choices:[{id:"",label:"",additional_krw:0,stock:null}]});redraw();
+});
+$("save").addEventListener("click",async()=>{
+ if(!state.slug){msg("상품을 먼저 선택하세요.",true);return}
+ try{sync();const r=await api("/api/admin/product-options/"+encodeURIComponent(state.slug)+"/revisions","POST",{groups:state.groups});
+ state.draft=r.data;updateRevision();msg("새 옵션 초안 v"+r.data.version+"이 저장되었습니다. 승인 전까지 고객에게 적용되지 않습니다.");}
+ catch(e){msg(e.message,true)}
+});
+$("approve").addEventListener("click",async()=>{
+ if(!state.slug||!state.draft||state.role!=="superadmin"){msg("최고관리자 및 저장된 초안이 필요합니다.",true);return}
+ if(!window.confirm("초안 v"+state.draft.version+"을 승인하시겠습니까? 과거 옵션 버전은 보존됩니다."))return;
+ try{await api("/api/admin/product-options/"+encodeURIComponent(state.slug)+"/revisions/"+state.draft.version+"/approve","POST",{});
+ await loadSelected();msg("최종 승인했습니다. 실제 결제 기능은 계속 비활성화됩니다.");}
+ catch(e){msg(e.message,true)}
+});
+$("reload").addEventListener("click",()=>loadSelected().catch(e=>msg(e.message,true)));
+init();
+</script></body></html>
