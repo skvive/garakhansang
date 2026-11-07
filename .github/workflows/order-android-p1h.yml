@@ -6,6 +6,7 @@ on:
       - chatgpt/garakhansang-order-launchfix-20261107
       - chatgpt/garakhansang-order-p1l-product-detail-20261107
       - chatgpt/garakhansang-order-p1m-catalog-options-20261107
+      - chatgpt/garakhansang-order-p2-intent-ledger-20261107
     paths:
       - android-order-p1h/GarakHansang_Order_Android_v1_11_P1H_Source_20261106.zip
       - 'android-order-p1h/source-b64/**'
@@ -89,6 +90,11 @@ jobs:
             subprocess.run(['node','--check',out.name],check=True)
           print('P1M admin UI static & JS syntax: PASS')
           PY
+      - name: Verify isolated P2 checkout intent ledger, auth and idempotency
+        run: |
+          for n in 1 2; do
+            python3 -m unittest discover -s tests -p 'test_order_intents_p2.py' -q
+          done
       - name: Verify merchant and rider order-state domain
         run: python3 -m unittest discover -s tests -p 'test_delivery_flow.py' -q
       - name: Run Java PKCE OAuth and catalog search checks
