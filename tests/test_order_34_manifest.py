@@ -75,7 +75,7 @@ class Exact34ReleaseShortlistTests(unittest.TestCase):
         self.assertIn("IF n <> 34", sql)
         for sku in ("GYS-037", "GYS-038", "GYS-039"):
             self.assertIn(sku, sql)
-        self.assertIsNone(re.search(r"(?im)^\\s*(UPDATE|DELETE|TRUNCATE|DROP)\\s+", sql))
+        self.assertIsNone(re.search(r"(?im)^\s*(UPDATE|DELETE|TRUNCATE|DROP)\s+", sql))
         self.assertNotIn("DO UPDATE", sql)
 
     def test_linkrpay_approved_does_not_imply_merchant_of_record_authorization(self):
