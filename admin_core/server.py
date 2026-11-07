@@ -248,23 +248,27 @@ class Handler(SimpleHTTPRequestHandler):
    session=self.require('products','POST')
    if not session:return
    if backend_name()!='sqlite':return self.error_json(503,'옵션 편집은 독립 테스트 DB에서만 허용합니다.')
+   if len(parts)==7 and (parts[6]!='approve' or not parts[5].isdigit()):
+    return self.error_json(404,'옵션 승인 API 없음')
+   if len(parts)==7 and session['role']!='superadmin':
+    return self.error_json(403,'최종 옵션 승인은 최고관리자만 가능합니다.')
    try:
     slug=parts[3]
     body=self.parse_body()
+    status=200
     with connect(dbpath(self.server)) as con:
      con.execute('BEGIN IMMEDIATE')
      if len(parts)==5:
-      saved=create_revision(con,slug,body.get('groups'),session['id'],now())
+      result=create_revision(con,slug,body.get('groups'),session['id'],now())
       record(con,session['id'],'product_options_revision_created','products',None,None,
-             {'slug':slug,'version':saved['version'],'count':len(saved['groups'])})
-      return self.respond({'data':saved,'checkout_enabled':False},201)
-     if parts[6]!='approve' or not parts[5].isdigit():
-      return self.error_json(404,'옵션 승인 API 없음')
-     if session['role']!='superadmin':
-      return self.error_json(403,'최종 옵션 승인은 최고관리자만 가능합니다.')
-     approved=approve_revision(con,slug,int(parts[5]),now())
-     record(con,session['id'],'product_options_revision_approved','products',None,None,approved)
-     return self.respond({'data':approved,'checkout_enabled':False})
+             {'slug':slug,'version':result['version'],'count':len(result['groups'])})
+      status=201
+     else:
+      result=approve_revision(con,slug,int(parts[5]),now())
+      record(con,session['id'],'product_options_revision_approved','products',None,None,result)
+    # The DB connection must commit before any HTTP success can reach the client.
+    # Otherwise an immediate customer GET may still observe unapproved options.
+    return self.respond({'data':result,'checkout_enabled':False},status)
    except LookupError:return self.error_json(404,'상품 없음')
    except (ValueError,TypeError,sqlite3.IntegrityError) as e:
     return self.error_json(400,str(e))
