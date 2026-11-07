@@ -182,10 +182,18 @@ class LabHandler(SimpleHTTPRequestHandler):
         origin = self.headers.get("Origin")
         return not origin or urlsplit(origin).netloc == self.headers.get("Host", "")
 
+    def stripe_test_ready(self):
+        """Only explicit test account credentials may expose TEST checkout."""
+        return (os.environ.get("GARAK_LAB_ENABLE_STRIPE_TEST") == "1"
+            and os.environ.get("GARAK_LAB_STRIPE_TEST_KEY","").startswith("sk_test_")
+            and self.server.lab_test_webhook_secret.startswith("whsec_")
+            and os.environ.get("GARAK_LAB_PUBLIC_HTTPS_ORIGIN","").startswith("https://"))
+
     def dispatch(self, method):
         path = urlsplit(self.path).path
         if path == "/lab/api/health" and method == "GET":
             return self.json({"ok": True, "mode": "LOOPBACK_SYNTHETIC",
+                "stripe_test_ready": self.stripe_test_ready(),
                 "real_payments": False, "live_delivery": False})
         if path == "/lab/api/login" and method == "POST":
             if not self.origin_ok(): return self.error(403, "bad_origin")
@@ -379,8 +387,8 @@ class LabHandler(SimpleHTTPRequestHandler):
                     return self.json({"order":result,"demo":True})
                 if action == "checkout":
                     if role != "customer":return self.error(403,"customer_role_required")
-                    if os.environ.get("GARAK_LAB_ENABLE_STRIPE_TEST")!="1":
-                        return self.error(409,"test_stripe_disabled")
+                    if not self.stripe_test_ready():
+                        return self.error(409,"stripe_test_not_configured")
                     key=os.environ.get("GARAK_LAB_STRIPE_TEST_KEY","")
                     base=os.environ.get("GARAK_LAB_PUBLIC_HTTPS_ORIGIN","")
                     if not base.startswith("https://"):
