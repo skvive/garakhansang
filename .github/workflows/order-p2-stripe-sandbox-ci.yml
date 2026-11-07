@@ -20,6 +20,8 @@ on:
       - 'tests/test_order_34_manifest.py'
       - 'config/garak_order_34_candidates_20261108.json'
       - 'db/migrations/20261107_garak_order_v2_*.sql'
+      - 'db/migrations/20261108_garak_order_v2_34_draft_catalog.sql'
+      - 'docs/GARAK_34_PRODUCTS_STRIPE_DELIVERY_AUDIT_20261107.md'
       - 'storefront/order-lab/**'
       - 'docs/ORDER_V2_REAL_PURCHASE_RELEASE_GATE_20261107.md'
       - '.github/workflows/order-p2-stripe-sandbox-ci.yml'
@@ -83,6 +85,8 @@ jobs:
             docs/ORDER_LAB_LOCAL_RUN_20261107.md
             docs/ORDER_V2_REAL_PURCHASE_RELEASE_GATE_20261107.md
             db/migrations/20261107_garak_order_v2_*.sql
+            db/migrations/20261108_garak_order_v2_34_draft_catalog.sql
+            docs/GARAK_34_PRODUCTS_STRIPE_DELIVERY_AUDIT_20261107.md
           retention-days: 14
       - name: Do not claim live release
         run: echo "P2 integration is sandbox-only; no Stripe API live/test E2E or Neon/Android application integration."
