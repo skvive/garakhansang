@@ -4,7 +4,9 @@ private enum Tab: Int { case home, menu, cart, orders, mine }
 
 struct RootTabView: View {
     @EnvironmentObject var store: CatalogStore
-    @State private var tab: Tab = .home
+    // iPhone Simulator screen-by-screen QA. Normal installation starts at Home.
+    @State private var tab: Tab =
+        Tab(rawValue: Int(ProcessInfo.processInfo.environment["GHS_QA_TAB"] ?? "") ?? 0) ?? .home
 
     var body: some View {
         TabView(selection: $tab) {
@@ -205,6 +207,14 @@ struct ItemDetailScreen: View {
                             .frame(maxWidth: .infinity, minHeight: 50)
                     }.buttonStyle(.borderedProminent).tint(Brand.brown)
                 }
+                if let route = VerifiedMarketNavigation.directions(travelMode: .walking) {
+                    Link(destination: route.url) {
+                        Label("가락시장 위치만 확인", systemImage: "mappin.and.ellipse")
+                            .frame(maxWidth: .infinity, minHeight: 48)
+                    }
+                    .buttonStyle(.bordered)
+                    .accessibilityHint("실매장 주소 확인 전에는 가락시장 기준 위치만 안내합니다")
+                }
                 Text("실제 판매가·재고·배송 가능 여부가 검증되지 않아 주문 및 결제 버튼을 제공하지 않습니다.")
                     .font(.caption).foregroundStyle(.secondary)
             }.padding(18)
@@ -304,6 +314,16 @@ struct MineScreen: View {
                     Button(action: onBrowse) { Label("전체 메뉴 보기", systemImage: "square.grid.2x2")
                         .frame(maxWidth: .infinity, minHeight: 52) }
                         .buttonStyle(.borderedProminent).tint(Brand.brown)
+                    if let route = VerifiedMarketNavigation.directions(travelMode: .driving) {
+                        Link(destination: route.url) {
+                            Label("가락시장 길찾기 · Google 지도", systemImage: "map")
+                                .frame(maxWidth: .infinity, minHeight: 52)
+                        }
+                        .buttonStyle(.bordered).tint(Brand.brown)
+                        .accessibilityHint("매장 좌표가 승인되지 않아 실제 판매점이 아닌 가락시장 기준으로 안내합니다")
+                    }
+                    Text("매장 좌표 및 고객 배송지는 아직 검증되지 않아 경로에 포함하지 않습니다.")
+                        .font(.caption).foregroundStyle(.secondary)
                     Text("본 앱은 iOS 시연용 네이티브 프로젝트입니다.\nAI 콘셉트 메뉴 이미지 · 판매 승인 전 상품 표시")
                         .font(.caption).foregroundStyle(.secondary).multilineTextAlignment(.center)
                 }.padding(18)
