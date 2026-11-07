@@ -1,0 +1,38 @@
+name: Garak Hansang Order P2 Stripe TEST-only / Roles QA
+
+on:
+  push:
+    branches:
+      - chatgpt/garakhansang-order-p2-stripe-sandbox-roles-20261107
+    paths:
+      - 'admin_core/order_p2_sandbox.py'
+      - 'admin_core/delivery_flow.py'
+      - 'tests/test_order_p2_sandbox.py'
+      - '.github/workflows/order-p2-stripe-sandbox-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  isolated-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Refuse real Stripe calls and production credentials
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -z "${STRIPE_SECRET_KEY:-}"
+          test -z "${STRIPE_WEBHOOK_SECRET:-}"
+          echo "No linked Stripe account is contacted. All sessions/webhooks are synthetic."
+      - name: Syntax and imported domain check
+        run: python -m compileall -q admin_core/order_p2_sandbox.py admin_core/delivery_flow.py tests/test_order_p2_sandbox.py
+      - name: Stripe signed webhook, role, rider and order regression
+        run: python -m unittest discover -s tests -p 'test_order_p2_sandbox.py' -v
+      - name: Do not claim live release
+        run: echo "P2 integration is sandbox-only; no Stripe API live/test E2E or Neon/Android application integration."
