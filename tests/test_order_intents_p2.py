@@ -97,6 +97,20 @@ class OrderIntentTests(unittest.TestCase):
   for field,value in [("price",1),("address","private"),("card","1234"),("payment","paid"),("customer_name","demo")]:
    p=self.payload();p[field]=value
    self.assertEqual(self.make(data=p)[0],400,field)
+ def test_client_nested_price_or_pii_rejected(self):
+  self.login()
+  for name,value in [("price",1),("client_total_krw",1),
+                     ("phone","010-0000-0000"),("card_number","4111111111111111")]:
+   data=self.payload()
+   data["items"][0][name]=value
+   self.assertEqual(self.make(data=data)[0],400,name)
+  with connect(self.db) as con:
+   self.assertEqual(con.execute("SELECT count(*) FROM checkout_intents").fetchone()[0],0)
+ def test_extra_option_payload_rejected(self):
+  self.login()
+  data=self.payload()
+  data["items"][0]["options"]=[{"group_id":"prep","choice_ids":["clean"],"payment":"fake"}]
+  self.assertEqual(self.make(data=data)[0],400)
  def test_unverified_merchant_rejected(self):
   self.login()
   with connect(self.db) as con:
