@@ -127,7 +127,17 @@ class PartnerReleaseGateTests(unittest.TestCase):
         assert_ready_for_activation(r, stripe_account_verified=True,
                                     stripe_test_webhook_passed=True,
                                     shipping_provider_contract_verified=True,
-                                    signed_delivery_e2e_passed=True)
+                                    signed_delivery_e2e_passed=True,
+                                    merchant_of_record_authorized=True)
+
+    def test_active_stripe_account_without_garak_merchant_authorization_is_blocked(self):
+        r = self.audit()
+        with self.assertRaisesRegex(ValueError, "GO-LIVE BLOCKED"):
+            assert_ready_for_activation(
+                r, stripe_account_verified=True, stripe_test_webhook_passed=True,
+                shipping_provider_contract_verified=True,
+                signed_delivery_e2e_passed=True,
+                merchant_of_record_authorized=False)
 
 if __name__ == "__main__":
     unittest.main()
