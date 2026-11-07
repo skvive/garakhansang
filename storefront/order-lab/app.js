@@ -356,3 +356,7 @@ document.querySelectorAll(".nav-item").forEach(el=>el.addEventListener("click",(
   }
 }catch(err){console.warn("Local lab unavailable",err)}})();
 setInterval(()=>{if(S.role&&!document.hidden)load(true).catch(()=>{})},15000);
+if("serviceWorker" in navigator && location.hostname==="127.0.0.1"){
+  navigator.serviceWorker.register("/order-lab/sw.js",{scope:"/order-lab/"})
+    .catch(()=>{/* Never block orders or auth for offline-shell caching. */});
+}
