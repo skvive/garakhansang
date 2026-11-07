@@ -201,6 +201,12 @@ jobs:
                       "P='site.lexid.garakhansang.order.lab'")
           s=s.replace("P+'/.MainActivity'",
                       "P+'/site.lexid.garakhansang.order.MainActivity'")
+          # Android 16 may show quantity control before the CTA enters the viewport.
+          # Scroll on subsequent strict assertion attempts; never pretend success.
+          missing="  observed.append('missing '+expected+' from '+str(len(elements))+' elements')"
+          assert missing in s
+          retry="  if name=='product_detail_scrolled' and attempt<7:\n   adb('shell','input','swipe','525','1650','525','480','350')\n"
+          s=s.replace(missing,retry+missing)
           smoke.write_text(s,encoding="utf-8")
           legacy=root/"emulator_legacy_prefs.py"
           s=legacy.read_text(encoding="utf-8")
