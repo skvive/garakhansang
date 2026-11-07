@@ -10,6 +10,7 @@ from pathlib import Path
 from .database import connect,init_db,now,password_hash,password_valid,HERE,DEFAULT_DB,backend_name
 from .mobile_commerce import public_product,quote_cart,verified_merchants,list_verified_products
 from .product_options import approved_options,draft_options,create_revision,approve_revision
+from .order_intents import create_or_replay,read_intent,list_intents,abandon_intent,IntentConflict
 
 SITE=HERE/'storefront'
 ROLE_RULES={
@@ -181,6 +182,22 @@ class Handler(SimpleHTTPRequestHandler):
      return self.respond({'items':[dict(r) for r in rows]})
    finally:con.close()
    return self.error_json(404,'공개 API가 없습니다.')
+  if path=='/api/admin/order-intents' or path.startswith('/api/admin/order-intents/'):
+   # This is an administrator-only NON-PAYABLE simulation ledger.
+   session=self.require('orders','GET')
+   if not session:return
+   if backend_name()!='sqlite' or os.environ.get('GARAK_ORDER_SANDBOX')!='1':
+    return self.error_json(503,'주문 시뮬레이션 API는 독립 로컬 테스트에서만 사용합니다.')
+   parts=path.strip('/').split('/')
+   if len(parts) not in (3,4):return self.error_json(404,'주문 시뮬레이션 조회 API 없음')
+   actor=None if session['role']=='superadmin' else session['id']
+   try:
+    with connect(dbpath(self.server)) as con:
+     if len(parts)==3:result={'items':list_intents(con,actor_id=actor)}
+     else:result=read_intent(con,reference=parts[3],actor_id=actor)
+   except LookupError:return self.error_json(404,'시뮬레이션 주문 정보 없음')
+   return self.respond({'data':result,'mode':'LOCAL_BETA',
+                        'checkout_enabled':False,'merchant_notified':False})
   if path.startswith('/api/admin/product-options/'):
    parts=path.strip('/').split('/')
    if len(parts)!=4:return self.error_json(404,'관리자 옵션 조회 API 없음')
@@ -225,6 +242,8 @@ class Handler(SimpleHTTPRequestHandler):
      items=[{k:v for k,v in dict(r).items() if k not in PRIVATE_FIELDS} for r in rows]
      return self.respond({'items':items,'count':len(items),'module':module,'demo':True,'editable':sorted(FIELDS.get(module,[]))})
   # Keep login shell and public assets readable, protect legacy media operator tool.
+  if path=='/admin/order-intents.html' and not self.session():
+   return self.error_json(401,'주문 원장 검수 페이지는 관리자 로그인 후 이용하세요.')
   if path=='/admin/menu-options.html' and not self.session():
    return self.error_json(401,'상품 옵션 관리 기능은 관리자 로그인 후 이용하세요.')
   if path=='/admin/recipe-media.html' and not self.session():
@@ -241,6 +260,41 @@ class Handler(SimpleHTTPRequestHandler):
     with connect(dbpath(self.server)) as con: quote=quote_cart(con,body)
    except (ValueError,TypeError,json.JSONDecodeError) as e:return self.error_json(400,str(e))
    return self.respond({'data':quote,'mode':'LOCAL_BETA','checkout_enabled':False})
+  if path=='/api/admin/order-intents' or path.startswith('/api/admin/order-intents/'):
+   session=self.require('orders','POST')
+   if not session:return
+   if backend_name()!='sqlite' or os.environ.get('GARAK_ORDER_SANDBOX')!='1':
+    return self.error_json(503,'주문 시뮬레이션은 명시적으로 허용된 로컬 테스트 DB에서만 진행합니다.')
+   parts=path.strip('/').split('/')
+   if len(parts) not in (3,5) or (len(parts)==5 and parts[4]!='abandon'):
+    return self.error_json(404,'시뮬레이션 주문 변경 API 없음')
+   try:
+    body=self.parse_body()
+    with connect(dbpath(self.server)) as con:
+     con.execute('BEGIN IMMEDIATE')
+     if len(parts)==3:
+      key=self.headers.get('Idempotency-Key','')
+      result,created=create_or_replay(
+       con,payload=body,actor_id=session['id'],key=key,timestamp=now())
+      if created:
+       record(con,session['id'],'checkout_intent_created','checkout_intents',None,
+              None,{'reference':result['reference'],'merchant_id':result['merchant_id'],
+                    'subtotal_krw':result['subtotal_krw'],'payment_status':'not_initiated'})
+      status=201 if created else 200
+     else:
+      result=abandon_intent(
+       con,reference=parts[3],actor_id=session['id'],
+       expected_version=body.get('expected_version'),timestamp=now())
+      record(con,session['id'],'checkout_intent_abandoned','checkout_intents',None,
+             None,{'reference':result['reference'],'status':result['status']})
+      status=200
+    # Commit must finish before success; no payment or merchant notification is emitted.
+    return self.respond({'data':result,'mode':'LOCAL_BETA',
+                         'checkout_enabled':False,'merchant_notified':False},status)
+   except IntentConflict as e:return self.error_json(409,str(e))
+   except LookupError:return self.error_json(404,'시뮬레이션 주문 정보 없음')
+   except (ValueError,TypeError,sqlite3.IntegrityError,json.JSONDecodeError) as e:
+    return self.error_json(400,str(e))
   if path.startswith('/api/admin/product-options/'):
    parts=path.strip('/').split('/')
    if len(parts) not in (5,7) or parts[:3]!=['api','admin','product-options'] or parts[4]!='revisions':

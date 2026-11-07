@@ -1,0 +1,135 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>가락한상 | 주문 원장 검수</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;--red:#C81932;--ink:#2C211F;--muted:#6F615C;--line:#E9DCD2;--cream:#FAF7F2;--green:#1C7654}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink)}button,input,select{font:inherit}
+.layout{min-height:100vh;display:grid;grid-template-columns:225px minmax(0,1fr)}
+aside{background:#2e201f;color:white;padding:25px 18px}.brand{font-size:20px;font-weight:900;margin-bottom:30px}.brand small{display:block;font-size:11px;font-weight:500;margin-top:8px}
+nav{display:grid;gap:8px}nav a{display:block;text-decoration:none;color:#ffefe7;padding:12px;border-radius:10px}
+nav a[aria-current]{background:#61352f;font-weight:800}main{padding:29px clamp(18px,4vw,50px) 75px;max-width:1350px;width:100%;margin:auto}
+.eyebrow{font-size:12px;color:var(--red);font-weight:900;letter-spacing:.14em}h1{font-size:clamp(25px,3vw,36px);margin:9px 0 8px;letter-spacing:-.04em}
+h2{font-size:18px;margin:0 0 12px}p{color:var(--muted);line-height:1.65;margin:8px 0 18px}
+.notice{padding:14px;border:1px solid #f3c3b9;border-radius:12px;background:#fff1e9;color:#843b35;font-size:14px;font-weight:700}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:19px}
+.panel{border:1px solid var(--line);border-radius:18px;background:white;padding:22px;box-shadow:0 9px 30px #503c2b0c}
+.label{display:block;color:var(--muted);font-size:13px;font-weight:800;margin-bottom:8px}
+select,input{width:100%;border:1px solid #ded2c7;border-radius:10px;padding:11px 12px;background:white;min-height:44px;color:var(--ink)}
+button{border:1px solid var(--line);background:white;padding:11px 16px;border-radius:11px;min-height:44px;font-weight:800;cursor:pointer}
+button:disabled{opacity:.55;cursor:not-allowed}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #e9afb3;outline-offset:2px}
+.primary{color:white;background:var(--red);border-color:var(--red)}.row{display:flex;gap:12px;align-items:end;flex-wrap:wrap}
+.row .grow{flex:1 1 210px}.row .qty{flex:0 0 115px}
+.muted{font-size:13px;color:var(--muted)}.chip{display:inline-block;background:#efe5d8;color:#735047;padding:6px 10px;border-radius:25px;font-weight:800;font-size:12px}
+.status{font-size:14px;min-height:28px;line-height:1.5;color:var(--green);margin:18px 0}.status.error{color:#a32634}
+.tableWrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;min-width:630px}th{text-align:left;background:#f9f3ee;font-size:12px;color:#7a6560}td,th{border-bottom:1px solid var(--line);padding:12px;vertical-align:middle}td{font-size:13px}
+td .ref{font-weight:750;word-break:break-all}.price{font-variant-numeric:tabular-nums;font-weight:900}.empty{padding:24px;text-align:center;color:var(--muted)}
+footer{margin-top:30px;color:var(--muted);font-size:12px}
+@media(max-width:850px){.layout{grid-template-columns:1fr}aside{padding:14px 18px}.brand{margin:0 0 10px}nav{display:flex;flex-wrap:wrap}.grid{grid-template-columns:1fr}}
+@media(max-width:420px){main{padding:18px 14px 50px}.panel{padding:15px}.row .qty{flex:1 1 100px}}
+</style></head><body>
+<div class="layout">
+<aside><div class="brand">가락한상 오더<small>ORDER OPERATIONS · P2 SANDBOX</small></div><nav aria-label="관리 메뉴">
+<a href="/admin/">운영 대시보드</a><a href="/admin/menu-options.html">상품 옵션 관리</a>
+<a href="/admin/order-intents.html" aria-current="page">주문 원장 검수</a></nav></aside>
+<main><div class="eyebrow">COMMERCE CONTROL / PRE-PAYMENT GATE</div><h1>주문 원장 검수</h1>
+<p>같은 요청을 다시 제출해도 중복 주문이 생성되지 않도록 서버의 금액 스냅샷과 멱등성을 검사합니다.</p>
+<div class="notice">LOCAL BETA ONLY · 이 화면의 기록은 실제 고객 주문이 아닙니다. 결제·재고 예약·상인 알림·라이더 배차는 발생하지 않습니다.</div>
+<section id="loginRequired" class="panel" hidden style="margin-top:20px"><h2>관리자 로그인이 필요합니다</h2><p>운영센터에서 로그인한 뒤 사용해 주세요.</p><a href="/admin/">관리센터로 돌아가기</a></section>
+<div id="app" hidden>
+<div class="grid"><section class="panel"><h2>1. 테스트 상품 선택</h2>
+<div class="row"><div class="grow"><label class="label" for="product">상품</label><select id="product"><option value="">서버 상품 로딩 중</option></select></div>
+<div class="qty"><label class="label" for="qty">수량</label><input id="qty" type="number" min="1" max="99" step="1" value="1"></div></div>
+<div style="margin-top:14px"><label class="label" for="fulfillment">주문 방식</label><select id="fulfillment"><option value="delivery">배달 · 정책 미검증</option><option value="pickup">포장 · 정책 미검증</option></select></div>
+<p class="muted" style="margin-top:16px">검증된 상품·상인만 견적을 생성할 수 있습니다. 옵션을 등록한 상품은 필수 구성 선택값이 필요하며, 현재 이 검수 화면에서는 주문 생성이 차단될 수 있습니다.</p>
+<button id="create" type="button" class="primary">서버 견적 스냅샷 생성</button></section>
+<section class="panel"><h2>2. 결제 전 안전장치</h2>
+<p><span class="chip">중복 요청 차단</span> 동일 멱등키를 다시 보내면 기존 기록만 반환합니다.</p>
+<p><span class="chip">서버 가격 고정</span> 클라이언트 가격은 사용하지 않고 현재 승인 상품 가격을 견적에 기록합니다.</p>
+<p><span class="chip">실결제 비활성</span> 배달비와 최종 결제액은 확정되지 않으며 결제 버튼도 없습니다.</p>
+<div id="lastResult" role="status" aria-live="polite" class="muted">생성한 견적 정보가 여기에 표시됩니다.</div></section></div>
+<section class="panel" style="margin-top:20px"><div class="row" style="justify-content:space-between;align-items:center"><h2>3. 시뮬레이션 기록</h2><button id="reload" type="button">내역 새로고침</button></div>
+<div id="listArea" class="tableWrap"><div class="empty">기록을 불러오는 중입니다.</div></div></section>
+<div class="status" id="message" role="status" aria-live="polite"></div></div>
+<footer>GARAK HANSANG © 2026 · 결제/상품/배달 검수 완료 전 GO-LIVE = NO</footer></main></div>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const state={csrf:"",products:[],pending:false};
+const money=n=>Number(n).toLocaleString("ko-KR")+"원";
+const message=(text,error=false)=>{const m=$("message");m.textContent=text;m.className="status"+(error?" error":"")};
+async function api(path,method="GET",payload,headers={}){
+ const resp=await fetch(path,{method,credentials:"same-origin",cache:"no-store",
+ headers:{"Content-Type":"application/json",...(method==="GET"?{}:{"X-Garak-CSRF":state.csrf}),...headers},
+ body:payload===undefined?undefined:JSON.stringify(payload)});
+ const body=await resp.json().catch(()=>({error:"서버 응답 오류"}));
+ if(!resp.ok)throw new Error(body.error||"요청에 실패했습니다.");
+ return body;
+}
+function drawProducts(){
+ const sel=$("product");sel.replaceChildren();
+ const prompt=document.createElement("option");prompt.value="";prompt.textContent="검수할 상품 선택";sel.append(prompt);
+ for(const p of state.products.filter(p=>p.status==="published")){
+  const opt=document.createElement("option");opt.value=p.slug;
+  opt.textContent=p.name+" · "+money(p.price);sel.appendChild(opt);
+ }
+}
+function drawList(items){
+ const target=$("listArea");target.replaceChildren();
+ if(!items?.length){const empty=document.createElement("div");empty.className="empty";
+ empty.textContent="생성된 견적 기록이 없습니다. (실제 주문 내역이 아닙니다.)";target.appendChild(empty);return}
+ const tbl=document.createElement("table"),thead=document.createElement("thead"),head=document.createElement("tr");
+ for(const value of ["시뮬레이션 번호","상태","기준 금액","배송 정책","기록 시각","조작"]){
+  const th=document.createElement("th");th.textContent=value;head.appendChild(th)
+ }thead.appendChild(head);tbl.appendChild(thead);
+ const body=document.createElement("tbody");
+ for(const item of items){
+  const tr=document.createElement("tr");
+  const fields=[item.reference,item.status,money(item.subtotal_krw),"미확정",item.created_at];
+  fields.forEach((value,index)=>{const cell=document.createElement("td");cell.textContent=value;
+    if(index===0)cell.className="ref";if(index===2)cell.className="price";tr.appendChild(cell)});
+  const controls=document.createElement("td");
+  const b=document.createElement("button");b.textContent=item.status==="abandoned"?"종료됨":"검수 종료";
+  b.disabled=item.status!=="awaiting_delivery_policy";
+  b.addEventListener("click",async()=>{if(!confirm("이 시뮬레이션 견적을 종료할까요? 주문·결제 취소가 아닙니다."))return;
+    try{await api("/api/admin/order-intents/"+encodeURIComponent(item.reference)+"/abandon","POST",
+      {expected_version:item.version});message("시뮬레이션 견적을 종료했습니다.");await load()}
+    catch(e){message(e.message,true)}});
+  controls.appendChild(b);tr.appendChild(controls);body.appendChild(tr);
+ }tbl.appendChild(body);target.appendChild(tbl);
+}
+async function load(){const data=await api("/api/admin/order-intents");drawList(data.data?.items||[])}
+$("reload").addEventListener("click",()=>load().catch(e=>message(e.message,true)));
+$("create").addEventListener("click",async()=>{
+ if(state.pending)return;
+ const sku=$("product").value,qty=Number($("qty").value);
+ if(!sku||!Number.isInteger(qty)||qty<1||qty>99){message("상품과 수량(1~99)을 확인하세요.",true);return}
+ if(!globalThis.crypto?.randomUUID){message("보안 연결이 필요한 브라우저입니다.",true);return}
+ const key=crypto.randomUUID();
+ state.pending=true;$("create").disabled=true;
+ try{
+  const response=await api("/api/admin/order-intents","POST",
+     {items:[{slug:sku,qty}],delivery_type:$("fulfillment").value},
+     {"Idempotency-Key":key});
+  const result=response.data;
+  $("lastResult").textContent=result.reference+" · 상품 합계 "+money(result.subtotal_krw)+
+    " · 최종 결제금액 미확정 / 실결제 불가";
+  message("개발용 견적 기록을 저장했습니다. 고객·상인·라이더에게 알림이 전송되지 않았습니다.");
+  await load();
+ }catch(e){message(e.message,true)}
+ finally{state.pending=false;$("create").disabled=false}
+});
+(async()=>{
+ try{
+  const session=await api("/api/auth/me");
+  if(!session.authenticated){$("loginRequired").hidden=false;return}
+  state.csrf=session.csrf;
+  if(!["superadmin","ops"].includes(session.user?.role)){
+   $("loginRequired").hidden=false;return
+  }
+  $("app").hidden=false;
+  const products=await api("/api/admin/products");
+  state.products=products.items||[];drawProducts();
+  await load();message("관리자 세션 확인 완료 · 로컬 베타 테스트");
+ }catch(e){$("app").hidden=false;message(e.message,true)}
+})();
+</script></body></html>

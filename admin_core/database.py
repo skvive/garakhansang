@@ -27,6 +27,24 @@ CREATE INDEX IF NOT EXISTS idx_product_option_status ON product_option_sets(prod
 CREATE TABLE IF NOT EXISTS inventory_moves(id INTEGER PRIMARY KEY,product_id INTEGER NOT NULL REFERENCES products(id),delta INTEGER NOT NULL,reason TEXT NOT NULL,reference TEXT NOT NULL DEFAULT '',created_at TEXT NOT NULL,actor_id INTEGER REFERENCES users(id));
 CREATE TABLE IF NOT EXISTS customers(id INTEGER PRIMARY KEY,name TEXT NOT NULL,email TEXT NOT NULL DEFAULT '',consent INTEGER NOT NULL DEFAULT 0,created_at TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS orders(id INTEGER PRIMARY KEY,customer_id INTEGER REFERENCES customers(id),reference TEXT NOT NULL UNIQUE,status TEXT NOT NULL DEFAULT 'new' CHECK(status IN ('new','paid_test','processing','shipped','delivered','canceled')),payment_mode TEXT NOT NULL DEFAULT 'simulation',subtotal INTEGER NOT NULL CHECK(subtotal>=0),delivery_fee INTEGER NOT NULL DEFAULT 0,created_at TEXT NOT NULL,updated_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS checkout_intents(
+ id INTEGER PRIMARY KEY,
+ reference TEXT NOT NULL UNIQUE,
+ actor_id INTEGER NOT NULL REFERENCES users(id),
+ idempotency_key TEXT NOT NULL,
+ request_digest TEXT NOT NULL,
+ merchant_id INTEGER NOT NULL REFERENCES merchants(id),
+ delivery_type TEXT NOT NULL CHECK(delivery_type IN ('delivery','pickup')),
+ status TEXT NOT NULL DEFAULT 'awaiting_delivery_policy'
+     CHECK(status IN ('awaiting_delivery_policy','abandoned')),
+ version INTEGER NOT NULL DEFAULT 1 CHECK(version>0),
+ quote_json TEXT NOT NULL,
+ subtotal_krw INTEGER NOT NULL CHECK(subtotal_krw>0),
+ created_at TEXT NOT NULL,
+ updated_at TEXT NOT NULL,
+ UNIQUE(actor_id,idempotency_key)
+);
+CREATE INDEX IF NOT EXISTS idx_checkout_intents_actor ON checkout_intents(actor_id,created_at);
 CREATE TABLE IF NOT EXISTS order_items(id INTEGER PRIMARY KEY,order_id INTEGER NOT NULL REFERENCES orders(id),product_id INTEGER NOT NULL REFERENCES products(id),merchant_id INTEGER REFERENCES merchants(id),qty INTEGER NOT NULL CHECK(qty>0),unit_price INTEGER NOT NULL CHECK(unit_price>=0));
 CREATE TABLE IF NOT EXISTS shipments(id INTEGER PRIMARY KEY,order_id INTEGER NOT NULL UNIQUE REFERENCES orders(id),carrier TEXT NOT NULL DEFAULT '',tracking TEXT NOT NULL DEFAULT '',status TEXT NOT NULL DEFAULT 'pending' CHECK(status IN ('pending','ready','shipped','delivered')),updated_at TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS recipes(id INTEGER PRIMARY KEY,source_id TEXT NOT NULL UNIQUE,title TEXT NOT NULL,category TEXT NOT NULL,main_ingredient TEXT NOT NULL,product_slug TEXT NOT NULL DEFAULT '',image TEXT NOT NULL DEFAULT '',minutes INTEGER NOT NULL DEFAULT 20,content TEXT NOT NULL DEFAULT '{}',status TEXT NOT NULL DEFAULT 'draft' CHECK(status IN ('draft','published','hidden')),reviewed INTEGER NOT NULL DEFAULT 0,updated_at TEXT NOT NULL);

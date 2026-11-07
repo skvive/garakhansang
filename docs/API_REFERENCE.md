@@ -41,3 +41,19 @@ curl http://127.0.0.1:8099/api/public/products
 
 ### 에러 표준
 `400` 유효성/업무 상태 오류, `401` 로그인 필요, `403` 권한/CSRF 위반, `404` 존재하지 않는 리소스, `429` 호출 제한. 성공 JSON은 `{ok:true}` 또는 `{items:[...]}`, 오류는 `{error:"..."}` 형식이다.
+
+
+## P2 결제 전 주문 원장 (Local Beta 검수 전용)
+
+**아래 API는 고객용 주문·결제가 아닙니다.** `GARAK_ORDER_SANDBOX=1`인 독립 로컬 SQLite 환경에서 관리자 세션/CSRF로만 접근합니다. Neon 운영 DB 및 결제 시스템과 연결되지 않습니다.
+
+| Method / Path | 목적 | 확인사항 |
+|---|---|---|
+| POST `/api/admin/order-intents` | 시연 견적 원장 생성 | `Idempotency-Key` 16~96자 필수, `{items:[{slug,qty,options?}],delivery_type}` JSON, 관리자 역할·CSRF |
+| GET `/api/admin/order-intents` | 작성자 격리 목록 조회 | 최고관리자는 전체 시뮬레이션, 일반 운영자는 본인 작성 기록 |
+| GET `/api/admin/order-intents/{GH-DEMO-ref}` | 저장된 서버 견적 조회 | 생성 시점 금액·옵션 스냅샷, 변경 후 재견적하지 않음 |
+| POST `/api/admin/order-intents/{GH-DEMO-ref}/abandon` | 미결제 시뮬레이션 종료 | `{expected_version:int}`, 요청자 본인만, 중복/경합 409 |
+
+견적 합계는 서버에서 계산하며 `payable_total_krw: null`, `checkout_enabled:false`, `payment_status:not_initiated`, `merchant_notified:false`, `dispatch_enabled:false`입니다. 원래 `orders` 테이블, 상품 재고, 정산 내역은 변경하지 않습니다. 실제 결제·상인 알림·배달 배정에는 Neon Auth/RLS, PG 웹훅 검증, 배송비/영업권역, 거래명세/환불 대사가 추가로 필요합니다.
+
+관리 UI: `/admin/order-intents.html`; 자세한 근거와 위험은 `docs/ORDER_P2_CHECKOUT_INTENT_QA_20261107.md`.
