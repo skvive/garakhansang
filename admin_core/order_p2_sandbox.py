@@ -20,7 +20,7 @@ from urllib.request import Request, urlopen
 from .delivery_flow import DeliveryOrder, transition as domain_transition
 
 KEY = re.compile(r"^[a-zA-Z0-9_-]{12,128}$")
-ID = re.compile(r"^[a-zA-Z0-9_-]{3,128}$")
+ID = re.compile(r"^[a-zA-Z0-9_-]{1,128}$")
 VALID_ROLES = frozenset({"customer", "merchant", "rider", "ops", "payment_service"})
 EVENT_PAYMENT = frozenset({"checkout.session.completed", "checkout.session.async_payment_succeeded"})
 
@@ -249,6 +249,16 @@ def paid_webhook(con, raw_payload, stripe_signature, *, signing_secret, now=None
             con.commit()
             return {"processed":False,"duplicate":True,"state":row["state"]}
         if row["state"]!="payment_pending":
+            # Repeated legitimate success messages can arrive after fulfillment starts.
+            # Record the provider event but never re-notify or reset the order.
+            if row["state"] in {"paid","merchant_accepted","preparing","ready_for_pickup",
+                "dispatch_requested","rider_assigned","picked_up","in_transit","delivered",
+                "refund_pending","refunded"}:
+                con.execute("""INSERT INTO p2_sandbox_events
+                  (provider_event_id,order_id,event_type,created_at) VALUES(?,?,?,?)""",
+                  (eid,oid,event["type"],int(time.time())))
+                con.commit()
+                return {"processed":False,"duplicate_payment":True,"state":row["state"]}
             raise SandboxError("payment completion in invalid state")
         outcome=domain_transition(DeliveryOrder(order_id=oid,merchant_id=row["merchant_id"],
                                   state=row["state"],rider_id=row["rider_id"],version=row["version"]),
