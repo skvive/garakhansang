@@ -22,6 +22,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.content.ActivityNotFoundException;
 import android.widget.*;
 import android.text.InputFilter;
 import android.text.InputType;
@@ -926,6 +929,25 @@ public class MainActivity extends Activity {
         }
         for(int i=0;i<names.length;i++)if(favorites.contains(i))addProduct(i);
     }
+    /** Import of GARAKLAND validated navigation behavior: unverified stores
+     * are never treated as precise destinations. Launches official Google Maps
+     * directions only to the verified public Garak market address. */
+    private void openMarketDirections(){
+        String destination="서울특별시 송파구 양재대로 932 가락시장";
+        Uri url=Uri.parse("https://www.google.com/maps/dir/").buildUpon()
+            .appendQueryParameter("api","1")
+            .appendQueryParameter("destination",destination)
+            .appendQueryParameter("travelmode","driving")
+            .appendQueryParameter("dir_action","navigate").build();
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW,url));
+        } catch(ActivityNotFoundException failure) {
+            new AlertDialog.Builder(this)
+                .setTitle("길찾기 앱을 열 수 없습니다")
+                .setMessage("지도 앱 설치 상태 또는 브라우저 설정을 확인해 주세요.")
+                .setPositiveButton("확인",null).show();
+        }
+    }
     private void myPage(){
         section("마이 가락한상","회원 로그인·주소 저장·실주문 조회는 아직 제공되지 않습니다.");
         infoCell("현재 시연 지역",demoArea);
@@ -935,6 +957,7 @@ public class MainActivity extends Activity {
         content.addView(button("Google 로그인 검증 준비 (P1E)",RED,()->open("auth_preview")),lp(-1,48));gap(content,10);
         content.addView(button("시장·매장·상품 API 상태 (P1)",0xFF6B514B,()->open("api")),lp(-1,48));gap(content,10);
         content.addView(button("개발 서버 시장·매장·상품 탐색 (P1)",GREEN,()->open("remote_catalog")),lp(-1,48));gap(content,10);
+        content.addView(button("🧭 가락시장 길찾기 (GPS 미검증 매장 제외)",GREEN,this::openMarketDirections),lp(-1,50));gap(content,10);
         content.addView(button("찜한 상품 · "+favorites.size()+"개",RED,()->open("favorites")),lp(-1,48));
         gap(content,10);content.addView(button("서비스 및 개인정보 안내",0xFF6B514B,()->open("info")),lp(-1,48));
         gap(content,13);content.addView(text("테스트용 데이터는 기기 내에만 보관됩니다. 카드 번호, 휴대폰 번호, 상세 주소 등은 수집하지 않습니다.",12,MUTED,false));
