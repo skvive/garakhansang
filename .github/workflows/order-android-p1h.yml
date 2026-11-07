@@ -60,6 +60,8 @@ jobs:
             tests/test_mobile_p17_auth.py tests/test_mobile_p18_assetlinks.py \
             tests/test_mobile_p19_apk_gate.py tests/test_mobile_p19_emulator_gate.py \
             tests/test_mobile_p1g_regressions.py tests/test_mobile_p1h_security.py
+      - name: Verify mobile commerce read-only API contracts
+        run: python3 -m unittest discover -s tests -p 'test_mobile_commerce_contract.py' -q
       - name: Run Java PKCE OAuth and catalog search checks
         working-directory: ${{ runner.temp }}/garak-p1h-app
         run: |
