@@ -101,7 +101,7 @@ def create_or_replay(con, *, payload, actor_id, key, timestamp):
           (reference,actor_id,idempotency_key,request_digest,
            merchant_id,delivery_type,status,version,quote_json,
            subtotal_krw,created_at,updated_at)
-         VALUES(?,?,?,?,?,?,'awaiting_delivery_policy',1,?,?,?)""",
+         VALUES(?,?,?,?,?,?,'awaiting_delivery_policy',1,?,?,?,?)""",
         (reference, actor_id, key, digest, quote["merchant_id"],
          request["delivery_type"], snapshot, quote["subtotal_krw"],
          timestamp, timestamp),
