@@ -279,27 +279,51 @@ public class MainActivity extends Activity {
         if (Build.VERSION.SDK_INT >= 35) {
             View decor = getWindow().getDecorView();
             decor.post(() -> {
-                WindowInsetsController controller = decor.getWindowInsetsController();
-                if (controller != null) controller.setSystemBarsAppearance(
-                    WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
-                    WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS);
+                // Insets are visual polish, not a prerequisite for app startup.
+                // Older devices can detach the decor during a quick relaunch.
+                if (isFinishing() || isDestroyed() || !decor.isAttachedToWindow()) return;
+                try {
+                    WindowInsetsController controller = decor.getWindowInsetsController();
+                    if (controller != null) controller.setSystemBarsAppearance(
+                        WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
+                        WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS);
+                } catch (RuntimeException ignored) {
+                    // Never crash the ordering UI just to style system bar icons.
+                }
             });
         }
         prefs = getSharedPreferences("order_preview",MODE_PRIVATE);
         mobileApi = new MobileApiClient(this);
         for (int i=0;i<cart.length;i++) {
-            cart[i]=Math.max(0,Math.min(99,prefs.getInt("q"+i,0)));
-            if (prefs.getBoolean("fav"+i,false)) favorites.add(i);
+            cart[i]=Math.max(0,Math.min(99,previewInt("q"+i,0)));
+            if (previewBoolean("fav"+i,false)) favorites.add(i);
         }
-        int savedArea = prefs.getInt("demo_area_index",0);
+        int savedArea = previewInt("demo_area_index",0);
         demoArea=DEMO_AREAS[Math.max(0,Math.min(DEMO_AREAS.length-1,savedArea))];
-        fulfillment="포장".equals(prefs.getString("fulfillment","배달")) ? "포장" : "배달";
+        fulfillment="포장".equals(previewString("fulfillment","배달")) ? "포장" : "배달";
         if (b != null) {
-            page=b.getString("page","home");
-            category=b.getString("category","전체");
-            query=b.getString("query","");
+            page=nonBlankOr(b.getString("page"),"home");
+            category=nonBlankOr(b.getString("category"),"전체");
+            query=b.getString("query") == null ? "" : b.getString("query");
         }
         render();
+    }
+    // Previous demo builds may have persisted values with different types. Keep
+    // valid preferences and ignore only incompatible individual entries.
+    private int previewInt(String key,int fallback){
+        try { return prefs.getInt(key,fallback); }
+        catch (ClassCastException ignored) { return fallback; }
+    }
+    private boolean previewBoolean(String key,boolean fallback){
+        try { return prefs.getBoolean(key,fallback); }
+        catch (ClassCastException ignored) { return fallback; }
+    }
+    private String previewString(String key,String fallback){
+        try { return prefs.getString(key,fallback); }
+        catch (ClassCastException ignored) { return fallback; }
+    }
+    private String nonBlankOr(String value,String fallback){
+        return value==null || value.trim().isEmpty() ? fallback : value;
     }
     private int d(float n){return Math.round(getResources().getDisplayMetrics().density*n);}
     private GradientDrawable shape(int fill,int rad){GradientDrawable g=new GradientDrawable();g.setColor(fill);g.setCornerRadius(d(rad));return g;}
