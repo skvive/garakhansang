@@ -19,10 +19,17 @@ def main(output: Path) -> None:
     output.mkdir(parents=True, exist_ok=True)
     adb('shell', 'am', 'force-stop', P)
     # Debug signed APK enables run-as; edit only this test app's own prefs XML.
+    directory = '/data/user/0/' + P + '/shared_prefs'
+    # Android's adb shell splits sh -c arguments; use run-as + toybox tee
+    # without nested shell quoting so XML lands in the app sandbox reliably.
+    create = subprocess.run(
+        ['adb', 'shell', 'run-as', P, 'mkdir', '-p', directory],
+        capture_output=True, timeout=30, check=False)
+    if create.returncode != 0:
+        raise RuntimeError('Cannot prepare test preferences folder: ' +
+                           create.stderr.decode('utf-8', 'replace')[-500:])
     result = subprocess.run(
-        ['adb', 'shell', 'run-as', P, 'sh', '-c',
-         'mkdir -p /data/user/0/' + P + '/shared_prefs && '
-         'cat > /data/user/0/' + P + '/shared_prefs/order_preview.xml'],
+        ['adb', 'shell', 'run-as', P, 'tee', directory + '/order_preview.xml'],
         input=LEGACY_XML.encode('utf-8'), capture_output=True, timeout=30,
         check=False)
     if result.returncode != 0:
