@@ -253,6 +253,7 @@ public class MainActivity extends Activity {
         "가락시장 주변 (예시)", "송파구 (예시)", "강남구 (예시)"
     };
     private String page="home", category="전체", query="";
+    private int selectedProduct=-1, detailQuantity=1;
     private String demoArea=DEMO_AREAS[0], fulfillment="배달";
     private final Set<Integer> favorites = new HashSet<>();
     private int[] cart = new int[names.length];
@@ -305,6 +306,8 @@ public class MainActivity extends Activity {
             page=nonBlankOr(b.getString("page"),"home");
             category=nonBlankOr(b.getString("category"),"전체");
             query=b.getString("query") == null ? "" : b.getString("query");
+            selectedProduct=Math.max(-1,Math.min(names.length-1,b.getInt("selectedProduct",-1)));
+            detailQuantity=Math.max(1,Math.min(99,b.getInt("detailQuantity",1)));
         }
         render();
     }
@@ -385,6 +388,8 @@ public class MainActivity extends Activity {
         state.putString("page",page);
         state.putString("category",category);
         state.putString("query",query);
+        state.putInt("selectedProduct",selectedProduct);
+        state.putInt("detailQuantity",detailQuantity);
     }
     private void save(){SharedPreferences.Editor e=prefs.edit();for(int i=0;i<cart.length;i++)e.putInt("q"+i,cart[i]);e.apply();}
     private void toggleFavorite(int i) {
@@ -430,6 +435,7 @@ public class MainActivity extends Activity {
             case "products": products(); break;
             case "store": store(); break;
             case "cart": cart(); break;
+            case "product_detail": productDetail(); break;
             case "checkout": checkoutPreview(); break;
             case "orders": orders(); break;
             case "favorites": favoritesPage(); break;
@@ -539,12 +545,85 @@ public class MainActivity extends Activity {
         favorite.setContentDescription(names[i]+(favorites.contains(i)?" 찜 해제":" 찜하기"));
         details.addView(text(units[i],11,MUTED,false));
         details.addView(text(won(prices[i])+"  ·  미승인 시연",14,RED,true));gap(details,2);
-        TextView add=button(cart[i]>0?"담김 "+cart[i]+"  +":"담기 +",RED,()->{cart[i]=Math.min(99,cart[i]+1);save();Toast.makeText(this,names[i]+" 시연 장바구니에 담음",Toast.LENGTH_SHORT).show();render();});details.addView(add,lp(-1,48));
-        card.setOnClickListener(v->new AlertDialog.Builder(this).setTitle(names[i]+" · "+won(prices[i]))
-            .setMessage(descriptions[i]+"\n\nAI 콘셉트 이미지이며 실제 상품 사진이 아닙니다. 판매 승인·재고·배송비 검증 전 상품입니다. 담기는 기기 내 시연만 가능합니다.")
-            .setPositiveButton("데모 장바구니 담기",(dg,w)->{cart[i]=Math.min(99,cart[i]+1);save();render();})
-            .setNegativeButton("닫기",null).show());
+        TextView add=button("상세·구성 선택",RED,()->openProduct(i));
+        details.addView(add,lp(-1,48));
+        card.setOnClickListener(v->openProduct(i));
+        card.setContentDescription(names[i]+" 상세 페이지 보기");
     }
+    private void openProduct(int i){
+        if(i<0 || i>=names.length)return;
+        selectedProduct=i;
+        detailQuantity=1;
+        open("product_detail");
+    }
+    private void productDetail(){
+        final int i=selectedProduct;
+        if(i<0 || i>=names.length){
+            section("상품을 찾을 수 없습니다.","상품 목록에서 다시 선택해주세요.");
+            content.addView(button("상품 목록",RED,()->open("products")),lp(-1,52));
+            return;
+        }
+        section("상품 상세","가락한상 오더 · 상품별 구성 및 수량 선택");
+        ImageView cover=photo(String.format(java.util.Locale.ROOT,"menu_%02d.jpg",i+1),-1,250);
+        content.addView(cover,lp(-1,250));
+        gap(content,15);
+        content.addView(text(names[i],22,INK,true));
+        gap(content,7);
+        content.addView(text(units[i],13,MUTED,false));
+        gap(content,9);
+        content.addView(text(won(prices[i])+" · 시연 기준가",19,RED,true));
+        gap(content,14);
+        content.addView(text(descriptions[i],14,INK,false));
+        gap(content,18);
+        content.addView(text("구성 및 옵션",17,INK,true));
+        gap(content,7);
+        TextView configuration=text("기본 구성 · 추가 옵션/손질/맵기는 운영 상품 API 검증 후 제공",13,MUTED,false);
+        configuration.setPadding(d(12),d(12),d(12),d(12));
+        configuration.setBackground(bordered(WHITE,LINE,12));
+        content.addView(configuration,lp(-1,-2));
+        gap(content,15);
+        content.addView(text("수량 선택",17,INK,true));
+        LinearLayout selector=row();
+        selector.setPadding(d(9),d(7),d(9),d(7));
+        selector.setBackground(bordered(WHITE,LINE,14));
+        content.addView(selector,lp(-1,66));
+        TextView chosen=text(String.valueOf(detailQuantity),18,INK,true);
+        chosen.setGravity(Gravity.CENTER);
+        TextView amount=text(won((long)prices[i]*detailQuantity),17,RED,true);
+        selector.addView(pill("−",false,()->{
+            detailQuantity=Math.max(1,detailQuantity-1);
+            chosen.setText(String.valueOf(detailQuantity));
+            amount.setText(won((long)prices[i]*detailQuantity));
+        }),lp(-2,48));
+        selector.addView(chosen,new LinearLayout.LayoutParams(0,-1,1));
+        selector.addView(pill("+",true,()->{
+            detailQuantity=Math.min(99,detailQuantity+1);
+            chosen.setText(String.valueOf(detailQuantity));
+            amount.setText(won((long)prices[i]*detailQuantity));
+        }),lp(-2,48));
+        gap(content,11);
+        content.addView(text("선택 상품 합계 (배달비·할인 전)",12,MUTED,false));
+        content.addView(amount,lp(-1,42));
+        gap(content,13);
+        TextView restriction=text("AI 연출 이미지 및 시연 기준가입니다. 실제 판매 승인, 옵션 가격, 재고, 배달료를 운영 서버에서 확인하기 전에는 결제되지 않습니다.",12,RED,true);
+        content.addView(restriction,lp(-1,-2));
+        gap(content,15);
+        content.addView(button("장바구니 담기 · "+won(prices[i])+"부터",RED,()->{
+            cart[i]=Math.min(99,cart[i]+detailQuantity);
+            save();
+            Toast.makeText(this,"시연 장바구니에 "+detailQuantity+"개 담았습니다.",Toast.LENGTH_SHORT).show();
+            open("cart");
+        }),lp(-1,54));
+        gap(content,9);
+        content.addView(button("주문서 보기 (결제 연결 준비 중)",GREEN,()->{
+            cart[i]=Math.min(99,cart[i]+detailQuantity);
+            save();
+            open("checkout");
+        }),lp(-1,52));
+        gap(content,8);
+        content.addView(button("상품 목록으로",0xFF77645F,()->open("products")),lp(-1,48));
+    }
+
     private void cart(){section("장바구니", "선택한 상품을 확인하세요. 실제 주문 요청은 전송되지 않습니다.");
         fulfillmentChooser();gap(content,14);
         int total=count();if(total==0){TextView msg=text("장바구니가 비었습니다.\n상품 목록에서 재료를 담아보세요.",16,MUTED,false);msg.setGravity(Gravity.CENTER);content.addView(msg,lp(-1,120));content.addView(button("상품 둘러보기",RED,()->open("products")),lp(-1,52));return;}
@@ -827,6 +906,7 @@ public class MainActivity extends Activity {
     }
     @Override public void onBackPressed(){
         if(page.equals("checkout"))open("cart");
+        else if(page.equals("product_detail"))open("products");
         else if(page.equals("api")||page.equals("address")||page.equals("remote_catalog")||page.equals("auth_preview"))open("my");
         else if(page.equals("favorites")||page.equals("info"))open("my");
         else if(!page.equals("home"))open("home");
