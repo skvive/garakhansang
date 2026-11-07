@@ -72,3 +72,37 @@ def quote_cart(con,request):
         "reason":"Delivery zone, final fees, stock reservation and PG are not verified",
         "source":"server_catalog","currency":"KRW",
     }
+
+def verified_merchants(con):
+    rows=con.execute("""
+        SELECT m.id,m.name,
+          (SELECT COUNT(*) FROM products p WHERE p.merchant_id=m.id
+           AND p.status='published') AS product_count
+        FROM merchants m WHERE m.status='active' AND m.verified=1
+        ORDER BY m.id LIMIT 100
+    """).fetchall()
+    return [{"id":str(x["id"]),"name":x["name"],"product_count":x["product_count"],
+             "checkout_enabled":False} for x in rows]
+
+def list_verified_products(con,merchant_name=None):
+    if merchant_name is not None and (not isinstance(merchant_name,str)
+           or not 1<=len(merchant_name)<=90
+           or any(ord(c)<32 for c in merchant_name)):
+        raise ValueError("invalid merchant filter")
+    sql="""
+      SELECT p.slug,p.name,p.category,p.price,p.stock,p.image,p.origin,
+             p.merchant_id,m.name merchant
+      FROM products p JOIN merchants m ON m.id=p.merchant_id
+      WHERE p.status='published' AND m.status='active' AND m.verified=1
+    """
+    params=[]
+    if merchant_name is not None:
+        sql+=" AND m.name=?"
+        params.append(merchant_name)
+    sql+=" ORDER BY p.id LIMIT 100"
+    rows=con.execute(sql,params).fetchall()
+    return [{"id":x["slug"],"slug":x["slug"],"name":x["name"],
+             "category":x["category"],"merchant":x["merchant"],
+             "price_krw":x["price"],"stock":x["stock"],"origin":x["origin"],
+             "image":x["image"],"checkout_enabled":False,
+             "image_is_concept":True} for x in rows]
