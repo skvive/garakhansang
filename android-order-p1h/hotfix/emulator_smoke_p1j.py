@@ -73,7 +73,13 @@ def run(apk,out):
     if not any('수량 선택' in t for t,d,b in detail):
      raise RuntimeError('product detail quantity selector missing')
     add=next((middle(b) for t,d,b in detail if '장바구니 담기 ·' in t and middle(b)),None)
-    if not add:raise RuntimeError('product detail add-to-cart action missing')
+    # The checkout CTA belongs below product options and quantity on a scroll page.
+    # Swipe explicitly rather than wrongly treating off-screen controls as absent.
+    if not add:
+     adb('shell','input','swipe','525','1750','525','550','450')
+     detail=screen(out,'product_detail_scrolled','장바구니 담기')
+     add=next((middle(b) for t,d,b in detail if '장바구니 담기 ·' in t and middle(b)),None)
+    if not add:raise RuntimeError('product detail add-to-cart action missing even after scroll')
     adb('shell','input','tap',str(add[0]),str(add[1]))
     screen(out,'product_cart','선택 수량 1개')
     status['product_detail']='PASS detail, quantity, add-to-cart, cart'
