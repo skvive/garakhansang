@@ -1,0 +1,18 @@
+{
+  "id": "/order-lab/merchant",
+  "name": "가락한상 입점상인 TEST",
+  "short_name": "가락한상 상인",
+  "description": "매장 상품·재고·주문 접수 (합성 데이터 전용)",
+  "start_url": "/order-lab/?role=merchant",
+  "scope": "/order-lab/",
+  "display": "standalone",
+  "background_color": "#faf7f1",
+  "theme_color": "#982c28",
+  "icons": [
+    {
+      "src": "/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
