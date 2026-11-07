@@ -17,6 +17,7 @@ on:
       - 'admin_core/order_v2_pg_checkout.py'
       - 'db/migrations/20261107_garak_order_v2_*.sql'
       - 'storefront/order-lab/**'
+      - 'docs/ORDER_V2_REAL_PURCHASE_RELEASE_GATE_20261107.md'
       - '.github/workflows/order-p2-stripe-sandbox-ci.yml'
   workflow_dispatch:
 
@@ -69,6 +70,7 @@ jobs:
             tests/test_order_v2_pg_checkout.py
             docs/ORDER_P2_P3_P4_IMPLEMENTATION_QUEUE_20261107.md
             docs/ORDER_LAB_LOCAL_RUN_20261107.md
+            docs/ORDER_V2_REAL_PURCHASE_RELEASE_GATE_20261107.md
             db/migrations/20261107_garak_order_v2_*.sql
           retention-days: 14
       - name: Do not claim live release
