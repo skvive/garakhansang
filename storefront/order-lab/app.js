@@ -16,6 +16,19 @@ const statusLabel={
   rider_assigned:"라이더 배정",picked_up:"픽업 완료",in_transit:"배달 중",
   delivered:"배송 완료",refund_pending:"환불 처리 대기",refunded:"환불 검증 완료"
 };
+const notificationLabel={
+  new_paid_order:"새 결제 확인 주문",
+  merchant_accepted:"상인이 주문을 수락했습니다",
+  preparing:"상품 준비 중",
+  ready_for_pickup:"픽업 준비 완료",
+  job_available:"새로운 배차 요청",
+  rider_assigned:"라이더가 배정됐습니다",
+  picked_up:"상품 픽업 완료",
+  in_transit:"배송 출발",
+  delivered:"배송 완료",
+  refund_required:"환불 검토 요청",
+  refund_completed:"환불 처리 확인"
+};
 const nextMerchant={
   paid:["merchant_accept","주문 수락"],merchant_accepted:["merchant_prepare","조리 시작"],
   preparing:["merchant_ready","픽업 준비완료"],
@@ -87,7 +100,7 @@ async function load(notify=false){
   if(notify&&S.inboxPrimed&&"Notification" in window&&Notification.permission==="granted"){
     for(const e of S.inbox){
       const key=[e.order_id,e.event,e.created_at].join(":");
-      if(!S.seen.has(key))new Notification("가락한상 테스트 알림",{body:label(e.event)});
+      if(!S.seen.has(key))new Notification("가락한상 테스트 알림",{body:notificationLabel[e.event]||label(e.event)});
     }
   }
   for(const e of S.inbox)S.seen.add([e.order_id,e.event,e.created_at].join(":"));
@@ -119,7 +132,7 @@ function renderMetrics(){
     S.orders.filter(x=>["payment_pending","paid","dispatch_requested","refund_pending"].includes(x.state)).length,
     "역할별 처리 조건 적용");
   metric(e,"완료된 테스트 배송",S.orders.filter(o=>o.state==="delivered").length,"실배송 아님");
-  metric(e,"새 알림 기록",S.inbox.length,"현재 역할만 조회");
+  metric(e,"알림 기록",S.inbox.length,"현재 역할만 조회");
 }
 function buttonRow(card){
   const div=node("div","actions");card.append(div);return div
@@ -127,7 +140,15 @@ function buttonRow(card){
 function renderOrders(){
   const root=$("#orders");root.replaceChildren();
   title(root,"주문 타임라인","주문 상태는 서버 원장에 저장되고 역할별 권한에 따라 변경됩니다.");
-  if(!S.orders.length){empty(root,"아직 주문이 없습니다.","고객 테스트 주문을 만든 뒤 운영자 결제 검증을 진행하세요.");return}
+  if(!S.orders.length){
+    const help={
+      customer:"상품을 장바구니에 담고 테스트 주문을 생성하세요.",
+      merchant:"해당 상점의 결제 완료 테스트 주문을 기다리고 있습니다.",
+      rider:"배차를 수락하면 이곳에서 배송 상태를 변경할 수 있습니다.",
+      ops:"고객 주문을 만든 뒤 운영자 결제 검증을 진행하세요."
+    };
+    empty(root,"아직 주문이 없습니다.",help[S.role]||"");return
+  }
   const container=node("div","stack");
   for(const o of S.orders){
     const card=node("article","order-card"),head=node("div","order-head"),labelBox=node("div");
@@ -314,7 +335,7 @@ function renderInbox(){
   const lines=node("div","stack");
   for(const notice of S.inbox){
     const item=node("div","inbox-line"),desc=node("div");
-    add(desc,node("strong","",label(notice.event)),node("small","",notice.order_id));
+    add(desc,node("strong","",notificationLabel[notice.event]||label(notice.event)),node("small","",notice.order_id));
     add(item,desc,node("span","micro","TEST EVENT"));
     lines.append(item);
   }
@@ -333,7 +354,7 @@ function render(){
 }
 function workspace(){
   $("#login-screen").hidden=true;$("#workspace").hidden=false;$("#logout").hidden=false;
-  render();
+  render();window.scrollTo(0,0);
 }
 $("#login-form").addEventListener("submit",async e=>{
   e.preventDefault();$("#auth-message").textContent="";
