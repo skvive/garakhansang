@@ -37,6 +37,15 @@ def screen(out,name,expected):
    p=subprocess.run(['adb','exec-out','screencap','-p'],stdout=f,check=False)
   if p.returncode or (out/(name+'.png')).stat().st_size<5000:raise RuntimeError('screenshot not captured')
   if any(expected in t or expected in d for t,d,b in elements):return elements
+  # Sometimes a just-booted emulator shows a system Pixel Launcher ANR over
+  # the perfectly rendered foreground app. Dismiss ONLY that launcher dialog;
+  # never suppress crashes or ANRs involving the app under test.
+  if any("Pixel Launcher isn't responding" in t for t,d,b in elements):
+   position=next((middle(b) for t,d,b in elements if t=="Close app" and middle(b)),None)
+   if position:
+    observed.append('unrelated Pixel Launcher ANR dismissed')
+    adb('shell','input','tap',str(position[0]),str(position[1]))
+    continue
   observed.append('missing '+expected+' from '+str(len(elements))+' elements')
  raise RuntimeError('Real screen missing on '+name+': '+str(observed[-4:]))
 def run(apk,out):
