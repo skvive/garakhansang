@@ -48,7 +48,7 @@ jobs:
           APP_MAIN="$RUNNER_TEMP/garak-p1h-app/app/src/main/java/site/lexid/garakhansang/order/MainActivity.java"
           test "$(sha256sum "$APP_MAIN" | cut -d' ' -f1)" = "d57d38a684d0d2716125ef03f2d47e2af0a48d89d78a192ca14825818f91f448"
           cp android-order-p1h/hotfix/MainActivity.java "$APP_MAIN"
-          test "$(sha256sum "$APP_MAIN" | cut -d' ' -f1)" = "9871fd77a8c390d1ef38d702a7e06aa1b65d579d949dc483a712e4e03ea9a047"
+          test "$(sha256sum "$APP_MAIN" | cut -d' ' -f1)" = "58d4252423c1cba3231647184a30782c975b79c9a24f70e0526d5a5d7a841a75"
           echo "P1H Android 15 window insets hotfix applied and verified."
       - name: Verify v1.11 source, media and demo-only restrictions
         working-directory: ${{ runner.temp }}/garak-p1h-app
