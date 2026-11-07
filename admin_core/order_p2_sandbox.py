@@ -17,7 +17,7 @@ import time
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-from .delivery_flow import DeliveryOrder, transition as domain_transition
+from .delivery_flow import DeliveryOrder, OrderFlowError, transition as domain_transition
 
 KEY = re.compile(r"^[a-zA-Z0-9_-]{12,128}$")
 ID = re.compile(r"^[a-zA-Z0-9_-]{1,128}$")
@@ -294,9 +294,12 @@ def act(con, principal, order_id, event, expected_version, *, approved_riders=()
             raise SandboxError("rider is not approved for this dispatch")
         if p["role"]=="rider" and event!="rider_accept" and row["rider_id"]!=p["sub"]:
             raise SandboxError("rider is not assigned")
-        outcome=domain_transition(DeliveryOrder(order_id=order_id,merchant_id=row["merchant_id"],
-             state=row["state"],rider_id=row["rider_id"],version=row["version"]),event,p["role"],
-             p["sub"],expected_version)
+        try:
+            outcome=domain_transition(DeliveryOrder(order_id=order_id,merchant_id=row["merchant_id"],
+                 state=row["state"],rider_id=row["rider_id"],version=row["version"]),event,p["role"],
+                 p["sub"],expected_version)
+        except OrderFlowError as exc:
+            raise SandboxError(str(exc)) from exc
         updated=con.execute("""UPDATE p2_sandbox_orders SET state=?,rider_id=?,version=?
              WHERE id=? AND version=?""",(outcome.order.state,outcome.order.rider_id,
                                         outcome.order.version,order_id,expected_version))
