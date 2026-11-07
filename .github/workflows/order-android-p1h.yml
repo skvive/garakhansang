@@ -1,10 +1,11 @@
-name: Garak Hansang Android P1L - Product Detail & Launch Stability v1.11 Debug APK (GO-LIVE NO)
+name: Garak Hansang Android P1M - Product Options API & Launch Stability v1.11 Debug APK (GO-LIVE NO)
 
 on:
   push:
     branches:
       - chatgpt/garakhansang-order-launchfix-20261107
       - chatgpt/garakhansang-order-p1l-product-detail-20261107
+      - chatgpt/garakhansang-order-p1m-catalog-options-20261107
     paths:
       - android-order-p1h/GarakHansang_Order_Android_v1_11_P1H_Source_20261106.zip
       - 'android-order-p1h/source-b64/**'
@@ -62,6 +63,8 @@ jobs:
             tests/test_mobile_p1g_regressions.py tests/test_mobile_p1h_security.py
       - name: Verify mobile commerce read-only API contracts
         run: python3 -m unittest discover -s tests -p 'test_mobile_commerce_contract.py' -q
+      - name: Verify P1M product options, merchant approvals, and server-side price totals
+        run: python3 -m unittest discover -s tests -p 'test_mobile_options_p1m.py' -q
       - name: Verify merchant and rider order-state domain
         run: python3 -m unittest discover -s tests -p 'test_delivery_flow.py' -q
       - name: Run Java PKCE OAuth and catalog search checks
