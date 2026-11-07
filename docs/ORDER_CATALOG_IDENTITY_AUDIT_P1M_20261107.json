@@ -1,0 +1,719 @@
+{
+  "schema_version": 1,
+  "generated_date": "2026-11-07",
+  "name": "GARAK Product Identity Audit — Android P1L vs Static Web Storefront",
+  "sources": {
+    "android": {
+      "repository": "skvive/garakhansang",
+      "branch": "chatgpt/garakhansang-order-p1m-catalog-options-20261107",
+      "path": "android-order-p1h/hotfix/MainActivity.java",
+      "count": 47
+    },
+    "storefront": {
+      "repository": "skvive/garakhansang",
+      "branch": "chatgpt/garakhansang-order-p1m-catalog-options-20261107",
+      "path": "storefront/assets/products.json",
+      "count": 44
+    }
+  },
+  "findings": {
+    "exact_name_matches": 0,
+    "overlapping_price_rows": 12,
+    "approved_legacy_to_web_mappings": 0,
+    "conclusion": "No local Android preview product has a verified web/catalog SKU mapping. Price coincidence is NOT product identity."
+  },
+  "policy": [
+    "Legacy Android menu indexes are not server SKUs.",
+    "Do not create, sell, pay for, or dispatch from unresolved mappings.",
+    "Only a verified merchant/operator-approved SKU crosswalk can convert legacy selections to server catalog IDs.",
+    "Keep historical product rows and their AI concept asset references unchanged."
+  ],
+  "android_legacy_rows": [
+    {
+      "legacy_id": "android-demo-01",
+      "legacy_asset": "menu_01.jpg",
+      "name": "오늘의 한상 (1인)",
+      "preview_price_krw": 19900,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-02",
+      "legacy_asset": "menu_02.jpg",
+      "name": "오늘의 한상 (2인)",
+      "preview_price_krw": 36900,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-03",
+      "legacy_asset": "menu_03.jpg",
+      "name": "오늘의 반상",
+      "preview_price_krw": 13900,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-04",
+      "legacy_asset": "menu_04.jpg",
+      "name": "모둠회 소 (2~3인)",
+      "preview_price_krw": 39900,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-05",
+      "legacy_asset": "menu_05.jpg",
+      "name": "모둠회 중 (3~4인)",
+      "preview_price_krw": 59900,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-06",
+      "legacy_asset": "menu_06.jpg",
+      "name": "광어회 (2인)",
+      "preview_price_krw": 32900,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-07",
+      "legacy_asset": "menu_07.jpg",
+      "name": "연어회 (2인)",
+      "preview_price_krw": 29900,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-08",
+      "legacy_asset": "menu_08.jpg",
+      "name": "매운탕 (2인)",
+      "preview_price_krw": 12900,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-09",
+      "legacy_asset": "menu_09.jpg",
+      "name": "공기밥",
+      "preview_price_krw": 1000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-10",
+      "legacy_asset": "menu_10.jpg",
+      "name": "콜라/사이다 355ml",
+      "preview_price_krw": 2000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-11",
+      "legacy_asset": "menu_11.jpg",
+      "name": "프리미엄(특수부위) 활모듬회",
+      "preview_price_krw": 65000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-12",
+      "legacy_asset": "menu_12.jpg",
+      "name": "활새우회(손질 O) + 찍먹 소스",
+      "preview_price_krw": 35000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-13",
+      "legacy_asset": "menu_13.jpg",
+      "name": "1인 모듬회(4~5구성)",
+      "preview_price_krw": 43000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-14",
+      "legacy_asset": "menu_14.jpg",
+      "name": "(1인) 들깨전어회",
+      "preview_price_krw": 38000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-15",
+      "legacy_asset": "menu_15.jpg",
+      "name": "(1인) 대광어회",
+      "preview_price_krw": 43000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-16",
+      "legacy_asset": "menu_16.jpg",
+      "name": "(1인) 연어회",
+      "preview_price_krw": 39000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-17",
+      "legacy_asset": "menu_17.jpg",
+      "name": "(1인) 세꼬시회(도다리)",
+      "preview_price_krw": 39000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-18",
+      "legacy_asset": "menu_18.jpg",
+      "name": "(1인) 광어참돔회",
+      "preview_price_krw": 45000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-19",
+      "legacy_asset": "menu_19.jpg",
+      "name": "(1인) 광어우럭회",
+      "preview_price_krw": 45000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-20",
+      "legacy_asset": "menu_20.jpg",
+      "name": "(1인) 광어연어회",
+      "preview_price_krw": 43000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-21",
+      "legacy_asset": "menu_21.jpg",
+      "name": "자연산 대농어(2인분)",
+      "preview_price_krw": 65000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-22",
+      "legacy_asset": "menu_22.jpg",
+      "name": "최고급 생참치회(스페인)",
+      "preview_price_krw": 85000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-23",
+      "legacy_asset": "menu_23.jpg",
+      "name": "생참치 트리오회",
+      "preview_price_krw": 83000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-24",
+      "legacy_asset": "menu_24.jpg",
+      "name": "생참치 활모듬회",
+      "preview_price_krw": 80000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-25",
+      "legacy_asset": "menu_25.jpg",
+      "name": "생물의 끝 - 시그니처모듬회",
+      "preview_price_krw": 95000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-26",
+      "legacy_asset": "menu_26.jpg",
+      "name": "조합의 끝 - 오마카세",
+      "preview_price_krw": 95000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-27",
+      "legacy_asset": "menu_27.jpg",
+      "name": "지구방어회(특대방어)",
+      "preview_price_krw": 80000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-28",
+      "legacy_asset": "menu_28.jpg",
+      "name": "지구방어생참치회(지구방어·생참치)",
+      "preview_price_krw": 85000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-29",
+      "legacy_asset": "menu_29.jpg",
+      "name": "지구방어모듬회",
+      "preview_price_krw": 80000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-30",
+      "legacy_asset": "menu_30.jpg",
+      "name": "지구방광참회(방어·광어·참돔)",
+      "preview_price_krw": 80000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-31",
+      "legacy_asset": "menu_31.jpg",
+      "name": "지구방어삼색회(방어·광어·참돔·연어)",
+      "preview_price_krw": 80000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-32",
+      "legacy_asset": "menu_32.jpg",
+      "name": "지구방광우회(방어·광어·우럭)",
+      "preview_price_krw": 80000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-33",
+      "legacy_asset": "menu_33.jpg",
+      "name": "지구방광연회(방어·광어·연어)",
+      "preview_price_krw": 80000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-34",
+      "legacy_asset": "menu_34.jpg",
+      "name": "들깨전어회",
+      "preview_price_krw": 49000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-35",
+      "legacy_asset": "menu_35.jpg",
+      "name": "들깨전어모듬회",
+      "preview_price_krw": 69000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-36",
+      "legacy_asset": "menu_36.jpg",
+      "name": "들기름 깻잎 막회(무침)",
+      "preview_price_krw": 34000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-37",
+      "legacy_asset": "menu_37.jpg",
+      "name": "줄무늬전갱이회(시마아지)",
+      "preview_price_krw": 90000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-38",
+      "legacy_asset": "menu_38.jpg",
+      "name": "줄무늬전갱이모듬회",
+      "preview_price_krw": 82000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-39",
+      "legacy_asset": "menu_39.jpg",
+      "name": "줄무늬전갱이삼색회",
+      "preview_price_krw": 85000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-40",
+      "legacy_asset": "menu_40.jpg",
+      "name": "꽃게탕용 밀키트",
+      "preview_price_krw": 65000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-41",
+      "legacy_asset": "menu_41.jpg",
+      "name": "서해산 가을 활암꽃게(특대)",
+      "preview_price_krw": 65000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-42",
+      "legacy_asset": "menu_42.jpg",
+      "name": "치즈폭탄 갈릭마요 꽃게찜(특대)",
+      "preview_price_krw": 75000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-43",
+      "legacy_asset": "menu_43.jpg",
+      "name": "A급 러시아 프리모리 대게(마리당)",
+      "preview_price_krw": 122000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-44",
+      "legacy_asset": "menu_44.jpg",
+      "name": "A급 러시아 레드킹크랩(마리당)",
+      "preview_price_krw": 378000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-45",
+      "legacy_asset": "menu_45.jpg",
+      "name": "활새우(손질 X)",
+      "preview_price_krw": 30000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-46",
+      "legacy_asset": "menu_46.jpg",
+      "name": "쥐치 1kg(2인분)",
+      "preview_price_krw": 75000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    },
+    {
+      "legacy_id": "android-demo-47",
+      "legacy_asset": "menu_47.jpg",
+      "name": "연어 타르타르 소스",
+      "preview_price_krw": 1000,
+      "approved_server_slug": null,
+      "mapping_status": "unresolved"
+    }
+  ],
+  "webshop_rows": [
+    {
+      "slug": "bangeo-hoe",
+      "name": "제철 대방어회 (1kg, 뱃살 두툼)",
+      "preview_price_krw": 55000,
+      "merchant": "온달수산",
+      "category": "seafood"
+    },
+    {
+      "slug": "chamdom-hoe",
+      "name": "자연산 참돔회 (800g)",
+      "preview_price_krw": 65000,
+      "merchant": "온달수산",
+      "category": "seafood"
+    },
+    {
+      "slug": "gwang-eo",
+      "name": "국내산 광어회 (1kg)",
+      "preview_price_krw": 42000,
+      "merchant": "영재수산",
+      "category": "seafood"
+    },
+    {
+      "slug": "yeon-eo",
+      "name": "노르웨이 생연어회 (600g)",
+      "preview_price_krw": 38000,
+      "merchant": "영재수산",
+      "category": "seafood"
+    },
+    {
+      "slug": "king-crab-a",
+      "name": "러시아 킹크랩 (살수율 A급 2.5kg)",
+      "preview_price_krw": 149000,
+      "merchant": "온달수산",
+      "category": "seafood"
+    },
+    {
+      "slug": "daege",
+      "name": "영덕 대게 3마리 (1.5kg)",
+      "preview_price_krw": 89000,
+      "merchant": "가락대게",
+      "category": "seafood"
+    },
+    {
+      "slug": "jeonbok",
+      "name": "완도 활전복 10미 (중)",
+      "preview_price_krw": 59000,
+      "merchant": "남도수산",
+      "category": "seafood"
+    },
+    {
+      "slug": "o-jing-eo",
+      "name": "동해 산오징어회 (500g)",
+      "preview_price_krw": 27000,
+      "merchant": "동해수산",
+      "category": "seafood"
+    },
+    {
+      "slug": "ddak-saeu",
+      "name": "제주 딱새우회 (500g)",
+      "preview_price_krw": 34000,
+      "merchant": "제주직송",
+      "category": "seafood"
+    },
+    {
+      "slug": "garibi",
+      "name": "통영 가리비 2kg",
+      "preview_price_krw": 22000,
+      "merchant": "남해수산",
+      "category": "seafood"
+    },
+    {
+      "slug": "huinsaeu",
+      "name": "흰다리새우 1kg (급냉)",
+      "preview_price_krw": 25000,
+      "merchant": "서해수산",
+      "category": "seafood"
+    },
+    {
+      "slug": "uni",
+      "name": "성게알(우니) 200g 트레이",
+      "preview_price_krw": 48000,
+      "merchant": "제주직송",
+      "category": "seafood"
+    },
+    {
+      "slug": "chamchi",
+      "name": "참치회 모둠 (특상 500g)",
+      "preview_price_krw": 45000,
+      "merchant": "바다정원",
+      "category": "seafood"
+    },
+    {
+      "slug": "mun-eo",
+      "name": "자숙 문어 숙회 (700g)",
+      "preview_price_krw": 39000,
+      "merchant": "동해수산",
+      "category": "seafood"
+    },
+    {
+      "slug": "bajirak",
+      "name": "서산 바지락 1.5kg (해감 완료)",
+      "preview_price_krw": 13000,
+      "merchant": "서해수산",
+      "category": "seafood"
+    },
+    {
+      "slug": "maeuntang-geori",
+      "name": "매운탕거리 모둠 (우럭+미더덕)",
+      "preview_price_krw": 18000,
+      "merchant": "가락한상",
+      "category": "seafood"
+    },
+    {
+      "slug": "teheran-premium",
+      "name": "테헤란 프리미엄 한 상 (3~4인)",
+      "preview_price_krw": 119000,
+      "merchant": "가락한상",
+      "category": "sets"
+    },
+    {
+      "slug": "office-lobster",
+      "name": "사무실 랍스터 플레이트 (2~3인)",
+      "preview_price_krw": 89000,
+      "merchant": "가락한상",
+      "category": "sets"
+    },
+    {
+      "slug": "hoe-maeuntang",
+      "name": "회+매운탕 한 상 (2인)",
+      "preview_price_krw": 69000,
+      "merchant": "가락한상",
+      "category": "sets"
+    },
+    {
+      "slug": "sushi-pack",
+      "name": "한 상 가득 수산 초밥 12pcs",
+      "preview_price_krw": 16000,
+      "merchant": "가락한상",
+      "category": "sets"
+    },
+    {
+      "slug": "mulhoe-pack",
+      "name": "가락 명품 물회 팩 (싱글)",
+      "preview_price_krw": 14000,
+      "merchant": "가락한상",
+      "category": "sets"
+    },
+    {
+      "slug": "homakase-sub",
+      "name": "홈마카세 정기구독 (월 2회)",
+      "preview_price_krw": 99000,
+      "merchant": "가락한상",
+      "category": "sets"
+    },
+    {
+      "slug": "fri-hoesik",
+      "name": "금요 사무실 회식 한 상 (4~6인)",
+      "preview_price_krw": 159000,
+      "merchant": "가락한상",
+      "category": "sets"
+    },
+    {
+      "slug": "gamtae-ssam",
+      "name": "감태 쌈 세트 (회와 함께)",
+      "preview_price_krw": 9000,
+      "merchant": "초장집 마루",
+      "category": "sets"
+    },
+    {
+      "slug": "hanwoo-yukhoe",
+      "name": "1++ 한우 육회 (200g)",
+      "preview_price_krw": 42000,
+      "merchant": "가락축산",
+      "category": "meat"
+    },
+    {
+      "slug": "chadol",
+      "name": "매운탕용 한우 차돌박이 (300g)",
+      "preview_price_krw": 29000,
+      "merchant": "가락축산",
+      "category": "meat"
+    },
+    {
+      "slug": "so-galbi",
+      "name": "한우 소갈비 찜용 (1kg)",
+      "preview_price_krw": 59000,
+      "merchant": "가락축산",
+      "category": "meat"
+    },
+    {
+      "slug": "samgyeop",
+      "name": "제주 흑돼지 삼겹살 (600g)",
+      "preview_price_krw": 27000,
+      "merchant": "제주직송",
+      "category": "meat"
+    },
+    {
+      "slug": "deungsim",
+      "name": "1++ 한우 등심 스테이크 (300g)",
+      "preview_price_krw": 64000,
+      "merchant": "가락축산",
+      "category": "meat"
+    },
+    {
+      "slug": "yuk-sashimi",
+      "name": "한우 육사시미 (250g)",
+      "preview_price_krw": 38000,
+      "merchant": "가락축산",
+      "category": "meat"
+    },
+    {
+      "slug": "ssam-mo-dum",
+      "name": "모둠 쌈채소 팩 (회 전용)",
+      "preview_price_krw": 8000,
+      "merchant": "가락청과",
+      "category": "produce"
+    },
+    {
+      "slug": "sonjil-yachae",
+      "name": "매운탕용 손질 야채 팩",
+      "preview_price_krw": 7000,
+      "merchant": "가락청과",
+      "category": "produce"
+    },
+    {
+      "slug": "shine-muscat",
+      "name": "샤인머스캣 2송이 (특)",
+      "preview_price_krw": 35000,
+      "merchant": "가락청과",
+      "category": "produce"
+    },
+    {
+      "slug": "ttalgi",
+      "name": "설향 딸기 1kg (특)",
+      "preview_price_krw": 22000,
+      "merchant": "가락청과",
+      "category": "produce"
+    },
+    {
+      "slug": "gamgyul",
+      "name": "제주 노지 감귤 5kg",
+      "preview_price_krw": 19000,
+      "merchant": "제주직송",
+      "category": "produce"
+    },
+    {
+      "slug": "maeuntang-yachae",
+      "name": "매운탕 야채 모둠 (무+미나리)",
+      "preview_price_krw": 6000,
+      "merchant": "가락청과",
+      "category": "produce"
+    },
+    {
+      "slug": "makjang",
+      "name": "초장집 특제 막장 (300g)",
+      "preview_price_krw": 9000,
+      "merchant": "초장집 마루",
+      "category": "extras"
+    },
+    {
+      "slug": "corndog-cheese",
+      "name": "콘치즈 세트 (회 곁들임)",
+      "preview_price_krw": 12000,
+      "merchant": "초장집 마루",
+      "category": "extras"
+    },
+    {
+      "slug": "saeng-wasabi",
+      "name": "생와사비 (40g)",
+      "preview_price_krw": 8000,
+      "merchant": "초장집 마루",
+      "category": "extras"
+    },
+    {
+      "slug": "maeuntang-sauce",
+      "name": "매운탕 양념장 (4인분)",
+      "preview_price_krw": 10000,
+      "merchant": "초장집 마루",
+      "category": "extras"
+    },
+    {
+      "slug": "chojang",
+      "name": "회 초장 소스 (300g)",
+      "preview_price_krw": 7000,
+      "merchant": "초장집 마루",
+      "category": "extras"
+    },
+    {
+      "slug": "highball-set",
+      "name": "수제 하이볼 시럽 세트",
+      "preview_price_krw": 15000,
+      "merchant": "초장집 마루",
+      "category": "extras"
+    },
+    {
+      "slug": "maesil-cheong",
+      "name": "수제 매실청 (1kg)",
+      "preview_price_krw": 18000,
+      "merchant": "초장집 마루",
+      "category": "extras"
+    },
+    {
+      "slug": "cheonggyul-cheong",
+      "name": "제주 청귤청 (600g)",
+      "preview_price_krw": 16000,
+      "merchant": "제주직송",
+      "category": "extras"
+    }
+  ]
+}
