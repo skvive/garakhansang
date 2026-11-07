@@ -1,9 +1,10 @@
-name: Garak Hansang Android P1K - Launch Stability v1.11 Debug APK (GO-LIVE NO)
+name: Garak Hansang Android P1L - Product Detail & Launch Stability v1.11 Debug APK (GO-LIVE NO)
 
 on:
   push:
     branches:
       - chatgpt/garakhansang-order-launchfix-20261107
+      - chatgpt/garakhansang-order-p1l-product-detail-20261107
     paths:
       - android-order-p1h/GarakHansang_Order_Android_v1_11_P1H_Source_20261106.zip
       - 'android-order-p1h/source-b64/**'
@@ -47,7 +48,7 @@ jobs:
           APP_MAIN="$RUNNER_TEMP/garak-p1h-app/app/src/main/java/site/lexid/garakhansang/order/MainActivity.java"
           test "$(sha256sum "$APP_MAIN" | cut -d' ' -f1)" = "d57d38a684d0d2716125ef03f2d47e2af0a48d89d78a192ca14825818f91f448"
           cp android-order-p1h/hotfix/MainActivity.java "$APP_MAIN"
-          test "$(sha256sum "$APP_MAIN" | cut -d' ' -f1)" = "1fa25215a89cc8a411eca366cc22b734296a9a09709eb936a07c325d2b5d98dc"
+          test "$(sha256sum "$APP_MAIN" | cut -d' ' -f1)" = "58d4252423c1cba3231647184a30782c975b79c9a24f70e0526d5a5d7a841a75"
           echo "P1H Android 15 window insets hotfix applied and verified."
       - name: Verify v1.11 source, media and demo-only restrictions
         working-directory: ${{ runner.temp }}/garak-p1h-app
@@ -59,6 +60,10 @@ jobs:
             tests/test_mobile_p17_auth.py tests/test_mobile_p18_assetlinks.py \
             tests/test_mobile_p19_apk_gate.py tests/test_mobile_p19_emulator_gate.py \
             tests/test_mobile_p1g_regressions.py tests/test_mobile_p1h_security.py
+      - name: Verify mobile commerce read-only API contracts
+        run: python3 -m unittest discover -s tests -p 'test_mobile_commerce_contract.py' -q
+      - name: Verify merchant and rider order-state domain
+        run: python3 -m unittest discover -s tests -p 'test_delivery_flow.py' -q
       - name: Run Java PKCE OAuth and catalog search checks
         working-directory: ${{ runner.temp }}/garak-p1h-app
         run: |

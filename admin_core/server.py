@@ -8,6 +8,7 @@ import argparse,datetime as dt,hashlib,json,mimetypes,os,re,secrets,sqlite3,thre
 from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 from .database import connect,init_db,now,password_hash,password_valid,HERE,DEFAULT_DB,backend_name
+from .mobile_commerce import public_product,quote_cart,verified_merchants,list_verified_products
 
 SITE=HERE/'storefront'
 ROLE_RULES={
@@ -131,6 +132,32 @@ class Handler(SimpleHTTPRequestHandler):
   if path=='/api/auth/me':
    s=self.session()
    return self.respond({'authenticated':bool(s),'user':{'id':s['id'],'username':s['username'],'role':s['role']} if s else None,'csrf':s['csrf'] if s else None,'demo':True})
+  if path=='/api/v1/mobile/markets':
+   with connect(dbpath(self.server)) as con: merchants=verified_merchants(con)
+   return self.respond({'data':{'items':[{'id':'garak','name':'가락한상 제휴 매장'}] if merchants else []},
+                        'mode':'LOCAL_BETA','serviceability_verified':False})
+  if path=='/api/v1/mobile/merchants':
+   query=urllib.parse.parse_qs(urllib.parse.urlsplit(self.path).query)
+   if query.get('market_id',[''])[0]!='garak':return self.error_json(404,'시장 정보 없음')
+   with connect(dbpath(self.server)) as con: merchants=verified_merchants(con)
+   return self.respond({'data':{'items':merchants},'mode':'LOCAL_BETA',
+                        'serviceability_verified':False})
+  if path=='/api/v1/mobile/products':
+   query=urllib.parse.parse_qs(urllib.parse.urlsplit(self.path).query)
+   if query and query.get('market_id',[''])[0]!='garak':return self.error_json(404,'시장 정보 없음')
+   merchant=query.get('merchant_name',[None])[0]
+   if merchant is not None and 'market_id' not in query:
+    return self.error_json(400,'매장 필터에는 시장 식별자가 필요합니다.')
+   try:
+    with connect(dbpath(self.server)) as con: products=list_verified_products(con,merchant)
+   except ValueError as e:return self.error_json(400,str(e))
+   return self.respond({'data':{'items':products},'mode':'LOCAL_BETA','checkout_enabled':False})
+  if path.startswith('/api/v1/mobile/products/'):
+   slug=path.rsplit('/',1)[-1]
+   try:
+    with connect(dbpath(self.server)) as con: product=public_product(con,slug)
+   except (LookupError,ValueError):return self.error_json(404,'승인된 상품을 찾을 수 없습니다.')
+   return self.respond({'data':product,'mode':'LOCAL_BETA','checkout_enabled':False})
   if path.startswith('/api/public/'):
    con=connect(dbpath(self.server))
    try:
@@ -190,6 +217,13 @@ class Handler(SimpleHTTPRequestHandler):
   return super().do_GET()
  def do_POST(self):
   path=urllib.parse.urlsplit(self.path).path
+  if path=='/api/v1/mobile/cart/quote':
+   if not self.request_origin_ok():return self.error_json(403,'요청 출처 오류')
+   try:
+    body=self.parse_body()
+    with connect(dbpath(self.server)) as con: quote=quote_cart(con,body)
+   except (ValueError,TypeError,json.JSONDecodeError) as e:return self.error_json(400,str(e))
+   return self.respond({'data':quote,'mode':'LOCAL_BETA','checkout_enabled':False})
   if path=='/api/public/events':
    if not self.request_origin_ok():return self.error_json(403,'출처 오류')
    try:

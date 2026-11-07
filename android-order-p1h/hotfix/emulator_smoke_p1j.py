@@ -3,7 +3,7 @@
 import argparse,json,re,subprocess,time,xml.etree.ElementTree as ET
 from pathlib import Path
 P='site.lexid.garakhansang.order'
-SCREENS=[('home','가락한상'),('products','상품 탐색'),('cart','장바구니가 비었습니다'),('orders','아직 주문한 내역이 없습니다'),('my','마이 가락한상')]
+SCREENS=[('home','가락한상'),('products','상품 탐색'),('cart','선택 수량 1개'),('orders','아직 주문한 내역이 없습니다'),('my','마이 가락한상')]
 TABS=['홈','메뉴','장바구니','주문내역','마이']
 def adb(*args,check=True):
  p=subprocess.run(['adb',*args],capture_output=True,timeout=60,check=False)
@@ -65,6 +65,25 @@ def run(apk,out):
     adb('shell','input','tap',str(xy[0]),str(xy[1]))
    previous=screen(out,name,expected)
    status[name]='PASS '+expected
+   if name=='products':
+    point=next((middle(b) for t,d,b in previous if t=='오늘의 한상 (1인)' and middle(b)),None)
+    if not point:raise RuntimeError('first menu not visible for detail navigation')
+    adb('shell','input','tap',str(point[0]),str(point[1]))
+    detail=screen(out,'product_detail','상품 상세')
+    if not any('수량 선택' in t for t,d,b in detail):
+     raise RuntimeError('product detail quantity selector missing')
+    add=next((middle(b) for t,d,b in detail if '장바구니 담기 ·' in t and middle(b)),None)
+    # The checkout CTA belongs below product options and quantity on a scroll page.
+    # Swipe explicitly rather than wrongly treating off-screen controls as absent.
+    if not add:
+     adb('shell','input','swipe','525','1750','525','550','450')
+     detail=screen(out,'product_detail_scrolled','장바구니 담기')
+     add=next((middle(b) for t,d,b in detail if '장바구니 담기 ·' in t and middle(b)),None)
+    if not add:raise RuntimeError('product detail add-to-cart action missing even after scroll')
+    adb('shell','input','tap',str(add[0]),str(add[1]))
+    screen(out,'product_cart','선택 수량 1개')
+    status['product_detail']='PASS detail, quantity, add-to-cart, cart'
+
   print('Real emulator: APK installed, activity launched, all 5 tabs and screenshots validated')
  finally:
   (out/'status.json').write_text(json.dumps(status,ensure_ascii=False,indent=2),encoding='utf-8')
