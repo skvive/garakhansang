@@ -171,6 +171,52 @@ class LabHttpTests(unittest.TestCase):
                               {"slug":slug,"stock":0},session=merchant)[0],200)
         self.assertEqual(self.request("GET","/lab/api/products",session=merchant)[1]["items"][0]["stock"],0)
 
+    def test_stripe_test_webhook_http_signature_required(self):
+        import hashlib
+        import hmac
+        import time
+        from admin_core.order_p2_sandbox import attach_test_checkout
+        customer=self.login("customer")
+        merchant=self.login("merchant")
+        order=self.order(customer)
+        oid=order["id"]
+        sid="cs_test_http_synthetic_123"
+        with connect(self.path) as db:
+            attach_test_checkout(db,{"role":"customer","sub":"c_demo"},oid,
+                api_key="sk_test_http_fake",
+                success_url="https://example.invalid/ok",
+                cancel_url="https://example.invalid/cancel",
+                create_session=lambda _:{"livemode":False,"id":sid,
+                   "url":"https://checkout.stripe.com/c/pay/http-lab"})
+        secret="whsec_http_test_only"
+        self.server.lab_test_webhook_secret=secret
+        event={"id":"evt_http_test_only","livemode":False,"type":"checkout.session.completed",
+          "data":{"object":{"id":sid,"livemode":False,"mode":"payment",
+             "status":"complete","payment_status":"paid","currency":"krw",
+             "amount_total":order["total_krw"],"client_reference_id":"c_demo",
+             "metadata":{"order_id":oid,"merchant_id":order["merchant_id"]}}}}
+        payload=json.dumps(event,separators=(",",":")).encode()
+        stamp=int(time.time())
+        signature=hmac.new(secret.encode(),str(stamp).encode()+b"."+payload,
+                            hashlib.sha256).hexdigest()
+        def post(sig):
+            conn=http.client.HTTPConnection("127.0.0.1",self.port,timeout=5)
+            conn.request("POST","/lab/api/stripe/webhook",payload,
+                headers={"Content-Type":"application/json",
+                         "Stripe-Signature":f"t={stamp},v1={sig}"})
+            res=conn.getresponse()
+            code=res.status;data=json.loads(res.read());conn.close()
+            return code,data
+        self.assertEqual(post("0"*64)[0],400)
+        self.assertEqual(self.request("GET","/lab/api/orders",session=customer)[1]["items"][0]["state"],"payment_pending")
+        code,data=post(signature)
+        self.assertEqual(code,200,data)
+        self.assertTrue(data["processed"])
+        self.assertEqual(post(signature)[1]["duplicate"],True)
+        self.assertEqual(self.request("GET","/lab/api/inbox",session=merchant)[1]["items"][0]["event"],
+                         "new_paid_order")
+        self.server.lab_test_webhook_secret=""
+
 
 if __name__=="__main__":
     unittest.main()
