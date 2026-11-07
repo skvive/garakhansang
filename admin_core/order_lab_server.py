@@ -110,6 +110,7 @@ class LabServer(ThreadingHTTPServer):
             raise RuntimeError("order laboratory cannot bind a non-loopback address")
         self.lab_db = str(path)
         self.lab_signing_secret = secrets.token_hex(24)
+        self.lab_test_webhook_secret = os.environ.get("GARAK_LAB_STRIPE_TEST_WEBHOOK_SECRET","")
         self.auth_lock = threading.RLock()
         self.failed_logins = {}
         super().__init__(address, LabHandler)
@@ -213,6 +214,19 @@ class LabHandler(SimpleHTTPRequestHandler):
             return self.json({"role": account["role"], "csrf": csrf, "sandbox_only": True}, extra={
                 "Set-Cookie": f"{COOKIE}={token}; HttpOnly; SameSite=Strict; Path=/lab; Max-Age={SESSION_MAX}"
             })
+        if path == "/lab/api/stripe/webhook" and method == "POST":
+            # Only Stripe CLI/test sandbox: no customer session, raw signature body.
+            secret=self.server.lab_test_webhook_secret
+            if not secret or not secret.startswith("whsec_"):
+                return self.error(503,"stripe_test_webhook_not_configured")
+            length=int(self.headers.get("Content-Length","0"))
+            if not 1 <= length <= 65536:
+                return self.error(400,"invalid_webhook_size")
+            payload=self.rfile.read(length)
+            with connect(self.server.lab_db) as db:
+                result=paid_webhook(db,payload,self.headers.get("Stripe-Signature",""),
+                                    signing_secret=secret)
+                return self.json(result)
         if path == "/lab/api/me" and method == "GET":
             p = self.principal()
             return self.json({"authenticated": bool(p), "principal": p})
@@ -452,8 +466,10 @@ def main():
     parser.add_argument("--db",type=str,default=str(HERE/"runtime"/"order-lab.sqlite3"))
     args=parser.parse_args()
     path=Path(args.db).resolve()
-    if not path.is_relative_to((HERE/"runtime").resolve()):
-        raise RuntimeError("local lab data MUST reside under runtime/")
+    if not path.is_relative_to((HERE/"runtime").resolve()) or path.name != "order-lab.sqlite3":
+        raise RuntimeError("lab must use only runtime/order-lab.sqlite3, never the beta or production DB")
+    if path == Path(os.environ.get("GARAK_ADMIN_DB",str(HERE/"runtime"/"garak_beta.sqlite3"))).resolve():
+        raise RuntimeError("refusing to use the existing admin database as a lab fixture")
     if os.environ.get("VERCEL") or os.environ.get("GARAK_ORDER_LIVE")=="1":
         raise RuntimeError("never launch lab in a live deployment")
     accounts={k:secrets.token_urlsafe(20) for k in ("customer","merchant","rider","ops")}
