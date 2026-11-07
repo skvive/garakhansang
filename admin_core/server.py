@@ -242,6 +242,8 @@ class Handler(SimpleHTTPRequestHandler):
      items=[{k:v for k,v in dict(r).items() if k not in PRIVATE_FIELDS} for r in rows]
      return self.respond({'items':items,'count':len(items),'module':module,'demo':True,'editable':sorted(FIELDS.get(module,[]))})
   # Keep login shell and public assets readable, protect legacy media operator tool.
+  if path=='/admin/order-intents.html' and not self.session():
+   return self.error_json(401,'주문 원장 검수 페이지는 관리자 로그인 후 이용하세요.')
   if path=='/admin/menu-options.html' and not self.session():
    return self.error_json(401,'상품 옵션 관리 기능은 관리자 로그인 후 이용하세요.')
   if path=='/admin/recipe-media.html' and not self.session():
