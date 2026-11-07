@@ -42,3 +42,60 @@
 - **앱 운영 배포: NO** — Neon Auth BFF·상품 노출/API 연동, Android/iOS 실기기 + 환불/정산/알림/실배송 연동 QA 이후 별도 출시 심사.
 
 증빙 및 자격증명이 없는 상태에서 절대 상품 상태만 강제로 승인·공개하거나 타사 Stripe 실계정으로 충전하지 않습니다. 운영 DB와 GitHub main은 변경하지 않았습니다.
+
+
+## 2026-11-08 · 추가 확인 및 조치
+
+### 사용자 제공 정보: "링크페이 승인완료" 검증
+연결 Stripe `Linkrpay` (미국 소재 운영 계정)의 실제 API `GetAccountsAccount` 조회 결과
+`charges_enabled=true`, `payouts_enabled=true`, `details_submitted=true`,
+`requirements.currently_due=[]`, `capabilities.card_payments=active`,
+`capabilities.transfers=active` 확인. **Linkrpay의 계정 심사/결제/정산 기능은 활성화 상태다.**
+하지만 계정에 확인된 법적 사업자 표기와 `GarakHansang` 판매자/입점 수산물 거래의
+정산 책임·결제대행 계약 관계는 별도로 입증되지 않았다. 계정 승인=가락한상 사용 허가 아님.
+**`livemode=true` 전용 연결**이며 TEST API 키는 제공되지 않았다. 실카드 청구/환불을 실행하지 않았다.
+
+현재 Linkrpay LIVE API `GetWebhookEndpoints` 조회 결과 등록된 enabled 웹훅 **2개**:
+- `https://lexid.site/api/stripe/webhook`
+- `https://lexistyle.vercel.app/api/payments/stripe/webhook`
+
+가락한상 `/api/order/stripe/webhook` 또는 관련 전용 URL은 확인되지 않음.
+Linkrpay 현재 ACTIVE 상품 12개에는 가락한상 `GYS-` SKU나 수산물 제품이 없음.
+따라서 다른 서비스의 live endpoint나 SKU를 가락한상 주문 확정/결제로 재활용하면 안 됨.
+운영 Vercel `garakhansang`의 Stripe 키·webhook 환경변수는 아직 0개.
+
+### 자동 선정 34개 후보 / 제외 3개 확정
+- `config/garak_order_34_candidates_20261108.json`:
+  `GYS-011`~`GYS-036`(26개), `GYS-040`~`GYS-047`(8개) 총 **34개**.
+- 보류: `GYS-037`, `GYS-038`, `GYS-039` 3개 —
+  기존 `gys-summer-sashimi` 여름회 분류, 11월 공급/재고·구성 확인 후 재검토.
+- 이는 상품 법적/거래 **최종 승인**이 아닌 **개발 검수 후보 선정**이다.
+  `GYS-046`을 포함해 모든 후보의 실물 이미지/판매 재고/입점 계약 등 필수 증빙
+  미검증 상태이므로 실제 `approved` 또는 `purchasable=true` 처리는 금지.
+
+### 기존 Neon 개발 브랜치로 주문 V2 카탈로그 안전 이식
+- GitHub SQL `db/migrations/20261108_garak_order_v2_34_draft_catalog.sql` 적용.
+- 별도 `dev-garak-order-v2-20261107` 브랜치 `br-lingering-queen-b3ew4bjw`;
+  `garak_order_v2.merchants` 비검증 대기 1건,
+  `garak_order_v2.products` **34건** 이름·카테고리·표기 참고가격만 복제.
+  **34/34 publication='draft', stock=0, image_key=NULL, origin=''**;
+  검증되지 않은 사진/원산지/재고를 새로 만들어 승인하지 않음.
+- 제외 SKU 3개 복제 0건, 승인 상품/노출 상품 0건.
+- SQL은 원본 `public.garak_partner_products`를 `SELECT`만 하며,
+  기존 데이터 삭제/업데이트 없음. 중복 생성 방지 `ON CONFLICT DO NOTHING`.
+- 운영 기본 Neon 브랜치 별도 조회로 **원본 pending 37, approved 0, evidence 0, ready 0** 확인.
+- `tests/test_order_34_manifest.py` 4건 및 기존 승인 게이트/결제/주문 테스트
+  GitHub CI 성공: https://github.com/skvive/garakhansang/actions/runs/42421050835 .
+
+### 남은 실운영 활성화 조건
+1. 동일 법인 명의 Linkrpay를 가락한상 사업의 합법적 결제 주체로 사용할 수 있는지
+   계약/정산 책임 확인. 별도 **Stripe TEST** 접근 및 가락한상 전용 웹훅 생성,
+   test Checkout/서명 확인/부분·전체 취소/PG 대사.
+2. 상인/카테고리 9건 및 34개 SKU의 실제 증빙·서류·사진·재고·권역·신선 배송 확정.
+3. 실제 배송 계약 및 배차 API/서명 콜백/냉장 SLA/배송완료 증빙 E2E.
+4. 운영 Neon Auth/BFF와 Android/iOS 결제/배송 화면 통합, 실기기 QA 후
+   별도 GO-LIVE 심사.
+
+**결론:** Linkrpay 자체 ACTIVE: YES. 가락한상 결제 통합: NO.
+34개 개발 초안: YES. 34개 실판매 승인: NO.
+실배차: NO. 운영상품/운영결제 변경: NONE.
