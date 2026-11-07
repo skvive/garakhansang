@@ -64,7 +64,31 @@ jobs:
       - name: Verify mobile commerce read-only API contracts
         run: python3 -m unittest discover -s tests -p 'test_mobile_commerce_contract.py' -q
       - name: Verify P1M product options, merchant approvals, and server-side price totals
-        run: python3 -m unittest discover -s tests -p 'test_mobile_options_p1m.py' -q
+        run: |
+          # Repeated runs catch HTTP-success-before-commit races.
+          for n in 1 2 3; do
+            python3 -m unittest discover -s tests -p 'test_mobile_options_p1m.py' -q
+          done
+      - name: Check responsive admin option editor and JavaScript syntax
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re,subprocess,tempfile
+          page=Path('storefront/admin/menu-options.html').read_text('utf-8')
+          panel=Path('storefront/admin/index.html').read_text('utf-8')
+          assert 'menu-options.html' in panel
+          assert 'role="status"' in page
+          assert 'aria-label' in page
+          assert 'product-options/' in page
+          assert 'checkout' not in page.lower() or '비활성' in page
+          scripts=re.findall(r'<script>(.*?)</script>',page,re.DOTALL)
+          assert len(scripts)==1,'expected exactly one inline admin UI script'
+          with tempfile.NamedTemporaryFile('w',suffix='.js',encoding='utf8') as out:
+            out.write(scripts[0]);out.flush()
+            subprocess.run(['node','--check',out.name],check=True)
+          print('P1M admin UI static & JS syntax: PASS')
+          PY
       - name: Verify merchant and rider order-state domain
         run: python3 -m unittest discover -s tests -p 'test_delivery_flow.py' -q
       - name: Run Java PKCE OAuth and catalog search checks
