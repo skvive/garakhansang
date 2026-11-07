@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "selection_id": "garak-gwangyang-34-2026-11-08",
+  "as_of": "2026-11-08",
+  "merchant_slug": "gwangyang-fisheries",
+  "source": "Neon public.garak_partner_products (read-only audit)",
+  "selection_type": "review_candidates_only",
+  "requested_count": 34,
+  "candidate_skus": [
+    "GYS-011",
+    "GYS-012",
+    "GYS-013",
+    "GYS-014",
+    "GYS-015",
+    "GYS-016",
+    "GYS-017",
+    "GYS-018",
+    "GYS-019",
+    "GYS-020",
+    "GYS-021",
+    "GYS-022",
+    "GYS-023",
+    "GYS-024",
+    "GYS-025",
+    "GYS-026",
+    "GYS-027",
+    "GYS-028",
+    "GYS-029",
+    "GYS-030",
+    "GYS-031",
+    "GYS-032",
+    "GYS-033",
+    "GYS-034",
+    "GYS-035",
+    "GYS-036",
+    "GYS-040",
+    "GYS-041",
+    "GYS-042",
+    "GYS-043",
+    "GYS-044",
+    "GYS-045",
+    "GYS-046",
+    "GYS-047"
+  ],
+  "excluded": [
+    {
+      "sku": "GYS-037",
+      "name": "줄무늬전갱이회(시마아지)",
+      "reason": "summer_sashimi_category_current_season_verification_required"
+    },
+    {
+      "sku": "GYS-038",
+      "name": "줄무늬전갱이모듬회",
+      "reason": "summer_sashimi_and_composition_verification_required"
+    },
+    {
+      "sku": "GYS-039",
+      "name": "줄무늬전갱이삼색회",
+      "reason": "summer_sashimi_and_composition_verification_required"
+    }
+  ],
+  "product_approval": "NOT_APPROVED",
+  "product_visibility": false,
+  "payment_activation": false,
+  "shipping_activation": false,
+  "release_conditions": {
+    "merchant_evidence_types": 8,
+    "sku_evidence_types": 4,
+    "category_approved": true,
+    "real_photo_verified": true,
+    "stock_positive": true,
+    "merchant_authorized_payment_account": true,
+    "stripe_test_webhook_verified": true,
+    "contracted_delivery_provider_verified": true,
+    "signed_dispatch_callback_verified": true
+  },
+  "notes": [
+    "This is a deterministic review shortlist, not a product status mutation.",
+    "The three deferred SKUs may be reconsidered with verified stock and seasonal sourcing.",
+    "All 37 live SKUs remain pending, stock 0, evidence 0 at the audit date.",
+    "The connected Linkrpay account is charges_enabled and payouts_enabled, but the legal business name does not establish GarakHansang merchant-of-record authority."
+  ]
+}
