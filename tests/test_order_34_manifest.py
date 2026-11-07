@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
@@ -63,6 +64,19 @@ class Exact34ReleaseShortlistTests(unittest.TestCase):
                 stripe_test_webhook_passed=True,
                 shipping_provider_contract_verified=True,
                 signed_delivery_e2e_passed=True)
+
+    def test_staging_migration_is_draft_only_and_never_mutates_operational_catalog(self):
+        sql = (ROOT / "db" / "migrations" /
+               "20261108_garak_order_v2_34_draft_catalog.sql").read_text(encoding="utf-8")
+        self.assertIn("'draft'", sql)
+        self.assertIn("ON CONFLICT(merchant_id,slug) DO NOTHING", sql)
+        self.assertIn("p.stock=0 AND p.image_verified=false", sql)
+        self.assertIn("p.status='pending'", sql)
+        self.assertIn("IF n <> 34", sql)
+        for sku in ("GYS-037", "GYS-038", "GYS-039"):
+            self.assertIn(sku, sql)
+        self.assertIsNone(re.search(r"(?im)^\\s*(UPDATE|DELETE|TRUNCATE|DROP)\\s+", sql))
+        self.assertNotIn("DO UPDATE", sql)
 
     def test_linkrpay_approved_does_not_imply_merchant_of_record_authorization(self):
         m = load()
