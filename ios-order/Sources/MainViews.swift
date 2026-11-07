@@ -4,7 +4,9 @@ private enum Tab: Int { case home, menu, cart, orders, mine }
 
 struct RootTabView: View {
     @EnvironmentObject var store: CatalogStore
-    @State private var tab: Tab = .home
+    // iPhone Simulator screen-by-screen QA. Normal installation starts at Home.
+    @State private var tab: Tab =
+        Tab(rawValue: Int(ProcessInfo.processInfo.environment["GHS_QA_TAB"] ?? "") ?? 0) ?? .home
 
     var body: some View {
         TabView(selection: $tab) {
