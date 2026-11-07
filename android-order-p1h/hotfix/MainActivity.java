@@ -262,6 +262,7 @@ public class MainActivity extends Activity {
     private MobileApiClient mobileApi;
     private String selectedRemoteMarketId="", selectedRemoteMarketName="";
     private String selectedRemoteMerchantName="";
+    private JSONObject selectedRemoteProduct;
     private int remoteRequestSerial=0;
     private int addressRequestSerial=0, authRequestSerial=0, apiRequestSerial=0;
     // Bounded thumbnail cache avoids decoding 47 full-resolution images on each navigation.
@@ -436,6 +437,7 @@ public class MainActivity extends Activity {
             case "store": store(); break;
             case "cart": cart(); break;
             case "product_detail": productDetail(); break;
+            case "remote_product_detail": remoteProductDetail(); break;
             case "checkout": checkoutPreview(); break;
             case "orders": orders(); break;
             case "favorites": favoritesPage(); break;
@@ -864,9 +866,46 @@ public class MainActivity extends Activity {
                 String name=safeRemoteText(item.optString("name","상품 이름 없음"),100);
                 // Never trust remote 'orderable' or 'price' flags to enable checkout.
                 long krw=item.optLong("price_krw",-1);
-                remoteItem(list,name,(krw>=0?won(krw)+" · ":"")+"서버 시연 상품 · 판매 불가 · AI 참고 이미지",null);
+                remoteItem(list,name,(krw>=0?won(krw)+" · ":"")+"서버 카탈로그 · 상세 보기",
+                    ()->{selectedRemoteProduct=item;open("remote_product_detail");});
             }
         });
+    }
+    private void remoteProductDetail(){
+        // This screen contains server-supplied, approved merchant catalog data.
+        // It never trusts price/availability flags to enable ordering or payments.
+        JSONObject product=selectedRemoteProduct;
+        if(product==null){
+            section("상품 조회 정보 없음","서버 상품 목록에서 다시 선택해 주세요.");
+            content.addView(button("서버 상품 다시 보기",RED,()->open("remote_catalog")),lp(-1,52));
+            return;
+        }
+        String name=safeRemoteText(product.optString("name","상품"),100);
+        String slug=safeRemoteText(product.optString("slug",product.optString("id","")),80);
+        String merchant=safeRemoteText(product.optString("merchant",""),90);
+        String origin=safeRemoteText(product.optString("origin",""),100);
+        long price=product.optLong("price_krw",-1);
+        long stock=product.optLong("stock",-1);
+        section("서버 상품 상세","웹서버에서 조회한 상품 정보 · 실결제 연결 전");
+        LinearLayout hero=column();
+        hero.setPadding(d(16),d(18),d(16),d(18));
+        hero.setBackground(shape(WHITE,20));
+        content.addView(hero,lp(-1,-2));
+        hero.addView(text(name,23,INK,true));
+        gap(hero,12);
+        hero.addView(text(price>0?won(price):"서버 가격 확인 불가",19,RED,true));
+        gap(hero,11);
+        hero.addView(text("판매처 · "+(merchant.isEmpty()?"정보 확인 중":merchant),14,INK,false));
+        hero.addView(text("상품 식별자 · "+(slug.isEmpty()?"정보 없음":slug),12,MUTED,false));
+        gap(content,16);
+        infoCell("원산지",origin.isEmpty()?"검수 후 표기":origin);
+        infoCell("재고 표시",stock>=0?stock+"개 (시연 DB 기준)":"재고 확인 불가");
+        infoCell("상품 사진","서버 원본 이미지 승인 및 모바일 미디어 매핑 후 제공");
+        infoCell("상품 옵션","판매자별 실제 옵션·추가메뉴·선택가격 등록 및 검수 후 활성화");
+        gap(content,8);
+        content.addView(text("이 상품은 서버에서 가져온 참고 정보입니다. 로컬 시연 카트와 SKU가 일치한다고 보장할 수 없어 주문·결제·장바구니에 추가하지 않습니다.",13,RED,true));
+        gap(content,16);
+        content.addView(button("서버 목록으로 돌아가기",GREEN,()->open("remote_catalog")),lp(-1,52));
     }
     private void infoCell(String label,String value){
         LinearLayout wrap=column();wrap.setPadding(d(15),d(11),d(15),d(11));
@@ -907,6 +946,7 @@ public class MainActivity extends Activity {
     @Override public void onBackPressed(){
         if(page.equals("checkout"))open("cart");
         else if(page.equals("product_detail"))open("products");
+        else if(page.equals("remote_product_detail"))open("remote_catalog");
         else if(page.equals("api")||page.equals("address")||page.equals("remote_catalog")||page.equals("auth_preview"))open("my");
         else if(page.equals("favorites")||page.equals("info"))open("my");
         else if(!page.equals("home"))open("home");
