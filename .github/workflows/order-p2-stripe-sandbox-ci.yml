@@ -13,6 +13,9 @@ on:
       - 'tests/test_order_p2_sandbox.py'
       - 'tests/test_order_lab_integration.py'
       - 'tests/test_order_navigation.mjs'
+      - 'tests/test_order_v2_pg_checkout.py'
+      - 'admin_core/order_v2_pg_checkout.py'
+      - 'db/migrations/20261107_garak_order_v2_*.sql'
       - 'storefront/order-lab/**'
       - '.github/workflows/order-p2-stripe-sandbox-ci.yml'
   workflow_dispatch:
@@ -37,7 +40,7 @@ jobs:
           test -z "${STRIPE_WEBHOOK_SECRET:-}"
           echo "No linked Stripe account is contacted. All sessions/webhooks are synthetic."
       - name: Syntax and imported domain check
-        run: python -m compileall -q admin_core/order_p2_sandbox.py admin_core/order_lab_server.py admin_core/delivery_flow.py tests/test_order_p2_sandbox.py tests/test_order_lab_integration.py
+        run: python -m compileall -q admin_core/order_p2_sandbox.py admin_core/order_lab_server.py admin_core/order_v2_pg_checkout.py admin_core/delivery_flow.py tests/test_order_p2_sandbox.py tests/test_order_lab_integration.py tests/test_order_v2_pg_checkout.py
       - name: JavaScript syntax
         run: |
           node --check storefront/order-lab/app.js
@@ -46,6 +49,8 @@ jobs:
           node --check storefront/order-lab/sw.js
       - name: Stripe signed webhook, role, rider and order regression
         run: python -m unittest discover -s tests -p 'test_order_p2_sandbox.py' -v
+      - name: Verify dedicated Neon V2 TEST-only checkout code and signed webhook
+        run: python -m unittest discover -s tests -p 'test_order_v2_pg_checkout.py' -v
       - name: End-to-end synthetic HTTP role-based delivery workflow
         run: python -m unittest discover -s tests -p 'test_order_lab_integration.py' -v
       - name: End-to-end artifact (lab UI and source only)
@@ -61,6 +66,7 @@ jobs:
             tests/test_order_p2_sandbox.py
             tests/test_order_lab_integration.py
             tests/test_order_navigation.mjs
+            tests/test_order_v2_pg_checkout.py
             docs/ORDER_P2_P3_P4_IMPLEMENTATION_QUEUE_20261107.md
             docs/ORDER_LAB_LOCAL_RUN_20261107.md
             db/migrations/20261107_garak_order_v2_staging.sql
