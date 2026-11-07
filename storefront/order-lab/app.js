@@ -44,6 +44,15 @@ function btn(label,click,kind="outline",disabled=false){
     try{await click()}catch(e){toast(e.message)}finally{b.disabled=false}
   });return b;
 }
+function newIdempotencyKey(){
+  if(!globalThis.crypto || typeof crypto.getRandomValues!=="function")
+    throw Error("안전한 난수 생성 기능이 없는 브라우저에서는 주문할 수 없습니다.");
+  if(typeof crypto.randomUUID==="function")
+    return crypto.randomUUID().replaceAll("-","")+"-lab";
+  const bytes=new Uint8Array(20);
+  crypto.getRandomValues(bytes);
+  return Array.from(bytes,b=>b.toString(16).padStart(2,"0")).join("")+"-lab";
+}
 function format(n){return Intl.NumberFormat("ko-KR").format(n||0)+"원"}
 function title(parent,t,desc){
   const head=node("div","section-head"),left=node("div");
@@ -222,7 +231,7 @@ function renderCustomer(){
     cartSide.append(details);
     cartSide.append(btn("테스트 주문 생성",async()=>{
       const items=cartItems.map(([slug,qty])=>({slug,qty}));
-      await mutate("/order/draft",{items,idempotency_key:crypto.randomUUID()+"_lab"},
+      await mutate("/order/draft",{items,idempotency_key:newIdempotencyKey()},
         "테스트 주문이 생성되었습니다. 운영자 화면에서 모의 결제 검증이 필요합니다.");
       S.cart={};render();
     },"primary full"));
