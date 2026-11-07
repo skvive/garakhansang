@@ -66,6 +66,13 @@ function newIdempotencyKey(){
   crypto.getRandomValues(bytes);
   return Array.from(bytes,b=>b.toString(16).padStart(2,"0")).join("")+"-lab";
 }
+async function navigateToMarket(mode="driving") {
+  // Imported unchanged from the verified Garakland directions module. Until a
+  // merchant's GPS is verified, never advertise demo shop pins as destinations.
+  const {buildDirections}=await import("/order-lab/navigation.mjs");
+  const route=buildDirections({name:"가락시장",isDemo:true,coordinateStatus:"unverified"},mode);
+  window.location.assign(route.url);
+}
 function format(n){return Intl.NumberFormat("ko-KR").format(n||0)+"원"}
 function title(parent,t,desc){
   const head=node("div","section-head"),left=node("div");
@@ -157,6 +164,9 @@ function renderOrders(){
       "상인 #"+o.merchant_id+" · 주문금액 "+format(o.total_krw)+" · 상태 버전 "+o.version));
     add(head,labelBox,tag);card.append(head);
     const actions=buttonRow(card);
+    if(S.role==="rider" && ["rider_assigned","picked_up","in_transit"].includes(o.state)){
+      actions.append(btn("🧭 픽업지(가락시장) 길찾기",()=>navigateToMarket("driving"),"outline small"));
+    }
     if(S.role==="merchant"&&nextMerchant[o.state]){
       const [event,name]=nextMerchant[o.state];
       actions.append(btn(name,()=>mutate("/order/"+o.id+"/transition",{event,version:o.version},name+" 처리 완료"),"primary small"));
@@ -203,6 +213,8 @@ function detail(p){
   add(modal,node("h2","",p.name),node("p","micro","판매자: "+p.merchant+" · 원산지: "+(p.origin||"판매 검증 필요")),
       node("p","micro","알레르기 정보·상품옵션·배송권역은 운영 검증 전입니다."),
       node("strong","product-price",format(p.price_krw)));
+  modal.append(btn("🧭 가락시장 위치 안내",()=>navigateToMarket("walking"),"outline small"));
+  modal.append(node("p","micro","매장 GPS는 미검증 상태입니다. Google 지도는 가락시장 기준 위치까지만 안내합니다."));
   modal.append(btn("확인 후 닫기",()=>modal.close(),"primary"));
   modal.addEventListener("close",()=>modal.remove());
   document.body.append(modal);modal.showModal();
@@ -289,6 +301,7 @@ function renderRider(){
     add(card,node("strong","",o.id),node("p","micro","상점 #"+o.merchant_id+" · 테스트 배달비 "+format(o.delivery_fee_krw)));
     card.append(btn("배차 수락",()=>mutate("/order/"+o.id+"/transition",
       {event:"rider_accept",version:o.version},"테스트 배차를 수락했습니다."),"primary small"));
+    card.append(btn("🧭 가락시장 픽업 안내",()=>navigateToMarket("driving"),"outline small"));
     offers.append(card);
   }
   root.append(offers);
