@@ -12,7 +12,6 @@ CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY, username TEXT NOT NULL 
 CREATE TABLE IF NOT EXISTS sessions(id_hash TEXT PRIMARY KEY,user_id INTEGER NOT NULL REFERENCES users(id),csrf TEXT NOT NULL,expires_at TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS merchants(id INTEGER PRIMARY KEY,name TEXT NOT NULL UNIQUE,kind TEXT NOT NULL CHECK(kind IN ('seafood','meat','produce','other')),contact TEXT NOT NULL DEFAULT '', commission_bps INTEGER NOT NULL DEFAULT 800 CHECK(commission_bps BETWEEN 0 AND 4000),verified INTEGER NOT NULL DEFAULT 0,status TEXT NOT NULL DEFAULT 'pending' CHECK(status IN ('pending','active','rejected','suspended')),created_at TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS products(id INTEGER PRIMARY KEY,slug TEXT NOT NULL UNIQUE,name TEXT NOT NULL,category TEXT NOT NULL,merchant_id INTEGER REFERENCES merchants(id),price INTEGER NOT NULL CHECK(price>=0),stock INTEGER NOT NULL CHECK(stock>=0),status TEXT NOT NULL DEFAULT 'draft' CHECK(status IN ('draft','published','hidden')),image TEXT NOT NULL DEFAULT '',origin TEXT NOT NULL DEFAULT '',updated_at TEXT NOT NULL);
--- Option sets are immutable revisions; no previous content is removed during an update.
 CREATE TABLE IF NOT EXISTS product_option_sets(
  id INTEGER PRIMARY KEY,
  product_id INTEGER NOT NULL REFERENCES products(id),
