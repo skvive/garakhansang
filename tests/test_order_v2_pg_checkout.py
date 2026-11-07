@@ -107,7 +107,7 @@ class V2StripeTests(unittest.TestCase):
         stamp=int(time.time());sig=hmac.new(secret.encode(),str(stamp).encode()+b"."+payload,hashlib.sha256).hexdigest()
         header=f"t={stamp},v1={sig}"
         with self.assertRaises(SandboxError):
-            accept_test_webhook(db,payload,header[:-1]+"0",webhook_test_secret=secret)
+            accept_test_webhook(db,payload,f"t={stamp},v1="+("0"*64),webhook_test_secret=secret)
         self.assertEqual(db.order["state"],"payment_pending")
         self.assertTrue(accept_test_webhook(db,payload,header,webhook_test_secret=secret)["processed"])
         self.assertEqual(db.hold_state,"consumed")
