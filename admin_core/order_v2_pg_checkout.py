@@ -1,7 +1,8 @@
 """Garak Order V2 staging-only Stripe Checkout. Not a public HTTP endpoint.
 
 The calling BFF MUST verify Neon Auth and use an isolated staging-only
-database connection. No live Stripe keys, live charges or refund calls.
+database connection (psycopg 3 dict_row, parameter marker %s).
+No live Stripe keys, live charges or refund calls.
 Reuses the strict P2 Stripe webhook signature verifier.
 """
 from __future__ import annotations
@@ -60,7 +61,7 @@ def reserve_authenticated_cart(con, *, verified_customer_sub, merchant_id, deliv
     """Only the server's verified Neon Auth identity may be passed as customer_sub."""
     if not isinstance(encrypted_delivery_address, bytes):
         raise SandboxError("Encrypt the delivery address in the BFF before DB insert")
-    rows = con.execute("SELECT * FROM garak_order_v2.reserve_trusted_order(?,?,?,?,?,?)",
+    rows = con.execute("SELECT * FROM garak_order_v2.reserve_trusted_order(%s,%s,%s,%s,%s,%s)",
         (verified_customer_sub, merchant_id, delivery_zone_id,
          json.dumps(items, separators=(",", ":")), idempotency_key,
          encrypted_delivery_address)).fetchall()
@@ -76,14 +77,14 @@ def create_test_checkout(con, *, verified_customer_sub, order_id, key, success_u
                          cancel_url, create_session=None):
     _trusted_test_inputs(key, success_url, cancel_url)
     order = con.execute("""SELECT id,merchant_id,customer_auth_sub,total_krw,state
-        FROM garak_order_v2.orders WHERE id=? AND customer_auth_sub=?""",
+        FROM garak_order_v2.orders WHERE id=%s AND customer_auth_sub=%s""",
         (order_id, verified_customer_sub)).fetchone()
     if not order:
         raise SandboxError("Order not found or not owned")
     if order["state"] != "payment_pending":
         raise SandboxError("Order not payable")
     prev = con.execute("""SELECT provider_checkout_id,checkout_url
-        FROM garak_order_v2.payment_attempts WHERE order_id=? AND provider='stripe'
+        FROM garak_order_v2.payment_attempts WHERE order_id=%s AND provider='stripe'
         ORDER BY created_at LIMIT 1""", (order_id,)).fetchone()
     if prev:
         if not str(prev["checkout_url"]).startswith("https://checkout.stripe.com/"):
@@ -116,7 +117,7 @@ def create_test_checkout(con, *, verified_customer_sub, order_id, key, success_u
         raise SandboxError("Stripe did not return a verified TEST Checkout URL")
     changed = con.execute("""INSERT INTO garak_order_v2.payment_attempts
         (order_id,provider,provider_checkout_id,checkout_url,amount_krw,currency,livemode)
-        VALUES(?,'stripe',?,?,?,'KRW',false)
+        VALUES(%s,'stripe',%s,%s,%s,'KRW',false)
         ON CONFLICT(order_id) DO NOTHING RETURNING provider_checkout_id""",
         (order["id"],session["id"],session["url"],order["total_krw"])).fetchone()
     if not changed:
@@ -135,23 +136,23 @@ def accept_test_webhook(con, raw, signature, *, webhook_test_secret):
         raise SandboxError("Missing checkout session")
     attempt = con.execute("""SELECT id,order_id,provider_checkout_id,amount_krw,currency,
         livemode,state FROM garak_order_v2.payment_attempts
-        WHERE provider='stripe' AND provider_checkout_id=? FOR UPDATE""",
+        WHERE provider='stripe' AND provider_checkout_id=%s FOR UPDATE""",
         (session.get("id"),)).fetchone()
     if not attempt:
         raise SandboxError("Unregistered checkout")
     order = con.execute("""SELECT id,merchant_id,customer_auth_sub,total_krw,state,version
-        FROM garak_order_v2.orders WHERE id=? FOR UPDATE""",
+        FROM garak_order_v2.orders WHERE id=%s FOR UPDATE""",
         (attempt["order_id"],)).fetchone()
     if not order:
         raise SandboxError("Order missing")
     validate_paid_session(event, order, attempt)
-    duplicate = con.execute("SELECT event_id FROM garak_order_v2.payment_events WHERE event_id=?",
+    duplicate = con.execute("SELECT event_id FROM garak_order_v2.payment_events WHERE event_id=%s",
                             (event["id"],)).fetchone()
     if duplicate:
         return {"processed": False, "duplicate": True, "state": order["state"]}
     con.execute("""INSERT INTO garak_order_v2.payment_events
         (event_id,order_id,provider,event_kind,signature_checked,amount_krw)
-        VALUES(?,?,'stripe',?,true,?)""",
+        VALUES(%s,%s,'stripe',%s,true,%s)""",
         (event["id"],order["id"],event["type"],order["total_krw"]))
     if order["state"] != "payment_pending":
         if order["state"] in {"paid","merchant_accepted","preparing","ready_for_pickup",
@@ -160,13 +161,13 @@ def accept_test_webhook(con, raw, signature, *, webhook_test_secret):
             return {"processed": False, "duplicate_payment": True, "state": order["state"]}
         raise SandboxError("Invalid payment completion state")
     con.execute("""UPDATE garak_order_v2.orders SET state='paid',version=version+1,
-        updated_at=now() WHERE id=? AND state='payment_pending'""", (order["id"],))
-    con.execute("UPDATE garak_order_v2.payment_attempts SET state='paid' WHERE id=?",
+        updated_at=now() WHERE id=%s AND state='payment_pending'""", (order["id"],))
+    con.execute("UPDATE garak_order_v2.payment_attempts SET state='paid' WHERE id=%s",
                 (attempt["id"],))
     con.execute("""UPDATE garak_order_v2.inventory_holds SET state='consumed'
-                   WHERE order_id=? AND state='held'""", (order["id"],))
+                   WHERE order_id=%s AND state='held'""", (order["id"],))
     con.execute("""INSERT INTO garak_order_v2.notification_outbox
         (order_id,event,recipient_role,recipient_subject,order_version)
-        VALUES(?,'new_paid_order','merchant',?,?) ON CONFLICT DO NOTHING""",
+        VALUES(%s,'new_paid_order','merchant',%s,%s) ON CONFLICT DO NOTHING""",
         (order["id"],str(order["merchant_id"]),order["version"]+1))
     return {"processed": True, "state": "paid", "order_id": str(order["id"])}
