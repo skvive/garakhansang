@@ -12,6 +12,7 @@ on:
       - 'admin_core/delivery_flow.py'
       - 'tests/test_order_p2_sandbox.py'
       - 'tests/test_order_lab_integration.py'
+      - 'tests/test_order_navigation.mjs'
       - 'storefront/order-lab/**'
       - '.github/workflows/order-p2-stripe-sandbox-ci.yml'
   workflow_dispatch:
@@ -40,6 +41,8 @@ jobs:
       - name: JavaScript syntax
         run: |
           node --check storefront/order-lab/app.js
+          node --check storefront/order-lab/navigation.mjs
+          node tests/test_order_navigation.mjs
           node --check storefront/order-lab/sw.js
       - name: Stripe signed webhook, role, rider and order regression
         run: python -m unittest discover -s tests -p 'test_order_p2_sandbox.py' -v
@@ -57,6 +60,7 @@ jobs:
             storefront/assets/images/
             tests/test_order_p2_sandbox.py
             tests/test_order_lab_integration.py
+            tests/test_order_navigation.mjs
             docs/ORDER_P2_P3_P4_IMPLEMENTATION_QUEUE_20261107.md
             docs/ORDER_LAB_LOCAL_RUN_20261107.md
             db/migrations/20261107_garak_order_v2_staging.sql
