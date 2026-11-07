@@ -176,7 +176,7 @@ jobs:
           sizes=set()
           for shot in shots:
               b=shot.read_bytes()
-              assert b[:8]==b"\\x89PNG\\r\\n\\x1a\\n",f"{shot} not PNG"
+              assert b[:8]==bytes.fromhex("89504e470d0a1a0a"),f"{shot} not PNG"
               w,h=struct.unpack(">II",b[16:24])
               assert w>=300 and h>=600, (shot,w,h)
               sizes.add((w,h))
