@@ -20,7 +20,9 @@ def main(output: Path) -> None:
     adb('shell', 'am', 'force-stop', P)
     # Debug signed APK enables run-as; edit only this test app's own prefs XML.
     result = subprocess.run(
-        ['adb', 'shell', 'run-as', P, 'sh', '-c', 'cat > shared_prefs/order_preview.xml'],
+        ['adb', 'shell', 'run-as', P, 'sh', '-c',
+         'mkdir -p /data/user/0/' + P + '/shared_prefs && '
+         'cat > /data/user/0/' + P + '/shared_prefs/order_preview.xml'],
         input=LEGACY_XML.encode('utf-8'), capture_output=True, timeout=30,
         check=False)
     if result.returncode != 0:
