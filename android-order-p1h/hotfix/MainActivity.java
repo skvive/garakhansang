@@ -940,7 +940,10 @@ public class MainActivity extends Activity {
             .appendQueryParameter("travelmode","driving")
             .appendQueryParameter("dir_action","navigate").build();
         try {
-            startActivity(new Intent(Intent.ACTION_VIEW,url));
+            Intent directions = new Intent();
+            directions.setAction(Intent.ACTION_VIEW);
+            directions.setData(url);
+            startActivity(directions);
         } catch(ActivityNotFoundException failure) {
             new AlertDialog.Builder(this)
                 .setTitle("길찾기 앱을 열 수 없습니다")
