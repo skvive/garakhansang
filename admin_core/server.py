@@ -8,6 +8,7 @@ import argparse,datetime as dt,hashlib,json,mimetypes,os,re,secrets,sqlite3,thre
 from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 from .database import connect,init_db,now,password_hash,password_valid,HERE,DEFAULT_DB,backend_name
+from .mobile_commerce import public_product,quote_cart
 
 SITE=HERE/'storefront'
 ROLE_RULES={
@@ -131,6 +132,12 @@ class Handler(SimpleHTTPRequestHandler):
   if path=='/api/auth/me':
    s=self.session()
    return self.respond({'authenticated':bool(s),'user':{'id':s['id'],'username':s['username'],'role':s['role']} if s else None,'csrf':s['csrf'] if s else None,'demo':True})
+  if path.startswith('/api/v1/mobile/products/'):
+   slug=path.rsplit('/',1)[-1]
+   try:
+    with connect(dbpath(self.server)) as con: product=public_product(con,slug)
+   except (LookupError,ValueError):return self.error_json(404,'승인된 상품을 찾을 수 없습니다.')
+   return self.respond({'data':product,'mode':'LOCAL_BETA','checkout_enabled':False})
   if path.startswith('/api/public/'):
    con=connect(dbpath(self.server))
    try:
@@ -190,6 +197,13 @@ class Handler(SimpleHTTPRequestHandler):
   return super().do_GET()
  def do_POST(self):
   path=urllib.parse.urlsplit(self.path).path
+  if path=='/api/v1/mobile/cart/quote':
+   if not self.request_origin_ok():return self.error_json(403,'요청 출처 오류')
+   try:
+    body=self.parse_body()
+    with connect(dbpath(self.server)) as con: quote=quote_cart(con,body)
+   except (ValueError,TypeError,json.JSONDecodeError) as e:return self.error_json(400,str(e))
+   return self.respond({'data':quote,'mode':'LOCAL_BETA','checkout_enabled':False})
   if path=='/api/public/events':
    if not self.request_origin_ok():return self.error_json(403,'출처 오류')
    try:
