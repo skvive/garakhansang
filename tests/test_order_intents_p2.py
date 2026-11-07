@@ -89,7 +89,7 @@ class OrderIntentTests(unittest.TestCase):
   self.assertEqual(self.make(data=self.payload(3))[0],409)
  def test_missing_or_invalid_key_rejected(self):
   self.login()
-  for key in ["short","Contains Spaces In Idempotency Key","🙂"*20,"a"*97]:
+  for key in ["short","Contains Spaces In Idempotency Key","é"*20,"a"*97]:
    self.assertEqual(self.make(key=key)[0],400,key)
   self.assertEqual(self.req("POST","/api/admin/order-intents",self.payload())[0],400)
  def test_client_total_and_pii_rejected(self):
