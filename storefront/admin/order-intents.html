@@ -123,7 +123,7 @@ $("create").addEventListener("click",async()=>{
   const session=await api("/api/auth/me");
   if(!session.authenticated){$("loginRequired").hidden=false;return}
   state.csrf=session.csrf;
-  if(!["superadmin","ops","finance","support"].includes(session.user?.role)){
+  if(!["superadmin","ops"].includes(session.user?.role)){
    $("loginRequired").hidden=false;return
   }
   $("app").hidden=false;
