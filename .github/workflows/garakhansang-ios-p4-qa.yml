@@ -164,9 +164,19 @@ jobs:
               3) label=orders ;; 4) label=mine ;;
             esac
             SIMCTL_CHILD_GHS_QA_TAB="$test_tab" xcrun simctl launch --terminate-running-process "$UDID" site.lexid.garakhansang.order.ios
-            sleep 3
-            xcrun simctl io "$UDID" screenshot "screenshots/ios-$label.png"
-            test "$(stat -f%z "screenshots/ios-$label.png")" -gt 20000
+            # The first launch may display a white splash while large bundled
+            # catalog images initialize. Never treat that blank frame as a pass.
+            for capture_attempt in 1 2 3 4 5 6; do
+              sleep 5
+              xcrun simctl io "$UDID" screenshot "screenshots/ios-$label.png"
+              bytes="$(stat -f%z "screenshots/ios-$label.png")"
+              threshold=100000
+              if test "$label" = home; then threshold=160000; fi
+              if test "$label" = menu; then threshold=350000; fi
+              if test "$bytes" -gt "$threshold"; then break; fi
+              echo "UI has not rendered complete $label; screenshot is $bytes bytes (attempt $capture_attempt)"
+            done
+            test "$(stat -f%z "screenshots/ios-$label.png")" -gt "$threshold"
           done
           python3 - <<'PY'
           from pathlib import Path
