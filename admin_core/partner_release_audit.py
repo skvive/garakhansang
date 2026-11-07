@@ -142,11 +142,13 @@ def assert_ready_for_activation(audit: AuditResult, *,
                                 stripe_account_verified: bool,
                                 stripe_test_webhook_passed: bool,
                                 shipping_provider_contract_verified: bool,
-                                signed_delivery_e2e_passed: bool) -> None:
-    """Fail-closed business rule; never silently activate sales."""
+                                signed_delivery_e2e_passed: bool,
+                                merchant_of_record_authorized: bool = False) -> None:
+    """Fail closed: an ACTIVE Stripe account is not GarakHansang billing authority."""
     gates = [
         audit.batch_eligible,
         stripe_account_verified,
+        merchant_of_record_authorized,
         stripe_test_webhook_passed,
         shipping_provider_contract_verified,
         signed_delivery_e2e_passed,
