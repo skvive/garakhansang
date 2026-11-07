@@ -77,6 +77,26 @@ class MobileContractTests(unittest.TestCase):
         for path in ("/api/v1/mobile/orders","/api/v1/mobile/payments/confirm"):
             code,_=self.req("POST",path,{"items":[{"slug":"bangeo-hoe","qty":1}]})
             self.assertEqual(code,404)
+
+    def test_market_and_merchants_only_verified(self):
+        self.assertEqual(self.req("GET","/api/v1/mobile/markets")[1]["data"]["items"],[])
+        self.approved()
+        markets=self.req("GET","/api/v1/mobile/markets")[1]["data"]["items"]
+        self.assertEqual(markets,[{"id":"garak","name":"가락한상 제휴 매장"}])
+        self.assertEqual(len(self.req("GET","/api/v1/mobile/merchants?market_id=garak")[1]["data"]["items"]),1)
+    def test_remote_shop_catalog_filters_approved(self):
+        self.assertEqual(self.req("GET","/api/v1/mobile/products")[1]["data"]["items"],[])
+        self.approved()
+        code,r=self.req("GET","/api/v1/mobile/products?market_id=garak")
+        self.assertEqual(code,200)
+        products=r["data"]["items"]
+        self.assertTrue(any(p["slug"]=="bangeo-hoe" for p in products))
+        self.assertTrue(all(p["checkout_enabled"] is False for p in products))
+    def test_market_mismatch_fails(self):
+        self.approved()
+        self.assertEqual(self.req("GET","/api/v1/mobile/merchants?market_id=other")[0],404)
+        self.assertEqual(self.req("GET","/api/v1/mobile/products?market_id=other")[0],404)
+
     def test_stock_and_data_unchanged_by_quote(self):
         self.approved()
         with connect(self.db) as c:
