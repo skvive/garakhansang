@@ -19,7 +19,7 @@
 | 읽기 `GET /api/admin/order-intents[/{ref}]` | 작성자 격리·최고관리자 전체 감사 조회 | 고객/상인 실주문 정보가 아님 |
 | 종료 `POST /api/admin/order-intents/{ref}/abandon` | 작성자만, 조건부 버전 갱신, 중복 종료 방지 | PG 환불/실주문 취소와 무관 |
 | 운영센터 페이지 `/admin/order-intents.html` | 반응형 표·상품/수량·개발 견적 생성·검수 종료 | 운영용 판매 알림, 주문 수락 UI 없음 |
-| CI | 주문 원장 테스트 17개 2회 + 기존 Android 15/16 에뮬레이터 회귀 | PR/배포 상태는 CI 종료 후 보고 |
+| CI | 주문 원장 테스트 19개 2회 + 기존 Android 15/16 에뮬레이터 회귀 | PR/배포 상태는 CI 종료 후 보고 |
 
 ### 검증 규칙
 
