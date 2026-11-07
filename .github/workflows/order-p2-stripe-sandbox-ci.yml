@@ -6,8 +6,13 @@ on:
       - chatgpt/garakhansang-order-p2-stripe-sandbox-roles-20261107
     paths:
       - 'admin_core/order_p2_sandbox.py'
+      - 'admin_core/order_lab_server.py'
+      - 'admin_core/mobile_commerce.py'
+      - 'admin_core/database.py'
       - 'admin_core/delivery_flow.py'
       - 'tests/test_order_p2_sandbox.py'
+      - 'tests/test_order_lab_integration.py'
+      - 'storefront/order-lab/**'
       - '.github/workflows/order-p2-stripe-sandbox-ci.yml'
   workflow_dispatch:
 
@@ -31,8 +36,28 @@ jobs:
           test -z "${STRIPE_WEBHOOK_SECRET:-}"
           echo "No linked Stripe account is contacted. All sessions/webhooks are synthetic."
       - name: Syntax and imported domain check
-        run: python -m compileall -q admin_core/order_p2_sandbox.py admin_core/delivery_flow.py tests/test_order_p2_sandbox.py
+        run: python -m compileall -q admin_core/order_p2_sandbox.py admin_core/order_lab_server.py admin_core/delivery_flow.py tests/test_order_p2_sandbox.py tests/test_order_lab_integration.py
+      - name: JavaScript syntax
+        run: |
+          node --check storefront/order-lab/app.js
+          node --check storefront/order-lab/sw.js
       - name: Stripe signed webhook, role, rider and order regression
         run: python -m unittest discover -s tests -p 'test_order_p2_sandbox.py' -v
+      - name: End-to-end synthetic HTTP role-based delivery workflow
+        run: python -m unittest discover -s tests -p 'test_order_lab_integration.py' -v
+      - name: End-to-end artifact (lab UI and source only)
+        uses: actions/upload-artifact@v4
+        with:
+          name: GarakHansang-Order-P3-LocalLab-Source
+          path: |
+            admin_core/order_p2_sandbox.py
+            admin_core/order_lab_server.py
+            admin_core/mobile_commerce.py
+            admin_core/delivery_flow.py
+            tests/test_order_p2_sandbox.py
+            tests/test_order_lab_integration.py
+            storefront/order-lab/
+            docs/ORDER_P2_P3_P4_IMPLEMENTATION_QUEUE_20261107.md
+          retention-days: 14
       - name: Do not claim live release
         run: echo "P2 integration is sandbox-only; no Stripe API live/test E2E or Neon/Android application integration."
