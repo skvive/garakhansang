@@ -29,7 +29,7 @@ from .order_p2_sandbox import (
     dashboard, get_order, act, inbox, paid_webhook, _notify,
 )
 
-SITE = HERE / "storefront" / "order-lab"
+SITE = HERE / "storefront"
 COOKIE = "garak_lab_session"
 SESSION_MAX = 3600
 ACCOUNT_NAME = re.compile(r"^[a-z][a-z0-9_-]{2,31}$")
@@ -92,8 +92,9 @@ def init_lab(path, accounts):
             password = accounts[username]
             if not isinstance(password, str) or len(password) < 14:
                 raise ValueError("lab passwords must be >= 14 characters")
-            db.execute("""INSERT OR IGNORE INTO p3_lab_accounts
-                  (username,subject,role,password_hash) VALUES(?,?,?,?)""",
+            db.execute("""INSERT INTO p3_lab_accounts
+                  (username,subject,role,password_hash) VALUES(?,?,?,?)
+                  ON CONFLICT(username) DO UPDATE SET password_hash=excluded.password_hash""",
                        (username, subject, role, secret_hash(password)))
         db.execute("""INSERT OR IGNORE INTO p3_lab_rider_status(subject,approved,on_duty)
                       VALUES('r_demo',1,1)""")
@@ -108,6 +109,7 @@ class LabServer(ThreadingHTTPServer):
         if address[0] not in ("127.0.0.1", "localhost", "::1"):
             raise RuntimeError("order laboratory cannot bind a non-loopback address")
         self.lab_db = str(path)
+        self.lab_signing_secret = secrets.token_hex(24)
         self.auth_lock = threading.RLock()
         self.failed_logins = {}
         super().__init__(address, LabHandler)
@@ -217,9 +219,9 @@ class LabHandler(SimpleHTTPRequestHandler):
         if not path.startswith("/lab/api/"):
             if method != "GET": return self.error(405, "method_not_allowed")
             if path == "/" or path == "/order-lab":
-                self.path = "/index.html"
-            elif path.startswith("/order-lab/"):
-                self.path = path[len("/order-lab"):]
+                self.path = "/order-lab/index.html"
+            elif path.startswith("/order-lab/") or path.startswith("/assets/"):
+                self.path = path
             else:
                 return self.error(404, "not_found")
             return super().do_GET()
