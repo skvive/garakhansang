@@ -1,0 +1,82 @@
+name: Garak Hansang Order P2 Stripe TEST-only / Roles QA
+
+on:
+  push:
+    branches:
+      - chatgpt/garakhansang-order-p2-stripe-sandbox-roles-20261107
+    paths:
+      - 'admin_core/order_p2_sandbox.py'
+      - 'admin_core/order_lab_server.py'
+      - 'admin_core/mobile_commerce.py'
+      - 'admin_core/database.py'
+      - 'admin_core/delivery_flow.py'
+      - 'tests/test_order_p2_sandbox.py'
+      - 'tests/test_order_lab_integration.py'
+      - 'tests/test_order_navigation.mjs'
+      - 'tests/test_order_v2_pg_checkout.py'
+      - 'admin_core/order_v2_pg_checkout.py'
+      - 'admin_core/partner_release_audit.py'
+      - 'tests/test_partner_release_audit.py'
+      - 'db/migrations/20261107_garak_order_v2_*.sql'
+      - 'storefront/order-lab/**'
+      - 'docs/ORDER_V2_REAL_PURCHASE_RELEASE_GATE_20261107.md'
+      - '.github/workflows/order-p2-stripe-sandbox-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  isolated-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Refuse real Stripe calls and production credentials
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -z "${STRIPE_SECRET_KEY:-}"
+          test -z "${STRIPE_WEBHOOK_SECRET:-}"
+          echo "No linked Stripe account is contacted. All sessions/webhooks are synthetic."
+      - name: Syntax and imported domain check
+        run: python -m compileall -q admin_core/order_p2_sandbox.py admin_core/order_lab_server.py admin_core/order_v2_pg_checkout.py admin_core/delivery_flow.py tests/test_order_p2_sandbox.py tests/test_order_lab_integration.py tests/test_order_v2_pg_checkout.py
+      - name: JavaScript syntax
+        run: |
+          node --check storefront/order-lab/app.js
+          node --check storefront/order-lab/navigation.mjs
+          node tests/test_order_navigation.mjs
+          node --check storefront/order-lab/sw.js
+      - name: Stripe signed webhook, role, rider and order regression
+        run: python -m unittest discover -s tests -p 'test_order_p2_sandbox.py' -v
+      - name: Verify dedicated Neon V2 TEST-only checkout code and signed webhook
+        run: python -m unittest discover -s tests -p 'test_order_v2_pg_checkout.py' -v
+      - name: Verify exactly 34 SKU merchant evidence and live delivery safety gates
+        run: python -m unittest discover -s tests -p 'test_partner_release_audit.py' -v
+      - name: End-to-end synthetic HTTP role-based delivery workflow
+        run: python -m unittest discover -s tests -p 'test_order_lab_integration.py' -v
+      - name: End-to-end artifact (lab UI and source only)
+        uses: actions/upload-artifact@v4
+        with:
+          name: GarakHansang-Order-P3-LocalLab-Source
+          path: |
+            admin_core/
+            storefront/order-lab/
+            storefront/assets/products.json
+            storefront/assets/recipes.json
+            storefront/assets/images/
+            tests/test_order_p2_sandbox.py
+            tests/test_order_lab_integration.py
+            tests/test_order_navigation.mjs
+            tests/test_order_v2_pg_checkout.py
+            tests/test_partner_release_audit.py
+            docs/ORDER_P2_P3_P4_IMPLEMENTATION_QUEUE_20261107.md
+            docs/ORDER_LAB_LOCAL_RUN_20261107.md
+            docs/ORDER_V2_REAL_PURCHASE_RELEASE_GATE_20261107.md
+            db/migrations/20261107_garak_order_v2_*.sql
+          retention-days: 14
+      - name: Do not claim live release
+        run: echo "P2 integration is sandbox-only; no Stripe API live/test E2E or Neon/Android application integration."
