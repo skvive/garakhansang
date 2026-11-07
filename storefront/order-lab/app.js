@@ -41,7 +41,7 @@ const nextRider={
 };
 let S={role:null,csrf:"",products:[],orders:[],inbox:[],merchants:[],
   riders:[],dispatch:[],settlements:[],cart:{},section:"primary",
-  seen:new Set(),inboxPrimed:false,permission:false};
+  seen:new Set(),inboxPrimed:false,permission:false,stripeTestReady:false};
 
 function node(tag,cl="",value){
   const e=document.createElement(tag);
@@ -117,6 +117,19 @@ async function load(notify=false){
 async function mutate(path,data,success){
   await api(path,"POST",data);toast(success||"테스트 기록이 갱신되었습니다.",true);await load();
 }
+async function loadCapabilities(){
+  const status=await api("/health");
+  S.stripeTestReady=status.stripe_test_ready===true;
+}
+async function startStripeTestCheckout(orderId){
+  if(!S.stripeTestReady)throw Error("테스트 Stripe 키와 웹훅이 연결되지 않았습니다.");
+  const result=await api("/order/"+orderId+"/checkout","POST",{});
+  if(result.sandbox_only!==true||typeof result.checkout_url!=="string"||
+    !result.checkout_url.startsWith("https://checkout.stripe.com/")){
+    throw Error("Stripe TEST 결제 페이지의 URL을 확인할 수 없습니다.");
+  }
+  window.location.assign(result.checkout_url);
+}
 function roleText(){
   const r=roles[S.role];
   $("#who").textContent=r.icon+" "+r.title;
@@ -174,6 +187,11 @@ function renderOrders(){
     if(S.role==="merchant"&&o.state==="paid")
       actions.append(btn("접수 거절·환불 요청",()=>mutate("/order/"+o.id+"/transition",
         {event:"merchant_reject",version:o.version},"환불 검토에 등록했습니다."),"danger"));
+    if(S.role==="customer"&&o.state==="payment_pending"){
+      actions.append(btn(S.stripeTestReady?"Stripe 테스트 결제 시작":"Stripe TEST 설정 전",
+        ()=>startStripeTestCheckout(o.id),"primary small",!S.stripeTestReady));
+      actions.append(node("span","micro","테스트 카드로만 결제하며, 결제 성공 여부는 서명된 웹훅으로 검증합니다."));
+    }
     if(S.role==="customer"&&o.state==="paid")
       actions.append(btn("주문 취소 신청",()=>mutate("/order/"+o.id+"/transition",
         {event:"customer_cancel",version:o.version},"환불 검토에 등록했습니다."),"danger"));
@@ -377,7 +395,7 @@ $("#login-form").addEventListener("submit",async e=>{
     S.role=result.role;S.csrf=result.csrf;S.cart={};
     S.inboxPrimed=false;S.seen=new Set();
     $("#password").value="";
-    workspace();await load();
+    workspace();await loadCapabilities();await load();
   }catch(err){$("#auth-message").textContent=err.message}
 });
 $("#logout").addEventListener("click",async()=>{
@@ -395,7 +413,7 @@ document.querySelectorAll(".nav-item").forEach(el=>el.addEventListener("click",(
   const me=await api("/me");
   if(me.authenticated&&me.principal){
     S.role=me.principal.role;S.csrf=me.principal.csrf;
-    workspace();await load();
+    workspace();await loadCapabilities();await load();
   }
 }catch(err){console.warn("Local lab unavailable",err)}})();
 setInterval(()=>{if(S.role&&!document.hidden)load(true).catch(()=>{})},15000);
