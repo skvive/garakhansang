@@ -504,7 +504,10 @@ public class MainActivity extends Activity {
                 .setPositiveButton("확인",null).show();
         }
     }
-    private void open(String p){page=p;render();}
+    private void open(String p){
+        page=p;render();
+        if("live_catalog".equals(p))refreshVerifiedCatalog();
+    }
     private void render(){
         // Every navigation invalidates replies belonging to detached views.
         ++remoteRequestSerial; ++addressRequestSerial; ++authRequestSerial; ++apiRequestSerial;
@@ -1022,7 +1025,10 @@ public class MainActivity extends Activity {
         if(data==null){
             content.addView(text("최신 상품 목록 확인 중입니다. 승인되지 않은 상인이나 오래된 상품 정보를 대신 표시하지 않습니다.",14,MUTED,false),lp(-1,-2));
             gap(content,13);content.addView(button("시연 메뉴 47종 둘러보기",RED,()->open("products")),lp(-1,52));
-            refreshVerifiedCatalog();return;
+            // Refresh is driven by onResume/open and 30-second poll.
+            // Never restart HTTP from render(): error responses caused an
+            // infinite UI rebuild loop and swallowed button taps on Android 16.
+            return;
         }
         if(data.items.isEmpty()){
             content.addView(text("현재 판매 승인이 완료된 상품이 없습니다. 신규 상인과 상품이 승인되면 이 목록이 자동으로 갱신됩니다.",15,MUTED,false),lp(-1,-2));
