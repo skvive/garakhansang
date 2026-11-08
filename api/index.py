@@ -15,6 +15,7 @@ if str(ROOT) not in sys.path:
 
 from admin_core.server import Handler, setup  # noqa: E402
 from admin_core.merchant_community import handle as merchant_handle  # noqa: E402
+from admin_core.mobile_public_catalog import handle as verified_mobile_handle  # noqa: E402
 
 _INITIALIZED = False
 
@@ -56,7 +57,13 @@ def _parse_http(raw: bytes):
     return status, headers, body
 
 
+def _is_public_native_path(path: str) -> bool:
+    return path.split("?", 1)[0].startswith("/api/mobile/v1/")
+
+
 def _invoke(method: str, path: str, headers: dict, body: bytes):
+    if _is_public_native_path(path):
+        return verified_mobile_handle(method, path, headers, body)
     if path.split('?', 1)[0].rstrip('/') in ('/api/merchant-applications','/api/community/posts','/api/community/comments','/api/community/moderation'):
         return merchant_handle(method, path, headers, body)
     out = BytesIO()
@@ -93,7 +100,8 @@ def _invoke(method: str, path: str, headers: dict, body: bytes):
 
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
-        _ensure_setup()
+        if not _is_public_native_path(self.path):
+            _ensure_setup()
         status, headers, body = _invoke("GET", self.path, dict(self.headers), b"")
         self._emit(status, headers, body)
 
@@ -105,7 +113,8 @@ class handler(BaseHTTPRequestHandler):
         self._emit(status, headers, body)
 
     def do_OPTIONS(self):
-        _ensure_setup()
+        if not _is_public_native_path(self.path):
+            _ensure_setup()
         status, headers, body = _invoke("OPTIONS", self.path, dict(self.headers), b"")
         self._emit(status, headers, body)
 
@@ -123,9 +132,10 @@ class handler(BaseHTTPRequestHandler):
 
 
 def vercel_handler(request):
-    _ensure_setup()
     method = getattr(request, "method", "GET") or "GET"
     path = getattr(request, "path", "/") or "/"
+    if not _is_public_native_path(path):
+        _ensure_setup()
     query = getattr(request, "query", None) or {}
     if query and "?" not in path:
         path = path + "?" + urlencode(query, doseq=True)

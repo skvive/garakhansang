@@ -1,0 +1,64 @@
+name: GarakHansang Verified Mobile Catalog — Server + Website Contract QA
+on:
+  push:
+    branches:
+      - chatgpt/garakhansang-unified-mobile-api-20261108
+    paths:
+      - 'admin_core/mobile_public_catalog.py'
+      - 'api/index.py'
+      - 'tests/test_mobile_public_catalog.py'
+      - 'storefront/index.html'
+      - 'storefront/mobile/index.html'
+      - 'storefront/assets/js/verified-live-shelf.js'
+      - 'storefront/assets/css/verified-live-shelf.css'
+      - '.github/workflows/garak-mobile-public-catalog-ci.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verified-catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate Python and fail-closed public catalog
+        run: |
+          python -m compileall -q admin_core/mobile_public_catalog.py api/index.py tests/test_mobile_public_catalog.py
+          python -m unittest discover -s tests -p 'test_mobile_public_catalog.py' -v
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate website and responsive mobile assets
+        run: |
+          node --check storefront/assets/js/verified-live-shelf.js
+          python - <<'PY'
+          from pathlib import Path
+          for file in ('storefront/index.html','storefront/mobile/index.html'):
+              s=Path(file).read_text(encoding='utf-8-sig')
+              assert s.count('id="garak-verified-shelf"')==1
+              assert s.count('verified-live-shelf.css')==1
+              assert s.count('verified-live-shelf.js')==1
+              assert s.count('</body>')==1
+          script=Path('storefront/assets/js/verified-live-shelf.js').read_text()
+          assert 'setInterval(update,30000)' in script
+          assert 'credentials:"omit"' in script
+          assert 'document.visibilityState==="hidden"' in script
+          assert 'can_checkout' not in script or 'order' not in script.lower()
+          print('PASS desktop/mobile verified-only merchant cards, poll and fail-close assets')
+          PY
+      - name: Archive reviewed API, web UI and tests
+        uses: actions/upload-artifact@v4
+        with:
+          name: GarakHansang-Mobile-Verified-API-Source
+          path: |
+            admin_core/mobile_public_catalog.py
+            api/index.py
+            tests/test_mobile_public_catalog.py
+            storefront/index.html
+            storefront/mobile/index.html
+            storefront/assets/js/verified-live-shelf.js
+            storefront/assets/css/verified-live-shelf.css
+          retention-days: 14
