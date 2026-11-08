@@ -8,6 +8,12 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
+import ssl
+import pg8000.dbapi
+from contextlib import closing
+from urllib.parse import urlparse
+from .pgcompat import PostgresConnection
 import re
 from datetime import date, datetime
 from urllib.parse import urlsplit
@@ -20,20 +26,10 @@ MAX_RESULTS = 500
 
 # Existing production view is the authoritative 8 merchant + 4 SKU evidence gate.
 PUBLISHED_SQL = """
-SELECT p.sku,p.merchant_slug,p.name,p.description,p.category_code,c.name AS category_name,
-       p.price_krw,p.stock,p.image_ref,p.updated_at
-FROM public.garak_partner_release_ready r
-JOIN public.garak_partner_products p
-  ON p.sku=r.sku AND p.merchant_slug=r.merchant_slug
-JOIN public.garak_partner_categories c
-  ON c.code=p.category_code AND c.merchant_slug=p.merchant_slug
-WHERE r.release_ready IS TRUE
-  AND p.status='approved' AND c.status='approved'
-  AND p.visible IS TRUE AND p.purchasable IS TRUE
-  AND p.image_verified IS TRUE
-  AND p.stock > 0 AND p.price_krw > 0
-  AND upper(trim(p.currency))='KRW'
-  AND p.image_ref ~* '^https://'
+SELECT p.sku,p.merchant_slug,p.name,p.description,p.category_code,
+       p.category_name,p.price_krw,p.stock,p.image_ref,p.updated_at
+FROM garak_catalog_api.approved_products p
+WHERE p.stock>0 AND p.price_krw>0 AND p.image_ref ~* '^https://'
 ORDER BY p.merchant_slug,p.sku
 LIMIT 501
 """
@@ -100,7 +96,27 @@ def _serialize(rows):
             "delivery_tracking_ready":False,
             "refresh_seconds":30}
 
-def get_snapshot(connection_factory=connect):
+def _catalog_readonly_connection():
+    # Independent of any legacy admin DATABASE_URL. The DB account has
+    # SELECT only on garak_catalog_api.approved_products, no user/order access.
+    raw=os.environ.get("GARAK_CATALOG_DATABASE_URL","")
+    u=urlparse(raw)
+    if u.scheme not in ("postgres","postgresql") or not u.hostname or not u.password:
+        raise ConnectionError("Isolated approved-catalog Neon URL is not configured")
+    if u.username!="garak_catalog_public_ro":
+        raise ConnectionError("Catalog must use verified least-privilege role")
+    c=pg8000.dbapi.connect(
+        host=u.hostname,port=u.port or 5432,user=u.username,
+        password=u.password,database=(u.path or "/neondb").lstrip("/"),
+        ssl_context=ssl.create_default_context(),timeout=12)
+    return PostgresConnection(c)
+
+def get_snapshot(connection_factory=None):
+    if connection_factory is None:
+        with _catalog_readonly_connection() as con:
+            rows=con.execute(PUBLISHED_SQL).fetchall()
+        return _serialize(rows)
+    # Test injection for independent read-only integration unit tests.
     if not use_postgres():
         raise ConnectionError("Neon not configured")
     with connection_factory() as con:
