@@ -374,7 +374,7 @@ struct VerifiedLiveHomeTile:View {
                     Text("공식 입점 새상품").font(.headline).foregroundStyle(.primary)
                     Text(live.products.isEmpty
                          ? "승인 매장 준비 중 · 서버 자동 갱신"
-                         : "현재 승인 상품 \\(live.products.count)종 · 실시간 연동")
+                         : "현재 승인 상품 \(live.products.count)종 · 실시간 연동")
                         .font(.caption).foregroundStyle(.secondary)
                     Text("홈페이지와 같은 판매 승인 DB")
                         .font(.caption.bold()).foregroundStyle(Brand.brown)
