@@ -4,22 +4,37 @@ private enum Tab: Int { case home, menu, cart, orders, mine }
 
 struct RootTabView: View {
     @EnvironmentObject var store: CatalogStore
-    @State private var tab: Tab = .home
+    @Environment(\.scenePhase) private var scenePhase
+    @StateObject private var live = VerifiedCatalogStore()
+    // iPhone Simulator screen-by-screen QA. Normal installation starts at Home.
+    @State private var tab: Tab =
+        Tab(rawValue: Int(ProcessInfo.processInfo.environment["GHS_QA_TAB"] ?? "") ?? 0) ?? .home
 
     var body: some View {
         TabView(selection: $tab) {
             HomeScreen(onBrowse: { tab = .menu }).tabItem { Label("홈", systemImage: "house.fill") }.tag(Tab.home)
-            MenuScreen().tabItem { Label("메뉴", systemImage: "square.grid.2x2.fill") }.tag(Tab.menu)
+            VerifiedLiveCatalogScreen().tabItem { Label("메뉴", systemImage: "square.grid.2x2.fill") }.tag(Tab.menu)
             DemoCartScreen().tabItem { Label("장바구니", systemImage: "cart.fill") }.tag(Tab.cart)
             OrdersScreen().tabItem { Label("주문내역", systemImage: "clock.arrow.circlepath") }.tag(Tab.orders)
             MineScreen(onBrowse: { tab = .menu }).tabItem { Label("마이", systemImage: "person.crop.circle") }.tag(Tab.mine)
         }
         .tint(Brand.brown)
+        .environmentObject(live)
+        .task {
+            while !Task.isCancelled {
+                if scenePhase == .active { await live.refresh() }
+                try? await Task.sleep(nanoseconds: 30_000_000_000)
+            }
+        }
+        .onChange(of:scenePhase) { newState in
+            if newState == .active { Task { await live.refresh() } }
+        }
     }
 }
 
 struct HomeScreen: View {
     @EnvironmentObject var store: CatalogStore
+    @EnvironmentObject var live: VerifiedCatalogStore
     var onBrowse: () -> Void
     private let grid = [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)]
 
@@ -39,6 +54,7 @@ struct HomeScreen: View {
                             .accessibilityLabel("알림 서비스 준비 중")
                     }.padding(.top, 14)
                     hero
+                    VerifiedLiveHomeTile()
                     DemoNotice()
                     VStack(alignment: .leading, spacing: 12) {
                         Text("이용 방식 미리보기").font(.title3.bold())
@@ -81,7 +97,7 @@ struct HomeScreen: View {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("가락시장의 맛을\n한 화면에 담다")
                         .font(.system(size: 25, weight: .heavy)).foregroundStyle(.white)
-                    Text("47개 메뉴 · 12개 카테고리")
+                    Text("참고 메뉴 47종 · 공식 입점은 서버 실시간 연결")
                         .font(.system(size: 13, weight: .semibold))
                         .foregroundStyle(.white.opacity(0.85))
                     Text("시연 카탈로그")
@@ -205,6 +221,14 @@ struct ItemDetailScreen: View {
                             .frame(maxWidth: .infinity, minHeight: 50)
                     }.buttonStyle(.borderedProminent).tint(Brand.brown)
                 }
+                if let route = VerifiedMarketNavigation.directions(travelMode: .walking) {
+                    Link(destination: route.url) {
+                        Label("가락시장 위치만 확인", systemImage: "mappin.and.ellipse")
+                            .frame(maxWidth: .infinity, minHeight: 48)
+                    }
+                    .buttonStyle(.bordered)
+                    .accessibilityHint("실매장 주소 확인 전에는 가락시장 기준 위치만 안내합니다")
+                }
                 Text("실제 판매가·재고·배송 가능 여부가 검증되지 않아 주문 및 결제 버튼을 제공하지 않습니다.")
                     .font(.caption).foregroundStyle(.secondary)
             }.padding(18)
@@ -217,10 +241,12 @@ struct ItemDetailScreen: View {
 
 struct DemoCartScreen: View {
     @EnvironmentObject var store: CatalogStore
+    @EnvironmentObject var live: VerifiedCatalogStore
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 14) {
+                    VerifiedLiveCartSection()
                     DemoNotice()
                     if store.cartItems.isEmpty {
                         EmptyState(title: "장바구니가 비었습니다", systemName: "cart", detail: "메뉴에서 시연용 상품을 담아보세요.")
@@ -273,8 +299,20 @@ struct OrdersScreen: View {
                 Spacer()
                 Image(systemName: "receipt").font(.system(size: 48)).foregroundStyle(Brand.brown)
                 Text("실제 주문 내역은 없습니다").font(.title3.bold())
-                Text("시연 앱에서는 주문을 접수하거나 결제하지 않습니다.")
+                Text("실주문·결제·배송 API는 아직 고객 로그인과 연결되지 않았습니다.")
                     .font(.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                NavigationLink {
+                    VerifiedDeliveryStatusScreen()
+                } label: {
+                    Label("배송 조회 화면",systemImage:"shippingbox.and.arrow.backward")
+                        .frame(maxWidth:.infinity,minHeight:52)
+                }.buttonStyle(.borderedProminent).tint(Brand.brown)
+                if let url=URL(string:"https://garakmall.lexid.site/mypage.html") {
+                    Link(destination:url) {
+                        Label("홈페이지에서 본인 주문 확인",systemImage:"safari")
+                            .frame(maxWidth:.infinity,minHeight:50)
+                    }.buttonStyle(.bordered).tint(Brand.brown)
+                }
                 Spacer()
             }.padding(20).frame(maxWidth: .infinity).background(Brand.canvas)
                 .navigationTitle("주문내역")
@@ -284,6 +322,7 @@ struct OrdersScreen: View {
 
 struct MineScreen: View {
     @EnvironmentObject var store: CatalogStore
+    @EnvironmentObject var live: VerifiedCatalogStore
     var onBrowse: () -> Void
     var body: some View {
         NavigationStack {
@@ -294,6 +333,7 @@ struct MineScreen: View {
                     Text("가락한상 오더").font(.title2.bold())
                     Text("로그인과 회원 기능은 정식 출시 시 제공됩니다.")
                         .font(.subheadline).foregroundStyle(.secondary)
+                    VerifiedLiveHomeTile()
                     DemoNotice()
                     VStack(alignment: .leading, spacing: 14) {
                         Label("찜한 메뉴: \(store.savedItems.count)종", systemImage: "heart")
@@ -304,6 +344,16 @@ struct MineScreen: View {
                     Button(action: onBrowse) { Label("전체 메뉴 보기", systemImage: "square.grid.2x2")
                         .frame(maxWidth: .infinity, minHeight: 52) }
                         .buttonStyle(.borderedProminent).tint(Brand.brown)
+                    if let route = VerifiedMarketNavigation.directions(travelMode: .driving) {
+                        Link(destination: route.url) {
+                            Label("가락시장 길찾기 · Google 지도", systemImage: "map")
+                                .frame(maxWidth: .infinity, minHeight: 52)
+                        }
+                        .buttonStyle(.bordered).tint(Brand.brown)
+                        .accessibilityHint("매장 좌표가 승인되지 않아 실제 판매점이 아닌 가락시장 기준으로 안내합니다")
+                    }
+                    Text("매장 좌표 및 고객 배송지는 아직 검증되지 않아 경로에 포함하지 않습니다.")
+                        .font(.caption).foregroundStyle(.secondary)
                     Text("본 앱은 iOS 시연용 네이티브 프로젝트입니다.\nAI 콘셉트 메뉴 이미지 · 판매 승인 전 상품 표시")
                         .font(.caption).foregroundStyle(.secondary).multilineTextAlignment(.center)
                 }.padding(18)
