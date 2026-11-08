@@ -27,14 +27,18 @@ class FakeDb:
 
 class MobileCatalogAPITests(unittest.TestCase):
     def test_verified_release_view_and_all_safety_predicates_mandatory(self):
-        s=m.PUBLISHED_SQL
+        from pathlib import Path
+        s=(Path(__file__).resolve().parents[1] / "db/migrations" /
+           "20261108_garak_catalog_public_ro_view.sql").read_text(encoding="utf-8")
         for required in ("garak_partner_release_ready","r.release_ready IS TRUE",
                          "p.status='approved'","c.status='approved'",
                          "p.visible IS TRUE","p.purchasable IS TRUE",
                          "p.image_verified IS TRUE","p.stock > 0",
                          "p.price_krw > 0","p.image_ref ~* '^https://'",
-                         "LIMIT 501"):
+                         "REVOKE ALL ON garak_catalog_api.approved_products"):
             self.assertIn(required,s)
+        self.assertIn("FROM garak_catalog_api.approved_products",m.PUBLISHED_SQL)
+        self.assertIn("LIMIT 501",m.PUBLISHED_SQL)
 
     def test_release_empty_returns_no_fabricated_products_and_never_enables_checkout(self):
         data=m._serialize([])
@@ -77,7 +81,7 @@ class MobileCatalogAPITests(unittest.TestCase):
         with patch.object(m,"use_postgres",return_value=True):
             result=m.get_snapshot(lambda:db)
         self.assertEqual(result["count"],1)
-        self.assertIn("garak_partner_release_ready",db.queries[0])
+        self.assertIn("garak_catalog_api.approved_products",db.queries[0])
 
     def test_etag_refresh_changes_when_price_or_new_merchant_changes(self):
         first=m._serialize([row()])
