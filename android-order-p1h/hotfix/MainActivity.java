@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.graphics.Bitmap;
@@ -22,6 +24,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.content.ActivityNotFoundException;
 import android.widget.*;
 import android.text.InputFilter;
 import android.text.InputType;
@@ -263,6 +268,21 @@ public class MainActivity extends Activity {
     private String selectedRemoteMarketId="", selectedRemoteMarketName="";
     private String selectedRemoteMerchantName="";
     private JSONObject selectedRemoteProduct;
+    // The official online catalog is strictly separate from 47 original AI demo products.
+    private LiveCatalogClient verifiedApi;
+    private LiveCatalogClient.Snapshot verifiedSnapshot;
+    private String verifiedStatus="공식 입점 상품 동기화 중", verifiedSearch="", selectedVerifiedSku="";
+    private int verifiedQuantity=1;
+    private final Map<String,Integer> verifiedCart=new LinkedHashMap<>();
+    private final Handler verifiedUi=new Handler(Looper.getMainLooper());
+    private final Runnable verifiedPoll=new Runnable(){
+        @Override public void run(){
+            if(!isFinishing() && !isDestroyed()) {
+                refreshVerifiedCatalog();
+                verifiedUi.postDelayed(this,30000);
+            }
+        }
+    };
     private int remoteRequestSerial=0;
     private int addressRequestSerial=0, authRequestSerial=0, apiRequestSerial=0;
     // Bounded thumbnail cache avoids decoding 47 full-resolution images on each navigation.
@@ -296,6 +316,19 @@ public class MainActivity extends Activity {
         }
         prefs = getSharedPreferences("order_preview",MODE_PRIVATE);
         mobileApi = new MobileApiClient(this);
+        verifiedApi = new LiveCatalogClient();
+        try {
+            JSONObject stored=new JSONObject(previewString("verified_preview_cart","{}"));
+            java.util.Iterator<String> keys=stored.keys();
+            while(keys.hasNext()){
+                String key=keys.next();
+                int qty=stored.optInt(key,0);
+                if(key.matches("[A-Za-z0-9_-]{3,100}") && qty>0 && qty<=99)
+                    verifiedCart.put(key,qty);
+            }
+        } catch(org.json.JSONException ignored) {
+            verifiedCart.clear();
+        }
         for (int i=0;i<cart.length;i++) {
             cart[i]=Math.max(0,Math.min(99,previewInt("q"+i,0)));
             if (previewBoolean("fav"+i,false)) favorites.add(i);
@@ -412,7 +445,69 @@ public class MainActivity extends Activity {
         prefs.edit().putString("fulfillment",fulfillment).apply();
         render();
     }
-    private void open(String p){page=p;render();}
+    @Override protected void onResume(){
+        super.onResume();
+        verifiedUi.removeCallbacks(verifiedPoll);
+        verifiedUi.post(verifiedPoll);
+    }
+    @Override protected void onPause(){
+        verifiedUi.removeCallbacks(verifiedPoll);
+        super.onPause();
+    }
+    private void refreshVerifiedCatalog(){
+        if(verifiedApi==null)return;
+        verifiedApi.refresh((snapshot,error)->{
+            if(isFinishing() || isDestroyed())return;
+            String previous=verifiedSnapshot==null?"":verifiedSnapshot.revision;
+            verifiedSnapshot=snapshot;
+            verifiedStatus=error==null?"공식 입점 정보 최신 확인 완료":error;
+            if(("live_catalog".equals(page) || "live_detail".equals(page) ||
+                "cart".equals(page) || "home".equals(page)) &&
+                (error!=null || snapshot==null || !String.valueOf(snapshot.revision).equals(String.valueOf(previous))))
+                render();
+        });
+    }
+    private int verifiedCount(){
+        int qty=0;for(Integer n:verifiedCart.values())qty+=n;return qty;
+    }
+    private void saveVerifiedCart(){
+        JSONObject o=new JSONObject();
+        for(Map.Entry<String,Integer> e:verifiedCart.entrySet()){
+            try{o.put(e.getKey(),e.getValue());}catch(org.json.JSONException ignored){}
+        }
+        prefs.edit().putString("verified_preview_cart",o.toString()).apply();
+    }
+    private LiveCatalogClient.Item verifiedItem(String sku){
+        return verifiedSnapshot==null?null:verifiedSnapshot.find(sku);
+    }
+    private void addVerifiedItem(LiveCatalogClient.Item item,int n){
+        if(verifiedItem(item.sku)==null)return;
+        int old=verifiedCart.containsKey(item.sku)?verifiedCart.get(item.sku):0;
+        verifiedCart.put(item.sku,Math.max(1,Math.min(item.stock,Math.min(99,old+n))));
+        saveVerifiedCart();open("cart");
+    }
+    private void adjustVerified(String sku,int delta){
+        int old=verifiedCart.containsKey(sku)?verifiedCart.get(sku):0;
+        LiveCatalogClient.Item item=verifiedItem(sku);
+        if(delta>0 && item==null)return;
+        int max=item==null?99:Math.min(99,item.stock);
+        int next=Math.max(0,Math.min(max,old+delta));
+        if(next==0)verifiedCart.remove(sku);else verifiedCart.put(sku,next);
+        saveVerifiedCart();render();
+    }
+    private void openOfficialMemberPage(){
+        Intent i=new Intent(Intent.ACTION_VIEW,
+            Uri.parse("https://garakmall.lexid.site/mypage.html"));
+        try{startActivity(i);}catch(ActivityNotFoundException e){
+            new AlertDialog.Builder(this).setTitle("브라우저를 열 수 없습니다")
+                .setMessage("홈페이지 주문 조회는 브라우저 설치가 필요합니다.")
+                .setPositiveButton("확인",null).show();
+        }
+    }
+    private void open(String p){
+        page=p;render();
+        if("live_catalog".equals(p))refreshVerifiedCatalog();
+    }
     private void render(){
         // Every navigation invalidates replies belonging to detached views.
         ++remoteRequestSerial; ++addressRequestSerial; ++authRequestSerial; ++apiRequestSerial;
@@ -434,6 +529,9 @@ public class MainActivity extends Activity {
         content=column();content.setPadding(d(18),d(15),d(18),d(20));sc.addView(content);
         switch(page){
             case "products": products(); break;
+            case "live_catalog": verifiedCatalogPage(); break;
+            case "live_detail": verifiedDetailPage(); break;
+            case "delivery_status": deliveryStatusPage(); break;
             case "store": store(); break;
             case "cart": cart(); break;
             case "product_detail": productDetail(); break;
@@ -456,7 +554,7 @@ public class MainActivity extends Activity {
         ImageView icon=photo("order_brand_512",48,48);bar.addView(icon);icon.setOnClickListener(v->open("home"));
         LinearLayout labels=column();labels.setPadding(d(10),0,0,0);bar.addView(labels,new LinearLayout.LayoutParams(0,-2,1));
         labels.addView(text("가락한상 오더",20,INK,true));labels.addView(text("시장에서 식탁까지, 간편하게",11,MUTED,false));
-        TextView bag=pill("장바구니 "+count(),true,()->open("cart"));bar.addView(bag,lp(-2,48));
+        TextView bag=pill("장바구니 "+(count()+verifiedCount()),true,()->open("cart"));bar.addView(bag,lp(-2,48));
         LinearLayout location=row();location.setPadding(d(18),d(7),d(18),d(8));
         location.setBackgroundColor(WHITE);app.addView(location,lp(-1,52));
         LinearLayout block=column();location.addView(block,new LinearLayout.LayoutParams(0,-2,1));
@@ -468,7 +566,7 @@ public class MainActivity extends Activity {
     }
     private void footer(){
         LinearLayout bar=row();bar.setPadding(d(10),d(5),d(10),d(8));bar.setBackground(bordered(WHITE,LINE,0));app.addView(bar,lp(-1,66));
-        String[][] nav={{"⌂","홈","home"},{"▦","메뉴","products"},{"▤","장바구니","cart"},{"☷","주문내역","orders"},{"◉","마이","my"}};
+        String[][] nav={{"⌂","홈","home"},{"▦","메뉴","live_catalog"},{"▤","장바구니","cart"},{"☷","주문내역","orders"},{"◉","마이","my"}};
         for(String[] item:nav){LinearLayout segment=column();segment.setGravity(Gravity.CENTER);TextView ico=text(item[0],22,page.equals(item[2])?RED:MUTED,true);ico.setGravity(Gravity.CENTER);segment.addView(ico);TextView t=text(item[1],11,page.equals(item[2])?RED:MUTED,true);t.setGravity(Gravity.CENTER);segment.addView(t);bar.addView(segment,new LinearLayout.LayoutParams(0,-1,1));segment.setContentDescription(item[1]+" 탭");segment.setFocusable(true);segment.setOnClickListener(v->open(item[2]));}
     }
     private void section(String title,String sub){TextView h=text(title,22,INK,true);content.addView(h,lp(-1,34));if(sub!=null){TextView s=text(sub,13,MUTED,false);s.setLineSpacing(d(2),1);content.addView(s,lp(-1,-2));}gap(content,14);}
@@ -484,7 +582,9 @@ public class MainActivity extends Activity {
         section("시장·매장 둘러보기","실제 입점 인증 및 배달 권역은 연결 전입니다");
         merchantCard();
         gap(content,10);
-        content.addView(button("연결된 시장·매장 둘러보기 · 개발 P1",GREEN,()->open("remote_catalog")),lp(-1,49));
+        content.addView(button("공식 입점 상품 · 서버 실시간 확인",RED,()->open("live_catalog")),lp(-1,52));
+        gap(content,8);
+        content.addView(button("개발용 시장·매장 목록",GREEN,()->open("remote_catalog")),lp(-1,49));
         gap(content,18);
         section("어떤 메뉴를 찾으세요?","가락한상 오더 47종 메뉴를 둘러보세요");
         LinearLayout cats=row();content.addView(cats,lp(-1,150));String[] tags={"오늘의 한상","회·모둠","광양수산 인기"};String[] files={"menu_01.jpg","menu_04.jpg","menu_11.jpg"};
@@ -525,7 +625,8 @@ public class MainActivity extends Activity {
         gap(content,8);content.addView(button("장바구니 보기",GREEN,()->open("cart")),lp(-1,48));
     }
     private void categoryBar(){HorizontalScrollView hs=new HorizontalScrollView(this);hs.setHorizontalScrollBarEnabled(false);LinearLayout row=row();hs.addView(row);for(String kind:kinds){TextView b=pill(kind,category.equals(kind),()->{if(!category.equals(kind))query="";category=kind;render();});row.addView(b,lp(-2,48));sideMargins(b,0,0,8,0);}content.addView(hs,lp(-1,52));gap(content,15);}
-    private void products(){section("상품 탐색","47개 메뉴 표시 · 가격은 제공된 목록 기준 · 실주문 불가");categoryBar();
+    private void products(){section("시연 메뉴 탐색","47개 AI 메뉴 참고 자료 · 실제 상품을 보려면 공식 입점을 선택하세요");
+        content.addView(button("공식 입점 상품 · 실시간 조회",RED,()->open("live_catalog")),lp(-1,52));gap(content,14);categoryBar();
         EditText search=new EditText(this);search.setSingleLine(true);search.setHint("상품명 검색");search.setTextSize(15);search.setPadding(d(14),d(8),d(14),d(8));search.setBackground(bordered(WHITE,LINE,14));search.setFilters(new InputFilter[]{new InputFilter.LengthFilter(80)});search.setText(query);content.addView(search,lp(-1,48));gap(content,13);
         LinearLayout results=column();content.addView(results,lp(-1,-2));renderResults(results);
         search.addTextChangedListener(new TextWatcher(){public void beforeTextChanged(CharSequence s,int st,int c,int a){}public void onTextChanged(CharSequence s,int st,int before,int count){query=s.toString();renderResults(results);}public void afterTextChanged(Editable e){}});
@@ -626,9 +727,12 @@ public class MainActivity extends Activity {
         content.addView(button("상품 목록으로",0xFF77645F,()->open("products")),lp(-1,48));
     }
 
-    private void cart(){section("장바구니", "선택한 상품을 확인하세요. 실제 주문 요청은 전송되지 않습니다.");
+    private void cart(){section("장바구니", "서버 승인 상품과 시연 상품을 구분해 보여줍니다. 실제 주문 접수는 아직 불가합니다.");
         fulfillmentChooser();gap(content,14);
-        int total=count();if(total==0){TextView msg=text("장바구니가 비었습니다.\n상품 목록에서 재료를 담아보세요.",16,MUTED,false);msg.setGravity(Gravity.CENTER);content.addView(msg,lp(-1,120));content.addView(button("상품 둘러보기",RED,()->open("products")),lp(-1,52));return;}
+        int total=count();if(total==0 && verifiedCart.isEmpty()){TextView msg=text("장바구니가 비었습니다.\n상품 목록에서 재료를 담아보세요.",16,MUTED,false);msg.setGravity(Gravity.CENTER);content.addView(msg,lp(-1,120));content.addView(button("상품 둘러보기",RED,()->open("products")),lp(-1,52));return;}
+        renderVerifiedCart();
+        if(total==0)return;
+        section("참고 메뉴 장바구니","앱에 저장된 시연용 장바구니 · 결제 불가");
         for(int i=0;i<names.length;i++)if(cart[i]>0){final int id=i;LinearLayout cell=row();cell.setPadding(d(12),d(12),d(12),d(12));cell.setBackground(bordered(WHITE,LINE,14));content.addView(cell,lp(-1,74));sideMargins(cell,0,0,0,9);
            TextView t=text(names[i]+"\n"+won(prices[i])+" × "+cart[i]+" = "+won((long)prices[i]*cart[i]),13,INK,true);cell.addView(t,new LinearLayout.LayoutParams(0,-1,1));TextView minus=pill("−",false,()->{cart[id]=Math.max(0,cart[id]-1);save();render();});cell.addView(minus,lp(-2,48));TextView num=text("  "+cart[i]+"  ",17,INK,true);cell.addView(num);TextView plus=pill("+",true,()->{cart[id]=Math.min(99,cart[id]+1);save();render();});cell.addView(plus,lp(-2,48));}
         gap(content,15);TextView note=text("선택 수량 "+total+"개\n상품 합계 "+won(cartTotal())+"\n\n배송비·할인 전 금액입니다. 실제 주문·결제·배송 접수는 제공되지 않습니다.",15,INK,true);content.addView(note);
@@ -912,11 +1016,163 @@ public class MainActivity extends Activity {
         wrap.setBackground(bordered(WHITE,LINE,13));content.addView(wrap,lp(-1,-2));
         wrap.addView(text(label,12,MUTED,false));wrap.addView(text(value,15,INK,true));gap(content,9);
     }
+    private void verifiedCatalogPage(){
+        section("공식 입점 상품","홈페이지 승인 DB 연동 · 앱 실행/복귀 후 갱신 · 30초 자동 확인");
+        TextView badge=text(verifiedStatus,13,verifiedSnapshot==null?RED:GREEN,true);
+        content.addView(badge,lp(-1,-2));gap(content,10);
+        content.addView(button("공식 상품 새로고침",GREEN,this::refreshVerifiedCatalog),lp(-1,50));gap(content,14);
+        final LiveCatalogClient.Snapshot data=verifiedSnapshot;
+        if(data==null){
+            content.addView(text("최신 상품 목록 확인 중입니다. 승인되지 않은 상인이나 오래된 상품 정보를 대신 표시하지 않습니다.",14,MUTED,false),lp(-1,-2));
+            gap(content,13);content.addView(button("시연 메뉴 47종 둘러보기",RED,()->open("products")),lp(-1,52));
+            // Refresh is driven by onResume/open and 30-second poll.
+            // Never restart HTTP from render(): error responses caused an
+            // infinite UI rebuild loop and swallowed button taps on Android 16.
+            return;
+        }
+        if(data.items.isEmpty()){
+            content.addView(text("현재 판매 승인이 완료된 상품이 없습니다. 신규 상인과 상품이 승인되면 이 목록이 자동으로 갱신됩니다.",15,MUTED,false),lp(-1,-2));
+            gap(content,13);content.addView(button("시연 메뉴 47종 둘러보기",RED,()->open("products")),lp(-1,52));
+            return;
+        }
+        content.addView(text("공식 검증 매장 "+new HashSet<String>(){{for(LiveCatalogClient.Item i:data.items)add(i.merchant);}}.size()
+           +"곳 · 상품 "+data.items.size()+"종",15,INK,true),lp(-1,-2));gap(content,11);
+        EditText search=new EditText(this);search.setSingleLine(true);search.setHint("매장명 또는 실상품 검색");
+        search.setTextSize(15);search.setPadding(d(12),d(7),d(12),d(7));search.setBackground(bordered(WHITE,LINE,13));
+        search.setText(verifiedSearch);content.addView(search,lp(-1,49));gap(content,12);
+        LinearLayout results=column();content.addView(results,lp(-1,-2));
+        renderVerifiedResults(results);
+        search.addTextChangedListener(new TextWatcher(){
+            public void beforeTextChanged(CharSequence s,int st,int c,int a){}
+            public void onTextChanged(CharSequence t,int start,int before,int count){
+                verifiedSearch=t.toString();renderVerifiedResults(results);
+            }
+            public void afterTextChanged(Editable e){}
+        });
+    }
+    private void renderVerifiedResults(LinearLayout root){
+        root.removeAllViews();
+        if(verifiedSnapshot==null)return;
+        String q=verifiedSearch.trim().toLowerCase(Locale.ROOT);
+        int shown=0;
+        for(LiveCatalogClient.Item item:verifiedSnapshot.items){
+            if(!q.isEmpty()&&!item.name.toLowerCase(Locale.ROOT).contains(q)&&
+                 !item.merchant.toLowerCase(Locale.ROOT).contains(q))continue;
+            LinearLayout card=column();card.setPadding(d(15),d(14),d(15),d(14));
+            card.setBackground(bordered(WHITE,LINE,16));root.addView(card,lp(-1,-2));sideMargins(card,0,0,0,12);
+            card.addView(text("검증 매장 · "+item.merchant,12,GREEN,true));gap(card,5);
+            card.addView(text(item.name,18,INK,true));gap(card,4);
+            card.addView(text(won(item.priceKrw)+" · 현재 재고 "+item.stock+"개",15,RED,true));
+            gap(card,10);
+            card.addView(button("상세 페이지",GREEN,()->{selectedVerifiedSku=item.sku;verifiedQuantity=1;open("live_detail");}),lp(-1,49));
+            shown++;
+        }
+        if(shown==0)root.addView(text("검색 조건에 맞는 공식 상품이 없습니다.",14,MUTED,false));
+    }
+    private void verifiedDetailPage(){
+        LiveCatalogClient.Item item=verifiedItem(selectedVerifiedSku);
+        if(item==null){
+            section("상품 상세","해당 상품은 현재 판매 승인 목록에 없습니다.");
+            content.addView(button("공식 상품으로 돌아가기",RED,()->open("live_catalog")),lp(-1,52));
+            return;
+        }
+        section("실상품 상세","검증된 상품 정보 · 최신 상품 가격은 주문 직전 서버 재검증");
+        LinearLayout hero=column();hero.setPadding(d(16),d(15),d(16),d(18));
+        hero.setBackground(bordered(WHITE,LINE,18));content.addView(hero,lp(-1,-2));
+        ImageView photo=new ImageView(this);
+        photo.setScaleType(ImageView.ScaleType.CENTER_CROP);photo.setBackgroundColor(0xFFEFEFE7);
+        hero.addView(photo,lp(-1,225));loadVerifiedPhoto(photo,item.imageUrl,item.sku);gap(hero,13);
+        hero.addView(text(item.name,22,INK,true));gap(hero,7);
+        hero.addView(text(won(item.priceKrw),22,RED,true));gap(hero,8);
+        hero.addView(text("판매처: "+item.merchant+" · 카테고리: "+item.category,13,INK,false));
+        if(item.description!=null&&!item.description.trim().isEmpty()){
+            gap(hero,8);hero.addView(text(item.description,14,MUTED,false));
+        }
+        gap(content,13);infoCell("검증 재고",item.stock+"개");
+        infoCell("배송과 주문","인증·결제·배송 연동 검증 전까지 실제 주문은 접수하지 않습니다.");
+        gap(content,14);
+        content.addView(text("장바구니 미리 담을 수량",15,INK,true));
+        LinearLayout counter=row();counter.setGravity(Gravity.CENTER_VERTICAL);content.addView(counter,lp(-1,54));
+        counter.addView(pill("−",false,()->{verifiedQuantity=Math.max(1,verifiedQuantity-1);render();}),lp(-2,48));
+        TextView n=text("     "+verifiedQuantity+"개     ",17,INK,true);counter.addView(n);
+        counter.addView(pill("+",true,()->{verifiedQuantity=Math.min(item.stock,Math.min(99,verifiedQuantity+1));render();}),lp(-2,48));
+        gap(content,13);
+        content.addView(button("장바구니에 미리 담기",RED,()->addVerifiedItem(item,verifiedQuantity)),lp(-1,54));gap(content,10);
+        content.addView(button("공식 상품 목록",GREEN,()->open("live_catalog")),lp(-1,48));
+    }
+    private void loadVerifiedPhoto(ImageView target,String url,String sku){
+        if(url==null||!url.startsWith("https://"))return;
+        Bitmap cached=thumbnails.get(url);if(cached!=null){target.setImageBitmap(cached);return;}
+        new Thread(()->{
+            java.net.HttpURLConnection con=null;
+            try{
+                con=(java.net.HttpURLConnection)new java.net.URL(url).openConnection();
+                con.setConnectTimeout(5000);con.setReadTimeout(7000);con.setInstanceFollowRedirects(false);
+                if(con.getResponseCode()!=200)return;
+                if(!con.getContentType().toLowerCase(Locale.ROOT).startsWith("image/"))return;
+                if(con.getContentLength()>5*1024*1024)return;
+                try(InputStream stream=con.getInputStream()){
+                    BitmapFactory.Options options=new BitmapFactory.Options();
+                    options.inSampleSize=2;
+                    final Bitmap bitmap=BitmapFactory.decodeStream(stream,null,options);
+                    if(bitmap==null)return;
+                    runOnUiThread(()->{
+                        if(isFinishing()||isDestroyed()||!sku.equals(selectedVerifiedSku)||!
+                                "live_detail".equals(page))return;
+                        thumbnails.put(url,bitmap);target.setImageBitmap(bitmap);
+                    });
+                }
+            }catch(Exception ignored){/* fail closed: never show a fake photo */}
+            finally{if(con!=null)con.disconnect();}
+        },"garak-photo").start();
+    }
+    private void renderVerifiedCart(){
+        if(verifiedCart.isEmpty())return;
+        section("공식 상품 장바구니 · 미리보기","현재 서버 가격과 재고 기준. 결제·재고 차감은 실행하지 않습니다.");
+        long sum=0;
+        for(Map.Entry<String,Integer> e:new ArrayList<>(verifiedCart.entrySet())){
+            String sku=e.getKey();int qty=e.getValue();
+            LiveCatalogClient.Item item=verifiedItem(sku);
+            LinearLayout card=column();card.setPadding(d(13),d(13),d(13),d(13));
+            card.setBackground(bordered(WHITE,LINE,14));content.addView(card,lp(-1,-2));sideMargins(card,0,0,0,9);
+            if(item==null){
+                card.addView(text(sku+" · 최신 승인 목록에서 제거됐거나 서버 연결 중입니다.",13,RED,true));
+                card.addView(button("미리 담은 상품 삭제",GREEN,()->adjustVerified(sku,-99)),lp(-1,46));continue;
+            }
+            card.addView(text(item.name,16,INK,true));gap(card,6);
+            card.addView(text("현재 가격 "+won(item.priceKrw)+" · 수량 "+qty+"개",13,MUTED,false));gap(card,8);
+            LinearLayout buttons=row();card.addView(buttons,lp(-1,48));
+            buttons.addView(pill("−",false,()->adjustVerified(sku,-1)),new LinearLayout.LayoutParams(0,-1,1));
+            buttons.addView(pill("+",true,()->adjustVerified(sku,1)),new LinearLayout.LayoutParams(0,-1,1));
+            sum+=(long)item.priceKrw*qty;
+        }
+        gap(content,12);
+        content.addView(text("공식 상품 참고 소계: "+won(sum),19,RED,true));gap(content,10);
+        content.addView(text("배송비·쿠폰·실결제 금액은 주문 API 검증 전 확정할 수 없습니다.",12,MUTED,false));
+        gap(content,12);
+        content.addView(button("실주문 기능 검증 중 · 구매 불가",0xFF8B817D,
+            ()->new AlertDialog.Builder(this).setTitle("안전 결제 연결 준비 중")
+              .setMessage("홈페이지와 상품 동기화는 작동합니다. 결제 및 배차는 가락한상 운영 검증 이후 제공됩니다.")
+              .setPositiveButton("확인",null).show()),lp(-1,50));gap(content,14);
+    }
     private void orders(){
-        section("주문 내역","실제 주문 서버 미연동 · 주문 정보 없음");
-        TextView empty=text("아직 주문한 내역이 없습니다.\n현재 장바구니는 시연 기능이며 실제 주문으로 처리되지 않습니다.",15,MUTED,false);
-        empty.setGravity(Gravity.CENTER);content.addView(empty,lp(-1,155));
-        content.addView(button("상품 둘러보기",RED,()->open("products")),lp(-1,52));
+        section("주문 조회","고객 본인 확인이 필요한 개인정보 영역입니다.");
+        LinearLayout card=column();card.setPadding(d(16),d(18),d(16),d(18));
+        card.setBackground(bordered(WHITE,LINE,18));content.addView(card,lp(-1,-2));
+        card.addView(text("▤  내 주문내역",19,INK,true));gap(card,7);
+        card.addView(text("네이티브 주문 API에 사용자 인증이 연결되기 전까지 다른 고객의 주문 정보를 요청하거나 표시하지 않습니다.",13,MUTED,false));
+        gap(content,15);
+        content.addView(button("홈페이지에서 내 주문 확인",GREEN,this::openOfficialMemberPage),lp(-1,52));gap(content,10);
+        content.addView(button("배송 조회",RED,()->open("delivery_status")),lp(-1,52));
+        gap(content,14);
+        content.addView(text("현재 Android 주문 엔진은 시연용이며, 실제 결제·운송장·라이더 GPS는 기록되지 않습니다.",12,MUTED,false));
+    }
+    private void deliveryStatusPage(){
+        section("배송 조회","주문 소유권 확인 후에만 배송정보를 표시합니다.");
+        content.addView(text("배송 중인 주문을 확인할 수 없습니다. 승인된 실주문 API와 라이더 운송장 연동이 완료되면 이 화면에서 수령 상태를 조회할 수 있습니다.",15,MUTED,false),lp(-1,-2));
+        gap(content,16);
+        content.addView(button("홈페이지 주문·배송 상태 확인",GREEN,this::openOfficialMemberPage),lp(-1,52));gap(content,10);
+        content.addView(button("주문내역 돌아가기",RED,()->open("orders")),lp(-1,52));
     }
     private void favoritesPage(){
         section("찜한 상품",favorites.size()+"개 · 이 기기에서만 보관됩니다");
@@ -925,6 +1181,28 @@ public class MainActivity extends Activity {
             gap(content,12);content.addView(button("상품 보기",RED,()->open("products")),lp(-1,48));return;
         }
         for(int i=0;i<names.length;i++)if(favorites.contains(i))addProduct(i);
+    }
+    /** Import of GARAKLAND validated navigation behavior: unverified stores
+     * are never treated as precise destinations. Launches official Google Maps
+     * directions only to the verified public Garak market address. */
+    private void openMarketDirections(){
+        String destination="서울특별시 송파구 양재대로 932 가락시장";
+        Uri url=Uri.parse("https://www.google.com/maps/dir/").buildUpon()
+            .appendQueryParameter("api","1")
+            .appendQueryParameter("destination",destination)
+            .appendQueryParameter("travelmode","driving")
+            .appendQueryParameter("dir_action","navigate").build();
+        try {
+            Intent directions = new Intent();
+            directions.setAction(Intent.ACTION_VIEW);
+            directions.setData(url);
+            startActivity(directions);
+        } catch(ActivityNotFoundException failure) {
+            new AlertDialog.Builder(this)
+                .setTitle("길찾기 앱을 열 수 없습니다")
+                .setMessage("지도 앱 설치 상태 또는 브라우저 설정을 확인해 주세요.")
+                .setPositiveButton("확인",null).show();
+        }
     }
     private void myPage(){
         section("마이 가락한상","회원 로그인·주소 저장·실주문 조회는 아직 제공되지 않습니다.");
@@ -935,6 +1213,7 @@ public class MainActivity extends Activity {
         content.addView(button("Google 로그인 검증 준비 (P1E)",RED,()->open("auth_preview")),lp(-1,48));gap(content,10);
         content.addView(button("시장·매장·상품 API 상태 (P1)",0xFF6B514B,()->open("api")),lp(-1,48));gap(content,10);
         content.addView(button("개발 서버 시장·매장·상품 탐색 (P1)",GREEN,()->open("remote_catalog")),lp(-1,48));gap(content,10);
+        content.addView(button("🧭 가락시장 길찾기 (GPS 미검증 매장 제외)",GREEN,this::openMarketDirections),lp(-1,50));gap(content,10);
         content.addView(button("찜한 상품 · "+favorites.size()+"개",RED,()->open("favorites")),lp(-1,48));
         gap(content,10);content.addView(button("서비스 및 개인정보 안내",0xFF6B514B,()->open("info")),lp(-1,48));
         gap(content,13);content.addView(text("테스트용 데이터는 기기 내에만 보관됩니다. 카드 번호, 휴대폰 번호, 상세 주소 등은 수집하지 않습니다.",12,MUTED,false));
@@ -944,7 +1223,10 @@ public class MainActivity extends Activity {
         content.addView(button("상품 보러가기",RED,()->open("products")),lp(-1,52));
     }
     @Override public void onBackPressed(){
-        if(page.equals("checkout"))open("cart");
+        if(page.equals("live_detail"))open("live_catalog");
+        else if(page.equals("live_catalog"))open("home");
+        else if(page.equals("delivery_status"))open("orders");
+        else if(page.equals("checkout"))open("cart");
         else if(page.equals("product_detail"))open("products");
         else if(page.equals("remote_product_detail"))open("remote_catalog");
         else if(page.equals("api")||page.equals("address")||page.equals("remote_catalog")||page.equals("auth_preview"))open("my");

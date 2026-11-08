@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#982c28">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="가락한상 오더 — 고객·입점상인·라이더·관리자 통합 기능 검증. 합성 테스트 전용입니다.">
+  <title>가락한상 오더 | 통합 개발 테스트</title>
+  <link rel="icon" href="/assets/images/icon-192.png">
+  <link rel="manifest" href="/order-lab/manifest.webmanifest">
+  <link rel="stylesheet" href="/order-lab/app.css">
+  <script defer src="/order-lab/app.js"></script>
+</head>
+<body>
+<header class="bar">
+  <div class="brand"><span class="brand-mark">한</span><span><strong>가락한상 <em>ORDER</em></strong><small>시장에서 식탁까지, 하나의 흐름</small></span></div>
+  <div class="header-actions"><span class="pill warn"><span class="red-dot"></span> TEST LAB · 실결제 불가</span><span id="who" class="who">미로그인</span><button id="logout" class="ghost" type="button" hidden>로그아웃</button></div>
+</header>
+<section class="login-layout" id="login-screen">
+  <div class="login-story">
+    <div class="eyebrow">GARAK HANSANG · COMMERCE PLATFORM</div>
+    <h1>주문부터 배달 완료까지,<br><span>역할에 맞게 연결됩니다.</span></h1>
+    <p>고객의 장바구니, 상인의 주문 접수, 라이더의 배차, 관리자의 관제까지 같은 테스트 주문을 따라가세요.</p>
+    <div class="feature-pills"><span>01 고객 주문</span><span>02 상인 접수</span><span>03 라이더 배차</span><span>04 운영 관제</span></div>
+    <div class="lab-notice"><strong>합성 데이터 전용</strong><span>실제 판매가격, 식품 재고, 입점 확인, Stripe 결제 및 실제 배송을 의미하지 않습니다.</span></div>
+  </div>
+  <form id="login-form" class="login-form">
+    <div class="eyebrow">SECURE LAB ACCESS</div>
+    <h2>테스트 계정 로그인</h2><p>실행 터미널에 표시된 임시 계정 정보를 사용하세요.</p>
+    <label for="username">계정 역할</label>
+    <select id="username" required><option value="customer">고객 · Customer</option><option value="merchant">입점상인 · Merchant</option><option value="rider">라이더 · Rider</option><option value="ops">통합관리자 · Admin</option></select>
+    <label for="password">테스트 비밀번호</label><input id="password" type="password" required autocomplete="current-password" placeholder="로컬 테스트 계정의 비밀번호">
+    <button class="primary full" type="submit">대시보드 입장 <span aria-hidden="true">→</span></button>
+    <div class="auth-message" id="auth-message" role="alert"></div>
+    <small>로컬 주소 127.0.0.1에서만 실행 · 테스트 데이터만 저장</small>
+  </form>
+</section>
+<div id="workspace" class="workspace" hidden>
+  <aside class="sidebar">
+    <div class="sidebar-kicker">OPERATIONS · P3 LAB</div>
+    <strong id="role-title" class="sidebar-title">통합 작업공간</strong>
+    <p id="role-description" class="sidebar-description">안전하게 테스트하는 주문 플랫폼</p>
+    <nav id="nav" aria-label="기능 메뉴"><button type="button" class="nav-item active" data-target="primary">◉ 주요 업무</button><button type="button" class="nav-item" data-target="orders">▤ 주문 관리</button><button type="button" class="nav-item" data-target="inbox">♧ 알림함</button></nav>
+    <div class="sidebar-bottom"><strong>검증 모드</strong><p>모든 매출·배달·환불은 합성 시뮬레이션입니다. 운영자 승인 없이 실결제로 전환되지 않습니다.</p></div>
+  </aside>
+  <main class="main">
+    <section class="page-head"><div><div class="eyebrow" id="section-eyebrow">ORDER WORKSPACE</div><h1 id="page-title">대시보드</h1><p id="page-lead">오늘의 테스트 흐름을 확인하세요.</p></div><button id="refresh" type="button" class="outline">↻ 새로고침</button></section>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <section class="metrics" id="metrics" aria-label="주요 수치"></section>
+    <section id="primary" class="section-card"></section>
+    <section id="orders" class="section-card"></section>
+    <section id="inbox" class="section-card"></section>
+    <footer class="footer">© 2026 가락한상 · 안전한 기능 통합 개발 테스트 · 운영 주문/정산 및 실배송 미연결</footer>
+  </main>
+</div>
+</body></html>

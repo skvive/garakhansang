@@ -1,0 +1,17 @@
+{
+  "name": "가락한상 오더 — 고객·상인·라이더 테스트",
+  "short_name": "가락한상 LAB",
+  "description": "실주문·실결제 없이 네 역할의 주문·배차 흐름을 검증하는 로컬 테스트 PWA",
+  "start_url": "/order-lab/",
+  "scope": "/order-lab/",
+  "display": "standalone",
+  "theme_color": "#982c28",
+  "background_color": "#faf7f1",
+  "icons": [
+    {
+      "src": "/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
