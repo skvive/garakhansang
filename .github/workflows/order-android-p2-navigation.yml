@@ -1,14 +1,10 @@
-name: Garak Hansang Android P2 Navigation - verified fallback debug APK (GO-LIVE NO)
+# Archived P2 workflow: manual comparison only.
+# Canonical native live catalog, UI click paths and emulator QA are
+# .github/workflows/order-android-p2-nav-lab.yml (Android P5).
+# Do not run stale P2 assertions on P5 native screen changes.
+name: Legacy Android P2 Navigation Archive - manual only
 
 on:
-  push:
-    branches:
-      - chatgpt/garakhansang-order-p2-stripe-sandbox-roles-20261107
-    paths:
-      - android-order-p1h/GarakHansang_Order_Android_v1_11_P1H_Source_20261106.zip
-      - 'android-order-p1h/source-b64/**'
-      - '.github/workflows/order-android-p2-navigation.yml'
-      - 'android-order-p1h/hotfix/**'
   workflow_dispatch:
 
 permissions:
