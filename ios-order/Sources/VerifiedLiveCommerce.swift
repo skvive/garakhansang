@@ -356,3 +356,35 @@ struct VerifiedDeliveryStatusScreen:View {
             .background(Brand.canvas).navigationTitle("배송 조회")
     }
 }
+
+
+struct VerifiedLiveHomeTile:View {
+    @EnvironmentObject var live:VerifiedCatalogStore
+    var body:some View {
+        NavigationLink {
+            VerifiedLiveCatalogScreen()
+        } label: {
+            HStack(spacing:14) {
+                ZStack {
+                    RoundedRectangle(cornerRadius:13).fill(Brand.cream)
+                    Image(systemName:"checkmark.seal.fill")
+                        .font(.system(size:25)).foregroundStyle(Brand.brown)
+                }.frame(width:58,height:58)
+                VStack(alignment:.leading,spacing:5){
+                    Text("공식 입점 새상품").font(.headline).foregroundStyle(.primary)
+                    Text(live.products.isEmpty
+                         ? "승인 매장 준비 중 · 서버 자동 갱신"
+                         : "현재 승인 상품 \\(live.products.count)종 · 실시간 연동")
+                        .font(.caption).foregroundStyle(.secondary)
+                    Text("홈페이지와 같은 판매 승인 DB")
+                        .font(.caption.bold()).foregroundStyle(Brand.brown)
+                }
+                Spacer(minLength:0)
+                Image(systemName:"chevron.right").foregroundStyle(Brand.brown)
+            }.padding(15)
+                .background(.white,in:RoundedRectangle(cornerRadius:16))
+                .overlay(RoundedRectangle(cornerRadius:16).stroke(Brand.cream,lineWidth:1))
+        }.buttonStyle(.plain)
+        .accessibilityLabel("공식 입점 상품, 홈페이지 승인 DB 최신 정보 열기")
+    }
+}
