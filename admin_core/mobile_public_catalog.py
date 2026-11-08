@@ -10,7 +10,6 @@ import hashlib
 import json
 import os
 import ssl
-import pg8000.dbapi
 from contextlib import closing
 from urllib.parse import urlparse
 from .pgcompat import PostgresConnection
@@ -105,6 +104,7 @@ def _catalog_readonly_connection():
         raise ConnectionError("Isolated approved-catalog Neon URL is not configured")
     if u.username!="garak_catalog_public_ro":
         raise ConnectionError("Catalog must use verified least-privilege role")
+    import pg8000.dbapi
     c=pg8000.dbapi.connect(
         host=u.hostname,port=u.port or 5432,user=u.username,
         password=u.password,database=(u.path or "/neondb").lstrip("/"),
