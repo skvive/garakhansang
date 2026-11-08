@@ -87,6 +87,22 @@ jobs:
           grep -q 'VerifiedLiveCartSection' ios-order/Sources/MainViews.swift
           grep -q 'VerifiedDeliveryStatusScreen' ios-order/Sources/MainViews.swift
           grep -q '30_000_000_000' ios-order/Sources/MainViews.swift
+      - name: Verify live homepage approved merchant API is reachable from macOS before iPhone QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'https://garakmall.lexid.site/api/mobile/v1/catalog' ios-order/Sources/VerifiedLiveCommerce.swift
+          curl -fSsL --retry 2 --retry-delay 1 --max-time 25             https://garakmall.lexid.site/api/mobile/v1/catalog -o "$RUNNER_TEMP/native-ios-catalog.json"
+          python3 - "$RUNNER_TEMP/native-ios-catalog.json" <<'PY'
+          import json,sys
+          payload=json.load(open(sys.argv[1],encoding='utf-8'))
+          assert payload['schema_version']==1
+          assert payload['source']=='verified_neon_release_ready'
+          assert not payload['order_service_ready']
+          assert not payload['delivery_tracking_ready']
+          assert isinstance(payload['items'],list)
+          print('iPhone source and production website share one verified Neon catalog:',len(payload['items']),'approved items')
+          PY
       - name: Show Xcode and project schemes
         shell: bash
         run: |
