@@ -1,4 +1,4 @@
-name: Garak Hansang Order iOS P4 - verified SwiftUI navigation and five-screen simulator QA
+name: Garak Hansang Order iOS P5 - verified live catalog and native five-screen simulator QA
 on:
   push:
     branches:
@@ -80,7 +80,13 @@ jobs:
           set -euo pipefail
           swiftc ios-order/Sources/VerifiedMarketNavigation.swift ios-order/Tests/VerifiedMarketNavigationTests.swift -o "$RUNNER_TEMP/garak-ios-navigation-tests"
           "$RUNNER_TEMP/garak-ios-navigation-tests"
+          swiftc ios-order/Sources/VerifiedCatalogModels.swift ios-order/Tests/VerifiedCatalogModelsTests.swift -o "$RUNNER_TEMP/garak-ios-catalog-policy"
+          "$RUNNER_TEMP/garak-ios-catalog-policy"
           xcrun swiftc -frontend -parse ios-order/Sources/*.swift
+          grep -q 'VerifiedLiveCatalogScreen' ios-order/Sources/MainViews.swift
+          grep -q 'VerifiedLiveCartSection' ios-order/Sources/MainViews.swift
+          grep -q 'VerifiedDeliveryStatusScreen' ios-order/Sources/MainViews.swift
+          grep -q '30_000_000_000' ios-order/Sources/MainViews.swift
       - name: Show Xcode and project schemes
         shell: bash
         run: |
@@ -112,12 +118,12 @@ jobs:
           codesign --force --deep --sign - "$APP"
           codesign --verify --deep --strict "$APP"
           mkdir -p output
-          ditto -c -k --sequesterRsrc --keepParent "$APP" output/GarakHansangOrder-P4-Simulator.app.zip
-          shasum -a 256 output/GarakHansangOrder-P4-Simulator.app.zip > output/SHA256.txt
+          ditto -c -k --sequesterRsrc --keepParent "$APP" output/GarakHansangOrder-P5-Simulator.app.zip
+          shasum -a 256 output/GarakHansangOrder-P5-Simulator.app.zip > output/SHA256.txt
           echo "Bundle id: $IDENTIFIER; version: $(plutil -extract CFBundleShortVersionString raw "$APP/Info.plist")" > output/build_receipt.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: GarakHansangOrder-iOS-P4-Simulator-App
+          name: GarakHansangOrder-iOS-P5-Simulator-App
           path: output/
           retention-days: 30
           if-no-files-found: error
@@ -130,14 +136,14 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: GarakHansangOrder-iOS-P4-Simulator-App
+          name: GarakHansangOrder-iOS-P5-Simulator-App
           path: download
       - name: Unpack signed-free simulator app
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p unpacked screenshots
-          ditto -x -k download/GarakHansangOrder-P4-Simulator.app.zip unpacked
+          ditto -x -k download/GarakHansangOrder-P5-Simulator.app.zip unpacked
           test -d unpacked/GarakHansangOrder.app
           test -f unpacked/GarakHansangOrder.app/Info.plist
           plutil -lint unpacked/GarakHansangOrder.app/Info.plist
@@ -197,7 +203,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: GarakHansangOrder-iOS-P4-Five-Screenshots
+          name: GarakHansangOrder-iOS-P5-Five-Screenshots
           path: screenshots/
           retention-days: 14
           if-no-files-found: ignore
