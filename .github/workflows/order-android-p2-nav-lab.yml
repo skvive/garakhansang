@@ -132,6 +132,24 @@ jobs:
           ),encoding="utf-8")
           print("Isolated Android appId suffix .lab and TEST display label configured.")
           PY
+      - name: Confirm shared production website live approved catalog API (safe to be empty)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(grep -c 'https://garakmall.lexid.site/api/mobile/v1/catalog' android-order-p1h/hotfix/LiveCatalogClient.java)" -ge 1
+          curl -fSsL --retry 2 --retry-delay 1 --max-time 25 -H 'Accept: application/json'             https://garakmall.lexid.site/api/mobile/v1/catalog -o "$RUNNER_TEMP/garak-approved-catalog.json"
+          python3 - "$RUNNER_TEMP/garak-approved-catalog.json" <<'PY'
+          import json,sys
+          with open(sys.argv[1],encoding='utf-8') as stream:
+              catalog=json.load(stream)
+          assert catalog['schema_version']==1
+          assert catalog['source']=='verified_neon_release_ready'
+          assert catalog['order_service_ready'] is False
+          assert catalog['delivery_tracking_ready'] is False
+          assert isinstance(catalog['items'],list)
+          assert all(p.get('merchant_verified') is True and not p.get('can_checkout') for p in catalog['items'])
+          print('Verified live garakmall.lexid.site approved catalog contract; approved product count:',len(catalog['items']))
+          PY
       - name: Build real native APK
         working-directory: ${{ runner.temp }}/garak-p1h-app
         run: gradle --no-daemon :app:assembleDebug --stacktrace
