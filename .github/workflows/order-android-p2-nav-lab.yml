@@ -1,4 +1,4 @@
-name: Garak Hansang Android P2 Navigation LAB - side-by-side debug APK (GO-LIVE NO)
+name: Garak Hansang Android P5 Verified Native Catalog LAB - debug APK (GO-LIVE NO)
 
 on:
   push:
@@ -47,6 +47,10 @@ jobs:
           APP_MAIN="$RUNNER_TEMP/garak-p1h-app/app/src/main/java/site/lexid/garakhansang/order/MainActivity.java"
           test "$(sha256sum "$APP_MAIN" | cut -d' ' -f1)" = "d57d38a684d0d2716125ef03f2d47e2af0a48d89d78a192ca14825818f91f448"
           cp android-order-p1h/hotfix/MainActivity.java "$APP_MAIN"
+          cp android-order-p1h/hotfix/LiveCatalogClient.java "$(dirname "$APP_MAIN")/LiveCatalogClient.java"
+          grep -q 'verifiedCatalogPage' "$APP_MAIN"
+          grep -q 'live_catalog' "$APP_MAIN"
+          grep -q 'https://garakmall.lexid.site/api/mobile/v1/catalog' "$(dirname "$APP_MAIN")/LiveCatalogClient.java"
           grep -q 'openMarketDirections' "$APP_MAIN"
           grep -q 'www.google.com/maps/dir/' "$APP_MAIN"
           echo "P2 reviewed Garakland navigation fallback patch applied; original ZIP was SHA-verified."
@@ -134,16 +138,16 @@ jobs:
       - name: Verify APK signature, applicationId and version 21
         run: |
           mkdir -p dist
-          cp "$RUNNER_TEMP/garak-p1h-app/app/build/outputs/apk/debug/app-debug.apk" dist/GarakHansang-Order-P2-Nav-Lab-v111-debug.apk
+          cp "$RUNNER_TEMP/garak-p1h-app/app/build/outputs/apk/debug/app-debug.apk" dist/GarakHansang-Order-P5-LiveCatalog-Lab-v111-debug.apk
           python3 "$RUNNER_TEMP/garak-p1h-app/tools/verify_debug_apk.py" \
-            --apk dist/GarakHansang-Order-P2-Nav-Lab-v111-debug.apk \
+            --apk dist/GarakHansang-Order-P5-LiveCatalog-Lab-v111-debug.apk \
             --aapt "$ANDROID_HOME/build-tools/36.0.0/aapt" \
             --apksigner "$ANDROID_HOME/build-tools/36.0.0/apksigner" \
             --receipt dist/debug-apk-verified.json
-          sha256sum dist/GarakHansang-Order-P2-Nav-Lab-v111-debug.apk > dist/SHA256.txt
+          sha256sum dist/GarakHansang-Order-P5-LiveCatalog-Lab-v111-debug.apk > dist/SHA256.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: GarakHansang-Order-P2-Nav-Lab-v111-debug-apk
+          name: GarakHansang-Order-P5-LiveCatalog-Lab-v111-debug-apk
           path: dist/
           if-no-files-found: error
           retention-days: 30
@@ -176,10 +180,10 @@ jobs:
             --extract-dir "$RUNNER_TEMP/garak-p1h-app"
       - uses: actions/download-artifact@v4
         with:
-          name: GarakHansang-Order-P2-Nav-Lab-v111-debug-apk
+          name: GarakHansang-Order-P5-LiveCatalog-Lab-v111-debug-apk
           path: dist
       - name: Check real APK exists
-        run: test -s dist/GarakHansang-Order-P2-Nav-Lab-v111-debug.apk
+        run: test -s dist/GarakHansang-Order-P5-LiveCatalog-Lab-v111-debug.apk
       - name: Enable KVM when available
         run: if test -e /dev/kvm; then sudo chmod 666 /dev/kvm; fi
       - name: Adapt emulator test scripts to isolated LAB package id
@@ -225,12 +229,12 @@ jobs:
           profile: pixel_7
           emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
           script: |
-            python3 "$RUNNER_TEMP/order-lab-smoke/emulator_smoke_p1j.py" --apk "$GITHUB_WORKSPACE/dist/GarakHansang-Order-P2-Nav-Lab-v111-debug.apk" --out "$GITHUB_WORKSPACE/smoke-evidence" || { adb logcat -d -v brief | grep -E 'AndroidRuntime|FATAL EXCEPTION|site\\.lexid\\.garakhansang' | tail -n 150; exit 1; }
+            python3 "$RUNNER_TEMP/order-lab-smoke/emulator_smoke_p1j.py" --apk "$GITHUB_WORKSPACE/dist/GarakHansang-Order-P5-LiveCatalog-Lab-v111-debug.apk" --out "$GITHUB_WORKSPACE/smoke-evidence" || { adb logcat -d -v brief | grep -E 'AndroidRuntime|FATAL EXCEPTION|site\\.lexid\\.garakhansang' | tail -n 150; exit 1; }
             python3 "$RUNNER_TEMP/order-lab-smoke/emulator_legacy_prefs.py" --out "$GITHUB_WORKSPACE/smoke-evidence" || { adb logcat -d -v brief | grep -E 'AndroidRuntime|FATAL EXCEPTION|site\\.lexid\\.garakhansang' | tail -n 150; exit 1; }
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: GarakHansang-Order-P2-Nav-Lab-v111-emulator-evidence-api${{ matrix.android_api }}
+          name: GarakHansang-Order-P5-LiveCatalog-Lab-v111-emulator-evidence-api${{ matrix.android_api }}
           path: smoke-evidence/
           if-no-files-found: ignore
           retention-days: 14
