@@ -1,0 +1,21 @@
+{
+  "name": "RODI_POS_BunnyBear_v0.1.0_20261110",
+  "created": "2026-11-10",
+  "files": {
+    ".gitignore": "7fdca14c83338e1dd608b9b2a87b287d55c90482a11939100f2d671e346f4551",
+    "QA_REPORT.md": "2beb46016c0dddf94fab5091c53dc261bc071741fcb140915fc677f6f211865b",
+    "README.md": "faa3a43c96f5c3dd1a27e6096be246a89529b1ed5a0fd48e84c6b4d0e8a2c9a7",
+    "RUN_MAC_LINUX.sh": "41c7962e396f7941134abca4789cce4adf0fc22931d9b356fcac4159a205d2b8",
+    "RUN_WINDOWS.bat": "33acec0eb20beb218d08f710eb9a05ae294feab8bdccbebddc5dbdbcb1bc16cd",
+    "server.py": "c65e17d470a6af8cb7e554120d65c4b15943f9ce3b10d4d23f54c8916ae975ff",
+    "terminal/toss-front-bridge.js": "5ddd93c26d58e13ba04433f6669a511be1460179a7c45b8457b4934a215a5e7e",
+    "tests/test_pos.py": "3dda4492e967cbafe68136b3fdddc0dbc6763eaca2ada82fcca8e9c726cdfefe",
+    "web/app.css": "7865add448967d12c3180a8fe249f420feb531ac2f04af1a34d69f8bf4d477d4",
+    "web/index.html": "7e7e934ccb3184dccbe4ea43c697b182808c244b166a766ef93913b476ad1c73",
+    "web/kiosk.js": "b86a5f79dfbbf0ebeb010d3feda366b9b6efe82c3cdb51f4207433cfbdb68ca4",
+    "web/receipt.html": "509488fe5c529ba188611de3afa3fa343eab9ca5a46322cbee7308b70f8abd6e",
+    "web/receipt.js": "21641ecec6b6314e121035461995a0d635cc26d1c95cd01fb6d2bd79dc83e654",
+    "web/staff.html": "fe205343505382be76ae587a23586f88122154693d410194034dd5e61bea8f90",
+    "web/staff.js": "d2d089b0ddd4a27c6f7ba9b3882f76494b4d7f219879fbb0989145c427d8af13"
+  }
+}
