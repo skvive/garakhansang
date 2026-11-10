@@ -1,0 +1,22 @@
+{
+  "name": "RODI POS",
+  "version": "v0.2.0",
+  "payment_mode": "DEMO_ONLY",
+  "files": {
+    ".gitignore": "87be4043d7ace8bea444ce417da5ad0228dbdec90eafa3cfba408432114f2824",
+    "README.md": "b80c92528c8953892da3fe5b96af44e6c56568347cc611ecc11cc1bae8e20036",
+    "RUN_MAC_LINUX.sh": "36a0a344e58918cf9f1261b4c779e2ae81659ee1797feba5dcba8664d9b32ef9",
+    "RUN_WINDOWS.bat": "b860fda6e130316b410482f48dea4f6dd873f2e4f67a86e5f4fe14810b203452",
+    "bridge/toss_front_adapter.js": "e043356a3cc53c25a65f2cbfcc41076037b7606e0717d59a61e5e70c1f62ea5f",
+    "docs/QA_20261110.md": "fc1f32911d21678eb309c2a5c2b096fe44ebf93e9c33c937a94903e9da6509d1",
+    "server.py": "0673f69a502a520a24ab77d6c3921ad4acf2bd38da254ae872c93185b84e1ebf",
+    "tests/test_pos.py": "35aaa00554b75dfa950d8deef4df070e5b39384d9638e770d007b6ef8151486e",
+    "web/assets.css": "231112874eda4596f4397bd028965b97384aec8f4d29ef75c64bd29b5b1da49a",
+    "web/index.html": "af854b3f2218439d274fd443f8edb7278857cf7c3d3eaf6e9d6b05dc6289b2f0",
+    "web/kiosk.js": "500087a5ea586835cfa19318814d767a80aa59b88024cd8e50f1cffaf7c88e04",
+    "web/receipt.html": "2e4848bb3222fdacd0004d7c51280c4fa8a11203b7aba649a5881f36bf1de605",
+    "web/receipt.js": "a9cbc87aa9efd46bed62e011f18ca12b265c24a1f4c0f3e13a6b3298b5efc319",
+    "web/staff.html": "a565c6faf6e64c16c50c443ec2bd0b78fc51f48094c064413e1151f5b84e5a5d",
+    "web/staff.js": "526ae42f04e4fafa1cc724eb04946254891063a7101af8899296234f13fe2633"
+  }
+}
