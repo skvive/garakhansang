@@ -31,3 +31,113 @@
 #garak-verified-dialog .gv-close{margin-top:7px;border:0;border-radius:12px;min-height:48px;background:#205236;color:#fff;font-weight:800;cursor:pointer}
 @media(max-width:850px){#garak-verified-shelf .gv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:460px){#garak-verified-shelf{padding:0 13px;margin:18px auto 90px}#garak-verified-shelf .gv-shell{padding:17px;border-radius:17px}#garak-verified-shelf .gv-grid{gap:10px}#garak-verified-shelf .gv-info{padding:11px}#garak-verified-shelf .gv-name{font-size:13px}#garak-verified-shelf .gv-price{font-size:15px}}
+
+
+/* Market Story polish 2026-11-19 — approved goods only; no fabricated content. */
+#garak-verified-shelf{
+  --gv-forest:#173d2b;--gv-accent:#b53a2d;--gv-gold:#c49b4e;
+  font-family:'Noto Sans KR',system-ui,-apple-system,sans-serif;
+  max-width:1240px;margin:clamp(30px,5vw,72px) auto;
+  color:#25382c;
+}
+#garak-verified-shelf .gv-shell{
+  position:relative;overflow:hidden;
+  background:radial-gradient(circle at 100% 0%,#f1eedf 0%,transparent 38%),#fffdf7;
+  border:1px solid #ddd5c5;border-radius:28px;
+  box-shadow:0 12px 38px rgba(24,50,31,.08);
+}
+#garak-verified-shelf .gv-shell::before{
+  content:"";position:absolute;inset:0 0 auto;height:4px;
+  background:linear-gradient(90deg,#16462f,#c49b4e,#bc4839);
+}
+#garak-verified-shelf .gv-head{align-items:center;padding-top:5px}
+#garak-verified-shelf h2{
+  font-family:'Song Myung','Noto Serif KR',serif;font-weight:700;
+  font-size:clamp(26px,3.15vw,40px);line-height:1.22;letter-spacing:-.055em;
+  color:var(--gv-forest);
+}
+#garak-verified-shelf .gv-overline{color:#a43b30;letter-spacing:.14em}
+#garak-verified-shelf .gv-desc{font-size:clamp(13px,1.4vw,15px);max-width:640px;color:#526758}
+#garak-verified-shelf .gv-refresh{
+  border:1px solid #bad0bc;background:#f6fbf3;color:var(--gv-forest);
+  padding:0 19px;transition:background .2s,border-color .2s;
+}
+#garak-verified-shelf .gv-refresh:hover{background:#e4f2df;border-color:#6eaa82}
+#garak-verified-shelf .gv-refresh:disabled{opacity:.65;cursor:wait}
+#garak-verified-shelf .gv-status{
+  margin:10px 0 14px;padding:12px 16px;display:flex;align-items:center;gap:10px;
+  background:#ecf3e9;border:1px solid #d7e4d1;border-radius:12px;
+  color:#285238;font-size:13px;font-weight:700;line-height:1.55;
+}
+#garak-verified-shelf .gv-status::before{
+  content:"";flex:none;width:9px;height:9px;border-radius:50%;background:#3b8757;
+  box-shadow:0 0 0 3px rgba(59,135,87,.12);
+}
+#garak-verified-shelf[data-state="error"] .gv-status{
+  color:#8a372e;background:#fff4ef;border-color:#f0cec1;
+}
+#garak-verified-shelf[data-state="error"] .gv-status::before{
+  background:#bf4a37;box-shadow:0 0 0 3px rgba(191,74,55,.12);
+}
+#garak-verified-shelf[data-state="loading"] .gv-status{
+  color:#6f603b;background:#faf6ea;border-color:#e7dcc0;
+}
+#garak-verified-shelf[data-state="loading"] .gv-status::before{
+  background:#bc9a4a;box-shadow:0 0 0 3px rgba(188,154,74,.12);
+}
+#garak-verified-shelf .gv-filters{gap:10px;padding-block:7px 20px}
+#garak-verified-shelf .gv-filter{border-color:#cfdccd;font-size:13px}
+#garak-verified-shelf .gv-filter[aria-pressed=true]{background:var(--gv-forest);border-color:var(--gv-forest)}
+#garak-verified-shelf .gv-grid{gap:18px}
+#garak-verified-shelf .gv-card{
+  border-color:#e4e2d9;border-radius:17px;
+  box-shadow:0 4px 16px rgba(20,48,29,.035);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+#garak-verified-shelf .gv-card:hover{
+  transform:translateY(-3px);box-shadow:0 15px 30px rgba(20,48,29,.12);
+}
+#garak-verified-shelf .gv-image{aspect-ratio:4/3;background:#eef0e8}
+#garak-verified-shelf .gv-image-missing{
+  aspect-ratio:4/3;background:linear-gradient(135deg,#e9eadf,#f7f5eb);
+  display:grid;place-items:center;text-align:center;color:#657767;
+  font-size:13px;padding:12px;
+}
+#garak-verified-shelf .gv-info{padding:16px;gap:8px}
+#garak-verified-shelf .gv-name{font-size:15px;line-height:1.55;min-height:2.9em;word-break:keep-all}
+#garak-verified-shelf .gv-merchant{color:#65736a}
+#garak-verified-shelf .gv-price{color:#a43b30}
+#garak-verified-shelf .gv-detail{
+  margin-top:7px;background:var(--gv-forest);
+  transition:background .2s ease;min-height:44px;
+}
+#garak-verified-shelf .gv-detail:hover{background:#0c7746}
+#garak-verified-shelf .gv-empty{
+  grid-column:1/-1;min-height:145px;display:grid;place-items:center;
+  text-align:center;padding:32px 18px;
+  background:#f6f5ee;border:1px dashed #d6d1bb;border-radius:16px;
+  color:#596a5e;font-size:14px;line-height:1.7;
+}
+#garak-verified-shelf .gv-note{color:#66736a;padding-top:13px;border-top:1px solid #eee9dd}
+#garak-verified-dialog .gv-dialog-inner{background:#fffdf7}
+#garak-verified-dialog .gv-close{background:var(--gv-forest,#205236)}
+@media(max-width:700px){
+  .brand-site .garak-mobile-entry{display:none!important}
+  #garak-verified-shelf{margin:30px auto 65px}
+  #garak-verified-shelf .gv-head{align-items:stretch}
+  #garak-verified-shelf .gv-refresh{width:max-content}
+}
+@media(max-width:460px){
+  #garak-verified-shelf .gv-shell{padding:19px 14px;border-radius:18px}
+  #garak-verified-shelf .gv-head{gap:6px}
+  #garak-verified-shelf h2{font-size:27px}
+  #garak-verified-shelf .gv-status{font-size:12px;padding:11px}
+  #garak-verified-shelf .gv-grid{gap:10px}
+  #garak-verified-shelf .gv-info{padding:12px}
+  #garak-verified-shelf .gv-name{min-height:0;font-size:13px}
+  #garak-verified-shelf .gv-detail{font-size:12px;min-height:44px}
+}
+@media(prefers-reduced-motion:reduce){
+  #garak-verified-shelf .gv-card{transition:none}
+  #garak-verified-shelf .gv-card:hover{transform:none}
+}
