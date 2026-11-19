@@ -4,12 +4,13 @@
   if(document.documentElement.dataset.garakV10Done)return;
   document.documentElement.dataset.garakV10Done='true';
   const root=typeof window.GARAK_ROOT==='string'?window.GARAK_ROOT:'';
-  const asset=(file)=>root+'assets/brand/'+file;
+  const brandRoot=root||((location.pathname.startsWith('/merchant-showcase/')||location.pathname.startsWith('/ir/'))?'../':'');
+  const asset=(file)=>brandRoot+'assets/brand/'+file;
   document.body.classList.add('garak-brand-v10');
-  const isHome=location.pathname==='/'||/\/(?:index\.html)?$/.test(location.pathname)&&!location.pathname.includes('/admin/')||document.querySelector('.story-hero')!==null;
+  const isHome=location.pathname==='/'||location.pathname==='/index.html'||document.querySelector('.story-hero')!==null;
   if(isHome)document.body.classList.add('brand-home');
   const applyLogo=()=>{
-    document.querySelectorAll('.header a.logo, .header a.brand-lockup, a.auth-brand').forEach((a)=>{
+    document.querySelectorAll('.header a.logo, .header a.brand-lockup, .site-header a.logo, a.auth-brand').forEach((a)=>{
       a.setAttribute('aria-label','가락한상 홈');
       a.classList.add('garak-v10-logo');
       if(a.querySelector('img[src*="wordmark"]'))return;
@@ -49,6 +50,60 @@
     const stamp=document.createElement('img');stamp.src=asset('seal.png');stamp.alt='가락한상 브랜드 인장';
     const span=document.createElement('span');span.textContent='시장과 식탁을 잇는 정겨운 동네 장터 · 신선한 먹거리의 이야기';el.append(stamp,span);footer.append(el);
   }
+
+  /* Keep the legacy upper header, login and shopping controls. Share the same
+     pinned category/service ribbon across all public page variants. */
+  const menuLinks=[
+    ['전체상품','/category/seafood.html'],
+    ['오늘의 가격','/prices.html'],
+    ['제철 수산','/category/seafood.html'],
+    ['한상 세트','/category/sets.html'],
+    ['132가지 레시피','/recipes/index.html'],
+    ['요리사·쇼츠','/chefs/index.html'],
+    ['업체·협회','/community/index.html'],
+    ['쿠팡·배민 입점','/channels/index.html'],
+    ['가락시장 지도','/map.html'],
+    ['매장 찾기','/stores.html'],
+    ['쿠폰','/coupons.html'],
+    ['이벤트','/events.html'],
+    ['탐험 지도','/market-map.html'],
+    ['자료실','/ir/index.html']
+  ];
+  function syncGlobalNavigation(){
+    const pathname=location.pathname;
+    if(pathname.startsWith('/admin/')||pathname.startsWith('/auth/')||
+       pathname==='/merchant-showcase/moderation.html')return;
+    const header=document.querySelector('header.header,header.site-header,header.top');
+    if(!header)return;
+    header.classList.add('gh-sticky-header');
+    let ribbon=header.querySelector('.story-nav-ribbon')||
+               document.querySelector('.story-nav-ribbon');
+    if(!ribbon){
+      ribbon=document.createElement('div');
+      ribbon.className='story-nav-ribbon';
+    }
+    ribbon.classList.add('gh-global-ribbon');
+    let navigation=ribbon.querySelector('nav');
+    if(!navigation){
+      navigation=document.createElement('nav');
+      ribbon.appendChild(navigation);
+    }
+    navigation.className='gh-global-links';
+    navigation.setAttribute('aria-label','가락한상 전체 서비스 메뉴');
+    navigation.replaceChildren();
+    for(const [title,href] of menuLinks){
+      const anchor=document.createElement('a');
+      anchor.href=href;
+      anchor.textContent=title;
+      if(pathname===href)anchor.setAttribute('aria-current','page');
+      navigation.appendChild(anchor);
+    }
+    // Previously this element sat OUTSIDE the sticky header, so it vanished
+    // after scrolling; keep it IN the header, including on Google Maps pages.
+    if(ribbon.parentElement!==header)header.appendChild(ribbon);
+    document.documentElement.classList.add('gh-global-nav-ready');
+  }
+  syncGlobalNavigation();
   const nav=document.querySelector('[data-menu]');const mobile=document.querySelector('.mobile-menu');
   if(nav && mobile){nav.setAttribute('aria-controls',mobile.id||'garak-mobile-menu');
     nav.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ') && nav.tagName!=='BUTTON'){e.preventDefault();nav.click()}});
