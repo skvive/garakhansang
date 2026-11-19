@@ -99,3 +99,133 @@ body.garak-brand-v10 a:focus-visible,body.garak-brand-v10 button:focus-visible,b
  .page-hero .container{padding-right:78px}
 }
 @media(prefers-reduced-motion:reduce){.product-card:hover,.feature:hover,.recipe-card:hover,.brand-v10-promo-grid a:hover{transform:none}}
+
+
+/* GARAK GLOBAL PINNED NAV | public pages only | 2026-11-19
+   The entire brand header and its canonical ribbon scroll together, not apart.
+   Keep map overlays, main content, and merchant forms beneath the menu. */
+.gh-sticky-header {
+  position: sticky !important;
+  position: -webkit-sticky !important;
+  top: 0 !important;
+  z-index: 1250 !important;
+  overflow: visible !important;
+  isolation: isolate;
+  width: 100%;
+}
+.gh-sticky-header .gh-global-ribbon {
+  display: block !important;
+  position: relative !important;
+  top: auto !important;
+  z-index: 1 !important;
+  clear: both;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #173d2b !important;
+  color: #faf6ec !important;
+  border-top: 3px solid #d1a952 !important;
+  border-bottom: 1px solid #bda06b !important;
+  box-shadow: 0 5px 13px rgba(9, 33, 24, .12);
+}
+.gh-sticky-header .gh-global-links {
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 0 !important;
+  margin: 0 auto !important;
+  padding: 0 15px !important;
+  width: 100%;
+  max-width: 1500px;
+  min-height: 46px;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #658570 #173d2b;
+  -webkit-overflow-scrolling: touch;
+}
+.gh-sticky-header .gh-global-links a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  min-height: 46px;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 11px 12px !important;
+  border: 0 !important;
+  border-bottom: 3px solid transparent !important;
+  border-radius: 0 !important;
+  background: transparent;
+  color: #fffaf0 !important;
+  font: 800 12px/1.4 'Noto Sans KR', 'Malgun Gothic', sans-serif !important;
+  letter-spacing: -.025em;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+}
+.gh-sticky-header .gh-global-links a:hover,
+.gh-sticky-header .gh-global-links a:focus-visible,
+.gh-sticky-header .gh-global-links a[aria-current="page"] {
+  background: #276447 !important;
+  color: white !important;
+  border-bottom-color: #e4c16e !important;
+}
+.gh-sticky-header .gh-global-links a:focus-visible {
+  outline: 3px solid #e4c16e !important;
+  outline-offset: -3px !important;
+}
+.gh-sticky-header .primary-nav,
+.gh-sticky-header .primary-nav .nav-inner {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+.gh-sticky-header .primary-nav .nav-inner {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  gap: 15px !important;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.gh-sticky-header .primary-nav .nav-inner a { flex: 0 0 auto; }
+/* Existing official brush wordmark is shared with the merchant-preview pages. */
+.gh-sticky-header.site-header .logo.garak-v10-logo img {
+  width: min(190px, 23vw);
+  max-height: 55px;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+}
+.gh-sticky-header.site-header .head {
+  min-width: 0;
+  max-width: 1200px;
+}
+.gh-sticky-header.site-header .head nav { min-width: 0; }
+.gh-sticky-header.top {
+  background: #fffaf1;
+  border-bottom: 2px solid #d1a952;
+}
+.gh-sticky-header.top .topin { max-width: 100%; }
+html { scroll-padding-top: 190px; }
+@media (max-width: 1020px) {
+  .gh-sticky-header .gh-global-links a { padding: 10px 10px !important; }
+  .gh-sticky-header.site-header .head nav { overflow-x: auto; scrollbar-width: thin; }
+}
+@media (max-width: 720px) {
+  .gh-sticky-header .gh-global-links { min-height: 44px; padding: 0 8px !important; }
+  .gh-sticky-header .gh-global-links a {
+    min-height: 44px;
+    padding: 10px 11px !important;
+    font-size: 12px !important;
+  }
+  .gh-sticky-header.site-header .logo.garak-v10-logo img {
+    width: 116px;
+    max-height: 40px;
+  }
+  .gh-sticky-header.site-header .head { gap: 10px; height: auto; min-height: 63px; }
+  html { scroll-padding-top: 138px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gh-sticky-header .gh-global-links { scroll-behavior: auto; }
+}
