@@ -78,3 +78,48 @@ body{background:#fffefa}
  .bottom-nav a.active .tab-label{padding:5px 6px}
 }
 @media(prefers-reduced-motion:reduce){.bottom-nav a{transition:none}}
+
+
+/* Persistent global categories for all mobile screens, sharing desktop links. */
+.gh-mobile-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 85;
+  width: 100%;
+  background: #fffefa;
+  box-shadow: 0 6px 14px rgba(15,56,40,.12);
+}
+.gh-mobile-sticky .mhead { position: relative; top: auto; z-index: 1; }
+.gh-mobile-ribbon {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  min-height: 44px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  background: #173d2b;
+  border-top: 3px solid #d1a952;
+}
+.gh-mobile-ribbon a {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 9px 12px;
+  font-size: 12px;
+  font-weight: 850;
+  white-space: nowrap;
+  color: #fffaf1;
+  text-decoration: none;
+}
+.gh-mobile-ribbon a:hover,.gh-mobile-ribbon a:focus-visible {
+  background: #276447;
+  color: #fff;
+}
+.gh-mobile-ribbon a:focus-visible {outline:3px solid #e4c16e;outline-offset:-3px}
+.mdrawer {top:136px}
+@media (prefers-reduced-motion:reduce){.gh-mobile-ribbon{scroll-behavior:auto}}
