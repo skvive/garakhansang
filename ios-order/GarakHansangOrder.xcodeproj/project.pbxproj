@@ -1,0 +1,101 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+		907B324FCE60D8AA083B0716 /* GarakHansangOrderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GarakHansangOrderApp.swift"; path = "GarakHansangOrder/App/GarakHansangOrderApp.swift"; sourceTree = "<group>";};
+		8EF70728B1E9C0F2F6B3C403 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ShopViewModel.swift"; path = "GarakHansangOrder/Data/ShopViewModel.swift"; sourceTree = "<group>";};
+		E5430158E16D43C49C28FD5C /* BrandTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BrandTheme.swift"; path = "GarakHansangOrder/Theme/BrandTheme.swift"; sourceTree = "<group>";};
+		61D525F2FC713FEF7996C5FC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "HomeView.swift"; path = "GarakHansangOrder/Views/HomeView.swift"; sourceTree = "<group>";};
+		6F36178FCB6DC64D79EF5409 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Components.swift"; path = "GarakHansangOrder/Views/Components.swift"; sourceTree = "<group>";};
+		1A5D3D99211D962C6A45B673 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProductDetailView.swift"; path = "GarakHansangOrder/Views/ProductDetailView.swift"; sourceTree = "<group>";};
+		E4448E3F91FB48EC1DCE0C4E /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SavedView.swift"; path = "GarakHansangOrder/Views/SavedView.swift"; sourceTree = "<group>";};
+		888C0AF630F9F297A943AEB4 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CartView.swift"; path = "GarakHansangOrder/Views/CartView.swift"; sourceTree = "<group>";};
+		47B17A8BB9BFC825B2351C53 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AccountView.swift"; path = "GarakHansangOrder/Views/AccountView.swift"; sourceTree = "<group>";};
+		042E16056264B0B49DE11FAB /* GarakCatalogDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GarakCatalogDomain.swift"; path = "Shared/GarakCatalogDomain.swift"; sourceTree = "<group>";};
+		C9212A7448F49FA27134BA74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Assets.xcassets"; path = "GarakHansangOrder/Assets.xcassets"; sourceTree = "<group>";};
+		48F1AD67BED87C0482432F4F /* menu_catalog.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "menu_catalog.json"; path = "Shared/Resources/menu_catalog.json"; sourceTree = "<group>";};
+		D5224B1A180BE04ADE377791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "GarakHansangOrder/Info.plist"; sourceTree = "<group>";};
+		95F9B9511AF6A72D2F3E376B /* GarakHansangOrderApp.swift */ = {isa = PBXBuildFile; fileRef = 907B324FCE60D8AA083B0716 /* GarakHansangOrderApp.swift */;};
+		C8D6DBF60C199CAA56FF0EB8 /* ShopViewModel.swift */ = {isa = PBXBuildFile; fileRef = 8EF70728B1E9C0F2F6B3C403 /* ShopViewModel.swift */;};
+		2B192D37E384F9784D0CAA71 /* BrandTheme.swift */ = {isa = PBXBuildFile; fileRef = E5430158E16D43C49C28FD5C /* BrandTheme.swift */;};
+		174F0427784185DBA627CC07 /* HomeView.swift */ = {isa = PBXBuildFile; fileRef = 61D525F2FC713FEF7996C5FC /* HomeView.swift */;};
+		D3D573AB5161E010862C8354 /* Components.swift */ = {isa = PBXBuildFile; fileRef = 6F36178FCB6DC64D79EF5409 /* Components.swift */;};
+		EAC0945DE2DF1E2A175ED26D /* ProductDetailView.swift */ = {isa = PBXBuildFile; fileRef = 1A5D3D99211D962C6A45B673 /* ProductDetailView.swift */;};
+		9EBA04865BA44ABE4904F379 /* SavedView.swift */ = {isa = PBXBuildFile; fileRef = E4448E3F91FB48EC1DCE0C4E /* SavedView.swift */;};
+		AEF832E2BD100249923C0E54 /* CartView.swift */ = {isa = PBXBuildFile; fileRef = 888C0AF630F9F297A943AEB4 /* CartView.swift */;};
+		76E0B70F717AE2FDAF495CCC /* AccountView.swift */ = {isa = PBXBuildFile; fileRef = 47B17A8BB9BFC825B2351C53 /* AccountView.swift */;};
+		B489AC3392D6B7C8E66D7492 /* GarakCatalogDomain.swift */ = {isa = PBXBuildFile; fileRef = 042E16056264B0B49DE11FAB /* GarakCatalogDomain.swift */;};
+		59A19B8D1DA4FF6B9D237400 /* Assets.xcassets */ = {isa = PBXBuildFile; fileRef = C9212A7448F49FA27134BA74 /* Assets.xcassets */;};
+		355D0AE1B54E26CB0DF2E4BA /* menu_catalog.json */ = {isa = PBXBuildFile; fileRef = 48F1AD67BED87C0482432F4F /* menu_catalog.json */;};
+		800FB1A970BFF9191D999502 /* GarakHansangOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarakHansangOrder.app; sourceTree = BUILT_PRODUCTS_DIR;};
+		00C45FD35CB0F9C5F764F070 /* Products */ = {isa = PBXGroup; children = (800FB1A970BFF9191D999502 /* GarakHansangOrder.app */,); name = Products; sourceTree = "<group>";};
+		ADCF10F76EBF2A74473E9DC4 /* Source and Resources */ = {isa = PBXGroup; children = (
+				907B324FCE60D8AA083B0716 /* GarakHansangOrderApp.swift */,
+				8EF70728B1E9C0F2F6B3C403 /* ShopViewModel.swift */,
+				E5430158E16D43C49C28FD5C /* BrandTheme.swift */,
+				61D525F2FC713FEF7996C5FC /* HomeView.swift */,
+				6F36178FCB6DC64D79EF5409 /* Components.swift */,
+				1A5D3D99211D962C6A45B673 /* ProductDetailView.swift */,
+				E4448E3F91FB48EC1DCE0C4E /* SavedView.swift */,
+				888C0AF630F9F297A943AEB4 /* CartView.swift */,
+				47B17A8BB9BFC825B2351C53 /* AccountView.swift */,
+				042E16056264B0B49DE11FAB /* GarakCatalogDomain.swift */,
+				C9212A7448F49FA27134BA74 /* Assets.xcassets */,
+				48F1AD67BED87C0482432F4F /* menu_catalog.json */,
+				D5224B1A180BE04ADE377791 /* Info.plist */,
+			); sourceTree = "<group>";};
+		DF891E785808226D241F246E /* Root */ = {isa = PBXGroup; children = (ADCF10F76EBF2A74473E9DC4 /* Source and Resources */, 00C45FD35CB0F9C5F764F070 /* Products */,); sourceTree = "<group>";};
+		1CDF2F71A52B082132B04DFF /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (95F9B9511AF6A72D2F3E376B /* GarakHansangOrderApp.swift */, C8D6DBF60C199CAA56FF0EB8 /* ShopViewModel.swift */, 2B192D37E384F9784D0CAA71 /* BrandTheme.swift */, 174F0427784185DBA627CC07 /* HomeView.swift */, D3D573AB5161E010862C8354 /* Components.swift */, EAC0945DE2DF1E2A175ED26D /* ProductDetailView.swift */, 9EBA04865BA44ABE4904F379 /* SavedView.swift */, AEF832E2BD100249923C0E54 /* CartView.swift */, 76E0B70F717AE2FDAF495CCC /* AccountView.swift */, B489AC3392D6B7C8E66D7492 /* GarakCatalogDomain.swift */,); runOnlyForDeploymentPostprocessing = 0;};
+		C02F1309AF4906C92F1EAD44 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (59A19B8D1DA4FF6B9D237400 /* Assets.xcassets */, 355D0AE1B54E26CB0DF2E4BA /* menu_catalog.json */,); runOnlyForDeploymentPostprocessing = 0;};
+		CF5BDB0BEAFE176F9629192A /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;};
+		7ADE71700E9404B10E13B577 /* Build configuration list for target */ = {isa = XCConfigurationList; buildConfigurations = (58B923851A6DC2AF2479E88C, B120543165201CD01FE38942,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+		12D04D787E90C9B967248BFD /* Build configuration list for project */ = {isa = XCConfigurationList; buildConfigurations = (C761B7D49C3C32C5F60E8010, ACCCD85F61979F8ECCA377BC,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+		39EF38D4EB0D91484597D3BD /* GarakHansangOrder */ = {isa = PBXNativeTarget; buildConfigurationList = 7ADE71700E9404B10E13B577 /* Target config */; buildPhases = (1CDF2F71A52B082132B04DFF /* Sources */, CF5BDB0BEAFE176F9629192A /* Frameworks */, C02F1309AF4906C92F1EAD44 /* Resources */,); buildRules = (); dependencies = (); name = GarakHansangOrder; productName = GarakHansangOrder; productReference = 800FB1A970BFF9191D999502 /* GarakHansangOrder.app */; productType = "com.apple.product-type.application";};
+		1325574543122428103E8B79 /* Project object */ = {isa = PBXProject; attributes = { BuildIndependentTargetsInParallel = YES; LastUpgradeCheck = 1600; TargetAttributes = { 39EF38D4EB0D91484597D3BD = { CreatedOnToolsVersion = 16.0; }; }; }; buildConfigurationList = 12D04D787E90C9B967248BFD /* Project config */; compatibilityVersion = "Xcode 14.0"; developmentRegion = ko; hasScannedForEncodings = 0; knownRegions = (ko, en, Base); mainGroup = DF891E785808226D241F246E /* Root */; productRefGroup = 00C45FD35CB0F9C5F764F070 /* Products */; projectDirPath = ""; projectRoot = ""; targets = (39EF38D4EB0D91484597D3BD /* GarakHansangOrder */,);};
+		C761B7D49C3C32C5F60E8010 /* Project debug */ = {isa = XCBuildConfiguration; buildSettings = { ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; GCC_OPTIMIZATION_LEVEL = 0; SDKROOT = iphoneos; IPHONEOS_DEPLOYMENT_TARGET = 16.0; SWIFT_VERSION = 5.0; DEBUG_INFORMATION_FORMAT = dwarf; }; name = Debug;};
+		58B923851A6DC2AF2479E88C /* Target debug */ = {isa = XCBuildConfiguration; buildSettings = {
+ ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+ CLANG_ENABLE_MODULES = YES;
+ CODE_SIGNING_ALLOWED = NO;
+ CURRENT_PROJECT_VERSION = 1;
+ ENABLE_PREVIEWS = YES;
+ GENERATE_INFOPLIST_FILE = NO;
+ INFOPLIST_FILE = GarakHansangOrder/Info.plist;
+ IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+ LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+ MARKETING_VERSION = 0.1.0;
+ PRODUCT_BUNDLE_IDENTIFIER = site.lexid.garakhansang.order.ios;
+ PRODUCT_NAME = "$(TARGET_NAME)";
+ SDKROOT = iphoneos;
+ SWIFT_EMIT_LOC_STRINGS = YES;
+ SWIFT_OPTIMIZATION_LEVEL = -Onone;
+ SWIFT_VERSION = 5.0;
+ SUPPORTS_MACCATALYST = NO;
+ TARGETED_DEVICE_FAMILY = "1,2";
+ }; name = Debug;};
+		ACCCD85F61979F8ECCA377BC /* Project release */ = {isa = XCBuildConfiguration; buildSettings = { ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; GCC_OPTIMIZATION_LEVEL = s; SDKROOT = iphoneos; IPHONEOS_DEPLOYMENT_TARGET = 16.0; SWIFT_VERSION = 5.0; DEBUG_INFORMATION_FORMAT = dwarf-with-dsym; }; name = Release;};
+		B120543165201CD01FE38942 /* Target release */ = {isa = XCBuildConfiguration; buildSettings = {
+ ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+ CLANG_ENABLE_MODULES = YES;
+ CODE_SIGNING_ALLOWED = NO;
+ CURRENT_PROJECT_VERSION = 1;
+ ENABLE_PREVIEWS = YES;
+ GENERATE_INFOPLIST_FILE = NO;
+ INFOPLIST_FILE = GarakHansangOrder/Info.plist;
+ IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+ LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+ MARKETING_VERSION = 0.1.0;
+ PRODUCT_BUNDLE_IDENTIFIER = site.lexid.garakhansang.order.ios;
+ PRODUCT_NAME = "$(TARGET_NAME)";
+ SDKROOT = iphoneos;
+ SWIFT_EMIT_LOC_STRINGS = YES;
+ SWIFT_OPTIMIZATION_LEVEL = -O;
+ SWIFT_VERSION = 5.0;
+ SUPPORTS_MACCATALYST = NO;
+ TARGETED_DEVICE_FAMILY = "1,2";
+ }; name = Release;};
+	};
+	rootObject = 1325574543122428103E8B79 /* Project object */;
+}
