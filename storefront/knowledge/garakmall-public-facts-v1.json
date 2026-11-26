@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "brand": "가락한상",
+  "projectId": "prj_U0g2LAS5EH3Q4zhTUiNmNh3Ysn8b",
+  "canonical": "https://garakmall.lexid.site/market-guide.html",
+  "status": "source-verified / preview-only; no indexing or AI training claimed",
+  "reviewed": "2026-11-26",
+  "purpose": "공개 사실 Q&A 원천; LEXID 자체 RAG 연결 후보",
+  "entries": [
+    {
+      "id": "GARAKMALL-FAQ-01",
+      "question": "가락한상·가락몰은 가락시장 공식 운영 사이트인가요?",
+      "answer": "가락한상은 시장 정보와 장보기 경험을 소개하는 브랜드 시연 사이트입니다. 가락시장 공식 운영기관이 아니며, 매장·가격·상품을 실제 판매 정보로 확정해서는 안 됩니다.",
+      "source_url": "https://garakmall.lexid.site/market-guide.html",
+      "source_status": "reviewed repository source, production HTTP unverified"
+    },
+    {
+      "id": "GARAKMALL-FAQ-02",
+      "question": "어떤 가락시장 정보를 둘러볼 수 있나요?",
+      "answer": "수산·축산·농산·한상 세트 상품 카테고리와 시장 지도 시안, 매장 소개, 쿠폰·행사, 상인 이야기를 탐색할 수 있습니다.",
+      "source_url": "https://garakmall.lexid.site/index.html",
+      "source_status": "reviewed repository source, production HTTP unverified"
+    },
+    {
+      "id": "GARAKMALL-FAQ-03",
+      "question": "‘오늘의 시세’는 공식 경매 가격인가요?",
+      "answer": "아닙니다. 현재 시세와 상품 가격은 시연 예시이며 공식 경매 API나 실거래가가 아닙니다. 실제 구매 전 공급자에게 당일 가격과 조건을 확인해야 합니다.",
+      "source_url": "https://garakmall.lexid.site/prices.html",
+      "source_status": "reviewed repository source, production HTTP unverified"
+    },
+    {
+      "id": "GARAKMALL-FAQ-04",
+      "question": "표시된 상품을 바로 주문·결제할 수 있나요?",
+      "answer": "가격·장바구니 등 시연 화면만으로 실제 주문·결제·배송이 운영된다는 뜻은 아닙니다. 현재 사이트에 실결제와 배송 연동이 완료됐다고 볼 근거가 없습니다.",
+      "source_url": "https://garakmall.lexid.site/category/seafood.html",
+      "source_status": "reviewed repository source, production HTTP unverified"
+    },
+    {
+      "id": "GARAKMALL-FAQ-05",
+      "question": "사이트 쿠폰을 실제 점포에서 사용할 수 있나요?",
+      "answer": "현재 쿠폰 지갑에 담기는 쿠폰은 시연용으로, 매장에서 실제 할인이나 결제 사용을 보장하지 않습니다.",
+      "source_url": "https://garakmall.lexid.site/coupons.html",
+      "source_status": "reviewed repository source, production HTTP unverified"
+    },
+    {
+      "id": "GARAKMALL-FAQ-06",
+      "question": "시장 지도에 나온 매장 위치는 정확한가요?",
+      "answer": "실내 안내도는 동선 참고 시안입니다. 개별 매장 GPS와 호실 좌표가 검증되지 않았으므로 방문 전 공식 안내와 해당 점포 정보를 대조하세요.",
+      "source_url": "https://garakmall.lexid.site/market-map.html",
+      "source_status": "reviewed repository source, production HTTP unverified"
+    },
+    {
+      "id": "GARAKMALL-FAQ-07",
+      "question": "방문 전에 어떤 정보를 추가 확인해야 하나요?",
+      "answer": "방문할 점포의 최신 영업 여부, 위치, 상품 취급 여부, 가격·중량·손질·보관 조건을 직접 확인하세요. 시연 화면만으로 구매 결정을 확정하지 마세요.",
+      "source_url": "https://garakmall.lexid.site/market-map.html",
+      "source_status": "reviewed repository source, production HTTP unverified"
+    },
+    {
+      "id": "GARAKMALL-FAQ-08",
+      "question": "‘가락시장 30년 전통의 맛’은 영업 기간인가요?",
+      "answer": "아닙니다. 그 문구는 가락한상의 브랜드 슬로건으로, 특정 점포나 사업체의 실제 영업 기간을 증명하지 않습니다.",
+      "source_url": "https://garakmall.lexid.site/market-guide.html",
+      "source_status": "reviewed repository source, production HTTP unverified"
+    },
+    {
+      "id": "GARAKMALL-FAQ-09",
+      "question": "상인 정보와 홍보 게시글은 모두 인증되었나요?",
+      "answer": "사이트에는 시연 콘텐츠가 포함됩니다. 상호, 홍보와 상품 정보는 실제 입점 또는 공식 제휴 사실로 간주하지 말고 승인·검증 상태를 확인하세요.",
+      "source_url": "https://garakmall.lexid.site/community/merchants.html",
+      "source_status": "reviewed repository source, production HTTP unverified"
+    },
+    {
+      "id": "GARAKMALL-FAQ-10",
+      "question": "수산물 상품을 비교할 때 중요한 기준은 무엇인가요?",
+      "answer": "상품명 외에도 중량, 손질 방식, 원산지, 보관 조건, 당일 공급 가능 여부를 확인해야 합니다. 시연 가격과 판매 조건은 참고 정보로만 사용하세요.",
+      "source_url": "https://garakmall.lexid.site/category/seafood.html",
+      "source_status": "reviewed repository source, production HTTP unverified"
+    },
+    {
+      "id": "GARAKMALL-FAQ-11",
+      "question": "상인으로 참여하려면 어디를 확인하나요?",
+      "answer": "상인센터에 표시된 참여·홍보 정보를 확인할 수 있습니다. 안내 화면은 입점 승인, 실제 광고 집행이나 계약 체결을 보장하지 않습니다.",
+      "source_url": "https://garakmall.lexid.site/merchant-center.html",
+      "source_status": "reviewed repository source, production HTTP unverified"
+    },
+    {
+      "id": "GARAKMALL-FAQ-12",
+      "question": "모바일 페이지에서는 어떤 점에 주의해야 하나요?",
+      "answer": "모바일에서도 카테고리와 메뉴를 탐색할 수 있지만 지도·가격·쿠폰·주문 기능은 일부 시연 또는 미검증 상태일 수 있습니다.",
+      "source_url": "https://garakmall.lexid.site/mobile/index.html",
+      "source_status": "reviewed repository source, production HTTP unverified"
+    }
+  ]
+}
